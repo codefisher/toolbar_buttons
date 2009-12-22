@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 tbutton"
+	id="customize-toolbar"
+	label="&customize-toolbar.label;"
+	tooltiptext="&customize-toolbar.tooltip;"
+	command="cmd_CustomizeMailToolbar"/> 

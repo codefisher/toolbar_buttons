@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Offline">
+<!ENTITY workoffline.tooltip "Přepíná režim offline">
+<!ENTITY delete.label "Smazat">
+<!ENTITY delete.tooltip "Smaže vybraný text">
+<!ENTITY find.label "Hledat">
+<!ENTITY find.tooltip "Najít">
+<!ENTITY saveas.label "Uložit Jako">
+<!ENTITY saveas.tooltip "Uloží dokument jako ...">
+<!ENTITY select-all.label "Vybrat vše">
+<!ENTITY select-all.tooltip "Vybere vše">
+<!ENTITY find-again.label "Najít další">
+<!ENTITY find-again.tooltip "Najít další">
+<!ENTITY find-prev.label "Najít předchozí">
+<!ENTITY find-prev.tooltip "Najít předchozí">
+<!ENTITY enlarge.label "Zvětšit">
+<!ENTITY enlarge.tooltip "Zvětší písmo">
+<!ENTITY reduce.label "Zmenšit">
+<!ENTITY reduce.tooltip "Zmenší velikost písma">
+<!ENTITY reset.label "Reset">
+<!ENTITY reset.tooltip "Vrátí velikost písma na původní hodnotu">
+<!ENTITY page-source.label "Zdroj">
+<!ENTITY page-source.tooltip "Zobrazí zdrojový kód">
+<!ENTITY print-preview.label "Náhled">
+<!ENTITY print-preview.tooltip "Zobrazí náhled před tiskem">
+<!ENTITY dictionary-list.label "Změnit slovník">
+<!ENTITY dictionary-list.tooltip "Rychle přepne slovník">

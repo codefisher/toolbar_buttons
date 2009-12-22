@@ -1,0 +1,82 @@
+<!ENTITY realNextMessage.label "Next Message">
+<!ENTITY realNextMessage.tooltip "Get Real Next Message">
+<!ENTITY realPreviousMessage.label "Previous Message">
+<!ENTITY realPreviousMessage.tooltip "Get Real Previous Message">
+<!ENTITY send-with-no-save.label "Send Without Save">
+<!ENTITY send-with-no-save.tooltip "Send message without saving a copy">
+<!ENTITY about-thunderbird.label "About">
+<!ENTITY about-thunderbird.tooltip "About Thunderbird">
+<!ENTITY accountwizard.label "Account Setup">
+<!ENTITY accountwizard.tooltip "Run wizard to setup a new account">
+<!ENTITY accountmanager.label "Account Settings">
+<!ENTITY accountmanager.tooltip "Open account settings">
+<!ENTITY plainpaste.label "Plain Text Paste">
+<!ENTITY plainpaste.tooltip "Paste Text With No Formatting">
+<!ENTITY attachments-save.label "Save Attachments">
+<!ENTITY attachments-save.tooltip "Save All Attachments From Message">
+<!ENTITY attachments-detach.label "Detach Attachments">
+<!ENTITY attachments-detach.tooltip "Detach All Attachments From Message">
+<!ENTITY attachments-delete.label "Delete Attachments">
+<!ENTITY attachments-delete.tooltip "Delete All Attachments From Message">
+<!ENTITY empty-trash.label "Empty Trash">
+<!ENTITY empty-trash.tooltip "Empty The Trash Folder">
+<!ENTITY not-junk.label "Not Junk">
+<!ENTITY not-junk.tooltip "Mark Message as not Junk">
+<!ENTITY cut.label "Cut">
+<!ENTITY cut.tooltip "Cut Text">
+<!ENTITY copy.label "Copy">
+<!ENTITY copy.tooltip "Copy Text">
+<!ENTITY paste.label "Paste">
+<!ENTITY paste.tooltip "Paste Text">
+<!ENTITY search-messages.label "Search Messages">
+<!ENTITY search-messages.tooltip "Open Message Search">
+<!ENTITY search-addresses.label "Search Addresses">
+<!ENTITY search-addresses.tooltip "Open Addresses Search">
+<!ENTITY msg-pane.label "Message Pane">
+<!ENTITY msg-pane.tooltip "Toggel Message Pane">
+<!ENTITY purge.label "Purge">
+<!ENTITY purge.tooltip "Compact Folder, and Delete Junk">
+<!ENTITY compact.label "Compact">
+<!ENTITY compact.tooltip "Compact Folder">
+<!ENTITY copy-address.label "Copy Email">
+<!ENTITY copy-address.tooltip "Copy Email Address to Clipboard">
+<!ENTITY add-address.label "Add Email">
+<!ENTITY add-address.tooltip "Copy Email Address to Address Book">
+<!ENTITY read-message.label "Read">
+<!ENTITY read-message.tooltip "Read Message">
+<!ENTITY delete-junk.label "Delete Junk">
+<!ENTITY delete-junk.tooltip "Delete Junk Messages">
+<!ENTITY msg-filter.label "Filters">
+<!ENTITY msg-filter.tooltip "Set up Message Filters">
+<!ENTITY html-mode.label "HTML Mode">
+<!ENTITY html-mode.tooltip "Set if Message is shown as HTML or Plain Text">
+<!ENTITY get-inbox.label "Get Inbox">
+<!ENTITY get-inbox.tooltip "Change Focused Folder to the Inbox">
+<!ENTITY send-receive.label "Send &amp; Receive">
+<!ENTITY send-receive.tooltip "Send and receive messages">
+<!ENTITY reply-sender.label "Reply to Sender Only">
+<!ENTITY reply-sender.tooltip "Reply only to the sender of the email">
+<!ENTITY create-filter.label "Create Filter">
+<!ENTITY create-filter.tooltip "Create filter from message">
+<!ENTITY shift-delete.label "Skip Trash">
+<!ENTITY shift-delete.tooltip "Delete message with out sending it to the Trash">
+<!ENTITY edit-draft.label "Edit Draft">
+<!ENTITY edit-draft.tooltip "Edit Saved Draft">
+<!ENTITY return-receipt.label "Return Receipt">
+<!ENTITY return-receipt.tooltip "Toggle Return Receipt on/off">
+<!ENTITY all-threads.label "All Threads">
+<!ENTITY all-threads.tooltip "View All Threads">
+<!ENTITY unread-threads.label "Unread Threads">
+<!ENTITY unread-threads.tooltip "View Unread Threads">
+<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
+<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY ignored-threads.tooltip "View Ignored Threads">
+<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
+<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

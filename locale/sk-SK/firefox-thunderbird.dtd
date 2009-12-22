@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Pracovať offline">
+<!ENTITY workoffline.tooltip "Zapnúť režim práce offline">
+<!ENTITY delete.label "Vymazať">
+<!ENTITY delete.tooltip "Vymazať označený text">
+<!ENTITY find.label "Vyhľadať">
+<!ENTITY find.tooltip "Vyhľadať text">
+<!ENTITY saveas.label "Uložiť ako">
+<!ENTITY saveas.tooltip "Uložiť dokument ako">
+<!ENTITY select-all.label "Označiť všetko">
+<!ENTITY select-all.tooltip "Označiť celý text">
+<!ENTITY find-again.label "Vyhľadať ďalšie">
+<!ENTITY find-again.tooltip "Vyhľadať ďalšiu zhodu">
+<!ENTITY find-prev.label "Vyhľadať predchádzajúce">
+<!ENTITY find-prev.tooltip "Vyhľadať predchádzajúcu zhodu">
+<!ENTITY enlarge.label "Zväčšiť">
+<!ENTITY enlarge.tooltip "Zväčšiť veľkosť textu">
+<!ENTITY reduce.label "Zmenšiť">
+<!ENTITY reduce.tooltip "Zmenšiť veľkosť textu">
+<!ENTITY reset.label "Pôvodná veľkosť">
+<!ENTITY reset.tooltip "Pôvodná veľkosť textu">
+<!ENTITY page-source.label "Zdrojový kód">
+<!ENTITY page-source.tooltip "Zobraziť zdrojový kód stránky">
+<!ENTITY print-preview.label "Ukážka pred tlačou">
+<!ENTITY print-preview.tooltip "Otvoriť ukážku pred tlačou">
+<!ENTITY dictionary-list.label "Zmeniť slovník">
+<!ENTITY dictionary-list.tooltip "Rýchla zmena aktuálneho slovníka">

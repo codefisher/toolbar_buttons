@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Trabajar sin conexión">
+<!ENTITY workoffline.tooltip "Alternar entre trabajar Conectado o Sin conexión">
+<!ENTITY delete.label "Eliminar">
+<!ENTITY delete.tooltip "Eliminar el texto seleccionado">
+<!ENTITY find.label "Buscar">
+<!ENTITY find.tooltip "Buscar el texto especificado">
+<!ENTITY saveas.label "Guardar">
+<!ENTITY saveas.tooltip "Guardar el documento como...">
+<!ENTITY select-all.label "Seleccionar todo">
+<!ENTITY select-all.tooltip "Seleccionar todo el texto">
+<!ENTITY find-again.label "Buscar siguiente">
+<!ENTITY find-again.tooltip "Buscar la siguiente aparición de la frase">
+<!ENTITY find-prev.label "Buscar anterior">
+<!ENTITY find-prev.tooltip "Buscar la aparición anterior de la frase">
+<!ENTITY enlarge.label "Aumentar">
+<!ENTITY enlarge.tooltip "Aumentar el tamaño del texto">
+<!ENTITY reduce.label "Disminuir">
+<!ENTITY reduce.tooltip "Disminuir el tamaño del texto">
+<!ENTITY reset.label "Normal">
+<!ENTITY reset.tooltip "Regresar el texto a tamaño normal">
+<!ENTITY page-source.label "Código fuente">
+<!ENTITY page-source.tooltip "Mostrar el código fuente de la página">
+<!ENTITY print-preview.label "Vista previa">
+<!ENTITY print-preview.tooltip "Abrir la Vista previa de impresión">
+<!ENTITY dictionary-list.label "Change Dictionary">
+<!ENTITY dictionary-list.tooltip "Quickly Change the Current Dictonary">

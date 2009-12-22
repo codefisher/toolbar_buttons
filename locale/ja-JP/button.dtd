@@ -1,0 +1,62 @@
+<!ENTITY exit.label "終了">
+<!ENTITY exit.tooltip "アプリケーションを終了します">
+<!ENTITY extensions.label "拡張">
+<!ENTITY extensions.tooltip "拡張マネージャを開きます">
+<!ENTITY themes.label "テーマ">
+<!ENTITY themes.tooltip "テーマ マネージャを開きます">
+<!ENTITY addons.label "アドオン">
+<!ENTITY addons.tooltip "アドオン マネージャを開きます">
+<!ENTITY installaddons.label "インストール">
+<!ENTITY installaddons.tooltip "拡張またはテーマをインストールします">
+<!ENTITY statusbar-toggle.label "ステータス バー">
+<!ENTITY statusbar-toggle.tooltip "ステータス バーを切り替えます">
+<!ENTITY redo.label "やり直し">
+<!ENTITY redo.tooltip "最後の変更をやり直します">
+<!ENTITY undo.label "元に戻す">
+<!ENTITY undo.tooltip "最後の変更を元に戻します">
+<!ENTITY preferences.label "オプション">
+<!ENTITY preferences.tooltip "オプションを開きます">
+<!ENTITY javaScriptConsole.label "エラー コンソール">
+<!ENTITY javaScriptConsole.tooltip "エラー コンソールを開きます">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY restart-app.label "再起動">
+<!ENTITY restart-app.tooltip "アプリケーションを再起動します">
+<!ENTITY profile-folder.label "プロファイル">
+<!ENTITY profile-folder.tooltip "プロファイル フォルダを表示します">
+<!ENTITY pagesetup.label "ページ設定">
+<!ENTITY pagesetup.tooltip "ページがどう印刷されるかを設定します">
+<!ENTITY help.label "ヘルプ">
+<!ENTITY help.tooltip "ヘルプ資料を開きます">
+<!ENTITY import.label "インポート">
+<!ENTITY import.tooltip "設定とデータをインポートします">
+<!ENTITY customize-toolbar.label "ツールバーのカスタマイズ">
+<!ENTITY customize-toolbar.tooltip "ツールバーをカスタマイズし、ボタンなどを追加または削除します">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config を開きます">
+<!ENTITY toolbar-menu.label "ツール バー">
+<!ENTITY toolbar-menu.tooltip "ツール バーの表示/非表示を切り替えます">
+<!ENTITY check-for-update.label "更新">
+<!ENTITY check-for-update.tooltip "更新をチェックします">
+<!ENTITY minimize-window.label "最小化">
+<!ENTITY minimize-window.tooltip "現在のウィンドウを最小化します">
+<!ENTITY reload-proxy.label "プロキシの再読み込み">
+<!ENTITY reload-proxy.tooltip "プロキシを再読み込みします">
+<!ENTITY change-text-direction.label "テキストの方向の変更">
+<!ENTITY change-text-direction.tooltip "左から右へまたは右から左へテキストの方向を変更します">
+<!ENTITY toggle-proxy.label "プロキシの切り替え">
+<!ENTITY toggle-proxy.tooltip "プロキシのオンとオフを切り替えます">
+<!ENTITY tb-file-menu.label "File Menu">
+<!ENTITY tb-file-menu.tooltip "Show the file menu">
+<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
+<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
+<!ENTITY tb-edit-menu.label "Edit Menu">
+<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
+<!ENTITY tb-view-menu.label "View Menu">
+<!ENTITY tb-view-menu.tooltip "Show the view menu">
+<!ENTITY tb-tools-menu.label "Tools Menu">
+<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
+<!ENTITY forward-as-attachment.label "Forward as Attachment">
+<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">

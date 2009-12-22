@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="extensions"
+	label="&extensions.label;"
+	tooltiptext="&extensions.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('extensions');"/>

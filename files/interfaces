@@ -1,0 +1,16 @@
+AppStartup:cc["@mozilla.org/toolkit/app-startup;1"].getService(ci.nsIAppStartup)
+ExtensionManager:cc['@mozilla.org/extensions/manager;1'].getService(ci.nsIExtensionManager)
+ExternalProtocolService:cc['@mozilla.org/uriloader/external-protocol-service;1'].getService(ci.nsIExternalProtocolService)
+FileOutputStream:function() { return cc['@mozilla.org/network/file-output-stream;1'].createInstance(ci.nsIFileOutputStream); }
+FilePicker: function() { return cc['@mozilla.org/filepicker;1'].createInstance(ci.nsIFilePicker); }
+IOService:cc['@mozilla.org/network/io-service;1'].getService(ci.nsIIOService)
+LocalFile:cc["@mozilla.org/file/local;1"].getService(ci.nsILocalFile)
+NavBookmarksService:cc['@mozilla.org/browser/nav-bookmarks-service;1'].getService(ci.nsINavBookmarksService)
+ObserverService:cc["@mozilla.org/observer-service;1"].getService(ci.nsIObserverService)
+PrefBranch:cc['@mozilla.org/preferences-service;1'].getService(ci.nsIPrefBranch)
+PromptService:cc['@mozilla.org/embedcomp/prompt-service;1'].getService(ci.nsIPromptService)
+Properties:cc["@mozilla.org/file/directory_service;1"].getService(ci.nsIProperties)
+StringBundleService:cc['@mozilla.org/intl/stringbundle;1'].getService(ci.nsIStringBundleService)
+SupportsPRBool:function() { return cc["@mozilla.org/supports-PRBool;1"].createInstance(ci.nsISupportsPRBool); }
+WindowMediator:cc['@mozilla.org/appshell/window-mediator;1'].getService(ci.nsIWindowMediator)
+XULAppInfo:function() { return cc["@mozilla.org/xre/app-info;1"].createInstance(ci.nsIXULAppInfo); }

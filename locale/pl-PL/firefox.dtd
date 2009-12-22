@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "O Firefox">
+<!ENTITY about-firefox.tooltip "O programie Mozilla Firefox">
+<!ENTITY firefox-toolbar.label "Pasek narzędzi nawigacyjnych">
+<!ENTITY firefox-toolbar.tooltip "Przełącz pasek narzędzi nawigacyjnych">
+<!ENTITY toggle-personal-toolbar.label "Pasek zakładek">
+<!ENTITY toggle-personal-toolbar.tooltip "Przełącz pasek zakładek">
+<!ENTITY undo-close-tab.label "Zamknięta karta">
+<!ENTITY undo-close-tab.tooltip "Przywróć ostatnio zamkniętą kartę">
+<!ENTITY pageinfo.label "Informacje o stronie">
+<!ENTITY pageinfo.tooltip "Informacje o stronie">
+<!ENTITY about-config.label "O konfiguracji aplikacji">
+<!ENTITY about-config.tooltip "O konfiguracji aplikacji">
+<!ENTITY about-plugins.label "O wtyczkach">
+<!ENTITY about-plugins.tooltip "Wyświetl listę zainstalowanych wtyczek">
+<!ENTITY about-cache.label "O buforze">
+<!ENTITY about-cache.tooltip "Wyświetl informacje o buforze">
+<!ENTITY about-mem-cache.label "O buforze pamięci">
+<!ENTITY about-mem-cache.tooltip "Wyświetl informacje o buforze w pamięci">
+<!ENTITY about-disk-cache.label "O buforze dysku">
+<!ENTITY about-disk-cache.tooltip "Wyświetl informacje o buforze na dysku">
+<!ENTITY websearch.label "Wyszukiwarka">
+<!ENTITY websearch.tooltip "Szukaj w sieci przy pomocy domyślnej wyszukiwarki">
+<!ENTITY bookmark.label "Dodaj do zakładek">
+<!ENTITY bookmark.tooltip "Dodaj tę stronę do zakładek">
+<!ENTITY bookmark-tabs.label "Dodaj karty do zakładek">
+<!ENTITY bookmark-tabs.tooltip "Dodaj wszystkie karty do zakładek">
+<!ENTITY bookmark-manager.label "Menedżer zakładek">
+<!ENTITY bookmark-manager.tooltip "Zarządzaj zakładkami">
+<!ENTITY bookmark-toolbar.label "Pasek zakładek">
+<!ENTITY bookmark-toolbar.tooltip "Przełącz pasek zakładek">
+<!ENTITY open.label "Otwórz">
+<!ENTITY open.tooltip "Otwórz plik...">
+<!ENTITY save-frame.label "Zapisz ramkę">
+<!ENTITY save-frame.tooltip "Zapisz ramkę dokumentu">
+<!ENTITY close-tab.label "Zamknij kartę">
+<!ENTITY close-tab.tooltip "Zamknij kartę lub okno">
+<!ENTITY send-link.label "Wyślij odnośnik">
+<!ENTITY send-link.tooltip "Wyślij odnośnik do strony przez e-mail">
+<!ENTITY bookmarks-menu-button.label "Menu zakładek">
+<!ENTITY bookmarks-menu-button.tooltip "Wyświetl menu zakładek">
+<!ENTITY personal-bookmarks-menu-button.label "Menu paska zakładek">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Wyświetl menu paska zakładek">
+<!ENTITY clear-url.label "Wyczyść pasek adresu">
+<!ENTITY clear-url.tooltip "Usuń tekst w pasku adresu">
+<!ENTITY close-all-tabs.label "Zamknij karty">
+<!ENTITY close-all-tabs.tooltip "Zamknij wszystkie karty">
+<!ENTITY label-blank.label "Usuń tytuł karty">
+<!ENTITY label-blank.tooltip "Usuń tytuł aktywnej karty">
+<!ENTITY label-all-blank.label "Usuń tytuły kart">
+<!ENTITY label-all-blank.tooltip "Usuń tytuły wszystkich kart">
+<!ENTITY read-news.label "Czytaj wiadomości">
+<!ENTITY read-news.tooltip "Uruchom program do odczytu wiadomości">
+<!ENTITY read-mail.label "Poczta">
+<!ENTITY read-mail.tooltip "Otwórz klienta pocztowego">
+<!ENTITY new-message.label "Nowa wiadomość">
+<!ENTITY new-message.tooltip "Napisz nową wiadomość">
+<!ENTITY bookmark-nopop.label "Szybka zakładka">
+<!ENTITY bookmark-nopop.tooltip "Dodaj zakładkę bez potwierdzania">
+<!ENTITY next-tab.label "Następna karta">
+<!ENTITY next-tab.tooltip "Przejdź do następnej karty">
+<!ENTITY previous-tab.label "Poprzednia karta">
+<!ENTITY previous-tab.tooltip "Przejdź do poprzedniej karty">
+<!ENTITY clear-data.label "Wyczyść prywatne dane">
+<!ENTITY clear-data.tooltip "Wyczyść prywatne dane">
+<!ENTITY top-page.label "Początek strony">
+<!ENTITY top-page.tooltip "Przejdź na początek strony">
+<!ENTITY bottom-page.label "Koniec strony">
+<!ENTITY bottom-page.tooltip "Przejdź na koniec strony">
+<!ENTITY full-screen.label "Tryb pełnoekranowy">
+<!ENTITY full-screen.tooltip "Przełącz na tryb pełnoekranowy">
+<!ENTITY toggle-styles.label "Styl">
+<!ENTITY toggle-styles.tooltip "Włącz/Wyłącz zdefiniowany styl stron">
+<!ENTITY translate.label "Przetłumacz">
+<!ENTITY translate.tooltip "Przetłumacz bieżącą stronę w wybranym języku">
+<!ENTITY show-frame.label "Pokaż ramkę">
+<!ENTITY show-frame.tooltip "Pokaż tylko aktywną ramkę">
+<!ENTITY rename-tab.label "Zmień nazwę karty">
+<!ENTITY rename-tab.tooltip "Zmień nazwę bieżącej karty">
+<!ENTITY reload-all-tabs.label "Odśwież karty">
+<!ENTITY reload-all-tabs.tooltip "Odśwież wszystkie otwarte karty">
+<!ENTITY stop-all.label "Zatrzymaj wczytywanie">
+<!ENTITY stop-all.tooltip "Zatrzymaj wczytywanie wszystkich stron">
+<!ENTITY java-toggle.label "Java">
+<!ENTITY java-toggle.tooltip "Włącz/Wyłącz Javę">
+<!ENTITY javascript-toggle.label "JavaScript">
+<!ENTITY javascript-toggle.tooltip "Włącz/Wyłącz JavaScript">
+<!ENTITY image-toggle.label "Obrazki">
+<!ENTITY image-toggle.tooltip "Włącz/Wyłącz wyświetlanie obrazków">
+<!ENTITY restart-tab.label "Uruchom ponownie">
+<!ENTITY restart-tab.tooltip "Uruchom ponownie z bieżącymi kartami">
+<!ENTITY close-other-tabs.label "Zamknij resztę kart">
+<!ENTITY close-other-tabs.tooltip "Zamknij wszystkie karty, oprócz aktywnej.">
+<!ENTITY hide-images.label "Ukryj obrazki">
+<!ENTITY hide-images.tooltip "Ukryj wszystkie obrazki i tła w bieżącym dokumencie">
+<!ENTITY link-open.label "Opcje otwierania odnośników">
+<!ENTITY link-open.tooltip "Ustaw w jaki sposób mają być otwierane odnośnki">
+<!ENTITY clipboard.label "Odnośnik ze schowka">
+<!ENTITY clipboard.tooltip "Otwórz odnośnik pobrany ze schowka w aktywnej karcie">
+<!ENTITY clipboard.newtab "Otwórz odnośnik pobrany ze schowka w nowej karcie">
+<!ENTITY clipboard.menuitem "Otwórz odnośnik ze schowka">
+<!ENTITY home-page-change.label "Zmień stronę domową">
+<!ENTITY home-page-change.tooltip "Zmień stronę domową">
+<!ENTITY home-page-change.multiple "Ustaw strony domowe (otwierane w kartach)">
+<!ENTITY favorite-page.label "Ulubiona strona">
+<!ENTITY favorite-page.tooltip "Otwórz ulubiona stronę">
+<!ENTITY tab-list.label "Lista kart">
+<!ENTITY tab-list.tooltip "Pokaż listę kart">
+<!ENTITY stop-animation.label "Animacja">
+<!ENTITY stop-animation.tooltip "Zatrzymaj animacje GIF, migające i przesuwane etykiety">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY stop-flash.tooltip "Zatrzymaj animacje flash">
+<!ENTITY stop-movies.label "Filmy">
+<!ENTITY stop-movies.tooltip "Zatrzymaj ładowanie filmów">
+<!ENTITY stop-iframe.label "Toggle iframes (blocks some ads)">
+<!ENTITY stop-iframe.tooltip "Stop iframes from loading and the ads they often contain">
+<!ENTITY stop-dinamic-content.label "Toggle embedded content">
+<!ENTITY stop-dinamic-content.tooltip "Stop all embedded content from loading.">
+<!ENTITY stop-cookies.label "Toggle Cookies">
+<!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
+<!ENTITY stop-popups.label "Toggle Popups">
+<!ENTITY stop-popups.tooltip "Stop popups from loading">
+<!ENTITY reload-skip-cache.label "Reload Skip Cache">
+<!ENTITY reload-skip-cache.tooltip "Reload page with out useing content stored in the browser cache">
+<!ENTITY open-current-frame.label "Show Current Frame">
+<!ENTITY open-current-frame.tooltip "Show only the currently selected frame">
+<!ENTITY up-directory.label "Up Directory">
+<!ENTITY up-directory.tooltip "Go up one Directory">
+<!ENTITY snap-back.label "Snap Back">
+<!ENTITY snap-back.tooltip "Go back to the first page opened in this tab">
+<!ENTITY min-font-size.label "Minimum Font Size">
+<!ENTITY min-font-size.tooltip "Toggle the minimum font size">
+<!ENTITY use-document-colors.label "Toggle Page Colors">
+<!ENTITY use-document-colors.tooltip "Toggle between the default and the sites page colors">
+<!ENTITY use-document-fonts.label "Toggle Page Fonts">
+<!ENTITY use-document-fonts.tooltip "Toggle between the default and the sites fonts">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.tooltip "Create a Tiny Url">
+<!ENTITY tiny-url.copy.to.clipboard "Copy to Clip Board">
+<!ENTITY tiny-url.email "Email Link">
+<!ENTITY tiny-url.link.use "Link Options">
+<!ENTITY tiny-url.use.normal "Use xrl.in">
+<!ENTITY tiny-url.use.preview "Use preview.xrl.in">
+<!ENTITY tiny-url.visit "Visit Xrl.In">
+<!ENTITY tb-clear-url.label "Clear Url">
+<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">

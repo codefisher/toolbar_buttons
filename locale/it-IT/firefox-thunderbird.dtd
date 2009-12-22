@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Lavora non in linea">
+<!ENTITY workoffline.tooltip "Attiva/disattiva la modalità &apos;Lavora non in linea&apos;">
+<!ENTITY delete.label "Elimina">
+<!ENTITY delete.tooltip "Elimina il testo o gli elementi selezionati">
+<!ENTITY find.label "Trova">
+<!ENTITY find.tooltip "Trova l&apos;occorrenza del testo da cercare">
+<!ENTITY saveas.label "Salva…">
+<!ENTITY saveas.tooltip "Salva il documento come…">
+<!ENTITY select-all.label "Seleziona tutto">
+<!ENTITY select-all.tooltip "Seleziona tutto">
+<!ENTITY find-again.label "Trova successivo">
+<!ENTITY find-again.tooltip "Trova l&apos;occorrenza successiva del testo da cercare">
+<!ENTITY find-prev.label "Trova precedente">
+<!ENTITY find-prev.tooltip "Trova l&apos;occorrenza precedente del testo da cercare">
+<!ENTITY enlarge.label "Aumenta">
+<!ENTITY enlarge.tooltip "Aumenta la dimensione del testo">
+<!ENTITY reduce.label "Diminuisci">
+<!ENTITY reduce.tooltip "Diminuisci la dimensione del testo">
+<!ENTITY reset.label "Normale">
+<!ENTITY reset.tooltip "Dimensione del testo normale">
+<!ENTITY page-source.label "Sorgente">
+<!ENTITY page-source.tooltip "Visualizza il sorgente del documento">
+<!ENTITY print-preview.label "Anteprima di stampa">
+<!ENTITY print-preview.tooltip "Apre la finestra di anteprima di stampa">
+<!ENTITY dictionary-list.label "Seleziona dizionario">
+<!ENTITY dictionary-list.tooltip "Seleziona rapidamente il dizionario da utilizzare">

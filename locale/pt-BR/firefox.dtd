@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "Sobre">
+<!ENTITY about-firefox.tooltip "Sobre Firefox">
+<!ENTITY firefox-toolbar.label "Alternar Barra de Ferramentas">
+<!ENTITY firefox-toolbar.tooltip "Alternar a navegação Barra de Ferramentas">
+<!ENTITY toggle-personal-toolbar.label "Barra de Ferramentas dos Favoritos">
+<!ENTITY toggle-personal-toolbar.tooltip "Alternar a Barra de Ferramentas dos Favoritos">
+<!ENTITY undo-close-tab.label "Retornar Fechar Aba">
+<!ENTITY undo-close-tab.tooltip "Reabrir a última aba fechada">
+<!ENTITY pageinfo.label "Informação da Página">
+<!ENTITY pageinfo.tooltip "Abrir Janela Informação da Página">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Abrir about:config para mudanças na configuração">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Abrir about:plugins para visualizar plugins instalados">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Abrir about:cache para visualizar conteúdo em cache">
+<!ENTITY about-mem-cache.label "about:cache Memória">
+<!ENTITY about-mem-cache.tooltip "Abrir about:cache para visualizar conteúdo em Memória">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "Abrir about:cache para visualizar conteúdo salvo no Disco Rígido">
+<!ENTITY websearch.label "Pesquisa Web">
+<!ENTITY websearch.tooltip "Pesquisar na web com seu buscador padrão">
+<!ENTITY bookmark.label "Página de Favoritos">
+<!ENTITY bookmark.tooltip "Adicionar Página Corrente no Favoritos">
+<!ENTITY bookmark-tabs.label "Adicionar todos no Favoritos">
+<!ENTITY bookmark-tabs.tooltip "Adicionar todas as abas abertas no Favoritos">
+<!ENTITY bookmark-manager.label "Gerenciar Favoritos">
+<!ENTITY bookmark-manager.tooltip "Abrir Gerenciador de Favoritos">
+<!ENTITY bookmark-toolbar.label "Barra de Ferramentas do Favoritos">
+<!ENTITY bookmark-toolbar.tooltip "Alternar Barra de Ferramentas">
+<!ENTITY open.label "Abrir">
+<!ENTITY open.tooltip "Abrir um arquivo">
+<!ENTITY save-frame.label "Salvar Frame">
+<!ENTITY save-frame.tooltip "Salvar Documento do Frame">
+<!ENTITY close-tab.label "Fechar Aba">
+<!ENTITY close-tab.tooltip "Fechar Aba Aberta ou Janela">
+<!ENTITY send-link.label "Enviar Link">
+<!ENTITY send-link.tooltip "Enviar Link da Página em um Email">
+<!ENTITY bookmarks-menu-button.label "Menu dos Favoritos">
+<!ENTITY bookmarks-menu-button.tooltip "Mostrar Menu de Favoritos">
+<!ENTITY personal-bookmarks-menu-button.label "Barra de Ferramentas do Menu de Favoritos">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Mostrar Barra de Ferramentas do Menu de Favoritos">
+<!ENTITY clear-url.label "Esconder URL">
+<!ENTITY clear-url.tooltip "Esconder a URL no Barra de Texto">
+<!ENTITY close-all-tabs.label "Fechar Todos">
+<!ENTITY close-all-tabs.tooltip "Fechar Todas as Abas">
+<!ENTITY label-blank.label "Remover Etiqueta">
+<!ENTITY label-blank.tooltip "Remover Etiqueta da Aba Corrente">
+<!ENTITY label-all-blank.label "Remover Etiquetas">
+<!ENTITY label-all-blank.tooltip "Remover Etiquetas de Todas as Abas">
+<!ENTITY read-news.label "Ler Notícias">
+<!ENTITY read-news.tooltip "Abrir Aplicação para Ler Notícias">
+<!ENTITY read-mail.label "Ler E-mail">
+<!ENTITY read-mail.tooltip "Abrir Aplicação para Ler E-mail">
+<!ENTITY new-message.label "Nova Mensagem">
+<!ENTITY new-message.tooltip "Escrever Nova Mensagem de E-mail">
+<!ENTITY bookmark-nopop.label "Favorito Rápido">
+<!ENTITY bookmark-nopop.tooltip "Adicionar Favoritos sem janela">
+<!ENTITY next-tab.label "Próxima Aba">
+<!ENTITY next-tab.tooltip "Ir para Próxima Aba">
+<!ENTITY previous-tab.label "Aba anterior">
+<!ENTITY previous-tab.tooltip "Ir para Aba Anterior">
+<!ENTITY clear-data.label "Limpar Dados">
+<!ENTITY clear-data.tooltip "Abrir Diálogo para Limpar Dados Privados">
+<!ENTITY top-page.label "Topo">
+<!ENTITY top-page.tooltip "Ir para o topo da página">
+<!ENTITY bottom-page.label "Abaixo">
+<!ENTITY bottom-page.tooltip "Ir para o final da página">
+<!ENTITY full-screen.label "Tela Cheia">
+<!ENTITY full-screen.tooltip "Alternar para o modo Tela Cheia">
+<!ENTITY toggle-styles.label "Alternar Estilos">
+<!ENTITY toggle-styles.tooltip "Adicionar/Remover definições de estilos dos sites">
+<!ENTITY translate.label "Traduzir">
+<!ENTITY translate.tooltip "Traduzir página corrente para idioma preferencial">
+<!ENTITY show-frame.label "Mostrar Frame">
+<!ENTITY show-frame.tooltip "Mostrar somente Frame corrente">
+<!ENTITY rename-tab.label "Renomear Aba">
+<!ENTITY rename-tab.tooltip "Renomear Aba selecionada">
+<!ENTITY reload-all-tabs.label "Recarregas Abas">
+<!ENTITY reload-all-tabs.tooltip "Recarregar todas as abas abertas">
+<!ENTITY stop-all.label "Parar Todos">
+<!ENTITY stop-all.tooltip "Parar o carregamento de todas as abas">
+<!ENTITY java-toggle.label "Alternar Java">
+<!ENTITY java-toggle.tooltip "Alternar Java Ligado/Desligado">
+<!ENTITY javascript-toggle.label "Alternar JavaScript">
+<!ENTITY javascript-toggle.tooltip "Alternar Javascript Ligado/Desligado">
+<!ENTITY image-toggle.label "Alternar imagens">
+<!ENTITY image-toggle.tooltip "Alternar carregamento de imagens Ligado/Desligado">
+<!ENTITY restart-tab.label "Reiniciar Abas">
+<!ENTITY restart-tab.tooltip "Reiniciar Abas Correntes">
+<!ENTITY close-other-tabs.label "Fechar Outras Abas">
+<!ENTITY close-other-tabs.tooltip "Fechar todas as abas exceto a selecionada.">
+<!ENTITY hide-images.label "Esconder imagens">
+<!ENTITY hide-images.tooltip "Esconder todas as imagens e imagens de fundo no documento corrente">
+<!ENTITY link-open.label "Configuração de abertura de Link">
+<!ENTITY link-open.tooltip "Configurar como Abrir Links">
+<!ENTITY clipboard.label "Link para Área de Trabalho">
+<!ENTITY clipboard.tooltip "Recuperar Link da Área de Trabalho e abrir">
+<!ENTITY clipboard.newtab "Abrir Link do Área de Trabalho e Abrir Nova Aba">
+<!ENTITY clipboard.menuitem "Abrir Link da Área de Trabalho">
+<!ENTITY home-page-change.label "Alterar Página Inicial">
+<!ENTITY home-page-change.tooltip "Alterar sua Página Inicial">
+<!ENTITY home-page-change.multiple "Configurar Página Inicial com Múltiplos Links">
+<!ENTITY favorite-page.label "Página Favorita">
+<!ENTITY favorite-page.tooltip "Abrir Página Favorita">
+<!ENTITY tab-list.label "Lista de Abas">
+<!ENTITY tab-list.tooltip "Mostrar Lista de Abas">
+<!ENTITY stop-animation.label "Alternar Animação">
+<!ENTITY stop-animation.tooltip "Bloquear Gif's animados, blinks e marquee.">
+<!ENTITY stop-flash.label "Alternar Flash">
+<!ENTITY stop-flash.tooltip "Bloquear Flash irritante para você">
+<!ENTITY stop-movies.label "Alternar filmes">
+<!ENTITY stop-movies.tooltip "Bloquear carregamento de filmes">
+<!ENTITY stop-iframe.label "Alternar iframes (bloquear alguns ads)">
+<!ENTITY stop-iframe.tooltip "Bloquear iframes de carregar e os ads com conteúdo frequente.">
+<!ENTITY stop-dinamic-content.label "Alternar conteúdo embutido">
+<!ENTITY stop-dinamic-content.tooltip "Bloquear todo carregamento de conteúdo embutido">
+<!ENTITY stop-cookies.label "Alterar Cookies">
+<!ENTITY stop-cookies.tooltip "Bloquear cookies de serem setados.">
+<!ENTITY stop-popups.label "Alterar Popups">
+<!ENTITY stop-popups.tooltip "Bloquear carregamento de popups">
+<!ENTITY reload-skip-cache.label "Recarregar sem passar pelo Cache">
+<!ENTITY reload-skip-cache.tooltip "Recarregar página sem utilizar conteúdo armazenado no cache do navegador">
+<!ENTITY open-current-frame.label "Mostrar frame atual">
+<!ENTITY open-current-frame.tooltip "Mostrar somente o frame selecionado atualmente">
+<!ENTITY up-directory.label "Diretório acima">
+<!ENTITY up-directory.tooltip "Ir para o diretório acima">
+<!ENTITY snap-back.label "Voltar Snap">
+<!ENTITY snap-back.tooltip "Voltar para a primeira página aberta nessa aba">
+<!ENTITY min-font-size.label "Tamanho mínimo de fonte">
+<!ENTITY min-font-size.tooltip "Alternar o tamanho mínimo de fonte">
+<!ENTITY use-document-colors.label "Alternar cores da página">
+<!ENTITY use-document-colors.tooltip "Alternar entre as cores padrão e da página do site">
+<!ENTITY use-document-fonts.label "Alternar fontes da página">
+<!ENTITY use-document-fonts.tooltip "Alternar entre as fontes padrão e do site">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.tooltip "Criar Tiny Url">
+<!ENTITY tiny-url.copy.to.clipboard "Copiar para Área de Transferência">
+<!ENTITY tiny-url.email "Link por E-mail">
+<!ENTITY tiny-url.link.use "Opções do Link">
+<!ENTITY tiny-url.use.normal "Usar xrl.in">
+<!ENTITY tiny-url.use.preview "Usar preview.xrl.in">
+<!ENTITY tiny-url.visit "Visitar Xrl.In">
+<!ENTITY tb-clear-url.label "Limpar Url">
+<!ENTITY tb-clear-url.tooltip "Limpar e focar na barra da URL">

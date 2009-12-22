@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="enlarge"
+	label="&enlarge.label;"
+	tooltiptext="&enlarge.tooltip;"
+	command="cmd_fullZoomEnlarge" />

@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Odstrániť udalosti">
+<!ENTITY delete-event.tooltip "Odstrániť označené udalosti">
+<!ENTITY delete-tasks.label "Odstrániť úlohy">
+<!ENTITY delete-tasks.tooltip "Odstrániť označené úlohy">
+<!ENTITY tasks-toggle.label "Zapnúť úlohy">
+<!ENTITY tasks-toggle.tooltip "Zapnúť panel nástrojov Úlohy">
+<!ENTITY calendar-bar-toggle.label "Zapnúť panel nástrojov">
+<!ENTITY calendar-bar-toggle.tooltip "Zapnúť hlavný panel nástrojov">
+<!ENTITY about-sunbird.label "Informácie">
+<!ENTITY about-sunbird.tooltip "O programe Sunbird">
+<!ENTITY tasks-in-view.label "Úlohy">
+<!ENTITY tasks-in-view.tooltip "V prehľade zobrazí aj úlohy">

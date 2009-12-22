@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Gebeurtenissen verwijderen">
+<!ENTITY delete-event.tooltip "Geselecteerde gebeurtenissen verwijderen">
+<!ENTITY delete-tasks.label "Taken verwijderen">
+<!ENTITY delete-tasks.tooltip "Geselecteerde taken verwijderen">
+<!ENTITY tasks-toggle.label "Taken wisselen">
+<!ENTITY tasks-toggle.tooltip "Taakbalk wisselen">
+<!ENTITY calendar-bar-toggle.label "Werkbalk wisselen">
+<!ENTITY calendar-bar-toggle.tooltip "De hoofdwerkbalk wisselen">
+<!ENTITY about-sunbird.label "Over">
+<!ENTITY about-sunbird.tooltip "Over Sunbird">
+<!ENTITY tasks-in-view.label "Taken in beeld">
+<!ENTITY tasks-in-view.tooltip "Taken in beeld wisselen">

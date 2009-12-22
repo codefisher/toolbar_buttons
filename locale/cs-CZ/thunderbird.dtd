@@ -1,0 +1,82 @@
+<!ENTITY realNextMessage.label "Další">
+<!ENTITY realNextMessage.tooltip "Skutečně další zpráva">
+<!ENTITY realPreviousMessage.label "Předchozí">
+<!ENTITY realPreviousMessage.tooltip "Skutečně předchozí zpráva">
+<!ENTITY send-with-no-save.label "Odeslat bez uložení">
+<!ENTITY send-with-no-save.tooltip "Odešle zprávu bez uložení místní kopie">
+<!ENTITY about-thunderbird.label "O aplikaci Mozilla Thunderbird">
+<!ENTITY about-thunderbird.tooltip "O aplikaci Mozilla Thunderbird">
+<!ENTITY accountwizard.label "Průvodce účtem">
+<!ENTITY accountwizard.tooltip "Průvodce nastavením účtu">
+<!ENTITY accountmanager.label "Nastavení účtu">
+<!ENTITY accountmanager.tooltip "Nastavení účtu">
+<!ENTITY plainpaste.label "Vložit jako text">
+<!ENTITY plainpaste.tooltip "Vloží jako text bez formátování">
+<!ENTITY attachments-save.label "Ulož přílohy">
+<!ENTITY attachments-save.tooltip "Uloží všechny přílohy">
+<!ENTITY attachments-detach.label "Vyčlenit přílohy">
+<!ENTITY attachments-detach.tooltip "Vyčlení všechny přílohy">
+<!ENTITY attachments-delete.label "Smaž přílohy">
+<!ENTITY attachments-delete.tooltip "Smaže všechny přílohy">
+<!ENTITY empty-trash.label "Vysypat">
+<!ENTITY empty-trash.tooltip "Vysype koš">
+<!ENTITY not-junk.label "Není nevyžádaná">
+<!ENTITY not-junk.tooltip "Označí zprávu jako vyžádaná">
+<!ENTITY cut.label "Vyjmout">
+<!ENTITY cut.tooltip "Vyjme text">
+<!ENTITY copy.label "Kopírovat">
+<!ENTITY copy.tooltip "Zkopíruje text">
+<!ENTITY paste.label "Vložit">
+<!ENTITY paste.tooltip "Vloží text">
+<!ENTITY search-messages.label "Hledat ve zprávách">
+<!ENTITY search-messages.tooltip "Otevře hledání ve zprávách">
+<!ENTITY search-addresses.label "Otevře hledání v adresách">
+<!ENTITY search-addresses.tooltip "Hledat v adresách">
+<!ENTITY msg-pane.label "Panel zpráv">
+<!ENTITY msg-pane.tooltip "Zobrazí/skryje panel zpráv">
+<!ENTITY purge.label "Uklidit">
+<!ENTITY purge.tooltip "Provede údržbu složek a vymaže nevyžádané zprávy">
+<!ENTITY compact.label "Údržba složek">
+<!ENTITY compact.tooltip "Provede údržbu složek">
+<!ENTITY copy-address.label "Kopírovat adresu">
+<!ENTITY copy-address.tooltip "Zkopíruje mailovou adresu do schránky">
+<!ENTITY add-address.label "Přidat adresu do Adresáře">
+<!ENTITY add-address.tooltip "Okopíruje mailovu adresu do Adresáře">
+<!ENTITY read-message.label "Číst">
+<!ENTITY read-message.tooltip "Otevře zprávu">
+<!ENTITY delete-junk.label "Smazat nevyžádanou">
+<!ENTITY delete-junk.tooltip "Smaže nevyžádané zprávy">
+<!ENTITY msg-filter.label "Filtry">
+<!ENTITY msg-filter.tooltip "Nastaví filtry zpráv">
+<!ENTITY html-mode.label "Jako Html">
+<!ENTITY html-mode.tooltip "Přepíná mezi zobrazením jako text a HTML">
+<!ENTITY get-inbox.label "Doručená pošta">
+<!ENTITY get-inbox.tooltip "Přejde na složku Doručené pošty">
+<!ENTITY send-receive.label "Odeslat a přijmout">
+<!ENTITY send-receive.tooltip "Odešle a přijme zprávy">
+<!ENTITY reply-sender.label "Odpovědět pouze odesílateli">
+<!ENTITY reply-sender.tooltip "Odpovípouze odesílateli zprávy">
+<!ENTITY create-filter.label "Nový filtr">
+<!ENTITY create-filter.tooltip "Vytvoří filtr ze zprávy">
+<!ENTITY shift-delete.label "Rovnou smazat">
+<!ENTITY shift-delete.tooltip "Smaže zprávu bez okopírování do Koše">
+<!ENTITY edit-draft.label "Upravit koncept">
+<!ENTITY edit-draft.tooltip "Upravovat uložený koncept zprávy">
+<!ENTITY return-receipt.label "Potvrzení o přijetí">
+<!ENTITY return-receipt.tooltip "Přepíná potvrzení o doručení">
+<!ENTITY all-threads.label "All Threads">
+<!ENTITY all-threads.tooltip "View All Threads">
+<!ENTITY unread-threads.label "Unread Threads">
+<!ENTITY unread-threads.tooltip "View Unread Threads">
+<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
+<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY ignored-threads.tooltip "View Ignored Threads">
+<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
+<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

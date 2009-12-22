@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Beenden">
+<!ENTITY exit.tooltip "Anwendung beenden">
+<!ENTITY extensions.label "Erweiterungen">
+<!ENTITY extensions.tooltip "Erweiterungen-Manager öffnen">
+<!ENTITY themes.label "Themes">
+<!ENTITY themes.tooltip "Themes-Manager öffnen">
+<!ENTITY addons.label "Add-ons">
+<!ENTITY addons.tooltip "Add-ons-Manager öffnen">
+<!ENTITY installaddons.label "Installieren">
+<!ENTITY installaddons.tooltip "Eine Erweiterung oder ein Theme installieren">
+<!ENTITY statusbar-toggle.label "Statusleiste">
+<!ENTITY statusbar-toggle.tooltip "Statusleiste ein-/ausblenden">
+<!ENTITY redo.label "Wiederholen">
+<!ENTITY redo.tooltip "Letzte Änderung wiederholen">
+<!ENTITY undo.label "Rückgängig">
+<!ENTITY undo.tooltip "Letzte Änderung rückgängig machen">
+<!ENTITY preferences.label "Einstellungen">
+<!ENTITY preferences.tooltip "Einstellungen öffnen">
+<!ENTITY javaScriptConsole.label "Fehler-Konsole">
+<!ENTITY javaScriptConsole.tooltip "Fehler-Konsole öffnen">
+<!ENTITY inspecter.label "DOM Inspector">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY restart-app.label "Neustart">
+<!ENTITY restart-app.tooltip "Anwendung neu starten">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Profil-Verzeichnis öffnen">
+<!ENTITY pagesetup.label "Seite einrichten">
+<!ENTITY pagesetup.tooltip "Einstellungen für die Druckausgabe der Seite vornehmen">
+<!ENTITY help.label "Hilfe">
+<!ENTITY help.tooltip "Hilfethemen öffnen">
+<!ENTITY import.label "Importieren">
+<!ENTITY import.tooltip "Einstellungen und Daten importieren">
+<!ENTITY customize-toolbar.label "Symbolleiste anpassen">
+<!ENTITY customize-toolbar.tooltip "Symbolleiste anpassen">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config öffnen">
+<!ENTITY toolbar-menu.label "Symbolleisten">
+<!ENTITY toolbar-menu.tooltip "Symbolleisten ein-/ausblenden">
+<!ENTITY check-for-update.label "Aktualisieren">
+<!ENTITY check-for-update.tooltip "Auf Aktualisierungen prüfen">
+<!ENTITY minimize-window.label "Minimieren">
+<!ENTITY minimize-window.tooltip "Aktives Fenster minimieren">
+<!ENTITY reload-proxy.label "Proxy neu laden">
+<!ENTITY reload-proxy.tooltip "Proxy neu laden">
+<!ENTITY change-text-direction.label "Textrichtung umkehren">
+<!ENTITY change-text-direction.tooltip "Textrichtung von links nach rechts oder von rechts nach links umkehren">
+<!ENTITY toggle-proxy.label "Proxy">
+<!ENTITY toggle-proxy.tooltip "Proxy ein-/ausschalten">
+<!ENTITY tb-file-menu.label "Menü &quot;Datei&quot;">
+<!ENTITY tb-file-menu.tooltip "Menü &quot;Datei&quot; anzeigen">
+<!ENTITY tb-toggle-menu-bar.label "Menüleiste">
+<!ENTITY tb-toggle-menu-bar.tooltip "Menüleiste ein-/ausblenden">
+<!ENTITY tb-edit-menu.label "Menü &quot;Bearbeiten&quot;">
+<!ENTITY tb-edit-menu.tooltip "Menü &quot;Bearbeiten&quot; anzeigen">
+<!ENTITY tb-view-menu.label "Menü &quot;Ansicht&quot;">
+<!ENTITY tb-view-menu.tooltip "Menü &quot;Ansicht&quot; anzeigen">
+<!ENTITY tb-tools-menu.label "Menü &quot;Extras&quot;">
+<!ENTITY tb-tools-menu.tooltip "Menü &quot;Extras&quot; anzeigen">
+<!ENTITY forward-as-attachment.label "Als Anhang weiterleiten">
+<!ENTITY forward-as-attachment.tooltip "Nachricht als Anhang weiterleiten">
+<!ENTITY forward-as-inline.label "Eingebunden weiterleiten">
+<!ENTITY forward-as-inline.tooltip "Nachricht eingebunden weiterleiten">

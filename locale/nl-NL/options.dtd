@@ -1,0 +1,46 @@
+<!ENTITY restart.label "Herstarten">
+<!ENTITY restart.checkbox "Niet vragen voor herstarten.">
+<!ENTITY options.window.title "Toolbar Buttons opties">
+<!ENTITY previous-next.label "Vorige &amp; Volgende">
+<!ENTITY previous-next.checkbox "Vorige en Volgende knop wijzigen">
+<!ENTITY translate.label "Vertalen">
+<!ENTITY translate.description "Selecteer welke taal u aan de Vertalen-knop wilt toewijzen. De knop maakt gebruik van de Google Translation service">
+<!ENTITY translate.ar "Arabisch">
+<!ENTITY translate.zh "Chinees">
+<!ENTITY translate.zh-CN "Chinees (Vereenvoudigd)">
+<!ENTITY translate.zh-TW "Chinees (Traditioneel)">
+<!ENTITY translate.fr "Frans">
+<!ENTITY translate.de "Duits">
+<!ENTITY translate.it "Italiaans">
+<!ENTITY translate.ja "Japans">
+<!ENTITY translate.ko "Koreaans">
+<!ENTITY translate.pt "Portugees">
+<!ENTITY translate.ru "Russisch">
+<!ENTITY translate.es "Spaans">
+<!ENTITY translate.en "Engels">
+<!ENTITY translate.bg "Bulgaars">
+<!ENTITY translate.cs "Tsjechisch">
+<!ENTITY translate.hr "Kroatisch">
+<!ENTITY translate.da "Deens">
+<!ENTITY translate.nl "Nederlands">
+<!ENTITY translate.fi "Fins">
+<!ENTITY translate.el "Grieks">
+<!ENTITY translate.hi "Hindi">
+<!ENTITY translate.nb "Noors">
+<!ENTITY translate.pl "Pools">
+<!ENTITY translate.ro "Roemeens">
+<!ENTITY translate.sv "Zweeds">
+<!ENTITY favorite-page.label "Favoriete pagina">
+<!ENTITY favorite-page.description "Gebruikt voor de knop ‘Favoriete pagina’. Zoiets als een secundaire startpagina.">
+<!ENTITY toggle.proxy.description "De knop ‘Proxy wisselen’ kan wisselen tussen Proxy uit en één van onderstaande opties.">
+<!ENTITY toggle.prox.label "Proxy wisselen">
+<!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">
+<!ENTITY toggle.proxy.auto.configuration "Automatische proxyconfiguratie (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
+<!ENTITY readmail.path.caption "Pad naar mailprogramma">
+<!ENTITY readmail.path.desc "Het pad naar uw mailprogramma, gebruik dit als de knop niet werkt.">
+<!ENTITY readnews.path.caption "Pad naar nieuwsprogramma">
+<!ENTITY readnews.path.desc "Het pad naar uw nieuwsprogramma, gebruik dit als de knop niet werkt.">
+<!ENTITY read.select.button "Selecteren">
+<!ENTITY toogle.label "Wisselknoppen">
+<!ENTITY toggle.checkbox "Herlaad de pagina na instellen van wisselen.">

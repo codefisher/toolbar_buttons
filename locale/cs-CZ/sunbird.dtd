@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Smazat události">
+<!ENTITY delete-event.tooltip "Smaže vybrané události">
+<!ENTITY delete-tasks.label "Smazat úkoly">
+<!ENTITY delete-tasks.tooltip "Smaže vybrané úkoly">
+<!ENTITY tasks-toggle.label "Úkoly">
+<!ENTITY tasks-toggle.tooltip "Přepíná lištu úkolů">
+<!ENTITY calendar-bar-toggle.label "Kalendář">
+<!ENTITY calendar-bar-toggle.tooltip "Přepíná hlavní lištu">
+<!ENTITY about-sunbird.label "O aplikaci Sunbird">
+<!ENTITY about-sunbird.tooltip "O aplikaci Sunbird">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

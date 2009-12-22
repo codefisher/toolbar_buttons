@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="saveas"
+	label="&saveas.label;"
+	tooltiptext="&saveas.tooltip;"
+	oncommand="goDoCommand('cmd_saveAsFile');" />

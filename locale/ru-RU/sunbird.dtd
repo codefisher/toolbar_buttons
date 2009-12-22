@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Удалить события">
+<!ENTITY delete-event.tooltip "Удалить выбранные события">
+<!ENTITY delete-tasks.label "Удалить задания">
+<!ENTITY delete-tasks.tooltip "Удалить выбранные задания">
+<!ENTITY tasks-toggle.label "Переключить задания">
+<!ENTITY tasks-toggle.tooltip "Переключить панель заданий">
+<!ENTITY calendar-bar-toggle.label "Переключить панель инструментов">
+<!ENTITY calendar-bar-toggle.tooltip "Показать/Скрыть главную панель инструментов">
+<!ENTITY about-sunbird.label "О программе">
+<!ENTITY about-sunbird.tooltip "О Sunbird">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

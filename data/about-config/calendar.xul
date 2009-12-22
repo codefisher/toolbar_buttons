@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="about-config"
+	label="&about-config.label;"
+	tooltiptext="&about-config.tooltip;"
+	oncommand="window.openDialog('about:config');"/>

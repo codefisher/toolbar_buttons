@@ -1,0 +1,46 @@
+<!ENTITY restart.label "Перезагрузка">
+<!ENTITY restart.checkbox "Не спрашивать перед перезагрузкой">
+<!ENTITY options.window.title "Настройки Toolbar Buttons">
+<!ENTITY previous-next.label "Назад и Вперед">
+<!ENTITY previous-next.checkbox "Изменить направление кнопок Назад и Вперед">
+<!ENTITY translate.label "Перевести">
+<!ENTITY translate.description "Выберите язык для использования кнопкой перевода. Кнопка использует cервис переводов Google">
+<!ENTITY translate.ar "Арабский">
+<!ENTITY translate.zh "Китайский">
+<!ENTITY translate.zh-CN "Китайский (Упрощенный)">
+<!ENTITY translate.zh-TW "Китайский (Традиционный)">
+<!ENTITY translate.fr "Французский">
+<!ENTITY translate.de "Немецкий">
+<!ENTITY translate.it "Итальянский">
+<!ENTITY translate.ja "Японский">
+<!ENTITY translate.ko "Корейский">
+<!ENTITY translate.pt "Португальский">
+<!ENTITY translate.ru "Русский">
+<!ENTITY translate.es "Испанский">
+<!ENTITY translate.en "Английский">
+<!ENTITY translate.bg "Bulgarian">
+<!ENTITY translate.cs "Czech">
+<!ENTITY translate.hr "Croatian">
+<!ENTITY translate.da "Danish">
+<!ENTITY translate.nl "Dutch">
+<!ENTITY translate.fi "Finnish">
+<!ENTITY translate.el "Greek">
+<!ENTITY translate.hi "Hindi">
+<!ENTITY translate.nb "Norwegian">
+<!ENTITY translate.pl "Polish">
+<!ENTITY translate.ro "Romanian">
+<!ENTITY translate.sv "Swedish">
+<!ENTITY favorite-page.label "Любимая страница">
+<!ENTITY favorite-page.description "Используется для кнопки &quot;Любимая страница&quot;. Как вторая домашняя страница.">
+<!ENTITY toggle.proxy.description "Кнопка переключения прокси может отключать и переводить прокси в один из выбранных режимов">
+<!ENTITY toggle.prox.label "Переключить прокси">
+<!ENTITY toggle.proxy.manual "Ручная настройка прокси">
+<!ENTITY toggle.proxy.auto.configuration "Автоматическая настройка прокси">
+<!ENTITY toggle.proxy.auto.detect "Автоопределение настроек прокси">
+<!ENTITY readmail.path.caption "Mail Client Path">
+<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
+<!ENTITY readnews.path.caption "News Client Path">
+<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
+<!ENTITY read.select.button "Select">
+<!ENTITY toogle.label "Toggle Buttons">
+<!ENTITY toggle.checkbox "Reload page after toggling setting.">

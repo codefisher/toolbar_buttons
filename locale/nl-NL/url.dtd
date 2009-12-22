@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google-startpagina laden">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia-startpagina laden">
+<!ENTITY firefox-extension.label "Extensies">
+<!ENTITY firefox-extension.tooltip "Meer Firefoxextensies verkrijgen">
+<!ENTITY firefox-theme.label "Thema’s">
+<!ENTITY firefox-theme.tooltip "Meer Firefoxthema’s verkrijgen">
+<!ENTITY thunderbird-extension.label "Extensies">
+<!ENTITY thunderbird-extension.tooltip "Meer Thunderbirdextensies verkrijgen">
+<!ENTITY thunderbird-theme.label "Thema’s">
+<!ENTITY thunderbird-theme.tooltip "Meer Thunderbirdthema’s verkrijgen">
+<!ENTITY gmail.label "GMail">
+<!ENTITY gmail.tooltip "Google Mail openen">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Yahoo Mail openen">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail openen">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "PayPal openen">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "eBay openen">

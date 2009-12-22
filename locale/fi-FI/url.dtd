@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Avaa Googlen kotisivu">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Avaa Wikipedian kotisivu">
+<!ENTITY firefox-extension.label "Laajennukset">
+<!ENTITY firefox-extension.tooltip "Hae lisää Firefoxin laajennuksia">
+<!ENTITY firefox-theme.label "Teemat">
+<!ENTITY firefox-theme.tooltip "Hae lisää Firefoxin teemoja">
+<!ENTITY thunderbird-extension.label "Laajennukset">
+<!ENTITY thunderbird-extension.tooltip "Hae lisää Thunderbirdin laajennuksia">
+<!ENTITY thunderbird-theme.label "Teemat">
+<!ENTITY thunderbird-theme.tooltip "Hae lisää Thunderbirdin teemoja">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Avaa Google Mail">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Avaa Yahoo Mail">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Avaa Hotmail">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Avaa PayPal">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Avaa eBay">

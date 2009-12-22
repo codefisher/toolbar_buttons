@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Выход">
+<!ENTITY exit.tooltip "Закрыть приложение">
+<!ENTITY extensions.label "Расширения">
+<!ENTITY extensions.tooltip "Открыть менеджер расширений">
+<!ENTITY themes.label "Темы">
+<!ENTITY themes.tooltip "Открыть менеджер тем">
+<!ENTITY addons.label "Дополнения">
+<!ENTITY addons.tooltip "Открыть менеджер дополнений">
+<!ENTITY installaddons.label "Установить">
+<!ENTITY installaddons.tooltip "Установить расширение или тему">
+<!ENTITY statusbar-toggle.label "Строка состояния">
+<!ENTITY statusbar-toggle.tooltip "Показать/Скрыть строку состояния">
+<!ENTITY redo.label "Повторить">
+<!ENTITY redo.tooltip "Отменить последнее изменение">
+<!ENTITY undo.label "Отменить">
+<!ENTITY undo.tooltip "Отменить последнее действие">
+<!ENTITY preferences.label "Настройки">
+<!ENTITY preferences.tooltip "Открыть настройки">
+<!ENTITY javaScriptConsole.label "Консоль">
+<!ENTITY javaScriptConsole.tooltip "Открыть консоль ошибок">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Modal Инспектор">
+<!ENTITY restart-app.label "Перезагрузка">
+<!ENTITY restart-app.tooltip "Перезапустить приложение">
+<!ENTITY profile-folder.label "Профиль">
+<!ENTITY profile-folder.tooltip "Просмотреть папку профиля">
+<!ENTITY pagesetup.label "Настройки страницы">
+<!ENTITY pagesetup.tooltip "Настройка параметров печати страницы">
+<!ENTITY help.label "Справка">
+<!ENTITY help.tooltip "Справка в Сети">
+<!ENTITY import.label "Импорт">
+<!ENTITY import.tooltip "Импорт настроек и данных">
+<!ENTITY customize-toolbar.label "Панель инструментов">
+<!ENTITY customize-toolbar.tooltip "Настройка Панели инструментов">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Открыть about:config">
+<!ENTITY toolbar-menu.label "Панели инструментов">
+<!ENTITY toolbar-menu.tooltip "Показать/Скрыть Панели инструментов">
+<!ENTITY check-for-update.label "Обновления">
+<!ENTITY check-for-update.tooltip "Проверить обновления">
+<!ENTITY minimize-window.label "Свернуть">
+<!ENTITY minimize-window.tooltip "Свернуть текущее окно">
+<!ENTITY reload-proxy.label "Обновить прокси">
+<!ENTITY reload-proxy.tooltip "Обновить прокси">
+<!ENTITY change-text-direction.label "Изменить направление текста">
+<!ENTITY change-text-direction.tooltip "Изменить направление текста (слева направо или справа налево)">
+<!ENTITY toggle-proxy.label "Переключить прокси">
+<!ENTITY toggle-proxy.tooltip "Включить или выключить прокси-сервер">
+<!ENTITY tb-file-menu.label "File Menu">
+<!ENTITY tb-file-menu.tooltip "Show the file menu">
+<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
+<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
+<!ENTITY tb-edit-menu.label "Edit Menu">
+<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
+<!ENTITY tb-view-menu.label "View Menu">
+<!ENTITY tb-view-menu.tooltip "Show the view menu">
+<!ENTITY tb-tools-menu.label "Tools Menu">
+<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
+<!ENTITY forward-as-attachment.label "Forward as Attachment">
+<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">

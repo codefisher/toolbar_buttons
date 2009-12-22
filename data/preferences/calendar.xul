@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="preferences"
+	label="&preferences.label;"
+	tooltiptext="&preferences.tooltip;"
+	oncommand="openPreferences();"/>

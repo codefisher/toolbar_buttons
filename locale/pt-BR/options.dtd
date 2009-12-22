@@ -1,0 +1,46 @@
+<!ENTITY restart.label "Reiniciar">
+<!ENTITY restart.checkbox "Não perguntar antes de reiniciar.">
+<!ENTITY options.window.title "Opção Toolbar Buttons">
+<!ENTITY previous-next.label "Anterior &amp; Próximo">
+<!ENTITY previous-next.checkbox "Mudar direção do botão Anterior e Próximo">
+<!ENTITY translate.label "Traduzir">
+<!ENTITY translate.description "Escolha qual idioma deseja que o botão de traduzir irá utilizar. O botão utiliza o Serviço de Tradução do Google">
+<!ENTITY translate.ar "Árabe">
+<!ENTITY translate.zh "Chinês">
+<!ENTITY translate.zh-CN "Chinês (Simplificado)">
+<!ENTITY translate.zh-TW "Chinês (Tradicional)">
+<!ENTITY translate.fr "Francês">
+<!ENTITY translate.de "German">
+<!ENTITY translate.it "Italiano">
+<!ENTITY translate.ja "Japonês">
+<!ENTITY translate.ko "Coreano">
+<!ENTITY translate.pt "Português">
+<!ENTITY translate.ru "Russo">
+<!ENTITY translate.es "Espanhol">
+<!ENTITY translate.en "Inglês">
+<!ENTITY translate.bg "Búlgaro">
+<!ENTITY translate.cs "Checo">
+<!ENTITY translate.hr "Croata">
+<!ENTITY translate.da "Dinamarquês">
+<!ENTITY translate.nl "Alemão">
+<!ENTITY translate.fi "Finlandês">
+<!ENTITY translate.el "Grego">
+<!ENTITY translate.hi "Hindi">
+<!ENTITY translate.nb "Norueguês">
+<!ENTITY translate.pl "Polonês">
+<!ENTITY translate.ro "Romeno">
+<!ENTITY translate.sv "Sueco">
+<!ENTITY favorite-page.label "Página Favorita">
+<!ENTITY favorite-page.description "Usado para o botão &apos;Página Favorita&apos;. Como uma espécie de segunda home page">
+<!ENTITY toggle.proxy.description "O botão para alterar proxy poderá alterar para proxy desligado ou uma das opções abaixo.">
+<!ENTITY toggle.prox.label "Alternar Proxy">
+<!ENTITY toggle.proxy.manual "Configuração Manual de Proxy">
+<!ENTITY toggle.proxy.auto.configuration "Auto Configuração de Proxy (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Auto detecção de configurações de proxy">
+<!ENTITY readmail.path.caption "Caminho do cliente de e-mail">
+<!ENTITY readmail.path.desc "O caminho para o seu cliente de e-mail, use se o botão não funcionar.">
+<!ENTITY readnews.path.caption "Caminho do cliente de notícias">
+<!ENTITY readnews.path.desc "O caminho para o seu cliente de notícias, use se o botão não funcionar.">
+<!ENTITY read.select.button "Selecionar">
+<!ENTITY toogle.label "Alternar botões">
+<!ENTITY toggle.checkbox "Recarregar página depois de alterar configuração.">

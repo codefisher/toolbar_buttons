@@ -1,0 +1,82 @@
+<!ENTITY realNextMessage.label "Sonraki Mesaj">
+<!ENTITY realNextMessage.tooltip "Gerçek Sonraki Mesajı Al">
+<!ENTITY realPreviousMessage.label "Önceki Mesaj">
+<!ENTITY realPreviousMessage.tooltip "Gerçek Önceki Mesajı Al">
+<!ENTITY send-with-no-save.label "Kaydetmeden Gönder">
+<!ENTITY send-with-no-save.tooltip "Bir kopyasını kaydetmeden mesajı gönder">
+<!ENTITY about-thunderbird.label "Hakkında">
+<!ENTITY about-thunderbird.tooltip "Thunderbird Hakkında">
+<!ENTITY accountwizard.label "Hesap Tanımlama">
+<!ENTITY accountwizard.tooltip "Yeni bir hesap tanımlaması yapmak için sihirbazı çalıştır">
+<!ENTITY accountmanager.label "Hesap Ayarları">
+<!ENTITY accountmanager.tooltip "Hesap Ayarlarını Aç">
+<!ENTITY plainpaste.label "Düz Metin Yapıştır">
+<!ENTITY plainpaste.tooltip "Biçimlendirme Yapmadan Metni Kopyala">
+<!ENTITY attachments-save.label "Ekleri Kaydet">
+<!ENTITY attachments-save.tooltip "Mesajdaki Tüm Ekleri Kaydet">
+<!ENTITY attachments-detach.label "Ekleri Kaldır">
+<!ENTITY attachments-detach.tooltip "Mesajdaki Tüm Ekleri Kaldır">
+<!ENTITY attachments-delete.label "Ekleri Sil">
+<!ENTITY attachments-delete.tooltip "Mesajdaki Tüm Ekleri Sil">
+<!ENTITY empty-trash.label "Çöp Kutusunu Boşalt">
+<!ENTITY empty-trash.tooltip "Çöp Kutusu Klasörünü Boşalt">
+<!ENTITY not-junk.label "Yığın posta değil">
+<!ENTITY not-junk.tooltip "Mesajı Yığın posta değil olarak işaretle">
+<!ENTITY cut.label "Kes">
+<!ENTITY cut.tooltip "Metni Kes">
+<!ENTITY copy.label "Kopyala">
+<!ENTITY copy.tooltip "Metni Kopyala">
+<!ENTITY paste.label "Yapıştır">
+<!ENTITY paste.tooltip "Metni Yapıştır">
+<!ENTITY search-messages.label "Mesajları Ara">
+<!ENTITY search-messages.tooltip "Mesaj Aramayı Aç">
+<!ENTITY search-addresses.label "Adresleri Ara">
+<!ENTITY search-addresses.tooltip "Adresleri Aramayı Aç">
+<!ENTITY msg-pane.label "Mesaj Gözü">
+<!ENTITY msg-pane.tooltip "Mesaj Gözünü Tersle">
+<!ENTITY purge.label "Temizle">
+<!ENTITY purge.tooltip "Klasörü Şıkıştır, ve Yığın postaları sil">
+<!ENTITY compact.label "Sıkıştır">
+<!ENTITY compact.tooltip "Klasörü Sıkıştır">
+<!ENTITY copy-address.label "İletiyi Kopyala">
+<!ENTITY copy-address.tooltip "İleti Adresini Panoya Kopyala">
+<!ENTITY add-address.label "İleti Ekle">
+<!ENTITY add-address.tooltip "İleti Adresini Adres Defterine Kopyala">
+<!ENTITY read-message.label "Oku">
+<!ENTITY read-message.tooltip "Mesajı Oku">
+<!ENTITY delete-junk.label "Yığın Postayı Sil">
+<!ENTITY delete-junk.tooltip "Yığın Mesajları Sil">
+<!ENTITY msg-filter.label "Filtreler">
+<!ENTITY msg-filter.tooltip "Mesaj Filtresi Ayarları">
+<!ENTITY html-mode.label "HTML Modu">
+<!ENTITY html-mode.tooltip "Mesajın Düz Metin veya HTML olarak mı görüntüleneceğini ayarla">
+<!ENTITY get-inbox.label "Gelen Kutusunu Al">
+<!ENTITY get-inbox.tooltip "Change Focused Folder to the Inbox">
+<!ENTITY send-receive.label "Send &amp; Receive">
+<!ENTITY send-receive.tooltip "Send and receive messages">
+<!ENTITY reply-sender.label "Reply to Sender Only">
+<!ENTITY reply-sender.tooltip "Reply only to the sender of the email">
+<!ENTITY create-filter.label "Filtre Oluştur">
+<!ENTITY create-filter.tooltip "Mesajdan Filtre Oluştur">
+<!ENTITY shift-delete.label "Çöp Kutusunu Atla">
+<!ENTITY shift-delete.tooltip "Mesajı Çöp Kutusuna Atmadan Sil">
+<!ENTITY edit-draft.label "Taslağı Düzenle">
+<!ENTITY edit-draft.tooltip "Kaydedilmiş Taslağı Düzenle">
+<!ENTITY return-receipt.label "Alındi Bilgisi Geri Dönüşü">
+<!ENTITY return-receipt.tooltip "Alındi Bilgisi Geri Dönüşü aç/kapa Tersle">
+<!ENTITY all-threads.label "Tüm Haber Grupları">
+<!ENTITY all-threads.tooltip "Tüm Haber Gruplarını Göster">
+<!ENTITY unread-threads.label "Okunmamış Haber Grupları">
+<!ENTITY unread-threads.tooltip "Okunmamış Haber Gruplarını Göster">
+<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
+<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY ignored-threads.tooltip "View Ignored Threads">
+<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
+<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

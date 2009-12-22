@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "Tietoja">
+<!ENTITY about-firefox.tooltip "Tietoja Firefoxista">
+<!ENTITY firefox-toolbar.label "Navigointipalkki">
+<!ENTITY firefox-toolbar.tooltip "Näytä/piilota navigointipalkki">
+<!ENTITY toggle-personal-toolbar.label "Kirjanmerkkipalkki">
+<!ENTITY toggle-personal-toolbar.tooltip "Näytä/piilota kirjanmerkkipalkki">
+<!ENTITY undo-close-tab.label "Kumoa Sulje välilehti">
+<!ENTITY undo-close-tab.tooltip "Avaa uudelleen viimeisin suljettu välilehti">
+<!ENTITY pageinfo.label "Tietoja sivusta">
+<!ENTITY pageinfo.tooltip "Avaa Tietoja sivusta -ponnahdusikkunan">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Avaa about:config, jossa voi muuttaa asetuksia">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Avaa about:plugins-sivu, jossa voi tarkastella asennettuja liitännäisiä">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Avaa about:cache-sivu, jossa voi tarkastella välimuistin sisältöä">
+<!ENTITY about-mem-cache.label "about:cache Muisti">
+<!ENTITY about-mem-cache.tooltip "Avaa about:cache-sivu, jossa voi tarkastella muistissa olevaa välimuistin sisältöä">
+<!ENTITY about-disk-cache.label "about:cache Levy">
+<!ENTITY about-disk-cache.tooltip "Avaa about:cache-sivu, jossa voi tarkastella levyllä olevaa välimuistin sisältöä">
+<!ENTITY websearch.label "Web-haku">
+<!ENTITY websearch.tooltip "Hae tietoa webistä käyttäen oletushakukonettasi">
+<!ENTITY bookmark.label "Lisää kirjanmerkki">
+<!ENTITY bookmark.tooltip "Lisää nykyinen sivu kirjanmerkkeihin">
+<!ENTITY bookmark-tabs.label "Välilehdet kirjanmerkkeihin">
+<!ENTITY bookmark-tabs.tooltip "Lisää kaikki välilehdet kirjanmerkkeihin">
+<!ENTITY bookmark-manager.label "Kirjanmerkkien hallinnointi">
+<!ENTITY bookmark-manager.tooltip "Avaa kirjanmerkkien hallinointitoiminto">
+<!ENTITY bookmark-toolbar.label "Kirjanmerkkipalkki">
+<!ENTITY bookmark-toolbar.tooltip "Näytä/piilota kirjanmerkkipalkki">
+<!ENTITY open.label "Avaa">
+<!ENTITY open.tooltip "Avaa tiedosto">
+<!ENTITY save-frame.label "Tallenna kehys">
+<!ENTITY save-frame.tooltip "Tallenna asiakirjakehys">
+<!ENTITY close-tab.label "Sulje välilehti">
+<!ENTITY close-tab.tooltip "Sulje avoin välilehti tai ikkuna">
+<!ENTITY send-link.label "Lähetä linkki">
+<!ENTITY send-link.tooltip "Lähetä sivun linkki sähköpostiviestinä">
+<!ENTITY bookmarks-menu-button.label "Kirjanmerkkivalikko">
+<!ENTITY bookmarks-menu-button.tooltip "Näytä kirjanmerkkivalikko">
+<!ENTITY personal-bookmarks-menu-button.label "Kirjanmerkkipalkkivalikko">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Näytä kirjanmerkkipalkki valikkomuodossa">
+<!ENTITY clear-url.label "Piilota URL">
+<!ENTITY clear-url.tooltip "Piilota URL-palkin sisältö">
+<!ENTITY close-all-tabs.label "Sulje kaikki">
+<!ENTITY close-all-tabs.tooltip "Sulje kaikki välilehdet">
+<!ENTITY label-blank.label "Poista otsikko">
+<!ENTITY label-blank.tooltip "Poista nykyisen välilehden otsikko">
+<!ENTITY label-all-blank.label "Poista otsikot">
+<!ENTITY label-all-blank.tooltip "Poista kaikkien välilehtien otsikot">
+<!ENTITY read-news.label "Lue keskusteluryhmiä">
+<!ENTITY read-news.tooltip "Avaa sovellus keskusteluryhmien lukemista varten">
+<!ENTITY read-mail.label "Lue sähköpostia">
+<!ENTITY read-mail.tooltip "Avaa sovellus sähköpostin lukemista varten">
+<!ENTITY new-message.label "Uusi viesti">
+<!ENTITY new-message.tooltip "Kirjoita uusi sähköpostiviesti">
+<!ENTITY bookmark-nopop.label "Pikakirjanmerkki">
+<!ENTITY bookmark-nopop.tooltip "Lisää kirjanmerkki ilman kehotetta">
+<!ENTITY next-tab.label "Seuraava välilehti">
+<!ENTITY next-tab.tooltip "Siirry seuraavaan välilehteen">
+<!ENTITY previous-tab.label "Edellinen välilehti">
+<!ENTITY previous-tab.tooltip "Siirry edelliseen välilehteen">
+<!ENTITY clear-data.label "Poista tietoja">
+<!ENTITY clear-data.tooltip "Avaa yksityistietojen poiston ponnahdusikkuna">
+<!ENTITY top-page.label "Yläreuna">
+<!ENTITY top-page.tooltip "Siirry sivun yläreunaan">
+<!ENTITY bottom-page.label "Alareuna">
+<!ENTITY bottom-page.tooltip "Siirry sivun alareunaan">
+<!ENTITY full-screen.label "Kokoruututila">
+<!ENTITY full-screen.tooltip "Siirry kokoruututilaan">
+<!ENTITY toggle-styles.label "Tyylit">
+<!ENTITY toggle-styles.tooltip "Ota sivuston määrittämät tyylit käyttöön/pois käytöstä">
+<!ENTITY translate.label "Käännä">
+<!ENTITY translate.tooltip "Käännä nykyinen sivu haluamallesi kielelle">
+<!ENTITY show-frame.label "Näytä kehys">
+<!ENTITY show-frame.tooltip "Näytä vain nykyinen kehys">
+<!ENTITY rename-tab.label "Vaihda otsikko">
+<!ENTITY rename-tab.tooltip "Nimeä nykyinen välilehti uudelleen">
+<!ENTITY reload-all-tabs.label "Lataa välilehdet">
+<!ENTITY reload-all-tabs.tooltip "Lataa kaikki välilehdet uudelleen">
+<!ENTITY stop-all.label "Pysäytä kaikki">
+<!ENTITY stop-all.tooltip "Pysäytä kaikkien välilehtien lataaminen">
+<!ENTITY java-toggle.label "Java">
+<!ENTITY java-toggle.tooltip "Ota Java käyttöön/pois käytöstä">
+<!ENTITY javascript-toggle.label "JavaScript">
+<!ENTITY javascript-toggle.tooltip "Ota JavaScript käyttöön/pois käytöstä">
+<!ENTITY image-toggle.label "Kuvat">
+<!ENTITY image-toggle.tooltip "Salli/kiellä kuvien lataaminen">
+<!ENTITY restart-tab.label "Uudelleenkäynnistys välilehdillä">
+<!ENTITY restart-tab.tooltip "Uudelleenkäynnistys nykyiset välilehdet säilyttäen">
+<!ENTITY close-other-tabs.label "Sulje muut">
+<!ENTITY close-other-tabs.tooltip "Sulje kaikki välilehdet valittua välilehteä lukuun ottamatta">
+<!ENTITY hide-images.label "Piilota kuvat">
+<!ENTITY hide-images.tooltip "Piilota kaikki kuvat ja taustakuvat nykyisessä asiakirjassa">
+<!ENTITY link-open.label "Linkkien avaaminen">
+<!ENTITY link-open.tooltip "Näyttää linkkien avaamisasetuksen">
+<!ENTITY clipboard.label "Linkki leikepöydältä">
+<!ENTITY clipboard.tooltip "Hae linkki leikepöydältä ja avaa se">
+<!ENTITY clipboard.newtab "Avaa linkki leikepöydältä uuteen välilehteen">
+<!ENTITY clipboard.menuitem "Avaa linkki leikepöydältä">
+<!ENTITY home-page-change.label "Vaihda aloitussivu">
+<!ENTITY home-page-change.tooltip "Vaihda Firefoxin aloitussivu">
+<!ENTITY home-page-change.multiple "Aseta useampi linkki aloitussivuksi">
+<!ENTITY favorite-page.label "Suosikkisivu">
+<!ENTITY favorite-page.tooltip "Avaa suosikkisivu">
+<!ENTITY tab-list.label "Välilehdet">
+<!ENTITY tab-list.tooltip "Näyttää luettelon välilehdistä">
+<!ENTITY stop-animation.label "Animaatiot">
+<!ENTITY stop-animation.tooltip "Pysäytä animoidut GIF-tiedostot sekä välkkyvät ja rullaavat tunnisteet">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY stop-flash.tooltip "Ota Flash pois käytöstä">
+<!ENTITY stop-movies.label "Videot">
+<!ENTITY stop-movies.tooltip "Estä videoiden lataaminen">
+<!ENTITY stop-iframe.label "iframes (estää joitakin mainoksia)">
+<!ENTITY stop-iframe.tooltip "Estä iframesien - ja samalla niiden sisältämiä mainoksia - lataaminen">
+<!ENTITY stop-dinamic-content.label "Upotettu sisältö">
+<!ENTITY stop-dinamic-content.tooltip "Estä upotetun sisällön lataaminen">
+<!ENTITY stop-cookies.label "Evästeet">
+<!ENTITY stop-cookies.tooltip "Estä evästeiden asettaminen">
+<!ENTITY stop-popups.label "Ponnahdusikkunat">
+<!ENTITY stop-popups.tooltip "Estä ponnahdusikkunoiden lataaminen">
+<!ENTITY reload-skip-cache.label "Täysi uudelleenlataus">
+<!ENTITY reload-skip-cache.tooltip "Lataa sivun täysin uudelleen käyttämättä selaimen välimuistissa olevaa sisältöä">
+<!ENTITY open-current-frame.label "Näytä nykyinen kehys">
+<!ENTITY open-current-frame.tooltip "Näytä ainoastaan valittuna oleva kehys">
+<!ENTITY up-directory.label "Ylempi hakemisto">
+<!ENTITY up-directory.tooltip "Siirry seuraavaan ylempänä olevaan hakemistoon">
+<!ENTITY snap-back.label "Palaa alkuun">
+<!ENTITY snap-back.tooltip "Palaa ensimmäiseen tällä välilehdellä avattuun sivuun">
+<!ENTITY min-font-size.label "Minimikirjasinkoko">
+<!ENTITY min-font-size.tooltip "Ota minimikirjasinkoko käyttöön/pois käytöstä">
+<!ENTITY use-document-colors.label "Sivun värit">
+<!ENTITY use-document-colors.tooltip "Siirry oletusvärimääritysten ja sivun omien värimääritysten välillä">
+<!ENTITY use-document-fonts.label "Sivun kirjasinlajit">
+<!ENTITY use-document-fonts.tooltip "Siirry oletuskirjasinlajien ja sivun omien kirjasinlajien välillä">
+<!ENTITY tiny-url.label "Pienois-URL">
+<!ENTITY tiny-url.tooltip "Luo pienois-URL">
+<!ENTITY tiny-url.copy.to.clipboard "Kopioi leikepöydälle">
+<!ENTITY tiny-url.email "Lähetä linkki sähköpostina">
+<!ENTITY tiny-url.link.use "Linkin valinnat">
+<!ENTITY tiny-url.use.normal "Käytä xrl.in-sivua">
+<!ENTITY tiny-url.use.preview "Käytä preview.xrl.in-sivua">
+<!ENTITY tiny-url.visit "Vieraile Xrl.in-sivustolla">
+<!ENTITY tb-clear-url.label "Tyhjennä URL">
+<!ENTITY tb-clear-url.tooltip "Tyhjennä URL-palkki ja siirry siihen">

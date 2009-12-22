@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Přejde na stránku Google">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Přejde na stránku Wikipedie">
+<!ENTITY firefox-extension.label "Doplňky">
+<!ENTITY firefox-extension.tooltip "Získat další doplňky pro Firefox">
+<!ENTITY firefox-theme.label "Motivy vzhledu">
+<!ENTITY firefox-theme.tooltip "Získat další motivy vzhledu pro Firefox">
+<!ENTITY thunderbird-extension.label "Doplňky">
+<!ENTITY thunderbird-extension.tooltip "Získat další doplňky pro Thunderbird">
+<!ENTITY thunderbird-theme.label "Motivy vzhledu">
+<!ENTITY thunderbird-theme.tooltip "Získat další motivy vzhledu pro Thunderbird">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Otevřít Google Mail">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Otevřít Yahoo Mail">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Otevřít Hotmail">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Přejít na PayPal">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Přejít na eBay">

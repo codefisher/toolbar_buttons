@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Работать автономно">
+<!ENTITY workoffline.tooltip "Переключить режим автономной работы">
+<!ENTITY delete.label "Удалить">
+<!ENTITY delete.tooltip "Удалить выделенный текст">
+<!ENTITY find.label "Поиск">
+<!ENTITY find.tooltip "Найти текст">
+<!ENTITY saveas.label "Сохранить">
+<!ENTITY saveas.tooltip "Сохранить страницу как...">
+<!ENTITY select-all.label "Выделить все">
+<!ENTITY select-all.tooltip "Выделить весь текст">
+<!ENTITY find-again.label "Искать следующее">
+<!ENTITY find-again.tooltip "Искать следующее совпадение">
+<!ENTITY find-prev.label "Искать предыдущее">
+<!ENTITY find-prev.tooltip "Искать предыдущее совпадение">
+<!ENTITY enlarge.label "Увеличить">
+<!ENTITY enlarge.tooltip "Увеличить размер текста">
+<!ENTITY reduce.label "Уменьшить">
+<!ENTITY reduce.tooltip "Уменьшить размер текста">
+<!ENTITY reset.label "Сбросить">
+<!ENTITY reset.tooltip "Сбросить размер текста">
+<!ENTITY page-source.label "Исходный код">
+<!ENTITY page-source.tooltip "Просмотреть исходный код страницы">
+<!ENTITY print-preview.label "Предварительный просмотр">
+<!ENTITY print-preview.tooltip "Предварительный просмотр страницы">
+<!ENTITY dictionary-list.label "Изменить словарь">
+<!ENTITY dictionary-list.tooltip "Быстрое изменение текущего словаря">
