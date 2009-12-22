@@ -1,0 +1,46 @@
+<!ENTITY restart.label "재시작">
+<!ENTITY restart.checkbox "재시작 전 묻기">
+<!ENTITY options.window.title "Toolbar Buttons 선택사항">
+<!ENTITY previous-next.label "뒤로/앞으로">
+<!ENTITY previous-next.checkbox "뒤로/앞으로 버튼 방향을 변경">
+<!ENTITY translate.label "번역">
+<!ENTITY translate.description "번역 단추에서 사용하기 원하는 언어가 무엇인지 선택하세요. 버튼은 Google 번역 서비스를 사용합니다.">
+<!ENTITY translate.ar "아랍어">
+<!ENTITY translate.zh "중국어">
+<!ENTITY translate.zh-CN "중국어(간체)">
+<!ENTITY translate.zh-TW "중국어(번체)">
+<!ENTITY translate.fr "불어">
+<!ENTITY translate.de "독어">
+<!ENTITY translate.it "이탈리아어">
+<!ENTITY translate.ja "일본어">
+<!ENTITY translate.ko "한국어">
+<!ENTITY translate.pt "포르투갈어">
+<!ENTITY translate.ru "러시아어">
+<!ENTITY translate.es "스페인어">
+<!ENTITY translate.en "영어">
+<!ENTITY translate.bg "불가리아어">
+<!ENTITY translate.cs "체코어">
+<!ENTITY translate.hr "크로아티아어">
+<!ENTITY translate.da "덴마크어">
+<!ENTITY translate.nl "네덜란드">
+<!ENTITY translate.fi "핀란드">
+<!ENTITY translate.el "그리스">
+<!ENTITY translate.hi "힌두어">
+<!ENTITY translate.nb "노르웨이어">
+<!ENTITY translate.pl "폴란드어">
+<!ENTITY translate.ro "루마니아어">
+<!ENTITY translate.sv "스웨덴어">
+<!ENTITY favorite-page.label "즐겨찾는 페이지">
+<!ENTITY favorite-page.description "제2의 홈페이지와 같은 &apos;즐겨찾는 페이지&apos;버튼을 위해 사용됩니다.">
+<!ENTITY toggle.proxy.description "프록시 전환 버튼은 프록시 끄기와 다음 선택사항의 하나로 전환할 수 있습니다.">
+<!ENTITY toggle.prox.label "프록시 전환">
+<!ENTITY toggle.proxy.manual "수동 프록시 환경설정">
+<!ENTITY toggle.proxy.auto.configuration "프록시 자동 환경설정(PAC)">
+<!ENTITY toggle.proxy.auto.detect "프록시 자동검색 설정">
+<!ENTITY readmail.path.caption "메일 프로그램 경로">
+<!ENTITY readmail.path.desc "버튼을 사용할 수 없을때 사용할 메일 프로그램의 경로">
+<!ENTITY readnews.path.caption "뉴스 프로그램 경로">
+<!ENTITY readnews.path.desc "버튼을 사용할 수 없을때 사용할 뉴스 프로그램의 경로">
+<!ENTITY read.select.button "선택">
+<!ENTITY toogle.label "버튼 전환">
+<!ENTITY toggle.checkbox "설정 전환후 페이지 새로 고침">

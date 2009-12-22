@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "Informácie">
+<!ENTITY about-firefox.tooltip "O programe Mozilla Firefox">
+<!ENTITY firefox-toolbar.label "Zapnúť panel nástrojov">
+<!ENTITY firefox-toolbar.tooltip "Zapnúť navigačný panel nástrojov">
+<!ENTITY toggle-personal-toolbar.label "Panel záložiek">
+<!ENTITY toggle-personal-toolbar.tooltip "Zapnúť panel záložiek">
+<!ENTITY undo-close-tab.label "Vrátiť späť zatvorenie karty">
+<!ENTITY undo-close-tab.tooltip "Opätovné otvorenie poslednej zatvorenej karty">
+<!ENTITY pageinfo.label "Informácie o stránke">
+<!ENTITY pageinfo.tooltip "Otvorí okno s informáciami o stránke">
+<!ENTITY about-config.label "Editor nastavení">
+<!ENTITY about-config.tooltip "Otvorí Editor nastavení">
+<!ENTITY about-plugins.label "Správca doplnkov">
+<!ENTITY about-plugins.tooltip "Otvorí Správcu doplnkov a zobrazí inštalované pluginy">
+<!ENTITY about-cache.label "Správca vyrovnávacej pamäte">
+<!ENTITY about-cache.tooltip "Otvorí Správcu vyrovnávacej pamäte a zobrazí uložený obsah">
+<!ENTITY about-mem-cache.label "Správca vyrovnávacej pamäte RAM">
+<!ENTITY about-mem-cache.tooltip "Otvorí správcu vyrovnávacej pamäte RAM a zobrazí uložený obsah">
+<!ENTITY about-disk-cache.label "Správca diskovej vyrovnávacej pamäte">
+<!ENTITY about-disk-cache.tooltip "Otvorí správcu diskovej vyrovnávacej pamäte a zobrazí uložený obsah">
+<!ENTITY websearch.label "Vyhľadávanie na internete">
+<!ENTITY websearch.tooltip "Vyhľadá na internete pomocou predvoleného vyhľadávača">
+<!ENTITY bookmark.label "Pridať k záložkám">
+<!ENTITY bookmark.tooltip "Pridá aktuálnu stránku k záložkám">
+<!ENTITY bookmark-tabs.label "Pridať všetko k záložkám">
+<!ENTITY bookmark-tabs.tooltip "Pridá k záložkám všetky otvorené karty">
+<!ENTITY bookmark-manager.label "Správca záložiek">
+<!ENTITY bookmark-manager.tooltip "Otvorí Správcu záložiek">
+<!ENTITY bookmark-toolbar.label "Panel nástrojov záložiek">
+<!ENTITY bookmark-toolbar.tooltip "Zapnúť panel nástrojov záložiek">
+<!ENTITY open.label "Otvoriť">
+<!ENTITY open.tooltip "Otvoriť súbor">
+<!ENTITY save-frame.label "Uložiť dokument">
+<!ENTITY save-frame.tooltip "Uložiť dokument">
+<!ENTITY close-tab.label "Zatvoriť kartu">
+<!ENTITY close-tab.tooltip "Zatvoriť otvorenú kartu alebo okno">
+<!ENTITY send-link.label "Odoslať odkaz">
+<!ENTITY send-link.tooltip "Odoslať odkaz na stránku elektronickou poštou">
+<!ENTITY bookmarks-menu-button.label "Ponuka záložiek">
+<!ENTITY bookmarks-menu-button.tooltip "Zobraziť ponuku záložiek">
+<!ENTITY personal-bookmarks-menu-button.label "Panel ponuky záložiek">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Zobraziť panel ponuky záložiek">
+<!ENTITY clear-url.label "Vymazať panel s adresou">
+<!ENTITY clear-url.tooltip "Vymazať text v paneli s adresou">
+<!ENTITY close-all-tabs.label "Zatvoriť všetko">
+<!ENTITY close-all-tabs.tooltip "Zatvoriť všetky karty">
+<!ENTITY label-blank.label "Odstrániť štítok">
+<!ENTITY label-blank.tooltip "Odstrániť štítok aktuálnej karty">
+<!ENTITY label-all-blank.label "Odstrániť štítky">
+<!ENTITY label-all-blank.tooltip "Odstrániť štítky všetkých kariet">
+<!ENTITY read-news.label "Prečítať novinky">
+<!ENTITY read-news.tooltip "Otvoriť aplikáciu na čítanie noviniek">
+<!ENTITY read-mail.label "Prečítať poštu">
+<!ENTITY read-mail.tooltip "Otvoriť aplikáciu na prácu s poštou">
+<!ENTITY new-message.label "Nová správa">
+<!ENTITY new-message.tooltip "Napísať novú správu elektronickej pošty">
+<!ENTITY bookmark-nopop.label "Rýchla záložka">
+<!ENTITY bookmark-nopop.tooltip "Pridať k záložkám bez potvrdenia">
+<!ENTITY next-tab.label "Nasledujúca karta">
+<!ENTITY next-tab.tooltip "Prejsť na nasledujúcu kartu">
+<!ENTITY previous-tab.label "Predchádzajúca karta">
+<!ENTITY previous-tab.tooltip "Prejsť na predchádzajúcu kartu">
+<!ENTITY clear-data.label "Vymazať údaje">
+<!ENTITY clear-data.tooltip "Otvoriť dialóg vymazania osobných údajov">
+<!ENTITY top-page.label "Navrch">
+<!ENTITY top-page.tooltip "Prejsť na začiatok stránky">
+<!ENTITY bottom-page.label "Spodok">
+<!ENTITY bottom-page.tooltip "Prejsť na koniec stránky">
+<!ENTITY full-screen.label "Celá obrazovka">
+<!ENTITY full-screen.tooltip "Zapnúť režim celej obrazovky">
+<!ENTITY toggle-styles.label "Zapnúť štýly">
+<!ENTITY toggle-styles.tooltip "Pridať/odstrániť definované štýly stránky">
+<!ENTITY translate.label "Preložiť">
+<!ENTITY translate.tooltip "Preložiť aktuálnu stránku do preferovaného jazyka">
+<!ENTITY show-frame.label "Zobraziť rámec">
+<!ENTITY show-frame.tooltip "Zobraziť iba aktuálny rámec">
+<!ENTITY rename-tab.label "Premenovať kartu">
+<!ENTITY rename-tab.tooltip "Premenovať aktuálnu kartu">
+<!ENTITY reload-all-tabs.label "Opätovne načítať karty">
+<!ENTITY reload-all-tabs.tooltip "Opätovne načítať všetky karty">
+<!ENTITY stop-all.label "Zastaviť všetko">
+<!ENTITY stop-all.tooltip "Zastaviť načítanie všetkých kariet">
+<!ENTITY java-toggle.label "Zapnúť Javu">
+<!ENTITY java-toggle.tooltip "Zapnúť alebo vypnúť Javu">
+<!ENTITY javascript-toggle.label "Zapnúť JavaScript">
+<!ENTITY javascript-toggle.tooltip "Zapnúť alebo vypnúť JavaScript">
+<!ENTITY image-toggle.label "Prepnúť obrázky">
+<!ENTITY image-toggle.tooltip "Zapnúť alebo vypnúť obrázky">
+<!ENTITY restart-tab.label "Reštartovať s kartami">
+<!ENTITY restart-tab.tooltip "Reštartovať a začať s aktuálnymi kartami">
+<!ENTITY close-other-tabs.label "Zavrieť ostatné">
+<!ENTITY close-other-tabs.tooltip "Zavrieť ostatné karty">
+<!ENTITY hide-images.label "Skryť obrázky">
+<!ENTITY hide-images.tooltip "Skryť všetky obrázky a pozadia aktuálneho dokumentu">
+<!ENTITY link-open.label "Nastavenia otvárania odkazov">
+<!ENTITY link-open.tooltip "Nastaviť ako budú otvárané odkazy">
+<!ENTITY clipboard.label "Odkaz zo schránky">
+<!ENTITY clipboard.tooltip "Otvoriť odkaz zo schránky">
+<!ENTITY clipboard.newtab "Otvoriť odkaz zo schránky na novej karte">
+<!ENTITY clipboard.menuitem "Otvoriť odkaz zo schránky">
+<!ENTITY home-page-change.label "Zmeniť domovskú stránku">
+<!ENTITY home-page-change.tooltip "Zmeniť domovskú stránku">
+<!ENTITY home-page-change.multiple "Nastaviť domovskú stránku s viacerými odkazmi">
+<!ENTITY favorite-page.label "Obľúbená stránka">
+<!ENTITY favorite-page.tooltip "Otvoriť obľúbenú stránku">
+<!ENTITY tab-list.label "Zoznam kariet">
+<!ENTITY tab-list.tooltip "Zobraziť zoznam kariet">
+<!ENTITY stop-animation.label "Vypnúť animáciu">
+<!ENTITY stop-animation.tooltip "Vypnúť animáciu GIF obrázkov">
+<!ENTITY stop-flash.label "Vypnúť Flash animáciu">
+<!ENTITY stop-flash.tooltip "Vypnúť Flash animáciu">
+<!ENTITY stop-movies.label "Vypnúť videá">
+<!ENTITY stop-movies.tooltip "Vypnúť načítavanie videí">
+<!ENTITY stop-iframe.label "Vypnúť vnorené rámce (zablokuje niektoré druhy reklamy)">
+<!ENTITY stop-iframe.tooltip "Vypnúť načítanie vnorených rámcov a reklamy, ktorú často obsahujú">
+<!ENTITY stop-dinamic-content.label "Vypnúť pripojený obsah">
+<!ENTITY stop-dinamic-content.tooltip "Vypnúť načítanie pripojeného obsahu">
+<!ENTITY stop-cookies.label "Vypnúť cookies">
+<!ENTITY stop-cookies.tooltip "Vypnúť cookies">
+<!ENTITY stop-popups.label "Vypnúť vyskakovacie okná">
+<!ENTITY stop-popups.tooltip "Vypnúť načítavanie vyskakovacích okien">
+<!ENTITY reload-skip-cache.label "Obnoviť bez cache">
+<!ENTITY reload-skip-cache.tooltip "Opätovne načítať stránku bez použitia obsahu vyrovnávacej pamäte prehliadača">
+<!ENTITY open-current-frame.label "Zobraziť aktuálny rámec">
+<!ENTITY open-current-frame.tooltip "Zobraziť iba aktuálne označený rámec">
+<!ENTITY up-directory.label "O úroveň vyššie">
+<!ENTITY up-directory.tooltip "Prejde o úroveň vyššie">
+<!ENTITY snap-back.label "Skok späť">
+<!ENTITY snap-back.tooltip "Prejde späť na prvú stránku otvorenú v tejto karte">
+<!ENTITY min-font-size.label "Min. veľkosť písma">
+<!ENTITY min-font-size.tooltip "Zmení veľkosť písma na minimum">
+<!ENTITY use-document-colors.label "Farby stránky">
+<!ENTITY use-document-colors.tooltip "Prepína medzi prednastavenými farbami a farbami určenými stránkou">
+<!ENTITY use-document-fonts.label "Písma stránky">
+<!ENTITY use-document-fonts.tooltip "Prepína medzi prednastavenými písmami a písmami určenými stránkou">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.tooltip "Vytvorí Tiny Url">
+<!ENTITY tiny-url.copy.to.clipboard "Do schránky">
+<!ENTITY tiny-url.email "E-mail">
+<!ENTITY tiny-url.link.use "Možnosti odkazu">
+<!ENTITY tiny-url.use.normal "Použiť xrl.in">
+<!ENTITY tiny-url.use.preview "Použiť preview.xrl.in">
+<!ENTITY tiny-url.visit "Navštíviť Xrl.in">
+<!ENTITY tb-clear-url.label "Vymazať URL">
+<!ENTITY tb-clear-url.tooltip "Vymazať URL a prejsť do adresného riadku">

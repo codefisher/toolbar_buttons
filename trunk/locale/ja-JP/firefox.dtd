@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "バージョン情報">
+<!ENTITY about-firefox.tooltip "Firefox について">
+<!ENTITY firefox-toolbar.label "ツール バーの切り替え">
+<!ENTITY firefox-toolbar.tooltip "ナビゲーション ツール バーを切り替えます">
+<!ENTITY toggle-personal-toolbar.label "ブックマーク ツール バー">
+<!ENTITY toggle-personal-toolbar.tooltip "ブックマーク ツール バーを切り替えます">
+<!ENTITY undo-close-tab.label "[タブを閉じる] を元に戻す">
+<!ENTITY undo-close-tab.tooltip "最後に閉じられたタブを開き直します">
+<!ENTITY pageinfo.label "ページ情報">
+<!ENTITY pageinfo.tooltip "[ページ情報] ウィンドウを開きます">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "設定を変更するのに about:config を開きます">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "インストールされているプラグインを表示するのに about:plugins を開きます">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "キャッシュされているコンテンツを表示するのに about:cache を開きます">
+<!ENTITY about-mem-cache.label "about:cache メモリ">
+<!ENTITY about-mem-cache.tooltip "メモリにキャッシュされているコンテンツを表示するのに about:cache を開きます">
+<!ENTITY about-disk-cache.label "about:cache ディスク">
+<!ENTITY about-disk-cache.tooltip "ハード ドライブに保存されたキャッシュされているコンテンツを表示するのにabout:cache を開きます">
+<!ENTITY websearch.label "Web 検索">
+<!ENTITY websearch.tooltip "既定の検索エンジンでウェブを検索します">
+<!ENTITY bookmark.label "ページのブックマーク">
+<!ENTITY bookmark.tooltip "現在のページをブックマークします">
+<!ENTITY bookmark-tabs.label "すべてブックマーク">
+<!ENTITY bookmark-tabs.tooltip "すべての開かれているタブをブックマークします">
+<!ENTITY bookmark-manager.label "ブックマーク マネージャ">
+<!ENTITY bookmark-manager.tooltip "ブックマーク マネージャを開きます">
+<!ENTITY bookmark-toolbar.label "ブックマーク ツール バー">
+<!ENTITY bookmark-toolbar.tooltip "ブックマーク ツール バーを切り替えます">
+<!ENTITY open.label "開く">
+<!ENTITY open.tooltip "ファイルを開きます">
+<!ENTITY save-frame.label "フレームの保存">
+<!ENTITY save-frame.tooltip "ドキュメント フレームを保存します">
+<!ENTITY close-tab.label "タブを閉じる">
+<!ENTITY close-tab.tooltip "開かれているタブまたはウィンドウを閉じます">
+<!ENTITY send-link.label "リンクの送信">
+<!ENTITY send-link.tooltip "電子メールでページ リンクを送信します">
+<!ENTITY bookmarks-menu-button.label "ブックマーク メニュー">
+<!ENTITY bookmarks-menu-button.tooltip "ブックマーク メニューを表示します">
+<!ENTITY personal-bookmarks-menu-button.label "ツール バー ブックマーク メニュー">
+<!ENTITY personal-bookmarks-menu-button.tooltip "ツール バー ブックマーク メニューを表示します">
+<!ENTITY clear-url.label "Url バーのクリア">
+<!ENTITY clear-url.tooltip "Url バーのテキストをクリアします">
+<!ENTITY close-all-tabs.label "すべて閉じる">
+<!ENTITY close-all-tabs.tooltip "すべてのタブを閉じます">
+<!ENTITY label-blank.label "ラベルの削除">
+<!ENTITY label-blank.tooltip "現在のタブのラベルを削除します">
+<!ENTITY label-all-blank.label "ラベルの削除">
+<!ENTITY label-all-blank.tooltip "すべてのタブのラベルを削除します">
+<!ENTITY read-news.label "ニュースを読む">
+<!ENTITY read-news.tooltip "ニュースを読むのにアプリケーションを開きます">
+<!ENTITY read-mail.label "メールを読む">
+<!ENTITY read-mail.tooltip "メールを読むのにアプリケーションを開きます">
+<!ENTITY new-message.label "新しいメッセージ">
+<!ENTITY new-message.tooltip "新しい電子メール メッセージを書きます">
+<!ENTITY bookmark-nopop.label "クイック ブックマーク">
+<!ENTITY bookmark-nopop.tooltip "確認せずにブックマークを追加します">
+<!ENTITY next-tab.label "次のタブ">
+<!ENTITY next-tab.tooltip "次のタブへ移動します">
+<!ENTITY previous-tab.label "前のタブ">
+<!ENTITY previous-tab.tooltip "前のタブへ移動します">
+<!ENTITY clear-data.label "情報のクリア">
+<!ENTITY clear-data.tooltip "[個人情報のクリア] ダイアログを開きます">
+<!ENTITY top-page.label "先頭へ">
+<!ENTITY top-page.tooltip "ページの先頭へ移動します">
+<!ENTITY bottom-page.label "末尾へ">
+<!ENTITY bottom-page.tooltip "ページの末尾へ移動します">
+<!ENTITY full-screen.label "全画面表示">
+<!ENTITY full-screen.tooltip "全画面表示モードへ切り替えます">
+<!ENTITY toggle-styles.label "スタイルの切り替え">
+<!ENTITY toggle-styles.tooltip "ウェブ サイトの定義スタイルを追加/削除します">
+<!ENTITY translate.label "翻訳">
+<!ENTITY translate.tooltip "お好みの言語へ現在のページを翻訳します">
+<!ENTITY show-frame.label "フレームの表示">
+<!ENTITY show-frame.tooltip "現在のフレームのみを表示します">
+<!ENTITY rename-tab.label "タブ名の変更">
+<!ENTITY rename-tab.tooltip "現在選択されているタブのタブ名を変更します">
+<!ENTITY reload-all-tabs.label "タブの再読み込み">
+<!ENTITY reload-all-tabs.tooltip "すべての開かれているタブを再読み込みします">
+<!ENTITY stop-all.label "すべて中止">
+<!ENTITY stop-all.tooltip "読み込みからすべてのタブを中止します">
+<!ENTITY java-toggle.label "Java の切り替え">
+<!ENTITY java-toggle.tooltip "Java のオンとオフを切り替えます">
+<!ENTITY javascript-toggle.label "JavaScript の切り替え">
+<!ENTITY javascript-toggle.tooltip "JavaScript のオンとオフを切り替えます">
+<!ENTITY image-toggle.label "イメージの切り替え">
+<!ENTITY image-toggle.tooltip "イメージを読み込むかのオンとオフを切り替えます">
+<!ENTITY restart-tab.label "タブで再起動">
+<!ENTITY restart-tab.tooltip "現在のタブで再起動します">
+<!ENTITY close-other-tabs.label "その他を閉じる">
+<!ENTITY close-other-tabs.tooltip "選択された以外のすべてのタブを閉じます。">
+<!ENTITY hide-images.label "イメージの非表示">
+<!ENTITY hide-images.tooltip "現在のドキュメントのすべてのイメージと背景を非表示にします">
+<!ENTITY link-open.label "リンクを開くの設定">
+<!ENTITY link-open.tooltip "どうリンクを開くかを設定します">
+<!ENTITY clipboard.label "クリップボードからのリンク">
+<!ENTITY clipboard.tooltip "クリップボードからリンクを取得して開きます">
+<!ENTITY clipboard.newtab "新しいタブにクリップボードからのリンクを開く">
+<!ENTITY clipboard.menuitem "クリップボードからのリンクを開く">
+<!ENTITY home-page-change.label "ホームの変更">
+<!ENTITY home-page-change.tooltip "ホーム ページを変更します">
+<!ENTITY home-page-change.multiple "複数のリンクとしてホーム ページを設定する">
+<!ENTITY favorite-page.label "お気に入りページ">
+<!ENTITY favorite-page.tooltip "お気に入りページを開きます">
+<!ENTITY tab-list.label "タブの一覧">
+<!ENTITY tab-list.tooltip "タブの一覧を表示します">
+<!ENTITY stop-animation.label "アニメーションの切り替え">
+<!ENTITY stop-animation.tooltip "アニメーションの GIF 、Blink および Marquee タグを中止します">
+<!ENTITY stop-flash.label "Flash の切り替え">
+<!ENTITY stop-flash.tooltip "迷惑な Flash を中止します">
+<!ENTITY stop-movies.label "ムービーの切り替え">
+<!ENTITY stop-movies.tooltip "読み込みからムービーを中止します">
+<!ENTITY stop-iframe.label "iframes ムービーの切り替え (いくつかの広告をブロックします)">
+<!ENTITY stop-iframe.tooltip "読み込みとしばしば含む広告から iframes を中止します">
+<!ENTITY stop-dinamic-content.label "埋め込みコンテンツを切り替えます">
+<!ENTITY stop-dinamic-content.tooltip "読み込みからすべての埋め込みコンテンツを中止します。">
+<!ENTITY stop-cookies.label "Cookie の切り替え">
+<!ENTITY stop-cookies.tooltip "設定されるのから cookie を中止します。">
+<!ENTITY stop-popups.label "ポップアップの切り替え">
+<!ENTITY stop-popups.tooltip "読み込みからポップアップを中止します">
+<!ENTITY reload-skip-cache.label "キャッシュをスキップして再読み込み">
+<!ENTITY reload-skip-cache.tooltip "ブラウザ キャッシュに格納されるコンテンツを使用せずにページを再読み込みします">
+<!ENTITY open-current-frame.label "現在のフレームの表示">
+<!ENTITY open-current-frame.tooltip "現在選択されているフレームのみを表示します">
+<!ENTITY up-directory.label "上のディレクトリへ">
+<!ENTITY up-directory.tooltip "1 つ上のディレクトリへ移動します">
+<!ENTITY snap-back.label "最初へ">
+<!ENTITY snap-back.tooltip "このタブで開かれた最初のページへ移動します">
+<!ENTITY min-font-size.label "最小のフォント サイズ">
+<!ENTITY min-font-size.tooltip "最小のフォント サイズを切り替えます">
+<!ENTITY use-document-colors.label "ページの色の切り替え">
+<!ENTITY use-document-colors.tooltip "ページの色を既定とサイト間で切り替えます">
+<!ENTITY use-document-fonts.label "ページのフォントの切り替え">
+<!ENTITY use-document-fonts.tooltip "ページのフォントを既定とサイト間で切り替えます">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.tooltip "Tiny Url を作成します">
+<!ENTITY tiny-url.copy.to.clipboard "クリップ ボードへコピー">
+<!ENTITY tiny-url.email "リンクの電子メール">
+<!ENTITY tiny-url.link.use "リンクのオプション">
+<!ENTITY tiny-url.use.normal "xrl.in の使用">
+<!ENTITY tiny-url.use.preview "preview.xrl.in の使用">
+<!ENTITY tiny-url.visit "Xrl.In の訪問">
+<!ENTITY tb-clear-url.label "Clear Url">
+<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">

@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "오프라인으로 작업">
+<!ENTITY workoffline.tooltip "오프라인으로 작업 전환">
+<!ENTITY delete.label "삭제">
+<!ENTITY delete.tooltip "선택된 글자 삭제">
+<!ENTITY find.label "찾기">
+<!ENTITY find.tooltip "내용 찾기">
+<!ENTITY saveas.label "저장">
+<!ENTITY saveas.tooltip "다음 이름으로 문서 저장">
+<!ENTITY select-all.label "모두 선택">
+<!ENTITY select-all.tooltip "모든 글자 선택">
+<!ENTITY find-again.label "다시 찾기">
+<!ENTITY find-again.tooltip "다음으로 일치하는 것을 찾기">
+<!ENTITY find-prev.label "이전 찾기">
+<!ENTITY find-prev.tooltip "이전에 일치하는 것을 찾기">
+<!ENTITY enlarge.label "확대">
+<!ENTITY enlarge.tooltip "글자 크기 확대">
+<!ENTITY reduce.label "축소">
+<!ENTITY reduce.tooltip "글자 크기 축소">
+<!ENTITY reset.label "재설정">
+<!ENTITY reset.tooltip "글자 크기 재설정">
+<!ENTITY page-source.label "소스">
+<!ENTITY page-source.tooltip "페이지 소스 보기">
+<!ENTITY print-preview.label "인쇄 미리보기">
+<!ENTITY print-preview.tooltip "인쇄 미리보기 열기">
+<!ENTITY dictionary-list.label "디렉토리 변경">
+<!ENTITY dictionary-list.tooltip "현재 디렉토리 빠르게 변경">

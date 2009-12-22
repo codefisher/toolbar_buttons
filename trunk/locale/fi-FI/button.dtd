@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Lopeta">
+<!ENTITY exit.tooltip "Lopeta sovellus">
+<!ENTITY extensions.label "Laajennukset">
+<!ENTITY extensions.tooltip "Avaa laajennushallinta">
+<!ENTITY themes.label "Teemat">
+<!ENTITY themes.tooltip "Avaa teemahallinta">
+<!ENTITY addons.label "Lisäosat">
+<!ENTITY addons.tooltip "Avaa lisäosien hallinta">
+<!ENTITY installaddons.label "Asenna">
+<!ENTITY installaddons.tooltip "Asenna laajennus tai teema">
+<!ENTITY statusbar-toggle.label "Tilarivi">
+<!ENTITY statusbar-toggle.tooltip "Näytä/piilota tilarivi">
+<!ENTITY redo.label "Toista">
+<!ENTITY redo.tooltip "Toista viimeisin muutos">
+<!ENTITY undo.label "Kumoa">
+<!ENTITY undo.tooltip "Kumoa viimeisin muutos">
+<!ENTITY preferences.label "Asetukset">
+<!ENTITY preferences.tooltip "Avaa asetukset">
+<!ENTITY javaScriptConsole.label "Konsoli">
+<!ENTITY javaScriptConsole.tooltip "Avaa virhekonsoli">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model -tarkistaja">
+<!ENTITY restart-app.label "Käynnistä uudelleen">
+<!ENTITY restart-app.tooltip "Käynnistä sovellus uudelleen">
+<!ENTITY profile-folder.label "Profiili">
+<!ENTITY profile-folder.tooltip "Tarkastele profiilikansiotasi">
+<!ENTITY pagesetup.label "Sivun asetukset">
+<!ENTITY pagesetup.tooltip "Määritä miten sivu tulostuu">
+<!ENTITY help.label "Ohje">
+<!ENTITY help.tooltip "Avaa ohjedokumentaatio">
+<!ENTITY import.label "Tuo">
+<!ENTITY import.tooltip "Tuo asetukset ja tiedot">
+<!ENTITY customize-toolbar.label "Mukauta työkalupalkki">
+<!ENTITY customize-toolbar.tooltip "Mukauta työkalupalkki, lisää tai poista painikkeita jne.">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Avaa about:config">
+<!ENTITY toolbar-menu.label "Työkalupalkit">
+<!ENTITY toolbar-menu.tooltip "Piilota/Näytä työkalupalkit">
+<!ENTITY check-for-update.label "Päivitä">
+<!ENTITY check-for-update.tooltip "Tarkista päivitykset">
+<!ENTITY minimize-window.label "Pienennä">
+<!ENTITY minimize-window.tooltip "Pienennä nykyinen ikkuna">
+<!ENTITY reload-proxy.label "Lataa välityspalvelin">
+<!ENTITY reload-proxy.tooltip "Lataa uudelleen käytössä oleva välityspalvelin">
+<!ENTITY change-text-direction.label "Vaihda tekstin suunta">
+<!ENTITY change-text-direction.tooltip "Vaihda tekstin suunta: vasemmalta oikealle tai oikealta vasemmalle">
+<!ENTITY toggle-proxy.label "Välityspalvelin">
+<!ENTITY toggle-proxy.tooltip "Ota välityspalvelin käyttöön/pois käytöstä">
+<!ENTITY tb-file-menu.label "Tiedostovalikko">
+<!ENTITY tb-file-menu.tooltip "Näytä tiedostovalikko">
+<!ENTITY tb-toggle-menu-bar.label "Valikkopalkki">
+<!ENTITY tb-toggle-menu-bar.tooltip "Näytä/piilota valikkopalkki">
+<!ENTITY tb-edit-menu.label "Muokkaa-valikko">
+<!ENTITY tb-edit-menu.tooltip "Näytä Muokkaa-valikko">
+<!ENTITY tb-view-menu.label "Näytä-valikko">
+<!ENTITY tb-view-menu.tooltip "Näytä Näytä-valikko">
+<!ENTITY tb-tools-menu.label "Työkalut-valikko">
+<!ENTITY tb-tools-menu.tooltip "Näytä Työkalut-valikko">
+<!ENTITY forward-as-attachment.label "Välitä liitetiedostona">
+<!ENTITY forward-as-attachment.tooltip "Välitä viesti liitetiedostona">
+<!ENTITY forward-as-inline.label "Välitä sisällytettynä">
+<!ENTITY forward-as-inline.tooltip "Välitä viesti uuteen viestiin sisällytettynä">

@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google 홈페이지 열기">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia 홈페이지 열기">
+<!ENTITY firefox-extension.label "확장기능">
+<!ENTITY firefox-extension.tooltip "더 많은 Firefox 확장기능">
+<!ENTITY firefox-theme.label "테마">
+<!ENTITY firefox-theme.tooltip "더 많은 Firefox 테마">
+<!ENTITY thunderbird-extension.label "확장기능">
+<!ENTITY thunderbird-extension.tooltip "더 많은 Thunderbird 확장기능">
+<!ENTITY thunderbird-theme.label "테마">
+<!ENTITY thunderbird-theme.tooltip "더 많은 Thunderbird 테마">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Google 메일 열기">
+<!ENTITY yahoo-button.label "Yahoo 메일">
+<!ENTITY yahoo-button.tooltip "Yahoo 메일 열기">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail 열기">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "PayPal 열기">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "eBay 열기">

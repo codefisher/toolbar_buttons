@@ -1,0 +1,82 @@
+<!ENTITY realNextMessage.label "Следующее сообщение">
+<!ENTITY realNextMessage.tooltip "Перейти к следующему по списку сообщению">
+<!ENTITY realPreviousMessage.label "Предыдущее сообщение">
+<!ENTITY realPreviousMessage.tooltip "Перейти к предыдущему по списку сообщению">
+<!ENTITY send-with-no-save.label "Отправить без сохранения">
+<!ENTITY send-with-no-save.tooltip "Отправить без сохранения копии">
+<!ENTITY about-thunderbird.label "О программе">
+<!ENTITY about-thunderbird.tooltip "О Thunderbird">
+<!ENTITY accountwizard.label "Настройки Учетной записи">
+<!ENTITY accountwizard.tooltip "Запустите программу установки чтобы создать новую учетную запись">
+<!ENTITY accountmanager.label "Настройки учетной записи">
+<!ENTITY accountmanager.tooltip "Открыть настройки учетной записи">
+<!ENTITY plainpaste.label "Вставить обычный текст">
+<!ENTITY plainpaste.tooltip "Вставить текст без форматирования">
+<!ENTITY attachments-save.label "Сохранить вложения">
+<!ENTITY attachments-save.tooltip "Сохранить все вложения из сообщения">
+<!ENTITY attachments-detach.label "Открепить вложения">
+<!ENTITY attachments-detach.tooltip "Открепить все вложения из сообщения">
+<!ENTITY attachments-delete.label "Удалить вложения">
+<!ENTITY attachments-delete.tooltip "Удалить все вложения из сообщения">
+<!ENTITY empty-trash.label "Очистить Удаленные">
+<!ENTITY empty-trash.tooltip "Очистить папку Удаленные">
+<!ENTITY not-junk.label "Не Спам">
+<!ENTITY not-junk.tooltip "Пометить сообщение как Не Спам">
+<!ENTITY cut.label "Вырезать">
+<!ENTITY cut.tooltip "Вырезать текст">
+<!ENTITY copy.label "Копировать">
+<!ENTITY copy.tooltip "Копировать текст">
+<!ENTITY paste.label "Вставить">
+<!ENTITY paste.tooltip "Вставить текст">
+<!ENTITY search-messages.label "Поиск сообщений">
+<!ENTITY search-messages.tooltip "Открыть Поиск сообщений">
+<!ENTITY search-addresses.label "Поиск адресов">
+<!ENTITY search-addresses.tooltip "Открыть Поиск адресов">
+<!ENTITY msg-pane.label "Панель сообщения">
+<!ENTITY msg-pane.tooltip "Переключить панель сообщения">
+<!ENTITY purge.label "Сжать">
+<!ENTITY purge.tooltip "Сжать папку и удалить спам">
+<!ENTITY compact.label "Сжать">
+<!ENTITY compact.tooltip "Сжать папку">
+<!ENTITY copy-address.label "Копировать адрес">
+<!ENTITY copy-address.tooltip "Копировать адрес почты в буфер обмена">
+<!ENTITY add-address.label "Добавить E-mail">
+<!ENTITY add-address.tooltip "Копировать адрес почты в адресную книгу">
+<!ENTITY read-message.label "Читать">
+<!ENTITY read-message.tooltip "Читать сообщение">
+<!ENTITY delete-junk.label "Удалить спам">
+<!ENTITY delete-junk.tooltip "Удалить спам">
+<!ENTITY msg-filter.label "Фильтры">
+<!ENTITY msg-filter.tooltip "Настроить фильтры">
+<!ENTITY html-mode.label "Режим HTML">
+<!ENTITY html-mode.tooltip "Показать сообщение в виде HTML или обычного текста">
+<!ENTITY get-inbox.label "Перейти во Входящие">
+<!ENTITY get-inbox.tooltip "Сделать папку Входящие активной">
+<!ENTITY send-receive.label "Отправить и Получить">
+<!ENTITY send-receive.tooltip "Отправить и Получить письма">
+<!ENTITY reply-sender.label "Ответить только отправителю">
+<!ENTITY reply-sender.tooltip "Ответить только отправителю письма">
+<!ENTITY create-filter.label "Создать фильтр">
+<!ENTITY create-filter.tooltip "Создать фильтр из письма">
+<!ENTITY shift-delete.label "Мимо корзины">
+<!ENTITY shift-delete.tooltip "Удалить письма, минуя корзину">
+<!ENTITY edit-draft.label "Редактировать черновик">
+<!ENTITY edit-draft.tooltip "Редактировать сохраненный черновик">
+<!ENTITY return-receipt.label "Уведомление о получении">
+<!ENTITY return-receipt.tooltip "Включить или выключить Уведомление о получении">
+<!ENTITY all-threads.label "All Threads">
+<!ENTITY all-threads.tooltip "View All Threads">
+<!ENTITY unread-threads.label "Unread Threads">
+<!ENTITY unread-threads.tooltip "View Unread Threads">
+<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
+<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY ignored-threads.tooltip "View Ignored Threads">
+<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
+<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

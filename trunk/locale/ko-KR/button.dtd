@@ -1,0 +1,62 @@
+<!ENTITY exit.label "종료">
+<!ENTITY exit.tooltip "응용풀그림 종료">
+<!ENTITY extensions.label "확장기능">
+<!ENTITY extensions.tooltip "확장기능 관리자 열기">
+<!ENTITY themes.label "테마">
+<!ENTITY themes.tooltip "테마 관리자 열기">
+<!ENTITY addons.label "부가기능">
+<!ENTITY addons.tooltip "부가기능 관리자 열기">
+<!ENTITY installaddons.label "설치">
+<!ENTITY installaddons.tooltip "확장기능/테마 설치">
+<!ENTITY statusbar-toggle.label "상태 막대">
+<!ENTITY statusbar-toggle.tooltip "상태 막대 전환">
+<!ENTITY redo.label "실행반복">
+<!ENTITY redo.tooltip "마지막 변경 실행반복">
+<!ENTITY undo.label "실행취소">
+<!ENTITY undo.tooltip "마지막 변경 실행취소">
+<!ENTITY preferences.label "선택사항">
+<!ENTITY preferences.tooltip "선택사항 선택사항">
+<!ENTITY javaScriptConsole.label "콘솔">
+<!ENTITY javaScriptConsole.tooltip "오류 콘솔 열기">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "문서 객체 모델 검사기">
+<!ENTITY restart-app.label "재시작">
+<!ENTITY restart-app.tooltip "응용풀그림 재시작">
+<!ENTITY profile-folder.label "프로파일">
+<!ENTITY profile-folder.tooltip "프로파일 폴더 보기">
+<!ENTITY pagesetup.label "페이지 설정">
+<!ENTITY pagesetup.tooltip "페이지를 어떻게 인쇄할지 설정">
+<!ENTITY help.label "도움말">
+<!ENTITY help.tooltip "도움말 문서 열기">
+<!ENTITY import.label "불러오기">
+<!ENTITY import.tooltip "설정 및 데이터 불러오기">
+<!ENTITY customize-toolbar.label "사용자지정 도구막대">
+<!ENTITY customize-toolbar.tooltip "사용자지정 도구막대, 버튼 추가/삭제 등">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config 열기">
+<!ENTITY toolbar-menu.label "도구막대">
+<!ENTITY toolbar-menu.tooltip "도구막대 숨기기/보이기">
+<!ENTITY check-for-update.label "갱신">
+<!ENTITY check-for-update.tooltip "갱신여부 확인">
+<!ENTITY minimize-window.label "최소화">
+<!ENTITY minimize-window.tooltip "현재창 최소화">
+<!ENTITY reload-proxy.label "프록시 다시 불러오기">
+<!ENTITY reload-proxy.tooltip "프록시 다시 불러오기">
+<!ENTITY change-text-direction.label "글자 방향 변경">
+<!ENTITY change-text-direction.tooltip "왼쪽에서 오른쪽으로 또는 오른쪽에서 왼쪽으로 글자 방향 변경합니다">
+<!ENTITY toggle-proxy.label "프록시 전환">
+<!ENTITY toggle-proxy.tooltip "프록시 켜거나 끄기를 전환합니다">
+<!ENTITY tb-file-menu.label "파일 메뉴">
+<!ENTITY tb-file-menu.tooltip "파일 메뉴를 표시합니다">
+<!ENTITY tb-toggle-menu-bar.label "메뉴 막대 전환">
+<!ENTITY tb-toggle-menu-bar.tooltip "메뉴 막대를 전환합니다">
+<!ENTITY tb-edit-menu.label "편집 메뉴">
+<!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
+<!ENTITY tb-view-menu.label "보기 메뉴">
+<!ENTITY tb-view-menu.tooltip "보기 메뉴를 표시합니다">
+<!ENTITY tb-tools-menu.label "도구 메뉴">
+<!ENTITY tb-tools-menu.tooltip "도구 메뉴를 표시합니다">
+<!ENTITY forward-as-attachment.label "첨부를 전달로">
+<!ENTITY forward-as-attachment.tooltip "첨부 파일을 전달 메세지로 보냅니다">
+<!ENTITY forward-as-inline.label "인라인를 전달로">
+<!ENTITY forward-as-inline.tooltip "이메일의 일부를 전달 메세지로 보냅니다">

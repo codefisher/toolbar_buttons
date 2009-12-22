@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Ieşire">
+<!ENTITY exit.tooltip "Închidere aplicaţie">
+<!ENTITY extensions.label "Extensii">
+<!ENTITY extensions.tooltip "Deschide gestionarul de extensii">
+<!ENTITY themes.label "Teme">
+<!ENTITY themes.tooltip "Deschide gestionarul de teme">
+<!ENTITY addons.label "Suplimente">
+<!ENTITY addons.tooltip "Deschide gestionarul de suplimete">
+<!ENTITY installaddons.label "Instalează">
+<!ENTITY installaddons.tooltip "Instalează o extensie sau o temă">
+<!ENTITY statusbar-toggle.label "Bara de stare">
+<!ENTITY statusbar-toggle.tooltip "Afişează/ascunde bara de stare">
+<!ENTITY redo.label "Refă">
+<!ENTITY redo.tooltip "Refă ultima modificare">
+<!ENTITY undo.label "Anulează">
+<!ENTITY undo.tooltip "Anulează ultima modificare">
+<!ENTITY preferences.label "Opţiuni">
+<!ENTITY preferences.tooltip "Deschide gestionarul de opţiuni">
+<!ENTITY javaScriptConsole.label "Consolă">
+<!ENTITY javaScriptConsole.tooltip "Deschide consola de erori">
+<!ENTITY inspecter.label "Inspector DOM">
+<!ENTITY inspecter.tooltip "Deschide inspectorul Document Object Model">
+<!ENTITY restart-app.label "Reporneşte">
+<!ENTITY restart-app.tooltip "Reporneşte aplicaţia">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Deschide dosarul profilului personal">
+<!ENTITY pagesetup.label "Configurează pagina">
+<!ENTITY pagesetup.tooltip "Configurează dimensiunile paginii">
+<!ENTITY help.label "Ajutor">
+<!ENTITY help.tooltip "Deschide documentaţia de ajutor">
+<!ENTITY import.label "Importă">
+<!ENTITY import.tooltip "Importă configuraţii şi date">
+<!ENTITY customize-toolbar.label "Personalizează bara de instrumente">
+<!ENTITY customize-toolbar.tooltip "Personalizează bara de instrumente, adaugă sau elimină butoane, etc.">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Deschide about:config">
+<!ENTITY toolbar-menu.label "Bare de instrumente">
+<!ENTITY toolbar-menu.tooltip "Ascunde/afişează barele de instrumente">
+<!ENTITY check-for-update.label "Actualizează">
+<!ENTITY check-for-update.tooltip "Verifică actualizările">
+<!ENTITY minimize-window.label "Minimizează">
+<!ENTITY minimize-window.tooltip "Minimizează aplicaţia">
+<!ENTITY reload-proxy.label "Reîncarcă proxy">
+<!ENTITY reload-proxy.tooltip "Reîncarcă configuraţia serverului proxy">
+<!ENTITY change-text-direction.label "Schimbă orientarea textului">
+<!ENTITY change-text-direction.tooltip "Schimbă orientarea textului de la dreapta la stânga sau invers">
+<!ENTITY toggle-proxy.label "Comutator proxy">
+<!ENTITY toggle-proxy.tooltip "Activează/dezactivează serverul proxy">
+<!ENTITY tb-file-menu.label "Meniu contextual file">
+<!ENTITY tb-file-menu.tooltip "Afişează meniul contextual al barei de file">
+<!ENTITY tb-toggle-menu-bar.label "Comtator meniu principal">
+<!ENTITY tb-toggle-menu-bar.tooltip "Afişează/ascunde meniul principal">
+<!ENTITY tb-edit-menu.label "Meniu Editare">
+<!ENTITY tb-edit-menu.tooltip "Afişează meniul Editare">
+<!ENTITY tb-view-menu.label "Meniu Vizualizare">
+<!ENTITY tb-view-menu.tooltip "Afişează meniul Vizualizare">
+<!ENTITY tb-tools-menu.label "Meniu Unelte">
+<!ENTITY tb-tools-menu.tooltip "Afişează meniul Unelte">
+<!ENTITY forward-as-attachment.label "Înaintează ca ataşament">
+<!ENTITY forward-as-attachment.tooltip "Înaintează mesajul ca ataşament">
+<!ENTITY forward-as-inline.label "Înaintează direct">
+<!ENTITY forward-as-inline.tooltip "Înaintează mesajul ca parte a altui mesaj">

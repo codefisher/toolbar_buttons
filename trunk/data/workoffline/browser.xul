@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="workoffline"
+	label="&workoffline.label;"
+	tooltiptext="&workoffline.tooltip;"
+	command="goOfflineMenuitem"/>

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 tbutton"
+	id="themes"
+	label="&themes.label;"
+	tooltiptext="&themes.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('themes');"/>

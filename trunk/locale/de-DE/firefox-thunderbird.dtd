@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Offline-Arbeiten">
+<!ENTITY workoffline.tooltip "Offline-Arbeiten ein-/ausschalten">
+<!ENTITY delete.label "Löschen">
+<!ENTITY delete.tooltip "Markierten Text löschen">
+<!ENTITY find.label "Suchen">
+<!ENTITY find.tooltip "Text suchen">
+<!ENTITY saveas.label "Speichern">
+<!ENTITY saveas.tooltip "Dokument speichern...">
+<!ENTITY select-all.label "Alles markieren">
+<!ENTITY select-all.tooltip "Alles markieren">
+<!ENTITY find-again.label "Nächster Treffer">
+<!ENTITY find-again.tooltip "Nächsten Treffer anzeigen">
+<!ENTITY find-prev.label "Vorheriger Treffer">
+<!ENTITY find-prev.tooltip "Vorherigen Treffer anzeigen">
+<!ENTITY enlarge.label "Vergrößern">
+<!ENTITY enlarge.tooltip "Schrift vergrößern">
+<!ENTITY reduce.label "Verkleinern">
+<!ENTITY reduce.tooltip "Schrift verkleinern">
+<!ENTITY reset.label "Schriftgröße zurücksetzen">
+<!ENTITY reset.tooltip "Schriftgröße zurücksetzen">
+<!ENTITY page-source.label "Quelltext">
+<!ENTITY page-source.tooltip "Quelltext anzeigen">
+<!ENTITY print-preview.label "Druckvorschau">
+<!ENTITY print-preview.tooltip "Druckvorschau der aktuellen Seite anzeigen">
+<!ENTITY dictionary-list.label "Wörterbuch wechseln">
+<!ENTITY dictionary-list.tooltip "Schneller Wechsel des aktuell verwendeten Wörterbuches">

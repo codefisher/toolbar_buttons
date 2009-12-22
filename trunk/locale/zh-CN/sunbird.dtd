@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "删除事件">
+<!ENTITY delete-event.tooltip "删除选中的事件">
+<!ENTITY delete-tasks.label "删除任务">
+<!ENTITY delete-tasks.tooltip "删除选中的任务">
+<!ENTITY tasks-toggle.label "切换任务">
+<!ENTITY tasks-toggle.tooltip "切换任务工具栏">
+<!ENTITY calendar-bar-toggle.label "切换工具栏">
+<!ENTITY calendar-bar-toggle.tooltip "切换主工具栏">
+<!ENTITY about-sunbird.label "关于">
+<!ENTITY about-sunbird.tooltip "关于 Sunbird">
+<!ENTITY tasks-in-view.label "视图中的任务">
+<!ENTITY tasks-in-view.tooltip "固定视图中的任务">

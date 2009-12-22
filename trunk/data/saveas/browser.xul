@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="saveas"
+	label="&saveas.label;"
+	tooltiptext="&saveas.tooltip;"
+	command="Browser:SavePage" />

@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Skončiť">
+<!ENTITY exit.tooltip "Ukončiť aplikáciu">
+<!ENTITY extensions.label "Rozšírenia">
+<!ENTITY extensions.tooltip "Otvoriť Správcu rozšírení">
+<!ENTITY themes.label "Témy">
+<!ENTITY themes.tooltip "Otvoriť Správcu tém">
+<!ENTITY addons.label "Doplnky">
+<!ENTITY addons.tooltip "Otvoriť Správcu doplnkov">
+<!ENTITY installaddons.label "Inštalovať">
+<!ENTITY installaddons.tooltip "Inštalovať rozšírenie alebo tému">
+<!ENTITY statusbar-toggle.label "Stavový riadok">
+<!ENTITY statusbar-toggle.tooltip "Prepnúť stavový riadok">
+<!ENTITY redo.label "Znova">
+<!ENTITY redo.tooltip "Opakovať poslednú zmenu">
+<!ENTITY undo.label "Späť">
+<!ENTITY undo.tooltip "Vrátiť poslednú zmenu">
+<!ENTITY preferences.label "Možnosti">
+<!ENTITY preferences.tooltip "Otvoriť Možnosti">
+<!ENTITY javaScriptConsole.label "Konzola">
+<!ENTITY javaScriptConsole.tooltip "Otvoriť Chybovú konzolu">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY restart-app.label "Reštartovať">
+<!ENTITY restart-app.tooltip "Reštartovať aplikáciu">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Zobraziť priečinok vášho profilu">
+<!ENTITY pagesetup.label "Nastavenie strany">
+<!ENTITY pagesetup.tooltip "Nastavenie tlače strany">
+<!ENTITY help.label "Pomocník">
+<!ENTITY help.tooltip "Otvoriť Pomocníka">
+<!ENTITY import.label "Importovať">
+<!ENTITY import.tooltip "Importovať nastavenia a údaje">
+<!ENTITY customize-toolbar.label "Panel nástrojov">
+<!ENTITY customize-toolbar.tooltip "Prispôsobiť panel nástrojov">
+<!ENTITY about-config.label "Editor nastavení">
+<!ENTITY about-config.tooltip "Otvoriť Editor nastavení">
+<!ENTITY toolbar-menu.label "Panely nástrojov">
+<!ENTITY toolbar-menu.tooltip "Skryť/Zobraziť panely nástrojov">
+<!ENTITY check-for-update.label "Aktualizovať">
+<!ENTITY check-for-update.tooltip "Vyhľadať aktualizácie">
+<!ENTITY minimize-window.label "Minimalizovať">
+<!ENTITY minimize-window.tooltip "Minimalizovať aktuálne okno">
+<!ENTITY reload-proxy.label "Znova načítať proxy">
+<!ENTITY reload-proxy.tooltip "Znova načítať proxy">
+<!ENTITY change-text-direction.label "Zmeniť smer textu">
+<!ENTITY change-text-direction.tooltip "Zmeniť smer textu">
+<!ENTITY toggle-proxy.label "Zapnúť proxy">
+<!ENTITY toggle-proxy.tooltip "Zapnúť/vypnúť proxy">
+<!ENTITY tb-file-menu.label "Ponuka Súbor">
+<!ENTITY tb-file-menu.tooltip "Zobrazí ponuku Súbor">
+<!ENTITY tb-toggle-menu-bar.label "Prepnúť panel ponuky">
+<!ENTITY tb-toggle-menu-bar.tooltip "Prepne panel ponuky">
+<!ENTITY tb-edit-menu.label "Ponuka Upraviť">
+<!ENTITY tb-edit-menu.tooltip "Zobrazí ponuku Upraviť">
+<!ENTITY tb-view-menu.label "Ponuka Zobraziť">
+<!ENTITY tb-view-menu.tooltip "Zobrazí ponuku Zobraziť">
+<!ENTITY tb-tools-menu.label "Ponuka Nástroje">
+<!ENTITY tb-tools-menu.tooltip "Zobrazí ponuku Nástroje">
+<!ENTITY forward-as-attachment.label "Odoslať ďalej ako prílohu">
+<!ENTITY forward-as-attachment.tooltip "Odošle správu ďalej ako prílohu">
+<!ENTITY forward-as-inline.label "Odoslať ďalej v tele správy">
+<!ENTITY forward-as-inline.tooltip "Odošle správu ďalej v tele e-mailu">

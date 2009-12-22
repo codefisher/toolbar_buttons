@@ -1,0 +1,7 @@
+<groupbox flex="1">
+	<caption label="&restart.label;"/>
+	<preferences>
+		<preference id="extension.tbutton.restart" name="extension.tbutton.restart" type="bool"/>
+	</preferences>	
+	<checkbox preference="extension.tbutton.restart" label="&restart.checkbox;"/>
+</groupbox>

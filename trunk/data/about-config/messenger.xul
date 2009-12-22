@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="about-config"
+	label="&about-config.label;"
+	tooltiptext="&about-config.tooltip;"
+	onclick="toolbar_buttons.openMessengerWindowOrTab('about:config', event);" />

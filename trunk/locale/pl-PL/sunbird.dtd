@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Usuń zdarzenie">
+<!ENTITY delete-event.tooltip "Usuń wybrane zdarzenie">
+<!ENTITY delete-tasks.label "Usuń zadanie">
+<!ENTITY delete-tasks.tooltip "Usuń wybrane zadanie">
+<!ENTITY tasks-toggle.label "Przełącz pasek zdarzeń">
+<!ENTITY tasks-toggle.tooltip "Przełącz pasek zdarzeń">
+<!ENTITY calendar-bar-toggle.label "Przełącz pasek narzędzi">
+<!ENTITY calendar-bar-toggle.tooltip "Przełącz główny pasek narzędzi">
+<!ENTITY about-sunbird.label "O Sunbird">
+<!ENTITY about-sunbird.tooltip "O programie Mozilla Sunbird">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="find-prev"
+	label="&find-prev.label;"
+	tooltiptext="&find-prev.tooltip;"
+	command="cmd_findPrevious" />

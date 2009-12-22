@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Delete Events">
+<!ENTITY delete-event.tooltip "Delete Selected Events">
+<!ENTITY delete-tasks.label "Delete Tasks">
+<!ENTITY delete-tasks.tooltip "Delete Selected Tasks">
+<!ENTITY tasks-toggle.label "Toggle Tasks">
+<!ENTITY tasks-toggle.tooltip "Toggle the task bar">
+<!ENTITY calendar-bar-toggle.label "Toggle Toolbar">
+<!ENTITY calendar-bar-toggle.tooltip "Toggle the main toolbar">
+<!ENTITY about-sunbird.label "About">
+<!ENTITY about-sunbird.tooltip "About Sunbird">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

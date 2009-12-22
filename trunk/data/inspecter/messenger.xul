@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="inspecter"
+	label="&inspecter.label;"
+	tooltiptext="&inspecter.tooltip;"
+	oncommand="toolbar_buttons.openDomInspector(event, document);" />

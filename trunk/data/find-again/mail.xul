@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="find-again"
+	label="&find-again.label;"
+	tooltiptext="&find-again.tooltip;"
+	oncommand="goDoCommand('cmd_findAgain');"/>

@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Ukončit">
+<!ENTITY exit.tooltip "Ukončí aplikaci">
+<!ENTITY extensions.label "Rozšíření">
+<!ENTITY extensions.tooltip "Správce rozšíření">
+<!ENTITY themes.label "Motivy vzhledu">
+<!ENTITY themes.tooltip "Správce motivů vzhledu">
+<!ENTITY addons.label "Správce doplňků">
+<!ENTITY addons.tooltip "Správce doplňků">
+<!ENTITY installaddons.label "Instaluj">
+<!ENTITY installaddons.tooltip "Instaluje doplněk nebo motiv vzhleddu">
+<!ENTITY statusbar-toggle.label "Stavová lišta">
+<!ENTITY statusbar-toggle.tooltip "Přepíná zobrazení stavové lišty">
+<!ENTITY redo.label "Znovu">
+<!ENTITY redo.tooltip "Znovu provede poslední úpravu">
+<!ENTITY undo.label "Zpět">
+<!ENTITY undo.tooltip "Vrátí zpět poslední úpravu">
+<!ENTITY preferences.label "Možnosti">
+<!ENTITY preferences.tooltip "Otevře Možnosti">
+<!ENTITY javaScriptConsole.label "Konzola JavaScriptu">
+<!ENTITY javaScriptConsole.tooltip "Chybová konzola">
+<!ENTITY inspecter.label "DOM inspektor">
+<!ENTITY inspecter.tooltip "DOM Inspektor">
+<!ENTITY restart-app.label "Restartovat">
+<!ENTITY restart-app.tooltip "Restartovat aplikaci">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Zobrazí složku s profilem">
+<!ENTITY pagesetup.label "Vzhled stránky">
+<!ENTITY pagesetup.tooltip "Otvře nastavení vhledu stránky pro tisk">
+<!ENTITY help.label "Nápověda">
+<!ENTITY help.tooltip "Otevře nápovědu">
+<!ENTITY import.label "Import">
+<!ENTITY import.tooltip "Nahraje data a nastavení z jiných aplikací">
+<!ENTITY customize-toolbar.label "Upravit lištu">
+<!ENTITY customize-toolbar.tooltip "Upraví lištu tlačítek">
+<!ENTITY about-config.label "Editor předvoleb">
+<!ENTITY about-config.tooltip "Otevře Editor předvoleb">
+<!ENTITY toolbar-menu.label "Lišta">
+<!ENTITY toolbar-menu.tooltip "Přepíná viditelnost lišty">
+<!ENTITY check-for-update.label "Aktualizovat">
+<!ENTITY check-for-update.tooltip "Zkontorlovat dostupnost aktualizace">
+<!ENTITY minimize-window.label "Minimalizovat">
+<!ENTITY minimize-window.tooltip "Minimalizuje aktuální okno">
+<!ENTITY reload-proxy.label "Reload Proxy">
+<!ENTITY reload-proxy.tooltip "Reload Proxy">
+<!ENTITY change-text-direction.label "Směr textu">
+<!ENTITY change-text-direction.tooltip "Změní směr textu">
+<!ENTITY toggle-proxy.label "Toggle Proxy">
+<!ENTITY toggle-proxy.tooltip "Toggle The Proxy On &amp; Off">
+<!ENTITY tb-file-menu.label "File Menu">
+<!ENTITY tb-file-menu.tooltip "Show the file menu">
+<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
+<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
+<!ENTITY tb-edit-menu.label "Edit Menu">
+<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
+<!ENTITY tb-view-menu.label "View Menu">
+<!ENTITY tb-view-menu.tooltip "Show the view menu">
+<!ENTITY tb-tools-menu.label "Tools Menu">
+<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
+<!ENTITY forward-as-attachment.label "Forward as Attachment">
+<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">

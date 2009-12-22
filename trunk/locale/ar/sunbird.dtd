@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "حذف الأحداث">
+<!ENTITY delete-event.tooltip "حذف الأحداث المختارة">
+<!ENTITY delete-tasks.label "حذف الواجبات">
+<!ENTITY delete-tasks.tooltip "حذف الواجبات المختارة">
+<!ENTITY tasks-toggle.label "نقل الواجبات">
+<!ENTITY tasks-toggle.tooltip "نقل شريط الواجبات">
+<!ENTITY calendar-bar-toggle.label "نقل شريط الأدوات">
+<!ENTITY calendar-bar-toggle.tooltip "نقل شريط الأدوات الرئيسي">
+<!ENTITY about-sunbird.label "عن">
+<!ENTITY about-sunbird.tooltip "عن Sunbird">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

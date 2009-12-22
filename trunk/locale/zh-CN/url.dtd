@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "加载 Google 主页">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "加载 Wikipedia 主页">
+<!ENTITY firefox-extension.label "扩展">
+<!ENTITY firefox-extension.tooltip "获取更多 Firefox 扩展">
+<!ENTITY firefox-theme.label "主题">
+<!ENTITY firefox-theme.tooltip "获取更多 Firefox 主题">
+<!ENTITY thunderbird-extension.label "扩展">
+<!ENTITY thunderbird-extension.tooltip "获取更多 Thunderbird 扩展">
+<!ENTITY thunderbird-theme.label "主题">
+<!ENTITY thunderbird-theme.tooltip "获取更多 Thunderbird 主题">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "打开 Google 邮件">
+<!ENTITY yahoo-button.label "Yahoo 邮件">
+<!ENTITY yahoo-button.tooltip "打开 Yahoo 邮件">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "打开 Hotmail">
+<!ENTITY paypal.label "Paypal">
+<!ENTITY paypal.tooltip "打开 Paypal">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "打开 eBay">

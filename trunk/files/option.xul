@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE overlay
+[
+  <!ENTITY % brand SYSTEM "chrome://global/locale/brand.dtd"> %brand;
+  <!ENTITY % tbutton SYSTEM "chrome://{{chrome-name}}/locale/options.dtd"> %tbutton;
+]>
+<overlay id="tbutton-options-overlay"  
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<prefpane id="toolbar-buttons-prefpane" flex="1">
+		{{options}}
+	</prefpane>
+</overlay>

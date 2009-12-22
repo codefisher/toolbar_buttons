@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Afsluiten">
+<!ENTITY exit.tooltip "Toepassing afsluiten">
+<!ENTITY extensions.label "Extensies">
+<!ENTITY extensions.tooltip "Extensiebeheerder openen">
+<!ENTITY themes.label "Thema’s">
+<!ENTITY themes.tooltip "Themabeheerder openen">
+<!ENTITY addons.label "Add-ons">
+<!ENTITY addons.tooltip "Add-onsbeheerder openen">
+<!ENTITY installaddons.label "Installeren">
+<!ENTITY installaddons.tooltip "Een extensie of thema installeren">
+<!ENTITY statusbar-toggle.label "Statusbalk">
+<!ENTITY statusbar-toggle.tooltip "Statusbalk wisselen">
+<!ENTITY redo.label "Opnieuw uitvoeren">
+<!ENTITY redo.tooltip "Laatste wijziging ongedaan maken">
+<!ENTITY undo.label "Ongedaan maken">
+<!ENTITY undo.tooltip "Laatste wijziging ongedaan maken">
+<!ENTITY preferences.label "Opties">
+<!ENTITY preferences.tooltip "Opties openen">
+<!ENTITY javaScriptConsole.label "Console">
+<!ENTITY javaScriptConsole.tooltip "De foutconsole openen">
+<!ENTITY inspecter.label "DOM Inspector">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY restart-app.label "Herstarten">
+<!ENTITY restart-app.tooltip "Toepassing herstarten">
+<!ENTITY profile-folder.label "Profiel">
+<!ENTITY profile-folder.tooltip "Uw profielmap bekijken">
+<!ENTITY pagesetup.label "Pagina-instellingen">
+<!ENTITY pagesetup.tooltip "Instellen hoe de pagina wordt afgedrukt">
+<!ENTITY help.label "Help">
+<!ENTITY help.tooltip "Helpdocumenten openen">
+<!ENTITY import.label "Importeren">
+<!ENTITY import.tooltip "Instellingen en gegevens importeren">
+<!ENTITY customize-toolbar.label "Werkbalk">
+<!ENTITY customize-toolbar.tooltip "Werkbalk aanpassen">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config openen">
+<!ENTITY toolbar-menu.label "Werkbalken openen">
+<!ENTITY toolbar-menu.tooltip "Werkbalken verbergen/weergeven">
+<!ENTITY check-for-update.label "Bijwerken">
+<!ENTITY check-for-update.tooltip "Op updates controleren">
+<!ENTITY minimize-window.label "Minimaliseren">
+<!ENTITY minimize-window.tooltip "Huidig venster minimaliseren">
+<!ENTITY reload-proxy.label "Proxy opnieuw laden">
+<!ENTITY reload-proxy.tooltip "Proxy opnieuw laden">
+<!ENTITY change-text-direction.label "Tekstrichting wijzigen">
+<!ENTITY change-text-direction.tooltip "De tekstrichting wijzigen van links naar rechts of rechts naar links">
+<!ENTITY toggle-proxy.label "Proxy wisselen">
+<!ENTITY toggle-proxy.tooltip "De proxy in- en uitschakelen">
+<!ENTITY tb-file-menu.label "Menu Bestand">
+<!ENTITY tb-file-menu.tooltip "Menu Bestand weergeven">
+<!ENTITY tb-toggle-menu-bar.label "Menubalk wisselen">
+<!ENTITY tb-toggle-menu-bar.tooltip "De menubalk wisselen">
+<!ENTITY tb-edit-menu.label "Menu Bewerken">
+<!ENTITY tb-edit-menu.tooltip "Menu Bewerken weergeven">
+<!ENTITY tb-view-menu.label "Menu Beeld">
+<!ENTITY tb-view-menu.tooltip "Menu Beeld weergeven">
+<!ENTITY tb-tools-menu.label "Menu Extra">
+<!ENTITY tb-tools-menu.tooltip "Menu Extra weergeven">
+<!ENTITY forward-as-attachment.label "Als bijlage doorsturen">
+<!ENTITY forward-as-attachment.tooltip "Bericht als bijlage doorsturen">
+<!ENTITY forward-as-inline.label "Als bericht doorsturen">
+<!ENTITY forward-as-inline.tooltip "Bericht als onderdeel van het e-mailbericht doorsturen">

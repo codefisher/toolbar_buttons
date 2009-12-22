@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="help"
+	label="&help.label;"
+	tooltiptext="&help.tooltip;"
+	oncommand="openSupportURL();"/>

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="bookmark-toolbar"
+	label="&bookmark-toolbar.label;"
+	tooltiptext="&bookmark-toolbar.tooltip;"
+	oncommand="toolbar_buttons.toggleToolbar(event, 'PersonalToolbar');"/>

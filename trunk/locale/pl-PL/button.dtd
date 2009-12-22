@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Zamknij">
+<!ENTITY exit.tooltip "Wyjście z aplikacji">
+<!ENTITY extensions.label "Rozszerzenia">
+<!ENTITY extensions.tooltip "Otwórz menedżera rozszerzeń">
+<!ENTITY themes.label "Motywy">
+<!ENTITY themes.tooltip "Otwórz menedżera motywów">
+<!ENTITY addons.label "Dodatki">
+<!ENTITY addons.tooltip "Otwórz menedżera dodatków">
+<!ENTITY installaddons.label "Instaluj">
+<!ENTITY installaddons.tooltip "Instaluj rozszerzenie lub motyw">
+<!ENTITY statusbar-toggle.label "Pasek stanu">
+<!ENTITY statusbar-toggle.tooltip "Przełącz pasek statusu">
+<!ENTITY redo.label "Przywróć">
+<!ENTITY redo.tooltip "Przywróć ostatnią zmianę">
+<!ENTITY undo.label "Cofnij">
+<!ENTITY undo.tooltip "Cofnij ostatnią zmianę">
+<!ENTITY preferences.label "Opcje">
+<!ENTITY preferences.tooltip "Otwórz okno opcji">
+<!ENTITY javaScriptConsole.label "Konsola błędów">
+<!ENTITY javaScriptConsole.tooltip "Otwórz konsolę błędów JavaScript">
+<!ENTITY inspecter.label "Inspektor DOM">
+<!ENTITY inspecter.tooltip "Otwórz Inspektora DOM">
+<!ENTITY restart-app.label "Uruchom ponownie">
+<!ENTITY restart-app.tooltip "Uruchom ponownie aplikację">
+<!ENTITY profile-folder.label "Folder profilu">
+<!ENTITY profile-folder.tooltip "Otwórz folder profilu">
+<!ENTITY pagesetup.label "Ustawienia strony">
+<!ENTITY pagesetup.tooltip "Ustawienia strony do druku">
+<!ENTITY help.label "Pomoc">
+<!ENTITY help.tooltip "Otwórz plik pomocy">
+<!ENTITY import.label "Importuj">
+<!ENTITY import.tooltip "Importowanie ustawień i danych">
+<!ENTITY customize-toolbar.label "Pasek narzędzi">
+<!ENTITY customize-toolbar.tooltip "Dostosuj pasek narzędzi">
+<!ENTITY about-config.label "O konfiguracji aplikacji">
+<!ENTITY about-config.tooltip "Otwórz &quot;about:config&quot;">
+<!ENTITY toolbar-menu.label "Paski narzędzi">
+<!ENTITY toolbar-menu.tooltip "Ukryj/Pokaż paski narzędzi">
+<!ENTITY check-for-update.label "Aktualizacja">
+<!ENTITY check-for-update.tooltip "Sprawdź dostępność aktualizacji">
+<!ENTITY minimize-window.label "Minimalizuj">
+<!ENTITY minimize-window.tooltip "Minimalizuj aktywne okno">
+<!ENTITY reload-proxy.label "Przeładuj proxy">
+<!ENTITY reload-proxy.tooltip "Przeładuj proxy">
+<!ENTITY change-text-direction.label "Zmień kierunek tekstu">
+<!ENTITY change-text-direction.tooltip "Zmień kierunek tekstu z lewej do prawej lub z prawej do lewej">
+<!ENTITY toggle-proxy.label "Toggle Proxy">
+<!ENTITY toggle-proxy.tooltip "Toggle The Proxy On &amp; Off">
+<!ENTITY tb-file-menu.label "File Menu">
+<!ENTITY tb-file-menu.tooltip "Show the file menu">
+<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
+<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
+<!ENTITY tb-edit-menu.label "Edit Menu">
+<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
+<!ENTITY tb-view-menu.label "View Menu">
+<!ENTITY tb-view-menu.tooltip "Show the view menu">
+<!ENTITY tb-tools-menu.label "Tools Menu">
+<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
+<!ENTITY forward-as-attachment.label "Forward as Attachment">
+<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">

@@ -1,0 +1,22 @@
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Deschide Google">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Deschide Wikipedia">
+<!ENTITY firefox-extension.label "Extensii">
+<!ENTITY firefox-extension.tooltip "Obţine mai multe extensii Firefox">
+<!ENTITY firefox-theme.label "Teme">
+<!ENTITY firefox-theme.tooltip "Obţine mai multe teme Firefox">
+<!ENTITY thunderbird-extension.label "Extensii">
+<!ENTITY thunderbird-extension.tooltip "Obţine mai multe extensii Thunderbird">
+<!ENTITY thunderbird-theme.label "Teme">
+<!ENTITY thunderbird-theme.tooltip "Obţine mai multe teme Thunderbird">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Deschide Gmail">
+<!ENTITY yahoo-button.label "Yahoo! Mail">
+<!ENTITY yahoo-button.tooltip "Deschide Yahoo! Mail">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Deschide Hotmail">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Deschide Paypal">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Deschide eBay">

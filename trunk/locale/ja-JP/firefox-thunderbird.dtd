@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "オフライン作業">
+<!ENTITY workoffline.tooltip "オフライン作業を切り替えます">
+<!ENTITY delete.label "削除">
+<!ENTITY delete.tooltip "選択されたテキストを削除します">
+<!ENTITY find.label "検索">
+<!ENTITY find.tooltip "テキストを検索します">
+<!ENTITY saveas.label "保存">
+<!ENTITY saveas.tooltip "名前を付けてドキュメントを保存します">
+<!ENTITY select-all.label "すべて選択">
+<!ENTITY select-all.tooltip "すべてのテキストを選択します">
+<!ENTITY find-again.label "再び検索">
+<!ENTITY find-again.tooltip "次の一致を検索します">
+<!ENTITY find-prev.label "前を検索">
+<!ENTITY find-prev.tooltip "前の一致を検索します">
+<!ENTITY enlarge.label "テキストの拡大">
+<!ENTITY enlarge.tooltip "テキスト サイズを拡大します">
+<!ENTITY reduce.label "テキストの縮小">
+<!ENTITY reduce.tooltip "テキスト サイズを縮小します">
+<!ENTITY reset.label "テキスト サイズのリセット">
+<!ENTITY reset.tooltip "テキスト サイズをリセットします">
+<!ENTITY page-source.label "ソース">
+<!ENTITY page-source.tooltip "ページ ソースを表示します">
+<!ENTITY print-preview.label "印刷プレビュー">
+<!ENTITY print-preview.tooltip "印刷プレビューを開きます">
+<!ENTITY dictionary-list.label "辞書の変更">
+<!ENTITY dictionary-list.tooltip "現在の辞書をすばやく変更します">

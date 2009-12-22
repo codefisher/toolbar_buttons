@@ -1,0 +1,82 @@
+<!ENTITY realNextMessage.label "次のメッセージ">
+<!ENTITY realNextMessage.tooltip "本当の次のメッセージを取得します">
+<!ENTITY realPreviousMessage.label "前のメッセージ">
+<!ENTITY realPreviousMessage.tooltip "本当の前のメッセージを取得します">
+<!ENTITY send-with-no-save.label "保存せずに送信">
+<!ENTITY send-with-no-save.tooltip "コピーを保存せずにメッセージを送信します">
+<!ENTITY about-thunderbird.label "バージョン情報">
+<!ENTITY about-thunderbird.tooltip "Thunderbird について">
+<!ENTITY accountwizard.label "アカウント セットアップ">
+<!ENTITY accountwizard.tooltip "新しいアカウントをセットアップするのにウィザードを起動します">
+<!ENTITY accountmanager.label "アカウントの設定">
+<!ENTITY accountmanager.tooltip "アカウントの設定を開きます">
+<!ENTITY plainpaste.label "プレーン テキスト貼り付け">
+<!ENTITY plainpaste.tooltip "フォーマットなしで貼り付けます">
+<!ENTITY attachments-save.label "添付の保存">
+<!ENTITY attachments-save.tooltip "メッセージからすべての添付を保存します">
+<!ENTITY attachments-detach.label "添付の添付解除">
+<!ENTITY attachments-detach.tooltip "メッセージからすべての添付を添付解除します">
+<!ENTITY attachments-delete.label "添付の削除">
+<!ENTITY attachments-delete.tooltip "メッセージからすべての添付を削除します">
+<!ENTITY empty-trash.label "ごみ箱を空にする">
+<!ENTITY empty-trash.tooltip "ごみ箱フォルダを空にする">
+<!ENTITY not-junk.label "非迷惑メール">
+<!ENTITY not-junk.tooltip "迷惑メールではないとしてメッセージをマークします">
+<!ENTITY cut.label "切り取り">
+<!ENTITY cut.tooltip "テキストを切り取ります">
+<!ENTITY copy.label "コピー">
+<!ENTITY copy.tooltip "テキストをコピーします">
+<!ENTITY paste.label "貼り付け">
+<!ENTITY paste.tooltip "テキストを貼り付けます">
+<!ENTITY search-messages.label "メッセージの検索">
+<!ENTITY search-messages.tooltip "メッセージ検索を開きます">
+<!ENTITY search-addresses.label "アドレスの検索">
+<!ENTITY search-addresses.tooltip "アドレス検索を開きます">
+<!ENTITY msg-pane.label "メッセージ ペイン">
+<!ENTITY msg-pane.tooltip "メッセージ ペインを切り替えます">
+<!ENTITY purge.label "一掃">
+<!ENTITY purge.tooltip "フォルダを最適化し、迷惑メールを削除します">
+<!ENTITY compact.label "最適化">
+<!ENTITY compact.tooltip "フォルダを最適化します">
+<!ENTITY copy-address.label "電子メールのコピー">
+<!ENTITY copy-address.tooltip "クリップボードへ電子メール アドレスをコピーします">
+<!ENTITY add-address.label "電子メールの追加">
+<!ENTITY add-address.tooltip "アドレス帳へ電子メール アドレスをコピーします">
+<!ENTITY read-message.label "読む">
+<!ENTITY read-message.tooltip "メッセージを読みますRead Message">
+<!ENTITY delete-junk.label "迷惑メールの削除">
+<!ENTITY delete-junk.tooltip "迷惑メール メッセージを削除します">
+<!ENTITY msg-filter.label "フィルタ">
+<!ENTITY msg-filter.tooltip "メッセージ フィルタをセット アップします">
+<!ENTITY html-mode.label "HTML モード">
+<!ENTITY html-mode.tooltip "メッセージが HTML として表示されるかプレーン テキストかを設定します">
+<!ENTITY get-inbox.label "受信トレイ フォルダ">
+<!ENTITY get-inbox.tooltip "受信トレイへフォーカスされたフォルダを変更します">
+<!ENTITY send-receive.label "送受信">
+<!ENTITY send-receive.tooltip "メッセージを送信および受信します">
+<!ENTITY reply-sender.label "送信者のみへ返信">
+<!ENTITY reply-sender.tooltip "電子メールの送信者へのみ返信します">
+<!ENTITY create-filter.label "フィルタの作成">
+<!ENTITY create-filter.tooltip "メッセージからフィルタを作成します">
+<!ENTITY shift-delete.label "ごみ箱のスキップ">
+<!ENTITY shift-delete.tooltip "ごみ箱へ送信せずにメッセージを削除します">
+<!ENTITY edit-draft.label "下書きの編集">
+<!ENTITY edit-draft.tooltip "保存された下書きを編集します">
+<!ENTITY return-receipt.label "開封確認の返送">
+<!ENTITY return-receipt.tooltip "開封確認の返送のオン/オフを切り替えます">
+<!ENTITY all-threads.label "すべてのスレッド">
+<!ENTITY all-threads.tooltip "すべてのスレッドを表示します">
+<!ENTITY unread-threads.label "未読のスレッド">
+<!ENTITY unread-threads.tooltip "未読のスレッドを表示します">
+<!ENTITY with-unread-threads.label "未読のあるスレッド">
+<!ENTITY with-unread-threads.tooltip "未読のあるスレッドを表示します">
+<!ENTITY watched-with-unread-threads.label "未読のある監視中のスレッド">
+<!ENTITY watched-with-unread-threads.tooltip "未読のある監視中のスレッドを表示します">
+<!ENTITY ignored-threads.label "無視されたスレッド">
+<!ENTITY ignored-threads.tooltip "無視されたスレッドを表示します">
+<!ENTITY toggle-mail-toolbar.label "メール ツール バー">
+<!ENTITY toggle-mail-toolbar.tooltip "メール ツール バーを切り替えます">
+<!ENTITY toggle-starred.label "スターの切り替え">
+<!ENTITY toggle-starred.tooltip "スターの状態を切り替えます">
+<!ENTITY toggle-read.label "既読の切り替え">
+<!ENTITY toggle-read.tooltip "スターが付けられた既読を切り替えます">

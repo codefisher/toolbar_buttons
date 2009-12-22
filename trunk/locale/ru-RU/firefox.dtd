@@ -1,0 +1,145 @@
+<!ENTITY about-firefox.label "О программе">
+<!ENTITY about-firefox.tooltip "О Firefox">
+<!ENTITY firefox-toolbar.label "Панель навигации">
+<!ENTITY firefox-toolbar.tooltip "Показать\Скрыть Панель навигации">
+<!ENTITY toggle-personal-toolbar.label "Панель Закладок">
+<!ENTITY toggle-personal-toolbar.tooltip "Показать\Скрыть Панель Закладок">
+<!ENTITY undo-close-tab.label "Отменить закрытие вкладки">
+<!ENTITY undo-close-tab.tooltip "Открыть последнюю закрытую вкладку">
+<!ENTITY pageinfo.label "Информация о странице">
+<!ENTITY pageinfo.tooltip "Открыть окно с Информацией о странице">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Открыть страницу настроек">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Открыть страницу со списком установленных плагинов">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Открыть страницу для просмотра кешированных элементов">
+<!ENTITY about-mem-cache.label "about:cache В памяти">
+<!ENTITY about-mem-cache.tooltip "Открыть страницу для просмотра кешированных элементов в памяти">
+<!ENTITY about-disk-cache.label "about:cache На диске">
+<!ENTITY about-disk-cache.tooltip "Открыть страницу для просмотра кешированных элементов на диске">
+<!ENTITY websearch.label "Поиск в Сети">
+<!ENTITY websearch.tooltip "Поиск в Сети, используя ваш поисковый плагин по умолчанию">
+<!ENTITY bookmark.label "Добавить в Закладки">
+<!ENTITY bookmark.tooltip "Добавить в Закладки текущую страницу">
+<!ENTITY bookmark-tabs.label "Добавить все в Закладки">
+<!ENTITY bookmark-tabs.tooltip "Добавить в Закладки все открытые вкладки">
+<!ENTITY bookmark-manager.label "Управление Закладками">
+<!ENTITY bookmark-manager.tooltip "Открыть менеджер Закладок">
+<!ENTITY bookmark-toolbar.label "Панель Закладок">
+<!ENTITY bookmark-toolbar.tooltip "Показать\Скрыть Панель Закладок">
+<!ENTITY open.label "Открыть">
+<!ENTITY open.tooltip "Открыть файл">
+<!ENTITY save-frame.label "Сохранить Фрейм">
+<!ENTITY save-frame.tooltip "Сохранить Фрейм">
+<!ENTITY close-tab.label "Закрыть вкладку">
+<!ENTITY close-tab.tooltip "Закрыть открытую вкладку или окно">
+<!ENTITY send-link.label "Отправить ссылку">
+<!ENTITY send-link.tooltip "Отправить строку по Email">
+<!ENTITY bookmarks-menu-button.label "Меню Закладок">
+<!ENTITY bookmarks-menu-button.tooltip "Показать меню Закладок">
+<!ENTITY personal-bookmarks-menu-button.label "Меню панели закладок">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Показать меню панели закладок">
+<!ENTITY clear-url.label "Очистить строку адреса">
+<!ENTITY clear-url.tooltip "Очистить строку адреса">
+<!ENTITY close-all-tabs.label "Закрыть все">
+<!ENTITY close-all-tabs.tooltip "Закрыть все вкладки">
+<!ENTITY label-blank.label "Удалить название">
+<!ENTITY label-blank.tooltip "Удалить название текущей вкладки">
+<!ENTITY label-all-blank.label "Удалить названия">
+<!ENTITY label-all-blank.tooltip "Удалить названия всех вкладок">
+<!ENTITY read-news.label "Читать новости">
+<!ENTITY read-news.tooltip "Открыть приложение для чтения новостей">
+<!ENTITY read-mail.label "Читать почту">
+<!ENTITY read-mail.tooltip "Открыть приложение для чтения почты">
+<!ENTITY new-message.label "Новое сообщение">
+<!ENTITY new-message.tooltip "Написать новое сообщение электронной почты">
+<!ENTITY bookmark-nopop.label "Быстрая закладка">
+<!ENTITY bookmark-nopop.tooltip "Добавить закладку без подтверждения">
+<!ENTITY next-tab.label "Следующая вкладка">
+<!ENTITY next-tab.tooltip "Перейти к следующей вкладке">
+<!ENTITY previous-tab.label "Предыдущая вкладка">
+<!ENTITY previous-tab.tooltip "Перейти к предыдущей вкладке">
+<!ENTITY clear-data.label "Удалить данные">
+<!ENTITY clear-data.tooltip "Открыть диалоговое окно Удаления личных данных">
+<!ENTITY top-page.label "Вверх">
+<!ENTITY top-page.tooltip "Перейти в начало страницы">
+<!ENTITY bottom-page.label "Вниз">
+<!ENTITY bottom-page.tooltip "Перейти к концу страницы">
+<!ENTITY full-screen.label "Во весь экран">
+<!ENTITY full-screen.tooltip "Перейти в полноэкранный режим">
+<!ENTITY toggle-styles.label "Переключить стили">
+<!ENTITY toggle-styles.tooltip "Добавить/Удалить стили, определенные сайтами">
+<!ENTITY translate.label "Перевести">
+<!ENTITY translate.tooltip "Перевести текущую страницу на предопределенный язык">
+<!ENTITY show-frame.label "Показать фрейм">
+<!ENTITY show-frame.tooltip "Показать только этот фрейм">
+<!ENTITY rename-tab.label "Переименовать вкладку">
+<!ENTITY rename-tab.tooltip "Переименовать текущую вкладку">
+<!ENTITY reload-all-tabs.label "Обновить вкладки">
+<!ENTITY reload-all-tabs.tooltip "Обновить все открытые вкладки">
+<!ENTITY stop-all.label "Остановить все">
+<!ENTITY stop-all.tooltip "Остановить загрузку во всех открытых вкладках">
+<!ENTITY java-toggle.label "Переключить Java">
+<!ENTITY java-toggle.tooltip "Включить или Выключить Java">
+<!ENTITY javascript-toggle.label "Переключить JavaScript">
+<!ENTITY javascript-toggle.tooltip "Включить или Выключить JavaScript">
+<!ENTITY image-toggle.label "Переключить изображения">
+<!ENTITY image-toggle.tooltip "Включить или Отключить загрузку изображений">
+<!ENTITY restart-tab.label "Перезагрузить с вкладками">
+<!ENTITY restart-tab.tooltip "Перезагрузить с текущими вкладками">
+<!ENTITY close-other-tabs.label "Закрыть остальные">
+<!ENTITY close-other-tabs.tooltip "Закрыть все вкладки, кроме текущей">
+<!ENTITY hide-images.label "Скрыть изображения">
+<!ENTITY hide-images.tooltip "Скрыть все изображения и фоновые картинки на странице">
+<!ENTITY link-open.label "Настройки открытия ссылок">
+<!ENTITY link-open.tooltip "Настроить, как должны открываться ссылки">
+<!ENTITY clipboard.label "Ссылка из буфера обмена">
+<!ENTITY clipboard.tooltip "Открыть ссылку из буфера обмена">
+<!ENTITY clipboard.newtab "Ссылка из буфера обмена в новой вкладке">
+<!ENTITY clipboard.menuitem "Открыть ссылку из буфера обмена">
+<!ENTITY home-page-change.label "Изменить домашнюю страницу">
+<!ENTITY home-page-change.tooltip "Изменить вашу домашнюю страницу">
+<!ENTITY home-page-change.multiple "Сделать домашнюю страницу множеством ссылок">
+<!ENTITY favorite-page.label "Любимая страница">
+<!ENTITY favorite-page.tooltip "Открыть Любимую страницу">
+<!ENTITY tab-list.label "Список вклдаок">
+<!ENTITY tab-list.tooltip "Отобразить список вкладок">
+<!ENTITY stop-animation.label "Переключить анимацию">
+<!ENTITY stop-animation.tooltip "Остановить анимированные GIF, теги Blink и Marquee">
+<!ENTITY stop-flash.label "Переключить Flash">
+<!ENTITY stop-flash.tooltip "Переключить Flash">
+<!ENTITY stop-movies.label "Переключить видео">
+<!ENTITY stop-movies.tooltip "Переключить загрузку видео">
+<!ENTITY stop-iframe.label "Переключить iframe">
+<!ENTITY stop-iframe.tooltip "Отключить загрузку iframes и всю рекламу, которую они часто содержат">
+<!ENTITY stop-dinamic-content.label "Переключить встр. содержимое">
+<!ENTITY stop-dinamic-content.tooltip "Отключить встроенное содержимое">
+<!ENTITY stop-cookies.label "Переключить cookies">
+<!ENTITY stop-cookies.tooltip "Отключить регистрацию cookies">
+<!ENTITY stop-popups.label "Переключить вспл. окна">
+<!ENTITY stop-popups.tooltip "Отключить всплывающие окна">
+<!ENTITY reload-skip-cache.label "Обновить, минуя кеш">
+<!ENTITY reload-skip-cache.tooltip "Обновить страницу, минуя кеш">
+<!ENTITY open-current-frame.label "Показать этот фрейм">
+<!ENTITY open-current-frame.tooltip "Показать только выбранный фрейм">
+<!ENTITY up-directory.label "Выше">
+<!ENTITY up-directory.tooltip "Перейти на папку выше">
+<!ENTITY snap-back.label "Полный назад">
+<!ENTITY snap-back.tooltip "Перейти на самую первую страницу, открытую в этой вкладке">
+<!ENTITY min-font-size.label "Минимальный размер шрифта">
+<!ENTITY min-font-size.tooltip "Изменить минимальный размер шрифта">
+<!ENTITY use-document-colors.label "Переключить цвета страницы">
+<!ENTITY use-document-colors.tooltip "Переключиться между цветами страницы и цветами по умолчанию">
+<!ENTITY use-document-fonts.label "Переключить шрифт страницы">
+<!ENTITY use-document-fonts.tooltip "Переключиться между шрифтами страницы и шрифтами по умолчанию">
+<!ENTITY tiny-url.label "Маленький URL">
+<!ENTITY tiny-url.tooltip "Создать маленький URL">
+<!ENTITY tiny-url.copy.to.clipboard "Копировать в буфер обмена">
+<!ENTITY tiny-url.email "Отправить ссылку">
+<!ENTITY tiny-url.link.use "Настрйоки ссылки">
+<!ENTITY tiny-url.use.normal "Использовать xrl.in">
+<!ENTITY tiny-url.use.preview "Использовать preview.xrl.in">
+<!ENTITY tiny-url.visit "Посетить Xrl.In">
+<!ENTITY tb-clear-url.label "Clear Url">
+<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">
