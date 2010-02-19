@@ -33,7 +33,7 @@
 <!ENTITY search-addresses.label "Search Addresses">
 <!ENTITY search-addresses.tooltip "Open Addresses Search">
 <!ENTITY msg-pane.label "Message Pane">
-<!ENTITY msg-pane.tooltip "Toggel Message Pane">
+<!ENTITY msg-pane.tooltip "Toggle Message Pane">
 <!ENTITY purge.label "Purge">
 <!ENTITY purge.tooltip "Compact Folder, and Delete Junk">
 <!ENTITY compact.label "Compact">

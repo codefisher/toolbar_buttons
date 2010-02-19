@@ -6,6 +6,7 @@ import zipfile
 import StringIO
 from locales import Locale
 from button import Button
+from util import get_button_folders, get_locale_folders
 
 def build_extension(settings):
     locale_folders, locales = get_locale_folders(settings.LOCALE)
@@ -51,7 +52,7 @@ def build_extension(settings):
         jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
     jar.close()
         
-    xpi = zipfile.ZipFile(os.path.join(settings.OUTPUT, "extension.xpi"), "w", zipfile.ZIP_DEFLATED)
+    xpi = zipfile.ZipFile(settings.OUTPUT, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.JAR_FILE), jar_file.getvalue())
     jar_file.close()
     
@@ -129,24 +130,3 @@ def create_install(settings, applications, options=[]):
                     .replace("{{applications}}", 
                              "\n".join(supported_applications))
             )
-
-def get_button_folders(limit):
-    folders = get_folders(limit, "data")
-    return [os.path.join("data", folder) for folder in folders], folders
-    
-def get_locale_folders(limit):
-    folders = get_folders(limit, "locale")
-    return [os.path.join("locale", folder) for folder in folders], folders
-    
-def get_folders(limit, folder):
-    """Gets all the folders inside another and applies some filtering to it
-    
-    filter maybe the value "all" or a comer seperated list of values
-    
-    get_folders(str, str) -> list<str>
-    """
-    folders = os.listdir(folder)
-    if limit == "all":
-        return folders
-    else:
-        return list(set(folders).intersection(set(limit.split(","))))
