@@ -25,9 +25,6 @@ var load_toolbar_button = {
 	        load_toolbar_button.file_put_contents(extensionFlagFile,version);
 	        load_toolbar_button.load_url(url);
 	    }
-	    try {
-	        prefs.deleteBranch("extension.tbutton.version");
-	    } catch(e) {}
 	},	
 	file_put_contents: function(file,data){
 		var foStream = toolbar_button_interfaces.FileOutputStream();

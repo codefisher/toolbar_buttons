@@ -14,7 +14,8 @@ class Locale(object):
         
         for folder, locale in zip(folders, locales):
             files = [os.path.join(folder, file_name) 
-                     for file_name in os.listdir(folder)]
+                     for file_name in os.listdir(folder) 
+                     if not file_name.startswith(".")]
             for file_name in files:
                 if options == False and file_name.endswith("options.dtd"):
                     continue

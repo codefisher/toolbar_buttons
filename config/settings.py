@@ -12,6 +12,9 @@ BUTTONS = "all"
 APPLICATIONS = "all"
 LOCALE = "all"
 
+DATA_FOLDER = "data"
+LOCALE_FOLDER = "locale"
+
 JAR_FILE = "tbutton.jar"
 CHROME_NAME = "toolbar-button"
 
@@ -23,7 +26,7 @@ SHOW_UPDATED_PROMPT = True
 
 APPLICATIONS_DATA = {
     "browser":   (
-                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "3.6a1pre"),
+                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "3.7a1pre"),
                   ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.5.*")
                   ),
     "messenger": (
@@ -45,6 +48,7 @@ FILES_TO_OVERLAY = {
 
 FILE_TO_APPLICATION = {
      "browser": "browser",
+     "messenger": "messenger",
      "mail": "messenger",
      "compose": "messenger", 
      "read": "messenger",
@@ -64,6 +68,6 @@ FILE_TO_PALETTE = {
      "calendar": "calendarToolbarPalette"                  
 }
 
-OUTPUT = "/home/michael/Dev/Extension/ToolbarButtons/extenions"
+OUTPUT = "/home/michael/Dev/Extension/ToolbarButtons/extenions/extension.xpi"
 
 

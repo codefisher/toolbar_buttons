@@ -26,6 +26,7 @@ class Button():
         button_files.sort()
         group_files = self._settings.FILE_MAP.keys()
         group_files.sort()
+        button_files = list(set(button_files).difference(group_files))
         
         for folder, button in zip(self._folders, self._buttons):
             files = os.listdir(folder)
@@ -55,7 +56,10 @@ class Button():
             
             for file_name in (button_files + group_files):
                 js_file = file_name + ".js"
-                if js_file in files:
+                if (js_file in files
+                    and (file_name == "button" 
+                         or self._settings.FILE_TO_APPLICATION[file_name] 
+                            in self._applications)):
                     self._button_js[file_name].append(
                                 open(os.path.join(folder, js_file)).read())
                  
@@ -165,9 +169,9 @@ class Button():
                 values["size"] = large
                 lines.append("""#%(id)s%(modifier)s {\n\tlist-style-image:"""
                              """url("chrome://%(chrome_name)s/skin/%(size)s/"""
-                             """%(image)s");\n}""" % values)
+                             """%(image)s") !important;\n}""" % values)
                 values["size"] = small
-                lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s");\n}""" % values)
+                lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
         return "\n".join(lines), image_list
                    
     def get_js_files(self):
