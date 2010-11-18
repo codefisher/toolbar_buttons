@@ -47,7 +47,7 @@ def build_extension(settings):
     css, image_list = buttons.get_css_file()
     small, large = settings.ICON_SIZE
     jar.writestr(os.path.join("skin", "button.css"), css)
-    for image in image_list:
+    for image in set(image_list):
         jar.write(os.path.join(settings.IMAGE_PATH, small, image), os.path.join("skin", small, image))
         jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
     jar.close()
@@ -59,6 +59,7 @@ def build_extension(settings):
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
     xpi.write(settings.ICON, "icon.png")
+    xpi.write(settings.LICENCE, "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
     
