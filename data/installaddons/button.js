@@ -17,9 +17,9 @@ installAddons: function() {
         var fileType = path.substring(cutFileType);
         var fileProtocolHandler = toolbar_button_interfaces.IOService
         							.getProtocolHandler("file")
-                                    .QueryInterface(ci.nsIFileProtocolHandler);
+                                    .QueryInterface(Ci.nsIFileProtocolHandler);
         var url = fileProtocolHandler.newFileURI(fp.file)
-        			.QueryInterface(ci.nsIURL);
+        			.QueryInterface(Ci.nsIURL);
         if (fileType == "xpi") {
             var xpi = {};
             xpi[decodeURIComponent(url.fileBaseName)] = url.spec;
