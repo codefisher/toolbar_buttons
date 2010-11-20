@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="show-frame"
+	label="&show-frame.label;"
+	tooltiptext="&show-frame.tooltip;"
+	oncommand="toolbar_buttons.showOnlyThisFrame();" />

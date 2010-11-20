@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="personal-bookmarks-menu-button"
+	label="&personal-bookmarks-menu-button.label;"
+	tooltiptext="&personal-bookmarks-menu-button.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event,'bookmarksToolbarFolderMenu');"/>

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="close-tab"
+	label="&close-tab.label;"
+	tooltiptext="&close-tab.tooltip;"
+	command="cmd_close"/>
