@@ -1,5 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1 firefoxButton"
+	class="toolbarbutton-1"
 	id="bookmark-manager"
 	label="&bookmark-manager.label;"
 	tooltiptext="&bookmark-manager.tooltip;"

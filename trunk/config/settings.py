@@ -58,9 +58,11 @@ FILE_TO_APPLICATION = {
 }
 
 FILE_MAP = {
+    "loader": ("browser","mail","compose","read","calendar"),
     "button": ("browser","mail","compose","read","calendar"),
-    "messenger": ("mail","compose","read")
+    "messenger": ("mail","compose","read"),
 }
+FILE_MAP_KEYS = ["loader","button", "messenger"] # order is important
 
 FILE_TO_PALETTE = {
      "browser": "BrowserToolbarPalette",

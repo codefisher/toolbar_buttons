@@ -3,5 +3,5 @@
 	id="preferences"
 	label="&preferences.label;"
 	tooltiptext="&preferences.tooltip;"
-    onclick="toolbar_buttons.openOptionsTab(event);"
+	onclick="toolbar_buttons.openOptionsTab(event);"
 	command="menu_preferences"/>
