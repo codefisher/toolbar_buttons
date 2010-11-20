@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="about-cache"
+	label="&about-cache.label;"
+	tooltiptext="&about-cache.tooltip;"
+	onclick="toolbar_buttons.LoadURL('about:cache', event);" />

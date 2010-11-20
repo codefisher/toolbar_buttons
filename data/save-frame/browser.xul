@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="save-frame"
+	label="&save-frame.label;"
+	tooltiptext="&save-frame.tooltip;"
+	oncommand="saveFrameDocument();"/>

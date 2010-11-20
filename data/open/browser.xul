@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="open"
+	label="&open.label;"
+	tooltiptext="&open.tooltip;"
+	command="Browser:OpenFile"/>

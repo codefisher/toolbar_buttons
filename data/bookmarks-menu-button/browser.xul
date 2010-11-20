@@ -1,0 +1,11 @@
+<!-- the ondrag lets stuff be dropped into the icon to bookmark it -->
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="bookmarks-menu-button"
+	label="&bookmarks-menu-button.label;"
+	tooltiptext="&bookmarks-menu-button.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event,'bookmarksMenu');"
+	ondragenter="PlacesMenuDNDController.onBookmarksMenuDragEnter(event);"
+	ondrop="nsDragAndDrop.drop(event, BookmarksMenuDropHandler);"
+	ondragover="nsDragAndDrop.dragOver(event, BookmarksMenuDropHandler);"
+	ondragexit="nsDragAndDrop.dragExit(event, BookmarksMenuDropHandler);"/>
