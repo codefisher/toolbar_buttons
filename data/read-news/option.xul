@@ -1,0 +1,13 @@
+<groupbox flex="1">
+	<preferences>
+		<preference id="{{pref-root}}readnews.path" name="{{pref-root}}readnews.path" type="unichar"/>
+	</preferences>
+	<caption label="&readnews.path.caption;"/>
+	<box>
+		<label value="&readnews.path.desc;"/>
+	</box>
+	<box>
+		<textbox id="readnewspath" preference="{{pref-root}}readnews.path" flex="1"/>
+		<button label="&read.select.button;" style="float:right" oncommand="toolbar_buttons.getFile('readnewspath');"/>
+	</box>
+</groupbox>

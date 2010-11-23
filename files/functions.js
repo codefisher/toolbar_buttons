@@ -111,3 +111,62 @@ openMessengerWindowOrTab: function(url, event) {
 		}
 	}
 }
+
+getAppPath: function(Application) {
+	try {
+		var wrk = Components.classes['@mozilla.org/windows-registry-key;1']
+				.createInstance(Components.interfaces.nsIWindowsRegKey);
+		wrk.open(wrk.HKEY_CURRENT_USER, "SOFTWARE\\Clients\\" + Application + "\\", wrk.ACCESS_READ);
+		var appName = wrk.readStringValue("");
+		wrk.close();
+		wrk.open(wrk.HKEY_CURRENT_USER, "SOFTWARE\\Clients\\" + Application + "\\" + appName + "\\shell\\open\\command", wrk.ACCESS_READ);
+		var appPath = wrk.readStringValue("");
+		wrk.close();
+		if (appPath.match(/".*" .*/)) {
+			appPath = appPath.match(/"(.*)" .*/)[1];
+		}
+		return appPath;
+	} catch (e) {
+		return false;
+	}
+}
+
+initApp: function(Application) {
+	var prefs = toolbar_button_interfaces.ExtensionPrefBranch;
+	if (Application == "News" && prefs.getCharPref("readnews.path") != "") {
+		var appPath = prefs.getCharPref("readnews.path");
+	} else if (Application == "Mail" && prefs.getCharPref("readmail.path") != "") {
+		var appPath = prefs.getCharPref("readmail.path");
+	} else {
+		var appPath = toolbar_buttons.getAppPath(Application);
+	}
+	if (appPath) {
+		try {
+			var appFile = toolbar_button_interfaces.LocalFile();
+			appFile.initWithPath(appPath);
+			var process = toolbar_button_interfaces.Process();
+			process.init(appFile);
+			process.run(false, [], 0);
+			return;
+		} catch(e) {}
+	}
+	var stringBundle = toolbar_button_interfaces.StringBundleService
+		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+	var title = stringBundle.GetStringFromName("no-path-title");
+	var error = stringBundle.GetStringFromName("no-path-message-version");
+	toolbar_button_interfaces.PromptService.alert(window, title, error);
+
+}
+
+getFile: function(name) {
+	var stringBundle = toolbar_button_interfaces.StringBundleService
+		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+	var fp = toolbar_button_interfaces.FilePicker();
+	fp.init(window, stringBundle.GetStringFromName("filepath"), Ci.nsIFilePicker.modeOpen);
+	if (fp.show() == Ci.nsIFilePicker.returnOK) {
+		document.getElementById(name).value = fp.file.path;
+		var evt = document.createEvent("HTMLEvents");
+		evt.initEvent("input", true, true);
+		document.getElementById(name).dispatchEvent(evt);
+	}
+}
