@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="label-blank"
+	label="&label-blank.label;"
+	tooltiptext="&label-blank.tooltip;"
+	oncommand="toolbar_buttons.renameTabBlank();"/>

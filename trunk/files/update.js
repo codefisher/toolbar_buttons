@@ -10,7 +10,7 @@ if(!this.load_toolbar_button) {
 			}
 			var ext_id = "{{uuid}}";
 			var version = "{{version}}";
-			var prefs = toolbar_button_interfaces.PrefBranch;
+			var prefs = toolbar_button_interfaces.ExtensionPrefBranch;
 			var app_name = toolbar_button_interfaces.XULAppInfo().name;
 			var url = "{{version_url}}" + version + "?application=" + app_name.toLowerCase();
 
@@ -19,8 +19,8 @@ if(!this.load_toolbar_button) {
 			extensionFlagFile.append(ext_id);
 			extensionFlagFile.append("installed");
 
-			if(!extensionFlagFile.exists() && prefs.getCharPref("extension.tbutton.current.version") != version){
-				prefs.setCharPref("extension.tbutton.current.version", version);
+			if(!extensionFlagFile.exists() && prefs.getCharPref("current.version") != version){
+				prefs.setCharPref("current.version", version);
 				load_toolbar_button.file_put_contents(extensionFlagFile,version);
 				load_toolbar_button.load_url(url);
 			}

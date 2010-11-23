@@ -19,6 +19,7 @@ class Button():
         self._button_options = {}
         self._button_options_js = {}
         self._option_applications = set()
+        self._has_javascript = False
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -108,17 +109,18 @@ class Button():
         base_window = (open(os.path.join("files", "options.xul"), "r").read()
                        .replace("{{chrome-name}}", self._settings.CHROME_NAME)
                        .replace("{{javascript}}", javascript))
-        result["options"] = base_window
         overlay_window = (open(os.path.join("files", "option.xul"), "r").read()
                        .replace("{{chrome-name}}", self._settings.CHROME_NAME))
         files = defaultdict(list)
         for button, data in self._button_options.iteritems():
             for application in self._button_applications[button]:
                 self._option_applications.add(application)
-                files[application].append(data)
+                files[application].append(data.replace("{{pref-root}}", self._settings.PREF_ROOT))
+        if files:
+            result["options"] = base_window
         for application, data in files.iteritems():
             result["%s-options" % application] = overlay_window.replace("{{options}}",
-                                    "\n\t\t".join(",\n".join(data).split("\n")))
+                                    "\n\t\t\t".join("\n".join(data).split("\n")))
         return result
 
     def get_options_applications(self):
@@ -155,9 +157,9 @@ class Button():
         settings.append("""pref("extensions.%s.description","chrome://%s/locale/button.properties");"""
                         % (self._settings.EXTENSION_ID, self._settings.CHROME_NAME))
         if self._settings.SHOW_UPDATED_PROMPT:
-            settings.append("""pref("extension.tbutton.current.version", "");""")
+            settings.append("""pref("%scurrent.version", "");""" % self._settings.PREF_ROOT)
         for name, value in self._preferences.iteritems():
-            settings.append("""pref("%s", %s);""" % (name, value))
+            settings.append("""pref("%s%s", %s);""" % (self._settings.PREF_ROOT, name, value))
         return "\n".join(settings)
 
     def get_css_file(self):
@@ -197,15 +199,16 @@ class Button():
         js_files = defaultdict(str)
         js_files_end = {}
         js_includes = set()
-
+        js_options_include = set()
 
         for file_name, js in self._button_js.iteritems():
             js_file = "\n".join(js)
             js_includes.update(include_match.findall(js_file))
             js_file = include_match_replace.sub("", js_file)
-
-            js_files[file_name] = "\t" + "\n\t".join(
-                        ",\n".join(function_match.findall(js_file)).split("\n"))
+            js_functions = function_match.findall(js_file)
+            if js_functions:
+                js_files[file_name] = "\t" + "\n\t".join(
+                        ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
         js_functions = open(os.path.join("files", "functions.js"), "r").read()
@@ -213,18 +216,27 @@ class Button():
                            in function_name_match.findall(js_functions)
                            if name in js_includes]
         js_extra_file = "\n\t".join(",\n".join(extra_functions).split("\n"))
-        if js_files["button"]:
+        if js_files.get("button"):
             js_files["button"] += ",\n\t" + js_extra_file
-        else:
+        elif js_extra_file:
             js_files["button"] += js_extra_file
         for file_name in js_files_end:
-            js_files[file_name] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n%s\n});\n%s"
+            if js_files.get(file_name):
+                js_files[file_name] = (
+                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n%s"
                      % (js_files[file_name], js_files_end[file_name]))
+            else:
+                js_files[file_name] = js_files_end[file_name]
         if self._button_options_js:
+            for button, value in self._button_options_js.iteritems():
+                js_options_include.update(include_match.findall(value))
+                self._button_options_js[button] = include_match_replace.sub("", value)
+            self._button_options_js.update(dict((name, function) for function, name
+                               in function_name_match.findall(js_functions)
+                               if name in js_options_include))
             js_files["option"] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n%s\n});"
-                    % "\n\t".join(",\n".join(self._button_options_js.values()).split("\n")))
+                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});"
+                    % "\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")))
         if self._settings.SHOW_UPDATED_PROMPT:
             show_update = (open(os.path.join("files", "update.js"), "r").read()
                            .replace("{{uuid}}", self._settings.EXTENSION_ID)
@@ -250,12 +262,16 @@ class Button():
                         and (interface not in js_global_interfaces
                              or js_file == "button")):
                         lines.append(constructor)
-                js_files[js_file] = ("toolbar_button_loader("
+                if lines:
+                    js_files[js_file] = ("toolbar_button_loader("
                                        "toolbar_button_interfaces, {\n\t%s\n});\n%s"
-                                     % (",\n\t".join(lines), js_files[js_file]))
+                                     % (",\n\t".join(lines).replace("{{pref-root}}", self._settings.PREF_ROOT), js_files[js_file]))
             js_files[js_file] = js_files[js_file].replace("{{chrome_name}}",
                     self._settings.CHROME_NAME)
-        js_files["loader"] = open(os.path.join("files", "loader.js"), "r").read()
+        js_files = dict((key, value) for key, value in js_files.iteritems() if value)
+        if js_files:
+            self._has_javascript = True
+            js_files["loader"] = open(os.path.join("files", "loader.js"), "r").read()
         return js_files
 
     def get_properties_strings(self):
@@ -266,15 +282,19 @@ class Button():
         return self._properties_strings
 
     def get_xul_files(self):
+        """
+
+        Precondition: get_js_files() has been called
+        """
         template = open(os.path.join('files', 'button.xul')).read()
         group_files = self._settings.FILE_MAP_KEYS
         result = {}
         for file, values in self._button_xul.iteritems():
             js_includes = []
             for group_file in group_files:
-                if group_file in self._button_js and file in self._settings.FILE_MAP[group_file]:
+                if self._has_javascript and group_file in self._button_js and file in self._settings.FILE_MAP[group_file]:
                     js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.CHROME_NAME, group_file))
-            if file in self._button_js:
+            if  self._has_javascript and file in self._button_js:
                 js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.CHROME_NAME, file))
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
