@@ -48,8 +48,14 @@ def build_extension(settings):
     small, large = settings.ICON_SIZE
     jar.writestr(os.path.join("skin", "button.css"), css)
     for image in set(image_list):
-        jar.write(os.path.join(settings.IMAGE_PATH, small, image), os.path.join("skin", small, image))
-        jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
+        try:
+            jar.write(os.path.join(settings.IMAGE_PATH, small, image), os.path.join("skin", small, image))
+        except (OSError, IOError):
+            print "can not find file %s" % image
+        try:
+            jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
+        except (OSError, IOError):
+            print "can not find file %s" % image
     jar.close()
 
     xpi = zipfile.ZipFile(settings.OUTPUT, "w", zipfile.ZIP_DEFLATED)

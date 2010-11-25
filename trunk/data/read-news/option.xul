@@ -1,8 +1,9 @@
 <groupbox flex="1">
+	<caption label="&readnews.path.caption;"/>
+
 	<preferences>
 		<preference id="{{pref-root}}readnews.path" name="{{pref-root}}readnews.path" type="unichar"/>
 	</preferences>
-	<caption label="&readnews.path.caption;"/>
 	<box>
 		<label value="&readnews.path.desc;"/>
 	</box>

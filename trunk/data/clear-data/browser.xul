@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="clear-data"
+	label="&clear-data.label;"
+	tooltiptext="&clear-data.tooltip;"
+	command="Tools:Sanitize"/>

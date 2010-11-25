@@ -24,6 +24,7 @@ setToggleToolbar: function(toolbar_id, button_id) {
 	if(button) {
 		var toolbar = document.getElementById(toolbar_id);
 		button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
+		button.removeAttribute("checked");
 	}
 }
 
@@ -89,9 +90,7 @@ showAMenu: function(aEvent) {
 	if (!aMenu) {
 		toolbar_buttons.wrongVersion();
 	}
-	var box = aEvent.target.boxObject;
 	var popup = aMenu.firstChild.cloneNode(true);
-
 	if(aEvent.target.firstChild) {
 		aEvent.target.removeChild(aEvent.target.firstChild);
 	}
