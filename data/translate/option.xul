@@ -1,0 +1,11 @@
+<groupbox>
+	<caption label="&translate.label;"/>
+	<preferences>
+		<preference id="extension.tbutton.translate.lang" name="extension.tbutton.translate.lang" type="unichar"/>
+	</preferences>
+	<description>&translate.description;</description>
+	<script type="application/x-javascript">toolbar_buttons.loadTranslateOverlay();</script>
+	<menulist preference="extension.tbutton.translate.lang">
+		<menupopup id="translate-languages"/>
+	</menulist>
+</groupbox>

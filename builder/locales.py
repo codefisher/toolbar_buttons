@@ -11,10 +11,10 @@ class Locale(object):
         self._locales = locales
         self._dtd = defaultdict(dict)
         self._properties = defaultdict(dict)
-        
+
         for folder, locale in zip(folders, locales):
-            files = [os.path.join(folder, file_name) 
-                     for file_name in os.listdir(folder) 
+            files = [os.path.join(folder, file_name)
+                     for file_name in os.listdir(folder)
                      if not file_name.startswith(".")]
             for file_name in files:
                 if options == False and file_name.endswith("options.dtd"):
@@ -29,12 +29,12 @@ class Locale(object):
                                 name, value = line[9:-1].split(' ', 1)
                                 self._dtd[locale][name] = value
                             elif file_name.endswith(".properties"):
-                                name, value = line.split('=')
+                                name, value = line.split('=', 1)
                                 self._properties[locale][name] = value.strip()
 
     def get_dtd_data(self, strings):
         """Gets a set of files with all the strings wanted
-        
+
         get_dtd_data(list<str>) -> dict<str: str>
         """
         result = {}
@@ -42,23 +42,23 @@ class Locale(object):
             dtd_file = []
             for string in strings:
                 if self._settings.MISSING_STRINGS == "replace":
-                    dtd_file.append("""<!ENTITY %s %s>""" 
-                                % (string, self._dtd[locale].get(string, 
+                    dtd_file.append("""<!ENTITY %s %s>"""
+                                % (string, self._dtd[locale].get(string,
                                         self._dtd[self._settings.DEFAULT_LOCALE]
                                         .get(string, ""))))
                 elif self._settings.MISSING_STRINGS == "empty":
-                    dtd_file.append("""<!ENTITY %s %s>""" 
+                    dtd_file.append("""<!ENTITY %s %s>"""
                              % (string, self._dtd[locale].get(string, "")))
-                elif (self._settings.MISSING_STRINGS == "skip" 
+                elif (self._settings.MISSING_STRINGS == "skip"
                       and string in self._dtd[locale]):
-                    dtd_file.append("""<!ENTITY %s %s>""" 
+                    dtd_file.append("""<!ENTITY %s %s>"""
                                   % (string, self._dtd[locale][string]))
             result[locale] = "\n".join(dtd_file)
         return result
-    
+
     def get_properties_data(self, strings):
         """Gets a set of files with all the .properties strings wanted
-        
+
         get_dtd_data(list<str>) -> dict<str: str>
         """
         description = "extensions.%s.description" % self._settings.EXTENSION_ID
@@ -68,13 +68,13 @@ class Locale(object):
             for string in strings:
                 if self._settings.MISSING_STRINGS == "replace":
                     properties_file.append("%s=%s"
-                                % (string, self._properties[locale].get(string, 
+                                % (string, self._properties[locale].get(string,
                                         self._properties[self._settings.DEFAULT_LOCALE]
                                         .get(string, ""))))
                 elif self._settings.MISSING_STRINGS == "empty":
-                    properties_file.append("%s=%s" 
+                    properties_file.append("%s=%s"
                              % (string, self._properties[locale].get(string, "")))
-                elif (self._settings.MISSING_STRINGS == "skip" 
+                elif (self._settings.MISSING_STRINGS == "skip"
                       and string in self._properties[locale]):
                     properties_file.append("%s=%s"
                                   % (string, self._properties[locale][string]))
@@ -84,4 +84,3 @@ class Locale(object):
                 properties_file.append("%s=%s" % (description, self._properties[locale][description]))
             result[locale] = "\n".join(properties_file)
         return result
-        

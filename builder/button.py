@@ -1,6 +1,7 @@
 import os
 import re
 from collections import defaultdict
+import grayscale
 
 class Button():
     def __init__(self, folders, buttons, settings, applications):
@@ -164,14 +165,23 @@ class Button():
 
     def get_css_file(self):
         image_list = []
+        image_datas = {}
         lines = ["""@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");"""]
         values = {"chrome_name": self._settings.CHROME_NAME}
         small, large = self._settings.ICON_SIZE
         for button, image_data in self._button_image.iteritems():
             values["id"] = button
             for image, modifier in image_data:
+                if image[0] == "*":
+                    name = list(image[1:].rpartition('.'))
+                    name.insert(1, "-disabled")
+                    _image = "".join(name)
+                    image_datas[os.path.join("skin", small, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, small, image[1:]))
+                    image_datas[os.path.join("skin", large, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, large, image[1:]))
+                    image = _image
+                else:
+                    image_list.append(image)
                 values["image"] = image
-                image_list.append(image)
                 values["modifier"] = modifier
                 values["size"] = large
                 lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {\n\tlist-style-image:"""
@@ -179,7 +189,7 @@ class Button():
                              """%(image)s") !important;\n}""" % values)
                 values["size"] = small
                 lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
-        return "\n".join(lines), image_list
+        return "\n".join(lines), image_list, image_datas
 
     def get_js_files(self):
         interface_match = re.compile("(?<=toolbar_button_interfaces.)[a-zA-Z]*")
@@ -193,7 +203,7 @@ class Button():
                                    re.MULTILINE)
         include_match_replace = re.compile("^#include [a-zA-Z0-9_]*\n?",
                                            re.MULTILINE)
-        string_match = re.compile("StringFromName\(\"([a-zA-Z-]*)\"")
+        string_match = re.compile("StringFromName\(\"([a-zA-Z.-]*?)\"")
 
         multi_line_replace = re.compile("\n{2,}")
         js_files = defaultdict(str)
@@ -211,9 +221,9 @@ class Button():
                         ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
-        js_functions = open(os.path.join("files", "functions.js"), "r").read()
+        shared_functions = open(os.path.join("files", "functions.js"), "r").read()
         extra_functions = [function for function, name
-                           in function_name_match.findall(js_functions)
+                           in function_name_match.findall(shared_functions)
                            if name in js_includes]
         js_extra_file = "\n\t".join(",\n".join(extra_functions).split("\n"))
         if js_files.get("button"):
@@ -228,15 +238,20 @@ class Button():
             else:
                 js_files[file_name] = js_files_end[file_name]
         if self._button_options_js:
+            extra_javascript = []
             for button, value in self._button_options_js.iteritems():
                 js_options_include.update(include_match.findall(value))
-                self._button_options_js[button] = include_match_replace.sub("", value)
+                value = include_match_replace.sub("", value)
+                js_functions = function_match.findall(value)
+                self._button_options_js[button] = ",\n".join(js_functions)
+                extra_javascript.append(multi_line_replace.sub("\n",
+                                        function_match.sub("", value).strip()));
             self._button_options_js.update(dict((name, function) for function, name
-                               in function_name_match.findall(js_functions)
+                               in function_name_match.findall(shared_functions)
                                if name in js_options_include))
             js_files["option"] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});"
-                    % "\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")))
+                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
+                    % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
         if self._settings.SHOW_UPDATED_PROMPT:
             show_update = (open(os.path.join("files", "update.js"), "r").read()
                            .replace("{{uuid}}", self._settings.EXTENSION_ID)

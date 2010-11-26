@@ -3,4 +3,5 @@
 	id="show-frame"
 	label="&show-frame.label;"
 	tooltiptext="&show-frame.tooltip;"
+	observes="isImage"
 	oncommand="toolbar_buttons.showOnlyThisFrame();" />
