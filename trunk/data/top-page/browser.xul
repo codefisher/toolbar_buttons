@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="top-page"
+	label="&top-page.label;"
+	tooltiptext="&top-page.tooltip;"
+	oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollTop').doCommand('cmd_scrollTop');" />

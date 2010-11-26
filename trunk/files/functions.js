@@ -33,13 +33,16 @@ loadToggleToolbar: function(button_id, toolbar_id){
 			"load",
 			function(aEvent) {
 				toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
-				document.getElementById(toolbar_id).addEventListener(
-						"DOMAttrModified",
-						function(aEvent) {
-							toolbar_buttons.toggleToolbarButtonUpdate(aEvent,
-									button_id, toolbar_id);
-						},
-				false);
+				var toolbar = document.getElementById(toolbar_id);
+				if(toolbar) {
+					toolbar.addEventListener(
+							"DOMAttrModified",
+							function(aEvent) {
+								toolbar_buttons.toggleToolbarButtonUpdate(aEvent,
+										button_id, toolbar_id);
+							},
+					false);
+				}
 			},
 	true);
 }

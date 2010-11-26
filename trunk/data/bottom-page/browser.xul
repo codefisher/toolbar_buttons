@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="bottom-page"
+	label="&bottom-page.label;"
+	tooltiptext="&bottom-page.tooltip;"
+	oncommand="document.commandDispatcher.getControllerForCommand('cmd_scrollBottom').doCommand('cmd_scrollBottom');" />
