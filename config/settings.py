@@ -1,7 +1,7 @@
 NAME = "Toolbar Buttons"
 CREATOR = "Michael Buckley"
 DESCRIPTION = "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality."
-VERSION = "1.0a4"
+VERSION = "1.0a5"
 EXTENSION_ID = "{03B08592-E5B4-45ff-A0BE-C1D975458688}"
 HOMEPAGE = "http://codefisher.org/toolbar_button/"
 ICON = "files/button.png"
@@ -29,7 +29,7 @@ SHOW_UPDATED_PROMPT = True
 # I need to add SeaMonkey in here somewhere
 APPLICATIONS_DATA = {
     "browser":   (
-                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0b7pre"),
+                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0b8"),
                   ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.5.*")
                   ),
     "messenger": (

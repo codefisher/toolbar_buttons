@@ -1,21 +1,21 @@
 TranslatePage: function() {
 	var service = "http://translate.google.com/translate?u=";
 	var targetURI = getWebNavigation().currentURI.spec;
-	var prefs = Components.classes['@mozilla.org/preferences-service;1']
-				.getService(Components.interfaces.nsIPrefBranch);
-	var to = prefs.getCharPref("extension.tbutton.translate.lang");
-	var langs = "&lt=" + to;
+	var to = toolbar_button_interfaces.ExtensionPrefBranch.getCharPref("translate.lang");
+	var langs = "&tl=" + to;
 	if (targetURI.indexOf("translate.google.com") > 0 ||
-		targetURI.indexOf("64.233.179") > 0) {
+			targetURI.indexOf("64.233.179") > 0) {
 		BrowserReload();
 	} else {
-		loadURI(service + encodeURI(targetURI) + langs);
+		loadURI(service + encodeURIComponent(targetURI) + langs);
 	}
 }
 
 UpdateTranslateOverlay: function() {
 	var file = toolbar_button_interfaces.Properties.get('ProfD', Ci.nsIFile);
-	file.append("translate-options-overlay.xul");
+	file.append("extensions");
+	file.append("{{uuid}}");
+	file.append("translate-options.xul");
 	if(!file.exists() || ((new Date()).getTime() - file.lastModifiedTime) > 1000*60*60*24*7) {
 		var XMLhttp = new XMLHttpRequest();
 		XMLhttp.open("GET", "http://www.google.com/language_tools");
@@ -36,7 +36,9 @@ UpdateTranslateOverlayOnload: function(XMLhttp) {
 	xul += "</menupopup></overlay>";
 
 	var file = toolbar_button_interfaces.Properties.get('ProfD', Ci.nsIFile);
-	file.append("translate-options-overlay.xul");
+	file.append("extensions");
+	file.append("{{uuid}}");
+	file.append("translate-options.xul");
 	var foStream = toolbar_button_interfaces.FileOutputStream();
 	foStream.init(file, 0x02 | 0x08 | 0x20, 0664, 0);
 	foStream.write(xul, xul.length);

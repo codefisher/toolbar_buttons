@@ -1,20 +1,21 @@
 AppStartup:Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
 ExtensionManager:Cc['@mozilla.org/extensions/manager;1'].getService(Ci.nsIExtensionManager)
+ExtensionPrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref-root}}")
 ExternalProtocolService:Cc['@mozilla.org/uriloader/external-protocol-service;1'].getService(Ci.nsIExternalProtocolService)
 FileOutputStream:function() { return Cc['@mozilla.org/network/file-output-stream;1'].createInstance(Ci.nsIFileOutputStream); }
 FilePicker: function() { return Cc['@mozilla.org/filepicker;1'].createInstance(Ci.nsIFilePicker); }
 IOService:Cc['@mozilla.org/network/io-service;1'].getService(Ci.nsIIOService)
 LocalFile:function() { return Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile); }
+MsgAccountManager: Cc["@mozilla.org/messenger/account-manager;1"].getService(Ci.nsIMsgAccountManager)
 NavBookmarksService:Cc['@mozilla.org/browser/nav-bookmarks-service;1'].getService(Ci.nsINavBookmarksService)
 ObserverService:Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService)
 PrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefBranch)
-ExtensionPrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref-root}}")
+PrefService:Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService)
+Process: function() { return Cc['@mozilla.org/process/util;1'].createInstance(Ci.nsIProcess); }
 PromptService:Cc['@mozilla.org/embedcomp/prompt-service;1'].getService(Ci.nsIPromptService)
 Properties:Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties)
 StringBundleService:Cc['@mozilla.org/intl/stringbundle;1'].getService(Ci.nsIStringBundleService)
 SupportsPRBool:function() { return Cc["@mozilla.org/supports-PRBool;1"].createInstance(Ci.nsISupportsPRBool); }
 WindowMediator:Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
-XULAppInfo:function() { return Cc["@mozilla.org/xre/app-info;1"].createInstance(Ci.nsIXULAppInfo); }
-MsgAccountManager: Cc["@mozilla.org/messenger/account-manager;1"].getService(Ci.nsIMsgAccountManager)
-Process: function() { return Cc['@mozilla.org/process/util;1'].createInstance(Ci.nsIProcess); }
 WindowsRegKey: function() { if(Ci.nsIWindowsRegKey) return Cc['@mozilla.org/windows-registry-key;1'].createInstance(Ci.nsIWindowsRegKey); }
+XULAppInfo:function() { return Cc["@mozilla.org/xre/app-info;1"].createInstance(Ci.nsIXULAppInfo); }

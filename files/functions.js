@@ -172,3 +172,56 @@ getFile: function(name) {
 		document.getElementById(name).dispatchEvent(evt);
 	}
 }
+
+checkBrowserReload: function() {
+	if (toolbar_button_interfaces.ExtensionPrefBranch.getBoolPref("do.reload")) {
+		BrowserReload();
+	}
+}
+
+prefToggleStatus: function(button, pref) {
+	var prefs = toolbar_button_interfaces.PrefBranch,
+		state = prefs.getBoolPref(pref);
+	prefs.setBoolPref(pref, !state);
+	button.setAttribute("activated", !state);
+}
+
+PreferenceWatcher: {
+	prefs: null,
+	button: null,
+	type: null,
+	pref: null,
+
+	startup: function(pref, button, type) {
+		this.prefs = toolbar_button_interfaces.PrefService.getBranch(pref);
+		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
+		this.prefs.addObserver("", this, false);
+		this.button = document.getElementById(button);
+		this.type = type;
+		this.pref = pref;
+		this.setStatus();
+	},
+
+	shutdown: function() {
+		this.prefs.removeObserver("", this);
+	},
+
+	setStatus: function() {
+		var prefs = toolbar_button_interfaces.PrefBranch, state = null;
+		switch(this.type) {
+			case "bool":
+				state = prefs.getBoolPref(this.pref);
+				break;
+			default:
+				return;
+		}
+		this.button.setAttribute("activated", state);
+	},
+
+	observe: function(subject, topic, data) {
+		if (topic != "nsPref:changed") {
+			return;
+		}
+		this.setStatus();
+	},
+}
