@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="reload-all-tabs"
+	label="&reload-all-tabs.label;"
+	tooltiptext="&reload-all-tabs.tooltip;"
+	oncommand="gBrowser.reloadAllTabs();" />

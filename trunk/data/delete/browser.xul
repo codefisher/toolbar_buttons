@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1"
-	id="delete"
-	label="&delete.label;"
-	tooltiptext="&delete.tooltip;"
-	command="cmd_delete"/>

@@ -21,6 +21,7 @@ class Button():
         self._button_options_js = {}
         self._option_applications = set()
         self._has_javascript = False
+        self._manifest = []
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -80,7 +81,10 @@ class Button():
                 preferences = open(os.path.join(folder, "preferences"), "r")
                 for line in preferences:
                     name, value = line.split(":")
-                    self._preferences[name] = value
+                    self._preferences[name] = value\
+
+            if "manifest" in files:
+                self._manifest.append(open(os.path.join(folder, "manifest"), "r").read())
 
             if "option.xul" in files:
                 self._button_options[button] = open(os.path.join(folder, "option.xul"), "r").read()
@@ -96,6 +100,9 @@ class Button():
                                 self._settings.FILE_TO_APPLICATION[file_name])
         self._button_xul[file_name][button] = open(
                                         os.path.join(folder, xul_file)).read()
+
+    def get_manifest(self):
+        return "\n".join(self._manifest)
 
     def get_options(self):
         result = {}
@@ -194,10 +201,10 @@ class Button():
     def get_js_files(self):
         interface_match = re.compile("(?<=toolbar_button_interfaces.)[a-zA-Z]*")
         function_match = re.compile("^[a-zA-Z0-9_]*:\s*"
-                                    "function\([^\)]*\)\s*{.*?^}",
+                                    "(?:function\([^\)]*\)\s*)?{.*?^}",
                                     re.MULTILINE | re.DOTALL)
         function_name_match = re.compile("((^[a-zA-Z0-9_]*):\s*"
-                                         "function\s*\([^\)]*\)\s*{.*?^})",
+                                         "(?:function\s*\([^\)]*\)\s*)?{.*?^})",
                                           re.MULTILINE | re.DOTALL)
         include_match = re.compile("(?<=^#include )[a-zA-Z0-9_]*",
                                    re.MULTILINE)
@@ -217,6 +224,7 @@ class Button():
             js_file = include_match_replace.sub("", js_file)
             js_functions = function_match.findall(js_file)
             if js_functions:
+                js_functions.sort(key=lambda x: x.lower())
                 js_files[file_name] = "\t" + "\n\t".join(
                         ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
@@ -272,7 +280,9 @@ class Button():
             js_interfaces = set(interface_match.findall(js_data))
             if js_interfaces:
                 lines = []
-                for interface, constructor in interfaces.iteritems():
+                interfaces_list = interfaces.items()
+                interfaces_list.sort(key=lambda x: x[0].lower())
+                for interface, constructor in interfaces_list:
                     if (interface in js_interfaces
                         and (interface not in js_global_interfaces
                              or js_file == "button")):

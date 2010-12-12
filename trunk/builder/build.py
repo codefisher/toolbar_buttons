@@ -25,7 +25,8 @@ def build_extension(settings):
     jar = zipfile.ZipFile(jar_file, "w", zipfile.ZIP_STORED)
     #write files to jar
     for file, data in buttons.get_js_files().iteritems():
-        jar.writestr(os.path.join("content", file + ".js"), data)
+        jar.writestr(os.path.join("content", file + ".js"),
+                data.replace("{{uuid}}", settings.EXTENSION_ID))
 
     for file, data in buttons.get_xul_files().iteritems():
         jar.writestr(os.path.join("content", file + ".xul"), data)
@@ -83,9 +84,11 @@ def create_manifest(settings, locales, buttons, options=[]):
     lines.append("style\tchrome://global/content/customizeToolbar.xul"
                  "\tchrome://%(chrome)s/skin/button.css" % values)
 
-    lines.append("skin\t%(chrome)s-icon\tclassic/1.0\t./" % values)
-    lines.append("override chrome://%(chrome)s/skin/icon.png "
-                 "chrome://%(chrome)s-icon/skin/icon.png" % values)
+    lines.append("content\t%(chrome)s-root\t./" % values)
+    lines.append("skin\t%(chrome)s-root\tclassic/1.0\t./" % values)
+
+    lines.append("override\tchrome://%(chrome)s/skin/icon.png\t"
+                 "chrome://%(chrome)s-root/skin/icon.png" % values)
 
     for option in options:
         values["application"] = option
@@ -101,6 +104,9 @@ def create_manifest(settings, locales, buttons, options=[]):
             values["overlay"] = overlay
             lines.append("overlay\t%(overlay)s\t"
                          "chrome://%(chrome)s/content/%(file)s.xul" % values)
+    manifest = buttons.get_manifest()
+    if manifest:
+        lines.append(manifest % values)
 
     for locale in locales:
         values["locale"] = locale
