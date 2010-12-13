@@ -9,6 +9,7 @@ LocalFile:function() { return Cc["@mozilla.org/file/local;1"].createInstance(Ci.
 MsgAccountManager: Cc["@mozilla.org/messenger/account-manager;1"].getService(Ci.nsIMsgAccountManager)
 NavBookmarksService:Cc['@mozilla.org/browser/nav-bookmarks-service;1'].getService(Ci.nsINavBookmarksService)
 ObserverService:Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService)
+PluginHost:Cc["@mozilla.org/plugin/host;1"].getService(Ci.nsIPluginHost)
 PrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefBranch)
 PrefService:Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService)
 Process: function() { return Cc['@mozilla.org/process/util;1'].createInstance(Ci.nsIProcess); }
