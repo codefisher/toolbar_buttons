@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="minimize-window"
+	label="&minimize-window.label;"
+	tooltiptext="&minimize-window.tooltip;"
+	oncommand="window.minimize();" />

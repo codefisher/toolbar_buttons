@@ -186,42 +186,112 @@ prefToggleStatus: function(button, pref) {
 	button.setAttribute("activated", !state);
 }
 
-PreferenceWatcher: {
-	prefs: null,
-	button: null,
-	type: null,
-	pref: null,
+PreferenceWatcher: function() {
+	this.prefs = null;
+	this.button = null;
+	this.type = null;
+	this.pref = null;
 
-	startup: function(pref, button, type) {
+	this.startup = function(pref, button, type) {
 		this.prefs = toolbar_button_interfaces.PrefService.getBranch(pref);
 		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
 		this.button = document.getElementById(button);
 		this.type = type;
 		this.pref = pref;
-		this.setStatus();
-	},
+		try {
+			this.setStatus();
+		} catch(e) {} // pref might not exist
+	};
 
-	shutdown: function() {
+	this.shutdown = function() {
 		this.prefs.removeObserver("", this);
-	},
+	};
 
-	setStatus: function() {
+	this.setStatus = function() {
 		var prefs = toolbar_button_interfaces.PrefBranch, state = null;
 		switch(this.type) {
 			case "bool":
 				state = prefs.getBoolPref(this.pref);
 				break;
+			case "int":
+				state = prefs.getIntPref(this.pref);
+				break;
 			default:
 				return;
 		}
 		this.button.setAttribute("activated", state);
-	},
+	};
 
-	observe: function(subject, topic, data) {
+	this.observe = function(subject, topic, data) {
 		if (topic != "nsPref:changed") {
 			return;
 		}
 		this.setStatus();
+	};
+}
+
+PluginHelper: {
+	/*
+	 * Credit for much of this code belongs to Prefbar, and is used under the
+	 * terms of the GPL
+	 */
+	GetPluginTags: function() {
+		return toolbar_button_interfaces.PluginHost.getPluginTags({});
 	},
+
+	GetPluginEnabled: function(aRegEx) {
+		var plugins = this.GetPluginTags();
+		if (!plugins)
+			return false;
+		for ( var i = 0; i < plugins.length; i++) {
+			if (plugins[i].name.match(aRegEx) && !plugins[i].disabled)
+				return true;
+		}
+		return false;
+	},
+
+	SetPluginEnabled: function(aRegEx, aValue, aName) {
+		if (!aName)
+			aName = aRegEx.toString().replace(/[^a-z ]/gi, "");
+		var filenames = {};
+		var stringBundle = toolbar_button_interfaces.StringBundleService
+				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		var title = stringBundle.GetStringFromName("plugin-error");
+		var plugins = this.GetPluginTags();
+		if (!plugins)
+			return;
+		var found = false;
+		for ( var i = 0; i < plugins.length; i++) {
+			if (plugins[i].name.match(aRegEx)) {
+				plugins[i].disabled = !aValue;
+				var filename = plugins[i].filename;
+				// https://www.mozdev.org/bugs/show_bug.cgi?id=22582
+				if (filename in filenames) {
+					var message = stringBundle.formatStringFromName(
+							"mutiple-plugin-installed", [ aName ], 1);
+					toolbar_button_interfaces.PromptService.alert(lastWindow,
+							title, message);
+				}
+				filenames[filename] = true;
+				found = true;
+			}
+		}
+
+		if (!found) {
+			var lastWindow = toolbar_button_interfaces.WindowMediator
+					.getMostRecentWindow(null);
+			var message = stringBundle.formatStringFromName("plugin-not-found",
+					[ aName ], 1);
+			toolbar_button_interfaces.PromptService.alert(lastWindow, title,
+					message);
+		}
+	},
+}
+
+prefToggleNumber: function(button, pref, next) {
+	var prefs = toolbar_button_interfaces.PrefBranch,
+		setting = prefs.getIntPref(pref);
+	prefs.setIntPref(pref, next[setting]);
+	button.setAttribute("activated", next[setting]);
 }
