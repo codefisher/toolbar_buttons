@@ -36,6 +36,8 @@ def build_extension(settings):
 
     for locale, data in button_locales.get_properties_data(buttons.get_properties_strings()).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.properties"), data)
+    for name, path in buttons.get_extra_files().iteritems():
+        jar.write(path, os.path.join("content", name))
 
     options_strings = buttons.get_options_strings()
     if options_strings:

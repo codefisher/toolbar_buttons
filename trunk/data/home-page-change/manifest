@@ -1,0 +1,1 @@
+overlay	chrome://global/content/commonDialog.xul	chrome://%(chrome)s/content/commonDialog.xul

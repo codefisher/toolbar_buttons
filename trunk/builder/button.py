@@ -22,6 +22,7 @@ class Button():
         self._option_applications = set()
         self._has_javascript = False
         self._manifest = []
+        self._extra_files = {}
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -91,6 +92,12 @@ class Button():
 
             if "option.js" in files:
                 self._button_options_js[button] = open(os.path.join(folder, "option.js"), "r").read()
+            if "files" in files:
+                for file in os.listdir(os.path.join(folder, "files")):
+                    self._extra_files[file] = os.path.join(folder, "files", file)
+
+    def get_extra_files(self):
+        return self._extra_files
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = self._settings.FILE_TO_APPLICATION[file_name]
