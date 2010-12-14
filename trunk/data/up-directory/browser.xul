@@ -1,0 +1,9 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="up-directory"
+	label="&up-directory.label;"
+	tooltiptext="&up-directory.tooltip;"
+	type="menu-button"
+	oncommand="toolbar_buttons.upOneFolder();">
+		<menupopup onpopupshowing="toolbar_buttons.loadHigherFolders(this);" oncommand="event.stopPropagation();" />
+</toolbarbutton>

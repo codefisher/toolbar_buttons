@@ -1,0 +1,1 @@
+Go up one directory.  This effectively removes ever non forward slash character after the last one.
