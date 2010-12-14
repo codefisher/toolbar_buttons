@@ -201,7 +201,7 @@ class Button():
     def get_js_files(self):
         interface_match = re.compile("(?<=toolbar_button_interfaces.)[a-zA-Z]*")
         function_match = re.compile("^[a-zA-Z0-9_]*:\s*"
-                                    "(?:function\([^\)]*\)\s*)?{.*?^}",
+                                    "(?:function\([^\)]*\)\s*)?{.*?^}[^\n]*",
                                     re.MULTILINE | re.DOTALL)
         function_name_match = re.compile("((^[a-zA-Z0-9_]*):\s*"
                                          "(?:function\s*\([^\)]*\)\s*)?{.*?^})",
@@ -241,7 +241,7 @@ class Button():
         for file_name in js_files_end:
             if js_files.get(file_name):
                 js_files[file_name] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n%s"
+                    "toolbar_button_loader(toolbar_buttons, {\n%s\n});\n%s"
                      % (js_files[file_name], js_files_end[file_name]))
             else:
                 js_files[file_name] = js_files_end[file_name]
