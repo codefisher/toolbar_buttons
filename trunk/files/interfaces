@@ -1,4 +1,5 @@
 AppStartup:Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
+Clipboard:Cc['@mozilla.org/widget/clipboard;1'].getService(Ci.nsIClipboard)
 ExtensionManager:Cc['@mozilla.org/extensions/manager;1'].getService(Ci.nsIExtensionManager)
 ExtensionPrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref-root}}")
 ExternalProtocolService:Cc['@mozilla.org/uriloader/external-protocol-service;1'].getService(Ci.nsIExternalProtocolService)
@@ -17,6 +18,7 @@ PromptService:Cc['@mozilla.org/embedcomp/prompt-service;1'].getService(Ci.nsIPro
 Properties:Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperties)
 StringBundleService:Cc['@mozilla.org/intl/stringbundle;1'].getService(Ci.nsIStringBundleService)
 SupportsPRBool:function() { return Cc["@mozilla.org/supports-PRBool;1"].createInstance(Ci.nsISupportsPRBool); }
+Transferable:function() { return Cc['@mozilla.org/widget/transferable;1'].createInstance(Ci.nsITransferable); }
 WindowMediator:Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
 WindowsRegKey: function() { if(Ci.nsIWindowsRegKey) return Cc['@mozilla.org/windows-registry-key;1'].createInstance(Ci.nsIWindowsRegKey); }
 XULAppInfo:function() { return Cc["@mozilla.org/xre/app-info;1"].createInstance(Ci.nsIXULAppInfo); }
