@@ -93,17 +93,19 @@
 <!ENTITY hide-images.label "Hide Images">
 <!ENTITY hide-images.tooltip "Hide all images and backgrounds in current document">
 <!ENTITY link-open.label "Link Setting">
-<!ENTITY link-open.tooltip "Set How Links Open">
+<!ENTITY link-open.tooltip "Set how links open">
 <!ENTITY clipboard.label "Clipboard Link">
 <!ENTITY clipboard.tooltip "Get link from clipboard and open it">
 <!ENTITY clipboard.newtab "In New Tab">
 <!ENTITY clipboard.newwindow "In New Window">
-<!ENTITY clipboard.menuitem "Open Link From Clipboard">
+<!ENTITY clipboard.menuitem "Open link from clipboard">
 <!ENTITY home-page-change.label "Change Home">
-<!ENTITY home-page-change.tooltip "Change Your Home Page">
-<!ENTITY home-page-change.multiple "Set Home Page as Multiple Links">
+<!ENTITY home-page-change.tooltip "Change home page">
+<!ENTITY home-page-change.multiple "Set as multiple links">
+<!ENTITY home-page-change.current "Set as current page">
+<!ENTITY home-page-change.add-current "Add current page">
 <!ENTITY favorite-page.label "Favorite Page">
-<!ENTITY favorite-page.tooltip "Open Favourite Page">
+<!ENTITY favorite-page.tooltip "Open favourite page">
 <!ENTITY tab-list.label "Tab List">
 <!ENTITY tab-list.tooltip "Show Tab List">
 <!ENTITY stop-animation.label "Animation">
@@ -111,7 +113,7 @@
 <!ENTITY stop-flash.label "Flash">
 <!ENTITY stop-flash.tooltip "Stop Flash from Annoying you">
 <!ENTITY stop-movies.label "Movies">
-<!ENTITY stop-movies.tooltip "Stop Movies from loading">
+<!ENTITY stop-movies.tooltip "Stop movies from loading">
 <!ENTITY stop-iframe.label "iframes">
 <!ENTITY stop-iframe.tooltip "Stop iframes from loading and the ads they often contain">
 <!ENTITY stop-dinamic-content.label "Toggle embedded content">
@@ -125,7 +127,7 @@
 <!ENTITY open-current-frame.label "Current Frame">
 <!ENTITY open-current-frame.tooltip "Show only the currently selected frame">
 <!ENTITY up-directory.label "Up Directory">
-<!ENTITY up-directory.tooltip "Go up one Directory">
+<!ENTITY up-directory.tooltip "Go up one directory">
 <!ENTITY snap-back.label "Snap Back">
 <!ENTITY snap-back.tooltip "Go back to the first page opened in this tab">
 <!ENTITY min-font-size.label "Minimum Font Size">

@@ -1,5 +1,6 @@
 AppStartup:Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
 Clipboard:Cc['@mozilla.org/widget/clipboard;1'].getService(Ci.nsIClipboard)
+DialogParamBlock:Cc['@mozilla.org/embedcomp/dialogparam;1'].getService(Ci.nsIDialogParamBlock)
 ExtensionManager:Cc['@mozilla.org/extensions/manager;1'].getService(Ci.nsIExtensionManager)
 ExtensionPrefBranch:Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref-root}}")
 ExternalProtocolService:Cc['@mozilla.org/uriloader/external-protocol-service;1'].getService(Ci.nsIExternalProtocolService)
