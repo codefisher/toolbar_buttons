@@ -73,7 +73,7 @@ class Button():
                 for line in images:
                     name, _, modifier = line.partition(" ")
                     self._button_image[button].append((name.strip(),
-                                                       modifier.strip()))
+                                                       modifier.rstrip()))
             else:
                 raise ValueError("%s does not contain image listing." % folder)
 

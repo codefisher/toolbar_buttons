@@ -96,7 +96,8 @@
 <!ENTITY link-open.tooltip "Set How Links Open">
 <!ENTITY clipboard.label "Clipboard Link">
 <!ENTITY clipboard.tooltip "Get link from clipboard and open it">
-<!ENTITY clipboard.newtab "Open Link From Clipboard in New Tab">
+<!ENTITY clipboard.newtab "In New Tab">
+<!ENTITY clipboard.newwindow "In New Window">
 <!ENTITY clipboard.menuitem "Open Link From Clipboard">
 <!ENTITY home-page-change.label "Change Home">
 <!ENTITY home-page-change.tooltip "Change Your Home Page">

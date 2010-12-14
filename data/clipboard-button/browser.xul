@@ -1,0 +1,16 @@
+<toolbarbutton class="toolbarbutton-1"
+	type="menu-button"
+	id="clipboard-button"
+	label="&clipboard.label;"
+	tooltiptext="&clipboard.tooltip;"
+	oncommand="toolbar_buttons.clipboardLink.OpenLink();"
+	onclick="toolbar_buttons.clipboardLink.open(event);">
+	<menupopup id="clipboard-button-menu" oncommand="event.stopPropagation();">
+		<menuitem id="clipboard-button-load" label="&clipboard.menuitem;"
+			oncommand="toolbar_buttons.clipboardLink.OpenLink();"/>
+		<menuitem id="clipboard-button-tab" label="&clipboard.newtab;"
+			oncommand="toolbar_buttons.clipboardLink.OpenNewTab();"/>
+		<menuitem id="clipboard-button-window" label="&clipboard.newwindow;"
+			oncommand="toolbar_buttons.clipboardLink.OpenWindow();"/>
+	</menupopup>
+</toolbarbutton>

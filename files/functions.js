@@ -64,15 +64,14 @@ OpenAddonsMgr: function(type) {
 
 LoadURL: function(url, event) {
 	if (event.button == 1) {
-		var newPage = getBrowser().addTab(url);
-		getBrowser().selectedTab = newPage;
+		openNewTabWith(url, window.content.document, null, null, false);
 	} else if (event.button == 0) {
 		loadURI(url);
 	}
 }
 
 wrongVersion: function(event) {
-	var XulAppInfo = toolbar_button_interfaces.XULAppInfo()
+	var XulAppInfo = toolbar_button_interfaces.XULAppInfo();
 	var stringBundle = toolbar_button_interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var title = stringBundle.GetStringFromName("wrong-version-title");
