@@ -35,7 +35,7 @@ JavaToggle: {
 
 window.addEventListener("load", function(e) {
 	var prefWatch = new toolbar_buttons.PreferenceWatcher();
-	prefWatch.startup("security.enable_java", "java-toggle", "bool");
+	prefWatch.startup("security.enable_java", "java-toggle");
 	window.addEventListener("unload", function(e) {
 		prefWatch.shutdown();
 	}, false);

@@ -188,19 +188,20 @@ prefToggleStatus: function(button, pref) {
 PreferenceWatcher: function() {
 	this.prefs = null;
 	this.button = null;
-	this.type = null;
 	this.pref = null;
+	this.func = null;
 
-	this.startup = function(pref, button, type) {
+	this.startup = function(pref, button, func) {
 		this.prefs = toolbar_button_interfaces.PrefService.getBranch(pref);
 		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
-		this.button = document.getElementById(button);
-		this.type = type;
+		if(button)
+			this.button = document.getElementById(button);
+		this.func = func;
 		this.pref = pref;
-		try {
+		//try {
 			this.setStatus();
-		} catch(e) {} // pref might not exist
+		//} catch(e) {} // pref might not exist
 	};
 
 	this.shutdown = function() {
@@ -209,24 +210,33 @@ PreferenceWatcher: function() {
 
 	this.setStatus = function() {
 		var prefs = toolbar_button_interfaces.PrefBranch, state = null;
-		switch(this.type) {
-			case "bool":
+		switch(prefs.getPrefType(this.pref)) {
+			case prefs.PREF_BOOL:
 				state = prefs.getBoolPref(this.pref);
 				break;
-			case "int":
+			case prefs.PREF_INT:
 				state = prefs.getIntPref(this.pref);
+				break;
+			case prefs.PREF_STRING:
+				state = prefs.getCharPref(this.pref);
 				break;
 			default:
 				return;
 		}
-		this.button.setAttribute("activated", state);
+		if(this.func) {
+			this.func(state);
+		} else {
+			this.button.setAttribute("activated", state);
+		}
 	};
 
 	this.observe = function(subject, topic, data) {
 		if (topic != "nsPref:changed") {
 			return;
 		}
-		this.setStatus();
+		try {
+			this.setStatus();
+		} catch(e) {} // button might not exist
 	};
 }
 

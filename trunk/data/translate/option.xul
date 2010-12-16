@@ -1,9 +1,11 @@
 <groupbox>
 	<caption label="&translate.label;"/>
 	<preferences>
-		<preference id="{{pref-root}}translate.lang" name="{{pref-root}}translate.lang" type="unichar"/>
+		<preference id="{{pref-root}}translate.lang" name="{{pref-root}}translate.lang"
+			type="unichar"/>
 	</preferences>
-	<description>&translate.description;</description>
+	<description>&translate.description;
+	</description>
 	<menulist preference="{{pref-root}}translate.lang">
 		<menupopup id="translate-languages"/>
 	</menulist>
