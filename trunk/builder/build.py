@@ -62,7 +62,10 @@ def build_extension(settings):
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)
     jar.close()
-
+    if settings.PROFILE_FOLDER:
+        with open(os.path.join(settings.PROFILE_FOLDER, "extensions",
+                settings.EXTENSION_ID, "chrome", settings.JAR_FILE), "w") as fp:
+            fp.write(jar_file.getvalue())
     xpi = zipfile.ZipFile(settings.OUTPUT, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.JAR_FILE), jar_file.getvalue())
     jar_file.close()

@@ -185,6 +185,13 @@ prefToggleStatus: function(button, pref) {
 	button.setAttribute("activated", !state);
 }
 
+extesnionPrefToggleStatus: function(button, pref) {
+	var prefs = toolbar_button_interfaces.ExtensionPrefBranch,
+		state = prefs.getBoolPref(pref);
+	prefs.setBoolPref(pref, !state);
+	button.setAttribute("activated", !state);
+}
+
 PreferenceWatcher: function() {
 	this.prefs = null;
 	this.button = null;
@@ -199,9 +206,9 @@ PreferenceWatcher: function() {
 			this.button = document.getElementById(button);
 		this.func = func;
 		this.pref = pref;
-		//try {
+		// try {
 			this.setStatus();
-		//} catch(e) {} // pref might not exist
+		// } catch(e) {} // pref might not exist
 	};
 
 	this.shutdown = function() {
@@ -303,4 +310,38 @@ prefToggleNumber: function(button, pref, next) {
 		setting = prefs.getIntPref(pref);
 	prefs.setIntPref(pref, next[setting]);
 	button.setAttribute("activated", next[setting]);
+}
+
+cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
+	var sss = toolbar_button_interfaces.StyleSheetService,
+		ios = toolbar_button_interfaces.IOService;
+	var url = ios.newURI(aCssFile, null, null),
+		button = document.getElementById(buttonId);
+	if (sss.sheetRegistered(url, sss.USER_SHEET)) {
+		if (!button || remove || toggle) {
+			sss.unregisterSheet(url, sss.USER_SHEET);
+			return true;
+		}
+	} else {
+		if (button && (!remove || toggle)) {
+			sss.loadAndRegisterSheet(url, sss.USER_SHEET);
+			return false;
+		}
+	}
+	return false;
+}
+
+loadUserContentSheet: function(sheet, pref, buttonId) {
+	var sss = toolbar_button_interfaces.StyleSheetService,
+		ios = toolbar_button_interfaces.IOService,
+		prefs = toolbar_button_interfaces.ExtensionPrefBranch;
+	var url = ios.newURI(sheet, null, null);
+	try {
+		if (!prefs.getBoolPref(pref)
+				&& document.getElementById(buttonId)
+				&& !sss.sheetRegistered(url, sss.USER_SHEET)) {
+			sss.loadAndRegisterSheet(url, sss.USER_SHEET);
+		}
+	} catch (e) {
+	}
 }

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0"?>
+<bindings xmlns="http://www.mozilla.org/xbl"
+	  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	  xmlns:xbl="http://www.mozilla.org/xbl">
+
+ <binding id="block" flex="1" display="xul:hbox">
+
+    <implementation>
+      <constructor>
+      <![CDATA[ 
+        /* many thanks to the flash block team that said I could pinch
+         * their code - some time in the distant past */
+        //From Jesse's XPCNativeWrapper: http://mavra.perilith.com/~luser/content/native.js
+        function nativeMethod(untrustedObject, methodName)
+        {
+          // happier stack traces and faster multiple calls
+          var fun = Components.lookupMethod(untrustedObject, methodName);
+          
+          return function()
+          {
+            return fun.apply(untrustedObject, arguments);
+          }
+        }
+
+        function flashblockCreatePlaceholder(isStandalone) {
+	        // Create placeholder
+	        var flashblockCreateElement = nativeMethod(document, "createElement");
+	        var placeholder = flashblockCreateElement("div");
+	        placeholder.isStandalone = isStandalone;
+	        return placeholder;
+        }
+
+        // Substitute the animation with a placeholder
+        function flashblockShowPlaceholder() {
+	        // Just in case the object has been moved away from under our feet during
+	        // the timeout, re-assign the parent node. See bug 13680
+	        // parent = current.parentNode;
+	        var newParent = current.parentNode;
+	        parent = newParent ? newParent : parent;
+	        parent.insertBefore(placeholder, current);
+	        if(placeholder.isStandalone) {
+		        placeholder.flashblock = "frame";
+		        if ("StopPlay" in current)
+			        current.StopPlay();
+		        if ("LoadMovie" in current)
+			        current.LoadMovie(0, "");
+		        current.prevWidth = current.width;
+		        current.prevHeight = current.height;
+		        current.width = current.height = 0;
+	        } else {
+		        placeholder.flashblock = "normal";
+		        parent.removeChild(current); 
+	        }
+        }
+        
+        // Show the original animation
+        function flashblockShowFlash() {
+	        if(placeholder.flashblock == "frame") {
+		        current.height = current.prevHeight;
+		        current.width = current.prevWidth;
+		        current.src = placeholder.title;
+		        if ("LoadMovie" in current)
+			        current.LoadMovie(0, current.src);
+	        } else {
+		        parent.insertBefore(current, placeholder);
+		        if (placeholder.hasAttribute("srcAttribute")) {
+			        current.setAttribute("src", placeholder.getAttribute("srcAttribute"));
+		        }
+		        if (placeholder.hasAttribute("movieAttribute")) {
+			        current.setAttribute("movie", placeholder.getAttribute("movieAttribute"));
+		        }
+		        if (placeholder.hasAttribute("dataAttribute")) {
+			        current.setAttribute("data", placeholder.getAttribute("dataAttribute"));
+		        }
+		        if (placeholder.movieParam) {
+			        var mparam = placeholder.movieParam;
+			        mparam[0].value = mparam[1];
+		        }
+		        if (placeholder.hasAttribute("embedsrc")) {
+			        var embeds = current.getElementsByTagName("embed");
+			        if (embeds && embeds.length > 0) {
+				        embeds[0].setAttribute("src", placeholder.getAttribute("embedsrc"));
+			        }
+		        }
+	        }
+	        parent.removeChild(placeholder);
+        }
+        var current = this;
+        var parent = current.parentNode;
+
+        // Check parent too (case of working EMBED inside broken OBJECT)
+        if (current.overrideCTV || parentNode.overrideCTV) {
+	        return;
+        }
+        current.overrideCTV = true;
+
+        // Create placeholder div
+        var isStandalone = ("src" in current && current.src == current.ownerDocument.location);
+        var placeholder = flashblockCreatePlaceholder(isStandalone);
+        placeholder.style.background = '#fff url("data:image/png;base64,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") no-repeat center center';
+        placeholder.style.height = "100%";
+
+        // Replace the flash document with a placeholder.
+        var flashblockSetTimeout = nativeMethod(window, "setTimeout");
+        flashblockSetTimeout(flashblockShowPlaceholder, 0);
+        
+        // Replace the placeholder with the flash document.
+        placeholder.onclick = flashblockShowFlash;
+      ]]>
+      </constructor>
+    </implementation>
+ </binding>
+
+</bindings>

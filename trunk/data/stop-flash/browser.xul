@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="stop-flash"
+	label="&stop-flash.label;"
+	tooltiptext="&stop-flash.tooltip;"
+	oncommand="toolbar_buttons.stopFlash(this);" />
