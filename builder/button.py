@@ -300,7 +300,8 @@ class Button():
                                        "toolbar_button_interfaces, {\n\t%s\n});\n%s"
                                      % (",\n\t".join(lines).replace("{{pref-root}}", self._settings.PREF_ROOT), js_files[js_file]))
             js_files[js_file] = js_files[js_file].replace("{{chrome_name}}",
-                    self._settings.CHROME_NAME)
+                    self._settings.CHROME_NAME).replace("{{pref_root}}",
+                    self._settings.PREF_ROOT)
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
             self._has_javascript = True

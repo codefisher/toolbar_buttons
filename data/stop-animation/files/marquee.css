@@ -1,0 +1,8 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+
+/* Stop those <marquee> tags! */
+marquee {
+	-moz-binding : none !important;
+	display      : block;
+	height       : auto !important;
+}

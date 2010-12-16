@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="stop-movies"
+	label="&stop-movies.label;"
+	tooltiptext="&stop-movies.tooltip;"
+	oncommand="toolbar_buttons.stopMovies(this);" />

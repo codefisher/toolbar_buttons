@@ -75,5 +75,5 @@ FILE_TO_PALETTE = {
 }
 
 OUTPUT = "/home/michael/Dev/Extension/ToolbarButtons/extenions/toolbar_buttons.xpi"
-
+PROFILE_FOLDER = "/home/michael/.mozilla/firefox/0xq1gim8.Michael"
 
