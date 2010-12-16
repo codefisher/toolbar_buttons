@@ -5,5 +5,5 @@
 	tooltiptext="&up-directory.tooltip;"
 	type="menu-button"
 	oncommand="toolbar_buttons.upOneFolder();">
-		<menupopup onpopupshowing="toolbar_buttons.loadHigherFolders(this);" oncommand="event.stopPropagation();" />
+		<menupopup onpopupshowing="toolbar_buttons.loadHigherFolders(this, event);" oncommand="event.stopPropagation();" />
 </toolbarbutton>

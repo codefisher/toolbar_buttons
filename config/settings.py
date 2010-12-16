@@ -8,6 +8,7 @@ ICON = "files/button.png"
 LICENCE = "files/LICENCE"
 VERSION_URL = "http://codefisher.org/toolbar_button/version/"
 PREF_ROOT = "extension.tbutton."
+DEBUG=False
 
 IMAGE_PATH = "/home/michael/Pictures/PastelSVG/png"
 BUTTONS = "all"

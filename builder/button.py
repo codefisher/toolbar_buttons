@@ -186,12 +186,13 @@ class Button():
         for button, image_data in self._button_image.iteritems():
             values["id"] = button
             for image, modifier in image_data:
-                if image[0] == "*":
+                if image[0] == "*" or image[0] == "-":
                     name = list(image[1:].rpartition('.'))
                     name.insert(1, "-disabled")
                     _image = "".join(name)
-                    image_datas[os.path.join("skin", small, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, small, image[1:]))
-                    image_datas[os.path.join("skin", large, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, large, image[1:]))
+                    opacity = 1.0 if image[0] == "-" else 0.9
+                    image_datas[os.path.join("skin", small, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, small, image[1:]), opacity)
+                    image_datas[os.path.join("skin", large, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.IMAGE_PATH, large, image[1:]), opacity)
                     image = _image
                 else:
                     image_list.append(image)

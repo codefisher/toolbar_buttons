@@ -10,10 +10,20 @@ else:
     try:
         from config import settings
     except ImportError:
-        print "Failed to load settings."    
+        print "Failed to load settings."
         sys.exit(1)
 
 if __name__ == "__main__":
     start = time.time()
-    build_extension(settings)
+    if settings.DEBUG:
+        import cProfile
+        import pstats
+        cProfile.runctx("build_extension(settings)",
+                    {"build_extension": build_extension, "settings": settings}, {},
+                    "./stats")
+        prof = pstats.Stats("./stats")
+        prof.sort_stats('time') # time, cumulative
+        prof.print_stats()
+    else:
+        build_extension(settings)
     print time.time() - start

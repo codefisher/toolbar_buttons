@@ -14,21 +14,31 @@ trimFolderPath: function(pathname) {
 	return pathname.substring(0, pathname.substring(0, pathname.length - 1).lastIndexOf("/") + 1);
 }
 
-loadHigherFolders: function(popup) {
+loadHigherFolders: function(popup, event) {
 	while(popup.firstChild)
 		popup.removeChild(popup.firstChild);
 	var item = null, location = window.content.document.location,
 		pathname = location.pathname;
-	pathname = toolbar_buttons.trimFolderPath(pathname);
-	do {
+	if(!pathname) {
 		item = document.createElement("menuitem");
-		item.setAttribute("label", location.host + pathname);
-		item.addEventListener("command", function() {
-			window.content.document.location = location.protocol + "//" + location.host + pathname;
-		}, false);
-		popup.appendChild(item);
-		pathname = toolbar_buttons.trimFolderPath(pathname);
-	} while (pathname);
-	if(location.pathname == "/" && location.hash == "")
+		var stringBundle = toolbar_button_interfaces.StringBundleService
+			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		var empty = stringBundle.GetStringFromName("empty");
+		item.setAttribute("label", empty);
 		item.setAttribute("disabled", true);
+		popup.appendChild(item);
+	} else {
+		pathname = toolbar_buttons.trimFolderPath(pathname);
+		do {
+			item = document.createElement("menuitem");
+			item.setAttribute("label", location.host + pathname);
+			item.addEventListener("command", function() {
+				window.content.document.location = location.protocol + "//" + location.host + pathname;
+			}, false);
+			popup.appendChild(item);
+			pathname = toolbar_buttons.trimFolderPath(pathname);
+		} while (pathname);
+		if(location.pathname == "/" && location.hash == "")
+			item.setAttribute("disabled", true);
+	}
 }

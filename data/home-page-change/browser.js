@@ -86,8 +86,9 @@ homeList: function(item) {
 	for (var i = 0; str[i] != null; i++) {
 		var menuitem = document.createElement("menuitem");
 		menuitem.setAttribute("label", str[i]);
+		var url = str[i];
 		item.addEventListener("click", function(event) {
-			toolbar_buttons.LoadURL(str[i], event);
+			toolbar_buttons.LoadURL(url, event);
 		}, false);
 		item.appendChild(menuitem);
 	}

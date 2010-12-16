@@ -9,7 +9,7 @@ toggleJavaScript: function(button) {
 
 window.addEventListener("load", function(e) {
 	var prefWatch = new toolbar_buttons.PreferenceWatcher();
-	prefWatch.startup("javascript.enabled", "javascript-toggle", "bool");
+	prefWatch.startup("javascript.enabled", "javascript-toggle");
 	window.addEventListener("unload", function(e) {
 		prefWatch.shutdown();
 	}, false);
