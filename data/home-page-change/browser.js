@@ -1,7 +1,5 @@
-#include LoadURL
-
 homePageStrings: function() {
-	var stringBundle = toolbar_button_interfaces.StringBundleService
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 	.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	return {
 		'title': stringBundle.GetStringFromName("home-page.title"),
@@ -12,19 +10,19 @@ homePageStrings: function() {
 }
 
 homePageChange: function() {
-	var prefs = toolbar_button_interfaces.PrefBranch;
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var strings = toolbar_buttons.homePageStrings();
 	var value = prefs.getCharPref("browser.startup.homepage");
 	var str = value.split("|");
 	var input = {value: str[0]};
-	var result = toolbar_button_interfaces.PromptService.prompt(null, strings["title"], strings["message"], input, null, {check: false});
+	var result = toolbar_buttons.interfaces.PromptService.prompt(null, strings["title"], strings["message"], input, null, {check: false});
 	if (result)
 		prefs.setCharPref("browser.startup.homepage", input.value);
 }
 
 homePageChangeMultiple: function() {
-	var prefs = toolbar_button_interfaces.PrefBranch;
-	var args = toolbar_button_interfaces.DialogParamBlock;
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
+	var args = toolbar_buttons.interfaces.DialogParamBlock;
 	var strings = toolbar_buttons.homePageStrings();
 	var value = prefs.getCharPref("browser.startup.homepage");
 	var str = value.split("|");
@@ -63,11 +61,11 @@ homePageChangeMultiple: function() {
 }
 
 homePageSetCurrent: function() {
-	toolbar_button_interfaces.PrefBranch.setCharPref("browser.startup.homepage", window.content.document.location.href)
+	toolbar_buttons.interfaces.PrefBranch.setCharPref("browser.startup.homepage", window.content.document.location.href)
 }
 
 homePageAddCurrent: function() {
-	var prefs = toolbar_button_interfaces.PrefBranch;
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var homePage = prefs.getCharPref("browser.startup.homepage");
 	if(homePage)
 		homePage += "|";
@@ -80,7 +78,7 @@ homeList: function(item) {
 	while (item.lastChild != command) {
 		item.removeChild(item.lastChild);
 	}
-	var prefs = toolbar_button_interfaces.PrefBranch;
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var links = prefs.getCharPref("browser.startup.homepage");
 	var str = links.split("|");
 	for (var i = 0; str[i] != null; i++) {

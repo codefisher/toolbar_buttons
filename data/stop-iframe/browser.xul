@@ -3,4 +3,4 @@
 	id="stop-iframe"
 	label="&stop-iframe.label;"
 	tooltiptext="&stop-iframe.tooltip;"
-	oncommand="toolbar_buttons.stopIframe(this);" />
+	oncommand="toolbar_buttons.stopContent(this, 'iframe');" />

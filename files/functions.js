@@ -3,18 +3,25 @@
 toggleToolbar: function(aEvent, toolbar_id) {
 	if(toolbar_id != aEvent.originalTarget.parentNode.id) {
 		var toolbar = document.getElementById(toolbar_id);
-		toolbar.collapsed = !toolbar.collapsed;
-		document.persist(toolbar_id, "collapsed");
+		try {
+			// Firefox 4, mainly the bookmark toolbar button
+			setToolbarVisibility(toolbar, toolbar.collapsed || toolbar.autohide);
+		} catch(e) {
+			toolbar.collapsed = !toolbar.collapsed;
+			document.persist(toolbar_id, "collapsed");
+		}
 	}
 }
 
 toggleToolbarButtonUpdate: function(aEvent, button_id, toolbar_id) {
 	// normal toolbars use collapsed, the statusbar uses hidden
-	if((aEvent.attrName == "collapsed" || aEvent.attrName == "hidden")) {
+	if((aEvent.attrName == "collapsed" || aEvent.attrName == "hidden"
+			|| aEvent.attrName == "autohide")) {
 		var button = document.getElementById(button_id);
 		if(button && aEvent.originalTarget.id == toolbar_id) {
 			var toolbar = aEvent.originalTarget;
-			button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
+			button.setAttribute("activated",
+					toolbar.collapsed || toolbar.hidden || toolbar.autohide);
 		}
 	}
 }
@@ -32,9 +39,9 @@ loadToggleToolbar: function(button_id, toolbar_id){
 	window.addEventListener(
 			"load",
 			function(aEvent) {
-				toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
 				var toolbar = document.getElementById(toolbar_id);
 				if(toolbar) {
+					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
 					toolbar.addEventListener(
 							"DOMAttrModified",
 							function(aEvent) {
@@ -48,7 +55,7 @@ loadToggleToolbar: function(button_id, toolbar_id){
 }
 
 OpenAddonsMgr: function(type) {
-	var extensionManager = toolbar_button_interfaces.WindowMediator
+	var extensionManager = toolbar_buttons.interfaces.WindowMediator
 					.getMostRecentWindow("Extension:Manager");
 	if (extensionManager) {
 		extensionManager.focus();
@@ -63,22 +70,24 @@ OpenAddonsMgr: function(type) {
 }
 
 LoadURL: function(url, event) {
-	if (event.button == 1) {
-		openNewTabWith(url, window.content.document, null, null, false);
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+	if (event.button == 1 || prefs.getBoolPref("always.new.tab")) {
+		var newPage = getBrowser().addTab(url);
+		getBrowser().selectedTab = newPage;
 	} else if (event.button == 0) {
 		loadURI(url);
 	}
 }
 
 wrongVersion: function(event) {
-	var XulAppInfo = toolbar_button_interfaces.XULAppInfo();
-	var stringBundle = toolbar_button_interfaces.StringBundleService
+	var XulAppInfo = toolbar_buttons.interfaces.XULAppInfo();
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var title = stringBundle.GetStringFromName("wrong-version-title");
 	var error = stringBundle.formatStringFromName("wrong-version",
 					[event.target.label, XulAppInfo.name,
 					 	XulAppInfo.version], 3);
-	toolbar_button_interfaces.PromptService.alert(window, title, error);
+	toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 }
 
 showAMenu: function(aEvent) {
@@ -133,7 +142,7 @@ getAppPath: function(Application) {
 }
 
 initApp: function(Application) {
-	var prefs = toolbar_button_interfaces.ExtensionPrefBranch;
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	if (Application == "News" && prefs.getCharPref("readnews.path") != "") {
 		var appPath = prefs.getCharPref("readnews.path");
 	} else if (Application == "Mail" && prefs.getCharPref("readmail.path") != "") {
@@ -143,26 +152,26 @@ initApp: function(Application) {
 	}
 	if (appPath) {
 		try {
-			var appFile = toolbar_button_interfaces.LocalFile();
+			var appFile = toolbar_buttons.interfaces.LocalFile();
 			appFile.initWithPath(appPath);
-			var process = toolbar_button_interfaces.Process();
+			var process = toolbar_buttons.interfaces.Process();
 			process.init(appFile);
 			process.run(false, [], 0);
 			return;
 		} catch(e) {}
 	}
-	var stringBundle = toolbar_button_interfaces.StringBundleService
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var title = stringBundle.GetStringFromName("no-path-title");
 	var error = stringBundle.GetStringFromName("no-path-message-version");
-	toolbar_button_interfaces.PromptService.alert(window, title, error);
+	toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 
 }
 
 getFile: function(name) {
-	var stringBundle = toolbar_button_interfaces.StringBundleService
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
-	var fp = toolbar_button_interfaces.FilePicker();
+	var fp = toolbar_buttons.interfaces.FilePicker();
 	fp.init(window, stringBundle.GetStringFromName("filepath"), Ci.nsIFilePicker.modeOpen);
 	if (fp.show() == Ci.nsIFilePicker.returnOK) {
 		document.getElementById(name).value = fp.file.path;
@@ -173,20 +182,20 @@ getFile: function(name) {
 }
 
 checkBrowserReload: function() {
-	if (toolbar_button_interfaces.ExtensionPrefBranch.getBoolPref("do.reload")) {
+	if (toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("do.reload")) {
 		BrowserReload();
 	}
 }
 
 prefToggleStatus: function(button, pref) {
-	var prefs = toolbar_button_interfaces.PrefBranch,
+	var prefs = toolbar_buttons.interfaces.PrefBranch,
 		state = prefs.getBoolPref(pref);
 	prefs.setBoolPref(pref, !state);
 	button.setAttribute("activated", !state);
 }
 
 extesnionPrefToggleStatus: function(button, pref) {
-	var prefs = toolbar_button_interfaces.ExtensionPrefBranch,
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch,
 		state = prefs.getBoolPref(pref);
 	prefs.setBoolPref(pref, !state);
 	button.setAttribute("activated", !state);
@@ -199,7 +208,7 @@ PreferenceWatcher: function() {
 	this.func = null;
 
 	this.startup = function(pref, button, func) {
-		this.prefs = toolbar_button_interfaces.PrefService.getBranch(pref);
+		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
 		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
 		if(button)
@@ -216,7 +225,7 @@ PreferenceWatcher: function() {
 	};
 
 	this.setStatus = function() {
-		var prefs = toolbar_button_interfaces.PrefBranch, state = null;
+		var prefs = toolbar_buttons.interfaces.PrefBranch, state = null;
 		switch(prefs.getPrefType(this.pref)) {
 			case prefs.PREF_BOOL:
 				state = prefs.getBoolPref(this.pref);
@@ -232,7 +241,7 @@ PreferenceWatcher: function() {
 		}
 		if(this.func) {
 			this.func(state);
-		} else {
+		} else if(this.button) {
 			this.button.setAttribute("activated", state);
 		}
 	};
@@ -253,7 +262,7 @@ PluginHelper: {
 	 * terms of the GPL
 	 */
 	GetPluginTags: function() {
-		return toolbar_button_interfaces.PluginHost.getPluginTags({});
+		return toolbar_buttons.interfaces.PluginHost.getPluginTags({});
 	},
 
 	GetPluginEnabled: function(aRegEx) {
@@ -271,7 +280,7 @@ PluginHelper: {
 		if (!aName)
 			aName = aRegEx.toString().replace(/[^a-z ]/gi, "");
 		var filenames = {};
-		var stringBundle = toolbar_button_interfaces.StringBundleService
+		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 		var title = stringBundle.GetStringFromName("plugin-error");
 		var plugins = this.GetPluginTags();
@@ -286,7 +295,7 @@ PluginHelper: {
 				if (filename in filenames) {
 					var message = stringBundle.formatStringFromName(
 							"mutiple-plugin-installed", [ aName ], 1);
-					toolbar_button_interfaces.PromptService.alert(lastWindow,
+					toolbar_buttons.interfaces.PromptService.alert(lastWindow,
 							title, message);
 				}
 				filenames[filename] = true;
@@ -295,26 +304,26 @@ PluginHelper: {
 		}
 
 		if (!found) {
-			var lastWindow = toolbar_button_interfaces.WindowMediator
+			var lastWindow = toolbar_buttons.interfaces.WindowMediator
 					.getMostRecentWindow(null);
 			var message = stringBundle.formatStringFromName("plugin-not-found",
 					[ aName ], 1);
-			toolbar_button_interfaces.PromptService.alert(lastWindow, title,
+			toolbar_buttons.interfaces.PromptService.alert(lastWindow, title,
 					message);
 		}
 	},
 }
 
 prefToggleNumber: function(button, pref, next) {
-	var prefs = toolbar_button_interfaces.PrefBranch,
+	var prefs = toolbar_buttons.interfaces.PrefBranch,
 		setting = prefs.getIntPref(pref);
 	prefs.setIntPref(pref, next[setting]);
 	button.setAttribute("activated", next[setting]);
 }
 
 cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
-	var sss = toolbar_button_interfaces.StyleSheetService,
-		ios = toolbar_button_interfaces.IOService;
+	var sss = toolbar_buttons.interfaces.StyleSheetService,
+		ios = toolbar_buttons.interfaces.IOService;
 	var url = ios.newURI(aCssFile, null, null),
 		button = document.getElementById(buttonId);
 	if (sss.sheetRegistered(url, sss.USER_SHEET)) {
@@ -332,9 +341,9 @@ cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
 }
 
 loadUserContentSheet: function(sheet, pref, buttonId) {
-	var sss = toolbar_button_interfaces.StyleSheetService,
-		ios = toolbar_button_interfaces.IOService,
-		prefs = toolbar_button_interfaces.ExtensionPrefBranch;
+	var sss = toolbar_buttons.interfaces.StyleSheetService,
+		ios = toolbar_buttons.interfaces.IOService,
+		prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var url = ios.newURI(sheet, null, null);
 	try {
 		if (!prefs.getBoolPref(pref)
@@ -344,4 +353,36 @@ loadUserContentSheet: function(sheet, pref, buttonId) {
 		}
 	} catch (e) {
 	}
+}
+
+stopContent: function(button, pref) {
+	toolbar_buttons.extesnionPrefToggleStatus(button, pref);
+	BrowserReload();
+}
+
+loadContectBlocker: function(fullPref, prefName, buttonId, sheet, func) {
+	window.addEventListener("load", function(e) {
+		var prefWatch = new toolbar_buttons.PreferenceWatcher();
+		prefWatch.startup(fullPref, null, func ? func : function(state) {
+			var button = document.getElementById(buttonId);
+			if(button) {
+				toolbar_buttons.cssFileToUserContent(sheet, state, false, buttonId);
+				button.setAttribute("activated", state);
+			}
+		});
+		toolbar_buttons.loadUserContentSheet(sheet, prefName, buttonId);
+		window.addEventListener("unload", function(e) {
+			prefWatch.shutdown();
+		}, false);
+	}, false);
+}
+
+loadPrefWatcher: function(pref, buttonId, func) {
+	window.addEventListener("load", function(e) {
+		var prefWatch = new toolbar_buttons.PreferenceWatcher();
+		prefWatch.startup(pref, buttonId, func);
+		window.addEventListener("unload", function(e) {
+			prefWatch.shutdown();
+		}, false);
+	}, false);
 }

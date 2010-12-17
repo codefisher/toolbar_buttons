@@ -4,7 +4,7 @@ tabListDropDown: function(item) {
 	}
 	var tabcontainer = document.getElementById("content").mTabContainer;
 	var tabs = tabcontainer.childNodes;
-	tabcontainer._stopAnimation();
+	//tabcontainer._stopAnimation();
 	for ( var i = 0; i < tabs.length; i++) {
 		var menuItem = document.createElement("menuitem");
 		var curTab = tabs[i];

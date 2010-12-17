@@ -82,8 +82,7 @@ class Button():
                 preferences = open(os.path.join(folder, "preferences"), "r")
                 for line in preferences:
                     name, value = line.split(":")
-                    self._preferences[name] = value\
-
+                    self._preferences[name] = value.strip()
             if "manifest" in files:
                 self._manifest.append(open(os.path.join(folder, "manifest"), "r").read())
 
@@ -207,7 +206,7 @@ class Button():
         return "\n".join(lines), image_list, image_datas
 
     def get_js_files(self):
-        interface_match = re.compile("(?<=toolbar_button_interfaces.)[a-zA-Z]*")
+        interface_match = re.compile("(?<=toolbar_buttons.interfaces.)[a-zA-Z]*")
         function_match = re.compile("^[a-zA-Z0-9_]*:\s*"
                                     "(?:function\([^\)]*\)\s*)?{.*?^}[^\n]*",
                                     re.MULTILINE | re.DOTALL)
@@ -218,6 +217,7 @@ class Button():
                                    re.MULTILINE)
         include_match_replace = re.compile("^#include [a-zA-Z0-9_]*\n?",
                                            re.MULTILINE)
+        detect_depandancy = re.compile("(?<=toolbar_buttons.)[a-zA-Z]*")
         string_match = re.compile("StringFromName\(\"([a-zA-Z.-]*?)\"")
 
         multi_line_replace = re.compile("\n{2,}")
@@ -225,12 +225,13 @@ class Button():
         js_files_end = {}
         js_includes = set()
         js_options_include = set()
-
+        js_imports = set()
         for file_name, js in self._button_js.iteritems():
             js_file = "\n".join(js)
             js_includes.update(include_match.findall(js_file))
             js_file = include_match_replace.sub("", js_file)
             js_functions = function_match.findall(js_file)
+            js_imports.update(detect_depandancy.findall(js_file))
             if js_functions:
                 js_functions.sort(key=lambda x: x.lower())
                 js_files[file_name] = "\t" + "\n\t".join(
@@ -238,9 +239,20 @@ class Button():
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
         shared_functions = open(os.path.join("files", "functions.js"), "r").read()
-        extra_functions = [function for function, name
-                           in function_name_match.findall(shared_functions)
-                           if name in js_includes]
+        externals = dict((name, function) for function, name
+                         in function_name_match.findall(shared_functions))
+
+        extra_functions = [externals[name] for name in js_includes
+                           if name in externals]
+        loop_imports = js_imports.difference(js_includes)
+        while loop_imports:
+            new_extra = [externals[func_name] for func_name in loop_imports
+                           if func_name in js_imports if func_name in externals]
+            extra_functions.extend(new_extra)
+            new_imports = set(detect_depandancy.findall("\n".join(new_extra)))
+            loop_imports = new_imports.difference(js_imports)
+            js_imports.update(loop_imports)
+
         js_extra_file = "\n\t".join(",\n".join(extra_functions).split("\n"))
         if js_files.get("button"):
             js_files["button"] += ",\n\t" + js_extra_file
@@ -249,13 +261,14 @@ class Button():
         for file_name in js_files_end:
             if js_files.get(file_name):
                 js_files[file_name] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n%s\n});\n%s"
-                     % (js_files[file_name], js_files_end[file_name]))
+                    "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n%s"
+                     % (js_files[file_name].strip(), js_files_end[file_name]))
             else:
                 js_files[file_name] = js_files_end[file_name]
         if self._button_options_js:
             extra_javascript = []
             for button, value in self._button_options_js.iteritems():
+                # dependency resolution is not enabled here yet
                 js_options_include.update(include_match.findall(value))
                 value = include_match_replace.sub("", value)
                 js_functions = function_match.findall(value)
@@ -266,7 +279,7 @@ class Button():
                                in function_name_match.findall(shared_functions)
                                if name in js_options_include))
             js_files["option"] = (
-                    "toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
+                    "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
         if self._settings.SHOW_UPDATED_PROMPT:
             show_update = (open(os.path.join("files", "update.js"), "r").read()
@@ -296,8 +309,8 @@ class Button():
                              or js_file == "button")):
                         lines.append(constructor)
                 if lines:
-                    js_files[js_file] = ("toolbar_button_loader("
-                                       "toolbar_button_interfaces, {\n\t%s\n});\n%s"
+                    js_files[js_file] = ("toolbar_buttons.toolbar_button_loader("
+                                       "toolbar_buttons.interfaces, {\n\t%s\n});\n%s"
                                      % (",\n\t".join(lines).replace("{{pref-root}}", self._settings.PREF_ROOT), js_files[js_file]))
             js_files[js_file] = js_files[js_file].replace("{{chrome_name}}",
                     self._settings.CHROME_NAME).replace("{{pref_root}}",

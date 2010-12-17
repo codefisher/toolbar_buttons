@@ -15,5 +15,5 @@
 		openInTabs="children"
 		oncommand="BookmarksEventHandler.onCommand(event);"
 		onclick="BookmarksEventHandler.onClick(event);"
-		onpopupshowing="BookmarksEventHandler.onPopupShowing(event);" />
+		onpopupshowing="try { BookmarksEventHandler.onPopupShowing(event); } catch(e) { if (!this.parentNode._placesView) new PlacesMenu(event, 'place:folder=BOOKMARKS_MENU'); }" />
 </toolbarbutton>

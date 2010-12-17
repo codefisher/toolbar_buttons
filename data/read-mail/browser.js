@@ -1,6 +1,3 @@
-#include initApp
-#include getAppPath
-
 readMail: function() {
 	try {
 		var shell = getShellService();

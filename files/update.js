@@ -10,11 +10,11 @@ if(!this.load_toolbar_button) {
 			}
 			var ext_id = "{{uuid}}";
 			var version = "{{version}}";
-			var prefs = toolbar_button_interfaces.ExtensionPrefBranch;
-			var app_name = toolbar_button_interfaces.XULAppInfo().name;
+			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+			var app_name = toolbar_buttons.interfaces.XULAppInfo().name;
 			var url = "{{version_url}}" + version + "?application=" + app_name.toLowerCase();
 
-			var extensionFlagFile = toolbar_button_interfaces.Properties.get("ProfD", Ci.nsIFile);
+			var extensionFlagFile = toolbar_buttons.interfaces.Properties.get("ProfD", Ci.nsIFile);
 			extensionFlagFile.append("extensions");
 			extensionFlagFile.append(ext_id);
 			extensionFlagFile.append("installed");
@@ -27,7 +27,7 @@ if(!this.load_toolbar_button) {
 			window.removeEventListener("load", load_toolbar_button.init, false);
 		},
 		file_put_contents: function(file,data){
-			var foStream = toolbar_button_interfaces.FileOutputStream();
+			var foStream = toolbar_buttons.interfaces.FileOutputStream();
 			foStream.init(file, 0x02 | 0x08 | 0x20, 0664, 0);
 			foStream.write(data, data.length);
 			foStream.close();
@@ -37,8 +37,8 @@ if(!this.load_toolbar_button) {
 				var newPage = getBrowser().addTab(url);
 				getBrowser().selectedTab = newPage;
 			} catch (e) {
-				var uri = toolbar_button_interfaces.IOService.newURI(url, null, null);
-				toolbar_button_interfaces.ExternalProtocolService.loadUrl(uri);
+				var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
+				toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
 			}
 		},
 		init: function() {

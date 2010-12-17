@@ -1,6 +1,3 @@
-#include initApp
-#include getAppPath
-
 readNews: function() {
 	try {
 		var shell = getShellService();

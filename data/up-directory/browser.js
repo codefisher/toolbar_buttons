@@ -21,7 +21,7 @@ loadHigherFolders: function(popup, event) {
 		pathname = location.pathname;
 	if(!pathname) {
 		item = document.createElement("menuitem");
-		var stringBundle = toolbar_button_interfaces.StringBundleService
+		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 		var empty = stringBundle.GetStringFromName("empty");
 		item.setAttribute("label", empty);

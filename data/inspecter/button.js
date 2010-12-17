@@ -1,5 +1,3 @@
-#include wrongVersion
-
 openDomInspector: function(event, aDocument) {
 	try {
 		inspectDOMDocument(aDocument);

@@ -3,4 +3,4 @@
 	id="stop-movies"
 	label="&stop-movies.label;"
 	tooltiptext="&stop-movies.tooltip;"
-	oncommand="toolbar_buttons.stopMovies(this);" />
+	oncommand="toolbar_buttons.stopContent(this, 'movies');" />

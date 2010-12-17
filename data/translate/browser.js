@@ -1,7 +1,7 @@
 TranslatePage: function() {
 	var service = "http://translate.google.com/translate?u=";
 	var targetURI = getWebNavigation().currentURI.spec;
-	var to = toolbar_button_interfaces.ExtensionPrefBranch.getCharPref("translate.lang");
+	var to = toolbar_buttons.interfaces.ExtensionPrefBranch.getCharPref("translate.lang");
 	var langs = "&tl=" + to;
 	if (targetURI.indexOf("translate.google.com") > 0 ||
 			targetURI.indexOf("64.233.179") > 0) {
@@ -12,7 +12,7 @@ TranslatePage: function() {
 }
 
 UpdateTranslateOverlay: function() {
-	var file = toolbar_button_interfaces.Properties.get('ProfD', Ci.nsIFile);
+	var file = toolbar_buttons.interfaces.Properties.get('ProfD', Ci.nsIFile);
 	file.append("extensions");
 	file.append("{{uuid}}");
 	file.append("translate-options.xul");
@@ -35,11 +35,11 @@ UpdateTranslateOverlayOnload: function(XMLhttp) {
 	}
 	xul += "</menupopup></overlay>";
 
-	var file = toolbar_button_interfaces.Properties.get('ProfD', Ci.nsIFile);
+	var file = toolbar_buttons.interfaces.Properties.get('ProfD', Ci.nsIFile);
 	file.append("extensions");
 	file.append("{{uuid}}");
 	file.append("translate-options.xul");
-	var foStream = toolbar_button_interfaces.FileOutputStream();
+	var foStream = toolbar_buttons.interfaces.FileOutputStream();
 	foStream.init(file, 0x02 | 0x08 | 0x20, 0664, 0);
 	foStream.write(xul, xul.length);
 	foStream.close();
