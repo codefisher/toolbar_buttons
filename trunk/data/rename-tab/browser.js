@@ -1,6 +1,9 @@
 renameTab: function() {
 	var thisTab = getBrowser().selectedTab;
 	thisTab.labelNode = document.getAnonymousElementByAttribute(thisTab, "class", "tab-text");
+	if(thisTab.labelNode == null) {
+		thisTab.labelNode = document.getAnonymousElementByAttribute(thisTab, "class", "tab-text tab-label");
+	}
 	var thisTitle = thisTab.label;
 	thisTab.labelNode.style.display = "none";
 	var textBox = document.createElement("textbox");

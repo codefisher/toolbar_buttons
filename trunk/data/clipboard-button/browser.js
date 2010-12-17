@@ -1,7 +1,7 @@
 clipboardLink: {
 	getText: function() {
-		var clip = toolbar_button_interfaces.Clipboard;
-		var trans = toolbar_button_interfaces.Transferable();
+		var clip = toolbar_buttons.interfaces.Clipboard;
+		var trans = toolbar_buttons.interfaces.Transferable();
 		trans.addDataFlavor("text/unicode");
 		clip.getData(trans, clip.kGlobalClipboard);
 		var str = new Object, strLength = new Object;
@@ -21,8 +21,8 @@ clipboardLink: {
 	},
 	OpenNewTab: function() {
 		try {
-			openNewTabWith(this.getText(), window.content.document, null,
-					null, false);
+			var newPage = getBrowser().addTab(this.getText());
+			getBrowser().selectedTab = newPage;
 		} catch (e) {} // no clipboard data
 	},
 	OpenLink: function() {

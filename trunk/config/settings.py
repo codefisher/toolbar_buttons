@@ -30,11 +30,11 @@ SHOW_UPDATED_PROMPT = True
 # I need to add SeaMonkey in here somewhere
 APPLICATIONS_DATA = {
     "browser":   (
-                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0b8"),
+                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0b9pre"),
                   ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.5.*")
                   ),
     "messenger": (
-                  ("Thunerbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0a1pre","3.2a1pre"),
+                  ("Thunerbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0a1pre", "3.3a2pre"),
                   ("Postbox", "postbox@postbox-inc.com", "1.0.0", "1.1.*")
                   ),
     "calendar":  (

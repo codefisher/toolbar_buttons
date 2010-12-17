@@ -1,8 +1,8 @@
 installAddons: function() {
-	var stringBundle = toolbar_button_interfaces.StringBundleService
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var title = stringBundle.GetStringFromName("installaddons");	
-	var fp = toolbar_button_interfaces.FilePicker();
+	var fp = toolbar_buttons.interfaces.FilePicker();
 	fp.init(window, title, fp.modeOpen);
 	fp.appendFilter(stringBundle
 			.GetStringFromName("installaddons-addons"), "*.xpi; *.jar");
@@ -15,7 +15,7 @@ installAddons: function() {
 		var path = fp.file.path;
 		var cutFileType = path.lastIndexOf(".") + 1;
 		var fileType = path.substring(cutFileType);
-		var fileProtocolHandler = toolbar_button_interfaces.IOService
+		var fileProtocolHandler = toolbar_buttons.interfaces.IOService
 									.getProtocolHandler("file")
 									.QueryInterface(Ci.nsIFileProtocolHandler);
 		var url = fileProtocolHandler.newFileURI(fp.file)

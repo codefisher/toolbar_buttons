@@ -122,22 +122,22 @@ def create_manifest(settings, locales, buttons, options=[]):
 def create_install(settings, applications, options=[]):
     """Creates the install.rdf file for the extension"""
     if options:
-        options_url = ("<em:optionsURL>chrome://%s/content/options.xul"
-                       "</em:optionsURL>" % settings.CHROME_NAME)
+        options_url = ("\t\t<em:optionsURL>chrome://%s/content/options.xul"
+                       "</em:optionsURL>\n" % settings.CHROME_NAME)
     else:
         options_url = ""
     supported_applications = []
     for application in applications:
         for values in settings.APPLICATIONS_DATA[application]:
             supported_applications.append("""
-        <!-- %s -->
-        <em:targetApplication>
-            <Description>
-                <em:id>%s</em:id>
-                <em:minVersion>%s</em:minVersion>
-                <em:maxVersion>%s</em:maxVersion>
-            </Description>
-        </em:targetApplication>""" % values)
+        \t\t<!-- %s -->
+        \t\t<em:targetApplication>
+            \t\t\t<Description>
+                \t\t\t\t<em:id>%s</em:id>
+                \t\t\t\t<em:minVersion>%s</em:minVersion>
+                \t\t\t\t<em:maxVersion>%s</em:maxVersion>
+            \t\t\t</Description>
+        \t\t</em:targetApplication>""".replace(" ","") % values)
     template = open(os.path.join("files", "install.rdf") ,"r").read()
     return (template.replace("{{uuid}}", settings.EXTENSION_ID)
                     .replace("{{name}}", settings.NAME)
@@ -148,5 +148,5 @@ def create_install(settings, applications, options=[]):
                     .replace("{{homepageURL}}", settings.HOMEPAGE)
                     .replace("{{optionsURL}}", options_url)
                     .replace("{{applications}}",
-                             "\n".join(supported_applications))
+                             "".join(supported_applications))
             )

@@ -17,7 +17,7 @@ emptyAllTrash: function(event) {
 			}
 		}
 		// not what happens with smart folders in 3.1, but too scared to change
-		var servers = toolbar_button_interfaces.MsgAccountManager.allServers;
+		var servers = toolbar_buttons.interfaces.MsgAccountManager.allServers;
 		for(var server in fixIterator(servers, Ci.nsIMsgIncomingServer)) {
 			server.rootMsgFolder.emptyTrash(msgWindow, null);
 		}

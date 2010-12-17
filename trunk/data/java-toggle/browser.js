@@ -1,5 +1,3 @@
-#include PluginHelper
-
 JavaToggle: {
 	/*
 	 * Credit for much of this code belongs to Prefbar, and is used
@@ -17,7 +15,7 @@ JavaToggle: {
 	toggle: function() {
 		var state = this.status(),
 			button = document.getElementById("java-toggle"),
-			prefs = toolbar_button_interfaces.PrefBranch;
+			prefs = toolbar_buttons.interfaces.PrefBranch;
 		prefs.setBoolPref("security.enable_java", !state);
 		toolbar_buttons.PluginHelper.SetPluginEnabled(this.prefbarRegExJava, !state, "Java");
 		button.setAttribute("activated", !state);
@@ -25,7 +23,7 @@ JavaToggle: {
 	},
 
 	status: function() {
-		var prefs = toolbar_button_interfaces.PrefBranch, state = true;
+		var prefs = toolbar_buttons.interfaces.PrefBranch, state = true;
 		try {
 			state = prefs.getBoolPref("security.enable_java");
 		} catch(e) {}
@@ -33,10 +31,4 @@ JavaToggle: {
 	}
 }
 
-window.addEventListener("load", function(e) {
-	var prefWatch = new toolbar_buttons.PreferenceWatcher();
-	prefWatch.startup("security.enable_java", "java-toggle");
-	window.addEventListener("unload", function(e) {
-		prefWatch.shutdown();
-	}, false);
-}, false);
+toolbar_buttons.loadPrefWatcher("security.enable_java", "java-toggle");

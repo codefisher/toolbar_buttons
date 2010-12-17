@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
 		<em:id>{{uuid}}</em:id>
 		<em:name>{{name}}</em:name>
@@ -9,10 +9,9 @@
 		<em:creator>{{creator}}</em:creator>
 		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
 		<em:homepageURL>{{homepageURL}}</em:homepageURL>
-		{{optionsURL}}
-		
-		{{applications}}
-		
+		<em:unpack>true</em:unpack>
+{{optionsURL}}{{applications}}
+
 		<em:translator>Thanks to the Babelzilla team!</em:translator>
 		<em:translator>Dryopteris, Fux, Team erweiterungen.de - German [de-DE]</em:translator>
 		<em:translator>ZuGro - Spanish (Argentina) [es-AR]</em:translator>
@@ -28,6 +27,6 @@
 		<em:translator>MRO Team - Russian [ru-RU]</em:translator>
 		<em:translator>Gianny111 - Slovak [sk-SK]</em:translator>
 		<em:translator>Turkish [tr-TR] - smyrna</em:translator>
-		<em:translator>aiseeker, fiag - Chinese (Simplified) [zh-CN]</em:translator>	
+		<em:translator>aiseeker, fiag - Chinese (Simplified) [zh-CN]</em:translator>
 	</Description>
 </RDF>
