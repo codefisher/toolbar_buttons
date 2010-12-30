@@ -35,6 +35,10 @@ loadHigherFolders: function(popup, event) {
 			item.addEventListener("command", function() {
 				window.content.document.location = location.protocol + "//" + location.host + pathname;
 			}, false);
+			item.addEventListener("click", function(event) {
+				if(event.button == 1)
+					toolbar_buttons.LoadURL(location.protocol + "//" + location.host + pathname, event);
+			}, false);
 			popup.appendChild(item);
 			pathname = toolbar_buttons.trimFolderPath(pathname);
 		} while (pathname);
