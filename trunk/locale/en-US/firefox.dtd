@@ -146,3 +146,5 @@
 <!ENTITY tiny-url.visit "Visit Xrl.In">
 <!ENTITY tb-clear-url.label "Clear Url">
 <!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">
+<!ENTITY tb-clear-search.label "Clear Search">
+<!ENTITY tb-clear-search.tooltip "Clear and focus on the search bar">

@@ -1,4 +1,6 @@
 renameTab: function() {
+	if(toolbar_buttons.renameTabObj)
+		return;
 	var thisTab = getBrowser().selectedTab;
 	thisTab.labelNode = document.getAnonymousElementByAttribute(thisTab, "class", "tab-text");
 	if(thisTab.labelNode == null) {

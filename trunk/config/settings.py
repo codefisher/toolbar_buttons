@@ -1,16 +1,17 @@
+import os
+
 NAME = "Toolbar Buttons"
 CREATOR = "Michael Buckley"
 DESCRIPTION = "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality."
-VERSION = "1.0a6"
+VERSION = "1.0a8"
 EXTENSION_ID = "{03B08592-E5B4-45ff-A0BE-C1D975458688}"
 HOMEPAGE = "http://codefisher.org/toolbar_button/"
-ICON = "files/button.png"
-LICENCE = "files/LICENCE"
+ICON = os.path.join("files", "button.png")
+LICENCE = os.path.join("files", "LICENCE")
 VERSION_URL = "http://codefisher.org/toolbar_button/version/"
 PREF_ROOT = "extension.tbutton."
 DEBUG=False
 
-IMAGE_PATH = "/home/michael/Pictures/PastelSVG/png"
 BUTTONS = "all"
 APPLICATIONS = "all"
 LOCALE = "all"
@@ -74,6 +75,7 @@ FILE_TO_PALETTE = {
      "calendar": "calendarToolbarPalette"
 }
 
-OUTPUT = "/home/michael/Dev/Extension/ToolbarButtons/extenions/toolbar_buttons.xpi"
-PROFILE_FOLDER = "/home/michael/.mozilla/firefox/0xq1gim8.Michael"
+OUTPUT = os.path.join("extenions", "toolbar_buttons.xpi")
 
+PROFILE_FOLDER = "/home/michael/.mozilla/firefox/0xq1gim8.Michael"
+IMAGE_PATH = "/home/michael/Pictures/PastelSVG/png"

@@ -2,6 +2,7 @@ import os
 import re
 from collections import defaultdict
 import grayscale
+from util import get_pref_folders
 
 class Button():
     def __init__(self, folders, buttons, settings, applications):
@@ -23,6 +24,7 @@ class Button():
         self._has_javascript = False
         self._manifest = []
         self._extra_files = {}
+        self._pref_list = defaultdict(list)
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -77,12 +79,12 @@ class Button():
                                                        modifier.rstrip()))
             else:
                 raise ValueError("%s does not contain image listing." % folder)
-
             if "preferences" in files:
                 preferences = open(os.path.join(folder, "preferences"), "r")
                 for line in preferences:
                     name, value = line.split(":")
                     self._preferences[name] = value.strip()
+                    self._pref_list[name].append(button)
             if "manifest" in files:
                 self._manifest.append(open(os.path.join(folder, "manifest"), "r").read())
 
@@ -130,6 +132,20 @@ class Button():
             for application in self._button_applications[button]:
                 self._option_applications.add(application)
                 files[application].append(data.replace("{{pref-root}}", self._settings.PREF_ROOT))
+        if self._pref_list:
+            limit = ".xul,".join(self._pref_list.keys()) + ".xul"
+            pref_files = get_pref_folders(limit)
+            for file_name, name in zip(*pref_files):
+                data_fp = open(file_name, "r")
+                data = data_fp.read()
+                data_fp.close()
+                applications = set()
+                for button in self._pref_list[name[:-4]]:
+                    for application in self._button_applications[button]:
+                        self._option_applications.add(application)
+                        applications.add(application)
+                for application in applications:
+                    files[application].append(data.replace("{{pref-root}}", self._settings.PREF_ROOT))
         if files:
             result["options"] = base_window
         for application, data in files.iteritems():
@@ -242,9 +258,9 @@ class Button():
         externals = dict((name, function) for function, name
                          in function_name_match.findall(shared_functions))
 
-        extra_functions = [externals[name] for name in js_includes
-                           if name in externals]
-        loop_imports = js_imports.difference(js_includes)
+        extra_functions = []
+        js_imports.update(js_includes)
+        loop_imports = js_imports
         while loop_imports:
             new_extra = [externals[func_name] for func_name in loop_imports
                            if func_name in js_imports if func_name in externals]

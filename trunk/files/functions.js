@@ -1,11 +1,13 @@
 /* functions that are used by more then one button */
 
-toggleToolbar: function(aEvent, toolbar_id) {
+toggleToolbar: function(aEvent, toolbar_id, force) {
 	if(toolbar_id != aEvent.originalTarget.parentNode.id) {
 		var toolbar = document.getElementById(toolbar_id);
 		try {
 			// Firefox 4, mainly the bookmark toolbar button
-			setToolbarVisibility(toolbar, toolbar.collapsed || toolbar.autohide);
+			setToolbarVisibility(toolbar, toolbar.collapsed);
+			if(force)
+				toolbar.collapsed = !toolbar.collapsed;
 		} catch(e) {
 			toolbar.collapsed = !toolbar.collapsed;
 			document.persist(toolbar_id, "collapsed");
@@ -15,13 +17,11 @@ toggleToolbar: function(aEvent, toolbar_id) {
 
 toggleToolbarButtonUpdate: function(aEvent, button_id, toolbar_id) {
 	// normal toolbars use collapsed, the statusbar uses hidden
-	if((aEvent.attrName == "collapsed" || aEvent.attrName == "hidden"
-			|| aEvent.attrName == "autohide")) {
+	if(aEvent.attrName == "collapsed" || aEvent.attrName == "hidden") {
 		var button = document.getElementById(button_id);
 		if(button && aEvent.originalTarget.id == toolbar_id) {
 			var toolbar = aEvent.originalTarget;
-			button.setAttribute("activated",
-					toolbar.collapsed || toolbar.hidden || toolbar.autohide);
+			button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
 		}
 	}
 }
@@ -192,13 +192,15 @@ prefToggleStatus: function(button, pref) {
 		state = prefs.getBoolPref(pref);
 	prefs.setBoolPref(pref, !state);
 	button.setAttribute("activated", !state);
+	return !state;
 }
 
-extesnionPrefToggleStatus: function(button, pref) {
+extensionPrefToggleStatus: function(button, pref) {
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch,
 		state = prefs.getBoolPref(pref);
 	prefs.setBoolPref(pref, !state);
 	button.setAttribute("activated", !state);
+	return !state;
 }
 
 PreferenceWatcher: function() {
@@ -319,6 +321,7 @@ prefToggleNumber: function(button, pref, next) {
 		setting = prefs.getIntPref(pref);
 	prefs.setIntPref(pref, next[setting]);
 	button.setAttribute("activated", next[setting]);
+	return next[setting];
 }
 
 cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
@@ -356,8 +359,8 @@ loadUserContentSheet: function(sheet, pref, buttonId) {
 }
 
 stopContent: function(button, pref) {
-	toolbar_buttons.extesnionPrefToggleStatus(button, pref);
-	BrowserReload();
+	if(toolbar_buttons.extensionPrefToggleStatus(button, pref))
+		BrowserReload();
 }
 
 loadContectBlocker: function(fullPref, prefName, buttonId, sheet, func) {
@@ -385,4 +388,24 @@ loadPrefWatcher: function(pref, buttonId, func) {
 			prefWatch.shutdown();
 		}, false);
 	}, false);
+}
+
+clearBar: function(bar) {
+	var item = document.getElementById(bar + "bar"), toolbar = item;
+	if(item) {
+		do {
+			toolbar = toolbar.parentNode;
+		} while(toolbar && toolbar.nodeName != "toolbar");
+		if(toolbar && toolbar.collapsed)
+			toolbar.collapsed = !toolbar.collapsed;
+		item.value = "";
+		item.focus();
+	} else {
+		var stringBundle = toolbar_buttons.interfaces.StringBundleService
+				.createBundle("chrome://{{chrome_name}}/locale/button.properties"),
+			title = stringBundle.GetStringFromName("bar-missing-title"),
+			error = stringBundle.formatStringFromName("bar-missing-error",
+					[stringBundle.GetStringFromName("bar-missing-" + bar)], 1);
+		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+	}
 }

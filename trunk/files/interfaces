@@ -20,6 +20,7 @@ Properties:Cc["@mozilla.org/file/directory_service;1"].getService(Ci.nsIProperti
 StyleSheetService:Cc['@mozilla.org/content/style-sheet-service;1'].getService(Ci.nsIStyleSheetService)
 StringBundleService:Cc['@mozilla.org/intl/stringbundle;1'].getService(Ci.nsIStringBundleService)
 SupportsPRBool:function() { return Cc["@mozilla.org/supports-PRBool;1"].createInstance(Ci.nsISupportsPRBool); }
+SupportsString:function() { return Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString); }
 Transferable:function() { return Cc['@mozilla.org/widget/transferable;1'].createInstance(Ci.nsITransferable); }
 WindowMediator:Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
 WindowsRegKey: function() { if(Ci.nsIWindowsRegKey) return Cc['@mozilla.org/windows-registry-key;1'].createInstance(Ci.nsIWindowsRegKey); }
