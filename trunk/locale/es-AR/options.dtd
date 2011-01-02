@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Ruta de Lector de Noticias">
 <!ENTITY readnews.path.desc "La ruta hacia su cliente de Lectura de Noticias, usar si el botón no funciona">
 <!ENTITY read.select.button "Seleccionar">
-<!ENTITY toogle.label "Conmutar botones">
+<!ENTITY toggle.label "Conmutar botones">
 <!ENTITY toggle.checkbox "Refrescar página después de conmutar ajuste.">

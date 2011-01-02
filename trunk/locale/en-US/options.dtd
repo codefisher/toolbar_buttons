@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "News Client Path">
 <!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
 <!ENTITY read.select.button "Select">
-<!ENTITY toogle.label "Toggle Buttons">
+<!ENTITY toggle.label "Toggle Buttons">
 <!ENTITY toggle.checkbox "Reload page after toggling setting.">

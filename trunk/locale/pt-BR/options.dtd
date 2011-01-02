@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Caminho do cliente de notícias">
 <!ENTITY readnews.path.desc "O caminho para o seu cliente de notícias, use se o botão não funcionar.">
 <!ENTITY read.select.button "Selecionar">
-<!ENTITY toogle.label "Alternar botões">
+<!ENTITY toggle.label "Alternar botões">
 <!ENTITY toggle.checkbox "Recarregar página depois de alterar configuração.">

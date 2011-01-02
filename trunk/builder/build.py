@@ -39,12 +39,12 @@ def build_extension(settings):
     for name, path in buttons.get_extra_files().iteritems():
         jar.write(path, os.path.join("content", name))
 
+    for file, data in buttons.get_options().iteritems():
+        jar.writestr(os.path.join("content", "%s.xul" % file), data)
     options_strings = buttons.get_options_strings()
     if options_strings:
         for locale, data in options_locales.get_dtd_data(options_strings).iteritems():
             jar.writestr(os.path.join("locale", locale, "options.dtd"), data)
-    for file, data in buttons.get_options().iteritems():
-        jar.writestr(os.path.join("content", "%s.xul" % file), data)
     option_applicaions = buttons.get_options_applications()
 
     css, image_list, image_data = buttons.get_css_file()

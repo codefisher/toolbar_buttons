@@ -79,6 +79,19 @@ LoadURL: function(url, event) {
 	}
 }
 
+
+OpenLinkFromPref: function(name, event) {
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+	var url = prefs.getCharPref(name);
+	if (event.button == 1 || prefs.getBoolPref("always.new.tab")) {
+		var newPage = getBrowser().addTab(url);
+		getBrowser().selectedTab = newPage;
+	} else if (event.button == 0) {
+		loadURI(url);
+	}
+}
+
+
 wrongVersion: function(event) {
 	var XulAppInfo = toolbar_buttons.interfaces.XULAppInfo();
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService

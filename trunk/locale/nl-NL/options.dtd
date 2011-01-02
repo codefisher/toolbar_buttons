@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Pad naar nieuwsprogramma">
 <!ENTITY readnews.path.desc "Het pad naar uw nieuwsprogramma, gebruik dit als de knop niet werkt.">
 <!ENTITY read.select.button "Selecteren">
-<!ENTITY toogle.label "Wisselknoppen">
+<!ENTITY toggle.label "Wisselknoppen">
 <!ENTITY toggle.checkbox "Herlaad de pagina na instellen van wisselen.">
