@@ -82,7 +82,7 @@ class Button():
             if "preferences" in files:
                 preferences = open(os.path.join(folder, "preferences"), "r")
                 for line in preferences:
-                    name, value = line.split(":")
+                    name, value = line.split(":", 1)
                     self._preferences[name] = value.strip()
                     self._pref_list[name].append(button)
             if "manifest" in files:
@@ -144,6 +144,7 @@ class Button():
                     for application in self._button_applications[button]:
                         self._option_applications.add(application)
                         applications.add(application)
+                    self._button_options[button] = data
                 for application in applications:
                     files[application].append(data.replace("{{pref-root}}", self._settings.PREF_ROOT))
         if files:
@@ -180,7 +181,7 @@ class Button():
             strings.append("options.window.title")
         for value in self._button_options.itervalues():
             strings.extend(locale_match.findall(value))
-        return strings
+        return list(set(strings))
 
     def get_defaults(self):
         settings = []

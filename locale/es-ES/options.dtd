@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Ruta del cliente de noticias">
 <!ENTITY readnews.path.desc "La ruta de su cliente de noticias. Utilícelo si el botón no funciona.">
 <!ENTITY read.select.button "Seleccionar">
-<!ENTITY toogle.label "Cambiar botones">
+<!ENTITY toggle.label "Cambiar botones">
 <!ENTITY toggle.checkbox "Recargar página después del cambio de configuración.">

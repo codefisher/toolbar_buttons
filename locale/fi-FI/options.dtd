@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Keskusteluryhmien lukuohjelman polku">
 <!ENTITY readnews.path.desc "Keskusteluryhmien lukuohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
 <!ENTITY read.select.button "Valitse">
-<!ENTITY toogle.label "Tilaa vaihtavat painikkeet">
+<!ENTITY toggle.label "Tilaa vaihtavat painikkeet">
 <!ENTITY toggle.checkbox "Lataa sivu uudelleen, kun tilaa vaihdetaan.">
