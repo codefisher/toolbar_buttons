@@ -25,6 +25,7 @@ class Button():
         self._manifest = []
         self._extra_files = {}
         self._pref_list = defaultdict(list)
+        self._button_keys = {}
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -68,31 +69,39 @@ class Button():
                     and (file_name == "button"
                          or self._settings.FILE_TO_APPLICATION[file_name]
                             in self._applications)):
-                    self._button_js[file_name].append(
-                                open(os.path.join(folder, js_file)).read())
-
+                    with open(os.path.join(folder, js_file)) as js:
+                        self._button_js[file_name].append(js.read())
             if "image" in files:
-                images = open(os.path.join(folder, "image"), "r")
-                for line in images:
-                    name, _, modifier = line.partition(" ")
-                    self._button_image[button].append((name.strip(),
-                                                       modifier.rstrip()))
+                with open(os.path.join(folder, "image"), "r") as images:
+                    for line in images:
+                        name, _, modifier = line.partition(" ")
+                        self._button_image[button].append((name.strip(),
+                                                           modifier.rstrip()))
             else:
                 raise ValueError("%s does not contain image listing." % folder)
+            if "key" in files:
+                with open(os.path.join(folder, "key"), "r") as keys:
+                    key_shortcut = list(keys.read().partition(":"))
+                    key_shortcut.pop(1)
+                    self._button_keys[button] = key_shortcut
+            if button in self._settings.KEYBOARD_CUSTOM_KEYS:
+                self._button_keys[button] = self._settings.KEYBOARD_CUSTOM_KEYS[button]
+
             if "preferences" in files:
-                preferences = open(os.path.join(folder, "preferences"), "r")
-                for line in preferences:
-                    name, value = line.split(":", 1)
-                    self._preferences[name] = value.strip()
-                    self._pref_list[name].append(button)
+                with open(os.path.join(folder, "preferences"), "r") as preferences:
+                    for line in preferences:
+                        name, value = line.split(":", 1)
+                        self._preferences[name] = value.strip()
+                        self._pref_list[name].append(button)
             if "manifest" in files:
-                self._manifest.append(open(os.path.join(folder, "manifest"), "r").read())
-
+                with open(os.path.join(folder, "manifest"), "r") as manifest:
+                    self._manifest.append(manifest.read())
             if "option.xul" in files:
-                self._button_options[button] = open(os.path.join(folder, "option.xul"), "r").read()
-
+                with open(os.path.join(folder, "option.xul"), "r") as option:
+                    self._button_options[button] = option.read()
             if "option.js" in files:
-                self._button_options_js[button] = open(os.path.join(folder, "option.js"), "r").read()
+                with open(os.path.join(folder, "option.js"), "r") as option:
+                    self._button_options_js[button] = option.read()
             if "files" in files:
                 for file in os.listdir(os.path.join(folder, "files")):
                     self._extra_files[file] = os.path.join(folder, "files", file)
@@ -106,8 +115,8 @@ class Button():
         self._button_files.add(file_name)
         self._button_applications[button].add(
                                 self._settings.FILE_TO_APPLICATION[file_name])
-        self._button_xul[file_name][button] = open(
-                                        os.path.join(folder, xul_file)).read()
+        with open(os.path.join(folder, xul_file)) as xul:
+            self._button_xul[file_name][button] = xul.read()
 
     def get_manifest(self):
         return "\n".join(self._manifest)
@@ -122,10 +131,12 @@ class Button():
                              self._settings.CHROME_NAME))
         else:
             javascript = ""
-        base_window = (open(os.path.join("files", "options.xul"), "r").read()
+        with open(os.path.join("files", "options.xul"), "r") as base_window_file:
+            base_window = (base_window_file.read()
                        .replace("{{chrome-name}}", self._settings.CHROME_NAME)
                        .replace("{{javascript}}", javascript))
-        overlay_window = (open(os.path.join("files", "option.xul"), "r").read()
+        with open(os.path.join("files", "option.xul"), "r") as overlay_window_file:
+            overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.CHROME_NAME))
         files = defaultdict(list)
         for button, data in self._button_options.iteritems():
@@ -255,7 +266,8 @@ class Button():
                         ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
-        shared_functions = open(os.path.join("files", "functions.js"), "r").read()
+        with  open(os.path.join("files", "functions.js"), "r") as shared_functions_file:
+            shared_functions = shared_functions_file.read()
         externals = dict((name, function) for function, name
                          in function_name_match.findall(shared_functions))
 
@@ -299,7 +311,8 @@ class Button():
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
         if self._settings.SHOW_UPDATED_PROMPT:
-            show_update = (open(os.path.join("files", "update.js"), "r").read()
+            with open(os.path.join("files", "update.js"), "r") as update_js:
+                show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.EXTENSION_ID)
                            .replace("{{version_url}}",
                                     self._settings.VERSION_URL)
@@ -312,6 +325,7 @@ class Button():
         for line in interfaces_data:
             name, _ = line.split(":")
             interfaces[name] = line.strip()
+        interfaces_data.close()
         js_global_interfaces = set(interface_match.findall(js_files["button"]))
         for js_file, js_data in js_files.iteritems():
             self._properties_strings.update(string_match.findall(js_data))
@@ -335,7 +349,8 @@ class Button():
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
             self._has_javascript = True
-            js_files["loader"] = open(os.path.join("files", "loader.js"), "r").read()
+            with open(os.path.join("files", "loader.js"), "r") as loader:
+                js_files["loader"] = loader.read()
         return js_files
 
     def get_properties_strings(self):
@@ -345,12 +360,25 @@ class Button():
         """
         return self._properties_strings
 
+    def get_keyboard_shortcuts(self, application):
+        if not self._settings.USE_KEYBOARD_SHORTCUTS and not self._settings.KEYBOARD_CUSTOM_KEYS:
+            return ""
+        keys = []
+        for button, (key, modifier) in self._button_keys.iteritems():
+            if application in self._button_applications[button]:
+                keys.append("""<key key="%s" modifiers="%s" id="%s-key" command="%s" />""" % (key, modifier, button, button))
+        if keys:
+            return """\n <keyset id="mainKeyset">\n\t%s\n </keyset>""" % "\n\t".join(keys)
+        else:
+            return ""
+
     def get_xul_files(self):
         """
 
         Precondition: get_js_files() has been called
         """
-        template = open(os.path.join('files', 'button.xul')).read()
+        with open(os.path.join('files', 'button.xul')) as template_file:
+            template = template_file.read()
         group_files = self._settings.FILE_MAP_KEYS
         result = {}
         for file, values in self._button_xul.iteritems():
@@ -362,6 +390,7 @@ class Button():
                 js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.CHROME_NAME, file))
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
+                                .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file))
                                 .replace("{{chrome-name}}", self._settings.CHROME_NAME)
                                 .replace("{{palette}}", self._settings.FILE_TO_PALETTE[file])
                         )

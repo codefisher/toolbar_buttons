@@ -230,9 +230,9 @@ PreferenceWatcher: function() {
 			this.button = document.getElementById(button);
 		this.func = func;
 		this.pref = pref;
-		// try {
+		try {
 			this.setStatus();
-		// } catch(e) {} // pref might not exist
+		} catch(e) {} // pref might not exist
 	};
 
 	this.shutdown = function() {

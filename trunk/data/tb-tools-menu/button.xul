@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-tools-menu"
+	label="&tb-tools-menu.label;"
+	tooltiptext="&tb-tools-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'tasksMenu', 'menu_Tools', 'tools-menu');" />
