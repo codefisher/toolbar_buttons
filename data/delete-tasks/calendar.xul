@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="delete-tasks"
+	tooltiptext="&delete-tasks.tooltip;"
+	label="&delete-tasks.label;"
+	observes="calendar_delete_todo_command"
+	oncommand="toolbar_buttons.deleteTasks();" />

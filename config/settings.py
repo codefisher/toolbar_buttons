@@ -3,7 +3,7 @@ import os
 NAME = "Toolbar Buttons"
 CREATOR = "Michael Buckley"
 DESCRIPTION = "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality."
-VERSION = "1.0a8"
+VERSION = "1.0a9"
 EXTENSION_ID = "{03B08592-E5B4-45ff-A0BE-C1D975458688}"
 HOMEPAGE = "http://codefisher.org/toolbar_button/"
 ICON = os.path.join("files", "button.png")
@@ -27,6 +27,8 @@ ICON_SIZE = ("16", "24")
 DEFAULT_LOCALE = "en-US"
 MISSING_STRINGS = "replace" # replace, skip, empty
 SHOW_UPDATED_PROMPT = True
+USE_KEYBOARD_SHORTCUTS = False
+KEYBOARD_CUSTOM_KEYS = {}
 
 # I need to add SeaMonkey in here somewhere
 APPLICATIONS_DATA = {
