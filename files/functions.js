@@ -415,15 +415,15 @@ clearBar: function(bar) {
 		item.focus();
 	} else {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties"),
-			var title = stringBundle.GetStringFromName("bar-missing-title");
-			// lousy because the code for matching strings is not smart enough
-			if(bar == "search") {
-				var name = stringBundle.GetStringFromName("bar-missing-search");
-			} else {
-				var name = stringBundle.GetStringFromName("bar-missing-url");
-			}
-			var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
+				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		var title = stringBundle.GetStringFromName("bar-missing-title");
+		// lousy because the code for matching strings is not smart enough
+		if(bar == "search") {
+			var name = stringBundle.GetStringFromName("bar-missing-search");
+		} else {
+			var name = stringBundle.GetStringFromName("bar-missing-url");
+		}
+		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 	}
 }
