@@ -178,9 +178,11 @@ class Button():
     def get_locale_strings(self):
         locale_match = re.compile("&([a-zA-Z0-9.-]*);")
         strings = []
-        for _, buttons in self._button_xul.iteritems():
-            for _, button in buttons.iteritems():
+        for buttons in self._button_xul.itervalues():
+            for button in buttons.itervalues():
                 strings.extend(locale_match.findall(button))
+        for key, _ in self._button_keys.itervalues():
+            strings.extend(locale_match.findall(key))
         strings = list(set(strings))
         strings.sort()
         return strings
