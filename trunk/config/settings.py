@@ -33,12 +33,12 @@ KEYBOARD_CUSTOM_KEYS = {}
 # I need to add SeaMonkey in here somewhere
 APPLICATIONS_DATA = {
     "browser":   (
-                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0b9pre"),
+                  ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0.*"),
                   ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.5.*")
                   ),
     "messenger": (
                   ("Thunerbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0a1pre", "3.3a2pre"),
-                  ("Postbox", "postbox@postbox-inc.com", "1.0.0", "1.1.*")
+                  ("Postbox", "postbox@postbox-inc.com", "1.0.0", "2.0.*")
                   ),
     "calendar":  (
                   ("Sunbird", "{718e30fb-e89b-41dd-9da7-e25a45638b28}", "1.0pre", "1.0pre"),
@@ -46,11 +46,12 @@ APPLICATIONS_DATA = {
 }
 
 FILES_TO_OVERLAY = {
-    "browser": ("chrome://browser/content/browser.xul",),
-    "mail": ("chrome://messenger/content/messenger.xul",),
-    "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul",),
-    "read": ("chrome://messenger/content/messageWindow.xul",),
-    "calendar": ("chrome://calendar/content/calendar.xul","chrome://sunbird/content/calendar.xul")
+    "browser": ("chrome://browser/content/browser.xul", ),
+    "mail": ("chrome://messenger/content/messenger.xul", ),
+    "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
+    "read": ("chrome://messenger/content/messageWindow.xul", ),
+    "calendar": ("chrome://calendar/content/calendar.xul", "chrome://sunbird/content/calendar.xul"),
+    "lightning": ("chrome://lightning/content/messenger-overlay-toolbar.xul", )
 }
 
 FILE_TO_APPLICATION = {
@@ -59,22 +60,29 @@ FILE_TO_APPLICATION = {
      "mail": "messenger",
      "compose": "messenger",
      "read": "messenger",
-     "calendar": "calendar"
+     "calendar": "calendar",
+     "lightning": "messenger",
 }
 
 FILE_MAP = {
     "loader": ("browser","mail","compose","read","calendar"),
     "button": ("browser","mail","compose","read","calendar"),
-    "messenger": ("mail","compose","read"),
+    "messenger": ("mail", "compose", "read"),
+    "calendar": ("lightning", "calendar"),
 }
-FILE_MAP_KEYS = ["loader","button", "messenger"] # order is important
+FILE_MAP_KEYS = ["loader","button", "messenger", "calendar"] # order is important
 
 FILE_TO_PALETTE = {
      "browser": "BrowserToolbarPalette",
      "mail": "MailToolbarPalette",
      "compose": "MsgComposeToolbarPalette",
      "read": "MailToolbarPalette",
-     "calendar": "calendarToolbarPalette"
+     "calendar": "calendarToolbarPalette",
+     "lightning": "MailToolbarPalette",
+}
+
+FILE_EXCLUDE = {
+    "lightning": ("mail", "messenger")
 }
 
 OUTPUT = os.path.join("extenions", "toolbar_buttons.xpi")

@@ -46,11 +46,15 @@ class Button():
                 xul_file = group_name + ".xul"
                 if xul_file in files:
                     for file_name in self._settings.FILE_MAP[group_name]:
-                        if (self._settings.FILE_TO_APPLICATION[file_name]
-                                in self._applications):
-                            self._process_xul_file(folder, button,
-                                                   xul_file, file_name)
-                            button_wanted = True
+                        for exclude in self._settings.FILE_EXCLUDE.get(file_name, []):
+                            if exclude + ".xul" in files:
+                                break
+                        else:
+                            if (self._settings.FILE_TO_APPLICATION[file_name]
+                                    in self._applications):
+                                self._process_xul_file(folder, button,
+                                                       xul_file, file_name)
+                                button_wanted = True
             #single window files
             for file_name in button_files:
                 xul_file = file_name + ".xul"
@@ -181,8 +185,9 @@ class Button():
         for buttons in self._button_xul.itervalues():
             for button in buttons.itervalues():
                 strings.extend(locale_match.findall(button))
-        for key, _ in self._button_keys.itervalues():
+        for key, modifies in self._button_keys.itervalues():
             strings.extend(locale_match.findall(key))
+            strings.extend(locale_match.findall(modifies))
         strings = list(set(strings))
         strings.sort()
         return strings

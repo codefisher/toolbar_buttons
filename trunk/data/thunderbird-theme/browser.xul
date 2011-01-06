@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="thunderbird-theme"
+	label="&thunderbird-theme.label;"
+	tooltiptext="&thunderbird-theme.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.thunderbird-theme', event);" />

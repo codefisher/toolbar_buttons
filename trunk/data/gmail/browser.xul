@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="gmail"
+	label="&gmail.label;"
+	tooltiptext="&gmail.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.gmail',event);" />
