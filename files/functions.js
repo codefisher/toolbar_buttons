@@ -79,7 +79,6 @@ LoadURL: function(url, event) {
 	}
 }
 
-
 OpenLinkFromPref: function(name, event) {
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var url = prefs.getCharPref(name);
@@ -91,6 +90,13 @@ OpenLinkFromPref: function(name, event) {
 	}
 }
 
+OpenMailLink: function(name, event) {
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+	var url = prefs.getCharPref(name);
+	var uri = toolbar_buttons.interfaces.IOService
+			  .newURI(url, null, null);
+	toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
+}
 
 wrongVersion: function(event) {
 	var XulAppInfo = toolbar_buttons.interfaces.XULAppInfo();
@@ -240,6 +246,8 @@ PreferenceWatcher: function() {
 	};
 
 	this.setStatus = function() {
+		if(!this.button)
+			return
 		var prefs = toolbar_buttons.interfaces.PrefBranch, state = null;
 		switch(prefs.getPrefType(this.pref)) {
 			case prefs.PREF_BOOL:
@@ -256,7 +264,7 @@ PreferenceWatcher: function() {
 		}
 		if(this.func) {
 			this.func(state);
-		} else if(this.button) {
+		} else {
 			this.button.setAttribute("activated", state);
 		}
 	};

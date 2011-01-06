@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-new-event"
+	label="&tb-new-event.label;"
+	tooltiptext="&tb-new-event.tooltip;"
+	observes="calendar_new_event_command"
+	command="calendar_new_event_command" />

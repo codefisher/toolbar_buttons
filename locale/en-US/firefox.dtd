@@ -148,3 +148,5 @@
 <!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">
 <!ENTITY tb-clear-search.label "Clear Search">
 <!ENTITY tb-clear-search.tooltip "Clear and focus on the search bar">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Open Twitter home page">
