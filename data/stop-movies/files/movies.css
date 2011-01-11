@@ -10,7 +10,7 @@ object[sourceelement*="xaml"],
 embed[type="application/ag-plugin"],
 embed[source*=".xaml"]
 {
- -moz-binding: url("block.xml#block") !important;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
  border:1px solid #eee;
 }
 
@@ -30,7 +30,7 @@ embed[src*=".qt"],
 embed[src*=".xaml"],
 embed[source*=".qt"]
 {
- -moz-binding: url("block.xml#block") !important;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
  min-height:50px;
 }
 
@@ -41,9 +41,9 @@ embed[source*=".qt"]
 object[classid*="6BF52A52-394A-11d3-B153-00C04F79FAA6"],
 object[type="application/x-oleobject"],
 embed[type="application/x-oleobject"],
-object[codebase*="nsmp2inf.cab"],
+object[codebase*="nsmp2inf.cab"]
 {
- -moz-binding: url("block.xml#block") !important;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
  min-height:50px;
 }
 
@@ -54,6 +54,6 @@ object[codebase*="nsmp2inf.cab"],
 object[type="video/mpeg"],
 embed[type="video/mpeg"]
 {
- -moz-binding: url("block.xml#block") !important;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
  min-height:50px;
 }

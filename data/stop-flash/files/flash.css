@@ -14,8 +14,7 @@ embed[src*=".swf"],
 object[type="application/x-shockwave-flash"],
 object[src*=".swf"]
 {
- -moz-binding: url("block.xml#block") !important;
- min-height:50px;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
 }
 
 /*
@@ -28,8 +27,7 @@ embed[type="application/x-director"],
 embed[src*=".dcr"],
 object[type="application/x-director"],
 object[src*=".dcr"] {
- -moz-binding: url("block.xml#block") !important;
- min-height:50px;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
 }
 
 /*
@@ -42,8 +40,7 @@ embed[type="application/x-authorware-map"],
 embed[src*=".aam"],
 object[type="application/x-authorware-map"],
 object[src*=".aam"] {
- -moz-binding: url("block.xml#block") !important;
- min-height:50px;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
 }
 
 /*
@@ -57,5 +54,5 @@ object[sourceelement*="xaml"],
 embed[type="application/ag-plugin"],
 embed[source*=".xaml"]
 {
- -moz-binding: none !important;
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
 }

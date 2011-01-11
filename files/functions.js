@@ -54,19 +54,37 @@ loadToggleToolbar: function(button_id, toolbar_id){
 	true);
 }
 
-OpenAddonsMgr: function(type) {
+OpenAddonsMgr: function(type, typeUrl) {
 	var extensionManager = toolbar_buttons.interfaces.WindowMediator
 					.getMostRecentWindow("Extension:Manager");
 	if (extensionManager) {
 		extensionManager.focus();
 		extensionManager.showView(type);
 	} else {
-		window.openDialog(
-				"chrome://mozapps/content/extensions/extensions.xul",
-				"",
-				"chrome,menubar,extra-chrome,toolbar,dialog=no,resizable",
-				type);
+		var addonManager = toolbar_buttons.interfaces.WindowMediator
+			.getMostRecentWindow("Addons:Manager");
+		if (addonManager) {
+			addonManager.focus();
+			addonManager.gViewController.loadView(typeUrl);
+		} else {
+			var contents = toolbar_buttons.getUrlContents("chrome://mozapps/content/extensions/extensions.xul");
+			var win = window.openDialog(
+					"chrome://mozapps/content/extensions/extensions.xul", "",
+					"chrome,menubar,extra-chrome,toolbar,dialog=no,resizable", contents.match("Addons:Manager") ? {"view" :typeUrl} : type);
+		}
 	}
+}
+
+getUrlContents: function(aURL){
+	var ioService = toolbar_buttons.interfaces.IOService;
+	var scriptableStream = toolbar_buttons.interfaces.ScriptableInputStream;
+	var channel=ioService.newChannel(aURL,null,null);
+	var input = channel.open();
+	scriptableStream.init(input);
+	var str = scriptableStream.read(input.available());
+	scriptableStream.close();
+	input.close();
+	return str;
 }
 
 LoadURL: function(url, event) {
@@ -234,11 +252,12 @@ PreferenceWatcher: function() {
 		this.prefs.addObserver("", this, false);
 		if(button)
 			this.button = document.getElementById(button);
+		this.buttonId = button
 		this.func = func;
 		this.pref = pref;
-		try {
+		//try {
 			this.setStatus();
-		} catch(e) {} // pref might not exist
+		//} catch(e) {} // pref might not exist
 	};
 
 	this.shutdown = function() {
@@ -248,6 +267,8 @@ PreferenceWatcher: function() {
 	this.setStatus = function() {
 		if(!this.button)
 			return
+		// remove the checked state of any old buttons
+		this.button.removeAttribute("checked");
 		var prefs = toolbar_buttons.interfaces.PrefBranch, state = null;
 		switch(prefs.getPrefType(this.pref)) {
 			case prefs.PREF_BOOL:
@@ -273,9 +294,11 @@ PreferenceWatcher: function() {
 		if (topic != "nsPref:changed") {
 			return;
 		}
-		try {
+		//try {
+			if(!this.button)
+				this.button = document.getElementById(this.buttonId);
 			this.setStatus();
-		} catch(e) {} // button might not exist
+		//} catch(e) {} // button might not exist
 	};
 }
 
@@ -380,14 +403,15 @@ loadUserContentSheet: function(sheet, pref, buttonId) {
 }
 
 stopContent: function(button, pref) {
-	if(toolbar_buttons.extensionPrefToggleStatus(button, pref))
-		BrowserReload();
+	//if(toolbar_buttons.extensionPrefToggleStatus(button, pref))
+	//	BrowserReload();
+	toolbar_buttons.extensionPrefToggleStatus(button, pref)
 }
 
 loadContectBlocker: function(fullPref, prefName, buttonId, sheet, func) {
 	window.addEventListener("load", function(e) {
 		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(fullPref, null, func ? func : function(state) {
+		prefWatch.startup(fullPref, buttonId, func ? func : function(state) {
 			var button = document.getElementById(buttonId);
 			if(button) {
 				toolbar_buttons.cssFileToUserContent(sheet, state, false, buttonId);
@@ -431,6 +455,65 @@ clearBar: function(bar) {
 		} else {
 			var name = stringBundle.GetStringFromName("bar-missing-url");
 		}
+		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
+		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+	}
+}
+
+showOnlyThisFrame: function() {
+	var focusedWindow = document.commandDispatcher.focusedWindow;
+	if (isContentFrame(focusedWindow)) {
+		var doc = focusedWindow.document;
+		var frameURL = doc.location.href;
+
+		urlSecurityCheck(frameURL, gBrowser.contentPrincipal,
+						 Ci.nsIScriptSecurityManager.DISALLOW_SCRIPT);
+		var referrer = doc.referrer;
+		gBrowser.loadURI(frameURL, referrer ? makeURI(referrer) : null);
+	}
+}
+
+searchBarSize: function(opp) {
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
+		.createBundle("chrome://toolbar-button/locale/button.properties");
+	var item = document.getElementById("search-container"), toolbar = item, size;
+	if(item) {
+		do {
+			toolbar = toolbar.parentNode;
+		} while(toolbar && toolbar.nodeName != "toolbar");
+		if(toolbar && toolbar.collapsed)
+			toolbar.collapsed = !toolbar.collapsed;
+		if(isNaN(opp)) {
+			var input = {value: item.width};
+			var result = toolbar_buttons.interfaces.PromptService.prompt(null, stringBundle.GetStringFromName("search-bar-size-title"),
+					stringBundle.GetStringFromName("search-bar-size-message"), input, null, {value: false});
+			size = input.value;
+			if(result && size){
+				size = Math.round(Number(size));
+				if(isNaN(size)) {
+					toolbar_buttons.interfaces.PromptService.alert(window, stringBundle.GetStringFromName("error"),
+							stringBundle.GetStringFromName("search-bar-numbers"));
+					return false;
+				}
+			} else {
+				return false;
+			}
+		} else {
+			size = Number(item.width) + (opp * 10);
+		}
+		if(size > -1){
+			item.width = size;
+			// incase the search bar is not on the same bar as the address bar
+			item.style.maxWidth = size + 'px';
+		} else {
+			toolbar_buttons.interfaces.PromptService.alert(window, stringBundle.GetStringFromName("error"),
+					stringBundle.formatStringFromName("search-bar-size", [size], 1));
+		}
+
+	} else {
+		var title = stringBundle.GetStringFromName("bar-missing-title");
+		// lousy because the code for matching strings is not smart enough
+		var name = stringBundle.GetStringFromName("bar-missing-search");
 		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 	}

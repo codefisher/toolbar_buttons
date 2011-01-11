@@ -150,3 +150,11 @@
 <!ENTITY tb-clear-search.tooltip "Clear and focus on the search bar">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Open Twitter home page">
+<!ENTITY tb-search-plus.label "Increase Searchbar Size">
+<!ENTITY tb-search-plus.tooltip "Increases the width of the searchbar by 10 pixles">
+<!ENTITY tb-search-minus.label "Decrease Searchbar Size">
+<!ENTITY tb-search-minus.tooltip "Decreases the width of the searchbar by 10 pixles">
+<!ENTITY tb-search-resize.label "Resize Search Size">
+<!ENTITY tb-search-resize.tooltip "Resizes the width of the searchbar">
+<!ENTITY tb-cookie-manager.label "Cookie Manager">
+<!ENTITY tb-cookie-manager.tooltip "Opens the cookie manager in a new tab">
