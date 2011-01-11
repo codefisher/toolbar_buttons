@@ -6,7 +6,10 @@
 	</preferences>
 	<description>&translate.description;
 	</description>
-	<menulist preference="{{pref-root}}translate.lang">
-		<menupopup id="translate-languages"/>
+	<menulist id="translate-languages-menu" hidden="true" preference="{{pref-root}}translate.lang">
+		<menupopup id="translate-languages" />
+	</menulist>
+	<menulist id="translate-languages-menu-dummy" disabled="true">
+		<menupopup><menuitem label="&translate.not-in-use;" /></menupopup>
 	</menulist>
 </groupbox>

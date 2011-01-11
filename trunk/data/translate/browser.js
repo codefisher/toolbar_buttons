@@ -12,6 +12,8 @@ TranslatePage: function() {
 }
 
 UpdateTranslateOverlay: function() {
+	if(!document.getElementById('translate'))
+		return;
 	var file = toolbar_buttons.interfaces.Properties.get('ProfD', Ci.nsIFile);
 	file.append("extensions");
 	file.append("{{uuid}}");
@@ -33,7 +35,7 @@ UpdateTranslateOverlayOnload: function(XMLhttp) {
 		var lang = items[item].toString().match(/<option value="(.*?)".*?>(.*?)<\/option>/);
 		xul += '<menuitem value="' + lang[1] + '" label="' + lang[2] + '"/>';
 	}
-	xul += "</menupopup></overlay>";
+	xul += '</menupopup><menulist id="translate-languages-menu-dummy" hidden="true"/><menulist id="translate-languages-menu" hidden="false" /></overlay>';
 
 	var file = toolbar_buttons.interfaces.Properties.get('ProfD', Ci.nsIFile);
 	file.append("extensions");

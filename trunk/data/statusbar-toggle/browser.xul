@@ -3,5 +3,4 @@
 	id="statusbar-toggle"
 	label="&statusbar-toggle.label;"
 	tooltiptext="&statusbar-toggle.tooltip;"
-	oncommand="toolbar_buttons.toggleToolbar(event, 'nav-bar');"
-	command="cmd_toggleTaskbar" />
+	oncommand="toolbar_buttons.toggleStatusBar(event);" />

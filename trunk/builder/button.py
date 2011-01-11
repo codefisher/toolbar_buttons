@@ -108,7 +108,8 @@ class Button():
                     self._button_options_js[button] = option.read()
             if "files" in files:
                 for file in os.listdir(os.path.join(folder, "files")):
-                    self._extra_files[file] = os.path.join(folder, "files", file)
+                    if file[0] != ".":
+                        self._extra_files[file] = os.path.join(folder, "files", file)
 
     def get_extra_files(self):
         return self._extra_files

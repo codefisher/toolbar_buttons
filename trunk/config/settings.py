@@ -3,7 +3,7 @@ import os
 NAME = "Toolbar Buttons"
 CREATOR = "Michael Buckley"
 DESCRIPTION = "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality."
-VERSION = "1.0a9"
+VERSION = "1.0a10"
 EXTENSION_ID = "{03B08592-E5B4-45ff-A0BE-C1D975458688}"
 HOMEPAGE = "http://codefisher.org/toolbar_button/"
 ICON = os.path.join("files", "button.png")
@@ -87,5 +87,5 @@ FILE_EXCLUDE = {
 
 OUTPUT = os.path.join("extenions", "toolbar_buttons.xpi")
 
-PROFILE_FOLDER = "/home/michael/.mozilla/firefox/0xq1gim8.Michael"
+PROFILE_FOLDER = "/home/michael/.thunderbird/qkx2vqjm.default" # "/home/michael/.mozilla/firefox/0xq1gim8.Michael" #
 IMAGE_PATH = "/home/michael/Pictures/PastelSVG/png"

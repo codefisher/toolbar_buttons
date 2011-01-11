@@ -37,7 +37,8 @@ def build_extension(settings):
     for locale, data in button_locales.get_properties_data(buttons.get_properties_strings()).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
-        jar.write(path, os.path.join("content", name))
+        with open(path) as fp:
+            jar.writestr(os.path.join("content", name), fp.read().replace("{{chrome-name}}", settings.CHROME_NAME))
 
     for file, data in buttons.get_options().iteritems():
         jar.writestr(os.path.join("content", "%s.xul" % file), data)
@@ -54,10 +55,12 @@ def build_extension(settings):
         try:
             jar.write(os.path.join(settings.IMAGE_PATH, small, image), os.path.join("skin", small, image))
         except (OSError, IOError):
+            jar.write(os.path.join("files", "default16.png"), os.path.join("skin", small, image))
             print "can not find file %s" % image
         try:
             jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
         except (OSError, IOError):
+            jar.write(os.path.join("files", "default24.png"), os.path.join("skin", large, image))
             print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)

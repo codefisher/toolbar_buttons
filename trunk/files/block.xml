@@ -1,114 +1,756 @@
 ﻿<?xml version="1.0"?>
-<bindings xmlns="http://www.mozilla.org/xbl"
-	  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-	  xmlns:xbl="http://www.mozilla.org/xbl">
+<!--
+	This file comes from the FlashBlock extension.  They gave me premission to
+	use their code. It is currently avilable under the MPL 1.1/GPL 2.0/LGPL 2.1
+	licences.
+ -->
+<bindings
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+>
 
- <binding id="block" flex="1" display="xul:hbox">
+<binding id="flash">
+  <implementation>
+    <constructor>
+        <![CDATA[
+//From Jesse's XPCNativeWrapper: http://mavra.perilith.com/~luser/content/native.js
+function nativeMethod(untrustedObject, methodName)
+{
+  // happier stack traces and faster multiple calls
+  var fun = Components.lookupMethod(untrustedObject, methodName);
 
-    <implementation>
-      <constructor>
-      <![CDATA[ 
-        /* many thanks to the flash block team that said I could pinch
-         * their code - some time in the distant past */
-        //From Jesse's XPCNativeWrapper: http://mavra.perilith.com/~luser/content/native.js
-        function nativeMethod(untrustedObject, methodName)
-        {
-          // happier stack traces and faster multiple calls
-          var fun = Components.lookupMethod(untrustedObject, methodName);
-          
-          return function()
-          {
-            return fun.apply(untrustedObject, arguments);
-          }
-        }
+  return function()
+  {
+    return fun.apply(untrustedObject, arguments);
+  }
+}
 
-        function flashblockCreatePlaceholder(isStandalone) {
-	        // Create placeholder
-	        var flashblockCreateElement = nativeMethod(document, "createElement");
-	        var placeholder = flashblockCreateElement("div");
-	        placeholder.isStandalone = isStandalone;
-	        return placeholder;
-        }
+function flashblockCreatePlaceholder(isStandalone) {
+	// Create placeholder
+	var flashblockCreateElement = nativeMethod(document, "createElementNS");
+	var placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	placeholder.isStandalone = isStandalone;
+	return placeholder;
+}
 
-        // Substitute the animation with a placeholder
-        function flashblockShowPlaceholder() {
-	        // Just in case the object has been moved away from under our feet during
-	        // the timeout, re-assign the parent node. See bug 13680
-	        // parent = current.parentNode;
-	        var newParent = current.parentNode;
-	        parent = newParent ? newParent : parent;
-	        parent.insertBefore(placeholder, current);
-	        if(placeholder.isStandalone) {
-		        placeholder.flashblock = "frame";
-		        if ("StopPlay" in current)
-			        current.StopPlay();
-		        if ("LoadMovie" in current)
-			        current.LoadMovie(0, "");
-		        current.prevWidth = current.width;
-		        current.prevHeight = current.height;
-		        current.width = current.height = 0;
-	        } else {
-		        placeholder.flashblock = "normal";
-		        parent.removeChild(current); 
-	        }
-        }
-        
-        // Show the original animation
-        function flashblockShowFlash() {
-	        if(placeholder.flashblock == "frame") {
-		        current.height = current.prevHeight;
-		        current.width = current.prevWidth;
-		        current.src = placeholder.title;
-		        if ("LoadMovie" in current)
-			        current.LoadMovie(0, current.src);
-	        } else {
-		        parent.insertBefore(current, placeholder);
-		        if (placeholder.hasAttribute("srcAttribute")) {
-			        current.setAttribute("src", placeholder.getAttribute("srcAttribute"));
-		        }
-		        if (placeholder.hasAttribute("movieAttribute")) {
-			        current.setAttribute("movie", placeholder.getAttribute("movieAttribute"));
-		        }
-		        if (placeholder.hasAttribute("dataAttribute")) {
-			        current.setAttribute("data", placeholder.getAttribute("dataAttribute"));
-		        }
-		        if (placeholder.movieParam) {
-			        var mparam = placeholder.movieParam;
-			        mparam[0].value = mparam[1];
-		        }
-		        if (placeholder.hasAttribute("embedsrc")) {
-			        var embeds = current.getElementsByTagName("embed");
-			        if (embeds && embeds.length > 0) {
-				        embeds[0].setAttribute("src", placeholder.getAttribute("embedsrc"));
-			        }
-		        }
-	        }
-	        parent.removeChild(placeholder);
-        }
-        var current = this;
-        var parent = current.parentNode;
+// Substitute the animation with a placeholder
+function flashblockShowPlaceholder() {
+	// Just in case the object has been moved away from under our feet during
+	// the timeout, re-assign the parent node. See bug 13680
+	// parent = current.parentNode;
+	var newParent = current.parentNode;
+	parent = newParent ? newParent : parent;
 
-        // Check parent too (case of working EMBED inside broken OBJECT)
-        if (current.overrideCTV || parentNode.overrideCTV) {
-	        return;
-        }
-        current.overrideCTV = true;
+	// Fix for Flashblock Bug 22168 (Node was not found" code: "8").
+	// if the LSB is 1, it means the nodes are unrelated (e.g. different window).
+	if (current.compareDocumentPosition(parent)&1)
+		return;
 
-        // Create placeholder div
-        var isStandalone = ("src" in current && current.src == current.ownerDocument.location);
-        var placeholder = flashblockCreatePlaceholder(isStandalone);
-        placeholder.style.background = '#fff url("data:image/png;base64,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") no-repeat center center';
-        placeholder.style.height = "100%";
+	parent.insertBefore(placeholder, current);
+	if(placeholder.isStandalone) {
+		placeholder.flashblock = "frame";
+		if ("StopPlay" in current)
+			current.StopPlay();
+		if ("LoadMovie" in current)
+			current.LoadMovie(0, "");
+		current.prevWidth = current.width;
+		current.prevHeight = current.height;
+		current.width = current.height = 0;
+	} else {
+		placeholder.flashblock = "normal";
+		parent.removeChild(current);
+	}
+}
 
-        // Replace the flash document with a placeholder.
-        var flashblockSetTimeout = nativeMethod(window, "setTimeout");
-        flashblockSetTimeout(flashblockShowPlaceholder, 0);
-        
-        // Replace the placeholder with the flash document.
-        placeholder.onclick = flashblockShowFlash;
-      ]]>
-      </constructor>
-    </implementation>
- </binding>
+// Show the original animation
+function flashblockShowFlash(event) {
+	if( event.type == "keypress" && event.keyCode != KeyEvent.DOM_VK_RETURN)
+		return false;
+	event.stopPropagation();
+	if(placeholder.flashblock == "frame") {
+		current.height = current.prevHeight;
+		current.width = current.prevWidth;
+		current.src = placeholder.title;
+		if ("LoadMovie" in current)
+			current.LoadMovie(0, current.src);
+	} else {
+		parent.insertBefore(current, placeholder);
+		if (placeholder.hasAttribute("srcAttribute")) {
+			current.setAttribute("src", placeholder.getAttribute("srcAttribute"));
+		}
+		if (placeholder.hasAttribute("movieAttribute")) {
+			current.setAttribute("movie", placeholder.getAttribute("movieAttribute"));
+		}
+		if (placeholder.hasAttribute("dataAttribute")) {
+			current.setAttribute("data", placeholder.getAttribute("dataAttribute"));
+		}
+		if (placeholder.movieParam) {
+			var mparam = placeholder.movieParam;
+			mparam[0].value = mparam[1];
+		}
+		if (placeholder.srcParam) {
+			var mparam = placeholder.srcParam;
+			mparam[0].value = mparam[1];
+		}
+		if (placeholder.sourceParam) {
+			var mparam = placeholder.sourceParam;
+			mparam[0].value = mparam[1];
+		}
+	}
+	parent.removeChild(placeholder);
+}
+
+function flashblockIsWhitelisted(node, type) {
+	// Check if the page that loaded the Flash site is whitelisted
+	// Thanks to Neil on #mozilla for suggesting this method, I would never have
+	// thought of it on my own. :-)
+	// Lor 20041215: Use "UIEvents" to make it work in post-1.0 FF
+	// (thanks to Neil again)
+	document.QueryInterface(Components.interfaces.nsIDOMDocument);
+	var flashblockEvent = document.createEvent("UIEvents");
+	if(flashblockEvent) {
+		var evt = type == "silverlight" ? "silverblockCheckLoad" : "flashblockCheckLoad";
+		flashblockEvent.initEvent(evt, true, true);
+		node.dispatchEvent(flashblockEvent);
+		if(flashblockEvent.getPreventDefault() == true) {
+			// Whitelisted
+			return true;
+		}
+	}
+	return false;
+}
+
+/*
+function getBinaryUrlContents(aURL){
+	var ioService = Components.classes["@mozilla.org/network/io-service;1"]
+		.getService(Components.interfaces.nsIIOService);
+	var binaryInputStream = Components.classes["@mozilla.org/binaryinputstream;1"]
+		.createInstance(Components.interfaces.nsIBinaryInputStream);
+	var channel = ioService.newChannel(aURL,null,null);
+	var input = channel.open();
+	binaryInputStream.setInputStream(input);
+	var numBytes = binaryInputStream.available();
+	var bytes = binaryInputStream.readByteArray(numBytes);
+	binaryInputStream.close();
+	input.close();
+	return "data:image/png;base64," + btoa(String.fromCharCode.apply(null, bytes));
+}*/
+
+function flashblockSetImage(placeholder, type) {
+	var block = "data:image/png;base64,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";
+	var play = "data:image/png;base64,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";
+	var inactiveurl = "#ffffff url(" + block + ") no-repeat center";
+	var playimage = "#ffffff url(" + play + ")";
+	/* switch (type) {
+		case "silverlight":
+			playimage = "url(chrome://{{chrome-name}}/content/silverplay.png)";
+			break;
+		default:
+			break;
+	} */
+	var activeurl = playimage + " no-repeat center";
+	placeholder.setAttribute("bgInactive", inactiveurl);
+	placeholder.setAttribute("bgActive", activeurl);
+	placeholder.style.setProperty("background", inactiveurl, "important");
+}
+
+function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
+	// If object's size was relative, use that.
+	// Otherwise, set size to minimum 32x32 px
+	placeholder.style.setProperty("min-width", "32px", "important");
+	placeholder.style.setProperty("min-height", "32px", "important");
+	// The size and positioning may come from a class
+	var fClass = flash.getAttribute("class");
+	if (fClass)
+		placeholder.setAttribute("class", fClass);
+
+	var fStyle = window.getComputedStyle(flash, "");
+
+	var fWidth = fStyle.getPropertyValue("width");
+	var width = parseInt(flash.width || flash.style.width);
+	if (fWidth && parseInt(fWidth) > 32)
+		width = fWidth;
+	else if(flash.width.match("%$"))
+		width = flash.width;
+	else if (width)
+			width = Math.max(width,32) + "px";
+	else
+		width = "32px"
+	placeholder.style.width = width;
+
+	var fHeight = fStyle.getPropertyValue("height");
+	var height = parseInt(flash.height || flash.style.height);
+	if (fHeight && parseInt(fHeight) > 32)
+		height = fHeight;
+	else if(flash.height.match("%$"))
+		height = flash.height;
+	else if (height)
+		height = Math.max(height,32) + "px";
+	else
+		height = "32px"
+	placeholder.style.height = height;
+
+	// Add styling rules to placeholder div.
+	placeholder.style.border = "1px solid #dfdfdf";
+	placeholder.style.cursor = "pointer";
+	placeholder.style.overflow = "hidden";
+	var disp = fStyle.getPropertyValue("display");
+	placeholder.style.display = disp == "block" ? "block" : "inline-block";
+	placeholder.style.setProperty("visibility", "visible", "important");
+
+	// The size of the placeholder should include borders too,
+	// otherwise scrollbars appear for blocked standalone objects
+	placeholder.style.MozBoxSizing = "border-box";
+
+	// Make some style adjustments since the placeholder is a <div>
+	// element instead of a <embed>, <object>, ... element.
+	// An <embed> will be centered if the parent has
+	// 'text-align: center' but a <div> will not. This code fixes that.
+	var parentStyle = window.getComputedStyle(flash.parentNode, "");
+	if (parentStyle.getPropertyValue("text-align") == "center") {
+		placeholder.style.marginRight = "auto";
+		placeholder.style.marginLeft = "auto";
+	}
+}
+
+function flashblockSetTitle(current, placeholder, isStandalone) {
+	// non-null "about:blank" value to prevent OS/2 crashing
+	var fakeURI = "about:blank";
+	if (isStandalone) {
+		placeholder.title = current.src;
+		current.src = fakeURI;
+	}
+	else if (current.hasAttribute("src") ||
+			(current.hasAttribute("data") && !/application\/x-silverlight/.test(current.getAttribute("data"))) ||
+			current.hasAttribute("movie") ) {
+		var srcURI = current.getAttribute("src") ||
+			current.getAttribute("movie") ||
+			current.getAttribute("data") ;
+		placeholder.title = srcURI;
+		if (current.hasAttribute("src")) {
+			placeholder.setAttribute("srcAttribute", current.getAttribute("src"));
+			current.setAttribute("src", fakeURI);
+		}
+		if (current.hasAttribute("data")) {
+			placeholder.setAttribute("dataAttribute", current.getAttribute("data"));
+			current.setAttribute("data", fakeURI);
+		}
+		if (current.hasAttribute("movie")) {
+			placeholder.setAttribute("movieAttribute", current.getAttribute("movie"));
+			current.setAttribute("movie", fakeURI);
+		}
+	}
+	else {
+		var params = current.getElementsByTagName("param");
+		for (var ii = 0; ii < params.length; ii++) {
+			if (params[ii].getAttribute("name") == "movie" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.movieParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+			if (params[ii].getAttribute("name") == "src" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.srcParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+			if (params[ii].getAttribute("name") == "source" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.sourceParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+		}
+	}
+}
+
+var type = this.flashblockType ? this.flashblockType : "flash"
+if (/silverlight|ag-plugin/i.test(this.getAttribute("type")) ||
+    /32C73088-76AE-40F7-AC40-81F62CB2C1DA/i.test(this.getAttribute("classid")) ) {
+  type = "silverlight";
+}
+
+if(flashblockIsWhitelisted(this, type))
+    return;
+
+var current = this;
+var parent = current.parentNode;
+
+// Check parent too (case of working EMBED inside broken OBJECT)
+if (current.overrideCTV || parentNode.overrideCTV) {
+    return;
+}
+current.overrideCTV = true;
+
+// Flowplayer specific workaround.
+var flow = parent.getAttribute("href");
+if (flow) {
+    var prevDef = function (event) {
+        event.preventDefault();
+        event.currentTarget.removeEventListener("load", arguments.callee, true);
+    }
+    parent.addEventListener("click", prevDef , true)
+}
+
+// Create placeholder div
+var isStandalone = ("src" in current && current.src == current.ownerDocument.location);
+var placeholder = flashblockCreatePlaceholder(isStandalone);
+
+// Set placeholder image
+flashblockSetImage(placeholder, type);
+
+flashblockStylePlaceholder(current, placeholder, isStandalone);
+
+flashblockSetTitle(current, placeholder, isStandalone);
+
+// Replace the flash document with a placeholder.
+var flashblockSetTimeout = nativeMethod(window, "setTimeout");
+flashblockSetTimeout(flashblockShowPlaceholder, 0);
+
+// Change the placeholder background when the mouse enters/exits the div.
+placeholder.addEventListener("mouseover",
+function(event) {event.target.style.setProperty("background",
+                                                 event.target.getAttribute("bgActive"),
+                                                 "important"); },
+"false"
+);
+placeholder.addEventListener("mouseout",
+function(event) {event.target.style.setProperty("background",
+                                                 event.target.getAttribute("bgInactive"),
+                                                 "important"); },
+"false"
+);
+
+// Replace the placeholder with the flash document.
+placeholder.addEventListener("click", flashblockShowFlash, "false");
+
+// Accessibility
+placeholder.setAttribute("tabindex", "0");
+placeholder.setAttribute("role", "button");
+placeholder.addEventListener("keypress", flashblockShowFlash, "false");
+
+        ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+<binding id="director" extends="#flash">
+  <implementation>
+    <field name="flashblockType">"director"</field>
+  </implementation>
+</binding>
+
+<binding id="authorware" extends="#flash">
+  <implementation>
+    <field name="flashblockType">"authorware"</field>
+  </implementation>
+</binding>
+
+<binding id="silverlight" extends="#flash">
+  <implementation>
+    <field name="flashblockType">"silverlight"</field>
+  </implementation>
+</binding>
+
+<binding id="brokenobject">
+  <implementation>
+
+    <field name="brokenObject">"yes"</field>
+
+    <constructor>
+        <![CDATA[
+
+//From Jesse's XPCNativeWrapper: http://mavra.perilith.com/~luser/content/native.js
+function nativeMethod(untrustedObject, methodName)
+{
+  // happier stack traces and faster multiple calls
+  var fun = Components.lookupMethod(untrustedObject, methodName);
+
+  return function()
+  {
+    return fun.apply(untrustedObject, arguments);
+  }
+}
+
+function flashblockCreatePlaceholder(isStandalone) {
+	// Create placeholder
+	var flashblockCreateElement = nativeMethod(document, "createElementNS");
+	var placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	placeholder.isStandalone = isStandalone;
+	return placeholder;
+}
+
+// Substitute the animation with a placeholder
+function flashblockShowPlaceholder() {
+	// Just in case the object has been moved away from under our feet during
+	// the timeout, re-assign the parent node. See bug 13680
+	// parent = current.parentNode;
+	var newParent = current.parentNode;
+	parent = newParent ? newParent : parent;
+
+	// Fix for Flashblock Bug 22168 (Node was not found" code: "8").
+	// if the LSB is 1, it means the nodes are unrelated (e.g. different window).
+	if (current.compareDocumentPosition(parent)&1)
+		return;
+
+	parent.insertBefore(placeholder, current);
+	if(placeholder.isStandalone) {
+		placeholder.flashblock = "frame";
+		if ("StopPlay" in current)
+			current.StopPlay();
+		if ("LoadMovie" in current)
+			current.LoadMovie(0, "");
+		current.prevWidth = current.width;
+		current.prevHeight = current.height;
+		current.width = current.height = 0;
+	} else {
+		placeholder.flashblock = "normal";
+		parent.removeChild(current);
+	}
+}
+
+// Show the original animation
+function flashblockShowFlash(event) {
+	if( event.type == "keypress" && event.keyCode != KeyEvent.DOM_VK_RETURN)
+		return false;
+	event.stopPropagation();
+	if(placeholder.flashblock == "frame") {
+		current.height = current.prevHeight;
+		current.width = current.prevWidth;
+		current.src = placeholder.title;
+		if ("LoadMovie" in current)
+			current.LoadMovie(0, current.src);
+	} else {
+		parent.insertBefore(current, placeholder);
+		if (placeholder.hasAttribute("srcAttribute")) {
+			current.setAttribute("src", placeholder.getAttribute("srcAttribute"));
+		}
+		if (placeholder.hasAttribute("movieAttribute")) {
+			current.setAttribute("movie", placeholder.getAttribute("movieAttribute"));
+		}
+		if (placeholder.hasAttribute("dataAttribute")) {
+			current.setAttribute("data", placeholder.getAttribute("dataAttribute"));
+		}
+		if (placeholder.movieParam) {
+			var mparam = placeholder.movieParam;
+			mparam[0].value = mparam[1];
+		}
+		if (placeholder.srcParam) {
+			var mparam = placeholder.srcParam;
+			mparam[0].value = mparam[1];
+		}
+		if (placeholder.sourceParam) {
+			var mparam = placeholder.sourceParam;
+			mparam[0].value = mparam[1];
+		}
+	}
+	parent.removeChild(placeholder);
+}
+
+function flashblockIsWhitelisted(node, type) {
+	// Check if the page that loaded the Flash site is whitelisted
+	// Thanks to Neil on #mozilla for suggesting this method, I would never have
+	// thought of it on my own. :-)
+	// Lor 20041215: Use "UIEvents" to make it work in post-1.0 FF
+	// (thanks to Neil again)
+	document.QueryInterface(Components.interfaces.nsIDOMDocument);
+	var flashblockEvent = document.createEvent("UIEvents");
+	if(flashblockEvent) {
+		var evt = type == "silverlight" ? "silverblockCheckLoad" : "flashblockCheckLoad";
+		flashblockEvent.initEvent(evt, true, true);
+		node.dispatchEvent(flashblockEvent);
+		if(flashblockEvent.getPreventDefault() == true) {
+			// Whitelisted
+			return true;
+		}
+	}
+	return false;
+}
+
+function flashblockSetImage(placeholder, type) {
+	var inactiveurl = "url(chrome://flashblock/content/" + type + ".png) no-repeat center";
+	var playimage = "url(chrome://flashblock/content/flashplay.png)";
+	switch (type) {
+		case "silverlight":
+			playimage = "url(chrome://flashblock/content/silverplay.png)";
+			break;
+		default:
+			break;
+	}
+	var activeurl = playimage + " no-repeat center";
+	placeholder.setAttribute("bgInactive", inactiveurl);
+	placeholder.setAttribute("bgActive", activeurl);
+	placeholder.style.setProperty("background", inactiveurl, "important");
+}
+
+function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
+	// If object's size was relative, use that.
+	// Otherwise, set size to minimum 32x32 px
+	placeholder.style.setProperty("min-width", "32px", "important");
+	placeholder.style.setProperty("min-height", "32px", "important");
+	// The size and positioning may come from a class
+	var fClass = flash.getAttribute("class");
+	if (fClass)
+		placeholder.setAttribute("class", fClass);
+
+	var fStyle = window.getComputedStyle(flash, "");
+
+	var fWidth = fStyle.getPropertyValue("width");
+	var width = parseInt(flash.width || flash.style.width);
+	if (fWidth && parseInt(fWidth) > 32)
+		width = fWidth;
+	else if(flash.width.match("%$"))
+		width = flash.width;
+	else if (width)
+			width = Math.max(width,32) + "px";
+	else
+		width = "32px"
+	placeholder.style.width = width;
+
+	var fHeight = fStyle.getPropertyValue("height");
+	var height = parseInt(flash.height || flash.style.height);
+	if (fHeight && parseInt(fHeight) > 32)
+		height = fHeight;
+	else if(flash.height.match("%$"))
+		height = flash.height;
+	else if (height)
+		height = Math.max(height,32) + "px";
+	else
+		height = "32px"
+	placeholder.style.height = height;
+
+	// Add styling rules to placeholder div.
+	placeholder.style.border = "1px solid #dfdfdf";
+	placeholder.style.cursor = "pointer";
+	placeholder.style.overflow = "hidden";
+	var disp = fStyle.getPropertyValue("display");
+	placeholder.style.display = disp == "block" ? "block" : "inline-block";
+	placeholder.style.setProperty("visibility", "visible", "important");
+
+	// The size of the placeholder should include borders too,
+	// otherwise scrollbars appear for blocked standalone objects
+	placeholder.style.MozBoxSizing = "border-box";
+
+	// Make some style adjustments since the placeholder is a <div>
+	// element instead of a <embed>, <object>, ... element.
+	// An <embed> will be centered if the parent has
+	// 'text-align: center' but a <div> will not. This code fixes that.
+	var parentStyle = window.getComputedStyle(flash.parentNode, "");
+	if (parentStyle.getPropertyValue("text-align") == "center") {
+		placeholder.style.marginRight = "auto";
+		placeholder.style.marginLeft = "auto";
+	}
+}
+
+function flashblockSetTitle(current, placeholder, isStandalone) {
+	// non-null "about:blank" value to prevent OS/2 crashing
+	var fakeURI = "about:blank";
+	if (isStandalone) {
+		placeholder.title = current.src;
+		current.src = fakeURI;
+	}
+	else if (current.hasAttribute("src") ||
+			(current.hasAttribute("data") && !/application\/x-silverlight/.test(current.getAttribute("data"))) ||
+			current.hasAttribute("movie") ) {
+		var srcURI = current.getAttribute("src") ||
+			current.getAttribute("movie") ||
+			current.getAttribute("data") ;
+		placeholder.title = srcURI;
+		if (current.hasAttribute("src")) {
+			placeholder.setAttribute("srcAttribute", current.getAttribute("src"));
+			current.setAttribute("src", fakeURI);
+		}
+		if (current.hasAttribute("data")) {
+			placeholder.setAttribute("dataAttribute", current.getAttribute("data"));
+			current.setAttribute("data", fakeURI);
+		}
+		if (current.hasAttribute("movie")) {
+			placeholder.setAttribute("movieAttribute", current.getAttribute("movie"));
+			current.setAttribute("movie", fakeURI);
+		}
+	}
+	else {
+		var params = current.getElementsByTagName("param");
+		for (var ii = 0; ii < params.length; ii++) {
+			if (params[ii].getAttribute("name") == "movie" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.movieParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+			if (params[ii].getAttribute("name") == "src" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.srcParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+			if (params[ii].getAttribute("name") == "source" &&
+				params[ii].hasAttribute("value")) {
+				placeholder.title = params[ii].value;
+				placeholder.sourceParam = [ params[ii], placeholder.title ];
+				params[ii].value = fakeURI;
+				break;
+			}
+		}
+	}
+}
+
+function isBrokenFlash(element) {
+	var params = element.getElementsByTagName("param");
+	var isFlash = false;
+	for (var ii = 0; ii < params.length; ii++) {
+		var pvalue = params[ii].getAttribute("value");
+		if (/\.swf/i.test(pvalue))
+			return true;
+		var pname = params[ii].getAttribute("name");
+		if (/movie/i.test(pname))
+			return true;
+	}
+	var embeds = element.getElementsByTagName("embed");
+	for (var jj = 0; jj < embeds.length; jj++) {
+		var embed = embeds[jj];
+		if (/x-shockwave-flash/i.test(embed.getAttribute("type")) ||
+			/\.swf/i.test(embed.getAttribute("src"))) {
+			return true;
+		}
+	}
+	return false;
+}
+
+var type = this.flashblockType ? this.flashblockType : "flash"
+if (/silverlight|ag-plugin/i.test(this.getAttribute("type")) ||
+    /32C73088-76AE-40F7-AC40-81F62CB2C1DA/i.test(this.getAttribute("classid")) ) {
+  type = "silverlight";
+}
+
+if(flashblockIsWhitelisted(this, type))
+    return;
+
+if (!isBrokenFlash(this))
+    return;
+
+var current = this;
+var parent = current.parentNode;
+
+// Check parent too (case of working EMBED inside broken OBJECT)
+if (current.overrideCTV || parentNode.overrideCTV) {
+	return;
+}
+current.overrideCTV = true;
+
+// Flowplayer specific workaround.
+var flow = parent.getAttribute("href");
+if (flow) {
+	var prevDef = function (event) {
+		event.preventDefault();
+		event.currentTarget.removeEventListener("load", arguments.callee, true);
+	}
+	parent.addEventListener("click", prevDef , true)
+}
+
+// Create placeholder div
+var isStandalone = ("src" in current && current.src == current.ownerDocument.location);
+var placeholder = flashblockCreatePlaceholder(isStandalone);
+
+// Set placeholder image
+flashblockSetImage(placeholder, type);
+
+flashblockStylePlaceholder(current, placeholder, isStandalone);
+
+flashblockSetTitle(current, placeholder, isStandalone);
+
+// Replace the flash document with a placeholder.
+var flashblockSetTimeout = nativeMethod(window, "setTimeout");
+flashblockSetTimeout(flashblockShowPlaceholder, 0);
+
+// Change the placeholder background when the mouse enters/exits the div.
+placeholder.addEventListener("mouseover",
+function(event) {event.target.style.setProperty("background",
+                                                 event.target.getAttribute("bgActive"),
+                                                 "important"); },
+"false"
+);
+placeholder.addEventListener("mouseout",
+function(event) {event.target.style.setProperty("background",
+                                                 event.target.getAttribute("bgInactive"),
+                                                 "important"); },
+"false"
+);
+
+// Replace the placeholder with the flash document.
+placeholder.addEventListener("click", flashblockShowFlash, "false");
+
+// Accessibility
+placeholder.setAttribute("tabindex", "0");
+placeholder.setAttribute("role", "button");
+placeholder.addEventListener("keypress", flashblockShowFlash, "false");
+
+        ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+<binding id="sifr-replaced">
+  <implementation>
+    <constructor>
+        <![CDATA[
+
+document.QueryInterface(Components.interfaces.nsIDOMDocument);
+event = document.createEvent("UIEvents");
+
+if(event) {
+	event.initEvent("flashblockCheckLoad", true, true);
+	this.dispatchEvent(event);
+	if(event.getPreventDefault() == true) {
+		// Whitelisted
+		return;
+	}
+}
+
+this.style.height = 0;
+this.style.width = 0;
+this.style.setProperty("display", "none", "important");
+this.style.position ="absolute";
+this.style.overflow ="hidden";
+        ]]>
+    </constructor>
+  </implementation>
+</binding>
+
+<binding id="sifr-alternate">
+  <implementation>
+    <constructor>
+        <![CDATA[
+
+document.QueryInterface(Components.interfaces.nsIDOMDocument);
+var event = document.createEvent("UIEvents");
+
+if(event) {
+	event.initEvent("flashblockCheckLoad", true, true);
+	this.dispatchEvent(event);
+	if(event.getPreventDefault() == true) {
+		// Whitelisted
+		return;
+	}
+}
+
+this.style.setProperty("visibility", "visible", "important");
+this.style.setProperty("display", "block", "important");
+this.style.setProperty("left", "auto", "important");
+this.style.setProperty("top", "auto", "important");
+this.style.setProperty("height", "auto", "important");
+this.style.setProperty("width", "auto", "important");
+//this.style.position = "static";
+this.style.setProperty("position", "static", "important");
+        ]]>
+    </constructor>
+  </implementation>
+</binding>
 
 </bindings>

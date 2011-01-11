@@ -3,4 +3,4 @@
 	id="preferences"
 	label="&preferences.label;"
 	tooltiptext="&preferences.tooltip;"
-	command=menu_preferences"/>
+	command="menu_preferences"/>
