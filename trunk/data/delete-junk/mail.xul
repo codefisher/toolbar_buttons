@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="delete-junk"
+	label="&delete-junk.label;"
+	tooltiptext="&delete-junk.tooltip;"
+	oncommand="goDoCommand('cmd_deleteJunk');"/>

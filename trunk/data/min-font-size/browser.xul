@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="min-font-size"
+	label="&min-font-size.label;"
+	tooltiptext="&min-font-size.tooltip;"
+	oncommand="toolbar_buttons.toggleMinimumFontSize(this)" />

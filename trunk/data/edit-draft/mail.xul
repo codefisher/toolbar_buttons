@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="edit-draft"
+	label="&edit-draft.label;"
+	tooltiptext="&edit-draft.tooltip;"
+	oncommand="MsgComposeDraftMessage();" />

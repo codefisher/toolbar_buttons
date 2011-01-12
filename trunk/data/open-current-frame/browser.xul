@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="open-current-frame"
+	label="&open-current-frame.label;"
+	tooltiptext="&open-current-frame.tooltip;"
+	observes="isImage"
+	oncommand="toolbar_buttons.showOnlyThisFrame();" />

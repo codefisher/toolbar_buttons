@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="toggle-proxy"
+	label="&toggle-proxy.label;"
+	tooltiptext="&toggle-proxy.tooltip;"
+	oncommand="toolbar_buttons.toggleTheProxy();" />

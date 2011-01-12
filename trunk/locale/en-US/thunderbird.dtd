@@ -60,8 +60,8 @@
 <!ENTITY create-filter.tooltip "Create filter from message">
 <!ENTITY shift-delete.label "Skip Trash">
 <!ENTITY shift-delete.tooltip "Delete message with out sending it to the Trash">
-<!ENTITY edit-draft.label "Edit Message">
-<!ENTITY edit-draft.tooltip "Edit Message or Saved Draft">
+<!ENTITY edit-draft.label "Edit Draft">
+<!ENTITY edit-draft.tooltip "Edit Saved Draft or Message">
 <!ENTITY return-receipt.label "Return Receipt">
 <!ENTITY return-receipt.tooltip "Toggle Return Receipt on/off">
 <!ENTITY all-threads.label "All Threads">
@@ -80,3 +80,5 @@
 <!ENTITY toggle-starred.tooltip "Toggle Starred Status">
 <!ENTITY toggle-read.label "Toggle Read">
 <!ENTITY toggle-read.tooltip "Toggle Message Read Status">
+<!ENTITY edit-as-new.label "Edit as New">
+<!ENTITY edit-as-new.tooltip "Edit Message as New">

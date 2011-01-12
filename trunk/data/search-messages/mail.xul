@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="search-messages"
+	label="&search-messages.label;"
+	tooltiptext="&search-messages.tooltip;"
+	oncommand="MsgSearchMessages();" />

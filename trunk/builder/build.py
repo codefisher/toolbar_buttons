@@ -39,6 +39,10 @@ def build_extension(settings):
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
             jar.writestr(os.path.join("content", name), fp.read().replace("{{chrome-name}}", settings.CHROME_NAME))
+    resources = buttons.get_resource_files()
+    has_resources = bool(resources)
+    for name, path in resources.iteritems():
+        jar.write(path, os.path.join("resources", name))
 
     for file, data in buttons.get_options().iteritems():
         jar.writestr(os.path.join("content", "%s.xul" % file), data)
@@ -73,7 +77,7 @@ def build_extension(settings):
     xpi.writestr(os.path.join("chrome", settings.JAR_FILE), jar_file.getvalue())
     jar_file.close()
 
-    xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, option_applicaions))
+    xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
     xpi.write(settings.ICON, "icon.png")
     xpi.write(settings.LICENCE, "LICENCE")
@@ -82,7 +86,7 @@ def build_extension(settings):
 
     xpi.close()
 
-def create_manifest(settings, locales, buttons, options=[]):
+def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
     values = {"chrome": settings.CHROME_NAME, "jar": settings.JAR_FILE}
 
@@ -97,7 +101,8 @@ def create_manifest(settings, locales, buttons, options=[]):
 
     lines.append("override\tchrome://%(chrome)s/skin/icon.png\t"
                  "chrome://%(chrome)s-root/skin/icon.png" % values)
-
+    if has_resources:
+        lines.append("resource\t%(chrome)s\tjar:chrome/%(jar)s!/resources/" % values)
     for option in options:
         values["application"] = option
         for _, application_id, _, _ in settings.APPLICATIONS_DATA[option]:

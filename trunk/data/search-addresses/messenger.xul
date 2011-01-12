@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="search-addresses"
+	label="&search-addresses.label;"
+	tooltiptext="&search-addresses.tooltip;"
+	oncommand="toolbar_buttons.MsgSearchAddresses();" />
