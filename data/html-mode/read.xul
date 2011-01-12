@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="html-mode"  persist="html"
+	label="&html-mode.label;"
+	tooltiptext="&html-mode.tooltip;"
+	oncommand="toolbar_buttons.toggleHtmlMode();"/>

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="page-source"
+	label="&page-source.label;"
+	tooltiptext="&page-source.tooltip;"
+	oncommand="goDoCommand('cmd_viewPageSource')" />

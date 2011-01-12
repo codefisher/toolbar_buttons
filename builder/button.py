@@ -24,6 +24,7 @@ class Button():
         self._has_javascript = False
         self._manifest = []
         self._extra_files = {}
+        self._res = {}
         self._pref_list = defaultdict(list)
         self._button_keys = {}
 
@@ -110,9 +111,16 @@ class Button():
                 for file in os.listdir(os.path.join(folder, "files")):
                     if file[0] != ".":
                         self._extra_files[file] = os.path.join(folder, "files", file)
+            if "res" in files:
+                for file in os.listdir(os.path.join(folder, "res")):
+                    if file[0] != ".":
+                        self._res[file] = os.path.join(folder, "res", file)
 
     def get_extra_files(self):
         return self._extra_files
+
+    def get_resource_files(self):
+        return self._res
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = self._settings.FILE_TO_APPLICATION[file_name]

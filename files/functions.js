@@ -518,3 +518,21 @@ searchBarSize: function(opp) {
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 	}
 }
+
+realNavigate: function(event, dirPrev) {
+	var dir;
+	if (dirPrev) {
+		if (event && event.shiftKey) {
+			dir = nsMsgNavigationType.previousUnreadMessage;
+		} else {
+			dir = nsMsgNavigationType.previousMessage;
+		}
+	} else {
+		if (event && event.shiftKey) {
+			dir = nsMsgNavigationType.nextUnreadMessage;
+		} else {
+			dir = nsMsgNavigationType.nextMessage;
+		}
+	}
+	return GoNextMessage(dir, false);
+}

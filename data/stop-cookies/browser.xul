@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="stop-cookies"
+	label="&stop-cookies.label;"
+	tooltiptext="&stop-cookies.tooltip;"
+	oncommand="toolbar_buttons.toggleCookies(this);" />

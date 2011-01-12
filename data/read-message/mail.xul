@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="read-message"
+	label="&read-message.label;"
+	tooltiptext="&read-message.tooltip;"
+	oncommand="MsgOpenNewWindowForMessage();"/>

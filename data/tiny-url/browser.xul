@@ -1,0 +1,25 @@
+<toolbarbutton class="toolbarbutton-1"
+	id="tiny-url"
+	type="menu-button"
+	label="&tiny-url.label;"
+	tooltiptext="&tiny-url.tooltip;"
+	oncommand="toolbar_buttons.tinyUrl.getLink(); this.firstChild.showPopup();">
+	<menupopup id="xrl-popup" onpopupshowing="toolbar_buttons.tinyUrl.getLink()"
+		oncommand="event.stopPropagation();" onclick="event.stopPropagation();">
+		<menuitem id="tiny-url-copy" label="&tiny-url.copy.to.clipboard;"
+			oncommand="toolbar_buttons.tinyUrl.copy();"/>
+		<menuitem id="tiny-url-mail" label="&tiny-url.email;"
+			oncommand="toolbar_buttons.tinyUrl.mail();"/>
+		<menu label="&tiny-url.link.use;">
+			<menupopup onpopupshowing="toolbar_buttons.tinyUrl.setOptions()"
+					oncommand="event.stopPropagation();">
+				<menuitem id="tiny-url-normal" label="&tiny-url.use.normal;"
+					value="xrl.in" oncommand="toolbar_buttons.tinyUrl.changeOption(this);"/>
+				<menuitem id="tiny-url-preview" label="&tiny-url.use.preview;"
+					value="preview.xrl.in" oncommand="toolbar_buttons.tinyUrl.changeOption(this);"/>
+			</menupopup>
+		</menu>
+		<menuitem id="tiny-url-visit" label="&tiny-url.visit;"
+			oncommand="toolbar_buttons.tinyUrl.visit();"/>
+	</menupopup>
+</toolbarbutton>

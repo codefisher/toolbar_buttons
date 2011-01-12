@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="watched-with-unread-threads"
+	label="&watched-with-unread-threads.label;"
+	tooltiptext="&with-unread-threads.tooltip;"
+	oncommand="goDoCommand('cmd_viewWatchedThreadsWithUnread');" />
