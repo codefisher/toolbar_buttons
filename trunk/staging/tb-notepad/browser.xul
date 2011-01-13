@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-notepad"
+	label="&tb-notepad.label;"
+	tooltiptext="&tb-notepad.tooltip;"
+	oncommand="toolbar_buttons.openNotepad();" />
