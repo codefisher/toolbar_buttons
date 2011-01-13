@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Anwendung für das Lesen von Newsgruppen">
 <!ENTITY readnews.path.desc "Der Pfad zu Ihrer bevorzugten Anwendung für das Lesen von Newsgruppen. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen der Anwendung nicht funktionieren.">
 <!ENTITY read.select.button "Durchsuchen…">
-<!ENTITY toggle.label "Schaltflächen zum Umschalten zwischen Optionen">
+<!ENTITY toogle.label "Schaltflächen zum Umschalten zwischen Optionen">
 <!ENTITY toggle.checkbox "Seite nach dem Umschalten neu laden.">

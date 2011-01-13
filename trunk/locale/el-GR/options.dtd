@@ -1,0 +1,46 @@
+<!ENTITY restart.label "Επανεκκίνηση">
+<!ENTITY restart.checkbox "Χωρίς ειδοποίηση πριν την επανεκκίνηση">
+<!ENTITY options.window.title "Επιλογές Toolbar Buttons">
+<!ENTITY previous-next.label "Πίσω &amp; μπροστά">
+<!ENTITY previous-next.checkbox "Αλλαγή κατεύθυνσης για τα κουμπιά «Πίσω» και «Μπροστά»">
+<!ENTITY translate.label "Μετάφραση">
+<!ENTITY translate.description "Επιλέξτε ποια γλώσσα θα χρησιμοποιεί το κουμπί «Μετάφραση». Χρησιμοποιείται η υπηρεσία μεταφράσεων της Google.">
+<!ENTITY translate.ar "Αραβικά">
+<!ENTITY translate.zh "Κινέζικα">
+<!ENTITY translate.zh-CN "Κινέζικα (απλοποιημένα)">
+<!ENTITY translate.zh-TW "Κινέζικα (παραδοσιακά)">
+<!ENTITY translate.fr "Γαλλικά">
+<!ENTITY translate.de "Γερμανικά">
+<!ENTITY translate.it "Ιταλικά">
+<!ENTITY translate.ja "Γιαπωνέζικα">
+<!ENTITY translate.ko "Κορεάτικα">
+<!ENTITY translate.pt "Πορτογαλικά">
+<!ENTITY translate.ru "Ρώσικα">
+<!ENTITY translate.es "Ισπανικά">
+<!ENTITY translate.en "Αγγλικά">
+<!ENTITY translate.bg "Βουλγάρικα">
+<!ENTITY translate.cs "Τσέχικα">
+<!ENTITY translate.hr "Κροατικά">
+<!ENTITY translate.da "Δανέζικα">
+<!ENTITY translate.nl "Ολλανδικά">
+<!ENTITY translate.fi "Φιλανδικά">
+<!ENTITY translate.el "Ελληνικά">
+<!ENTITY translate.hi "Ινδικά">
+<!ENTITY translate.nb "Νορβηγικά">
+<!ENTITY translate.pl "Πολωνικά">
+<!ENTITY translate.ro "Ρουμάνικα">
+<!ENTITY translate.sv "Σουηδικά">
+<!ENTITY favorite-page.label "Προτιμώμενη σελίδα">
+<!ENTITY favorite-page.description "Χρησιμοποιείται στο κουμπί «Προτιμώμενη σελίδα» και λειτουργεί σαν μια δεύτερη αρχική σελίδα">
+<!ENTITY toggle.proxy.description "Το κουμπί εναλλαγής διαμεσολαβητή τον απενεργοποιεί ή εναλλάσσει τις παρακάτω ρυθμίσεις:">
+<!ENTITY toggle.prox.label "Εναλλαγή διαμεσολαβητή">
+<!ENTITY toggle.proxy.manual "Χειρωνακτική ρύθμιση διαμεσολαβητή">
+<!ENTITY toggle.proxy.auto.configuration "Αυτόματη ρύθμιση διαμεσολαβητή μέσω αρχείου PAC">
+<!ENTITY toggle.proxy.auto.detect "Αυτόματος εντοπισμός ρυθμίσεων διαμεσολαβητή">
+<!ENTITY readmail.path.caption "Διαδρομή εφαρμογής ηλεκτρονικής αλληλογραφίας">
+<!ENTITY readmail.path.desc "Η διαδρομή για τον πελάτη ηλεκτρονικής αλληλογραφίας που χρησιμοποιείτε, χρησιμοποιήστε το αν δεν λειτουργεί το κουμπί.">
+<!ENTITY readnews.path.caption "Διαδρομή εφαρμογής παρακολούθησης συζητήσεων">
+<!ENTITY readnews.path.desc "Η διαδρομή για τον πελάτη συζητήσεων που χρησιμοποιείτε, χρησιμοποιήστε το αν δεν λειτουργεί το κουμπί.">
+<!ENTITY read.select.button "Επιλογή">
+<!ENTITY toogle.label "Κουμπιά εναλλαγής">
+<!ENTITY toggle.checkbox "Ανανέωση σελίδας μετά την εναλλαγή ρύθμισης.">

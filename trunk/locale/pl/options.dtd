@@ -1,0 +1,46 @@
+<!ENTITY restart.label "Uruchom ponownie">
+<!ENTITY restart.checkbox "Nie powiadamiaj o ponownym uruchomieniu.">
+<!ENTITY options.window.title "Toolbar Buttons - opcje">
+<!ENTITY previous-next.label "Poprzednia/Następna strona">
+<!ENTITY previous-next.checkbox "Zamień kierunek przycisku &quot;Poprzednia/Następna strona&quot;">
+<!ENTITY translate.label "Przetłumacz">
+<!ENTITY translate.description "Wybierz język tłumaczenia, jaki ma być stosowany. Przycisk stosuje serwis &quot;Google Translation&quot;">
+<!ENTITY translate.ar "Arabski">
+<!ENTITY translate.zh "Chiński">
+<!ENTITY translate.zh-CN "Chiński (uproszczony)">
+<!ENTITY translate.zh-TW "Chiński (tradycyjny)">
+<!ENTITY translate.fr "Francuzki">
+<!ENTITY translate.de "Niemiecki">
+<!ENTITY translate.it "Włoski">
+<!ENTITY translate.ja "Japoński">
+<!ENTITY translate.ko "Koreański">
+<!ENTITY translate.pt "Portugalski">
+<!ENTITY translate.ru "Rosyjski">
+<!ENTITY translate.es "Hiszpański">
+<!ENTITY translate.en "Angielski">
+<!ENTITY translate.bg "Bułgarski">
+<!ENTITY translate.cs "Czeski">
+<!ENTITY translate.hr "Chorwacki">
+<!ENTITY translate.da "Duński">
+<!ENTITY translate.nl "Niderlandzki">
+<!ENTITY translate.fi "Fiński">
+<!ENTITY translate.el "Grecki">
+<!ENTITY translate.hi "Hindi">
+<!ENTITY translate.nb "Norweski">
+<!ENTITY translate.pl "Polski">
+<!ENTITY translate.ro "Rumuński">
+<!ENTITY translate.sv "Szwedzki">
+<!ENTITY favorite-page.label "Ulubiona">
+<!ENTITY favorite-page.description "Przycisk &quot;Ulubiona&quot; spełnia funkcję drugiej strony startowej.">
+<!ENTITY toggle.proxy.description "Przycisk proxy umożliwia włączanie i wyłączanie poniższych opcji proxy.">
+<!ENTITY toggle.prox.label "Proxy">
+<!ENTITY toggle.proxy.manual "Ręczna konfiguracja proxy">
+<!ENTITY toggle.proxy.auto.configuration "Automatyczna konfiguracja proxy">
+<!ENTITY toggle.proxy.auto.detect "Wykrywaj automatycznie ustawienia proxy">
+<!ENTITY readmail.path.caption "Ścieżka lokalizacji klienta pocztowego">
+<!ENTITY readmail.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta pocztowego nie działa.">
+<!ENTITY readnews.path.caption "Ścieżka lokalizacji klienta wiadomości">
+<!ENTITY readnews.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta wiadomości nie działa.">
+<!ENTITY read.select.button "Wybierz">
+<!ENTITY toogle.label "Przyciski">
+<!ENTITY toggle.checkbox "Przed zmianą ustawień, odśwież stronę.">

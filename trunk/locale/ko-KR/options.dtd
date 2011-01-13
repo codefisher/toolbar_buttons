@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "뉴스 프로그램 경로">
 <!ENTITY readnews.path.desc "버튼을 사용할 수 없을때 사용할 뉴스 프로그램의 경로">
 <!ENTITY read.select.button "선택">
-<!ENTITY toggle.label "버튼 전환">
+<!ENTITY toogle.label "버튼 전환">
 <!ENTITY toggle.checkbox "설정 전환후 페이지 새로 고침">

@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Chemin du client de nouvelles">
 <!ENTITY readnews.path.desc "Le chemin vers votre client gérant les nouvelles, utilisé si le bouton ne fonctionne pas.">
 <!ENTITY read.select.button "Choisir…">
-<!ENTITY toggle.label "Boutons pour basculer un état à un autre état">
+<!ENTITY toogle.label "Boutons pour basculer un état à un autre état">
 <!ENTITY toggle.checkbox "Recharger la page lorsque le basculement d&apos;un état à un autre a été réalisé.">

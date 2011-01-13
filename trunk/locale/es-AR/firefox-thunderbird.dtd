@@ -22,5 +22,3 @@
 <!ENTITY page-source.tooltip "Mostrar el código fuente de la página">
 <!ENTITY print-preview.label "Vista previa">
 <!ENTITY print-preview.tooltip "Abrir la Vista previa de impresión">
-<!ENTITY dictionary-list.label "Change Dictionary">
-<!ENTITY dictionary-list.tooltip "Quickly Change the Current Dictonary">

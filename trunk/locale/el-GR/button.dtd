@@ -1,0 +1,62 @@
+<!ENTITY exit.label "Έξοδος">
+<!ENTITY exit.tooltip "Έξοδος από την εφαρμογή">
+<!ENTITY extensions.label "Επεκτάσεις">
+<!ENTITY extensions.tooltip "Άνοιγμα του διαχειριστή επεκτάσεων">
+<!ENTITY themes.label "Θέματα">
+<!ENTITY themes.tooltip "Άνοιγμα του διαχειριστή θεμάτων">
+<!ENTITY addons.label "Πρόσθετα">
+<!ENTITY addons.tooltip "Άνοιγμα του διαχειριστή πρόσθετων">
+<!ENTITY installaddons.label "Εγκατάσταση">
+<!ENTITY installaddons.tooltip "Εγκατάσταση επέκτασης ή θέματος">
+<!ENTITY statusbar-toggle.label "Γραμμή κατάστασης">
+<!ENTITY statusbar-toggle.tooltip "Εναλλαγή γραμμής κατάστασης">
+<!ENTITY redo.label "Ακύρωση αναίρεσης">
+<!ENTITY redo.tooltip "Επανάληψη τελευταίας αλλαγής">
+<!ENTITY undo.label "Αναίρεση">
+<!ENTITY undo.tooltip "Αναίρεση τελευταίας αλλαγής">
+<!ENTITY preferences.label "Επιλογές">
+<!ENTITY preferences.tooltip "Άνοιγμα επιλογών">
+<!ENTITY javaScriptConsole.label "Κονσόλα">
+<!ENTITY javaScriptConsole.tooltip "Άνοιγμα της κονσόλας σφαλμάτων">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY restart-app.label "Επανεκκίνηση">
+<!ENTITY restart-app.tooltip "Επανεκκίνηση της εφαρμογής">
+<!ENTITY profile-folder.label "Προφίλ">
+<!ENTITY profile-folder.tooltip "Προβολή του καταλόγου προφίλ">
+<!ENTITY pagesetup.label "Διαμόρφωση σελίδας">
+<!ENTITY pagesetup.tooltip "Διαμόρφωση σελίδας για εκτύπωση">
+<!ENTITY help.label "Βοήθεια">
+<!ENTITY help.tooltip "Άνοιγμα της βοήθειας">
+<!ENTITY import.label "Εισαγωγή">
+<!ENTITY import.tooltip "Εισαγωγή ρυθμίσεων και δεδομένων">
+<!ENTITY customize-toolbar.label "Προσαρμογή εργαλειοθήκης">
+<!ENTITY customize-toolbar.tooltip "Προσαρμογή εργαλειοθήκης, αφαίρεση ή πρόσθεση κουμπιών κλπ.">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Άνοιγμα του about:config">
+<!ENTITY toolbar-menu.label "Εργαλειοθήκες">
+<!ENTITY toolbar-menu.tooltip "Προβολή/απόκρυψη εργαλειοθηκών">
+<!ENTITY check-for-update.label "Ενημέρωση">
+<!ENTITY check-for-update.tooltip "Έλεγχος για ενημερώσεις">
+<!ENTITY minimize-window.label "Ελαχιστοποίηση">
+<!ENTITY minimize-window.tooltip "Ελαχιστοποίηση του τρέχοντος παραθύρου">
+<!ENTITY reload-proxy.label "Ανανέωση διαμεσολαβητή">
+<!ENTITY reload-proxy.tooltip "Ανανέωση διαμεσολαβητή">
+<!ENTITY change-text-direction.label "Αλλαγή κατεύθυνσης κειμένου">
+<!ENTITY change-text-direction.tooltip "Αλλαγή της κατεύθυνσης του κειμένου από αριστερά προς δεξιά σε δεξιά προς αριστερά">
+<!ENTITY toggle-proxy.label "Εναλλαγή διαμεσολαβητή">
+<!ENTITY toggle-proxy.tooltip "Εναλλαγή κατάστασης λειτουργίας διαμεσολαβητή (ενεργός/ανενεργός)">
+<!ENTITY tb-file-menu.label "Μενού αρχείου">
+<!ENTITY tb-file-menu.tooltip "Προβολή του μενού αρχείου">
+<!ENTITY tb-toggle-menu-bar.label "Εναλλαγή εργαλειοθήκης μενού">
+<!ENTITY tb-toggle-menu-bar.tooltip "Εναλλαγή προβολής της εργαλειοθήκης μενού">
+<!ENTITY tb-edit-menu.label "Μενού επεξεργασίας">
+<!ENTITY tb-edit-menu.tooltip "Προβολή του μενού επεξεργασίας">
+<!ENTITY tb-view-menu.label "Μενού εμφάνισης">
+<!ENTITY tb-view-menu.tooltip "Προβολή του μενού εμφάνισης">
+<!ENTITY tb-tools-menu.label "Μενού εργαλείων">
+<!ENTITY tb-tools-menu.tooltip "Προβολή του μενού εργαλείων">
+<!ENTITY forward-as-attachment.label "Προώθηση ως συνημμένου">
+<!ENTITY forward-as-attachment.tooltip "Προώθηση μηνύματος ως συνημμένο">
+<!ENTITY forward-as-inline.label "Προώθηση στο μήνυμα">
+<!ENTITY forward-as-inline.tooltip "Προώθηση του μηνύματος ως τμήμα μηνύματος">

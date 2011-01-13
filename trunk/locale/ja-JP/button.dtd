@@ -46,17 +46,3 @@
 <!ENTITY change-text-direction.tooltip "左から右へまたは右から左へテキストの方向を変更します">
 <!ENTITY toggle-proxy.label "プロキシの切り替え">
 <!ENTITY toggle-proxy.tooltip "プロキシのオンとオフを切り替えます">
-<!ENTITY tb-file-menu.label "File Menu">
-<!ENTITY tb-file-menu.tooltip "Show the file menu">
-<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
-<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
-<!ENTITY tb-edit-menu.label "Edit Menu">
-<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
-<!ENTITY tb-view-menu.label "View Menu">
-<!ENTITY tb-view-menu.tooltip "Show the view menu">
-<!ENTITY tb-tools-menu.label "Tools Menu">
-<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
-<!ENTITY forward-as-attachment.label "Forward as Attachment">
-<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
-<!ENTITY forward-as-inline.label "Forward Inline">
-<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">

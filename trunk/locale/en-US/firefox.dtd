@@ -104,7 +104,7 @@
 <!ENTITY home-page-change.multiple "Set as multiple links">
 <!ENTITY home-page-change.current "Set as current page">
 <!ENTITY home-page-change.add-current "Add current page">
-<!ENTITY favorite-page.label "Favorite Page">
+<!ENTITY favorite-page.label "Favourite Page">
 <!ENTITY favorite-page.tooltip "Open favourite page">
 <!ENTITY tab-list.label "Tab List">
 <!ENTITY tab-list.tooltip "Show Tab List">
