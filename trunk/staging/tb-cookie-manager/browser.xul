@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-cookie-manager"
+	label="&cookie-manager.label;"
+	tooltiptext="&cookie-manager.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.cookie-manager', event);" />
