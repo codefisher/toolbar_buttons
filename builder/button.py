@@ -251,10 +251,10 @@ class Button():
 
     def get_js_files(self):
         interface_match = re.compile("(?<=toolbar_buttons.interfaces.)[a-zA-Z]*")
-        function_match = re.compile("^[a-zA-Z0-9_]*:\s*"
+        function_match = re.compile("^[a-zA-Z0-9_]*\s*:\s*"
                                     "(?:function\([^\)]*\)\s*)?{.*?^}[^\n]*",
                                     re.MULTILINE | re.DOTALL)
-        function_name_match = re.compile("((^[a-zA-Z0-9_]*):\s*"
+        function_name_match = re.compile("((^[a-zA-Z0-9_]*)\s*:\s*"
                                          "(?:function\s*\([^\)]*\)\s*)?{.*?^})",
                                           re.MULTILINE | re.DOTALL)
         include_match = re.compile("(?<=^#include )[a-zA-Z0-9_]*",
