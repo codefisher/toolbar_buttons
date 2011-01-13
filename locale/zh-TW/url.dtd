@@ -12,10 +12,6 @@
 <!ENTITY thunderbird-theme.tooltip "取得 Thunderbird 佈景主題">
 <!ENTITY gmail.label "Gmail">
 <!ENTITY gmail.tooltip "Gmail 信箱">
-<!ENTITY yahoo-button.label "Yahoo Mail">
-<!ENTITY yahoo-button.tooltip "Open Yahoo Mail">
-<!ENTITY hotmail-button.label "Hotmail">
-<!ENTITY hotmail-button.tooltip "Open Hotmail">
 <!ENTITY paypal.label "PayPal">
 <!ENTITY paypal.tooltip "登入 Paypal">
 <!ENTITY ebay.label "eBay">

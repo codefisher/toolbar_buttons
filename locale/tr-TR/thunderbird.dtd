@@ -51,11 +51,6 @@
 <!ENTITY html-mode.label "HTML Modu">
 <!ENTITY html-mode.tooltip "Mesajın Düz Metin veya HTML olarak mı görüntüleneceğini ayarla">
 <!ENTITY get-inbox.label "Gelen Kutusunu Al">
-<!ENTITY get-inbox.tooltip "Change Focused Folder to the Inbox">
-<!ENTITY send-receive.label "Send &amp; Receive">
-<!ENTITY send-receive.tooltip "Send and receive messages">
-<!ENTITY reply-sender.label "Reply to Sender Only">
-<!ENTITY reply-sender.tooltip "Reply only to the sender of the email">
 <!ENTITY create-filter.label "Filtre Oluştur">
 <!ENTITY create-filter.tooltip "Mesajdan Filtre Oluştur">
 <!ENTITY shift-delete.label "Çöp Kutusunu Atla">
@@ -68,15 +63,3 @@
 <!ENTITY all-threads.tooltip "Tüm Haber Gruplarını Göster">
 <!ENTITY unread-threads.label "Okunmamış Haber Grupları">
 <!ENTITY unread-threads.tooltip "Okunmamış Haber Gruplarını Göster">
-<!ENTITY with-unread-threads.label "Threads With Unread">
-<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
-<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
-<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
-<!ENTITY ignored-threads.label "Ignored Threads">
-<!ENTITY ignored-threads.tooltip "View Ignored Threads">
-<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
-<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
-<!ENTITY toggle-starred.label "Toggle Starred">
-<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
-<!ENTITY toggle-read.label "Toggle Read">
-<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

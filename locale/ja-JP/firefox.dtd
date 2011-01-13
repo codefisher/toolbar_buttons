@@ -141,5 +141,3 @@
 <!ENTITY tiny-url.use.normal "xrl.in の使用">
 <!ENTITY tiny-url.use.preview "preview.xrl.in の使用">
 <!ENTITY tiny-url.visit "Xrl.In の訪問">
-<!ENTITY tb-clear-url.label "Clear Url">
-<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">

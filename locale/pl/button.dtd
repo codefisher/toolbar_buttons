@@ -44,19 +44,19 @@
 <!ENTITY reload-proxy.tooltip "Przeładuj proxy">
 <!ENTITY change-text-direction.label "Zmień kierunek tekstu">
 <!ENTITY change-text-direction.tooltip "Zmień kierunek tekstu z lewej do prawej lub z prawej do lewej">
-<!ENTITY toggle-proxy.label "Toggle Proxy">
-<!ENTITY toggle-proxy.tooltip "Toggle The Proxy On &amp; Off">
-<!ENTITY tb-file-menu.label "File Menu">
-<!ENTITY tb-file-menu.tooltip "Show the file menu">
-<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
-<!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
-<!ENTITY tb-edit-menu.label "Edit Menu">
-<!ENTITY tb-edit-menu.tooltip "Show the edit menu">
-<!ENTITY tb-view-menu.label "View Menu">
-<!ENTITY tb-view-menu.tooltip "Show the view menu">
-<!ENTITY tb-tools-menu.label "Tools Menu">
-<!ENTITY tb-tools-menu.tooltip "Show the tools menu">
-<!ENTITY forward-as-attachment.label "Forward as Attachment">
-<!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
-<!ENTITY forward-as-inline.label "Forward Inline">
-<!ENTITY forward-as-inline.tooltip "Forward message as part of the email">
+<!ENTITY toggle-proxy.label "Proxy">
+<!ENTITY toggle-proxy.tooltip "Włącz/Wyłącz proxy">
+<!ENTITY tb-file-menu.label "Menu Plik">
+<!ENTITY tb-file-menu.tooltip "Pokaż menu Plik">
+<!ENTITY tb-toggle-menu-bar.label "Pasek menu">
+<!ENTITY tb-toggle-menu-bar.tooltip "Przełącz pasek menu">
+<!ENTITY tb-edit-menu.label "Menu Edytuj">
+<!ENTITY tb-edit-menu.tooltip "Pokaż menu Edytuj">
+<!ENTITY tb-view-menu.label "Menu Widok">
+<!ENTITY tb-view-menu.tooltip "Pokaż menu Widok">
+<!ENTITY tb-tools-menu.label "Menu Narzędzia">
+<!ENTITY tb-tools-menu.tooltip "Pokaż menu Narzędzia">
+<!ENTITY forward-as-attachment.label "Prześlij dalej jako załącznik">
+<!ENTITY forward-as-attachment.tooltip "Przekaż wiadomość dalej jako załącznik">
+<!ENTITY forward-as-inline.label "Prześlij w treści listu">
+<!ENTITY forward-as-inline.tooltip "Przekaż wiadomość jako część listu">

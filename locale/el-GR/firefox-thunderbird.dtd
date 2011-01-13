@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Εργασία χωρίς σύνδεση">
+<!ENTITY workoffline.tooltip "Εναλλαγή εργασίας χωρίς σύνδεση">
+<!ENTITY delete.label "Διαγραφή">
+<!ENTITY delete.tooltip "Διαγραφή επιλεγμένου κειμένου">
+<!ENTITY find.label "Αναζήτηση">
+<!ENTITY find.tooltip "Εύρεση κειμένου">
+<!ENTITY saveas.label "Αποθήκευση">
+<!ENTITY saveas.tooltip "Αποθήκευση εγγράφου ως...">
+<!ENTITY select-all.label "Επιλογή όλων">
+<!ENTITY select-all.tooltip "Επιλογή όλου του κειμένου">
+<!ENTITY find-again.label "Εύρεση ξανά">
+<!ENTITY find-again.tooltip "Εύρεση επόμενου">
+<!ENTITY find-prev.label "Εύρεση προηγούμενου">
+<!ENTITY find-prev.tooltip "Εύρεση προηγούμενου ταιριάσματος">
+<!ENTITY enlarge.label "Μεγέθυνση">
+<!ENTITY enlarge.tooltip "Μεγέθυνση κειμένου">
+<!ENTITY reduce.label "Σμίκρυνση">
+<!ENTITY reduce.tooltip "Σμίκρυνση κειμένου">
+<!ENTITY reset.label "Επαναφορά">
+<!ENTITY reset.tooltip "Επαναφορά μεγέθους κειμένου">
+<!ENTITY page-source.label "Πηγαίος κώδικας">
+<!ENTITY page-source.tooltip "Προβολή πηγαίου κώδικα">
+<!ENTITY print-preview.label "Προεπισκόπηση εκτύπωσης">
+<!ENTITY print-preview.tooltip "Άνοιγμα προεπισκόπησης εκτύπωσης">
+<!ENTITY dictionary-list.label "Αλλαγή λεξικού">
+<!ENTITY dictionary-list.tooltip "Γρήγορη αλλαγή τρέχοντος λεξικού">

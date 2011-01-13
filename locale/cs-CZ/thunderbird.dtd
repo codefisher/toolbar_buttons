@@ -64,19 +64,3 @@
 <!ENTITY edit-draft.tooltip "Upravovat uložený koncept zprávy">
 <!ENTITY return-receipt.label "Potvrzení o přijetí">
 <!ENTITY return-receipt.tooltip "Přepíná potvrzení o doručení">
-<!ENTITY all-threads.label "All Threads">
-<!ENTITY all-threads.tooltip "View All Threads">
-<!ENTITY unread-threads.label "Unread Threads">
-<!ENTITY unread-threads.tooltip "View Unread Threads">
-<!ENTITY with-unread-threads.label "Threads With Unread">
-<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
-<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
-<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
-<!ENTITY ignored-threads.label "Ignored Threads">
-<!ENTITY ignored-threads.tooltip "View Ignored Threads">
-<!ENTITY toggle-mail-toolbar.label "Mail Toolbar">
-<!ENTITY toggle-mail-toolbar.tooltip "Toggle Mail Toolbar">
-<!ENTITY toggle-starred.label "Toggle Starred">
-<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
-<!ENTITY toggle-read.label "Toggle Read">
-<!ENTITY toggle-read.tooltip "Toggle Message Read Status">

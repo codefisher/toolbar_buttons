@@ -18,18 +18,6 @@
 <!ENTITY translate.ru "ロシア語">
 <!ENTITY translate.es "スペイン語">
 <!ENTITY translate.en "英語">
-<!ENTITY translate.bg "Bulgarian">
-<!ENTITY translate.cs "Czech">
-<!ENTITY translate.hr "Croatian">
-<!ENTITY translate.da "Danish">
-<!ENTITY translate.nl "Dutch">
-<!ENTITY translate.fi "Finnish">
-<!ENTITY translate.el "Greek">
-<!ENTITY translate.hi "Hindi">
-<!ENTITY translate.nb "Norwegian">
-<!ENTITY translate.pl "Polish">
-<!ENTITY translate.ro "Romanian">
-<!ENTITY translate.sv "Swedish">
 <!ENTITY favorite-page.label "お気に入りページ">
 <!ENTITY favorite-page.description "&apos;お気に入りページ&apos; ボタンに使用されます。 第二のホーム ページのような類です">
 <!ENTITY toggle.proxy.description "プロキシ切り替えボタンはプロキシ オフと以下のオプションの 1 つ間で切り替えます。">
@@ -37,10 +25,3 @@
 <!ENTITY toggle.proxy.manual "手動のプロキシの構成">
 <!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
 <!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
-<!ENTITY readmail.path.caption "Mail Client Path">
-<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
-<!ENTITY readnews.path.caption "News Client Path">
-<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
-<!ENTITY read.select.button "Select">
-<!ENTITY toggle.label "Toggle Buttons">
-<!ENTITY toggle.checkbox "Reload page after toggling setting.">

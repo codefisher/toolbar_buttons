@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Percorso del client dei gruppi di discussione">
 <!ENTITY readnews.path.desc "Inserire il percorso del proprio client dei gruppi di discussione in caso il relativo pulsante non funzionasse:">
 <!ENTITY read.select.button "Sfoglia…">
-<!ENTITY toggle.label "Pulsanti di attivazione/disattivazione impostazioni">
+<!ENTITY toogle.label "Pulsanti di attivazione/disattivazione impostazioni">
 <!ENTITY toggle.checkbox "Ricarica la pagina dopo aver fatto clic sui pulsanti per attivare/disattivare impostazioni">

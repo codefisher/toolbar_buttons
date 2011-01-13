@@ -141,5 +141,3 @@
 <!ENTITY tiny-url.use.normal "Utilizar xrl.in">
 <!ENTITY tiny-url.use.preview "Utilizar preview.xrl.in">
 <!ENTITY tiny-url.visit "Visitar Xrl.in">
-<!ENTITY tb-clear-url.label "Clear Url">
-<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">

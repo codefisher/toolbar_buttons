@@ -2,8 +2,6 @@
 <!ENTITY about-firefox.tooltip "Firefox Hakkında">
 <!ENTITY firefox-toolbar.label "Araç Çubuğunu Tersle">
 <!ENTITY firefox-toolbar.tooltip "Gezinme Araç Çubuğunu Tersle">
-<!ENTITY toggle-personal-toolbar.label "Bookmark Toolbar">
-<!ENTITY toggle-personal-toolbar.tooltip "Toggle the Bookmark Toolbar">
 <!ENTITY undo-close-tab.label "Kapatılan Sekmeyi Geri Al">
 <!ENTITY undo-close-tab.tooltip "Son kapatılan sekmeyi yeniden aç">
 <!ENTITY pageinfo.label "Sayfa Bilgisi">
@@ -13,33 +11,16 @@
 <!ENTITY about-plugins.label "about:plugins">
 <!ENTITY about-plugins.tooltip "Yüklü ilave yazılımşları görmek için about:plugins&apos;i aç">
 <!ENTITY about-cache.label "about:cache">
-<!ENTITY about-cache.tooltip "Open about:cache to view cached contents">
 <!ENTITY about-mem-cache.label "about:cache Memory">
-<!ENTITY about-mem-cache.tooltip "Open about:cache to view cached contents in Memory">
 <!ENTITY about-disk-cache.label "about:cache Disk">
-<!ENTITY about-disk-cache.tooltip "Open about:cache to view cached contents saved to your Hard Drive">
 <!ENTITY websearch.label "Web Araması">
 <!ENTITY websearch.tooltip "Varsayılan arama motorunuzla webde arayın">
-<!ENTITY bookmark.label "Bookmark Page">
-<!ENTITY bookmark.tooltip "Bookmark Current Page">
-<!ENTITY bookmark-tabs.label "Bookmark All">
-<!ENTITY bookmark-tabs.tooltip "Bookmark All Open Tabs">
-<!ENTITY bookmark-manager.label "Bookmark Manager">
-<!ENTITY bookmark-manager.tooltip "Open The Bookmark Manager">
-<!ENTITY bookmark-toolbar.label "Bookmark Toolbar">
-<!ENTITY bookmark-toolbar.tooltip "Toggle the Bookmark Toolbar">
 <!ENTITY open.label "Aç">
 <!ENTITY open.tooltip "Bir dosya aç">
-<!ENTITY save-frame.label "Save Frame">
-<!ENTITY save-frame.tooltip "Save Document Frame">
 <!ENTITY close-tab.label "Sekmeyi Kapa">
 <!ENTITY close-tab.tooltip "Açık sekmeyi veya pencereyi kapat">
 <!ENTITY send-link.label "Bağlantı Gönder">
 <!ENTITY send-link.tooltip "Email&apos;de sayfa bağlantısı gönder">
-<!ENTITY bookmarks-menu-button.label "Bookmark Menu">
-<!ENTITY bookmarks-menu-button.tooltip "Show Bookmark Menu">
-<!ENTITY personal-bookmarks-menu-button.label "Toolbar Bookmark Menu">
-<!ENTITY personal-bookmarks-menu-button.tooltip "Show Toolbar Bookmark Menu">
 <!ENTITY clear-url.label "URL çubuğunu temizle">
 <!ENTITY clear-url.tooltip "URL çubuğu metnini temizle">
 <!ENTITY close-all-tabs.label "Tümünü Kapat">
@@ -54,28 +35,11 @@
 <!ENTITY read-mail.tooltip "Posta Oku Uygulamasını Aç">
 <!ENTITY new-message.label "Yeni Mesaj">
 <!ENTITY new-message.tooltip "Yeni Email mesajı yaz">
-<!ENTITY bookmark-nopop.label "Quick Bookmark">
-<!ENTITY bookmark-nopop.tooltip "Add Bookmark Without Prompt">
 <!ENTITY next-tab.label "Sonraki Sekme">
 <!ENTITY next-tab.tooltip "Sonraki Sekmeye Git">
 <!ENTITY previous-tab.label "Önceki Sekme">
 <!ENTITY previous-tab.tooltip "Önceki Sekmeye Git">
 <!ENTITY clear-data.label "Bilgiyi Sil">
-<!ENTITY clear-data.tooltip "Open Clear Private Data Dialog">
-<!ENTITY top-page.label "Top">
-<!ENTITY top-page.tooltip "Go to Top of Page">
-<!ENTITY bottom-page.label "Bottom">
-<!ENTITY bottom-page.tooltip "Go to Bottom of Page">
-<!ENTITY full-screen.label "Full Screen">
-<!ENTITY full-screen.tooltip "Toggle To Full Screen Mode">
-<!ENTITY toggle-styles.label "Toggle Styles">
-<!ENTITY toggle-styles.tooltip "Add/Remove web sites defined styles">
-<!ENTITY translate.label "Translate">
-<!ENTITY translate.tooltip "Translate current page to prefered language">
-<!ENTITY show-frame.label "Show Frame">
-<!ENTITY show-frame.tooltip "Show only Current Frame">
-<!ENTITY rename-tab.label "Rename Tab">
-<!ENTITY rename-tab.tooltip "Rename Tab Currently Selected Tab">
 <!ENTITY reload-all-tabs.label "Sekmeleri Yeniden Yükle">
 <!ENTITY reload-all-tabs.tooltip "Açık Tüm Sekmeleri Yeniden Yükle">
 <!ENTITY stop-all.label "Tümünü Durdur">
@@ -85,61 +49,17 @@
 <!ENTITY javascript-toggle.label "JavaScript&apos;i Tersle">
 <!ENTITY javascript-toggle.tooltip "JavaScript Aç/Kapa&apos;yı Tersle">
 <!ENTITY image-toggle.label "Resimleri Tersle">
-<!ENTITY image-toggle.tooltip "Toggle if Images Load On and Off">
-<!ENTITY restart-tab.label "Restart Tabbed">
-<!ENTITY restart-tab.tooltip "Restart With Current Tabs">
 <!ENTITY close-other-tabs.label "Diğerlerini Kapat">
-<!ENTITY close-other-tabs.tooltip "Close all tabs but the selected one.">
 <!ENTITY hide-images.label "Resimleri Gizle">
-<!ENTITY hide-images.tooltip "Hide all images and backgrounds in current document">
-<!ENTITY link-open.label "Link Open Setting">
-<!ENTITY link-open.tooltip "Set How Links Open">
-<!ENTITY clipboard.label "Link From Clipboard">
-<!ENTITY clipboard.tooltip "Get link from clipboard and open it">
-<!ENTITY clipboard.newtab "Open Link From Clipboard in New Tab">
-<!ENTITY clipboard.menuitem "Open Link From Clipboard">
-<!ENTITY home-page-change.label "Change Home">
-<!ENTITY home-page-change.tooltip "Change Your Home Page">
-<!ENTITY home-page-change.multiple "Set Home Page as Multiple Links">
-<!ENTITY favorite-page.label "Favorite Page">
-<!ENTITY favorite-page.tooltip "Open Favorite Page">
 <!ENTITY tab-list.label "Sekme Listesi">
 <!ENTITY tab-list.tooltip "Sekme Listesini Göster">
 <!ENTITY stop-animation.label "Animasyonu Tersle">
-<!ENTITY stop-animation.tooltip "Stop Animated GIF&apos;s, Blink and Marquee tags">
 <!ENTITY stop-flash.label "Flash&apos;ı Tewrsle">
 <!ENTITY stop-flash.tooltip "Rahatsız Eden Flash dosyasını durdur">
 <!ENTITY stop-movies.label "Filmleri Tersle">
 <!ENTITY stop-movies.tooltip "Yüklenen Filmleri Tersle">
-<!ENTITY stop-iframe.label "Toggle iframes (blocks some ads)">
-<!ENTITY stop-iframe.tooltip "Stop iframes from loading and the ads they often contain">
 <!ENTITY stop-dinamic-content.label "Gömülü içeriği tersle">
 <!ENTITY stop-dinamic-content.tooltip "Yüklenen tüm gömülü içeriği durdur.">
 <!ENTITY stop-cookies.label "Çerezleri Tersle">
-<!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
 <!ENTITY stop-popups.label "Açılır pencereleri Tersle">
 <!ENTITY stop-popups.tooltip "Yüklenen açılır pencereleri tersle">
-<!ENTITY reload-skip-cache.label "Reload Skip Cache">
-<!ENTITY reload-skip-cache.tooltip "Reload page with out useing content stored in the browser cache">
-<!ENTITY open-current-frame.label "Show Current Frame">
-<!ENTITY open-current-frame.tooltip "Show only the currently selected frame">
-<!ENTITY up-directory.label "Up Directory">
-<!ENTITY up-directory.tooltip "Go up one Directory">
-<!ENTITY snap-back.label "Snap Back">
-<!ENTITY snap-back.tooltip "Go back to the first page opened in this tab">
-<!ENTITY min-font-size.label "Minimum Font Size">
-<!ENTITY min-font-size.tooltip "Toggle the minimum font size">
-<!ENTITY use-document-colors.label "Toggle Page Colors">
-<!ENTITY use-document-colors.tooltip "Toggle between the default and the sites page colors">
-<!ENTITY use-document-fonts.label "Toggle Page Fonts">
-<!ENTITY use-document-fonts.tooltip "Toggle between the default and the sites fonts">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.tooltip "Create a Tiny Url">
-<!ENTITY tiny-url.copy.to.clipboard "Copy to Clip Board">
-<!ENTITY tiny-url.email "Email Link">
-<!ENTITY tiny-url.link.use "Link Options">
-<!ENTITY tiny-url.use.normal "Use xrl.in">
-<!ENTITY tiny-url.use.preview "Use preview.xrl.in">
-<!ENTITY tiny-url.visit "Visit Xrl.In">
-<!ENTITY tb-clear-url.label "Clear Url">
-<!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">

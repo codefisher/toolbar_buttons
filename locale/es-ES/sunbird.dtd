@@ -8,5 +8,3 @@
 <!ENTITY calendar-bar-toggle.tooltip "Muestra/Oculta la barra de herramientas principal">
 <!ENTITY about-sunbird.label "Acerca de">
 <!ENTITY about-sunbird.tooltip "Acerca de Sunbird">
-<!ENTITY tasks-in-view.label "Tasks In View">
-<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">

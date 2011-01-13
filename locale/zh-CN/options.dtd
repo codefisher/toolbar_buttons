@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "新闻客户端路径">
 <!ENTITY readnews.path.desc "新闻客户端的路径，如果按钮没法工作时使用">
 <!ENTITY read.select.button "选择">
-<!ENTITY toggle.label "切换按钮">
+<!ENTITY toogle.label "切换按钮">
 <!ENTITY toggle.checkbox "切换设置后重新载入页面">

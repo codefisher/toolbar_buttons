@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Cesta k čítačke kanálov">
 <!ENTITY readnews.path.desc "Cesta k vašej čítačke kanálov, použite ak tlačidlo nefunguje">
 <!ENTITY read.select.button "Vybrať">
-<!ENTITY toggle.label "Zapnúť tlačidlá">
+<!ENTITY toogle.label "Zapnúť tlačidlá">
 <!ENTITY toggle.checkbox "Obnoviť stránky po zmene nastavení">

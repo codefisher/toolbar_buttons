@@ -42,5 +42,5 @@
 <!ENTITY readnews.path.caption "Calea către cititorul de ştiri">
 <!ENTITY readnews.path.desc "Redefiniţi calea către cititorul favorit de ştiri, dacă butonul nu funcţionează.">
 <!ENTITY read.select.button "Redefineşte">
-<!ENTITY toggle.label "Comutări">
+<!ENTITY toogle.label "Comutări">
 <!ENTITY toggle.checkbox "Reîncarcă pagina curentă după schimbarea unor configuraţii (Java, Flash, video, etc.)">

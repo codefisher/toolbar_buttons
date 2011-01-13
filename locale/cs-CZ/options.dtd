@@ -18,29 +18,5 @@
 <!ENTITY translate.ru "Ruština">
 <!ENTITY translate.es "Španělština">
 <!ENTITY translate.en "Angličtina">
-<!ENTITY translate.bg "Bulgarian">
-<!ENTITY translate.cs "Czech">
-<!ENTITY translate.hr "Croatian">
-<!ENTITY translate.da "Danish">
-<!ENTITY translate.nl "Dutch">
-<!ENTITY translate.fi "Finnish">
-<!ENTITY translate.el "Greek">
-<!ENTITY translate.hi "Hindi">
-<!ENTITY translate.nb "Norwegian">
-<!ENTITY translate.pl "Polish">
-<!ENTITY translate.ro "Romanian">
-<!ENTITY translate.sv "Swedish">
 <!ENTITY favorite-page.label "Oblíbené">
 <!ENTITY favorite-page.description "Adresa stránky pro tlačítko &apos;Oblíbené&apos;">
-<!ENTITY toggle.proxy.description "The proxy toggle button can toggle between proxy off and one of the below options.">
-<!ENTITY toggle.prox.label "Toggle Proxy">
-<!ENTITY toggle.proxy.manual "Manual proxy configuration">
-<!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
-<!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
-<!ENTITY readmail.path.caption "Mail Client Path">
-<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
-<!ENTITY readnews.path.caption "News Client Path">
-<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
-<!ENTITY read.select.button "Select">
-<!ENTITY toggle.label "Toggle Buttons">
-<!ENTITY toggle.checkbox "Reload page after toggling setting.">
