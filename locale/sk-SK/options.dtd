@@ -1,46 +1,20 @@
-<!ENTITY restart.label "Reštartovať">
-<!ENTITY restart.checkbox "Nepýtať sa pred reštartovaním.">
 <!ENTITY options.window.title "Možnosti Toolbar Buttons">
+<!ENTITY favorite-page.description "Používané pre tlačidlo &apos;Obľúbená stránka&apos;.  Niečo ako druhá domovská stránka.">
+<!ENTITY toggle.prox.label "Zapnúť proxy">
+<!ENTITY toggle.proxy.description "Tlačidlo Zapnúť proxy zapína a vypína jedno z nižšie uvedených nastavení proxy.">
+<!ENTITY restart.checkbox "Nepýtať sa pred reštartovaním.">
 <!ENTITY previous-next.label "Predchádzajúci &amp; Nasledujúci">
-<!ENTITY previous-next.checkbox "Vymeniť smer tlačidiel Predchádzajúci a Nasledujúci.">
+<!ENTITY toggle.checkbox "Obnoviť stránky po zmene nastavení">
+<!ENTITY restart.label "Reštartovať">
+<!ENTITY read.select.button "Vybrať">
+<!ENTITY readnews.path.desc "Cesta k vašej čítačke kanálov, použite ak tlačidlo nefunguje">
+<!ENTITY toggle.proxy.auto.detect "Automaticky zistiť nastavenia proxy">
+<!ENTITY toggle.proxy.auto.configuration "Automatická konfigurácia proxy">
+<!ENTITY readmail.path.desc "Cesta k vášmu poštovému klientovi, použite ak tlačidlo nefunguje">
+<!ENTITY toggle.proxy.manual "Manuálne nastavenie proxy">
+<!ENTITY favorite-page.label "Obľúbená stránka">
 <!ENTITY translate.label "Preložiť">
 <!ENTITY translate.description "Vyberte jazyk, ktorý bude používaný tlačidlom Preložiť. Tlačidlo využíva službu Google Translation Service">
-<!ENTITY translate.ar "Arabský">
-<!ENTITY translate.zh "Čínsky">
-<!ENTITY translate.zh-CN "Čínsky (Zjednodušený)">
-<!ENTITY translate.zh-TW "Čínsky (Tradičný)">
-<!ENTITY translate.fr "Francúzsky">
-<!ENTITY translate.de "Nemecký">
-<!ENTITY translate.it "Taliansky">
-<!ENTITY translate.ja "Japonský">
-<!ENTITY translate.ko "Kórejský">
-<!ENTITY translate.pt "Portugalský">
-<!ENTITY translate.ru "Ruský">
-<!ENTITY translate.es "Španielsky">
-<!ENTITY translate.en "Anglický">
-<!ENTITY translate.bg "Bulharský">
-<!ENTITY translate.cs "Český">
-<!ENTITY translate.hr "Chorvátsky">
-<!ENTITY translate.da "Dánsky">
-<!ENTITY translate.nl "Holandský">
-<!ENTITY translate.fi "Fínsky">
-<!ENTITY translate.el "Grécky">
-<!ENTITY translate.hi "Hindský">
-<!ENTITY translate.nb "Nórsky">
-<!ENTITY translate.pl "Poľský">
-<!ENTITY translate.ro "Rumunský">
-<!ENTITY translate.sv "Švédsky">
-<!ENTITY favorite-page.label "Obľúbená stránka">
-<!ENTITY favorite-page.description "Používané pre tlačidlo &apos;Obľúbená stránka&apos;.  Niečo ako druhá domovská stránka.">
-<!ENTITY toggle.proxy.description "Tlačidlo Zapnúť proxy zapína a vypína jedno z nižšie uvedených nastavení proxy.">
-<!ENTITY toggle.prox.label "Zapnúť proxy">
-<!ENTITY toggle.proxy.manual "Manuálne nastavenie proxy">
-<!ENTITY toggle.proxy.auto.configuration "Automatická konfigurácia proxy">
-<!ENTITY toggle.proxy.auto.detect "Automaticky zistiť nastavenia proxy">
+<!ENTITY previous-next.checkbox "Vymeniť smer tlačidiel Predchádzajúci a Nasledujúci.">
 <!ENTITY readmail.path.caption "Cestá k poštovému klientovi">
-<!ENTITY readmail.path.desc "Cesta k vášmu poštovému klientovi, použite ak tlačidlo nefunguje">
 <!ENTITY readnews.path.caption "Cesta k čítačke kanálov">
-<!ENTITY readnews.path.desc "Cesta k vašej čítačke kanálov, použite ak tlačidlo nefunguje">
-<!ENTITY read.select.button "Vybrať">
-<!ENTITY toogle.label "Zapnúť tlačidlá">
-<!ENTITY toggle.checkbox "Obnoviť stránky po zmene nastavení">

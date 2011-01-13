@@ -1,0 +1,18 @@
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "ebay.com(英文)">
+<!ENTITY firefox-extension.label "擴充套件">
+<!ENTITY firefox-extension.tooltip "取得 Firefox 擴充套件">
+<!ENTITY firefox-theme.label "佈景主題">
+<!ENTITY firefox-theme.tooltip "取得 Firefox 佈景主題">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Gmail 信箱">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google 首頁">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "登入 Paypal">
+<!ENTITY thunderbird-extension.label "擴充套件">
+<!ENTITY thunderbird-extension.tooltip "取得 Thunderbird 擴充套件">
+<!ENTITY thunderbird-theme.label "佈景主題">
+<!ENTITY thunderbird-theme.tooltip "取得 Thunderbird 佈景主題">
+<!ENTITY wikipedia.label "維基百科">
+<!ENTITY wikipedia.tooltip "維基百科首頁">

@@ -1,27 +1,14 @@
-<!ENTITY restart.label "再起動">
-<!ENTITY restart.checkbox "再起動前に確認しない。">
 <!ENTITY options.window.title "Toolbar Buttons のオプション">
+<!ENTITY favorite-page.description "&apos;お気に入りページ&apos; ボタンに使用されます。 第二のホーム ページのような類です">
+<!ENTITY toggle.prox.label "プロキシの切り替え">
+<!ENTITY toggle.proxy.description "プロキシ切り替えボタンはプロキシ オフと以下のオプションの 1 つ間で切り替えます。">
+<!ENTITY restart.checkbox "再起動前に確認しない。">
 <!ENTITY previous-next.label "[前へ] と [次へ]">
-<!ENTITY previous-next.checkbox "[前へ] および [次へ] ボタンの方向を変更する。">
+<!ENTITY restart.label "再起動">
+<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
+<!ENTITY toggle.proxy.manual "手動のプロキシの構成">
+<!ENTITY favorite-page.label "お気に入りページ">
 <!ENTITY translate.label "翻訳">
 <!ENTITY translate.description "翻訳ボタンに使用したい言語を選択します。 ボタンは Google 翻訳サービスを使用します">
-<!ENTITY translate.ar "アラビア語">
-<!ENTITY translate.zh "中国語">
-<!ENTITY translate.zh-CN "中国語 (簡体字)">
-<!ENTITY translate.zh-TW "中国語 (繁体字)">
-<!ENTITY translate.fr "フランス語">
-<!ENTITY translate.de "ドイツ語">
-<!ENTITY translate.it "イタリア語">
-<!ENTITY translate.ja "日本語">
-<!ENTITY translate.ko "韓国語">
-<!ENTITY translate.pt "ポルトガル語">
-<!ENTITY translate.ru "ロシア語">
-<!ENTITY translate.es "スペイン語">
-<!ENTITY translate.en "英語">
-<!ENTITY favorite-page.label "お気に入りページ">
-<!ENTITY favorite-page.description "&apos;お気に入りページ&apos; ボタンに使用されます。 第二のホーム ページのような類です">
-<!ENTITY toggle.proxy.description "プロキシ切り替えボタンはプロキシ オフと以下のオプションの 1 つ間で切り替えます。">
-<!ENTITY toggle.prox.label "プロキシの切り替え">
-<!ENTITY toggle.proxy.manual "手動のプロキシの構成">
-<!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
-<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY previous-next.checkbox "[前へ] および [次へ] ボタンの方向を変更する。">

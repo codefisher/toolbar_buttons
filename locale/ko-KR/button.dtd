@@ -1,62 +1,320 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "캐쉬 내용을 보기 위해 about:cache 열기">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config 열기">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "디스크 내 캐쉬 내용을 보기위해 about:cache 열기">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY about-mem-cache.tooltip "메모리 내 캐쉬 내용을 보기위해 about:cache 열기">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "설치된 플러그인을 보기위해 about:plugins 열기">
+<!ENTITY accountmanager.label "계정 설정">
+<!ENTITY accountmanager.tooltip "계정 설정 열기">
+<!ENTITY accountwizard.label "계정 설정">
+<!ENTITY accountwizard.tooltip "새 계정 설정 마법사 실행">
+<!ENTITY add-address.label "Email 추가">
+<!ENTITY add-address.tooltip "주소록에 Email 주소 복사">
+<!ENTITY addons.label "부가기능">
+<!ENTITY addons.tooltip "부가기능 관리자 열기">
+<!ENTITY all-threads.label "모든 스레드">
+<!ENTITY all-threads.tooltip "모든 스레드 표시">
+<!ENTITY attachments-delete.label "첨부 삭제">
+<!ENTITY attachments-delete.tooltip "메세지 내 모든 첨부 제거">
+<!ENTITY attachments-detach.label "첨부 분리">
+<!ENTITY attachments-detach.tooltip "메세지 내 모든 첨부 분리">
+<!ENTITY attachments-save.label "첨부 저장">
+<!ENTITY attachments-save.tooltip "메세지 내 모든 첨부 저장">
+<!ENTITY bookmark-manager.label "북마크 관리자">
+<!ENTITY bookmark-manager.tooltip "북마크 관리자 열기">
+<!ENTITY bookmark-nopop.label "빠른 북마크">
+<!ENTITY bookmark-nopop.tooltip "질문없이 북마크 추가">
+<!ENTITY bookmark-tabs.label "모두 북마크">
+<!ENTITY bookmark-tabs.tooltip "모든 열린 탭 북마크 추가">
+<!ENTITY bookmark-toolbar.label "북마크 도구막대">
+<!ENTITY bookmark-toolbar.tooltip "북마크 도구막대 전환">
+<!ENTITY bookmark.label "북마크 추가">
+<!ENTITY bookmark.tooltip "현재 페이지 북마크 추가">
+<!ENTITY bookmarks-menu-button.label "북마트 메뉴">
+<!ENTITY bookmarks-menu-button.tooltip "북마크 메뉴 표시">
+<!ENTITY bottom-page.label "맨 아래로">
+<!ENTITY bottom-page.tooltip "페이지의 맨 아래로 가기">
+<!ENTITY change-text-direction.label "글자 방향 변경">
+<!ENTITY change-text-direction.tooltip "왼쪽에서 오른쪽으로 또는 오른쪽에서 왼쪽으로 글자 방향 변경합니다">
+<!ENTITY check-for-update.label "갱신">
+<!ENTITY check-for-update.tooltip "갱신여부 확인">
+<!ENTITY clear-data.label "자료 청소">
+<!ENTITY clear-data.tooltip "개인 자료 청소 대화상자 열기">
+<!ENTITY clear-url.label "Url 막대 청소">
+<!ENTITY clear-url.tooltip "Url 막대 내용 청소">
+<!ENTITY clipboard.label "클립보드로부터 연결">
+<!ENTITY clipboard.menuitem "클립보드로부터 링크 열기">
+<!ENTITY clipboard.newtab "새 탭으로 클립보드로부터 링크 열기">
+<!ENTITY clipboard.tooltip "링크를 클립보드에서 얻어 열기">
+<!ENTITY close-all-tabs.label "모두 닫기">
+<!ENTITY close-all-tabs.tooltip "모든 탭 닫기">
+<!ENTITY close-other-tabs.label "다른 탭 닫기">
+<!ENTITY close-other-tabs.tooltip "선택된 탭을 제외하고 모두 닫기">
+<!ENTITY close-tab.label "탭 닫기">
+<!ENTITY close-tab.tooltip "열린 탭 또는 창 닫기">
+<!ENTITY compact.label "압축">
+<!ENTITY compact.tooltip "폴더 압축">
+<!ENTITY copy-address.label "Email 복사">
+<!ENTITY copy-address.tooltip "클립보드에 Email 주소 복사">
+<!ENTITY create-filter.label "필터 생성">
+<!ENTITY create-filter.tooltip "메세지에 필터 생성">
+<!ENTITY customize-toolbar.label "사용자지정 도구막대">
+<!ENTITY customize-toolbar.tooltip "사용자지정 도구막대, 버튼 추가/삭제 등">
+<!ENTITY delete-event.label "사건 삭제">
+<!ENTITY delete-event.tooltip "선택된 사건 삭제">
+<!ENTITY delete-junk.label "스팸 삭제">
+<!ENTITY delete-junk.tooltip "스펨 메시지 삭제">
+<!ENTITY delete-tasks.label "작업 삭제">
+<!ENTITY delete-tasks.tooltip "선택된 작업 삭제">
+<!ENTITY delete.label "삭제">
+<!ENTITY delete.tooltip "선택된 글자 삭제">
+<!ENTITY dictionary-list.label "디렉토리 변경">
+<!ENTITY dictionary-list.tooltip "현재 디렉토리 빠르게 변경">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "eBay 열기">
+<!ENTITY edit-draft.label "초안 편집">
+<!ENTITY edit-draft.tooltip "저장된 초안 편집">
+<!ENTITY empty-trash.label "휴지통 비우기">
+<!ENTITY empty-trash.tooltip "휴지통 폴더 비우기">
+<!ENTITY enlarge.label "확대">
+<!ENTITY enlarge.tooltip "글자 크기 확대">
 <!ENTITY exit.label "종료">
 <!ENTITY exit.tooltip "응용풀그림 종료">
 <!ENTITY extensions.label "확장기능">
 <!ENTITY extensions.tooltip "확장기능 관리자 열기">
-<!ENTITY themes.label "테마">
-<!ENTITY themes.tooltip "테마 관리자 열기">
-<!ENTITY addons.label "부가기능">
-<!ENTITY addons.tooltip "부가기능 관리자 열기">
-<!ENTITY installaddons.label "설치">
-<!ENTITY installaddons.tooltip "확장기능/테마 설치">
-<!ENTITY statusbar-toggle.label "상태 막대">
-<!ENTITY statusbar-toggle.tooltip "상태 막대 전환">
-<!ENTITY redo.label "실행반복">
-<!ENTITY redo.tooltip "마지막 변경 실행반복">
-<!ENTITY undo.label "실행취소">
-<!ENTITY undo.tooltip "마지막 변경 실행취소">
-<!ENTITY preferences.label "선택사항">
-<!ENTITY preferences.tooltip "선택사항 선택사항">
-<!ENTITY javaScriptConsole.label "콘솔">
-<!ENTITY javaScriptConsole.tooltip "오류 콘솔 열기">
-<!ENTITY inspecter.label "DOMi">
-<!ENTITY inspecter.tooltip "문서 객체 모델 검사기">
-<!ENTITY restart-app.label "재시작">
-<!ENTITY restart-app.tooltip "응용풀그림 재시작">
-<!ENTITY profile-folder.label "프로파일">
-<!ENTITY profile-folder.tooltip "프로파일 폴더 보기">
-<!ENTITY pagesetup.label "페이지 설정">
-<!ENTITY pagesetup.tooltip "페이지를 어떻게 인쇄할지 설정">
-<!ENTITY help.label "도움말">
-<!ENTITY help.tooltip "도움말 문서 열기">
-<!ENTITY import.label "불러오기">
-<!ENTITY import.tooltip "설정 및 데이터 불러오기">
-<!ENTITY customize-toolbar.label "사용자지정 도구막대">
-<!ENTITY customize-toolbar.tooltip "사용자지정 도구막대, 버튼 추가/삭제 등">
-<!ENTITY about-config.label "about:config">
-<!ENTITY about-config.tooltip "about:config 열기">
-<!ENTITY toolbar-menu.label "도구막대">
-<!ENTITY toolbar-menu.tooltip "도구막대 숨기기/보이기">
-<!ENTITY check-for-update.label "갱신">
-<!ENTITY check-for-update.tooltip "갱신여부 확인">
-<!ENTITY minimize-window.label "최소화">
-<!ENTITY minimize-window.tooltip "현재창 최소화">
-<!ENTITY reload-proxy.label "프록시 다시 불러오기">
-<!ENTITY reload-proxy.tooltip "프록시 다시 불러오기">
-<!ENTITY change-text-direction.label "글자 방향 변경">
-<!ENTITY change-text-direction.tooltip "왼쪽에서 오른쪽으로 또는 오른쪽에서 왼쪽으로 글자 방향 변경합니다">
-<!ENTITY toggle-proxy.label "프록시 전환">
-<!ENTITY toggle-proxy.tooltip "프록시 켜거나 끄기를 전환합니다">
-<!ENTITY tb-file-menu.label "파일 메뉴">
-<!ENTITY tb-file-menu.tooltip "파일 메뉴를 표시합니다">
-<!ENTITY tb-toggle-menu-bar.label "메뉴 막대 전환">
-<!ENTITY tb-toggle-menu-bar.tooltip "메뉴 막대를 전환합니다">
-<!ENTITY tb-edit-menu.label "편집 메뉴">
-<!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
-<!ENTITY tb-view-menu.label "보기 메뉴">
-<!ENTITY tb-view-menu.tooltip "보기 메뉴를 표시합니다">
-<!ENTITY tb-tools-menu.label "도구 메뉴">
-<!ENTITY tb-tools-menu.tooltip "도구 메뉴를 표시합니다">
+<!ENTITY favorite-page.label "즐겨찾는 페이지">
+<!ENTITY favorite-page.tooltip "즐겨찾는 페이지 열기">
+<!ENTITY find-again.label "다시 찾기">
+<!ENTITY find-again.tooltip "다음으로 일치하는 것을 찾기">
+<!ENTITY find-prev.label "이전 찾기">
+<!ENTITY find-prev.tooltip "이전에 일치하는 것을 찾기">
+<!ENTITY find.label "찾기">
+<!ENTITY find.tooltip "내용 찾기">
+<!ENTITY firefox-extension.label "확장기능">
+<!ENTITY firefox-extension.tooltip "더 많은 Firefox 확장기능">
+<!ENTITY firefox-theme.label "테마">
+<!ENTITY firefox-theme.tooltip "더 많은 Firefox 테마">
 <!ENTITY forward-as-attachment.label "첨부를 전달로">
 <!ENTITY forward-as-attachment.tooltip "첨부 파일을 전달 메세지로 보냅니다">
 <!ENTITY forward-as-inline.label "인라인를 전달로">
 <!ENTITY forward-as-inline.tooltip "이메일의 일부를 전달 메세지로 보냅니다">
+<!ENTITY full-screen.label "전체 화면">
+<!ENTITY full-screen.tooltip "전체 화면으로 전환">
+<!ENTITY get-inbox.label "수신함 받기">
+<!ENTITY get-inbox.tooltip "수신함으로 사용중인 폴더 전환">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Google 메일 열기">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google 홈페이지 열기">
+<!ENTITY help.label "도움말">
+<!ENTITY help.tooltip "도움말 문서 열기">
+<!ENTITY hide-images.label "그림 감추기">
+<!ENTITY hide-images.tooltip "현재 문서 내 모든 그림 및 배경 감추기">
+<!ENTITY home-page-change.label "홈페이지 변경">
+<!ENTITY home-page-change.multiple "다중 링크로 홈 페이지 설정">
+<!ENTITY home-page-change.tooltip "홈 페이지 변경">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail 열기">
+<!ENTITY html-mode.label "Html 방식">
+<!ENTITY html-mode.tooltip "메시지가 HTML 또는 plain 문서로 보이도록 설정">
+<!ENTITY ignored-threads.label "무시된 스레드">
+<!ENTITY ignored-threads.tooltip "무시된 스레드 표시">
+<!ENTITY image-toggle.label "그림 전환">
+<!ENTITY image-toggle.tooltip "그림 불러오기 켜기/끄기 전환">
+<!ENTITY import.label "불러오기">
+<!ENTITY import.tooltip "설정 및 데이터 불러오기">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "문서 객체 모델 검사기">
+<!ENTITY installaddons.label "설치">
+<!ENTITY installaddons.tooltip "확장기능/테마 설치">
+<!ENTITY java-toggle.label "Java 전환">
+<!ENTITY java-toggle.tooltip "Java 켜기/끄기 전환">
+<!ENTITY javaScriptConsole.label "콘솔">
+<!ENTITY javaScriptConsole.tooltip "오류 콘솔 열기">
+<!ENTITY javascript-toggle.label "JavaScript 전환">
+<!ENTITY javascript-toggle.tooltip "JavaScript 켜기/끄기 전환">
+<!ENTITY label-all-blank.label "제목 제거">
+<!ENTITY label-all-blank.tooltip "모든 탭의 제목 제거">
+<!ENTITY label-blank.label "제목 제거">
+<!ENTITY label-blank.tooltip "현재 탭의 제목 제거">
+<!ENTITY link-open.label "링크 열기 설정">
+<!ENTITY link-open.tooltip "링크를 어떻게 열것인지 설정">
+<!ENTITY min-font-size.label "글꼴크기 최소화">
+<!ENTITY min-font-size.tooltip "최소 글꼴 크기로 전환">
+<!ENTITY minimize-window.label "최소화">
+<!ENTITY minimize-window.tooltip "현재창 최소화">
+<!ENTITY msg-filter.label "필터">
+<!ENTITY msg-filter.tooltip "메세지 필터 설정">
+<!ENTITY msg-pane.label "메세지 패널">
+<!ENTITY msg-pane.tooltip "메세지 패널 전환">
+<!ENTITY new-message.label "새 메세지">
+<!ENTITY new-message.tooltip "새 Email 메세지 쓰기">
+<!ENTITY next-tab.label "다음 탭">
+<!ENTITY next-tab.tooltip "다음 탭으로 가기">
+<!ENTITY open-current-frame.label "현재 페이지 표시">
+<!ENTITY open-current-frame.tooltip "현재 선택된 프레임만 표시">
+<!ENTITY open.label "열기">
+<!ENTITY open.tooltip "파일 열기">
+<!ENTITY page-source.label "소스">
+<!ENTITY page-source.tooltip "페이지 소스 보기">
+<!ENTITY pageinfo.label "페이지 정보">
+<!ENTITY pageinfo.tooltip "페이지 정보 창 열기">
+<!ENTITY pagesetup.label "페이지 설정">
+<!ENTITY pagesetup.tooltip "페이지를 어떻게 인쇄할지 설정">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "PayPal 열기">
+<!ENTITY personal-bookmarks-menu-button.label "도구막대 북마크 메뉴">
+<!ENTITY personal-bookmarks-menu-button.tooltip "도구막대 북마크 메뉴 표시">
+<!ENTITY plainpaste.label "문서(Plain) 붙이기">
+<!ENTITY plainpaste.tooltip "형식 제거 후 문서 붙여넣기">
+<!ENTITY preferences.label "선택사항">
+<!ENTITY preferences.tooltip "선택사항 선택사항">
+<!ENTITY previous-tab.label "이전 탭">
+<!ENTITY previous-tab.tooltip "이전 탭으로 가기">
+<!ENTITY print-preview.label "인쇄 미리보기">
+<!ENTITY print-preview.tooltip "인쇄 미리보기 열기">
+<!ENTITY profile-folder.label "프로파일">
+<!ENTITY profile-folder.tooltip "프로파일 폴더 보기">
+<!ENTITY purge.label "정화">
+<!ENTITY purge.tooltip "폴더 압축 및 스팸 삭제">
+<!ENTITY read-mail.label "메일 읽기">
+<!ENTITY read-mail.tooltip "메일 읽기를 위해 응용풀그림 열기">
+<!ENTITY read-message.label "읽기">
+<!ENTITY read-message.tooltip "메세지 읽기">
+<!ENTITY read-news.label "뉴스 읽기">
+<!ENTITY read-news.tooltip "뉴스 읽기를 위해 응용풀그림 열기">
+<!ENTITY realNextMessage.label "다음 메시지">
+<!ENTITY realNextMessage.tooltip "진짜 다음 메시지 받기">
+<!ENTITY realPreviousMessage.label "이전 메시지">
+<!ENTITY realPreviousMessage.tooltip "진짜 이전 메시지 받기">
+<!ENTITY redo.label "실행반복">
+<!ENTITY redo.tooltip "마지막 변경 실행반복">
+<!ENTITY reduce.label "축소">
+<!ENTITY reduce.tooltip "글자 크기 축소">
+<!ENTITY reload-all-tabs.label "탭 새로 고침">
+<!ENTITY reload-all-tabs.tooltip "모든 열린 탭 새로고침">
+<!ENTITY reload-proxy.label "프록시 다시 불러오기">
+<!ENTITY reload-proxy.tooltip "프록시 다시 불러오기">
+<!ENTITY reload-skip-cache.label "캐쉬 무시하고 새로고침">
+<!ENTITY reload-skip-cache.tooltip "브라우저 캐쉬 내 저장된 내용을 이용하지 않고 페이지 다시 부르기">
+<!ENTITY rename-tab.label "탭 이름 변경">
+<!ENTITY rename-tab.tooltip "현재 선택된 탭 이름 변경">
+<!ENTITY reply-sender.label "보낸이에게만 답신">
+<!ENTITY reply-sender.tooltip "Email을 보낸이에게만 답신">
+<!ENTITY reset.label "재설정">
+<!ENTITY reset.tooltip "글자 크기 재설정">
+<!ENTITY restart-app.label "재시작">
+<!ENTITY restart-app.tooltip "응용풀그림 재시작">
+<!ENTITY return-receipt.label "수신 확인">
+<!ENTITY return-receipt.tooltip "수신 확인 켜기/끄기 전환">
+<!ENTITY save-frame.label "프레임 저장">
+<!ENTITY save-frame.tooltip "문서 프레임 저장">
+<!ENTITY saveas.label "저장">
+<!ENTITY saveas.tooltip "다음 이름으로 문서 저장">
+<!ENTITY search-addresses.label "주소 검색">
+<!ENTITY search-addresses.tooltip "주소 검색 열기">
+<!ENTITY search-messages.label "메세지 검색">
+<!ENTITY search-messages.tooltip "메세지 검색 열기">
+<!ENTITY select-all.label "모두 선택">
+<!ENTITY select-all.tooltip "모든 글자 선택">
+<!ENTITY send-link.label "링크 보내기">
+<!ENTITY send-link.tooltip "Email로 페이지 링크 보내기">
+<!ENTITY send-receive.label "보내기 및 받기">
+<!ENTITY send-receive.tooltip "메세지를 보내고 받기">
+<!ENTITY send-with-no-save.label "저장 없이 보내기">
+<!ENTITY send-with-no-save.tooltip "복사본 저장없이 메세지 보내기">
+<!ENTITY shift-delete.label "바로 삭제">
+<!ENTITY shift-delete.tooltip "휴지통에 보내지 않고 메세지 삭제">
+<!ENTITY show-frame.label "프레임 표시">
+<!ENTITY show-frame.tooltip "현재 프레임만 표시">
+<!ENTITY snap-back.label "즉시 회귀">
+<!ENTITY snap-back.tooltip "이 탭 내 첫번째로 열린 페이지로 돌아가기">
+<!ENTITY statusbar-toggle.label "상태 막대">
+<!ENTITY statusbar-toggle.tooltip "상태 막대 전환">
+<!ENTITY stop-all.label "모두 읽기 중지">
+<!ENTITY stop-all.tooltip "모든 탭의 읽기를 중지">
+<!ENTITY stop-animation.label "애니메이션 전환">
+<!ENTITY stop-animation.tooltip "Animated GIF, Blink 및 Marquee 태그 정지">
+<!ENTITY stop-cookies.label "쿠키 전환">
+<!ENTITY stop-cookies.tooltip "설정에서 쿠키 중지">
+<!ENTITY stop-dinamic-content.label "임베디드 개체 전환">
+<!ENTITY stop-dinamic-content.tooltip "모든 임베디드 개체 불러오기 중지">
+<!ENTITY stop-flash.label "Flash 전환">
+<!ENTITY stop-flash.tooltip "성가신 Flash 정지">
+<!ENTITY stop-iframe.label "iframes 전환 (일부 광고 차단)">
+<!ENTITY stop-iframe.tooltip "로딩중 iframes과 종종 포함되는 광고 중지">
+<!ENTITY stop-movies.label "동영상 전환">
+<!ENTITY stop-movies.tooltip "동영상 읽기 중지">
+<!ENTITY tab-list.label "탭 목록">
+<!ENTITY tab-list.tooltip "탭 목록 표시">
+<!ENTITY tasks-in-view.label "작업 내용">
+<!ENTITY tasks-in-view.tooltip "작업 내용 전환">
+<!ENTITY tasks-toggle.label "작업 전환">
+<!ENTITY tasks-toggle.tooltip "작업 막대 전환">
+<!ENTITY tb-clear-url.label "Url 지우기">
+<!ENTITY tb-clear-url.tooltip "주소막대의 내용을 지우고 커서를 맞춥니다.">
+<!ENTITY tb-edit-menu.label "편집 메뉴">
+<!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
+<!ENTITY tb-file-menu.label "파일 메뉴">
+<!ENTITY tb-file-menu.tooltip "파일 메뉴를 표시합니다">
+<!ENTITY tb-toggle-menu-bar.label "메뉴 막대 전환">
+<!ENTITY tb-toggle-menu-bar.tooltip "메뉴 막대를 전환합니다">
+<!ENTITY tb-tools-menu.label "도구 메뉴">
+<!ENTITY tb-tools-menu.tooltip "도구 메뉴를 표시합니다">
+<!ENTITY tb-view-menu.label "보기 메뉴">
+<!ENTITY tb-view-menu.tooltip "보기 메뉴를 표시합니다">
+<!ENTITY themes.label "테마">
+<!ENTITY themes.tooltip "테마 관리자 열기">
+<!ENTITY thunderbird-extension.label "확장기능">
+<!ENTITY thunderbird-extension.tooltip "더 많은 Thunderbird 확장기능">
+<!ENTITY thunderbird-theme.label "테마">
+<!ENTITY thunderbird-theme.tooltip "더 많은 Thunderbird 테마">
+<!ENTITY tiny-url.copy.to.clipboard "클립보드로 복사">
+<!ENTITY tiny-url.email "이메일 연결">
+<!ENTITY tiny-url.label "간략 Url">
+<!ENTITY tiny-url.link.use "선택사항 연결">
+<!ENTITY tiny-url.tooltip "간략 Url 생성">
+<!ENTITY tiny-url.use.normal "xrl.in 사용">
+<!ENTITY tiny-url.use.preview "xrl.in 미리보기 사용">
+<!ENTITY tiny-url.visit "Xrl.In 방문">
+<!ENTITY toggle-proxy.label "프록시 전환">
+<!ENTITY toggle-proxy.tooltip "프록시 켜거나 끄기를 전환합니다">
+<!ENTITY toggle-read.label "읽음으로 전환">
+<!ENTITY toggle-read.tooltip "별표 읽기를 전환">
+<!ENTITY toggle-starred.label "별표 전환">
+<!ENTITY toggle-starred.tooltip "별표 상태를 전환">
+<!ENTITY toggle-styles.label "스타일 전환">
+<!ENTITY toggle-styles.tooltip "웹 사이트 지정 스타일 추가/삭제">
+<!ENTITY toolbar-menu.label "도구막대">
+<!ENTITY toolbar-menu.tooltip "도구막대 숨기기/보이기">
+<!ENTITY top-page.label "맨 위로">
+<!ENTITY top-page.tooltip "페이지의 맨 위로 가기">
+<!ENTITY translate.label "번역">
+<!ENTITY translate.tooltip "선호하는 언어로 현재 페이지 번역">
+<!ENTITY undo-close-tab.label "닫은 탭 복원">
+<!ENTITY undo-close-tab.tooltip "최종 닫은 탭 다시 열기">
+<!ENTITY undo.label "실행취소">
+<!ENTITY undo.tooltip "마지막 변경 실행취소">
+<!ENTITY unread-threads.label "읽지 않은 스레드">
+<!ENTITY unread-threads.tooltip "읽지 않은 스레드 표시">
+<!ENTITY up-directory.label "상위 디렉토리">
+<!ENTITY up-directory.tooltip "상위 디렉토리로 가기">
+<!ENTITY use-document-colors.label "페이지 색상 전환">
+<!ENTITY use-document-colors.tooltip "기본값과 사이트의 페이지 색상에서를 전환">
+<!ENTITY use-document-fonts.label "페이지 글꼴 전환">
+<!ENTITY use-document-fonts.tooltip "기본값과 사이트 글꼴 사이에서 전환">
+<!ENTITY watched-with-unread-threads.label "읽은 스레드를 읽지 않은 것으로">
+<!ENTITY websearch.label "웹 검색">
+<!ENTITY websearch.tooltip "기본 검색 엔진으로 웹 검색">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia 홈페이지 열기">
+<!ENTITY with-unread-threads.label "읽지 않은 스레드로">
+<!ENTITY with-unread-threads.tooltip "읽지 않은 스레드로 표시">
+<!ENTITY workoffline.label "오프라인으로 작업">
+<!ENTITY workoffline.tooltip "오프라인으로 작업 전환">
+<!ENTITY yahoo-button.label "Yahoo 메일">
+<!ENTITY yahoo-button.tooltip "Yahoo 메일 열기">

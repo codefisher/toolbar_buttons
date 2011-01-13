@@ -1,62 +1,320 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Deschide &quot;about:cache&quot; pentru a vedea datele din cache">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Deschide about:config">
+<!ENTITY about-disk-cache.label "about:cache pe disc">
+<!ENTITY about-disk-cache.tooltip "Deschide &quot;about:cache&quot; pentru a vedea datele cache stocate pe disc">
+<!ENTITY about-mem-cache.label "about:cache în memorie">
+<!ENTITY about-mem-cache.tooltip "Deschide &quot;about:cache&quot; pentru a vedea datele cache stocate în memorie">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Deschide &quot;about:plugins&quot; pentru a vedea plugin-urile instalate">
+<!ENTITY accountmanager.label "Account Settings">
+<!ENTITY accountmanager.tooltip "Open account settings">
+<!ENTITY accountwizard.label "Account Setup">
+<!ENTITY accountwizard.tooltip "Run wizard to setup a new account">
+<!ENTITY add-address.label "Add Email">
+<!ENTITY add-address.tooltip "Copy Email Address to Address Book">
+<!ENTITY addons.label "Suplimente">
+<!ENTITY addons.tooltip "Deschide gestionarul de suplimete">
+<!ENTITY all-threads.label "All Threads">
+<!ENTITY all-threads.tooltip "View All Threads">
+<!ENTITY attachments-delete.label "Delete Attachments">
+<!ENTITY attachments-delete.tooltip "Delete All Attachments From Message">
+<!ENTITY attachments-detach.label "Detach Attachments">
+<!ENTITY attachments-detach.tooltip "Detach All Attachments From Message">
+<!ENTITY attachments-save.label "Save Attachments">
+<!ENTITY attachments-save.tooltip "Save All Attachments From Message">
+<!ENTITY bookmark-manager.label "Gestionar de semne de carte">
+<!ENTITY bookmark-manager.tooltip "Deschide gestionarul semnelor de carte">
+<!ENTITY bookmark-nopop.label "Semn de carte imediat">
+<!ENTITY bookmark-nopop.tooltip "Pune un semn de carte imediat">
+<!ENTITY bookmark-tabs.label "Semne de carte la toate paginile">
+<!ENTITY bookmark-tabs.tooltip "Pune semne de carte la toate paginile">
+<!ENTITY bookmark-toolbar.label "Bară de semne de carte">
+<!ENTITY bookmark-toolbar.tooltip "Afişează/ascunde bara semnelor de carte">
+<!ENTITY bookmark.label "Semn de carte">
+<!ENTITY bookmark.tooltip "Pune semn de carte la pagina curentă">
+<!ENTITY bookmarks-menu-button.label "Meniu semne de carte">
+<!ENTITY bookmarks-menu-button.tooltip "Afişează ca meniu toate semnele de carte">
+<!ENTITY bottom-page.label "La sfârşit">
+<!ENTITY bottom-page.tooltip "Mergi la sfârşitul paginii">
+<!ENTITY change-text-direction.label "Schimbă orientarea textului">
+<!ENTITY change-text-direction.tooltip "Schimbă orientarea textului de la dreapta la stânga sau invers">
+<!ENTITY check-for-update.label "Actualizează">
+<!ENTITY check-for-update.tooltip "Verifică actualizările">
+<!ENTITY clear-data.label "Şterge datele private">
+<!ENTITY clear-data.tooltip "Deschide fereastra de ştergere date private">
+<!ENTITY clear-url.label "Ascunde URL">
+<!ENTITY clear-url.tooltip "Ascunde URL-ul din bara de adrese">
+<!ENTITY clipboard.label "Legătură din Clipboard">
+<!ENTITY clipboard.menuitem "Deschide legătura din Clipboard">
+<!ENTITY clipboard.newtab "Deschide legătura din Clipboard în filă nouă">
+<!ENTITY clipboard.tooltip "Deschide legătura din Clipboard">
+<!ENTITY close-all-tabs.label "Închide tot">
+<!ENTITY close-all-tabs.tooltip "Închide toate filele">
+<!ENTITY close-other-tabs.label "Închide celelalte file">
+<!ENTITY close-other-tabs.tooltip "Închide toate filele mai puţin cea selectată.">
+<!ENTITY close-tab.label "Închide fila">
+<!ENTITY close-tab.tooltip "Închide fila sau fereastra curentă">
+<!ENTITY compact.label "Compact">
+<!ENTITY compact.tooltip "Compact Folder">
+<!ENTITY copy-address.label "Copy Email">
+<!ENTITY copy-address.tooltip "Copy Email Address to Clipboard">
+<!ENTITY create-filter.label "Create Filter">
+<!ENTITY create-filter.tooltip "Create filter from message">
+<!ENTITY customize-toolbar.label "Personalizează bara de instrumente">
+<!ENTITY customize-toolbar.tooltip "Personalizează bara de instrumente, adaugă sau elimină butoane, etc.">
+<!ENTITY delete-event.label "Delete Events">
+<!ENTITY delete-event.tooltip "Delete Selected Events">
+<!ENTITY delete-junk.label "Delete Junk">
+<!ENTITY delete-junk.tooltip "Delete Junk Messages">
+<!ENTITY delete-tasks.label "Delete Tasks">
+<!ENTITY delete-tasks.tooltip "Delete Selected Tasks">
+<!ENTITY delete.label "Şterge">
+<!ENTITY delete.tooltip "Şterge textul selectat">
+<!ENTITY dictionary-list.label "Schimbă dicţionarul">
+<!ENTITY dictionary-list.tooltip "Schimbă dicţionarul curent">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Deschide eBay">
+<!ENTITY edit-draft.label "Edit Draft">
+<!ENTITY edit-draft.tooltip "Edit Saved Draft">
+<!ENTITY empty-trash.label "Empty Trash">
+<!ENTITY empty-trash.tooltip "Empty The Trash Folder">
+<!ENTITY enlarge.label "Măreşte fontul">
+<!ENTITY enlarge.tooltip "Măreşte dimensiunea fonturilor">
 <!ENTITY exit.label "Ieşire">
 <!ENTITY exit.tooltip "Închidere aplicaţie">
 <!ENTITY extensions.label "Extensii">
 <!ENTITY extensions.tooltip "Deschide gestionarul de extensii">
-<!ENTITY themes.label "Teme">
-<!ENTITY themes.tooltip "Deschide gestionarul de teme">
-<!ENTITY addons.label "Suplimente">
-<!ENTITY addons.tooltip "Deschide gestionarul de suplimete">
-<!ENTITY installaddons.label "Instalează">
-<!ENTITY installaddons.tooltip "Instalează o extensie sau o temă">
-<!ENTITY statusbar-toggle.label "Bara de stare">
-<!ENTITY statusbar-toggle.tooltip "Afişează/ascunde bara de stare">
-<!ENTITY redo.label "Refă">
-<!ENTITY redo.tooltip "Refă ultima modificare">
-<!ENTITY undo.label "Anulează">
-<!ENTITY undo.tooltip "Anulează ultima modificare">
-<!ENTITY preferences.label "Opţiuni">
-<!ENTITY preferences.tooltip "Deschide gestionarul de opţiuni">
-<!ENTITY javaScriptConsole.label "Consolă">
-<!ENTITY javaScriptConsole.tooltip "Deschide consola de erori">
-<!ENTITY inspecter.label "Inspector DOM">
-<!ENTITY inspecter.tooltip "Deschide inspectorul Document Object Model">
-<!ENTITY restart-app.label "Reporneşte">
-<!ENTITY restart-app.tooltip "Reporneşte aplicaţia">
-<!ENTITY profile-folder.label "Profil">
-<!ENTITY profile-folder.tooltip "Deschide dosarul profilului personal">
-<!ENTITY pagesetup.label "Configurează pagina">
-<!ENTITY pagesetup.tooltip "Configurează dimensiunile paginii">
-<!ENTITY help.label "Ajutor">
-<!ENTITY help.tooltip "Deschide documentaţia de ajutor">
-<!ENTITY import.label "Importă">
-<!ENTITY import.tooltip "Importă configuraţii şi date">
-<!ENTITY customize-toolbar.label "Personalizează bara de instrumente">
-<!ENTITY customize-toolbar.tooltip "Personalizează bara de instrumente, adaugă sau elimină butoane, etc.">
-<!ENTITY about-config.label "about:config">
-<!ENTITY about-config.tooltip "Deschide about:config">
-<!ENTITY toolbar-menu.label "Bare de instrumente">
-<!ENTITY toolbar-menu.tooltip "Ascunde/afişează barele de instrumente">
-<!ENTITY check-for-update.label "Actualizează">
-<!ENTITY check-for-update.tooltip "Verifică actualizările">
-<!ENTITY minimize-window.label "Minimizează">
-<!ENTITY minimize-window.tooltip "Minimizează aplicaţia">
-<!ENTITY reload-proxy.label "Reîncarcă proxy">
-<!ENTITY reload-proxy.tooltip "Reîncarcă configuraţia serverului proxy">
-<!ENTITY change-text-direction.label "Schimbă orientarea textului">
-<!ENTITY change-text-direction.tooltip "Schimbă orientarea textului de la dreapta la stânga sau invers">
-<!ENTITY toggle-proxy.label "Comutator proxy">
-<!ENTITY toggle-proxy.tooltip "Activează/dezactivează serverul proxy">
-<!ENTITY tb-file-menu.label "Meniu contextual file">
-<!ENTITY tb-file-menu.tooltip "Afişează meniul contextual al barei de file">
-<!ENTITY tb-toggle-menu-bar.label "Comtator meniu principal">
-<!ENTITY tb-toggle-menu-bar.tooltip "Afişează/ascunde meniul principal">
-<!ENTITY tb-edit-menu.label "Meniu Editare">
-<!ENTITY tb-edit-menu.tooltip "Afişează meniul Editare">
-<!ENTITY tb-view-menu.label "Meniu Vizualizare">
-<!ENTITY tb-view-menu.tooltip "Afişează meniul Vizualizare">
-<!ENTITY tb-tools-menu.label "Meniu Unelte">
-<!ENTITY tb-tools-menu.tooltip "Afişează meniul Unelte">
+<!ENTITY favorite-page.label "Pagina favorită">
+<!ENTITY favorite-page.tooltip "Deschide pagina favorită">
+<!ENTITY find-again.label "Caută din nou">
+<!ENTITY find-again.tooltip "Caută următoarea potrivire">
+<!ENTITY find-prev.label "Caută înapoi">
+<!ENTITY find-prev.tooltip "Caută potrivirea anterioară">
+<!ENTITY find.label "Caută">
+<!ENTITY find.tooltip "Caută un text">
+<!ENTITY firefox-extension.label "Extensii">
+<!ENTITY firefox-extension.tooltip "Obţine mai multe extensii Firefox">
+<!ENTITY firefox-theme.label "Teme">
+<!ENTITY firefox-theme.tooltip "Obţine mai multe teme Firefox">
 <!ENTITY forward-as-attachment.label "Înaintează ca ataşament">
 <!ENTITY forward-as-attachment.tooltip "Înaintează mesajul ca ataşament">
 <!ENTITY forward-as-inline.label "Înaintează direct">
 <!ENTITY forward-as-inline.tooltip "Înaintează mesajul ca parte a altui mesaj">
+<!ENTITY full-screen.label "Pe tot ecranul">
+<!ENTITY full-screen.tooltip "Comută în modul Pe tot ecranul">
+<!ENTITY get-inbox.label "Get Inbox">
+<!ENTITY get-inbox.tooltip "Change Focused Folder to the Inbox">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Deschide Gmail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Deschide Google">
+<!ENTITY help.label "Ajutor">
+<!ENTITY help.tooltip "Deschide documentaţia de ajutor">
+<!ENTITY hide-images.label "Comutator elemente grafice">
+<!ENTITY hide-images.tooltip "Afişează/ascunde toate elementele grafice şi fundalul">
+<!ENTITY home-page-change.label "Pagina gazdă">
+<!ENTITY home-page-change.multiple "Stabileşte pagina gazdă ca legături multiple">
+<!ENTITY home-page-change.tooltip "Stabileşte pagina gazdă">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Deschide Hotmail">
+<!ENTITY html-mode.label "HTML Mode">
+<!ENTITY html-mode.tooltip "Set if Message is shown as HTML or Plain Text">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY ignored-threads.tooltip "View Ignored Threads">
+<!ENTITY image-toggle.label "Comutator încărcare imagini">
+<!ENTITY image-toggle.tooltip "Activează/dezactivează incărcarea imaginilor">
+<!ENTITY import.label "Importă">
+<!ENTITY import.tooltip "Importă configuraţii şi date">
+<!ENTITY inspecter.label "Inspector DOM">
+<!ENTITY inspecter.tooltip "Deschide inspectorul Document Object Model">
+<!ENTITY installaddons.label "Instalează">
+<!ENTITY installaddons.tooltip "Instalează o extensie sau o temă">
+<!ENTITY java-toggle.label "Comutator Java">
+<!ENTITY java-toggle.tooltip "Activează/dezactivează Java">
+<!ENTITY javaScriptConsole.label "Consolă">
+<!ENTITY javaScriptConsole.tooltip "Deschide consola de erori">
+<!ENTITY javascript-toggle.label "Comutator JavaScript">
+<!ENTITY javascript-toggle.tooltip "Activează/dezactivează JavaScript">
+<!ENTITY label-all-blank.label "Elimină toate etichetele">
+<!ENTITY label-all-blank.tooltip "Elimină etichetele tuturor filelor">
+<!ENTITY label-blank.label "Elimină eticheta filei">
+<!ENTITY label-blank.tooltip "Elimină eticheta filei curente">
+<!ENTITY link-open.label "Configurează deschiderea legăturilor">
+<!ENTITY link-open.tooltip "Configurează modul de deschidere a legăturilor">
+<!ENTITY min-font-size.label "Dimensiune minimă font">
+<!ENTITY min-font-size.tooltip "Selectează dimensiunea minimă a fontului">
+<!ENTITY minimize-window.label "Minimizează">
+<!ENTITY minimize-window.tooltip "Minimizează aplicaţia">
+<!ENTITY msg-filter.label "Filters">
+<!ENTITY msg-filter.tooltip "Set up Message Filters">
+<!ENTITY msg-pane.label "Message Pane">
+<!ENTITY msg-pane.tooltip "Toggel Message Pane">
+<!ENTITY new-message.label "Mesaj nou">
+<!ENTITY new-message.tooltip "Scrie un mesaj nou">
+<!ENTITY next-tab.label "Fila următoare">
+<!ENTITY next-tab.tooltip "Mergi la fila următoare">
+<!ENTITY open-current-frame.label "Afişează cadrul curent">
+<!ENTITY open-current-frame.tooltip "Afişează doar cadrul selectat">
+<!ENTITY open.label "Deschide">
+<!ENTITY open.tooltip "Deschide un fişier">
+<!ENTITY page-source.label "Sursă pagină">
+<!ENTITY page-source.tooltip "Afişează sursa paginii">
+<!ENTITY pageinfo.label "Informaţii pagină">
+<!ENTITY pageinfo.tooltip "Deschide fereastra cu informaţii despre pagină">
+<!ENTITY pagesetup.label "Configurează pagina">
+<!ENTITY pagesetup.tooltip "Configurează dimensiunile paginii">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Deschide Paypal">
+<!ENTITY personal-bookmarks-menu-button.label "Meniu bară semne de carte">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Afişează ca meniu bara semnelor de carte">
+<!ENTITY plainpaste.label "Plain Text Paste">
+<!ENTITY plainpaste.tooltip "Paste Text With No Formatting">
+<!ENTITY preferences.label "Opţiuni">
+<!ENTITY preferences.tooltip "Deschide gestionarul de opţiuni">
+<!ENTITY previous-tab.label "Fila precedentă">
+<!ENTITY previous-tab.tooltip "Mergi la fila precedentă">
+<!ENTITY print-preview.label "Previzualizează pagina">
+<!ENTITY print-preview.tooltip "Previzualizează pagina înaintea tipăririi">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Deschide dosarul profilului personal">
+<!ENTITY purge.label "Purge">
+<!ENTITY purge.tooltip "Compact Folder, and Delete Junk">
+<!ENTITY read-mail.label "Cititor mesaje">
+<!ENTITY read-mail.tooltip "Deschide aplicaţia de poştă electronică">
+<!ENTITY read-message.label "Read">
+<!ENTITY read-message.tooltip "Read Message">
+<!ENTITY read-news.label "Cititor ştiri">
+<!ENTITY read-news.tooltip "Deschide aplicaţia de citire ştiri">
+<!ENTITY realNextMessage.label "Next Message">
+<!ENTITY realNextMessage.tooltip "Get Real Next Message">
+<!ENTITY realPreviousMessage.label "Previous Message">
+<!ENTITY realPreviousMessage.tooltip "Get Real Previous Message">
+<!ENTITY redo.label "Refă">
+<!ENTITY redo.tooltip "Refă ultima modificare">
+<!ENTITY reduce.label "Micşorează fontul">
+<!ENTITY reduce.tooltip "Micşorează dimensiunea fonturilor">
+<!ENTITY reload-all-tabs.label "Reîncarcă filele">
+<!ENTITY reload-all-tabs.tooltip "Reîncarcă toate filele deschise">
+<!ENTITY reload-proxy.label "Reîncarcă proxy">
+<!ENTITY reload-proxy.tooltip "Reîncarcă configuraţia serverului proxy">
+<!ENTITY reload-skip-cache.label "Reîncarcă fără cache">
+<!ENTITY reload-skip-cache.tooltip "Reîncarcă pagina curentă fără a utiliza conţinutul din cache">
+<!ENTITY rename-tab.label "Redenumeşte fila">
+<!ENTITY rename-tab.tooltip "Redenumeşte fila curentă">
+<!ENTITY reply-sender.label "Reply to Sender Only">
+<!ENTITY reply-sender.tooltip "Reply only to the sender of the email">
+<!ENTITY reset.label "Refă fontul">
+<!ENTITY reset.tooltip "Refă dimensiunea iniţială a fonturilor">
+<!ENTITY restart-app.label "Reporneşte">
+<!ENTITY restart-app.tooltip "Reporneşte aplicaţia">
+<!ENTITY return-receipt.label "Return Receipt">
+<!ENTITY return-receipt.tooltip "Toggle Return Receipt on/off">
+<!ENTITY save-frame.label "Salvează cadrul">
+<!ENTITY save-frame.tooltip "Salvează cadrul curent din document">
+<!ENTITY saveas.label "Salvează">
+<!ENTITY saveas.tooltip "Salvează documentul">
+<!ENTITY search-addresses.label "Search Addresses">
+<!ENTITY search-addresses.tooltip "Open Addresses Search">
+<!ENTITY search-messages.label "Search Messages">
+<!ENTITY search-messages.tooltip "Open Message Search">
+<!ENTITY select-all.label "Selectează tot">
+<!ENTITY select-all.tooltip "Selectează tot textul">
+<!ENTITY send-link.label "Trimite legătura">
+<!ENTITY send-link.tooltip "Trimite adresa paginii curente prin poşta electronică">
+<!ENTITY send-receive.label "Send &amp; Receive">
+<!ENTITY send-receive.tooltip "Send and receive messages">
+<!ENTITY send-with-no-save.label "Send Without Save">
+<!ENTITY send-with-no-save.tooltip "Send message without saving a copy">
+<!ENTITY shift-delete.label "Skip Trash">
+<!ENTITY shift-delete.tooltip "Delete message with out sending it to the Trash">
+<!ENTITY show-frame.label "Afişează cadrul">
+<!ENTITY show-frame.tooltip "Afişează numai cadrul curent">
+<!ENTITY snap-back.label "Întoarce-te la început">
+<!ENTITY snap-back.tooltip "Se întoarce la prima pagină deschisă în fila curentă">
+<!ENTITY statusbar-toggle.label "Bara de stare">
+<!ENTITY statusbar-toggle.tooltip "Afişează/ascunde bara de stare">
+<!ENTITY stop-all.label "Opreşte tot">
+<!ENTITY stop-all.tooltip "Opreşte încărcarea tuturor filelor">
+<!ENTITY stop-animation.label "Comutator animaţii">
+<!ENTITY stop-animation.tooltip "Activează/dezactivează GIF-urile animate şi etichetele clipitoare">
+<!ENTITY stop-cookies.label "Comutator cookie-uri">
+<!ENTITY stop-cookies.tooltip "Activează/dezactivează cookie-urile.">
+<!ENTITY stop-dinamic-content.label "Comutator conţinut încapsulat">
+<!ENTITY stop-dinamic-content.tooltip "Activează/dezactivează încărcarea conţinutului încapsulat.">
+<!ENTITY stop-flash.label "Comutator Flash">
+<!ENTITY stop-flash.tooltip "Activează/dezactivează derularea elementelor Flash">
+<!ENTITY stop-iframe.label "Comutator cadre iFrame">
+<!ENTITY stop-iframe.tooltip "Activează/dezactivează încărcarea cadrelor iFrame şi a reclamelor pe care le conţin">
+<!ENTITY stop-movies.label "Comutator clipuri">
+<!ENTITY stop-movies.tooltip "Activează/dezactivează încărcarea clipurilor video">
+<!ENTITY tab-list.label "Lista filelor">
+<!ENTITY tab-list.tooltip "Afişează lista filelor">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">
+<!ENTITY tasks-toggle.label "Toggle Tasks">
+<!ENTITY tasks-toggle.tooltip "Toggle the task bar">
+<!ENTITY tb-clear-url.label "Şterge adresa din bară">
+<!ENTITY tb-clear-url.tooltip "Şterge adresa şi selectează bara de adrese">
+<!ENTITY tb-edit-menu.label "Meniu Editare">
+<!ENTITY tb-edit-menu.tooltip "Afişează meniul Editare">
+<!ENTITY tb-file-menu.label "Meniu contextual file">
+<!ENTITY tb-file-menu.tooltip "Afişează meniul contextual al barei de file">
+<!ENTITY tb-toggle-menu-bar.label "Comtator meniu principal">
+<!ENTITY tb-toggle-menu-bar.tooltip "Afişează/ascunde meniul principal">
+<!ENTITY tb-tools-menu.label "Meniu Unelte">
+<!ENTITY tb-tools-menu.tooltip "Afişează meniul Unelte">
+<!ENTITY tb-view-menu.label "Meniu Vizualizare">
+<!ENTITY tb-view-menu.tooltip "Afişează meniul Vizualizare">
+<!ENTITY themes.label "Teme">
+<!ENTITY themes.tooltip "Deschide gestionarul de teme">
+<!ENTITY thunderbird-extension.label "Extensii">
+<!ENTITY thunderbird-extension.tooltip "Obţine mai multe extensii Thunderbird">
+<!ENTITY thunderbird-theme.label "Teme">
+<!ENTITY thunderbird-theme.tooltip "Obţine mai multe teme Thunderbird">
+<!ENTITY tiny-url.copy.to.clipboard "Copiază în Clipboard">
+<!ENTITY tiny-url.email "Trimite prin poşta electronică">
+<!ENTITY tiny-url.label "URL scurt">
+<!ENTITY tiny-url.link.use "Opţiuni">
+<!ENTITY tiny-url.tooltip "Crează un URL scurt la pagina curentă">
+<!ENTITY tiny-url.use.normal "Foloseşte xrl.in">
+<!ENTITY tiny-url.use.preview "Foloseşte preview.xrl.in">
+<!ENTITY tiny-url.visit "Visitează xrl.in">
+<!ENTITY toggle-proxy.label "Comutator proxy">
+<!ENTITY toggle-proxy.tooltip "Activează/dezactivează serverul proxy">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY toggle-read.tooltip "Toggle Message Read Status">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY toggle-starred.tooltip "Toggle Starred Status">
+<!ENTITY toggle-styles.label "Comutator stiluri">
+<!ENTITY toggle-styles.tooltip "Activează/dezactivează stilurile definite pentru pagină">
+<!ENTITY toolbar-menu.label "Bare de instrumente">
+<!ENTITY toolbar-menu.tooltip "Ascunde/afişează barele de instrumente">
+<!ENTITY top-page.label "La început">
+<!ENTITY top-page.tooltip "Mergi la începutul paginii">
+<!ENTITY translate.label "Tradu">
+<!ENTITY translate.tooltip "Tradu pagina curentă în limba aleasă">
+<!ENTITY undo-close-tab.label "Redeschide fila închisă">
+<!ENTITY undo-close-tab.tooltip "Redeschide ultima filă închisă">
+<!ENTITY undo.label "Anulează">
+<!ENTITY undo.tooltip "Anulează ultima modificare">
+<!ENTITY unread-threads.label "Unread Threads">
+<!ENTITY unread-threads.tooltip "View Unread Threads">
+<!ENTITY up-directory.label "Un nivel în sus">
+<!ENTITY up-directory.tooltip "Navighează cu un nivel în sus">
+<!ENTITY use-document-colors.label "Comutator culori">
+<!ENTITY use-document-colors.tooltip "Comută între culorile implicite ale paginii şi cele ale aplicaţiei">
+<!ENTITY use-document-fonts.label "Comutator fonturi">
+<!ENTITY use-document-fonts.tooltip "Comută între fonturile implicite ale paginii şi cele ale aplicaţiei">
+<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY websearch.label "Caută pe web">
+<!ENTITY websearch.tooltip "Caută pe web folosind motorul de căutare implicit">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Deschide Wikipedia">
+<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.tooltip "View Threads With Unread">
+<!ENTITY workoffline.label "Lucrează neconectat">
+<!ENTITY workoffline.tooltip "Conectează/deconectează aplicaţia">
+<!ENTITY yahoo-button.label "Yahoo! Mail">
+<!ENTITY yahoo-button.tooltip "Deschide Yahoo! Mail">
