@@ -14,7 +14,7 @@ config = {
     # makes the build system run with debuging enabled
     "debug": False,
     # if true buttons in the staging folder are also added
-    "use_staging": False,
+    "use_staging": True,
     # should a page be shown when the extension is installed
     "show_updated_prompt": True,
     "version_url": "http://codefisher.org/toolbar_button/version/",
@@ -44,7 +44,7 @@ config = {
     "output": os.path.join("extenions", "toolbar_buttons.xpi"),
 
     # parts of the extension are copied here, if set
-    "profile_folder": None,
+    "profile_folder": "/home/michael/.mozilla/firefox/0xq1gim8.Michael",
 
     # the below sets application support
     "applications_data": {

@@ -3,4 +3,5 @@
 	id="stop-cookies"
 	label="&stop-cookies.label;"
 	tooltiptext="&stop-cookies.tooltip;"
+	onclick="toolbar_buttons.viewCookies(event);"
 	oncommand="toolbar_buttons.toggleCookies(this);" />
