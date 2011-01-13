@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="compact"
+	label="&compact.label;"
+	tooltiptext="&compact.tooltip;"
+	oncommand="goDoCommand('cmd_compactFolder');"/>

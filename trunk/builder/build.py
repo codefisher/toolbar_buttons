@@ -6,19 +6,23 @@ import zipfile
 import StringIO
 from locales import Locale
 from button import Button
-from util import get_button_folders, get_locale_folders
+from util import get_button_folders, get_locale_folders, get_folders
 
 def build_extension(settings):
-    locale_folders, locales = get_locale_folders(settings.LOCALE)
+    locale_folders, locales = get_locale_folders(settings.get("locale"))
     button_locales = Locale(settings, locale_folders, locales)
     options_locales = Locale(settings, locale_folders, locales, True)
 
-    if settings.APPLICATIONS == "all":
-        applications = settings.APPLICATIONS_DATA.keys()
+    if settings.get("applications", "all") == "all":
+        applications = settings.get("applications_data").keys()
     else:
-        applications = settings.APPLICATIONS.split(',')
+        applications = settings.get("applications").split(',')
 
-    button_folders, buttons = get_button_folders(settings.BUTTONS)
+    button_folders, buttons = get_button_folders(settings.get("buttons"))
+    if settings.get("use_staging"):
+        staging_button_folders, staging_buttons = get_folders(settings.get("buttons"), "staging")
+        button_folders.extend(staging_button_folders)
+        buttons.extend(staging_buttons)
     buttons = Button(button_folders, buttons, settings, applications)
 
     jar_file = StringIO.StringIO()
@@ -26,7 +30,7 @@ def build_extension(settings):
     #write files to jar
     for file, data in buttons.get_js_files().iteritems():
         jar.writestr(os.path.join("content", file + ".js"),
-                data.replace("{{uuid}}", settings.EXTENSION_ID))
+                data.replace("{{uuid}}", settings.get("extension_id")))
 
     for file, data in buttons.get_xul_files().iteritems():
         jar.writestr(os.path.join("content", file + ".xul"), data)
@@ -38,7 +42,7 @@ def build_extension(settings):
         jar.writestr(os.path.join("locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
-            jar.writestr(os.path.join("content", name), fp.read().replace("{{chrome-name}}", settings.CHROME_NAME))
+            jar.writestr(os.path.join("content", name), fp.read().replace("{{chrome-name}}", settings.get("chrome_name")))
     resources = buttons.get_resource_files()
     has_resources = bool(resources)
     for name, path in resources.iteritems():
@@ -53,34 +57,34 @@ def build_extension(settings):
     option_applicaions = buttons.get_options_applications()
 
     css, image_list, image_data = buttons.get_css_file()
-    small, large = settings.ICON_SIZE
+    small, large = settings.get("icon_size")
     jar.writestr(os.path.join("skin", "button.css"), css)
     for image in set(image_list):
         try:
-            jar.write(os.path.join(settings.IMAGE_PATH, small, image), os.path.join("skin", small, image))
+            jar.write(os.path.join(settings.get("image_path"), small, image), os.path.join("skin", small, image))
         except (OSError, IOError):
             jar.write(os.path.join("files", "default16.png"), os.path.join("skin", small, image))
             print "can not find file %s" % image
         try:
-            jar.write(os.path.join(settings.IMAGE_PATH, large, image), os.path.join("skin", large, image))
+            jar.write(os.path.join(settings.get("image_path"), large, image), os.path.join("skin", large, image))
         except (OSError, IOError):
             jar.write(os.path.join("files", "default24.png"), os.path.join("skin", large, image))
             print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)
     jar.close()
-    if settings.PROFILE_FOLDER:
-        with open(os.path.join(settings.PROFILE_FOLDER, "extensions",
-                settings.EXTENSION_ID, "chrome", settings.JAR_FILE), "w") as fp:
+    if settings.get("profile_folder"):
+        with open(os.path.join(settings.get("profile_folder"), "extensions",
+                settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
             fp.write(jar_file.getvalue())
-    xpi = zipfile.ZipFile(settings.OUTPUT, "w", zipfile.ZIP_DEFLATED)
-    xpi.writestr(os.path.join("chrome", settings.JAR_FILE), jar_file.getvalue())
+    xpi = zipfile.ZipFile(settings.get("output"), "w", zipfile.ZIP_DEFLATED)
+    xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
 
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
-    xpi.write(settings.ICON, "icon.png")
-    xpi.write(settings.LICENCE, "LICENCE")
+    xpi.write(settings.get("icon"), "icon.png")
+    xpi.write(settings.get("licence"), "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
 
@@ -88,7 +92,7 @@ def build_extension(settings):
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
-    values = {"chrome": settings.CHROME_NAME, "jar": settings.JAR_FILE}
+    values = {"chrome": settings.get("chrome_name"), "jar": settings.get("jar_file")}
 
     lines.append("content\t%(chrome)s\tjar:chrome/%(jar)s!/content/" % values)
     lines.append("skin\t%(chrome)s\tclassic/1.0\t"
@@ -105,7 +109,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
         lines.append("resource\t%(chrome)s\tjar:chrome/%(jar)s!/resources/" % values)
     for option in options:
         values["application"] = option
-        for _, application_id, _, _ in settings.APPLICATIONS_DATA[option]:
+        for _, application_id, _, _ in settings.get("applications_data")[option]:
             values["id"] = application_id
             lines.append("overlay\tchrome://%(chrome)s/content/options.xul\t"
                          "chrome://%(chrome)s/content/%(application)s"
@@ -113,7 +117,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
 
     for file_name in buttons.get_file_names():
         values["file"] = file_name
-        for overlay in settings.FILES_TO_OVERLAY[file_name]:
+        for overlay in settings.get("files_to_overlay")[file_name]:
             values["overlay"] = overlay
             lines.append("overlay\t%(overlay)s\t"
                          "chrome://%(chrome)s/content/%(file)s.xul" % values)
@@ -131,12 +135,12 @@ def create_install(settings, applications, options=[]):
     """Creates the install.rdf file for the extension"""
     if options:
         options_url = ("\t\t<em:optionsURL>chrome://%s/content/options.xul"
-                       "</em:optionsURL>\n" % settings.CHROME_NAME)
+                       "</em:optionsURL>\n" % settings.get("chrome_name"))
     else:
         options_url = ""
     supported_applications = []
     for application in applications:
-        for values in settings.APPLICATIONS_DATA[application]:
+        for values in settings.get("applications_data")[application]:
             supported_applications.append("""
         \t\t<!-- %s -->
         \t\t<em:targetApplication>
@@ -147,13 +151,13 @@ def create_install(settings, applications, options=[]):
             \t\t\t</Description>
         \t\t</em:targetApplication>""".replace(" ","") % values)
     template = open(os.path.join("files", "install.rdf") ,"r").read()
-    return (template.replace("{{uuid}}", settings.EXTENSION_ID)
-                    .replace("{{name}}", settings.NAME)
-                    .replace("{{version}}", settings.VERSION)
-                    .replace("{{description}}", settings.DESCRIPTION)
-                    .replace("{{creator}}", settings.CREATOR)
-                    .replace("{{chrome-name}}", settings.CHROME_NAME)
-                    .replace("{{homepageURL}}", settings.HOMEPAGE)
+    return (template.replace("{{uuid}}", settings.get("extension_id"))
+                    .replace("{{name}}", settings.get("name"))
+                    .replace("{{version}}", settings.get("version"))
+                    .replace("{{description}}", settings.get("description"))
+                    .replace("{{creator}}", settings.get("creator"))
+                    .replace("{{chrome-name}}", settings.get("chrome_name"))
+                    .replace("{{homepageURL}}", settings.get("homepage"))
                     .replace("{{optionsURL}}", options_url)
                     .replace("{{applications}}",
                              "".join(supported_applications))

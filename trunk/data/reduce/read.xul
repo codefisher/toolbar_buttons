@@ -3,4 +3,4 @@
 	id="reduce"
 	label="&reduce.label;"
 	tooltiptext="&reduce.tooltip;"
-	command="cmd_fullZoomReduce"/>
+	oncommand="goDoCommand('cmd_fullZoomReduce')"/>
