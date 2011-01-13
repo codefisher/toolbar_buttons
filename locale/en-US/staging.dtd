@@ -1,2 +1,4 @@
 <!ENTITY tb-cookie-manager.label "Coookie Manager">
 <!ENTITY tb-cookie-manager.tooltip "Opens the coookie manager in a new tab">
+<!ENTITY tb-toggle-headers.label "Email Headers">
+<!ENTITY tb-toggle-headers.tooltip "Toggle what email headers show">

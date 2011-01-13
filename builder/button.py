@@ -27,6 +27,7 @@ class Button():
         self._res = {}
         self._pref_list = defaultdict(list)
         self._button_keys = {}
+        self._button_style = {}
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -115,6 +116,9 @@ class Button():
                 for file in os.listdir(os.path.join(folder, "res")):
                     if file[0] != ".":
                         self._res[file] = os.path.join(folder, "res", file)
+            if "style.css" in files:
+                with open(os.path.join(folder, "style.css"), "r") as style:
+                    self._button_style[button] = style.read()
 
     def get_extra_files(self):
         return self._extra_files
@@ -247,6 +251,8 @@ class Button():
                              """%(image)s") !important;\n}""" % values)
                 values["size"] = small
                 lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
+        for item in set(self._button_style.values()):
+            lines.append(item)
         return "\n".join(lines), image_list, image_datas
 
     def get_js_files(self):
