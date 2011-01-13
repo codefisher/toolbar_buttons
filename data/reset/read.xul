@@ -3,4 +3,4 @@
 	id="reset"
 	label="&reset.label;"
 	tooltiptext="&reset.tooltip;"
-	command="cmd_fullZoomReset" />
+	oncommand="goDoCommnad('cmd_fullZoomReset')" />

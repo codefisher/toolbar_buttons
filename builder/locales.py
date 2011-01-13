@@ -7,6 +7,7 @@ class Locale(object):
     """Parses the localisation files of the extension and queries it for data"""
     def __init__(self, settings, folders, locales, options=False):
         self._settings = settings
+        self._missing_strings = settings.get("missing_strings")
         self._folders = folders
         self._locales = locales
         self._dtd = defaultdict(dict)
@@ -41,15 +42,15 @@ class Locale(object):
         for locale in self._locales:
             dtd_file = []
             for string in strings:
-                if self._settings.MISSING_STRINGS == "replace":
+                if self._missing_strings == "replace":
                     dtd_file.append("""<!ENTITY %s %s>"""
                                 % (string, self._dtd[locale].get(string,
-                                        self._dtd[self._settings.DEFAULT_LOCALE]
+                                        self._dtd[self._settings.get("default_locale")]
                                         .get(string, ""))))
-                elif self._settings.MISSING_STRINGS == "empty":
+                elif self._missing_strings == "empty":
                     dtd_file.append("""<!ENTITY %s %s>"""
                              % (string, self._dtd[locale].get(string, "")))
-                elif (self._settings.MISSING_STRINGS == "skip"
+                elif (self._missing_strings == "skip"
                       and string in self._dtd[locale]):
                     dtd_file.append("""<!ENTITY %s %s>"""
                                   % (string, self._dtd[locale][string]))
@@ -61,25 +62,25 @@ class Locale(object):
 
         get_dtd_data(list<str>) -> dict<str: str>
         """
-        description = "extensions.%s.description" % self._settings.EXTENSION_ID
+        description = "extensions.%s.description" % self._settings.get("extension_id")
         result = {}
         for locale in self._locales:
             properties_file = []
             for string in strings:
-                if self._settings.MISSING_STRINGS == "replace":
+                if self._missing_strings == "replace":
                     properties_file.append("%s=%s"
                                 % (string, self._properties[locale].get(string,
-                                        self._properties[self._settings.DEFAULT_LOCALE]
+                                        self._properties[self._settings.get("default_locale")]
                                         .get(string, ""))))
-                elif self._settings.MISSING_STRINGS == "empty":
+                elif self._missing_strings == "empty":
                     properties_file.append("%s=%s"
                              % (string, self._properties[locale].get(string, "")))
-                elif (self._settings.MISSING_STRINGS == "skip"
+                elif (self._missing_strings == "skip"
                       and string in self._properties[locale]):
                     properties_file.append("%s=%s"
                                   % (string, self._properties[locale][string]))
             if locale == "en-US":
-                properties_file.append("%s=%s" % (description, self._settings.DESCRIPTION))
+                properties_file.append("%s=%s" % (description, self._settings.get("description")))
             elif description in self._properties[locale]:
                 properties_file.append("%s=%s" % (description, self._properties[locale][description]))
             result[locale] = "\n".join(properties_file)

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="msg-pane"
+	label="&msg-pane.label;"
+	tooltiptext="&msg-pane.tooltip;"
+	oncommand="MsgToggleMessagePane();"/>

@@ -3,4 +3,4 @@
 	id="enlarge"
 	label="&enlarge.label;"
 	tooltiptext="&enlarge.tooltip;"
-	command="cmd_fullZoomEnlarge" />
+	oncommand="goDoCommand('cmd_fullZoomEnlarge')" />

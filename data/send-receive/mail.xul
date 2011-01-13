@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="send-receive"
+	label="&send-receive.label;"
+	tooltiptext="&send-receive.tooltip;"
+	oncommand="goDoCommand('cmd_sendUnsentMsgs'); goDoCommand('cmd_getMsgsForAuthAccounts');"/>
