@@ -1,46 +1,20 @@
-<!ENTITY restart.label "Riavvio">
-<!ENTITY restart.checkbox "Non avvisare al riavvio del programma">
 <!ENTITY options.window.title "Opzioni di Toolbar Buttons">
+<!ENTITY favorite-page.description "Inserire un indirizzo web, utilizzabile come una seconda pagina iniziale, per il pulsante &apos;Pagina preferita&apos;:">
+<!ENTITY toggle.prox.label "Attiva/disattiva proxy">
+<!ENTITY toggle.proxy.description "Tramite il pulsante &apos;Attiva/disattiva proxy&apos; è possibile scegliere tra la connessione diretta ad internet e una delle opzioni qui sotto">
+<!ENTITY restart.checkbox "Non avvisare al riavvio del programma">
 <!ENTITY previous-next.label "Precedente e successivo">
-<!ENTITY previous-next.checkbox "Modifica la direzione per i pulsanti &apos;Precedente&apos; e &apos;Successivo&apos;">
+<!ENTITY toggle.checkbox "Ricarica la pagina dopo aver fatto clic sui pulsanti per attivare/disattivare impostazioni">
+<!ENTITY restart.label "Riavvio">
+<!ENTITY read.select.button "Sfoglia…">
+<!ENTITY readnews.path.desc "Inserire il percorso del proprio client dei gruppi di discussione in caso il relativo pulsante non funzionasse:">
+<!ENTITY toggle.proxy.auto.detect "Individua automaticamente le impostazioni dei proxy">
+<!ENTITY toggle.proxy.auto.configuration "Configurazione automatica dei proxy (PAC)">
+<!ENTITY readmail.path.desc "Inserire il percorso del proprio client e-mail in caso il relativo pulsante non funzionasse:">
+<!ENTITY toggle.proxy.manual "Configurazione manuale dei proxy">
+<!ENTITY favorite-page.label "Pagina preferita">
 <!ENTITY translate.label "Traduzione">
 <!ENTITY translate.description "Selezionare la lingua nella quale tradurre tramite il servizio &apos;Google Translate&apos; con il pulsante &apos;Traduci&apos;:">
-<!ENTITY translate.ar "arabo">
-<!ENTITY translate.zh "cinese">
-<!ENTITY translate.zh-CN "cinese (semplificato)">
-<!ENTITY translate.zh-TW "cinese (tradizionale)">
-<!ENTITY translate.fr "francese">
-<!ENTITY translate.de "tedesco">
-<!ENTITY translate.it "italiano">
-<!ENTITY translate.ja "giapponese">
-<!ENTITY translate.ko "coreano">
-<!ENTITY translate.pt "portoghese">
-<!ENTITY translate.ru "russo">
-<!ENTITY translate.es "spagnolo">
-<!ENTITY translate.en "inglese">
-<!ENTITY translate.bg "bulgaro">
-<!ENTITY translate.cs "ceco">
-<!ENTITY translate.hr "croato">
-<!ENTITY translate.da "danese">
-<!ENTITY translate.nl "olandese">
-<!ENTITY translate.fi "finlandese">
-<!ENTITY translate.el "greco">
-<!ENTITY translate.hi "hindi">
-<!ENTITY translate.nb "norvegese">
-<!ENTITY translate.pl "polacco">
-<!ENTITY translate.ro "romeno">
-<!ENTITY translate.sv "svedese">
-<!ENTITY favorite-page.label "Pagina preferita">
-<!ENTITY favorite-page.description "Inserire un indirizzo web, utilizzabile come una seconda pagina iniziale, per il pulsante &apos;Pagina preferita&apos;:">
-<!ENTITY toggle.proxy.description "Tramite il pulsante &apos;Attiva/disattiva proxy&apos; è possibile scegliere tra la connessione diretta ad internet e una delle opzioni qui sotto">
-<!ENTITY toggle.prox.label "Attiva/disattiva proxy">
-<!ENTITY toggle.proxy.manual "Configurazione manuale dei proxy">
-<!ENTITY toggle.proxy.auto.configuration "Configurazione automatica dei proxy (PAC)">
-<!ENTITY toggle.proxy.auto.detect "Individua automaticamente le impostazioni dei proxy">
+<!ENTITY previous-next.checkbox "Modifica la direzione per i pulsanti &apos;Precedente&apos; e &apos;Successivo&apos;">
 <!ENTITY readmail.path.caption "Percorso del client e-mail">
-<!ENTITY readmail.path.desc "Inserire il percorso del proprio client e-mail in caso il relativo pulsante non funzionasse:">
 <!ENTITY readnews.path.caption "Percorso del client dei gruppi di discussione">
-<!ENTITY readnews.path.desc "Inserire il percorso del proprio client dei gruppi di discussione in caso il relativo pulsante non funzionasse:">
-<!ENTITY read.select.button "Sfoglia…">
-<!ENTITY toogle.label "Pulsanti di attivazione/disattivazione impostazioni">
-<!ENTITY toggle.checkbox "Ricarica la pagina dopo aver fatto clic sui pulsanti per attivare/disattivare impostazioni">

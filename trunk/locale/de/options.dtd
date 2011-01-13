@@ -1,46 +1,20 @@
-<!ENTITY restart.label "Neustart">
-<!ENTITY restart.checkbox "Vor Neustart nicht nachfragen.">
 <!ENTITY options.window.title "Toolbar Buttons - Einstellungen">
+<!ENTITY favorite-page.description "URL, die über die Schaltfläche &quot;Lieblingsseite&quot; aufgerufen wird.">
+<!ENTITY toggle.prox.label "Proxy">
+<!ENTITY toggle.proxy.description "Über die Proxy-Schaltfläche wird zwischen der Benutzung keines Proxys und der unten ausgewählten Einstellung umgeschaltet:">
+<!ENTITY restart.checkbox "Vor Neustart nicht nachfragen.">
 <!ENTITY previous-next.label "Vorherige Nachricht &amp; Nächste Nachricht">
-<!ENTITY previous-next.checkbox "Richtung umkehren, in der die Schaltflächen &quot;Vorherige Nachricht&quot; und &quot;Nächste Nachricht&quot; wirken.">
+<!ENTITY toggle.checkbox "Seite nach dem Umschalten neu laden.">
+<!ENTITY restart.label "Neustart">
+<!ENTITY read.select.button "Durchsuchen…">
+<!ENTITY readnews.path.desc "Der Pfad zu Ihrer bevorzugten Anwendung für das Lesen von Newsgruppen. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen der Anwendung nicht funktionieren.">
+<!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
+<!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
+<!ENTITY readmail.path.desc "Der Pfad zu Ihrem bevorzugten E-Mail-Programm. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen des Programms nicht funktionieren.">
+<!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
+<!ENTITY favorite-page.label "Lieblingsseite">
 <!ENTITY translate.label "Übersetzen">
 <!ENTITY translate.description "Auswählen, in welche Sprache mit der &quot;Übersetzen&quot;-Schaltfläche übersetzt werden soll. Genutzt wird der Übersetzungsdienst von Google.">
-<!ENTITY translate.ar "Arabisch">
-<!ENTITY translate.zh "Chinesisch">
-<!ENTITY translate.zh-CN "Chinesisch (vereinfacht)">
-<!ENTITY translate.zh-TW "Chinesisch (traditionell)">
-<!ENTITY translate.fr "Französisch">
-<!ENTITY translate.de "Deutsch">
-<!ENTITY translate.it "Italienisch">
-<!ENTITY translate.ja "Japanisch">
-<!ENTITY translate.ko "Koreanisch">
-<!ENTITY translate.pt "Portugiesisch">
-<!ENTITY translate.ru "Russisch">
-<!ENTITY translate.es "Spanisch">
-<!ENTITY translate.en "Englisch">
-<!ENTITY translate.bg "Bulgarisch">
-<!ENTITY translate.cs "Tschechisch">
-<!ENTITY translate.hr "Kroatisch">
-<!ENTITY translate.da "Dänisch">
-<!ENTITY translate.nl "Niederländisch">
-<!ENTITY translate.fi "Finnisch">
-<!ENTITY translate.el "Griechisch">
-<!ENTITY translate.hi "Hindi">
-<!ENTITY translate.nb "Norwegisch">
-<!ENTITY translate.pl "Polnisch">
-<!ENTITY translate.ro "Rumänisch">
-<!ENTITY translate.sv "Schwedisch">
-<!ENTITY favorite-page.label "Lieblingsseite">
-<!ENTITY favorite-page.description "URL, die über die Schaltfläche &quot;Lieblingsseite&quot; aufgerufen wird.">
-<!ENTITY toggle.proxy.description "Über die Proxy-Schaltfläche wird zwischen der Benutzung keines Proxys und der unten ausgewählten Einstellung umgeschaltet:">
-<!ENTITY toggle.prox.label "Proxy">
-<!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
-<!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
-<!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
+<!ENTITY previous-next.checkbox "Richtung umkehren, in der die Schaltflächen &quot;Vorherige Nachricht&quot; und &quot;Nächste Nachricht&quot; wirken.">
 <!ENTITY readmail.path.caption "E-Mail-Programm">
-<!ENTITY readmail.path.desc "Der Pfad zu Ihrem bevorzugten E-Mail-Programm. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen des Programms nicht funktionieren.">
 <!ENTITY readnews.path.caption "Anwendung für das Lesen von Newsgruppen">
-<!ENTITY readnews.path.desc "Der Pfad zu Ihrer bevorzugten Anwendung für das Lesen von Newsgruppen. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen der Anwendung nicht funktionieren.">
-<!ENTITY read.select.button "Durchsuchen…">
-<!ENTITY toogle.label "Schaltflächen zum Umschalten zwischen Optionen">
-<!ENTITY toggle.checkbox "Seite nach dem Umschalten neu laden.">

@@ -1,46 +1,20 @@
-<!ENTITY restart.label "Repornire">
-<!ENTITY restart.checkbox "Nu cere confirmare înainte de repornire.">
 <!ENTITY options.window.title "Opţiuni Toolbar Buttons">
+<!ENTITY favorite-page.description "Alegeţi adresa &quot;Paginii favorite&quot;, un fel de a doua Pagină gazdă">
+<!ENTITY toggle.prox.label "Comutare proxy">
+<!ENTITY toggle.proxy.description "Butonul de comutare proxy poate comuta între opţiunea &quot;Fără proxy&quot; şi una dintre opţiunile următoare:">
+<!ENTITY restart.checkbox "Nu cere confirmare înainte de repornire.">
 <!ENTITY previous-next.label "Butoane Înapoi şi Înainte">
-<!ENTITY previous-next.checkbox "Schimbă direcţia de acţiune a butoanelor Înapoi şi Înainte.">
+<!ENTITY toggle.checkbox "Reîncarcă pagina curentă după schimbarea unor configuraţii (Java, Flash, video, etc.)">
+<!ENTITY restart.label "Repornire">
+<!ENTITY read.select.button "Redefineşte">
+<!ENTITY readnews.path.desc "Redefiniţi calea către cititorul favorit de ştiri, dacă butonul nu funcţionează.">
+<!ENTITY toggle.proxy.auto.detect "Auto-detectare configuraţie proxy">
+<!ENTITY toggle.proxy.auto.configuration "Auto-configurare proxy (PAC)">
+<!ENTITY readmail.path.desc "Redefiniţi calea către clientul favorit de poştă electronică, dacă butonul nu funcţionează.">
+<!ENTITY toggle.proxy.manual "Configurare manuală proxy">
+<!ENTITY favorite-page.label "Pagină favorită">
 <!ENTITY translate.label "Traducere">
 <!ENTITY translate.description "Selectaţi limba pe care butonul de traducere o va utiliza.  Acest buton foloseşte serviuciul de traducere al Google">
-<!ENTITY translate.ar "Arabă">
-<!ENTITY translate.zh "Chineză">
-<!ENTITY translate.zh-CN "Chineză simplificată">
-<!ENTITY translate.zh-TW "Chineză tradiţională">
-<!ENTITY translate.fr "Franceză">
-<!ENTITY translate.de "Germană">
-<!ENTITY translate.it "Italiană">
-<!ENTITY translate.ja "Japoneză">
-<!ENTITY translate.ko "Coreană">
-<!ENTITY translate.pt "Portugheză">
-<!ENTITY translate.ru "Rusă">
-<!ENTITY translate.es "Spaniolă">
-<!ENTITY translate.en "Engleză">
-<!ENTITY translate.bg "Bulgară">
-<!ENTITY translate.cs "Cehă">
-<!ENTITY translate.hr "Croată">
-<!ENTITY translate.da "Daneză">
-<!ENTITY translate.nl "Olandeză">
-<!ENTITY translate.fi "Finlandeză">
-<!ENTITY translate.el "Greacă">
-<!ENTITY translate.hi "Hindi">
-<!ENTITY translate.nb "Norvegiană">
-<!ENTITY translate.pl "Poloneză">
-<!ENTITY translate.ro "Română">
-<!ENTITY translate.sv "Suedeză">
-<!ENTITY favorite-page.label "Pagină favorită">
-<!ENTITY favorite-page.description "Alegeţi adresa &quot;Paginii favorite&quot;, un fel de a doua Pagină gazdă">
-<!ENTITY toggle.proxy.description "Butonul de comutare proxy poate comuta între opţiunea &quot;Fără proxy&quot; şi una dintre opţiunile următoare:">
-<!ENTITY toggle.prox.label "Comutare proxy">
-<!ENTITY toggle.proxy.manual "Configurare manuală proxy">
-<!ENTITY toggle.proxy.auto.configuration "Auto-configurare proxy (PAC)">
-<!ENTITY toggle.proxy.auto.detect "Auto-detectare configuraţie proxy">
+<!ENTITY previous-next.checkbox "Schimbă direcţia de acţiune a butoanelor Înapoi şi Înainte.">
 <!ENTITY readmail.path.caption "Calea către clientul de poştă electronică">
-<!ENTITY readmail.path.desc "Redefiniţi calea către clientul favorit de poştă electronică, dacă butonul nu funcţionează.">
 <!ENTITY readnews.path.caption "Calea către cititorul de ştiri">
-<!ENTITY readnews.path.desc "Redefiniţi calea către cititorul favorit de ştiri, dacă butonul nu funcţionează.">
-<!ENTITY read.select.button "Redefineşte">
-<!ENTITY toogle.label "Comutări">
-<!ENTITY toggle.checkbox "Reîncarcă pagina curentă după schimbarea unor configuraţii (Java, Flash, video, etc.)">

@@ -1,21 +1,8 @@
-<!ENTITY restart.label "Yeniden Başlat">
-<!ENTITY restart.checkbox "Yeniden başlatırken Sorma.">
 <!ENTITY options.window.title "Araç Çubuğu Düğme Seçenekleri">
+<!ENTITY restart.checkbox "Yeniden başlatırken Sorma.">
 <!ENTITY previous-next.label "Önce-Sonra">
-<!ENTITY previous-next.checkbox "Önce ve Sonra düğme yönünü değiştir.">
+<!ENTITY restart.label "Yeniden Başlat">
+<!ENTITY favorite-page.label "Favori Sayfa">
 <!ENTITY translate.label "Çevir">
 <!ENTITY translate.description "Çevir düğmesinde kullanmak istediğiniz dili seçin. Düğme Google Çeviri Servisini kullanır">
-<!ENTITY translate.ar "Arapça">
-<!ENTITY translate.zh "Çince">
-<!ENTITY translate.zh-CN "Çince(Basitleştirilmiş)">
-<!ENTITY translate.zh-TW "Çince(Geleneksel)">
-<!ENTITY translate.fr "Fransızca">
-<!ENTITY translate.de "Almanca">
-<!ENTITY translate.it "İtalyanca">
-<!ENTITY translate.ja "Japonca">
-<!ENTITY translate.ko "Korece">
-<!ENTITY translate.pt "Portekizce">
-<!ENTITY translate.ru "Rusça">
-<!ENTITY translate.es "İspanyolca">
-<!ENTITY translate.en "İngilizce">
-<!ENTITY favorite-page.label "Favori Sayfa">
+<!ENTITY previous-next.checkbox "Önce ve Sonra düğme yönünü değiştir.">

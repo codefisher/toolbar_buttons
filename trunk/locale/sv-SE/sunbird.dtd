@@ -1,0 +1,12 @@
+<!ENTITY delete-event.label "Ta bort händelser">
+<!ENTITY delete-event.tooltip "Ta bort markerade händelser">
+<!ENTITY delete-tasks.label "Ta bort uppgifter">
+<!ENTITY delete-tasks.tooltip "Ta bort markerade uppgifter">
+<!ENTITY tasks-toggle.label "Växla uppgifter">
+<!ENTITY tasks-toggle.tooltip "Växla uppgiftsfältet">
+<!ENTITY calendar-bar-toggle.label "Växla verktygsfält">
+<!ENTITY calendar-bar-toggle.tooltip "Växla huvudverktygsfältet">
+<!ENTITY about-sunbird.label "Om">
+<!ENTITY about-sunbird.tooltip "Om Sunbird">
+<!ENTITY tasks-in-view.label "Uppgifter i vy">
+<!ENTITY tasks-in-view.tooltip "Växla visning av uppgifter i vyn">

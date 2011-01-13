@@ -1,22 +1,9 @@
-<!ENTITY restart.label "Restartovat aplikaci">
-<!ENTITY restart.checkbox "Neptat se před restartem">
 <!ENTITY options.window.title "Nastavení Toolbar Buttons">
+<!ENTITY favorite-page.description "Adresa stránky pro tlačítko &apos;Oblíbené&apos;">
+<!ENTITY restart.checkbox "Neptat se před restartem">
 <!ENTITY previous-next.label "Předchozí a Další">
-<!ENTITY previous-next.checkbox "Změnený význam tlačítek Předchozí a Další.">
+<!ENTITY restart.label "Restartovat aplikaci">
+<!ENTITY favorite-page.label "Oblíbené">
 <!ENTITY translate.label "Přeložit">
 <!ENTITY translate.description "Vyberte jazyk, do kterého má tlačítko Překlad přkládat. Aplikace používá překladové služby Google Translation Service">
-<!ENTITY translate.ar "Arabsky">
-<!ENTITY translate.zh "Čínština">
-<!ENTITY translate.zh-CN "Čínština (zjednodušená)">
-<!ENTITY translate.zh-TW "Čínština (tradiční)">
-<!ENTITY translate.fr "Francoužština">
-<!ENTITY translate.de "Němčina">
-<!ENTITY translate.it "Italština">
-<!ENTITY translate.ja "Japonština">
-<!ENTITY translate.ko "Korejština">
-<!ENTITY translate.pt "Portugalština">
-<!ENTITY translate.ru "Ruština">
-<!ENTITY translate.es "Španělština">
-<!ENTITY translate.en "Angličtina">
-<!ENTITY favorite-page.label "Oblíbené">
-<!ENTITY favorite-page.description "Adresa stránky pro tlačítko &apos;Oblíbené&apos;">
+<!ENTITY previous-next.checkbox "Změnený význam tlačítek Předchozí a Další.">

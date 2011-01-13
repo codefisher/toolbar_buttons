@@ -1,0 +1,320 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Öppna about:cache för att granska cachat innehåll">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Öppna about:config">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "Öppna about:cache för att granska innehåll sparat till diskcachen (på hårddisken)">
+<!ENTITY about-mem-cache.label "about:cache Minne">
+<!ENTITY about-mem-cache.tooltip "Öppna about:cache för att granska innehåll i cacheminnet">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Öppna about:plugins för att granska installerade insticksmoduler">
+<!ENTITY accountmanager.label "Kontoinställningar">
+<!ENTITY accountmanager.tooltip "Öppna kontoinställningarna">
+<!ENTITY accountwizard.label "Skapa konto">
+<!ENTITY accountwizard.tooltip "Kör &quot;Lägg till nytt konto&quot;-guiden för att skapa ett nytt konto">
+<!ENTITY add-address.label "Lägg till adress">
+<!ENTITY add-address.tooltip "Kopiera e-postadress till adressboken">
+<!ENTITY addons.label "Tillägg">
+<!ENTITY addons.tooltip "Öppna Tilläggshanteraren">
+<!ENTITY all-threads.label "Alla trådar">
+<!ENTITY all-threads.tooltip "Visa alla trådar">
+<!ENTITY attachments-delete.label "Ta bort bilagor">
+<!ENTITY attachments-delete.tooltip "Ta bort alla bilagor från meddelande">
+<!ENTITY attachments-detach.label "Koppla bort bilagor">
+<!ENTITY attachments-detach.tooltip "Koppla bort alla bilagor från meddelande">
+<!ENTITY attachments-save.label "Spara bilagor">
+<!ENTITY attachments-save.tooltip "Spara alla bilagor från meddelande">
+<!ENTITY bookmark-manager.label "Biblioteket">
+<!ENTITY bookmark-manager.tooltip "Öppna Biblioteket där du kan hantera dina bokmärken">
+<!ENTITY bookmark-nopop.label "Snabbokmärk">
+<!ENTITY bookmark-nopop.tooltip "Lägg till ett bokmärke utan att bekräftelserutan öppnas">
+<!ENTITY bookmark-tabs.label "Bokmärk alla">
+<!ENTITY bookmark-tabs.tooltip "Bokmärk alla öppna flikar">
+<!ENTITY bookmark-toolbar.label "Bokmärkesfältet">
+<!ENTITY bookmark-toolbar.tooltip "Växla Bokmärkesfältet">
+<!ENTITY bookmark.label "Bokmärk sida">
+<!ENTITY bookmark.tooltip "Bokmärk aktuell sida">
+<!ENTITY bookmarks-menu-button.label "Bokmärken-menyn">
+<!ENTITY bookmarks-menu-button.tooltip "Visa Bokmärken-menyn">
+<!ENTITY bottom-page.label "Nederst">
+<!ENTITY bottom-page.tooltip "Gå till sidans nederkant">
+<!ENTITY change-text-direction.label "Ändra textriktning">
+<!ENTITY change-text-direction.tooltip "Ändra textriktningen från vänster till höger eller från höger till vänster">
+<!ENTITY check-for-update.label "Uppdatera">
+<!ENTITY check-for-update.tooltip "Sök efter uppdateringar">
+<!ENTITY clear-data.label "Rensa data">
+<!ENTITY clear-data.tooltip "Öppna dialogen Rensa ut tidigare historik">
+<!ENTITY clear-url.label "Göm URL">
+<!ENTITY clear-url.tooltip "Göm texten i adressfältet">
+<!ENTITY clipboard.label "Urklippslänk">
+<!ENTITY clipboard.menuitem "Öppna länk från Urklipp">
+<!ENTITY clipboard.newtab "Öppna länk från Urklipp i ny flik">
+<!ENTITY clipboard.tooltip "Hämta länk från Urklipp och öppna den">
+<!ENTITY close-all-tabs.label "Stäng alla">
+<!ENTITY close-all-tabs.tooltip "Stäng alla flikar">
+<!ENTITY close-other-tabs.label "Stäng övriga flikar">
+<!ENTITY close-other-tabs.tooltip "Stäng alla flikar utom den aktiva fliken.">
+<!ENTITY close-tab.label "Stäng flik">
+<!ENTITY close-tab.tooltip "Stäng en öppen flik eller ett öppet fönster">
+<!ENTITY compact.label "Komprimera">
+<!ENTITY compact.tooltip "Komprimera mapp">
+<!ENTITY copy-address.label "Kopiera adress">
+<!ENTITY copy-address.tooltip "Kopiera e-postadress till Urklipp">
+<!ENTITY create-filter.label "Skapa filter">
+<!ENTITY create-filter.tooltip "Skapa filter från meddelande">
+<!ENTITY customize-toolbar.label "Anpassa verktygsfält">
+<!ENTITY customize-toolbar.tooltip "Anpassa verktygsfält, lägg till eller ta bort knappar etc.">
+<!ENTITY delete-event.label "Ta bort händelser">
+<!ENTITY delete-event.tooltip "Ta bort markerade händelser">
+<!ENTITY delete-junk.label "Ta bort skräp">
+<!ENTITY delete-junk.tooltip "Ta bort skräppostmeddelanden">
+<!ENTITY delete-tasks.label "Ta bort uppgifter">
+<!ENTITY delete-tasks.tooltip "Ta bort markerade uppgifter">
+<!ENTITY delete.label "Ta bort">
+<!ENTITY delete.tooltip "Ta bort markerad text">
+<!ENTITY dictionary-list.label "Byt ordlista">
+<!ENTITY dictionary-list.tooltip "Snabbyte av den aktuella ordlistan">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Gå till eBay">
+<!ENTITY edit-draft.label "Redigera utkast">
+<!ENTITY edit-draft.tooltip "Redigera sparat utkast">
+<!ENTITY empty-trash.label "Töm papperskorgen">
+<!ENTITY empty-trash.tooltip "Töm papperskorgen-mappen">
+<!ENTITY enlarge.label "Förstora">
+<!ENTITY enlarge.tooltip "Öka textstorleken">
+<!ENTITY exit.label "Avsluta">
+<!ENTITY exit.tooltip "Avsluta programmet">
+<!ENTITY extensions.label "Tillägg">
+<!ENTITY extensions.tooltip "Öppna Tilläggshanteraren">
+<!ENTITY favorite-page.label "Favoritsida">
+<!ENTITY favorite-page.tooltip "Öppna din favoritsida">
+<!ENTITY find-again.label "Sök igen">
+<!ENTITY find-again.tooltip "Sök nästa träff">
+<!ENTITY find-prev.label "Sök föregående">
+<!ENTITY find-prev.tooltip "Sök föregående träff">
+<!ENTITY find.label "Sök">
+<!ENTITY find.tooltip "Sök text">
+<!ENTITY firefox-extension.label "Tillägg">
+<!ENTITY firefox-extension.tooltip "Hämta fler Firefox-tillägg">
+<!ENTITY firefox-theme.label "Teman">
+<!ENTITY firefox-theme.tooltip "Hämta fler Firefox-teman">
+<!ENTITY forward-as-attachment.label "Vidarebefordra som bilaga">
+<!ENTITY forward-as-attachment.tooltip "Vidarebefordra meddelande som en bilaga">
+<!ENTITY forward-as-inline.label "Vidarebefordra infogat">
+<!ENTITY forward-as-inline.tooltip "Vidarebefordra meddelande som en del av e-brevet">
+<!ENTITY full-screen.label "Helskärm">
+<!ENTITY full-screen.tooltip "Växla till helskärmsläge">
+<!ENTITY get-inbox.label "Gå till Inkorgen">
+<!ENTITY get-inbox.tooltip "Ändra den fokus från aktuell mapp till Inkorgen">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Gå till Google Mail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Gå till Googles startsida">
+<!ENTITY help.label "Hjälp">
+<!ENTITY help.tooltip "Öppna hjälpdokumentationen">
+<!ENTITY hide-images.label "Göm bilder">
+<!ENTITY hide-images.tooltip "Göm alla bilder och bakgrunder i aktuellt dokument">
+<!ENTITY home-page-change.label "Byt startsida">
+<!ENTITY home-page-change.multiple "Ange startsidan som multipla länkar">
+<!ENTITY home-page-change.tooltip "Byt ut din startsida">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Gå till Hotmail">
+<!ENTITY html-mode.label "HTML-läge">
+<!ENTITY html-mode.tooltip "Ange om meddelandet visas som HTML eller oformaterad text">
+<!ENTITY ignored-threads.label "Ignorerade trådar">
+<!ENTITY ignored-threads.tooltip "Visa ignorerade trådar">
+<!ENTITY image-toggle.label "Växla bilder">
+<!ENTITY image-toggle.tooltip "Växla inläsning av bilder, på och av">
+<!ENTITY import.label "Importera">
+<!ENTITY import.tooltip "Importera inställningar och data">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model-granskare">
+<!ENTITY installaddons.label "Installera">
+<!ENTITY installaddons.tooltip "Installera ett tillägg eller tema">
+<!ENTITY java-toggle.label "Växla Java">
+<!ENTITY java-toggle.tooltip "Växla Java, på och av">
+<!ENTITY javaScriptConsole.label "Konsol">
+<!ENTITY javaScriptConsole.tooltip "Öppna Felkonsolen">
+<!ENTITY javascript-toggle.label "Växla JavaScript">
+<!ENTITY javascript-toggle.tooltip "Växla JavaScript, på och av">
+<!ENTITY label-all-blank.label "Ta bort etiketter">
+<!ENTITY label-all-blank.tooltip "Ta bort fliketiketterna från alla flikar">
+<!ENTITY label-blank.label "Ta bort etikett">
+<!ENTITY label-blank.tooltip "Ta bort fliketiketten från aktuell flik">
+<!ENTITY link-open.label "Länkinställningar">
+<!ENTITY link-open.tooltip "Ange hur länkar öppnas">
+<!ENTITY min-font-size.label "Minsta fontstorlek">
+<!ENTITY min-font-size.tooltip "Växla den minsta fontstorleken">
+<!ENTITY minimize-window.label "Minimera">
+<!ENTITY minimize-window.tooltip "Minimera aktuellt fönster">
+<!ENTITY msg-filter.label "Filter">
+<!ENTITY msg-filter.tooltip "Hantera meddelandefilter">
+<!ENTITY msg-pane.label "Meddelandefönster">
+<!ENTITY msg-pane.tooltip "Växla meddelandefönstret">
+<!ENTITY new-message.label "Nytt meddelande">
+<!ENTITY new-message.tooltip "Skriv ett nytt e-postmeddelande">
+<!ENTITY next-tab.label "Nästa flik">
+<!ENTITY next-tab.tooltip "Gå till nästa flik">
+<!ENTITY open-current-frame.label "Aktuell ram">
+<!ENTITY open-current-frame.tooltip "Visa endast den aktuella, markerade ramen">
+<!ENTITY open.label "Öppna">
+<!ENTITY open.tooltip "Öppna en fil">
+<!ENTITY page-source.label "Källkod">
+<!ENTITY page-source.tooltip "Visa sidans källkod">
+<!ENTITY pageinfo.label "Sidinformation">
+<!ENTITY pageinfo.tooltip "Öppna fönstret Sidinformation">
+<!ENTITY pagesetup.label "Utskriftsformat">
+<!ENTITY pagesetup.tooltip "Ange hur sidan skall skrivas ut">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Gå till PayPal">
+<!ENTITY personal-bookmarks-menu-button.label "Verktygsfältets bokmärkesmeny">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Visa verktygsfältets bokmärkesmeny">
+<!ENTITY plainpaste.label "Klistra in oformaterad">
+<!ENTITY plainpaste.tooltip "Klistra in oformaterad text">
+<!ENTITY preferences.label "Inställningar">
+<!ENTITY preferences.tooltip "Öppna Inställningar">
+<!ENTITY previous-tab.label "Föregående flik">
+<!ENTITY previous-tab.tooltip "Gå till föregående flik">
+<!ENTITY print-preview.label "Förhandsgranska">
+<!ENTITY print-preview.tooltip "Öppna förhandsgranskning av utskrift">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Granska din profilmapp">
+<!ENTITY purge.label "Töm">
+<!ENTITY purge.tooltip "Komprimera mapp och ta bort skräppost">
+<!ENTITY read-mail.label "Läs e-post">
+<!ENTITY read-mail.tooltip "Öppna program för att läsa e-post">
+<!ENTITY read-message.label "Läs">
+<!ENTITY read-message.tooltip "Läs meddelande">
+<!ENTITY read-news.label "Läs nyheter">
+<!ENTITY read-news.tooltip "Öppna program för att läsa nyheter från diskussionsgrupper och flöden">
+<!ENTITY realNextMessage.label "Nästa meddelande">
+<!ENTITY realNextMessage.tooltip "Gå till nästa meddelande i meddelandelistan (oavsett läst/oläst)">
+<!ENTITY realPreviousMessage.label "Föregående meddelande">
+<!ENTITY realPreviousMessage.tooltip "Gå till föregående meddelande i meddelandelistan (oavsett läst/oläst)">
+<!ENTITY redo.label "Gör om">
+<!ENTITY redo.tooltip "Gör om senaste ändring">
+<!ENTITY reduce.label "Förminska">
+<!ENTITY reduce.tooltip "Minska textstorleken">
+<!ENTITY reload-all-tabs.label "Uppdatera flikar">
+<!ENTITY reload-all-tabs.tooltip "Uppdatera alla öppna flikar">
+<!ENTITY reload-proxy.label "Uppdatera proxy">
+<!ENTITY reload-proxy.tooltip "Läs in proxyn igen">
+<!ENTITY reload-skip-cache.label "Uppdatera (utan cache)">
+<!ENTITY reload-skip-cache.tooltip "Uppdatera sidan utan att använda innehåll lagrat i webbläsarens cache">
+<!ENTITY rename-tab.label "Byt namn på flik">
+<!ENTITY rename-tab.tooltip "Byt namn på den för närvarande aktiva fliken">
+<!ENTITY reply-sender.label "Svara endast avsändaren">
+<!ENTITY reply-sender.tooltip "Svara endast till avsändaren av e-brevet">
+<!ENTITY reset.label "Återställ">
+<!ENTITY reset.tooltip "Återställ textstorleken">
+<!ENTITY restart-app.label "Starta om">
+<!ENTITY restart-app.tooltip "Starta om programmet">
+<!ENTITY return-receipt.label "Mottagningskvitto">
+<!ENTITY return-receipt.tooltip "Växla mottagningskvitto av/på">
+<!ENTITY save-frame.label "Spara ram">
+<!ENTITY save-frame.tooltip "Spara dokumentram">
+<!ENTITY saveas.label "Spara">
+<!ENTITY saveas.tooltip "Spara dokument som">
+<!ENTITY search-addresses.label "Sök adresser">
+<!ENTITY search-addresses.tooltip "Öppna adressökningen">
+<!ENTITY search-messages.label "Sök meddelanden">
+<!ENTITY search-messages.tooltip "Öppna meddelandesökningen">
+<!ENTITY select-all.label "Markera alla">
+<!ENTITY select-all.tooltip "Markera all text">
+<!ENTITY send-link.label "Skicka länk">
+<!ENTITY send-link.tooltip "Skicka sidlänk i ett e-brev">
+<!ENTITY send-receive.label "Skicka &amp; hämta">
+<!ENTITY send-receive.tooltip "Skicka och hämta meddelanden">
+<!ENTITY send-with-no-save.label "Skicka utan att spara">
+<!ENTITY send-with-no-save.tooltip "Skicka meddelande utan att spara någon kopia av det">
+<!ENTITY shift-delete.label "Hoppa över papperskorgen">
+<!ENTITY shift-delete.tooltip "Ta bort meddelande utan att skicka det till papperskorgen">
+<!ENTITY show-frame.label "Visa ram">
+<!ENTITY show-frame.tooltip "Visa endast aktuell ram">
+<!ENTITY snap-back.label "Till början">
+<!ENTITY snap-back.tooltip "Gå tillbaka till den första sidan som öppnades i den här fliken">
+<!ENTITY statusbar-toggle.label "Statusfält">
+<!ENTITY statusbar-toggle.tooltip "Växla statusfältet">
+<!ENTITY stop-all.label "Stoppa alla">
+<!ENTITY stop-all.tooltip "Stoppa alla flikar från att läsas in">
+<!ENTITY stop-animation.label "Animationer">
+<!ENTITY stop-animation.tooltip "Stoppa animerade GIF-filers blink- och rullelement">
+<!ENTITY stop-cookies.label "Växla kakor">
+<!ENTITY stop-cookies.tooltip "Stoppa kakor från att etableras.">
+<!ENTITY stop-dinamic-content.label "Växla inbäddat innehåll">
+<!ENTITY stop-dinamic-content.tooltip "Stoppa allt inbäddat innehåll från att läsas in.">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY stop-flash.tooltip "Stoppa Flash-objekt från att irritera dig">
+<!ENTITY stop-iframe.label "Iframe">
+<!ENTITY stop-iframe.tooltip "Stoppa Iframe-objekt och annonserna de ofta innehåller från att läsas in">
+<!ENTITY stop-movies.label "Videor">
+<!ENTITY stop-movies.tooltip "Stoppa videor från att läsas in">
+<!ENTITY tab-list.label "Fliklista">
+<!ENTITY tab-list.tooltip "Visa en lista över alla flikar">
+<!ENTITY tasks-in-view.label "Uppgifter i vy">
+<!ENTITY tasks-in-view.tooltip "Växla visning av uppgifter i vyn">
+<!ENTITY tasks-toggle.label "Växla uppgifter">
+<!ENTITY tasks-toggle.tooltip "Växla uppgiftsfältet">
+<!ENTITY tb-clear-url.label "Rensa URL">
+<!ENTITY tb-clear-url.tooltip "Rensa och fokusera på adressfältet">
+<!ENTITY tb-edit-menu.label "Redigera-menyn">
+<!ENTITY tb-edit-menu.tooltip "Visa Redigera-menyn">
+<!ENTITY tb-file-menu.label "Filmeny">
+<!ENTITY tb-file-menu.tooltip "Visa filmenyn">
+<!ENTITY tb-toggle-menu-bar.label "Växla menyrad">
+<!ENTITY tb-toggle-menu-bar.tooltip "Växla menyraden">
+<!ENTITY tb-tools-menu.label "Verktyg-menyn">
+<!ENTITY tb-tools-menu.tooltip "Visa Verktyg-menyn">
+<!ENTITY tb-view-menu.label "Visa-menyn">
+<!ENTITY tb-view-menu.tooltip "Visa Visa-menyn">
+<!ENTITY themes.label "Teman">
+<!ENTITY themes.tooltip "Öppna Temahanteraren">
+<!ENTITY thunderbird-extension.label "Tillägg">
+<!ENTITY thunderbird-extension.tooltip "Hämta fler Thunderbird-tillägg">
+<!ENTITY thunderbird-theme.label "Teman">
+<!ENTITY thunderbird-theme.tooltip "Hämta fler Thunderbird-teman">
+<!ENTITY tiny-url.copy.to.clipboard "Kopiera till Urklipp">
+<!ENTITY tiny-url.email "E-posta länk">
+<!ENTITY tiny-url.label "Kortlänk">
+<!ENTITY tiny-url.link.use "Länkalternativ">
+<!ENTITY tiny-url.tooltip "Skapa en kortlänk">
+<!ENTITY tiny-url.use.normal "Använd xrl.in">
+<!ENTITY tiny-url.use.preview "Använd preview.xrl.in">
+<!ENTITY tiny-url.visit "Besök xrl.in">
+<!ENTITY toggle-proxy.label "Växla proxy">
+<!ENTITY toggle-proxy.tooltip "Växla proxyns läge mellan av &amp; på">
+<!ENTITY toggle-read.label "Växla läst">
+<!ENTITY toggle-read.tooltip "Växla meddelandets läst/oläst-status">
+<!ENTITY toggle-starred.label "Växla stjärnor">
+<!ENTITY toggle-starred.tooltip "Växla stjärnmärkningsstatus">
+<!ENTITY toggle-styles.label "Växla stilar">
+<!ENTITY toggle-styles.tooltip "Lägg till/Ta bort webbplatsdefinierade stilar">
+<!ENTITY toolbar-menu.label "Verktygsfält">
+<!ENTITY toolbar-menu.tooltip "Göm/Visa verktygsfält">
+<!ENTITY top-page.label "Överst">
+<!ENTITY top-page.tooltip "Gå till sidans överkant">
+<!ENTITY translate.label "Översätt">
+<!ENTITY translate.tooltip "Översätt aktuell sida till önskat språk">
+<!ENTITY undo-close-tab.label "Ångra Stäng flik">
+<!ENTITY undo-close-tab.tooltip "Öppna den senast stängda fliken på nytt">
+<!ENTITY undo.label "Ångra">
+<!ENTITY undo.tooltip "Ångra senaste ändring">
+<!ENTITY unread-threads.label "Olästa trådar">
+<!ENTITY unread-threads.tooltip "Visa olästa trådar">
+<!ENTITY up-directory.label "Upp en nivå">
+<!ENTITY up-directory.tooltip "Gå upp en nivå/mapp/domän">
+<!ENTITY use-document-colors.label "Sidfärger">
+<!ENTITY use-document-colors.tooltip "Växla mellan standardsidfärgerna och webbplatsens sidfärger">
+<!ENTITY use-document-fonts.label "Sidfonter">
+<!ENTITY use-document-fonts.tooltip "Växla mellan standardfonterna och webbplatsens fonter">
+<!ENTITY watched-with-unread-threads.label "Bevakade trådar med oläst">
+<!ENTITY websearch.label "Webbsökning">
+<!ENTITY websearch.tooltip "Sök på webben med din standardsökmotor">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Gå till Wikipedias startsida">
+<!ENTITY with-unread-threads.label "Trådar med oläst">
+<!ENTITY with-unread-threads.tooltip "Visa trådar med oläst material">
+<!ENTITY workoffline.label "Arbeta nedkopplad">
+<!ENTITY workoffline.tooltip "Växla Arbeta nedkopplad">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Gå till Yahoo Mail">

@@ -1,0 +1,26 @@
+<!ENTITY workoffline.label "Arbeta nedkopplad">
+<!ENTITY workoffline.tooltip "Växla Arbeta nedkopplad">
+<!ENTITY delete.label "Ta bort">
+<!ENTITY delete.tooltip "Ta bort markerad text">
+<!ENTITY find.label "Sök">
+<!ENTITY find.tooltip "Sök text">
+<!ENTITY saveas.label "Spara">
+<!ENTITY saveas.tooltip "Spara dokument som">
+<!ENTITY select-all.label "Markera alla">
+<!ENTITY select-all.tooltip "Markera all text">
+<!ENTITY find-again.label "Sök igen">
+<!ENTITY find-again.tooltip "Sök nästa träff">
+<!ENTITY find-prev.label "Sök föregående">
+<!ENTITY find-prev.tooltip "Sök föregående träff">
+<!ENTITY enlarge.label "Förstora">
+<!ENTITY enlarge.tooltip "Öka textstorleken">
+<!ENTITY reduce.label "Förminska">
+<!ENTITY reduce.tooltip "Minska textstorleken">
+<!ENTITY reset.label "Återställ">
+<!ENTITY reset.tooltip "Återställ textstorleken">
+<!ENTITY page-source.label "Källkod">
+<!ENTITY page-source.tooltip "Visa sidans källkod">
+<!ENTITY print-preview.label "Förhandsgranska">
+<!ENTITY print-preview.tooltip "Öppna förhandsgranskning av utskrift">
+<!ENTITY dictionary-list.label "Byt ordlista">
+<!ENTITY dictionary-list.tooltip "Snabbyte av den aktuella ordlistan">

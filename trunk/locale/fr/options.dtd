@@ -1,46 +1,20 @@
-<!ENTITY restart.label "Redémarrer">
-<!ENTITY restart.checkbox "Pas de notification avant redémarrage.">
 <!ENTITY options.window.title "Options de Toolbar Buttons">
+<!ENTITY favorite-page.description "Utilisée par le bouton « Page préférée ». Sorte de deuxième page d&apos;accueil.">
+<!ENTITY toggle.prox.label "Proxy">
+<!ENTITY toggle.proxy.description "Le bouton proxy peut désactiver le proxy ou activer une des options ci-dessous.">
+<!ENTITY restart.checkbox "Pas de notification avant redémarrage.">
 <!ENTITY previous-next.label "Précédent &amp; Suivant">
-<!ENTITY previous-next.checkbox "Modifier la direction des boutons « Précédent » et « Suivant »">
+<!ENTITY toggle.checkbox "Recharger la page lorsque le basculement d&apos;un état à un autre a été réalisé.">
+<!ENTITY restart.label "Redémarrer">
+<!ENTITY read.select.button "Choisir…">
+<!ENTITY readnews.path.desc "Le chemin vers votre client gérant les nouvelles, utilisé si le bouton ne fonctionne pas.">
+<!ENTITY toggle.proxy.auto.detect "Détection automatique des paramètres du proxy">
+<!ENTITY toggle.proxy.auto.configuration "Configuration automatique du proxy (PAC)">
+<!ENTITY readmail.path.desc "Le chemin vers votre client de messagerie, utilisé si le bouton ne fonctionne pas.">
+<!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
+<!ENTITY favorite-page.label "Page préférée">
 <!ENTITY translate.label "Traduire">
 <!ENTITY translate.description "Veuillez choisir la langue de traduction à utiliser lors du clic sur le bouton. C&apos;est le service de traduction Google qui est utilisé ici.">
-<!ENTITY translate.ar "Arabe">
-<!ENTITY translate.zh "Chinois">
-<!ENTITY translate.zh-CN "Chinois (simplifié)">
-<!ENTITY translate.zh-TW "Chinois (traditionnel)">
-<!ENTITY translate.fr "Français">
-<!ENTITY translate.de "Allemand">
-<!ENTITY translate.it "Italien">
-<!ENTITY translate.ja "Japonais">
-<!ENTITY translate.ko "Coréen">
-<!ENTITY translate.pt "Portugais">
-<!ENTITY translate.ru "Russe">
-<!ENTITY translate.es "Espagnol">
-<!ENTITY translate.en "Anglais">
-<!ENTITY translate.bg "Bulgare">
-<!ENTITY translate.cs "Tchèque">
-<!ENTITY translate.hr "Croate">
-<!ENTITY translate.da "Danois">
-<!ENTITY translate.nl "Hollandais">
-<!ENTITY translate.fi "Finlandais">
-<!ENTITY translate.el "Grec">
-<!ENTITY translate.hi "Hindi">
-<!ENTITY translate.nb "Norvégien">
-<!ENTITY translate.pl "Polonais">
-<!ENTITY translate.ro "Roumain">
-<!ENTITY translate.sv "Suédois">
-<!ENTITY favorite-page.label "Page préférée">
-<!ENTITY favorite-page.description "Utilisée par le bouton « Page préférée ». Sorte de deuxième page d&apos;accueil.">
-<!ENTITY toggle.proxy.description "Le bouton proxy peut désactiver le proxy ou activer une des options ci-dessous.">
-<!ENTITY toggle.prox.label "Proxy">
-<!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
-<!ENTITY toggle.proxy.auto.configuration "Configuration automatique du proxy (PAC)">
-<!ENTITY toggle.proxy.auto.detect "Détection automatique des paramètres du proxy">
+<!ENTITY previous-next.checkbox "Modifier la direction des boutons « Précédent » et « Suivant »">
 <!ENTITY readmail.path.caption "Chemin du client de messagerie">
-<!ENTITY readmail.path.desc "Le chemin vers votre client de messagerie, utilisé si le bouton ne fonctionne pas.">
 <!ENTITY readnews.path.caption "Chemin du client de nouvelles">
-<!ENTITY readnews.path.desc "Le chemin vers votre client gérant les nouvelles, utilisé si le bouton ne fonctionne pas.">
-<!ENTITY read.select.button "Choisir…">
-<!ENTITY toogle.label "Boutons pour basculer un état à un autre état">
-<!ENTITY toggle.checkbox "Recharger la page lorsque le basculement d&apos;un état à un autre a été réalisé.">
