@@ -64,7 +64,7 @@ MEDIA_URL = ''
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
 
-# Make this unique, and don't share it with anybody.
+# Make this unique, and don't share it with anybody.  LOL at using svn!
 SECRET_KEY = ')#!(e1()71v@2l@$$1#8u4)(@j#-qg2fn6#^60#7-(&dbq5@o-'
 
 # List of callables that know how to import templates from various sources.
