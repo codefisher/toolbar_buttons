@@ -74,7 +74,10 @@ def index(request, locale_name=None, applications=None):
 @csrf_protect
 def create(request):
     extension_settings = dict(config)
-    extension_settings["buttons"] = request.POST.getlist("button")
+    buttons = request.POST.getlist("button")
+    extension_settings["buttons"] = buttons
     locale = request.POST.get("locale")
     extension_settings["locale"] = locale
+    applications = request.POST.get("application")
+    extension_settings["applications"] = applications
     build.build_extension(extension_settings)
