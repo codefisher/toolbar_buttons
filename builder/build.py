@@ -77,7 +77,12 @@ def build_extension(settings):
         with open(os.path.join(settings.get("profile_folder"), "extensions",
                 settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
             fp.write(jar_file.getvalue())
-    xpi = zipfile.ZipFile(settings.get("output"), "w", zipfile.ZIP_DEFLATED)
+    if settings.get("output") == None:
+        xpi_file = StringIO.StringIO()
+        xpi = zipfile.ZipFile(xpi_file, "w", zipfile.ZIP_DEFLATED)
+    else:
+        xpi_file = None
+        xpi = zipfile.ZipFile(settings.get("output"), "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
 
@@ -87,8 +92,8 @@ def build_extension(settings):
     xpi.write(settings.get("licence"), "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
-
     xpi.close()
+    return xpi_file.getvalue() if xpi_file else None
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []

@@ -5,7 +5,7 @@ from collections import defaultdict
 
 class Locale(object):
     """Parses the localisation files of the extension and queries it for data"""
-    def __init__(self, settings, folders, locales, options=False):
+    def __init__(self, settings, folders, locales, options=False, load_properites=True):
         self._settings = settings
         self._missing_strings = settings.get("missing_strings")
         self._folders = folders
@@ -18,9 +18,11 @@ class Locale(object):
                      for file_name in os.listdir(folder)
                      if not file_name.startswith(".")]
             for file_name in files:
-                if options == False and file_name.endswith("options.dtd"):
+                if not options and file_name.endswith("options.dtd"):
                     continue
-                elif options == True and not file_name.endswith("options.dtd"):
+                elif options and not file_name.endswith("options.dtd"):
+                    continue
+                elif not load_properites and file_name.endswith(".properties"):
                     continue
                 with open(file_name) as data:
                     for line in data:
@@ -32,6 +34,15 @@ class Locale(object):
                             elif file_name.endswith(".properties"):
                                 name, value = line.split('=', 1)
                                 self._properties[locale][name] = value.strip()
+
+    def get_dtd_value(self, locale, name):
+        """Returns the value of a given dtd string
+
+        get_dtd_value(str, str) -> str
+        """
+        value = self._dtd[locale].get(name,
+                self._dtd[self._settings.get("default_locale")].get(name))
+        return value.strip('"') if value else None
 
     def get_dtd_data(self, strings):
         """Gets a set of files with all the strings wanted

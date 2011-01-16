@@ -1,0 +1,8 @@
+<groupbox>
+	<preferences>
+		<preference id="{{pref-root}}next" name="{{pref-root}}next"
+			type="bool"/>
+	</preferences>
+	<caption label="&previous-next.label;"/>
+	<checkbox preference="{{pref-root}}next" label="&previous-next.checkbox;"/>
+</groupbox>
