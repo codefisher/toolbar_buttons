@@ -4,47 +4,31 @@ from collections import defaultdict
 import grayscale
 from util import get_pref_folders
 
-class Button():
+class SimpleButton():
+
     def __init__(self, folders, buttons, settings, applications):
         self._folders = folders
         self._buttons = buttons
         self._settings = settings
         self._applications = applications
-        self._suported_applications = set()
-        self._button_applications = defaultdict(set)
-        self._button_files = set()
-        self._button_xul = defaultdict(dict)
-        self._button_js = defaultdict(list)
         self._button_image = defaultdict(list)
-        self._properties_strings = set()
-        self._preferences = {}
-        self._button_options = {}
-        self._button_options_js = {}
-        self._option_applications = set()
-        self._has_javascript = False
-        self._manifest = []
-        self._extra_files = {}
-        self._res = {}
-        self._pref_list = defaultdict(list)
         self._button_keys = {}
-        self._button_style = {}
-
-        # we always want these file
-        self._button_js["loader"].append("")
-        self._button_js["button"].append("")
+        self._button_applications = defaultdict(set)
 
         button_files = self._settings.get("file_to_application").keys()
         button_files.sort()
-        group_files = self._settings.get("file_map").keys()
-        group_files.sort()
-        button_files = list(set(button_files).difference(group_files))
+        self._app_files = self._settings.get("file_map").keys()
+        self._app_files.sort()
+        self._window_files = list(set(button_files).difference(self._app_files))
+        self._info = []
+        self._xul_files = defaultdict(list)
 
         for folder, button in zip(self._folders, self._buttons):
             files = os.listdir(folder)
             button_wanted = False
 
             #file that belong to more then one window
-            for group_name in group_files:
+            for group_name in self._app_files:
                 xul_file = group_name + ".xul"
                 if xul_file in files:
                     for file_name in self._settings.get("file_map")[group_name]:
@@ -56,27 +40,23 @@ class Button():
                                     in self._applications):
                                 self._process_xul_file(folder, button,
                                                        xul_file, file_name)
+                                self._xul_files[button].append(os.path.join(folder, xul_file))
                                 button_wanted = True
             #single window files
-            for file_name in button_files:
+            for file_name in self._window_files:
                 xul_file = file_name + ".xul"
                 if (xul_file in files
                         and self._settings.get("file_to_application")[file_name]
                             in self._applications):
                     self._process_xul_file(folder, button, xul_file, file_name)
+                    self._xul_files[button].append(os.path.join(folder, xul_file))
                     button_wanted = True
 
             if not button_wanted:
                 continue
+            else:
+                self._info.append((folder, button, files))
 
-            for file_name in (button_files + group_files):
-                js_file = file_name + ".js"
-                if (js_file in files
-                    and (file_name == "button"
-                         or self._settings.get("file_to_application")[file_name]
-                            in self._applications)):
-                    with open(os.path.join(folder, js_file)) as js:
-                        self._button_js[file_name].append(js.read())
             if "image" in files:
                 with open(os.path.join(folder, "image"), "r") as images:
                     for line in images:
@@ -90,6 +70,51 @@ class Button():
                     key_shortcut = list(keys.read().partition(":"))
                     key_shortcut.pop(1)
                     self._button_keys[button] = key_shortcut
+
+    def _process_xul_file(self, folder, button, xul_file, file_name):
+        application = self._settings.get("file_to_application")[file_name]
+        self._button_applications[button].add(application)
+        return application
+
+    def button_applications(self):
+        return self._button_applications
+
+class Button(SimpleButton):
+    def __init__(self, folders, buttons, settings, applications):
+        self._suported_applications = set()
+        self._button_files = set()
+        self._button_xul = defaultdict(dict)
+
+        SimpleButton.__init__(self, folders, buttons, settings, applications)
+
+        self._button_js = defaultdict(list)
+        self._properties_strings = set()
+        self._preferences = {}
+        self._button_options = {}
+        self._button_options_js = {}
+        self._option_applications = set()
+        self._has_javascript = False
+        self._manifest = []
+        self._extra_files = {}
+        self._res = {}
+        self._pref_list = defaultdict(list)
+        self._button_style = {}
+
+        # we always want these file
+        self._button_js["loader"].append("")
+        self._button_js["button"].append("")
+
+        for folder, button, files in self._info:
+
+            for file_name in (self._window_files + self._app_files):
+                js_file = file_name + ".js"
+                if (js_file in files
+                    and (file_name == "button"
+                         or self._settings.get("file_to_application")[file_name]
+                            in self._applications)):
+                    with open(os.path.join(folder, js_file)) as js:
+                        self._button_js[file_name].append(js.read())
+
             if button in self._settings.get("keyboard_custom_keys"):
                 self._button_keys[button] = self._settings.get("keyboard_custom_keys")[button]
 
@@ -127,11 +152,9 @@ class Button():
         return self._res
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
-        application = self._settings.get("file_to_application")[file_name]
+        application = SimpleButton._process_xul_file(self, folder, button, xul_file, file_name)
         self._suported_applications.add(application)
         self._button_files.add(file_name)
-        self._button_applications[button].add(
-                                self._settings.get("file_to_application")[file_name])
         with open(os.path.join(folder, xul_file)) as xul:
             self._button_xul[file_name][button] = xul.read()
 

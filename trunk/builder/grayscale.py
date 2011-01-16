@@ -30,8 +30,8 @@ def image_to_graysacle(file_name, drop_opacity=0.9):
     out_image.write_packed(output, gray_data(color_data, info, drop_opacity))
     data = output.getvalue()
     output.close()
-    with open(temp_path, "w") as fp:
-        fp.write(data)
+    #with open(temp_path, "w") as fp:
+    #    fp.write(data)
     return data
 
 def gray_data(color_data, info, drop_opacity=0.9):
