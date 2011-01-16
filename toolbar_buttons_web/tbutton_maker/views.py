@@ -73,4 +73,5 @@ def index(request, locale_name=None, applications=None):
 
 @csrf_protect
 def create(request):
+    extension_settings = dict(config)
     print request.POST.getlist("button")
