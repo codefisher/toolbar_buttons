@@ -77,6 +77,8 @@ def create(request):
     buttons = request.POST.getlist("button")
     extension_settings["buttons"] = buttons
     locale = request.POST.get("locale")
+    if not locale:
+        locale = config.get("default_locale")
     extension_settings["locale"] = locale
     applications = request.POST.get("application")
     extension_settings["applications"] = applications
