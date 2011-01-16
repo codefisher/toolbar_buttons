@@ -15,12 +15,14 @@ def build_extension(settings):
 
     if settings.get("applications", "all") == "all":
         applications = settings.get("applications_data").keys()
-    else:
+    elif type(settings.get("applications")) == basestring:
         applications = settings.get("applications").split(',')
-
-    button_folders, buttons = get_button_folders(settings.get("buttons"))
+    else:
+        applications = settings.get("applications")
+    button_list = settings.get("buttons")
+    button_folders, buttons = get_button_folders(button_list)
     if settings.get("use_staging"):
-        staging_button_folders, staging_buttons = get_folders(settings.get("buttons"), "staging")
+        staging_button_folders, staging_buttons = get_folders(button_list, "staging")
         button_folders.extend(staging_button_folders)
         buttons.extend(staging_buttons)
     buttons = Button(button_folders, buttons, settings, applications)

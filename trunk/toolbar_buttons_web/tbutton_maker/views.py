@@ -11,7 +11,7 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 
 from ToolbarButtons.config.settings import config
-from ToolbarButtons.builder import button, locales, util
+from ToolbarButtons.builder import button, locales, util, build
 
 class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -74,4 +74,7 @@ def index(request, locale_name=None, applications=None):
 @csrf_protect
 def create(request):
     extension_settings = dict(config)
-    print request.POST.getlist("button")
+    extension_settings["buttons"] = request.POST.getlist("button")
+    locale = request.POST.get("locale")
+    extension_settings["locale"] = locale
+    build.build_extension(extension_settings)
