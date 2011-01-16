@@ -19,5 +19,7 @@ def get_folders(limit, folder):
     folders = [file_name for file_name in os.listdir(folder)
                if not file_name.startswith(".")]
     if limit != "all":
-        folders = list(set(folders).intersection(set(limit.split(","))))
+        if type(limit) == basestring:
+            limit = limit.split(",")
+        folders = list(set(folders).intersection(set(limit)))
     return [os.path.join(folder, sub_folder) for sub_folder in folders], folders
