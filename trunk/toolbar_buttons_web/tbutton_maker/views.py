@@ -2,6 +2,7 @@
 
 import os
 import re
+import operator
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
@@ -10,8 +11,8 @@ from django.http import HttpResponseNotFound
 from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 
-from ToolbarButtons.config.settings import config
-from ToolbarButtons.builder import button, locales, util, build
+from toolbar_buttons.config.settings import config
+from toolbar_buttons.builder import button, locales, util, build
 
 class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -64,12 +65,15 @@ def index(request, locale_name=None, applications=None):
     for buttonId, apps in buttons_obj.button_applications().items():
         button_data.append((buttonId, apps,
                 locale_str("label", buttonId), locale_str("tooltip", buttonId)))
+    def button_key(item):
+        return item[2].lower()
+    button_data.sort(key=button_key)
     data = {
         "locale": locale_name,
         "applications":applications,
         "button_data": button_data,
     }
-    return render_to_response('index.html' , data, context_instance=RequestContext(request))
+    return render_to_response('tbutton_maker/index.html' , data, context_instance=RequestContext(request))
 
 @csrf_protect
 def create(request):

@@ -15,7 +15,7 @@ def build_extension(settings):
 
     if settings.get("applications", "all") == "all":
         applications = settings.get("applications_data").keys()
-    elif type(settings.get("applications")) == basestring:
+    elif isinstance(settings.get("applications"), basestring):
         applications = settings.get("applications").split(',')
     else:
         applications = settings.get("applications")
@@ -79,12 +79,13 @@ def build_extension(settings):
         with open(os.path.join(settings.get("profile_folder"), "extensions",
                 settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
             fp.write(jar_file.getvalue())
-    if settings.get("output") == None:
+    if settings.get("output_folder") == None:
         xpi_file = StringIO.StringIO()
         xpi = zipfile.ZipFile(xpi_file, "w", zipfile.ZIP_DEFLATED)
     else:
         xpi_file = None
-        xpi = zipfile.ZipFile(settings.get("output"), "w", zipfile.ZIP_DEFLATED)
+        file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi"))
+        xpi = zipfile.ZipFile(file_name, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
 

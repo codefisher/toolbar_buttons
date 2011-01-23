@@ -4,8 +4,8 @@ ViewPageSourceNow: function(event) {
 		var docCharset = "charset=" + focusedWindow.document.characterSet;
 		var reference = focusedWindow.getSelection();
 		if (!reference.isCollapsed) {
-			window.openDialog("chrome://global/content/viewPartialSource.xul", 
-							  "_blank", "scrollbars,resizable,chrome,dialog=no",
+			window.openDialog("chrome://global/content/viewPartialSource.xul",
+							  "_blank", "scrollbars,resizable,chrome,dialog=no,centerscreen",
 							  null, docCharset, reference, "selection");
 		} else {
 			var sourceURL = "view-source:" + content.document.location.href;
