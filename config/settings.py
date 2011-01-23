@@ -41,7 +41,8 @@ config = {
     "use_keyboard_shortcuts": False,
     "keyboard_custom_keys": {},
 
-    "output": os.path.join("extenions", "toolbar_buttons.xpi"),
+    "output_folder": "extensions",
+    "output_file": "toolbar_buttons.xpi",
 
     # parts of the extension are copied here, if set
     "profile_folder": "/home/michael/.mozilla/firefox/0xq1gim8.Michael",

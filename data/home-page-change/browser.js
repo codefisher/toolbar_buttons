@@ -44,7 +44,7 @@ homePageChangeMultiple: function() {
 		}
 		var arg2 = Array();
 		arg2.returnbutton2 = true;
-		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal", args, arg2);
+		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", args, arg2);
 		if (args.GetInt(0) == 1) {
 			return;
 		}
@@ -85,7 +85,7 @@ homeList: function(item) {
 		var menuitem = document.createElement("menuitem");
 		menuitem.setAttribute("label", str[i]);
 		var url = str[i];
-		item.addEventListener("click", function(event) {
+		menuitem.addEventListener("click", function(event) {
 			toolbar_buttons.LoadURL(url, event);
 		}, false);
 		item.appendChild(menuitem);
