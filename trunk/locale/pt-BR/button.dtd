@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Sobre">
+<!ENTITY about-application.tooltip "Sobre &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Abrir about:cache para visualizar conteúdo em cache">
 <!ENTITY about-config.label "about:config">
@@ -49,6 +51,7 @@
 <!ENTITY clipboard.label "Link para Área de Trabalho">
 <!ENTITY clipboard.menuitem "Abrir Link da Área de Trabalho">
 <!ENTITY clipboard.newtab "Abrir Link do Área de Trabalho e Abrir Nova Aba">
+<!ENTITY clipboard.newwindow "Em nova janela">
 <!ENTITY clipboard.tooltip "Recuperar Link da Área de Trabalho e abrir">
 <!ENTITY close-all-tabs.label "Fechar Todos">
 <!ENTITY close-all-tabs.tooltip "Fechar Todas as Abas">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Mudar rapidamente o dicionário corrente">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Abrir eBay">
+<!ENTITY edit-as-new.label "Editar como novo">
+<!ENTITY edit-as-new.tooltip "Editar mensagem como nova">
 <!ENTITY edit-draft.label "Editar rascunho">
 <!ENTITY edit-draft.tooltip "Editar rascunho guardado">
 <!ENTITY empty-trash.label "Esvaziar lixeira">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "Abrir documentação de ajuda">
 <!ENTITY hide-images.label "Esconder imagens">
 <!ENTITY hide-images.tooltip "Esconder todas as imagens e imagens de fundo no documento corrente">
+<!ENTITY home-page-change.add-current "Adicionar página corrente">
+<!ENTITY home-page-change.current "Configurar como página corrente">
 <!ENTITY home-page-change.label "Alterar Página Inicial">
 <!ENTITY home-page-change.multiple "Configurar Página Inicial com Múltiplos Links">
 <!ENTITY home-page-change.tooltip "Alterar sua Página Inicial">
@@ -255,16 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "Alterar para tarefas em vista">
 <!ENTITY tasks-toggle.label "Alternas Tarefas">
 <!ENTITY tasks-toggle.tooltip "Alternar na barra de tarefas">
+<!ENTITY tb-clear-search.label "Limpar pesquisa">
+<!ENTITY tb-clear-search.tooltip "Limpar e focar na barra de pesquisa">
 <!ENTITY tb-clear-url.label "Limpar Url">
 <!ENTITY tb-clear-url.tooltip "Limpar e focar na barra da URL">
 <!ENTITY tb-edit-menu.label "Editar Menu">
 <!ENTITY tb-edit-menu.tooltip "Mostrar Editar Menu">
 <!ENTITY tb-file-menu.label "Menu de Arquivo">
 <!ENTITY tb-file-menu.tooltip "Mostrar menu de arquivo">
+<!ENTITY tb-new-event.label "Novo Evento">
+<!ENTITY tb-new-event.tooltip "Adicionar novo evento ao calendário.">
+<!ENTITY tb-new-task.label "Nova tarefa">
+<!ENTITY tb-new-task.tooltip "Adicionar nova tarefa ao calendário.">
+<!ENTITY tb-search-minus.label "Diminuir tamanho da barra de pesquisa">
+<!ENTITY tb-search-minus.tooltip "Diminui a largura da barra de pesquisa para 10 pixles">
+<!ENTITY tb-search-plus.label "Aumentar tamanho da barra de pesquisa">
+<!ENTITY tb-search-plus.tooltip "Aumentar a largura da barra de pesquisa para 10 pixles">
+<!ENTITY tb-search-resize.label "Redimensionar o tamanho da Pesquisa">
+<!ENTITY tb-search-resize.tooltip "Redimensiona a largura da barra de pesquisa">
 <!ENTITY tb-toggle-menu-bar.label "Alternar barra de menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Alternar a barra de menu">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Bloquear PopUp">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Alternar o bloqueador de PopUp">
 <!ENTITY tb-tools-menu.label "Menu de Ferramentas">
 <!ENTITY tb-tools-menu.tooltip "Mostrar menu de ferramentas">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Abrir página do Twitter">
 <!ENTITY tb-view-menu.label "Visualizar Menu">
 <!ENTITY tb-view-menu.tooltip "Mostrar Visualizar Menu">
 <!ENTITY themes.label "Temas">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Alternar status para Favoritos">
 <!ENTITY toggle-styles.label "Alternar Estilos">
 <!ENTITY toggle-styles.tooltip "Adicionar/Remover definições de estilos dos sites">
+<!ENTITY toggle-toolbar.label "Alternar Barra de Ferramentas">
+<!ENTITY toggle-toolbar.tooltip "Alternar a Barra Principal">
 <!ENTITY toolbar-menu.label "Barra de ferramentas">
 <!ENTITY toolbar-menu.tooltip "Esconder/Mostrar Barra de ferramentas">
 <!ENTITY top-page.label "Topo">

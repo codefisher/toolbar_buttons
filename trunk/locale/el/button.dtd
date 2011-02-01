@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Περί">
+<!ENTITY about-application.tooltip "Περί &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Εμφάνιση πληροφοριών για τη λανθάνουσα μνήμη του περιηγητή">
 <!ENTITY about-config.label "about:config">
@@ -49,6 +51,7 @@
 <!ENTITY clipboard.label "Δεσμός από το πρόχειρο">
 <!ENTITY clipboard.menuitem "Άνοιγμα δεσμού απ' το πρόχειρο">
 <!ENTITY clipboard.newtab "Άνοιγμα δεσμού από το πρόχειρο σε νέα καρτέλα">
+<!ENTITY clipboard.newwindow "Σε νέο παράθυρο">
 <!ENTITY clipboard.tooltip "Λήψη δεσμού από το πρόχειρο και άνοιγμα του">
 <!ENTITY close-all-tabs.label "Κλείσιμο όλων">
 <!ENTITY close-all-tabs.tooltip "Κλείσιμο όλων των καρτελών">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Γρήγορη αλλαγή τρέχοντος λεξικού">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Άνοιγμα του eBay">
+<!ENTITY edit-as-new.label "Τροποποίηση ως νέο">
+<!ENTITY edit-as-new.tooltip "Επεξεργασία μηνύματος ως νέο">
 <!ENTITY edit-draft.label "Επεξεργασία πρόχειρου">
 <!ENTITY edit-draft.tooltip "Επεξεργασία πρόχειρου μηνύματος">
 <!ENTITY empty-trash.label "Άδειασμα κάδου">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "Άνοιγμα της βοήθειας">
 <!ENTITY hide-images.label "Απόκρυψη εικόνων">
 <!ENTITY hide-images.tooltip "Απόκρυψη όλων των εικόνων, ακόμα και του παρασκηνίου της τρέχουσας σελίδας">
+<!ENTITY home-page-change.add-current "Προσθήκη τρέχουσας σελίδας">
+<!ENTITY home-page-change.current "Ορισμός τρέχουσας σελίδας">
 <!ENTITY home-page-change.label "Αλλαγή αρχικής σελίδας">
 <!ENTITY home-page-change.multiple "Ορισμός πολλαπλών δεσμών για αρχική σελίδα">
 <!ENTITY home-page-change.tooltip "Αλλαγή της αρχικής σας σελίδας">
@@ -248,23 +255,40 @@
 <!ENTITY stop-iframe.label "Εναλλαγή iframes (μπλοκάρει μερικές διαφημίσεις)">
 <!ENTITY stop-iframe.tooltip "Διακοπή/συνέχιση φόρτωσης των iframes (και των διαφημίσεων που συνήθως περιέχουν)">
 <!ENTITY stop-movies.label "Εναλλαγή βίντεο">
-<!ENTITY stop-movies.tooltip "Δδιακοπή/συνέχεια φόρτωσης βίντεο">
+<!ENTITY stop-movies.tooltip "Διακοπή/συνέχεια φόρτωσης βίντεο">
 <!ENTITY tab-list.label "Λίστα καρτελών">
 <!ENTITY tab-list.tooltip "Προβολή λίστας καρτελών">
 <!ENTITY tasks-in-view.label "Tasks In View">
 <!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">
 <!ENTITY tasks-toggle.label "Toggle Tasks">
 <!ENTITY tasks-toggle.tooltip "Toggle the task bar">
+<!ENTITY tb-clear-search.label "Εκκαθάριση αναζήτησης">
+<!ENTITY tb-clear-search.tooltip "Εκκαθάριση περιεχομένου και εστίαση στην εργαλειοθήκη αναζήτησης">
 <!ENTITY tb-clear-url.label "Εκκαθάριση Url">
 <!ENTITY tb-clear-url.tooltip "Εκκαθάριση της εργαλειοθήκης διευθύνσεων και μεταφορά εστίασης εκεί">
 <!ENTITY tb-edit-menu.label "Μενού επεξεργασίας">
 <!ENTITY tb-edit-menu.tooltip "Προβολή του μενού επεξεργασίας">
 <!ENTITY tb-file-menu.label "Μενού αρχείου">
 <!ENTITY tb-file-menu.tooltip "Προβολή του μενού αρχείου">
+<!ENTITY tb-new-event.label "Νέο γεγονός">
+<!ENTITY tb-new-event.tooltip "Προσθήκη νέου γεγονότος στο ημερολόγιο.">
+<!ENTITY tb-new-task.label "Νέα εργασία">
+<!ENTITY tb-new-task.tooltip "Προσθήκη νέας εργασίας στο ημερολόγιο.">
+<!ENTITY tb-search-minus.label "Μείωση μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-minus.tooltip "Μειώνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
+<!ENTITY tb-search-plus.label "Αύξηση μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-plus.tooltip "Αυξάνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
+<!ENTITY tb-search-resize.label "Αλλαγή μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-resize.tooltip "Αλλάζει το μέγεθος της εργαλειοθήκης αναζήτησης">
 <!ENTITY tb-toggle-menu-bar.label "Εναλλαγή εργαλειοθήκης μενού">
 <!ENTITY tb-toggle-menu-bar.tooltip "Εναλλαγή προβολής της εργαλειοθήκης μενού">
+<!ENTITY tb-toggle-popup-blocker.key "δ">
+<!ENTITY tb-toggle-popup-blocker.label "Φραγή αναδυόμενων">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Εναλλαγή φραγής αναδυόμενων">
 <!ENTITY tb-tools-menu.label "Μενού εργαλείων">
 <!ENTITY tb-tools-menu.tooltip "Προβολή του μενού εργαλείων">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Άνοιγμα της αρχικής σελίδας του Twitter">
 <!ENTITY tb-view-menu.label "Μενού εμφάνισης">
 <!ENTITY tb-view-menu.tooltip "Προβολή του μενού εμφάνισης">
 <!ENTITY themes.label "Θέματα">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Εναλλαγή κατάστασης μηνύματος με αστέρι">
 <!ENTITY toggle-styles.label "Εναλλαγή στυλ">
 <!ENTITY toggle-styles.tooltip "Προσθήκη/αφαίρεση φύλλων στυλ για τη σελίδα">
+<!ENTITY toggle-toolbar.label "Εναλλαγή εργαλειοθήκης">
+<!ENTITY toggle-toolbar.tooltip "Εναλλαγή προβολής εργαλειοθήκης μενού">
 <!ENTITY toolbar-menu.label "Εργαλειοθήκες">
 <!ENTITY toolbar-menu.tooltip "Προβολή/απόκρυψη εργαλειοθηκών">
 <!ENTITY top-page.label "Κορυφή">

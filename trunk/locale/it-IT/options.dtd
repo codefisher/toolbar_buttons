@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "Inserire il percorso del proprio client e-mail in caso il relativo pulsante non funzionasse:">
 <!ENTITY toggle.proxy.manual "Configurazione manuale dei proxy">
 <!ENTITY favorite-page.label "Pagina preferita">
+<!ENTITY toggle.proxy.system "Utilizza le impostazioni dei proxy del sistema">
 <!ENTITY translate.label "Traduzione">
 <!ENTITY translate.description "Selezionare la lingua nella quale tradurre tramite il servizio &apos;Google Translate&apos; con il pulsante &apos;Traduci&apos;:">
 <!ENTITY previous-next.checkbox "Modifica la direzione per i pulsanti &apos;Precedente&apos; e &apos;Successivo&apos;">
 <!ENTITY readmail.path.caption "Percorso del client e-mail">
+<!ENTITY toggle.label "Pulsanti di attivazione/disattivazione impostazioni">
+<!ENTITY translate.not-in-use "Il pulsante non è posizionato nelle barre degli strumenti. Aggiungerlo e riavviare il programma">
 <!ENTITY readnews.path.caption "Percorso del client dei gruppi di discussione">

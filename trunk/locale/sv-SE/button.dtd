@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Om">
+<!ENTITY about-application.tooltip "Om &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Öppna about:cache för att granska cachat innehåll">
 <!ENTITY about-config.label "about:config">
@@ -48,7 +50,8 @@
 <!ENTITY clear-url.tooltip "Göm texten i adressfältet">
 <!ENTITY clipboard.label "Urklippslänk">
 <!ENTITY clipboard.menuitem "Öppna länk från Urklipp">
-<!ENTITY clipboard.newtab "Öppna länk från Urklipp i ny flik">
+<!ENTITY clipboard.newtab "I ny flik">
+<!ENTITY clipboard.newwindow "I nytt fönster">
 <!ENTITY clipboard.tooltip "Hämta länk från Urklipp och öppna den">
 <!ENTITY close-all-tabs.label "Stäng alla">
 <!ENTITY close-all-tabs.tooltip "Stäng alla flikar">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Snabbyte av den aktuella ordlistan">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Gå till eBay">
+<!ENTITY edit-as-new.label "Redigera som nytt">
+<!ENTITY edit-as-new.tooltip "Redigera meddelande som nytt">
 <!ENTITY edit-draft.label "Redigera utkast">
 <!ENTITY edit-draft.tooltip "Redigera sparat utkast">
 <!ENTITY empty-trash.label "Töm papperskorgen">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "Öppna hjälpdokumentationen">
 <!ENTITY hide-images.label "Göm bilder">
 <!ENTITY hide-images.tooltip "Göm alla bilder och bakgrunder i aktuellt dokument">
+<!ENTITY home-page-change.add-current "Lägg till aktuell sida">
+<!ENTITY home-page-change.current "Ange som aktuell sida">
 <!ENTITY home-page-change.label "Byt startsida">
 <!ENTITY home-page-change.multiple "Ange startsidan som multipla länkar">
 <!ENTITY home-page-change.tooltip "Byt ut din startsida">
@@ -255,16 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "Växla visning av uppgifter i vyn">
 <!ENTITY tasks-toggle.label "Växla uppgifter">
 <!ENTITY tasks-toggle.tooltip "Växla uppgiftsfältet">
+<!ENTITY tb-clear-search.label "Rensa sökning">
+<!ENTITY tb-clear-search.tooltip "Rensa och fokusera på sökfältet">
 <!ENTITY tb-clear-url.label "Rensa URL">
 <!ENTITY tb-clear-url.tooltip "Rensa och fokusera på adressfältet">
 <!ENTITY tb-edit-menu.label "Redigera-menyn">
 <!ENTITY tb-edit-menu.tooltip "Visa Redigera-menyn">
 <!ENTITY tb-file-menu.label "Filmeny">
 <!ENTITY tb-file-menu.tooltip "Visa filmenyn">
+<!ENTITY tb-new-event.label "Ny händelse">
+<!ENTITY tb-new-event.tooltip "Lägg till en ny händelse i kalendern.">
+<!ENTITY tb-new-task.label "Ny uppgift">
+<!ENTITY tb-new-task.tooltip "Lägg till en ny uppgift i kalendern.">
+<!ENTITY tb-search-minus.label "Minska sökfältsstorleken">
+<!ENTITY tb-search-minus.tooltip "Minskar bredden på sökfältet med 10 pixlar">
+<!ENTITY tb-search-plus.label "Öka sökfältsstorleken">
+<!ENTITY tb-search-plus.tooltip "Ökar bredden på sökfältet med 10 pixlar">
+<!ENTITY tb-search-resize.label "Ändra sökfältsstorleken">
+<!ENTITY tb-search-resize.tooltip "Ändrar bredden på sökfältet">
 <!ENTITY tb-toggle-menu-bar.label "Växla menyrad">
 <!ENTITY tb-toggle-menu-bar.tooltip "Växla menyraden">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Popup-blockeraren">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Växla Popup-blockeraren">
 <!ENTITY tb-tools-menu.label "Verktyg-menyn">
 <!ENTITY tb-tools-menu.tooltip "Visa Verktyg-menyn">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Öppna Twitters webbplats">
 <!ENTITY tb-view-menu.label "Visa-menyn">
 <!ENTITY tb-view-menu.tooltip "Visa Visa-menyn">
 <!ENTITY themes.label "Teman">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Växla stjärnmärkningsstatus">
 <!ENTITY toggle-styles.label "Växla stilar">
 <!ENTITY toggle-styles.tooltip "Lägg till/Ta bort webbplatsdefinierade stilar">
+<!ENTITY toggle-toolbar.label "Växla verktygsfältet">
+<!ENTITY toggle-toolbar.tooltip "Växla huvudverktygsfältet">
 <!ENTITY toolbar-menu.label "Verktygsfält">
 <!ENTITY toolbar-menu.tooltip "Göm/Visa verktygsfält">
 <!ENTITY top-page.label "Överst">
