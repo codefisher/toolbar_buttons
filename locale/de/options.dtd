@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "Der Pfad zu Ihrem bevorzugten E-Mail-Programm. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen des Programms nicht funktionieren.">
 <!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
 <!ENTITY favorite-page.label "Lieblingsseite">
+<!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY translate.label "Übersetzen">
 <!ENTITY translate.description "Auswählen, in welche Sprache mit der &quot;Übersetzen&quot;-Schaltfläche übersetzt werden soll. Genutzt wird der Übersetzungsdienst von Google.">
 <!ENTITY previous-next.checkbox "Richtung umkehren, in der die Schaltflächen &quot;Vorherige Nachricht&quot; und &quot;Nächste Nachricht&quot; wirken.">
 <!ENTITY readmail.path.caption "E-Mail-Programm">
+<!ENTITY toggle.label "Schaltflächen umschalten">
+<!ENTITY translate.not-in-use "Schaltfläche wird nicht verwendet. Zur Symbolleiste hinzufügen und neu starten.">
 <!ENTITY readnews.path.caption "Anwendung für das Lesen von Newsgruppen">

@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Informazioni su…">
+<!ENTITY about-application.tooltip "Informazioni su &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Apre &apos;about:cache&apos; per visualizzare gli elementi presenti nella cache">
 <!ENTITY about-config.label "about:config">
@@ -42,13 +44,14 @@
 <!ENTITY change-text-direction.tooltip "Cambia la direzione del testo da sinistra a destra e viceversa">
 <!ENTITY check-for-update.label "Controlla aggiornamenti">
 <!ENTITY check-for-update.tooltip "Controlla gli aggiornamenti…">
-<!ENTITY clear-data.label "Elimina i dati personali…">
-<!ENTITY clear-data.tooltip "Apre la finestra di eliminazione dei dati personali">
+<!ENTITY clear-data.label "Cancella cronologia recente…">
+<!ENTITY clear-data.tooltip "Apre la finestra di cancellazione della cronologia recente">
 <!ENTITY clear-url.label "Svuota la barra degli indirizzi">
 <!ENTITY clear-url.tooltip "Nasconde il testo nella barra degli indirizzi">
 <!ENTITY clipboard.label "Apri i link dagli appunti">
 <!ENTITY clipboard.menuitem "Nella finestra attuale">
 <!ENTITY clipboard.newtab "In nuova scheda">
+<!ENTITY clipboard.newwindow "In nuova finestra">
 <!ENTITY clipboard.tooltip "Apri i link dagli appunti">
 <!ENTITY close-all-tabs.label "Chiudi tutte le schede">
 <!ENTITY close-all-tabs.tooltip "Chiudi tutte le schede">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Seleziona rapidamente il dizionario da utilizzare">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Apre la pagina di eBay">
+<!ENTITY edit-as-new.label "Modifica come nuovo…">
+<!ENTITY edit-as-new.tooltip "Modifica il messaggio selezionato come nuovo">
 <!ENTITY edit-draft.label "Modifica Bozza…">
 <!ENTITY edit-draft.tooltip "Modifica la bozza salvata">
 <!ENTITY empty-trash.label "Svuota cestino">
@@ -114,8 +119,10 @@
 <!ENTITY help.tooltip "Apre i contenuti guida">
 <!ENTITY hide-images.label "Nascondi immagini">
 <!ENTITY hide-images.tooltip "Nascondi tutte le immagini e gli sfondi nel documento attuale">
+<!ENTITY home-page-change.add-current "Aggiungi la pagina attuale alla pagina iniziale impostata">
+<!ENTITY home-page-change.current "Imposta la pagina attuale come pagina iniziale">
 <!ENTITY home-page-change.label "Cambia pagina iniziale">
-<!ENTITY home-page-change.multiple "Imposta le pagine iniziali da aprire in più schede">
+<!ENTITY home-page-change.multiple "Imposta le pagine iniziali da aprire in più schede…">
 <!ENTITY home-page-change.tooltip "Cambia la pagina iniziale">
 <!ENTITY hotmail-button.label "Hotmail">
 <!ENTITY hotmail-button.tooltip "Apre la pagina di Hotmail">
@@ -255,16 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "Attiva/disattiva le attività nella vista">
 <!ENTITY tasks-toggle.label "Visualizza/nascondi la lista attività">
 <!ENTITY tasks-toggle.tooltip "Visualizza/nascondi nella barra laterale la lista attività">
+<!ENTITY tb-clear-search.label "Svuota barra di ricerca">
+<!ENTITY tb-clear-search.tooltip "Svuota e seleziona la barra di ricerca">
 <!ENTITY tb-clear-url.label "Elimina URL">
 <!ENTITY tb-clear-url.tooltip "Elimina l'URL e seleziona la barra degli indirizzi">
 <!ENTITY tb-edit-menu.label "Menu Modifica">
 <!ENTITY tb-edit-menu.tooltip "Mostra il menu Modifica">
 <!ENTITY tb-file-menu.label "Menu File">
 <!ENTITY tb-file-menu.tooltip "Mostra il menu File">
+<!ENTITY tb-new-event.label "Nuovo evento">
+<!ENTITY tb-new-event.tooltip "Crea un nuovo evento">
+<!ENTITY tb-new-task.label "Nuova attività">
+<!ENTITY tb-new-task.tooltip "Crea una nuova attività">
+<!ENTITY tb-search-minus.label "Riduci barra di ricerca">
+<!ENTITY tb-search-minus.tooltip "Diminuisci la larghezza della barra di ricerca di 10 pixel">
+<!ENTITY tb-search-plus.label "Allarga barra di ricerca">
+<!ENTITY tb-search-plus.tooltip "Aumenta la larghezza della barra di ricerca di 10 pixel">
+<!ENTITY tb-search-resize.label "Larghezza barra di ricerca…">
+<!ENTITY tb-search-resize.tooltip "Imposta la larghezza della barra di ricerca">
 <!ENTITY tb-toggle-menu-bar.label "Barra dei menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Visualizza/nascondi la barra dei menu">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Blocco pop-up">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Attiva/disattiva il blocco delle finestre pop-up">
 <!ENTITY tb-tools-menu.label "Menu Strumenti">
 <!ENTITY tb-tools-menu.tooltip "Mostra il menu Strumenti">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Apre la pagina iniziale di Twitter">
 <!ENTITY tb-view-menu.label "Menu Visualizza">
 <!ENTITY tb-view-menu.tooltip "Mostra il menu Visualizza">
 <!ENTITY themes.label "Temi">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Marca i messaggi selezionati come speciali/non speciali">
 <!ENTITY toggle-styles.label "Attiva/disattiva fogli di stile">
 <!ENTITY toggle-styles.tooltip "Attiva/disattiva gli stili definiti per le pagine web">
+<!ENTITY toggle-toolbar.label "Barra di navigazione">
+<!ENTITY toggle-toolbar.tooltip "Visualizza/nascondi la Barra di navigazione">
 <!ENTITY toolbar-menu.label "Barre degli strumenti">
 <!ENTITY toolbar-menu.tooltip "Visualizza/nascondi le barre degli strumenti">
 <!ENTITY top-page.label "In cima">

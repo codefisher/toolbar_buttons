@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "Le chemin vers votre client de messagerie, utilisé si le bouton ne fonctionne pas.">
 <!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
 <!ENTITY favorite-page.label "Page préférée">
+<!ENTITY toggle.proxy.system "Utiliser les paramètres de proxy du système">
 <!ENTITY translate.label "Traduire">
 <!ENTITY translate.description "Veuillez choisir la langue de traduction à utiliser lors du clic sur le bouton. C&apos;est le service de traduction Google qui est utilisé ici.">
 <!ENTITY previous-next.checkbox "Modifier la direction des boutons « Précédent » et « Suivant »">
 <!ENTITY readmail.path.caption "Chemin du client de messagerie">
+<!ENTITY toggle.label "Afficher/masquer les boutons">
+<!ENTITY translate.not-in-use "Bouton non utilisé. Ajoutez-le à la barre d'outils et redémarrez.">
 <!ENTITY readnews.path.caption "Chemin du client de nouvelles">

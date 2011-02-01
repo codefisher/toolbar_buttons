@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "O caminho para o seu cliente de e-mail, use se o botão não funcionar.">
 <!ENTITY toggle.proxy.manual "Configuração Manual de Proxy">
 <!ENTITY favorite-page.label "Página Favorita">
+<!ENTITY toggle.proxy.system "Usar configurações de proxy do sistema">
 <!ENTITY translate.label "Traduzir">
 <!ENTITY translate.description "Escolha qual idioma deseja que o botão de traduzir irá utilizar. O botão utiliza o Serviço de Tradução do Google">
 <!ENTITY previous-next.checkbox "Mudar direção do botão Anterior e Próximo">
 <!ENTITY readmail.path.caption "Caminho do cliente de e-mail">
+<!ENTITY toggle.label "Alternar Botões">
+<!ENTITY translate.not-in-use "Botão não está em uso. Adicionar à barra de ferramentas e reiniciar.">
 <!ENTITY readnews.path.caption "Caminho do cliente de notícias">

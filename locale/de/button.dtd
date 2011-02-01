@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Über">
+<!ENTITY about-application.tooltip "Über &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "about:cache öffnen, um im Cache gespeicherte Elemente anzuzeigen">
 <!ENTITY about-config.label "about:config">
@@ -49,6 +51,7 @@
 <!ENTITY clipboard.label "Link aus Zwischenablage">
 <!ENTITY clipboard.menuitem "Link aus Zwischenablage öffnen">
 <!ENTITY clipboard.newtab "Link aus Zwischenablage in neuem Tab öffnen">
+<!ENTITY clipboard.newwindow "In einem neuen Fenster">
 <!ENTITY clipboard.tooltip "Link aus Zwischenablage öffnen">
 <!ENTITY close-all-tabs.label "Alle schließen">
 <!ENTITY close-all-tabs.tooltip "Alle Tabs schließen">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Schneller Wechsel des aktuell verwendeten Wörterbuches">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "eBay aufrufen">
+<!ENTITY edit-as-new.label "Als neu bearbeiten">
+<!ENTITY edit-as-new.tooltip "Diese Nachricht als neue Nachricht bearbeiten">
 <!ENTITY edit-draft.label "Entwurf bearbeiten">
 <!ENTITY edit-draft.tooltip "Gespeicherten Entwurf bearbeiten">
 <!ENTITY empty-trash.label "Papierkorb leeren">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "Hilfethemen öffnen">
 <!ENTITY hide-images.label "Grafiken anzeigen">
 <!ENTITY hide-images.tooltip "Alle Grafiken und Hintergründe der aktuellen Seite ein-/ausblenden">
+<!ENTITY home-page-change.add-current "Aktuelle Seite hinzufügen">
+<!ENTITY home-page-change.current "Als aktuelle Seite festlegen">
 <!ENTITY home-page-change.label "Startseite ändern">
 <!ENTITY home-page-change.multiple "Mehrere Links als Startseite festlegen">
 <!ENTITY home-page-change.tooltip "Startseite ändern">
@@ -255,18 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "Aufgaben im Kalender anzeigen/nicht anzeigen">
 <!ENTITY tasks-toggle.label "Aufgaben">
 <!ENTITY tasks-toggle.tooltip "Aufgabenbereich ein-/ausblenden">
+<!ENTITY tb-clear-search.label "Suchleiste leeren">
+<!ENTITY tb-clear-search.tooltip "Die Suchleiste jetzt leeren und die Schreibmarke hineinsetzen">
 <!ENTITY tb-clear-url.label "Adressleiste leeren">
-<!ENTITY tb-clear-url.tooltip "Adressleiste leeren und fokussieren">
+<!ENTITY tb-clear-url.tooltip "Adressleiste leeren und und die Schreibmarke hineinsetzen">
 <!ENTITY tb-edit-menu.label "Menü &quot;Bearbeiten&quot;">
 <!ENTITY tb-edit-menu.tooltip "Menü &quot;Bearbeiten&quot; anzeigen">
 <!ENTITY tb-file-menu.label "Menü &quot;Datei&quot;">
 <!ENTITY tb-file-menu.tooltip "Menü &quot;Datei&quot; anzeigen">
+<!ENTITY tb-new-event.label "Neues Ereignis">
+<!ENTITY tb-new-event.tooltip "Fügt ein neues Ereignis dem Kalender hinzu.">
+<!ENTITY tb-new-task.label "Neue Aufgabe">
+<!ENTITY tb-new-task.tooltip "Fügt eine neue Aufgabe dem Kalender hinzu.">
+<!ENTITY tb-search-minus.label "Suchleistenbreite verkleinern">
+<!ENTITY tb-search-minus.tooltip "Verringert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
+<!ENTITY tb-search-plus.label "Suchleistenbreite vergrößern">
+<!ENTITY tb-search-plus.tooltip "Erweitert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
+<!ENTITY tb-search-resize.label "Größe der Suchleiste ändern">
+<!ENTITY tb-search-resize.tooltip "Die Breite der Suchleiste festlegen">
 <!ENTITY tb-toggle-menu-bar.label "Menüleiste">
 <!ENTITY tb-toggle-menu-bar.tooltip "Menüleiste ein-/ausblenden">
-<!ENTITY tb-toggle-popup-blocker.label "PopUp-Blocker">
-<!ENTITY tb-toggle-popup-blocker.tooltip "PopUp-Blocker ein-/ausschalten">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Pop-up-Blocker">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Pop-up-Blocker ein-/ausschalten">
 <!ENTITY tb-tools-menu.label "Menü &quot;Extras&quot;">
 <!ENTITY tb-tools-menu.tooltip "Menü &quot;Extras&quot; anzeigen">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Twitter-Homepage öffnen">
 <!ENTITY tb-view-menu.label "Menü &quot;Ansicht&quot;">
 <!ENTITY tb-view-menu.tooltip "Menü &quot;Ansicht&quot; anzeigen">
 <!ENTITY themes.label "Themes">
@@ -291,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Kennzeichnung ein-/ausschalten">
 <!ENTITY toggle-styles.label "Webseiten-Stil">
 <!ENTITY toggle-styles.tooltip "Von Webseite angebotenen Webseiten-Stil ein-/ausschalten">
+<!ENTITY toggle-toolbar.label "Symbolleiste ein-/ausblenden">
+<!ENTITY toggle-toolbar.tooltip "Navigations-Symbolleiste ein-/ausblenden">
 <!ENTITY toolbar-menu.label "Symbolleisten">
 <!ENTITY toolbar-menu.tooltip "Symbolleisten ein-/ausblenden">
 <!ENTITY top-page.label "Nach oben">

@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "À propos de…">
+<!ENTITY about-application.tooltip "À propos de &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Afficher le contenu des caches">
 <!ENTITY about-config.label "about:config">
@@ -49,6 +51,7 @@
 <!ENTITY clipboard.label "Lien du presse-papiers">
 <!ENTITY clipboard.menuitem "Ouvrir le lien à partir du presse-papiers">
 <!ENTITY clipboard.newtab "Ouvrir le lien du presse-papiers dans un nouvel onglet">
+<!ENTITY clipboard.newwindow "Dans une nouvelle fenêtre">
 <!ENTITY clipboard.tooltip "Ouvrir la cible du lien contenu dans le presse-papiers">
 <!ENTITY close-all-tabs.label "Tout fermer">
 <!ENTITY close-all-tabs.tooltip "Fermer tous les onglets">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "Changer rapidement le dictionnaire courant">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Se connecter à eBay">
+<!ENTITY edit-as-new.label "Modifier sous">
+<!ENTITY edit-as-new.tooltip "Modifier le message comme un nouveau message">
 <!ENTITY edit-draft.label "Éditer le brouillon">
 <!ENTITY edit-draft.tooltip "Éditer le brouillon enregistré">
 <!ENTITY empty-trash.label "Vider la corbeille">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "Ouvrir la documentation d&apos;aide">
 <!ENTITY hide-images.label "Masquer les images">
 <!ENTITY hide-images.tooltip "Masquer toutes les images et arrières-plans dans le document courant">
+<!ENTITY home-page-change.add-current "Ajouter la page courante">
+<!ENTITY home-page-change.current "Définir comme page courante">
 <!ENTITY home-page-change.label "Modifier la page d&apos;accueil">
 <!ENTITY home-page-change.multiple "Définir plusieurs pages d&apos;accueil (liens multiples)">
 <!ENTITY home-page-change.tooltip "Modifier votre page d&apos;accueil">
@@ -255,16 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "Afficher / masquer les tâches à réaliser">
 <!ENTITY tasks-toggle.label "Tâches">
 <!ENTITY tasks-toggle.tooltip "Afficher/masquer la barre des tâches">
+<!ENTITY tb-clear-search.label "Effacer la recherche">
+<!ENTITY tb-clear-search.tooltip "Effacer et placer le curseur dans la barre de recherche">
 <!ENTITY tb-clear-url.label "Effacer l&apos;URL">
 <!ENTITY tb-clear-url.tooltip "Effacer l&apos;URL et laisser le curseur dans la barre d&apos;adresse">
 <!ENTITY tb-edit-menu.label "Menu « Édition »">
 <!ENTITY tb-edit-menu.tooltip "Afficher le menu « Édition »">
 <!ENTITY tb-file-menu.label "Menu « Fichier »">
 <!ENTITY tb-file-menu.tooltip "Afficher le menu « Fichier »">
+<!ENTITY tb-new-event.label "Nouvel évènement">
+<!ENTITY tb-new-event.tooltip "Ajouter un nouvel évènement dans le calendrier.">
+<!ENTITY tb-new-task.label "Nouvelle Tâche">
+<!ENTITY tb-new-task.tooltip "Ajouter une nouvelle tâche au calendrier.">
+<!ENTITY tb-search-minus.label "Réduire la taille de la barre de recherche">
+<!ENTITY tb-search-minus.tooltip "Réduit la largeur de la barre de recherche de 10 pixels">
+<!ENTITY tb-search-plus.label "Augmenter la taille de la barre de recherche">
+<!ENTITY tb-search-plus.tooltip "Augmente la largeur de la barre de recherche de 10 pixels">
+<!ENTITY tb-search-resize.label "Taille de la barre de recherche">
+<!ENTITY tb-search-resize.tooltip "Modifie la taille de la barre de recherche">
 <!ENTITY tb-toggle-menu-bar.label "Barre de menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Afficher / masquer la barre de menu">
+<!ENTITY tb-toggle-popup-blocker.key "P">
+<!ENTITY tb-toggle-popup-blocker.label "Bloqueur de fenêtres popup">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Activer/désactiver le bloqueur de fenêtres popup">
 <!ENTITY tb-tools-menu.label "Menu « Outils »">
 <!ENTITY tb-tools-menu.tooltip "Afficher le menu « Outils »">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Ouvrir le site Twitter">
 <!ENTITY tb-view-menu.label "Menu « Affichage »">
 <!ENTITY tb-view-menu.tooltip "Afficher le menu « Affichage »">
 <!ENTITY themes.label "Thèmes">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "Suivre / ne plus suivre le sujet">
 <!ENTITY toggle-styles.label "Modifier le style">
 <!ENTITY toggle-styles.tooltip "Ajouter / supprimer les styles définis par les pages Web">
+<!ENTITY toggle-toolbar.label "Afficher/masquer la barre d'outils">
+<!ENTITY toggle-toolbar.tooltip "Afficher/masquer la barre d'outils principale">
 <!ENTITY toolbar-menu.label "Barres d&apos;outils">
 <!ENTITY toolbar-menu.tooltip "Afficher / masquer les barres d&apos;outils">
 <!ENTITY top-page.label "Haut">

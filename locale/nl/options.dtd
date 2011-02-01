@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "Het pad naar uw mailprogramma, gebruik dit als de knop niet werkt.">
 <!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">
 <!ENTITY favorite-page.label "Favoriete pagina">
+<!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY translate.label "Vertalen">
 <!ENTITY translate.description "Selecteer welke taal u aan de Vertalen-knop wilt toewijzen. De knop maakt gebruik van de Google Translation service">
 <!ENTITY previous-next.checkbox "Vorige en Volgende knop wijzigen">
 <!ENTITY readmail.path.caption "Pad naar mailprogramma">
+<!ENTITY toggle.label "Knoppen wisselen">
+<!ENTITY translate.not-in-use "Knop wordt niet gebruikt. Voeg deze aan de werkbalk toe en start opnieuw.">
 <!ENTITY readnews.path.caption "Pad naar nieuwsprogramma">

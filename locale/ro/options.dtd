@@ -1,20 +1,23 @@
-<!ENTITY options.window.title "Opţiuni Toolbar Buttons">
-<!ENTITY favorite-page.description "Alegeţi adresa &quot;Paginii favorite&quot;, un fel de a doua Pagină gazdă">
-<!ENTITY toggle.prox.label "Comutare proxy">
-<!ENTITY toggle.proxy.description "Butonul de comutare proxy poate comuta între opţiunea &quot;Fără proxy&quot; şi una dintre opţiunile următoare:">
-<!ENTITY restart.checkbox "Nu cere confirmare înainte de repornire.">
-<!ENTITY previous-next.label "Butoane Înapoi şi Înainte">
-<!ENTITY toggle.checkbox "Reîncarcă pagina curentă după schimbarea unor configuraţii (Java, Flash, video, etc.)">
+<!ENTITY options.window.title "Opțiuni Toolbar Buttons">
+<!ENTITY favorite-page.description "Adresă pentru „Pagina favorită“ (un fel de a doua pagină de pornire):">
+<!ENTITY toggle.prox.label "Proxy">
+<!ENTITY toggle.proxy.description "Comutare între „Fără proxy“ și una dintre opțiunile următoare:">
+<!ENTITY restart.checkbox "Nu cere confirmare înainte de repornire">
+<!ENTITY previous-next.label "Butoane Înapoi și Înainte">
+<!ENTITY toggle.checkbox "Reîncarcă pagina curentă după comutarea unor configurații (Java, Flash, video, etc.)">
 <!ENTITY restart.label "Repornire">
-<!ENTITY read.select.button "Redefineşte">
-<!ENTITY readnews.path.desc "Redefiniţi calea către cititorul favorit de ştiri, dacă butonul nu funcţionează.">
-<!ENTITY toggle.proxy.auto.detect "Auto-detectare configuraţie proxy">
-<!ENTITY toggle.proxy.auto.configuration "Auto-configurare proxy (PAC)">
-<!ENTITY readmail.path.desc "Redefiniţi calea către clientul favorit de poştă electronică, dacă butonul nu funcţionează.">
-<!ENTITY toggle.proxy.manual "Configurare manuală proxy">
+<!ENTITY read.select.button "Redefinește">
+<!ENTITY readnews.path.desc "Cale către cititorul favorit de știri (dacă butonul nu funcționează):">
+<!ENTITY toggle.proxy.auto.detect "Detectare automată a configuraţiei proxy">
+<!ENTITY toggle.proxy.auto.configuration "Configurare automată a proxy (PAC)">
+<!ENTITY readmail.path.desc "Cale către clientul favorit de poștă electronică (dacă butonul nu funcționează):">
+<!ENTITY toggle.proxy.manual "Configurare manuală a proxy">
 <!ENTITY favorite-page.label "Pagină favorită">
+<!ENTITY toggle.proxy.system "Utilizare a configurației proxy a sistemului">
 <!ENTITY translate.label "Traducere">
-<!ENTITY translate.description "Selectaţi limba pe care butonul de traducere o va utiliza.  Acest buton foloseşte serviuciul de traducere al Google">
-<!ENTITY previous-next.checkbox "Schimbă direcţia de acţiune a butoanelor Înapoi şi Înainte.">
-<!ENTITY readmail.path.caption "Calea către clientul de poştă electronică">
-<!ENTITY readnews.path.caption "Calea către cititorul de ştiri">
+<!ENTITY translate.description "Limba în care se traduce (se folosește serviciul de traducere al Google):">
+<!ENTITY previous-next.checkbox "Schimbă direcția de acțiune a butoanelor Înapoi și Înainte">
+<!ENTITY readmail.path.caption "Client de poștă electronică">
+<!ENTITY toggle.label "Comutatoare">
+<!ENTITY translate.not-in-use "Butonul nu este folosit. Adăugați-l pe bară și reporniți navigatorul.">
+<!ENTITY readnews.path.caption "Cititorul de știri">
