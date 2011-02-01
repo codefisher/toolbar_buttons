@@ -68,7 +68,7 @@ OpenAddonsMgr: function(type, typeUrl) {
 			addonManager.gViewController.loadView(typeUrl);
 		} else {
 			var contents = toolbar_buttons.getUrlContents("chrome://mozapps/content/extensions/extensions.xul");
-			var win = window.openDialog(
+			window.openDialog(
 					"chrome://mozapps/content/extensions/extensions.xul", "",
 					"chrome,menubar,extra-chrome,toolbar,dialog=no,resizable", contents.match("Addons:Manager") ? {"view" :typeUrl} : type);
 		}
@@ -405,7 +405,7 @@ loadUserContentSheet: function(sheet, pref, buttonId) {
 stopContent: function(button, pref) {
 	//if(toolbar_buttons.extensionPrefToggleStatus(button, pref))
 	//	BrowserReload();
-	toolbar_buttons.extensionPrefToggleStatus(button, pref)
+	toolbar_buttons.extensionPrefToggleStatus(button, pref);
 }
 
 loadContectBlocker: function(fullPref, prefName, buttonId, sheet, func) {
@@ -448,12 +448,12 @@ clearBar: function(bar) {
 	} else {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
-		var title = stringBundle.GetStringFromName("bar-missing-title");
+		var title = stringBundle.GetStringFromName("bar-missing-title"), name = "";
 		// lousy because the code for matching strings is not smart enough
 		if(bar == "search") {
-			var name = stringBundle.GetStringFromName("bar-missing-search");
+			name = stringBundle.GetStringFromName("bar-missing-search");
 		} else {
-			var name = stringBundle.GetStringFromName("bar-missing-url");
+			name = stringBundle.GetStringFromName("bar-missing-url");
 		}
 		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
@@ -535,4 +535,32 @@ realNavigate: function(event, dirPrev) {
 		}
 	}
 	return GoNextMessage(dir, false);
+}
+
+getETDL: function() {
+	var eTLDService = toolbar_buttons.interfaces.EffectiveTLDService;
+
+	var eTLD;
+	var uri = window.content.document.documentURIObject;
+	try {
+		eTLD = eTLDService.getBaseDomain(uri);
+	} catch (e) {
+		// getBaseDomain will fail if the host is an IP address or is empty
+		eTLD = uri.asciiHost;
+	}
+	return eTLD;
+}
+
+openPermissions: function(type, title, text) {
+	var bundlePreferences = toolbar_buttons.interfaces.StringBundleService
+		.createBundle("chrome://browser/locale/preferences/preferences.properties");
+	var params = { blockVisible   : true,
+				   sessionVisible : true,
+				   allowVisible   : true,
+				   prefilledHost  : toolbar_buttons.getETDL(),
+				   permissionType : type,
+				   windowTitle	: bundlePreferences.GetStringFromName(title),
+				   introText	  : bundlePreferences.GetStringFromName(text) };
+	window.openDialog("chrome://browser/content/preferences/permissions.xul",
+			"Browser:Permissions", "", params);
 }

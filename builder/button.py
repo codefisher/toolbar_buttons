@@ -1,8 +1,13 @@
 import os
 import re
+import io
 from collections import defaultdict
 import grayscale
 from util import get_pref_folders
+try:
+    from PIL import Image
+except ImportError:
+    pass
 
 class SimpleButton():
 
@@ -10,6 +15,10 @@ class SimpleButton():
         self._folders = folders
         self._buttons = buttons
         self._settings = settings
+        try:
+            Image
+        except NameError:
+            self._settings["merge_images"] = False
         self._applications = applications
         self._button_image = defaultdict(list)
         self._button_keys = {}
@@ -253,6 +262,18 @@ class Button(SimpleButton):
         lines = ["""@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");"""]
         values = {"chrome_name": self._settings.get("chrome_name")}
         small, large = self._settings.get("icon_size")
+        image_count = 0
+        image_map = {}
+        if self._settings.get("merge_images"):
+            image_set = set()
+            for button, image_data in self._button_image.iteritems():
+                for image, modifier in image_data:
+                    image_set.add(image)
+            image_count = len(image_set)
+            image_map_small = Image.new("RGBA", (image_count*int(small), int(small)), (0, 0, 0, 0))
+            image_map_large = Image.new("RGBA", (image_count*int(large), int(large)), (0, 0, 0, 0))
+        count = 0
+        offset = 0
         for button, image_data in self._button_image.iteritems():
             values["id"] = button
             for image, modifier in image_data:
@@ -261,19 +282,77 @@ class Button(SimpleButton):
                     name.insert(1, "-disabled")
                     _image = "".join(name)
                     opacity = 1.0 if image[0] == "-" else 0.9
-                    image_datas[os.path.join("skin", small, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), small, image[1:]), opacity)
-                    image_datas[os.path.join("skin", large, _image)] = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), large, image[1:]), opacity)
+                    small_data, small_fp = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), small, image[1:]), opacity)
+                    large_data, large_fp = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), large, image[1:]), opacity)
+                    if self._settings.get("merge_images"):
+                        if image_map.get(_image):
+                            offset = image_map.get(_image)
+                        else:
+                            offset = count
+                            image_map[_image] = offset
+                            box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
+                            small_fp.seek(0)
+                            image_map_small.paste(Image.open(small_fp), box)
+                            box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
+                            large_fp.seek(0)
+                            image_map_large.paste(Image.open(large_fp), box)
+                            count += 1
+                    else:
+                        offset = count
+                        image_datas[os.path.join("skin", small, _image)] = small_data
+                        image_datas[os.path.join("skin", large, _image)] = large_data
+                        count += 1
+                    small_fp.close()
+                    large_fp.close()
                     image = _image
                 else:
-                    image_list.append(image)
-                values["image"] = image
+                    if self._settings.get("merge_images"):
+                        if image_map.get(image):
+                            offset = image_map.get(image)
+                        else:
+                            offset = count
+                            image_map[image] = offset
+                            box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
+                            small_im = Image.open(os.path.join(self._settings.get("image_path"), small, image))
+                            image_map_small.paste(small_im, box)
+                            box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
+                            large_im = Image.open(os.path.join(self._settings.get("image_path"), large, image))
+                            image_map_large.paste(large_im, box)
+                            count += 1
+                    else:
+                        offset = count
+                        image_list.append(image)
+                        count += 1
                 values["modifier"] = modifier
-                values["size"] = large
-                lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {\n\tlist-style-image:"""
-                             """url("chrome://%(chrome_name)s/skin/%(size)s/"""
-                             """%(image)s") !important;\n}""" % values)
-                values["size"] = small
-                lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
+                if self._settings.get("merge_images"):
+                    values["size"] = large
+                    values["top"] = 0
+                    values.update({"left": offset * int(large), "bottom": large, "right": (offset + 1) * int(large)})
+                    lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {"""
+                                 """\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
+                                 """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
+                    values.update({"left": offset * int(small), "bottom": small, "right": (offset + 1) * int(small)})
+                    values["size"] = small
+                    lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\t"""
+                                 """list-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
+                                 """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
+                else:
+                    values["image"] = image
+                    values["size"] = large
+                    lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {\n\tlist-style-image:"""
+                                 """url("chrome://%(chrome_name)s/skin/%(size)s/"""
+                                 """%(image)s") !important;\n}""" % values)
+                    values["size"] = small
+                    lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
+        if self._settings.get("merge_images"):
+            small_io = io.BytesIO()
+            image_map_small.save(small_io, "png")
+            image_datas[os.path.join("skin", small, "button.png")] = small_io.getvalue()
+            small_io.close()
+            large_io = io.BytesIO()
+            image_map_large.save(large_io, "png")
+            image_datas[os.path.join("skin", large, "button.png")] = large_io.getvalue()
+            large_io.close()
         for item in set(self._button_style.values()):
             lines.append(item)
         return "\n".join(lines), image_list, image_datas

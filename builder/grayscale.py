@@ -2,7 +2,7 @@ try:
     import png
 except ImportError:
     print "pypng module has not been installed"
-import StringIO
+import io
 import itertools
 import tempfile
 import os
@@ -12,9 +12,9 @@ def image_to_graysacle(file_name, drop_opacity=0.9):
     temp_path = os.path.join(tempfile.gettempdir(),
             "grayscale.%s.png" % hashlib.md5(file_name + str(drop_opacity)).hexdigest())
     if os.path.exists(temp_path):
-        with open(temp_path, "r") as fp:
-            return fp.read()
-    output = StringIO.StringIO()
+        fp = open(temp_path, "r")
+        return fp.read(), fp
+    output = io.BytesIO()
     try:
         image = png.Reader(filename=file_name)
     except IOError:
@@ -29,10 +29,10 @@ def image_to_graysacle(file_name, drop_opacity=0.9):
     out_image = png.Writer(**info)
     out_image.write_packed(output, gray_data(color_data, info, drop_opacity))
     data = output.getvalue()
-    output.close()
-    #with open(temp_path, "w") as fp:
-    #    fp.write(data)
-    return data
+    output
+    with open(temp_path, "w") as fp:
+        fp.write(data)
+    return data, output
 
 def gray_data(color_data, info, drop_opacity=0.9):
     data = []

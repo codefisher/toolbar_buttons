@@ -4,7 +4,7 @@ clipboardLink: {
 		var trans = toolbar_buttons.interfaces.Transferable();
 		trans.addDataFlavor("text/unicode");
 		clip.getData(trans, clip.kGlobalClipboard);
-		var str = new Object, strLength = new Object;
+		var str = {}, strLength = {};
 		trans.getTransferData("text/unicode", str, strLength);
 		if (str) {
 			var str = str.value.QueryInterface(Ci.nsISupportsString);
