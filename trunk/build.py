@@ -13,7 +13,7 @@ except ImportError:
     sys.exit(1)
 
 def main():
-    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:", ["help"])
+    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:s:m:", ["help"])
     opts_table = dict(opts)
     if "--help" in opts_table:
         print textwrap.dedent("""
@@ -24,6 +24,9 @@ def main():
             -l    - a locale to include
             -o    - the folder to put the created extension in
             -f    - the file name for the created extension
+            -s    - the sizes to use for the icons, but be two numbers separated
+                        by a hyphen.
+            -m    - merge all images into single large image, either y or n
         """).strip()
         return
     config = dict(settings.config)
@@ -34,6 +37,10 @@ def main():
         config["output_folder"] = opts_table["-o"]
     if "-f" in opts_table:
         config["output_file"] = opts_table["-f"]
+    if "-s" in opts_table:
+        config["icon_size"] = tuple(opts_table["-s"].split('-'))
+    if "-m" in opts_table:
+        config["merge_images"] = opts_table["-m"].lower() == "y"
     start = time.time()
     if config.get("debug", False):
         import cProfile

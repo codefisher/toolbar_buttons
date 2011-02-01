@@ -3,4 +3,4 @@
 	id="link-open"
 	label="&link-open.label;"
 	tooltiptext="&link-open.tooltip;"
-	onclick="toolbar_buttons.setHowLinksOpen();" />
+	oncommand="toolbar_buttons.setHowLinksOpen();" />

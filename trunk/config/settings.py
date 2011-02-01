@@ -5,7 +5,7 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0b2",
+    "version": "1.0",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "http://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -15,6 +15,8 @@ config = {
     "debug": False,
     # if true buttons in the staging folder are also added
     "use_staging": False,
+    # all the image files are put into a bit map if enabled
+    "merge_images": True,
     # should a page be shown when the extension is installed
     "show_updated_prompt": True,
     "version_url": "http://codefisher.org/toolbar_button/version/",
@@ -23,7 +25,9 @@ config = {
     # list of values, or the special value "all"
     "buttons": "all",
     "applications": "all",
-    "locale": "all",
+    # this setting may include locals to skip even if we we have them
+    # simply specify "all" the a "-" in front of locals to remove
+    "locale": "all,-ar,-zh-TW,-tr-TR,-da,-cs-CZ",
 
     # these settings change the internals of the extension
     "pref_root": "extension.tbutton.",

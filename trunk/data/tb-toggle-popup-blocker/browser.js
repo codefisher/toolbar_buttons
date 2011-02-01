@@ -14,4 +14,11 @@ togglePopUp: function() {
 	button.setAttribute("activated", !blockPopUp);
 }
 
+viewPopupExceptions: function(event) {
+	if(event.button == 1) {
+		toolbar_buttons.openPermissions("popup",
+				"popuppermissionstitle", "popuppermissionstext");
+	}
+}
+
 toolbar_buttons.loadPrefWatcher("{{pref_root}}block.popups", "tb-toggle-popup-blocker");

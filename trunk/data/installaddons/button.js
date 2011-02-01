@@ -1,7 +1,7 @@
 installAddons: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
-	var title = stringBundle.GetStringFromName("installaddons");	
+	var title = stringBundle.GetStringFromName("installaddons");
 	var fp = toolbar_buttons.interfaces.FilePicker();
 	fp.init(window, title, fp.modeOpen);
 	fp.appendFilter(stringBundle
@@ -25,8 +25,15 @@ installAddons: function() {
 			xpi[decodeURIComponent(url.fileBaseName)] = url.spec;
 			InstallTrigger.install(xpi);
 		} else if (fileType == "jar") {
-			InstallTrigger.installChrome(InstallTrigger.SKIN, url.spec, 
+			InstallTrigger.installChrome(InstallTrigger.SKIN, url.spec,
 					decodeURIComponent(url.fileBaseName));
 		}
+	}
+}
+
+viewAddonsExceptions: function(event) {
+	if(event.button == 1) {
+		toolbar_buttons.openPermissions("install",
+				"addons_permissions_title", "addonspermissionstext");
 	}
 }

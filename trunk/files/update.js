@@ -1,8 +1,8 @@
 if(!this.load_toolbar_button) {
 	var load_toolbar_button = {
 		start: function() {
-			var test_ids = ["status-bar", ];
-			for (var i = 0; i < test_ids.length; i++) {
+			var test_ids = ["status-bar"], i;
+			for (i = 0; i < test_ids.length; i++) {
 				if (!document.getElementById(test_ids[i])) {
 					setTimeout(load_toolbar_button.start, 100);
 					return;
