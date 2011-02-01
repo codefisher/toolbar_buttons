@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="toggle-toolbar"
+	label="&toggle-toolbar.label;"
+	tooltiptext="&toggle-toolbar.tooltip;"
+	oncommand="toolbar_buttons.toggleToolbar(event, 'mail-bar3');" />

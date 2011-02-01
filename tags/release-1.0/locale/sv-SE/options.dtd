@@ -1,0 +1,23 @@
+<!ENTITY options.window.title "Inställningar för Toolbar Buttons">
+<!ENTITY favorite-page.description "Används för &quot;Favoritsida&quot;-knappen.  Ungefär som en andra startsida">
+<!ENTITY toggle.prox.label "Växla proxy">
+<!ENTITY toggle.proxy.description "&quot;Växla proxy&quot;-knappen kan växla mellan läget &quot;av&quot; och ett av alternativen nedan.">
+<!ENTITY restart.checkbox "Fråga inte innan omstart.">
+<!ENTITY previous-next.label "Föregående &amp; Nästa">
+<!ENTITY toggle.checkbox "Uppdatera sidan efter växling av funktion/inställning.">
+<!ENTITY restart.label "Starta om">
+<!ENTITY read.select.button "Markera">
+<!ENTITY readnews.path.desc "Sökvägen till din diskussionsgruppsklient, använd om knappen inte fungerar.">
+<!ENTITY toggle.proxy.auto.detect "Identifiera proxyinställningar automatiskt">
+<!ENTITY toggle.proxy.auto.configuration "Automatisk konfiguration av proxy (PAC)">
+<!ENTITY readmail.path.desc "Sökvägen till ditt e-postprogram, använd om knappen inte fungerar.">
+<!ENTITY toggle.proxy.manual "Manuell proxykonfiguration">
+<!ENTITY favorite-page.label "Favoritsida">
+<!ENTITY toggle.proxy.system "Använd datorns proxyinställningar">
+<!ENTITY translate.label "Översätt">
+<!ENTITY translate.description "Välj vilket språk du vill att översättningsknappen skall använda.  Knappen använder Googles översättningstjänst">
+<!ENTITY previous-next.checkbox "Byt riktning på Föregående- och Nästa-knapparna.">
+<!ENTITY readmail.path.caption "Sökväg till e-postprogram">
+<!ENTITY toggle.label "Växlingsknappar">
+<!ENTITY translate.not-in-use "Knappen används inte. Lägg till den i verktygsfältet och starta om.">
+<!ENTITY readnews.path.caption "Sökväg till diskussionsgruppsklient">

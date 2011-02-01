@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 firefoxButton"
+	id="bookmark-tabs"
+	label="&bookmark-tabs.label;"
+	tooltiptext="&bookmark-tabs.tooltip;"
+	command="Browser:BookmarkAllTabs" />

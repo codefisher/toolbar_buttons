@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="installaddons"
+	label="&installaddons.label;"
+	tooltiptext="&installaddons.tooltip;"
+	onclick="toolbar_buttons.viewAddonsExceptions(event);"
+	oncommand="toolbar_buttons.installAddons()"/>

@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="toggle-styles"
+	label="&toggle-styles.label;"
+	tooltiptext="&toggle-styles.tooltip;"
+	observes="isImage"
+	onclick="toolbar_buttons.disableStyle();" />

@@ -1,0 +1,9 @@
+<!ENTITY options.window.title "Nastavení Toolbar Buttons">
+<!ENTITY favorite-page.description "Adresa stránky pro tlačítko &apos;Oblíbené&apos;">
+<!ENTITY restart.checkbox "Neptat se před restartem">
+<!ENTITY previous-next.label "Předchozí a Další">
+<!ENTITY restart.label "Restartovat aplikaci">
+<!ENTITY favorite-page.label "Oblíbené">
+<!ENTITY translate.label "Přeložit">
+<!ENTITY translate.description "Vyberte jazyk, do kterého má tlačítko Překlad přkládat. Aplikace používá překladové služby Google Translation Service">
+<!ENTITY previous-next.checkbox "Změnený význam tlačítek Předchozí a Další.">

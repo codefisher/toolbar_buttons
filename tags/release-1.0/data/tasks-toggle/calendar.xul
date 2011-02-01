@@ -1,0 +1,8 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	type="checkbox"
+	persist="checked"
+	id="tasks-toggle"
+	label="&tasks-toggle.label;"
+	tooltiptext="&tasks-toggle.tooltip;"
+	oncommand="toolbar_buttons.toggleTasks(event);" />

@@ -1,0 +1,346 @@
+<!ENTITY about-application.label "Περί">
+<!ENTITY about-application.tooltip "Περί &brandShortName;">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Εμφάνιση πληροφοριών για τη λανθάνουσα μνήμη του περιηγητή">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Άνοιγμα του about:config">
+<!ENTITY about-disk-cache.label "about:cache δίσκου">
+<!ENTITY about-disk-cache.tooltip "Άνοιγμα του about:cache για προβολή του περιεχομένου της λανθάνουσας δίσκου">
+<!ENTITY about-mem-cache.label "about:cache μνήμης">
+<!ENTITY about-mem-cache.tooltip "Άνοιγμα του about:cache για προβολή των περιεχομένων της λανθάνουσας μνήμης">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Εμφάνιση εγκατεστημένων πρόσθετων λειτουργιών">
+<!ENTITY accountmanager.label "Ρυθμίσεις λογαριασμού">
+<!ENTITY accountmanager.tooltip "Άνοιγμα ρυθμίσεων λογαριασμού">
+<!ENTITY accountwizard.label "Δημιουργία λογαριασμού">
+<!ENTITY accountwizard.tooltip "Φόρτωση βοηθού δημιουργίας νέου λογαριασμού">
+<!ENTITY add-address.label "Προσθήκη διεύθυνσης">
+<!ENTITY add-address.tooltip "Προσθήκη διεύθυνσης αλληλογραφίας στο ευρετήριο">
+<!ENTITY addons.label "Πρόσθετα">
+<!ENTITY addons.tooltip "Άνοιγμα του διαχειριστή πρόσθετων">
+<!ENTITY all-threads.label "Όλα τα νήματα">
+<!ENTITY all-threads.tooltip "Προβολή όλων των νημάτων">
+<!ENTITY attachments-delete.label "Διαγραφή συνημμένων">
+<!ENTITY attachments-delete.tooltip "Διαγραφή όλων των συνημμένων του μηνύματος">
+<!ENTITY attachments-detach.label "Αποκόλληση συνημμένων">
+<!ENTITY attachments-detach.tooltip "Αποκόλληση όλων των συνημμένων του μηνύματος">
+<!ENTITY attachments-save.label "Αποθήκευση συνημμένων">
+<!ENTITY attachments-save.tooltip "Αποθήκευση όλων των συνημμένων του μηνύματος">
+<!ENTITY bookmark-manager.label "Οργάνωση σελιδοδεικτών">
+<!ENTITY bookmark-manager.tooltip "Άνοιγμα της βιβλιοθήκης οργάνωσης σελιδοδεικτών">
+<!ENTITY bookmark-nopop.label "Γρήγορος σελιδοδείκτης">
+<!ENTITY bookmark-nopop.tooltip "Προσθήκη σελιδοδείκτη χωρίς διαλόγους">
+<!ENTITY bookmark-tabs.label "Προσθήκη σελιδοδείκτη για όλα">
+<!ENTITY bookmark-tabs.tooltip "Προσθήκη σελιδοδεικτών για όλες τις ανοιχτές καρτέλες">
+<!ENTITY bookmark-toolbar.label "Εργαλειοθήκη σελιδοδεικτών">
+<!ENTITY bookmark-toolbar.tooltip "Εναλλαγή προβολής της εργαλειοθήκης σελιδοδεικτών">
+<!ENTITY bookmark.label "Προσθήκη σελιδοδείκτη">
+<!ENTITY bookmark.tooltip "Προσθήκη της τρέχουσας σελίδας στους σελιδοδείκτες">
+<!ENTITY bookmarks-menu-button.label "Μενού σελιδοδεικτών">
+<!ENTITY bookmarks-menu-button.tooltip "Προβολή του μενού σελιδοδεικτών">
+<!ENTITY bottom-page.label "Τέλος">
+<!ENTITY bottom-page.tooltip "Μετάβαση στο τέλος της σελίδας">
+<!ENTITY change-text-direction.label "Αλλαγή κατεύθυνσης κειμένου">
+<!ENTITY change-text-direction.tooltip "Αλλαγή της κατεύθυνσης του κειμένου από αριστερά προς δεξιά σε δεξιά προς αριστερά">
+<!ENTITY check-for-update.label "Ενημέρωση">
+<!ENTITY check-for-update.tooltip "Έλεγχος για ενημερώσεις">
+<!ENTITY clear-data.label "Εκκαθάριση δεδομένων">
+<!ENTITY clear-data.tooltip "Άνοιγμα του διαλόγου εκκαθάρισης πρόσφατου ιστορικού">
+<!ENTITY clear-url.label "Απόκρυψη Url">
+<!ENTITY clear-url.tooltip "Απόκρυψη του κειμένου της εργαλειοθήκης διευθύνσεων">
+<!ENTITY clipboard.label "Δεσμός από το πρόχειρο">
+<!ENTITY clipboard.menuitem "Άνοιγμα δεσμού απ' το πρόχειρο">
+<!ENTITY clipboard.newtab "Άνοιγμα δεσμού από το πρόχειρο σε νέα καρτέλα">
+<!ENTITY clipboard.newwindow "Σε νέο παράθυρο">
+<!ENTITY clipboard.tooltip "Λήψη δεσμού από το πρόχειρο και άνοιγμα του">
+<!ENTITY close-all-tabs.label "Κλείσιμο όλων">
+<!ENTITY close-all-tabs.tooltip "Κλείσιμο όλων των καρτελών">
+<!ENTITY close-other-tabs.label "Κλείσιμο των άλλων καρτελών">
+<!ENTITY close-other-tabs.tooltip "Κλείσιμο των υπόλοιπων καρτελών εκτός της τρέχουσας επιλεγμένης">
+<!ENTITY close-tab.label "Κλείσιμο καρτέλας">
+<!ENTITY close-tab.tooltip "Κλείσιμο ανοιχτής καρτέλας ή παραθύρου">
+<!ENTITY compact.label "Σύμπτυξη">
+<!ENTITY compact.tooltip "Σύμπτυξη φακέλου">
+<!ENTITY copy-address.label "Αντιγραφή διεύθυνσης">
+<!ENTITY copy-address.tooltip "Αντιγραφή διεύθυνσης αλληλογραφίας στο πρόχειρο">
+<!ENTITY create-filter.label "Δημιουργία φίλτρου">
+<!ENTITY create-filter.tooltip "Δημιουργία φίλτρου από το μήνυμα">
+<!ENTITY customize-toolbar.label "Προσαρμογή εργαλειοθήκης">
+<!ENTITY customize-toolbar.tooltip "Προσαρμογή εργαλειοθήκης, αφαίρεση ή πρόσθεση κουμπιών κλπ.">
+<!ENTITY delete-event.label "Delete Events">
+<!ENTITY delete-event.tooltip "Delete Selected Events">
+<!ENTITY delete-junk.label "διαγραφή ανεπιθύμητων">
+<!ENTITY delete-junk.tooltip "Διαγραφή ανεπιθύμητης αλληλογραφίας">
+<!ENTITY delete-tasks.label "Delete Tasks">
+<!ENTITY delete-tasks.tooltip "Delete Selected Tasks">
+<!ENTITY delete.label "Διαγραφή">
+<!ENTITY delete.tooltip "Διαγραφή επιλεγμένου κειμένου">
+<!ENTITY dictionary-list.label "Αλλαγή λεξικού">
+<!ENTITY dictionary-list.tooltip "Γρήγορη αλλαγή τρέχοντος λεξικού">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Άνοιγμα του eBay">
+<!ENTITY edit-as-new.label "Τροποποίηση ως νέο">
+<!ENTITY edit-as-new.tooltip "Επεξεργασία μηνύματος ως νέο">
+<!ENTITY edit-draft.label "Επεξεργασία πρόχειρου">
+<!ENTITY edit-draft.tooltip "Επεξεργασία πρόχειρου μηνύματος">
+<!ENTITY empty-trash.label "Άδειασμα κάδου">
+<!ENTITY empty-trash.tooltip "Άδειασμα του κάδου">
+<!ENTITY enlarge.label "Μεγέθυνση">
+<!ENTITY enlarge.tooltip "Μεγέθυνση κειμένου">
+<!ENTITY exit.label "Έξοδος">
+<!ENTITY exit.tooltip "Έξοδος από την εφαρμογή">
+<!ENTITY extensions.label "Επεκτάσεις">
+<!ENTITY extensions.tooltip "Άνοιγμα του διαχειριστή επεκτάσεων">
+<!ENTITY favorite-page.label "Προτιμώμενη σελίδα">
+<!ENTITY favorite-page.tooltip "Άνοιγμα προτιμώμενης σελίδας">
+<!ENTITY find-again.label "Εύρεση ξανά">
+<!ENTITY find-again.tooltip "Εύρεση επόμενου">
+<!ENTITY find-prev.label "Εύρεση προηγούμενου">
+<!ENTITY find-prev.tooltip "Εύρεση προηγούμενου ταιριάσματος">
+<!ENTITY find.label "Αναζήτηση">
+<!ENTITY find.tooltip "Εύρεση κειμένου">
+<!ENTITY firefox-extension.label "Λήψη επεκτάσεων">
+<!ENTITY firefox-extension.tooltip "Κάντε λήψη περισσότερων επεκτάσεων για τον Firefox">
+<!ENTITY firefox-theme.label "Λήψη θεμάτων">
+<!ENTITY firefox-theme.tooltip "Κάντε λήψη περισσότερων θεμάτων για τον Firefox">
+<!ENTITY forward-as-attachment.label "Προώθηση ως συνημμένου">
+<!ENTITY forward-as-attachment.tooltip "Προώθηση μηνύματος ως συνημμένο">
+<!ENTITY forward-as-inline.label "Προώθηση στο μήνυμα">
+<!ENTITY forward-as-inline.tooltip "Προώθηση του μηνύματος ως τμήμα μηνύματος">
+<!ENTITY full-screen.label "Πλήρης οθόνη">
+<!ENTITY full-screen.tooltip "Εναλλαγή σε κατάσταση λειτουργίας πλήρους οθόνης">
+<!ENTITY get-inbox.label "Λήψη εισερχομένων">
+<!ENTITY get-inbox.tooltip "Αλλαγή εστίασης φακέλου στα εισερχόμενα">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Άνοιγμα του Gmail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Φόρτωση της αρχικής σελίδας Google">
+<!ENTITY help.label "Βοήθεια">
+<!ENTITY help.tooltip "Άνοιγμα της βοήθειας">
+<!ENTITY hide-images.label "Απόκρυψη εικόνων">
+<!ENTITY hide-images.tooltip "Απόκρυψη όλων των εικόνων, ακόμα και του παρασκηνίου της τρέχουσας σελίδας">
+<!ENTITY home-page-change.add-current "Προσθήκη τρέχουσας σελίδας">
+<!ENTITY home-page-change.current "Ορισμός τρέχουσας σελίδας">
+<!ENTITY home-page-change.label "Αλλαγή αρχικής σελίδας">
+<!ENTITY home-page-change.multiple "Ορισμός πολλαπλών δεσμών για αρχική σελίδα">
+<!ENTITY home-page-change.tooltip "Αλλαγή της αρχικής σας σελίδας">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Άνοιγμα του Hotmail">
+<!ENTITY html-mode.label "Προβολή HTML">
+<!ENTITY html-mode.tooltip "Ορισμός μορφοποίησης μηνυμάτων με HTML ή απλό κείμενο">
+<!ENTITY ignored-threads.label "Αγνοημένα νήματα">
+<!ENTITY ignored-threads.tooltip "Προβολή αγνοημένων νημάτων">
+<!ENTITY image-toggle.label "Εναλλαγή εικόνων">
+<!ENTITY image-toggle.tooltip "Ενεργοποίηση/απενεργοποίηση φόρτωσης εικόνων">
+<!ENTITY import.label "Εισαγωγή">
+<!ENTITY import.tooltip "Εισαγωγή ρυθμίσεων και δεδομένων">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY installaddons.label "Εγκατάσταση">
+<!ENTITY installaddons.tooltip "Εγκατάσταση επέκτασης ή θέματος">
+<!ENTITY java-toggle.label "Εναλλαγή Java">
+<!ENTITY java-toggle.tooltip "Ενεργοποίηση/απενεργοποίηση της Java">
+<!ENTITY javaScriptConsole.label "Κονσόλα">
+<!ENTITY javaScriptConsole.tooltip "Άνοιγμα της κονσόλας σφαλμάτων">
+<!ENTITY javascript-toggle.label "Εναλλαγή JavaScript">
+<!ENTITY javascript-toggle.tooltip "Ενεργοποίηση/απενεργοποίηση της JavaScript">
+<!ENTITY label-all-blank.label "Αφαίρεση τίτλων">
+<!ENTITY label-all-blank.tooltip "Αφαίρεσή των τίτλων όλων των καρτελών">
+<!ENTITY label-blank.label "Αφαίρεση τίτλου">
+<!ENTITY label-blank.tooltip "Αφαίρεση του τίτλου της τρέχουσας καρτέλας">
+<!ENTITY link-open.label "Ρύθμιση ανοίγματος δεσμών">
+<!ENTITY link-open.tooltip "Ορισμός του πως θα ανοίγουν οι δεσμοί">
+<!ENTITY min-font-size.label "ελάχιστο μέγεθος γραμματοσειράς">
+<!ENTITY min-font-size.tooltip "Εναλλαγή του ελάχιστου μεγέθους γραμματοσειράς">
+<!ENTITY minimize-window.label "Ελαχιστοποίηση">
+<!ENTITY minimize-window.tooltip "Ελαχιστοποίηση του τρέχοντος παραθύρου">
+<!ENTITY msg-filter.label "Φίλτρα">
+<!ENTITY msg-filter.tooltip "Ορισμός φίλτρων μηνυμάτων">
+<!ENTITY msg-pane.label "Ταμπλό μηνυμάτων">
+<!ENTITY msg-pane.tooltip "Εναλλαγή του ταμπλό μηνυμάτων">
+<!ENTITY new-message.label "Νέο μήνυμα">
+<!ENTITY new-message.tooltip "Σύνταξη νέου μηνύματος ηλεκτρονικής αλληλογραφίας">
+<!ENTITY next-tab.label "Επόμενη καρτέλα">
+<!ENTITY next-tab.tooltip "Μετάβαση στην επόμενη καρτέλα">
+<!ENTITY open-current-frame.label "Προβολή τρέχοντος πλαισίου">
+<!ENTITY open-current-frame.tooltip "Προβολή μόνο του τρέχοντος επιλεγμένου πλαισίου">
+<!ENTITY open.label "Άνοιγμα">
+<!ENTITY open.tooltip "Άνοιγμα αρχείου">
+<!ENTITY page-source.label "Πηγαίος κώδικας">
+<!ENTITY page-source.tooltip "Προβολή πηγαίου κώδικα">
+<!ENTITY pageinfo.label "Πληροφορίες σελίδας">
+<!ENTITY pageinfo.tooltip "Άνοιγμα του διαλόγου πληροφοριών σελίδας">
+<!ENTITY pagesetup.label "Διαμόρφωση σελίδας">
+<!ENTITY pagesetup.tooltip "Διαμόρφωση σελίδας για εκτύπωση">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Άνοιγμα του PayPal">
+<!ENTITY personal-bookmarks-menu-button.label "Μενού εργαλειοθήκης σελιδοδεικτών">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Προβολή του μενού εργαλειοθήκης σελιδοδεικτών">
+<!ENTITY plainpaste.label "Επικόλληση ως απλό κείμενο">
+<!ENTITY plainpaste.tooltip "Επικόλληση κειμένου χωρίς μορφοποίηση">
+<!ENTITY preferences.label "Επιλογές">
+<!ENTITY preferences.tooltip "Άνοιγμα επιλογών">
+<!ENTITY previous-tab.label "Προηγούμενη καρτέλα">
+<!ENTITY previous-tab.tooltip "Μετάβαση στην προηγούμενη καρτέλα">
+<!ENTITY print-preview.label "Προεπισκόπηση εκτύπωσης">
+<!ENTITY print-preview.tooltip "Άνοιγμα προεπισκόπησης εκτύπωσης">
+<!ENTITY profile-folder.label "Προφίλ">
+<!ENTITY profile-folder.tooltip "Προβολή του καταλόγου προφίλ">
+<!ENTITY purge.label "Σύμπτυξη">
+<!ENTITY purge.tooltip "Σύμπτυξη φακέλου και διαγραφή ανεπιθύμητης αλληλογραφίας">
+<!ENTITY read-mail.label "Ανάγνωση ηλεκτρονικής αλληλογραφίας">
+<!ENTITY read-mail.tooltip "Άνοιγμα εφαρμογής για την ανάγνωση ηλεκτρονικής αλληλογραφίας">
+<!ENTITY read-message.label "Ανάγνωση">
+<!ENTITY read-message.tooltip "Ανάγνωση μηνύματος">
+<!ENTITY read-news.label "Ανάγνωση ειδήσεων">
+<!ENTITY read-news.tooltip "Άνοιγμα εφαρμογής για ανάγνωση ειδήσεων">
+<!ENTITY realNextMessage.label "Επόμενο μήνυμα">
+<!ENTITY realNextMessage.tooltip "Λήψη πραγματικού νέου μηνύματος">
+<!ENTITY realPreviousMessage.label "Προηγούμενο μήνυμα">
+<!ENTITY realPreviousMessage.tooltip "Λήψη πραγματικού νέου μηνύματος">
+<!ENTITY redo.label "Ακύρωση αναίρεσης">
+<!ENTITY redo.tooltip "Επανάληψη τελευταίας αλλαγής">
+<!ENTITY reduce.label "Σμίκρυνση">
+<!ENTITY reduce.tooltip "Σμίκρυνση κειμένου">
+<!ENTITY reload-all-tabs.label "Ανανέωση καρτελών">
+<!ENTITY reload-all-tabs.tooltip "Ανανέωση όλων των ανοιχτών καρτελών">
+<!ENTITY reload-proxy.label "Ανανέωση διαμεσολαβητή">
+<!ENTITY reload-proxy.tooltip "Ανανέωση διαμεσολαβητή">
+<!ENTITY reload-skip-cache.label "Ανανέωση χωρίς λανθάνουσα">
+<!ENTITY reload-skip-cache.tooltip "Ανανέωση σελίδας χωρίς χρήση αποθηκευμένου περιεχόμενου από τη λανθάνουσα του περιηγητή">
+<!ENTITY rename-tab.label "Μετονομασία καρτέλας">
+<!ENTITY rename-tab.tooltip "Μετονομασία της τρέχουσας επιλεγμένης καρτέλας">
+<!ENTITY reply-sender.label "Απάντηση μόνο στον αποστολέα">
+<!ENTITY reply-sender.tooltip "Απάντηση μόνο στον συντάκτη του μηνύματος">
+<!ENTITY reset.label "Επαναφορά">
+<!ENTITY reset.tooltip "Επαναφορά μεγέθους κειμένου">
+<!ENTITY restart-app.label "Επανεκκίνηση">
+<!ENTITY restart-app.tooltip "Επανεκκίνηση της εφαρμογής">
+<!ENTITY return-receipt.label "Βεβαιώσεις ανάγνωσης">
+<!ENTITY return-receipt.tooltip "Εναλλαγή ρύθμισης για βεβαιώσεις ανάγνωσης (ενεργό/ανενεργό)">
+<!ENTITY save-frame.label "Αποθήκευση πλαισίου">
+<!ENTITY save-frame.tooltip "Αποθήκευση πλαισίου εγγράφου">
+<!ENTITY saveas.label "Αποθήκευση">
+<!ENTITY saveas.tooltip "Αποθήκευση εγγράφου ως...">
+<!ENTITY search-addresses.label "Εύρεση διευθύνσεων">
+<!ENTITY search-addresses.tooltip "άνοιγμα της εύρεσης για διευθύνσεις">
+<!ENTITY search-messages.label "Αναζήτηση για μηνύματα">
+<!ENTITY search-messages.tooltip "άνοιγμα της αναζήτησης για μηνύματα">
+<!ENTITY select-all.label "Επιλογή όλων">
+<!ENTITY select-all.tooltip "Επιλογή όλου του κειμένου">
+<!ENTITY send-link.label "Αποστολή δεσμού">
+<!ENTITY send-link.tooltip "Αποστολή δεσμού από σελίδα σε διεύθυνση ηλεκτρονικού ταχυδρομείου">
+<!ENTITY send-receive.label "Λήψη &amp; αποστολή">
+<!ENTITY send-receive.tooltip "Αποστολή και λήψη μηνυμάτων">
+<!ENTITY send-with-no-save.label "Αποστολή χωρίς αποθήκευση">
+<!ENTITY send-with-no-save.tooltip "Αποστολή του μηνύματος χωρίς αποθήκευση αντιγράφου">
+<!ENTITY shift-delete.label "Παράκαμψη κάδου">
+<!ENTITY shift-delete.tooltip "Άμεση διαγραφή του μηνύματος παρακάμπτοντας τον κάδο">
+<!ENTITY show-frame.label "Προβολή πλαισίου">
+<!ENTITY show-frame.tooltip "Προβολή μόνο του τρέχοντος πλαισίου">
+<!ENTITY snap-back.label "Επιστροφή στην αρχή">
+<!ENTITY snap-back.tooltip "Επιστροφή στην πρώτη σελίδα που ανοίχτηκε στην καρτέλα">
+<!ENTITY statusbar-toggle.label "Γραμμή κατάστασης">
+<!ENTITY statusbar-toggle.tooltip "Εναλλαγή γραμμής κατάστασης">
+<!ENTITY stop-all.label "Διακοπή όλων">
+<!ENTITY stop-all.tooltip "Διακοπή φόρτωσης όλων των καρτελών">
+<!ENTITY stop-animation.label "Εναλλαγή εφέ κίνησης">
+<!ENTITY stop-animation.tooltip "Διακοπή εφέ κίνησης σε GIF's, οδηγίες hmtl Blink και Marquee">
+<!ENTITY stop-cookies.label "Εναλλαγή Cookies">
+<!ENTITY stop-cookies.tooltip "Απαγόρευση αποθήκευσης Cookies">
+<!ENTITY stop-dinamic-content.label "Εναλλαγή ενσωματωμένου περιεχόμενου">
+<!ENTITY stop-dinamic-content.tooltip "Διακοπή/συνέχιση φόρτωσης ενσωματωμένου περιεχόμενου">
+<!ENTITY stop-flash.label "Εναλλαγή Flash">
+<!ENTITY stop-flash.tooltip "Απενεργοποίηση του Flash">
+<!ENTITY stop-iframe.label "Εναλλαγή iframes (μπλοκάρει μερικές διαφημίσεις)">
+<!ENTITY stop-iframe.tooltip "Διακοπή/συνέχιση φόρτωσης των iframes (και των διαφημίσεων που συνήθως περιέχουν)">
+<!ENTITY stop-movies.label "Εναλλαγή βίντεο">
+<!ENTITY stop-movies.tooltip "Διακοπή/συνέχεια φόρτωσης βίντεο">
+<!ENTITY tab-list.label "Λίστα καρτελών">
+<!ENTITY tab-list.tooltip "Προβολή λίστας καρτελών">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">
+<!ENTITY tasks-toggle.label "Toggle Tasks">
+<!ENTITY tasks-toggle.tooltip "Toggle the task bar">
+<!ENTITY tb-clear-search.label "Εκκαθάριση αναζήτησης">
+<!ENTITY tb-clear-search.tooltip "Εκκαθάριση περιεχομένου και εστίαση στην εργαλειοθήκη αναζήτησης">
+<!ENTITY tb-clear-url.label "Εκκαθάριση Url">
+<!ENTITY tb-clear-url.tooltip "Εκκαθάριση της εργαλειοθήκης διευθύνσεων και μεταφορά εστίασης εκεί">
+<!ENTITY tb-edit-menu.label "Μενού επεξεργασίας">
+<!ENTITY tb-edit-menu.tooltip "Προβολή του μενού επεξεργασίας">
+<!ENTITY tb-file-menu.label "Μενού αρχείου">
+<!ENTITY tb-file-menu.tooltip "Προβολή του μενού αρχείου">
+<!ENTITY tb-new-event.label "Νέο γεγονός">
+<!ENTITY tb-new-event.tooltip "Προσθήκη νέου γεγονότος στο ημερολόγιο.">
+<!ENTITY tb-new-task.label "Νέα εργασία">
+<!ENTITY tb-new-task.tooltip "Προσθήκη νέας εργασίας στο ημερολόγιο.">
+<!ENTITY tb-search-minus.label "Μείωση μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-minus.tooltip "Μειώνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
+<!ENTITY tb-search-plus.label "Αύξηση μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-plus.tooltip "Αυξάνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
+<!ENTITY tb-search-resize.label "Αλλαγή μεγέθους εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-search-resize.tooltip "Αλλάζει το μέγεθος της εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-toggle-menu-bar.label "Εναλλαγή εργαλειοθήκης μενού">
+<!ENTITY tb-toggle-menu-bar.tooltip "Εναλλαγή προβολής της εργαλειοθήκης μενού">
+<!ENTITY tb-toggle-popup-blocker.key "δ">
+<!ENTITY tb-toggle-popup-blocker.label "Φραγή αναδυόμενων">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Εναλλαγή φραγής αναδυόμενων">
+<!ENTITY tb-tools-menu.label "Μενού εργαλείων">
+<!ENTITY tb-tools-menu.tooltip "Προβολή του μενού εργαλείων">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Άνοιγμα της αρχικής σελίδας του Twitter">
+<!ENTITY tb-view-menu.label "Μενού εμφάνισης">
+<!ENTITY tb-view-menu.tooltip "Προβολή του μενού εμφάνισης">
+<!ENTITY themes.label "Θέματα">
+<!ENTITY themes.tooltip "Άνοιγμα του διαχειριστή θεμάτων">
+<!ENTITY thunderbird-extension.label "Λήψη επεκτάσεων">
+<!ENTITY thunderbird-extension.tooltip "Κάντε λήψη περισσότερων επεκτάσεων για τον Thunderbird">
+<!ENTITY thunderbird-theme.label "Λήψη θεμάτων">
+<!ENTITY thunderbird-theme.tooltip "Κάντε λήψη περισσότερων θεμάτων για τον Thunderbird">
+<!ENTITY tiny-url.copy.to.clipboard "Αντιγραφή στο πρόχειρο">
+<!ENTITY tiny-url.email "Αποστολή δεσμού με μήνυμα ηλ. ταχυδρομείου">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.link.use "Επιλογές δεσμού">
+<!ENTITY tiny-url.tooltip "Δημιουργία Tiny Url">
+<!ENTITY tiny-url.use.normal "Χρήση xrl.in">
+<!ENTITY tiny-url.use.preview "Χρήση preview.xrl.in">
+<!ENTITY tiny-url.visit "Μετάβαση στο Xrl.In">
+<!ENTITY toggle-proxy.label "Εναλλαγή διαμεσολαβητή">
+<!ENTITY toggle-proxy.tooltip "Εναλλαγή κατάστασης λειτουργίας διαμεσολαβητή (ενεργός/ανενεργός)">
+<!ENTITY toggle-read.label "Εναλλαγή αναγνωσμένου">
+<!ENTITY toggle-read.tooltip "Εναλλαγή κατάστασης αναγνωσμένου για το μήνυμα">
+<!ENTITY toggle-starred.label "Εναλλαγή με αστέρι">
+<!ENTITY toggle-starred.tooltip "Εναλλαγή κατάστασης μηνύματος με αστέρι">
+<!ENTITY toggle-styles.label "Εναλλαγή στυλ">
+<!ENTITY toggle-styles.tooltip "Προσθήκη/αφαίρεση φύλλων στυλ για τη σελίδα">
+<!ENTITY toggle-toolbar.label "Εναλλαγή εργαλειοθήκης">
+<!ENTITY toggle-toolbar.tooltip "Εναλλαγή προβολής εργαλειοθήκης μενού">
+<!ENTITY toolbar-menu.label "Εργαλειοθήκες">
+<!ENTITY toolbar-menu.tooltip "Προβολή/απόκρυψη εργαλειοθηκών">
+<!ENTITY top-page.label "Κορυφή">
+<!ENTITY top-page.tooltip "Μετάβαση στην κορυφή της σελίδας">
+<!ENTITY translate.label "Μετάφραση">
+<!ENTITY translate.tooltip "Μετάφραση της τρέχουσας σελίδας στην γλώσσα που έχετε ορίσει">
+<!ENTITY undo-close-tab.label "Αναίρεση κλεισίματος καρτέλας">
+<!ENTITY undo-close-tab.tooltip "Άνοιγμα ξανά της τελευταίας κλεισμένης καρτέλας">
+<!ENTITY undo.label "Αναίρεση">
+<!ENTITY undo.tooltip "Αναίρεση τελευταίας αλλαγής">
+<!ENTITY unread-threads.label "Μη αναγνωσμένα νήματα">
+<!ENTITY unread-threads.tooltip "Προβολή μη αναγνωσμένων νημάτων">
+<!ENTITY up-directory.label "Κατάλογος πάνω">
+<!ENTITY up-directory.tooltip "Μετάβαση ένα κατάλογο πάνω">
+<!ENTITY use-document-colors.label "Εναλλαγή χρωμάτων σελίδας">
+<!ENTITY use-document-colors.tooltip "Εναλλαγή μεταξύ των ορισμένων από τον χρήστη χρωμάτων και αυτών της σελίδας">
+<!ENTITY use-document-fonts.label "Εναλλαγή γραμματοσειράς σελίδας">
+<!ENTITY use-document-fonts.tooltip "Εναλλαγή μεταξύ της ορισμένης από τον χρήστη γραμματοσειράς και αυτής της σελίδας">
+<!ENTITY watched-with-unread-threads.label "Παρακολουθούμενα νήματα με μη αναγνωσμένα">
+<!ENTITY websearch.label "Αναζήτηση στον ιστό">
+<!ENTITY websearch.tooltip "Αναζήτηση στον ιστό με την αρχική μηχανή αναζήτησης που έχετε ορίσει">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Φόρτωση της αρχικής σελίδας Wikipedia">
+<!ENTITY with-unread-threads.label "Νήματα με μη αναγνωσμένα">
+<!ENTITY with-unread-threads.tooltip "Προβολή νημάτων με μη αναγνωσμένα μηνύματα">
+<!ENTITY workoffline.label "Εργασία χωρίς σύνδεση">
+<!ENTITY workoffline.tooltip "Εναλλαγή εργασίας χωρίς σύνδεση">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Άνοιγμα του Yahoo Mail">

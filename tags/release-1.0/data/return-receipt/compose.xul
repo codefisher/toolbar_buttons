@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="return-receipt"
+	label="&return-receipt.label;"
+	tooltiptext="&return-receipt.tooltip;"
+	observes="returnReceiptMenu" />

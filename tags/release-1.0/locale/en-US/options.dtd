@@ -1,0 +1,23 @@
+<!ENTITY options.window.title "Toolbar Buttons Options">
+<!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
+<!ENTITY toggle.prox.label "Toggle Proxy">
+<!ENTITY toggle.proxy.description "The proxy toggle button can toggle between proxy off and one of the below options.">
+<!ENTITY restart.checkbox "Don&apos;t prompt before restart.">
+<!ENTITY previous-next.label "Previous &amp; Next">
+<!ENTITY toggle.checkbox "Reload page after toggling setting.">
+<!ENTITY restart.label "Restart">
+<!ENTITY read.select.button "Select">
+<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
+<!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
+<!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
+<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
+<!ENTITY toggle.proxy.manual "Manual proxy configuration">
+<!ENTITY favorite-page.label "Favorite Page">
+<!ENTITY toggle.proxy.system "Use system proxy settings">
+<!ENTITY translate.label "Translate">
+<!ENTITY translate.description "Select what language you want the translate button to use.  The button uses the Google Translation Service">
+<!ENTITY previous-next.checkbox "Change Previous and Next button direction.">
+<!ENTITY readmail.path.caption "Mail Client Path">
+<!ENTITY toggle.label "Toggle Buttons">
+<!ENTITY translate.not-in-use "Button not in use. Add to toolbar and restart.">
+<!ENTITY readnews.path.caption "News Client Path">

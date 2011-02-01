@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="pagesetup"
+	label="&pagesetup.label;"
+	tooltiptext="&pagesetup.tooltip;"
+	command="cmd_pageSetup"/>

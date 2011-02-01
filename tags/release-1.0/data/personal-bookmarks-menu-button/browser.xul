@@ -1,0 +1,19 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="personal-bookmarks-menu-button"
+	label="&personal-bookmarks-menu-button.label;"
+	tooltiptext="&personal-bookmarks-menu-button.tooltip;"
+	oncommand="this.firstChild.openPopup(this, 'after_start');"
+	ondragenter="PlacesMenuDNDController.onBookmarksMenuDragEnter(event);"
+	ondrop="nsDragAndDrop.drop(event, BookmarksMenuDropHandler);"
+	ondragover="nsDragAndDrop.dragOver(event, BookmarksMenuDropHandler);"
+	ondragexit="nsDragAndDrop.dragExit(event, BookmarksMenuDropHandler);">
+	<menupopup id="bookmarksMenuPopupCustomPersonal"
+		type="places"
+		place="place:folder=TOOLBAR"
+		context="placesContext"
+		openInTabs="children"
+		oncommand="BookmarksEventHandler.onCommand(event);"
+		onclick="BookmarksEventHandler.onClick(event);"
+		onpopupshowing="try { BookmarksEventHandler.onPopupShowing(event); } catch(e) { if (!this.parentNode._placesView) new PlacesMenu(event, 'place:folder=BOOKMARKS_MENU'); }" />
+</toolbarbutton>

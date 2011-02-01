@@ -1,0 +1,59 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+
+/*
+* Silverlight identifiers.
+*/
+object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],
+object[type="application/ag-plugin"],
+object[source*=".xaml"],
+object[sourceelement*="xaml"],
+embed[type="application/ag-plugin"],
+embed[source*=".xaml"]
+{
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
+ border:1px solid #eee;
+}
+
+/*
+* Quick time movies
+*/
+object[type="video/quicktime"],
+object[source*=".mov"],
+object[sourceelement*="mov"],
+object[source*=".qt"],
+object[sourceelement*="qt"],
+object[src*="mov"],
+object[src*=".qt"],
+embed[type="video/quicktime"],
+embed[source*=".xaml"],
+embed[src*=".qt"],
+embed[src*=".xaml"],
+embed[source*=".qt"]
+{
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
+ min-height:50px;
+}
+
+/*
+* Window Media Player
+*/
+
+object[classid*="6BF52A52-394A-11d3-B153-00C04F79FAA6"],
+object[type="application/x-oleobject"],
+embed[type="application/x-oleobject"],
+object[codebase*="nsmp2inf.cab"]
+{
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
+ min-height:50px;
+}
+
+/*
+* MPEG
+*/
+
+object[type="video/mpeg"],
+embed[type="video/mpeg"]
+{
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
+ min-height:50px;
+}

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-clear-search"
+	label="&tb-clear-search.label;"
+	tooltiptext="&tb-clear-search.tooltip;"
+	oncommand="toolbar_buttons.clearBar('search');" />

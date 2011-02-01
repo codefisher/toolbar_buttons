@@ -1,0 +1,14 @@
+<!ENTITY options.window.title "Toolbar Buttons のオプション">
+<!ENTITY favorite-page.description "&apos;お気に入りページ&apos; ボタンに使用されます。 第二のホーム ページのような類です">
+<!ENTITY toggle.prox.label "プロキシの切り替え">
+<!ENTITY toggle.proxy.description "プロキシ切り替えボタンはプロキシ オフと以下のオプションの 1 つ間で切り替えます。">
+<!ENTITY restart.checkbox "再起動前に確認しない。">
+<!ENTITY previous-next.label "[前へ] と [次へ]">
+<!ENTITY restart.label "再起動">
+<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
+<!ENTITY toggle.proxy.manual "手動のプロキシの構成">
+<!ENTITY favorite-page.label "お気に入りページ">
+<!ENTITY translate.label "翻訳">
+<!ENTITY translate.description "翻訳ボタンに使用したい言語を選択します。 ボタンは Google 翻訳サービスを使用します">
+<!ENTITY previous-next.checkbox "[前へ] および [次へ] ボタンの方向を変更する。">

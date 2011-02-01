@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 tbutton"
+	id="tb-toggle-menu-bar"
+	label="&tb-toggle-menu-bar.label;"
+	tooltiptext="&tb-toggle-menu-bar.tooltip;"
+	oncommand="toolbar_buttons.toggleToolbar(event,'toolbar-menubar', true);" />

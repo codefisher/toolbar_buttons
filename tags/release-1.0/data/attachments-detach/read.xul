@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="attachments-detach"
+	label="&attachments-detach.label;"
+	tooltiptext="&attachments-detach.tooltip;"
+	oncommand="HandleAllAttachments('detach');" />

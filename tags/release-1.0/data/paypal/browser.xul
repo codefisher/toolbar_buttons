@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="paypal"
+	label="&paypal.label;"
+	tooltiptext="&paypal.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.paypal', event);" />

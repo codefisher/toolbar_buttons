@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="firefox-extension"
+	label="&firefox-extension.label;"
+	tooltiptext="&firefox-extension.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.firefox-ext',event);" />

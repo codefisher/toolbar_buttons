@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="addons"
+	label="&addons.label;"
+	tooltiptext="&addons.tooltip;"
+	onclick="toolbar_buttons.openExtensionTab(event);"
+	oncommand="openAddonsMgr();" />

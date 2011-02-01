@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="image-toggle"
+	label="&image-toggle.label;"
+	tooltiptext="&image-toggle.tooltip;"
+	onclick="toolbar_buttons.viewImageExceptions(event);"
+	oncommand="toolbar_buttons.toggleImages(this);" />

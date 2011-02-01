@@ -1,0 +1,163 @@
+<!ENTITY about-cache.label "Vyrovnávací paměť">
+<!ENTITY about-config.label "Editor předvoleb">
+<!ENTITY about-config.tooltip "Otevře Editor předvoleb">
+<!ENTITY about-plugins.label "Pluginy">
+<!ENTITY about-plugins.tooltip "Otevře seznam instalovaných zásvných modulů">
+<!ENTITY accountmanager.label "Nastavení účtu">
+<!ENTITY accountmanager.tooltip "Nastavení účtu">
+<!ENTITY accountwizard.label "Průvodce účtem">
+<!ENTITY accountwizard.tooltip "Průvodce nastavením účtu">
+<!ENTITY add-address.label "Přidat adresu do Adresáře">
+<!ENTITY add-address.tooltip "Okopíruje mailovu adresu do Adresáře">
+<!ENTITY addons.label "Správce doplňků">
+<!ENTITY addons.tooltip "Správce doplňků">
+<!ENTITY attachments-delete.label "Smaž přílohy">
+<!ENTITY attachments-delete.tooltip "Smaže všechny přílohy">
+<!ENTITY attachments-detach.label "Vyčlenit přílohy">
+<!ENTITY attachments-detach.tooltip "Vyčlení všechny přílohy">
+<!ENTITY attachments-save.label "Ulož přílohy">
+<!ENTITY attachments-save.tooltip "Uloží všechny přílohy">
+<!ENTITY change-text-direction.label "Směr textu">
+<!ENTITY change-text-direction.tooltip "Změní směr textu">
+<!ENTITY check-for-update.label "Aktualizovat">
+<!ENTITY check-for-update.tooltip "Zkontorlovat dostupnost aktualizace">
+<!ENTITY compact.label "Údržba složek">
+<!ENTITY compact.tooltip "Provede údržbu složek">
+<!ENTITY copy-address.label "Kopírovat adresu">
+<!ENTITY copy-address.tooltip "Zkopíruje mailovou adresu do schránky">
+<!ENTITY create-filter.label "Nový filtr">
+<!ENTITY create-filter.tooltip "Vytvoří filtr ze zprávy">
+<!ENTITY customize-toolbar.label "Upravit lištu">
+<!ENTITY customize-toolbar.tooltip "Upraví lištu tlačítek">
+<!ENTITY delete-event.label "Smazat události">
+<!ENTITY delete-event.tooltip "Smaže vybrané události">
+<!ENTITY delete-junk.label "Smazat nevyžádanou">
+<!ENTITY delete-junk.tooltip "Smaže nevyžádané zprávy">
+<!ENTITY delete-tasks.label "Smazat úkoly">
+<!ENTITY delete-tasks.tooltip "Smaže vybrané úkoly">
+<!ENTITY delete.label "Smazat">
+<!ENTITY delete.tooltip "Smaže vybraný text">
+<!ENTITY dictionary-list.label "Změnit slovník">
+<!ENTITY dictionary-list.tooltip "Rychle přepne slovník">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Přejít na eBay">
+<!ENTITY edit-draft.label "Upravit koncept">
+<!ENTITY edit-draft.tooltip "Upravovat uložený koncept zprávy">
+<!ENTITY empty-trash.label "Vysypat">
+<!ENTITY empty-trash.tooltip "Vysype koš">
+<!ENTITY enlarge.label "Zvětšit">
+<!ENTITY enlarge.tooltip "Zvětší písmo">
+<!ENTITY exit.label "Ukončit">
+<!ENTITY exit.tooltip "Ukončí aplikaci">
+<!ENTITY extensions.label "Rozšíření">
+<!ENTITY extensions.tooltip "Správce rozšíření">
+<!ENTITY find-again.label "Najít další">
+<!ENTITY find-again.tooltip "Najít další">
+<!ENTITY find-prev.label "Najít předchozí">
+<!ENTITY find-prev.tooltip "Najít předchozí">
+<!ENTITY find.label "Hledat">
+<!ENTITY find.tooltip "Najít">
+<!ENTITY firefox-extension.label "Doplňky">
+<!ENTITY firefox-extension.tooltip "Získat další doplňky pro Firefox">
+<!ENTITY firefox-theme.label "Motivy vzhledu">
+<!ENTITY firefox-theme.tooltip "Získat další motivy vzhledu pro Firefox">
+<!ENTITY get-inbox.label "Doručená pošta">
+<!ENTITY get-inbox.tooltip "Přejde na složku Doručené pošty">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Otevřít Google Mail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Přejde na stránku Google">
+<!ENTITY help.label "Nápověda">
+<!ENTITY help.tooltip "Otevře nápovědu">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Otevřít Hotmail">
+<!ENTITY html-mode.label "Jako Html">
+<!ENTITY html-mode.tooltip "Přepíná mezi zobrazením jako text a HTML">
+<!ENTITY import.label "Import">
+<!ENTITY import.tooltip "Nahraje data a nastavení z jiných aplikací">
+<!ENTITY inspecter.label "DOM inspektor">
+<!ENTITY inspecter.tooltip "DOM Inspektor">
+<!ENTITY installaddons.label "Instaluj">
+<!ENTITY installaddons.tooltip "Instaluje doplněk nebo motiv vzhleddu">
+<!ENTITY javaScriptConsole.label "Konzola JavaScriptu">
+<!ENTITY javaScriptConsole.tooltip "Chybová konzola">
+<!ENTITY minimize-window.label "Minimalizovat">
+<!ENTITY minimize-window.tooltip "Minimalizuje aktuální okno">
+<!ENTITY msg-filter.label "Filtry">
+<!ENTITY msg-filter.tooltip "Nastaví filtry zpráv">
+<!ENTITY msg-pane.label "Panel zpráv">
+<!ENTITY msg-pane.tooltip "Zobrazí/skryje panel zpráv">
+<!ENTITY page-source.label "Zdroj">
+<!ENTITY page-source.tooltip "Zobrazí zdrojový kód">
+<!ENTITY pageinfo.label "Informace">
+<!ENTITY pageinfo.tooltip "Otevře informace o stránce">
+<!ENTITY pagesetup.label "Vzhled stránky">
+<!ENTITY pagesetup.tooltip "Otvře nastavení vhledu stránky pro tisk">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Přejít na PayPal">
+<!ENTITY plainpaste.label "Vložit jako text">
+<!ENTITY plainpaste.tooltip "Vloží jako text bez formátování">
+<!ENTITY preferences.label "Možnosti">
+<!ENTITY preferences.tooltip "Otevře Možnosti">
+<!ENTITY print-preview.label "Náhled">
+<!ENTITY print-preview.tooltip "Zobrazí náhled před tiskem">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Zobrazí složku s profilem">
+<!ENTITY purge.label "Uklidit">
+<!ENTITY purge.tooltip "Provede údržbu složek a vymaže nevyžádané zprávy">
+<!ENTITY read-message.label "Číst">
+<!ENTITY read-message.tooltip "Otevře zprávu">
+<!ENTITY realNextMessage.label "Další">
+<!ENTITY realNextMessage.tooltip "Skutečně další zpráva">
+<!ENTITY realPreviousMessage.label "Předchozí">
+<!ENTITY realPreviousMessage.tooltip "Skutečně předchozí zpráva">
+<!ENTITY redo.label "Znovu">
+<!ENTITY redo.tooltip "Znovu provede poslední úpravu">
+<!ENTITY reduce.label "Zmenšit">
+<!ENTITY reduce.tooltip "Zmenší velikost písma">
+<!ENTITY reload-proxy.label "Reload Proxy">
+<!ENTITY reload-proxy.tooltip "Reload Proxy">
+<!ENTITY reply-sender.label "Odpovědět pouze odesílateli">
+<!ENTITY reply-sender.tooltip "Odpovípouze odesílateli zprávy">
+<!ENTITY reset.label "Reset">
+<!ENTITY reset.tooltip "Vrátí velikost písma na původní hodnotu">
+<!ENTITY restart-app.label "Restartovat">
+<!ENTITY restart-app.tooltip "Restartovat aplikaci">
+<!ENTITY return-receipt.label "Potvrzení o přijetí">
+<!ENTITY return-receipt.tooltip "Přepíná potvrzení o doručení">
+<!ENTITY saveas.label "Uložit Jako">
+<!ENTITY saveas.tooltip "Uloží dokument jako ...">
+<!ENTITY search-addresses.label "Otevře hledání v adresách">
+<!ENTITY search-addresses.tooltip "Hledat v adresách">
+<!ENTITY search-messages.label "Hledat ve zprávách">
+<!ENTITY search-messages.tooltip "Otevře hledání ve zprávách">
+<!ENTITY select-all.label "Vybrat vše">
+<!ENTITY select-all.tooltip "Vybere vše">
+<!ENTITY send-receive.label "Odeslat a přijmout">
+<!ENTITY send-receive.tooltip "Odešle a přijme zprávy">
+<!ENTITY send-with-no-save.label "Odeslat bez uložení">
+<!ENTITY send-with-no-save.tooltip "Odešle zprávu bez uložení místní kopie">
+<!ENTITY shift-delete.label "Rovnou smazat">
+<!ENTITY shift-delete.tooltip "Smaže zprávu bez okopírování do Koše">
+<!ENTITY statusbar-toggle.label "Stavová lišta">
+<!ENTITY statusbar-toggle.tooltip "Přepíná zobrazení stavové lišty">
+<!ENTITY tasks-toggle.label "Úkoly">
+<!ENTITY tasks-toggle.tooltip "Přepíná lištu úkolů">
+<!ENTITY themes.label "Motivy vzhledu">
+<!ENTITY themes.tooltip "Správce motivů vzhledu">
+<!ENTITY thunderbird-extension.label "Doplňky">
+<!ENTITY thunderbird-extension.tooltip "Získat další doplňky pro Thunderbird">
+<!ENTITY thunderbird-theme.label "Motivy vzhledu">
+<!ENTITY thunderbird-theme.tooltip "Získat další motivy vzhledu pro Thunderbird">
+<!ENTITY toolbar-menu.label "Lišta">
+<!ENTITY toolbar-menu.tooltip "Přepíná viditelnost lišty">
+<!ENTITY undo-close-tab.label "Zpět zavření panelu">
+<!ENTITY undo-close-tab.tooltip "Znovu otevře poslední zavřený panel">
+<!ENTITY undo.label "Zpět">
+<!ENTITY undo.tooltip "Vrátí zpět poslední úpravu">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Přejde na stránku Wikipedie">
+<!ENTITY workoffline.label "Offline">
+<!ENTITY workoffline.tooltip "Přepíná režim offline">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Otevřít Yahoo Mail">

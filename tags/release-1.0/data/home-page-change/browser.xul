@@ -1,0 +1,21 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="home-page-change"
+	type="menu-button"
+	label="&home-page-change.label;"
+	tooltiptext="&home-page-change.tooltip;"
+	oncommand="toolbar_buttons.homePageChange();">
+	<menupopup onpopupshowing="toolbar_buttons.homeList(this);"
+		oncommand="event.stopPropagation();" >
+		<menuitem label="&home-page-change.current;"
+			id="homePageSetCurrent"
+			oncommand="toolbar_buttons.homePageSetCurrent();"/>
+		<menuitem label="&home-page-change.add-current;"
+			id="homePageAddCurrent"
+			oncommand="toolbar_buttons.homePageAddCurrent();"/>
+		<menuitem label="&home-page-change.multiple;"
+			id="homePageChangeItem"
+			oncommand="toolbar_buttons.homePageChangeMultiple();"/>
+		<menuseparator id="homePageSeperator"/>
+	</menupopup>
+</toolbarbutton>

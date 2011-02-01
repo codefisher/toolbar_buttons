@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 firefoxButton"
+	id="close-all-tabs"
+	label="&close-all-tabs.label;"
+	tooltiptext="&close-all-tabs.tooltip;"
+	oncommand="toolbar_buttons.BrowserCloseAllTabs();"/>

@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="about-plugins"
+	label="&about-plugins.label;"
+	tooltiptext="&about-plugins.tooltip;"
+	onclick="toolbar_buttons.LoadURL('about:plugins', event);" />

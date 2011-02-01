@@ -1,0 +1,20 @@
+<!ENTITY options.window.title "Toolbar Buttons - opcje">
+<!ENTITY favorite-page.description "Przycisk &quot;Ulubiona&quot; spełnia funkcję drugiej strony startowej.">
+<!ENTITY toggle.prox.label "Proxy">
+<!ENTITY toggle.proxy.description "Przycisk proxy umożliwia włączanie i wyłączanie poniższych opcji proxy.">
+<!ENTITY restart.checkbox "Nie powiadamiaj o ponownym uruchomieniu.">
+<!ENTITY previous-next.label "Poprzednia/Następna strona">
+<!ENTITY toggle.checkbox "Przed zmianą ustawień, odśwież stronę.">
+<!ENTITY restart.label "Uruchom ponownie">
+<!ENTITY read.select.button "Wybierz">
+<!ENTITY readnews.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta wiadomości nie działa.">
+<!ENTITY toggle.proxy.auto.detect "Wykrywaj automatycznie ustawienia proxy">
+<!ENTITY toggle.proxy.auto.configuration "Automatyczna konfiguracja proxy">
+<!ENTITY readmail.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta pocztowego nie działa.">
+<!ENTITY toggle.proxy.manual "Ręczna konfiguracja proxy">
+<!ENTITY favorite-page.label "Ulubiona">
+<!ENTITY translate.label "Przetłumacz">
+<!ENTITY translate.description "Wybierz język tłumaczenia, jaki ma być stosowany. Przycisk stosuje serwis &quot;Google Translation&quot;">
+<!ENTITY previous-next.checkbox "Zamień kierunek przycisku &quot;Poprzednia/Następna strona&quot;">
+<!ENTITY readmail.path.caption "Ścieżka lokalizacji klienta pocztowego">
+<!ENTITY readnews.path.caption "Ścieżka lokalizacji klienta wiadomości">

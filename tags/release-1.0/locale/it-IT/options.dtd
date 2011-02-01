@@ -1,0 +1,23 @@
+<!ENTITY options.window.title "Opzioni di Toolbar Buttons">
+<!ENTITY favorite-page.description "Inserire un indirizzo web, utilizzabile come una seconda pagina iniziale, per il pulsante &apos;Pagina preferita&apos;:">
+<!ENTITY toggle.prox.label "Attiva/disattiva proxy">
+<!ENTITY toggle.proxy.description "Tramite il pulsante &apos;Attiva/disattiva proxy&apos; è possibile scegliere tra la connessione diretta ad internet e una delle opzioni qui sotto">
+<!ENTITY restart.checkbox "Non avvisare al riavvio del programma">
+<!ENTITY previous-next.label "Precedente e successivo">
+<!ENTITY toggle.checkbox "Ricarica la pagina dopo aver fatto clic sui pulsanti per attivare/disattivare impostazioni">
+<!ENTITY restart.label "Riavvio">
+<!ENTITY read.select.button "Sfoglia…">
+<!ENTITY readnews.path.desc "Inserire il percorso del proprio client dei gruppi di discussione in caso il relativo pulsante non funzionasse:">
+<!ENTITY toggle.proxy.auto.detect "Individua automaticamente le impostazioni dei proxy">
+<!ENTITY toggle.proxy.auto.configuration "Configurazione automatica dei proxy (PAC)">
+<!ENTITY readmail.path.desc "Inserire il percorso del proprio client e-mail in caso il relativo pulsante non funzionasse:">
+<!ENTITY toggle.proxy.manual "Configurazione manuale dei proxy">
+<!ENTITY favorite-page.label "Pagina preferita">
+<!ENTITY toggle.proxy.system "Utilizza le impostazioni dei proxy del sistema">
+<!ENTITY translate.label "Traduzione">
+<!ENTITY translate.description "Selezionare la lingua nella quale tradurre tramite il servizio &apos;Google Translate&apos; con il pulsante &apos;Traduci&apos;:">
+<!ENTITY previous-next.checkbox "Modifica la direzione per i pulsanti &apos;Precedente&apos; e &apos;Successivo&apos;">
+<!ENTITY readmail.path.caption "Percorso del client e-mail">
+<!ENTITY toggle.label "Pulsanti di attivazione/disattivazione impostazioni">
+<!ENTITY translate.not-in-use "Il pulsante non è posizionato nelle barre degli strumenti. Aggiungerlo e riavviare il programma">
+<!ENTITY readnews.path.caption "Percorso del client dei gruppi di discussione">

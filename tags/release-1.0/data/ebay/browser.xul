@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="ebay"
+	label="&ebay.label;"
+	tooltiptext="&ebay.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.ebay',event);" />

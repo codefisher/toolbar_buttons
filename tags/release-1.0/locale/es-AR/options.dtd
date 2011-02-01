@@ -1,0 +1,20 @@
+<!ENTITY options.window.title "opciones de Toolbar Buttons">
+<!ENTITY favorite-page.description "Usada por el botón &apos;Página favorita&apos;.  Una especie de segunda página de inicio.">
+<!ENTITY toggle.prox.label "Conmutar Proxy">
+<!ENTITY toggle.proxy.description "The proxy toggle button can toggle between proxy off and one of the below options.">
+<!ENTITY restart.checkbox "No pedir confirmación al reiniciar.">
+<!ENTITY previous-next.label "Anterior &amp; Siguiente">
+<!ENTITY toggle.checkbox "Refrescar página después de conmutar ajuste.">
+<!ENTITY restart.label "Reiniciar">
+<!ENTITY read.select.button "Seleccionar">
+<!ENTITY readnews.path.desc "La ruta hacia su cliente de Lectura de Noticias, usar si el botón no funciona">
+<!ENTITY toggle.proxy.auto.detect "Detectar automáticamente ajustes de Proxy">
+<!ENTITY toggle.proxy.auto.configuration "Auto-Configuración de Proxy (ACP)">
+<!ENTITY readmail.path.desc "La ruta havia su cliente de correo, usar si el botón no funciona">
+<!ENTITY toggle.proxy.manual "Configuración manual de Proxy">
+<!ENTITY favorite-page.label "Página favorita">
+<!ENTITY translate.label "Traducir">
+<!ENTITY translate.description "Seleccione el lenguaje que desea usar con el botón Traducir.  El botón usa el servicio de Google Translation.">
+<!ENTITY previous-next.checkbox "Invertir la dirección de los botones Anterior y Siguiente.">
+<!ENTITY readmail.path.caption "Ruta del Cliente de Correo">
+<!ENTITY readnews.path.caption "Ruta de Lector de Noticias">

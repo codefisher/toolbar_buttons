@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="yahoo-button"
+	label="&yahoo-button.label;"
+	tooltiptext="&yahoo-button.tooltip;"
+	onclick="toolbar_buttons.OpenLinkFromPref('url.yahoo', event);" />

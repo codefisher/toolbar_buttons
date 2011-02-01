@@ -1,0 +1,23 @@
+<!ENTITY options.window.title "Opção Toolbar Buttons">
+<!ENTITY favorite-page.description "Usado para o botão &apos;Página Favorita&apos;. Como uma espécie de segunda home page">
+<!ENTITY toggle.prox.label "Alternar Proxy">
+<!ENTITY toggle.proxy.description "O botão para alterar proxy poderá alterar para proxy desligado ou uma das opções abaixo.">
+<!ENTITY restart.checkbox "Não perguntar antes de reiniciar.">
+<!ENTITY previous-next.label "Anterior &amp; Próximo">
+<!ENTITY toggle.checkbox "Recarregar página depois de alterar configuração.">
+<!ENTITY restart.label "Reiniciar">
+<!ENTITY read.select.button "Selecionar">
+<!ENTITY readnews.path.desc "O caminho para o seu cliente de notícias, use se o botão não funcionar.">
+<!ENTITY toggle.proxy.auto.detect "Auto detecção de configurações de proxy">
+<!ENTITY toggle.proxy.auto.configuration "Auto Configuração de Proxy (PAC)">
+<!ENTITY readmail.path.desc "O caminho para o seu cliente de e-mail, use se o botão não funcionar.">
+<!ENTITY toggle.proxy.manual "Configuração Manual de Proxy">
+<!ENTITY favorite-page.label "Página Favorita">
+<!ENTITY toggle.proxy.system "Usar configurações de proxy do sistema">
+<!ENTITY translate.label "Traduzir">
+<!ENTITY translate.description "Escolha qual idioma deseja que o botão de traduzir irá utilizar. O botão utiliza o Serviço de Tradução do Google">
+<!ENTITY previous-next.checkbox "Mudar direção do botão Anterior e Próximo">
+<!ENTITY readmail.path.caption "Caminho do cliente de e-mail">
+<!ENTITY toggle.label "Alternar Botões">
+<!ENTITY translate.not-in-use "Botão não está em uso. Adicionar à barra de ferramentas e reiniciar.">
+<!ENTITY readnews.path.caption "Caminho do cliente de notícias">

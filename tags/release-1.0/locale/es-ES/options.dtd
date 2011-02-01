@@ -1,0 +1,20 @@
+<!ENTITY options.window.title "Opciones de botones de la barra de herramientas">
+<!ENTITY favorite-page.description "Usada por el botón &apos;Página favorita&apos;.  Una especie de segunda página de inicio">
+<!ENTITY toggle.prox.label "Cambiar proxy">
+<!ENTITY toggle.proxy.description "El botón de cambio de proxy cambia entre la desactivación del proxy y una de las opciones siguientes.">
+<!ENTITY restart.checkbox "No pedir confirmación antes del reinicio.">
+<!ENTITY previous-next.label "Anterior y Siguiente">
+<!ENTITY toggle.checkbox "Recargar página después del cambio de configuración.">
+<!ENTITY restart.label "Reiniciar">
+<!ENTITY read.select.button "Seleccionar">
+<!ENTITY readnews.path.desc "La ruta de su cliente de noticias. Utilícelo si el botón no funciona.">
+<!ENTITY toggle.proxy.auto.detect "Auto detectar configuración de proxy">
+<!ENTITY toggle.proxy.auto.configuration "Configuración automática de proxy (CAP)">
+<!ENTITY readmail.path.desc "La ruta de su cliente de correo. Utilícelo si el botón no funciona.">
+<!ENTITY toggle.proxy.manual "Configuración manual de proxy">
+<!ENTITY favorite-page.label "Página favorita">
+<!ENTITY translate.label "Traducir">
+<!ENTITY translate.description "Seleccione el lenguaje para usar con el botón Traducir.  El botón usa el servicio de Google Translation">
+<!ENTITY previous-next.checkbox "Cambiar la dirección de los botones Anterior y Siguiente.">
+<!ENTITY readmail.path.caption "Ruta del cliente de correo">
+<!ENTITY readnews.path.caption "Ruta del cliente de noticias">

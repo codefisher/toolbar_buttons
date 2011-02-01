@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="link-open"
+	label="&link-open.label;"
+	tooltiptext="&link-open.tooltip;"
+	oncommand="toolbar_buttons.setHowLinksOpen();" />

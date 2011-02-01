@@ -1,0 +1,346 @@
+<!ENTITY about-application.label "Over">
+<!ENTITY about-application.tooltip "Over &brandShortName;">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "about:cache openen om de inhoud van de cache te bekijken">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config openen">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "about:cache openen om de inhoud van de schijfcache te bekijken">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY about-mem-cache.tooltip "about:cache openen om de inhoud van de geheugencache te bekijken">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "about:plugins openen om geïnstalleerde plug-ins te bekijken">
+<!ENTITY accountmanager.label "Accountinstellingen">
+<!ENTITY accountmanager.tooltip "Accountinstellingen openen">
+<!ENTITY accountwizard.label "Account instellen">
+<!ENTITY accountwizard.tooltip "Accountwizard starten om een nieuw account aan te maken">
+<!ENTITY add-address.label "Adres toevoegen">
+<!ENTITY add-address.tooltip "E-mailadres kopiëren naar Adresboek">
+<!ENTITY addons.label "Add-ons">
+<!ENTITY addons.tooltip "Add-onsbeheerder openen">
+<!ENTITY all-threads.label "Alle discussies">
+<!ENTITY all-threads.tooltip "Alle discussies bekijken">
+<!ENTITY attachments-delete.label "Bijlagen verwijderen">
+<!ENTITY attachments-delete.tooltip "Alle bijlagen uit het bericht verwijderen">
+<!ENTITY attachments-detach.label "Bijlagen ontkoppelen">
+<!ENTITY attachments-detach.tooltip "Alle bijlagen van bericht ontkoppelen">
+<!ENTITY attachments-save.label "Bijlagen opslaan">
+<!ENTITY attachments-save.tooltip "Alle bijlagen in het bericht opslaan">
+<!ENTITY bookmark-manager.label "Bladwijzerbeheerder">
+<!ENTITY bookmark-manager.tooltip "De Bladwijzerbeheerder openen">
+<!ENTITY bookmark-nopop.label "Snelle Bladwijzer">
+<!ENTITY bookmark-nopop.tooltip "Bladwijzer toevoegen zonder dialoog">
+<!ENTITY bookmark-tabs.label "Bladwijzers van alles maken">
+<!ENTITY bookmark-tabs.tooltip "Bladwijzers van alle open tabbladen maken">
+<!ENTITY bookmark-toolbar.label "Bladwijzerwerkbalk">
+<!ENTITY bookmark-toolbar.tooltip "Bladwijzerwerkbalk wisselen">
+<!ENTITY bookmark.label "Bladwijzer van pagina maken">
+<!ENTITY bookmark.tooltip "Bladwijzer van huidige pagina maken">
+<!ENTITY bookmarks-menu-button.label "Menu Bladwijzers">
+<!ENTITY bookmarks-menu-button.tooltip "Menu Bladwijzers weergeven">
+<!ENTITY bottom-page.label "Onderkant">
+<!ENTITY bottom-page.tooltip "Naar onderkant van de pagina gaan">
+<!ENTITY change-text-direction.label "Tekstrichting wijzigen">
+<!ENTITY change-text-direction.tooltip "De tekstrichting wijzigen van links naar rechts of rechts naar links">
+<!ENTITY check-for-update.label "Bijwerken">
+<!ENTITY check-for-update.tooltip "Op updates controleren">
+<!ENTITY clear-data.label "Gegevens opruimen">
+<!ENTITY clear-data.tooltip "Dialoogvenster ‘Privégegevens opruimen’ openen">
+<!ENTITY clear-url.label "URL verbergen">
+<!ENTITY clear-url.tooltip "Tekst in navigatiebalk wissen">
+<!ENTITY clipboard.label "Koppeling van klembord">
+<!ENTITY clipboard.menuitem "Koppeling van klembord openen">
+<!ENTITY clipboard.newtab "Koppeling van klembord in nieuw tabblad openen">
+<!ENTITY clipboard.newwindow "In nieuw venster">
+<!ENTITY clipboard.tooltip "Koppeling van klembord ophalen en openen">
+<!ENTITY close-all-tabs.label "Alles sluiten">
+<!ENTITY close-all-tabs.tooltip "Alle tabbladen sluiten">
+<!ENTITY close-other-tabs.label "Overige sluiten">
+<!ENTITY close-other-tabs.tooltip "Alle tabbladen behalve de huidige sluiten">
+<!ENTITY close-tab.label "Tabblad sluiten">
+<!ENTITY close-tab.tooltip "Open tabblad of venster sluiten">
+<!ENTITY compact.label "Comprimeren">
+<!ENTITY compact.tooltip "Map comprimeren">
+<!ENTITY copy-address.label "Adres kopiëren">
+<!ENTITY copy-address.tooltip "E-mailadres kopiëren naar het Klembord">
+<!ENTITY create-filter.label "Filter aanmaken">
+<!ENTITY create-filter.tooltip "Filter maken van bericht">
+<!ENTITY customize-toolbar.label "Werkbalk">
+<!ENTITY customize-toolbar.tooltip "Werkbalk aanpassen">
+<!ENTITY delete-event.label "Gebeurtenissen verwijderen">
+<!ENTITY delete-event.tooltip "Geselecteerde gebeurtenissen verwijderen">
+<!ENTITY delete-junk.label "Ongewenste post verwijderen">
+<!ENTITY delete-junk.tooltip "Ongewenste post verwijderen">
+<!ENTITY delete-tasks.label "Taken verwijderen">
+<!ENTITY delete-tasks.tooltip "Geselecteerde taken verwijderen">
+<!ENTITY delete.label "Verwijderen">
+<!ENTITY delete.tooltip "Geselecteerde tekst verwijderen">
+<!ENTITY dictionary-list.label "Woordenboek wijzigen">
+<!ENTITY dictionary-list.tooltip "Het huidige woordenboek snel wijzigen">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "eBay openen">
+<!ENTITY edit-as-new.label "Als nieuw bewerken">
+<!ENTITY edit-as-new.tooltip "Bericht als nieuw bewerken">
+<!ENTITY edit-draft.label "Concept bewerken">
+<!ENTITY edit-draft.tooltip "Opgeslagen concept of bericht bewerken">
+<!ENTITY empty-trash.label "Prullenbak leegmaken">
+<!ENTITY empty-trash.tooltip "Prullenbak leegmaken">
+<!ENTITY enlarge.label "Vergroten">
+<!ENTITY enlarge.tooltip "Tekstformaat vergroten">
+<!ENTITY exit.label "Afsluiten">
+<!ENTITY exit.tooltip "Toepassing afsluiten">
+<!ENTITY extensions.label "Extensies">
+<!ENTITY extensions.tooltip "Extensiebeheerder openen">
+<!ENTITY favorite-page.label "Favoriete pagina">
+<!ENTITY favorite-page.tooltip "Favoriete pagina openen">
+<!ENTITY find-again.label "Opnieuw zoeken">
+<!ENTITY find-again.tooltip "Volgende match zoeken">
+<!ENTITY find-prev.label "Voorgaande zoeken">
+<!ENTITY find-prev.tooltip "Voorgaande match zoeken">
+<!ENTITY find.label "Zoeken">
+<!ENTITY find.tooltip "Tekst zoeken">
+<!ENTITY firefox-extension.label "Extensies">
+<!ENTITY firefox-extension.tooltip "Meer Firefoxextensies verkrijgen">
+<!ENTITY firefox-theme.label "Thema’s">
+<!ENTITY firefox-theme.tooltip "Meer Firefoxthema’s verkrijgen">
+<!ENTITY forward-as-attachment.label "Als bijlage doorsturen">
+<!ENTITY forward-as-attachment.tooltip "Bericht als bijlage doorsturen">
+<!ENTITY forward-as-inline.label "Als bericht doorsturen">
+<!ENTITY forward-as-inline.tooltip "Bericht als onderdeel van het e-mailbericht doorsturen">
+<!ENTITY full-screen.label "Volledig scherm">
+<!ENTITY full-screen.tooltip "Naar Volledig scherm-modus schakelen">
+<!ENTITY get-inbox.label "Naar Postvak IN">
+<!ENTITY get-inbox.tooltip "Map met focus naar Postvak IN wijzigen">
+<!ENTITY gmail.label "GMail">
+<!ENTITY gmail.tooltip "Google Mail openen">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google-startpagina laden">
+<!ENTITY help.label "Help">
+<!ENTITY help.tooltip "Helpdocumenten openen">
+<!ENTITY hide-images.label "Afbeeldingen verbergen">
+<!ENTITY hide-images.tooltip "Alle afbeeldingen en achtergronden in het huidige document verbergen">
+<!ENTITY home-page-change.add-current "Huidige pagina toevoegen">
+<!ENTITY home-page-change.current "Instellen als huidige pagina">
+<!ENTITY home-page-change.label "Startpagina wijzigen">
+<!ENTITY home-page-change.multiple "Als meerdere koppelingen instellen">
+<!ENTITY home-page-change.tooltip "Startpagina wijzigen">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail openen">
+<!ENTITY html-mode.label "HTML-modus">
+<!ENTITY html-mode.tooltip "Instellen of bericht wordt weergegeven als HTML of platte tekst">
+<!ENTITY ignored-threads.label "Genegeerde discussies">
+<!ENTITY ignored-threads.tooltip "Genegeerde discussies bekijken">
+<!ENTITY image-toggle.label "Afbeeldingen wisselen">
+<!ENTITY image-toggle.tooltip "Laden van afbeeldingen in- en uitschakelen">
+<!ENTITY import.label "Importeren">
+<!ENTITY import.tooltip "Instellingen en gegevens importeren">
+<!ENTITY inspecter.label "DOM Inspector">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY installaddons.label "Installeren">
+<!ENTITY installaddons.tooltip "Een extensie of thema installeren">
+<!ENTITY java-toggle.label "Java wisselen">
+<!ENTITY java-toggle.tooltip "Java in- en uitschakelen">
+<!ENTITY javaScriptConsole.label "Console">
+<!ENTITY javaScriptConsole.tooltip "De foutconsole openen">
+<!ENTITY javascript-toggle.label "JavaScript wisselen">
+<!ENTITY javascript-toggle.tooltip "JavaScript in- en uitschakelen">
+<!ENTITY label-all-blank.label "Labels verwijderen">
+<!ENTITY label-all-blank.tooltip "Labels van alle tabbladen verwijderen">
+<!ENTITY label-blank.label "Label verwijderen">
+<!ENTITY label-blank.tooltip "Label van het huidige tabblad verwijderen">
+<!ENTITY link-open.label "Instellingen voor koppelingen">
+<!ENTITY link-open.tooltip "Instellen hoe koppelingen geopend worden">
+<!ENTITY min-font-size.label "Kleinste lettertypegrootte">
+<!ENTITY min-font-size.tooltip "Kleinste lettertypegrootte wisselen">
+<!ENTITY minimize-window.label "Minimaliseren">
+<!ENTITY minimize-window.tooltip "Huidig venster minimaliseren">
+<!ENTITY msg-filter.label "Filters">
+<!ENTITY msg-filter.tooltip "Berichtenfilters instellen">
+<!ENTITY msg-pane.label "Berichtenvenster">
+<!ENTITY msg-pane.tooltip "Berichtenvenster wisselen">
+<!ENTITY new-message.label "Nieuw bericht">
+<!ENTITY new-message.tooltip "Nieuw e-mailbericht schrijven">
+<!ENTITY next-tab.label "Volgend tabblad">
+<!ENTITY next-tab.tooltip "Naar het volgende tabblad gaan">
+<!ENTITY open-current-frame.label "Huidig frame weergeven">
+<!ENTITY open-current-frame.tooltip "Alleen het momenteel geselecteerde frame wordt weergegeven.">
+<!ENTITY open.label "Openen">
+<!ENTITY open.tooltip "Bestand openen">
+<!ENTITY page-source.label "Bron">
+<!ENTITY page-source.tooltip "Paginabron bekijken">
+<!ENTITY pageinfo.label "Pagina-info">
+<!ENTITY pageinfo.tooltip "Venster met pagina-informatie openen">
+<!ENTITY pagesetup.label "Pagina-instellingen">
+<!ENTITY pagesetup.tooltip "Instellen hoe de pagina wordt afgedrukt">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "PayPal openen">
+<!ENTITY personal-bookmarks-menu-button.label "Werkbalk menu Bladwijzers">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Werkbalk menu Bladwijzers weergeven">
+<!ENTITY plainpaste.label "Plakken als platte tekst">
+<!ENTITY plainpaste.tooltip "Tekst zonder opmaak plakken">
+<!ENTITY preferences.label "Opties">
+<!ENTITY preferences.tooltip "Opties openen">
+<!ENTITY previous-tab.label "Vorig tabblad">
+<!ENTITY previous-tab.tooltip "Naar het vorige tabblad gaan">
+<!ENTITY print-preview.label "Afdrukvoorbeeld">
+<!ENTITY print-preview.tooltip "Afdrukvoorbeeld openen">
+<!ENTITY profile-folder.label "Profiel">
+<!ENTITY profile-folder.tooltip "Uw profielmap bekijken">
+<!ENTITY purge.label "Opschonen">
+<!ENTITY purge.tooltip "Map comprimeren en ongewenste post verwijderen">
+<!ENTITY read-mail.label "E-mailberichten lezen">
+<!ENTITY read-mail.tooltip "Toepassing om e-mailberichten te lezen openen">
+<!ENTITY read-message.label "Lezen">
+<!ENTITY read-message.tooltip "Bericht lezen">
+<!ENTITY read-news.label "Nieuws lezen">
+<!ENTITY read-news.tooltip "Toepassing om nieuws te lezen openen">
+<!ENTITY realNextMessage.label "Volgende bericht">
+<!ENTITY realNextMessage.tooltip "Echt volgende bericht tonen">
+<!ENTITY realPreviousMessage.label "Vorige bericht">
+<!ENTITY realPreviousMessage.tooltip "Echt vorige bericht tonen">
+<!ENTITY redo.label "Opnieuw uitvoeren">
+<!ENTITY redo.tooltip "Laatste wijziging opnieuw uitvoeren">
+<!ENTITY reduce.label "Verkleinen">
+<!ENTITY reduce.tooltip "Tekstformaat verkleinen">
+<!ENTITY reload-all-tabs.label "Tabbladen opnieuw laden">
+<!ENTITY reload-all-tabs.tooltip "Alle open tabbladen opnieuw laden">
+<!ENTITY reload-proxy.label "Proxy opnieuw laden">
+<!ENTITY reload-proxy.tooltip "Proxy opnieuw laden">
+<!ENTITY reload-skip-cache.label "Vernieuwen zonder cache">
+<!ENTITY reload-skip-cache.tooltip "De pagina wordt herladen zonder gebruik te maken van de browsercache">
+<!ENTITY rename-tab.label "Tabblad hernoemen">
+<!ENTITY rename-tab.tooltip "Momenteel geselecteerde tabblad hernoemen">
+<!ENTITY reply-sender.label "Alleen afzender beantwoorden">
+<!ENTITY reply-sender.tooltip "Alleen de afzender van het e-mailbericht beantwoorden">
+<!ENTITY reset.label "Reset">
+<!ENTITY reset.tooltip "Tekstformaat resetten">
+<!ENTITY restart-app.label "Herstarten">
+<!ENTITY restart-app.tooltip "Toepassing herstarten">
+<!ENTITY return-receipt.label "Ontvangstbevestiging">
+<!ENTITY return-receipt.tooltip "Ontvangstbevestiging in-/uitschakelen">
+<!ENTITY save-frame.label "Frame opslaan">
+<!ENTITY save-frame.tooltip "Documentframe opslaan">
+<!ENTITY saveas.label "Opslaan">
+<!ENTITY saveas.tooltip "Document opslaan als">
+<!ENTITY search-addresses.label "Adressen zoeken">
+<!ENTITY search-addresses.tooltip "Zoekdialoog openen">
+<!ENTITY search-messages.label "Berichten zoeken">
+<!ENTITY search-messages.tooltip "Zoekdialoog openen">
+<!ENTITY select-all.label "Alles selecteren">
+<!ENTITY select-all.tooltip "Alle tekst selecteren">
+<!ENTITY send-link.label "Koppeling versturen">
+<!ENTITY send-link.tooltip "Paginakoppeling per e-mail versturen">
+<!ENTITY send-receive.label "Verzenden &amp; Ophalen">
+<!ENTITY send-receive.tooltip "Berichten verzenden en ophalen">
+<!ENTITY send-with-no-save.label "Verzenden zonder opslaan">
+<!ENTITY send-with-no-save.tooltip "Bericht verzenden zonder een kopie te bewaren">
+<!ENTITY shift-delete.label "Prullenbak overslaan">
+<!ENTITY shift-delete.tooltip "Bericht verwijderen zonder het naar de Prullenbak te verplaatsen">
+<!ENTITY show-frame.label "Frame weergeven">
+<!ENTITY show-frame.tooltip "Alleen huidige frame weergeven">
+<!ENTITY snap-back.label "Terugspringen">
+<!ENTITY snap-back.tooltip "Teruggaan naar de eerste pagina die in dit tabblad is geopend">
+<!ENTITY statusbar-toggle.label "Statusbalk">
+<!ENTITY statusbar-toggle.tooltip "Statusbalk wisselen">
+<!ENTITY stop-all.label "Alles stoppen">
+<!ENTITY stop-all.tooltip "Laden van alle tabbladen stoppen">
+<!ENTITY stop-animation.label "Animatie wisselen">
+<!ENTITY stop-animation.tooltip "Animated gifs, blink- en marqueelabels stoppen">
+<!ENTITY stop-cookies.label "Cookies wisselen">
+<!ENTITY stop-cookies.tooltip "Cookies worden niet meer ingesteld">
+<!ENTITY stop-dinamic-content.label "Ingebedde inhoud wisselen">
+<!ENTITY stop-dinamic-content.tooltip "Laden van alle ingebedde inhoud stoppen">
+<!ENTITY stop-flash.label "Flash wisselen">
+<!ENTITY stop-flash.tooltip "Flash zal u niet meer irriteren">
+<!ENTITY stop-iframe.label "iframes wisselen (blokkeert wat advertenties)">
+<!ENTITY stop-iframe.tooltip "Verhindert laden van iframes en de advertenties die daar vaak in zitten">
+<!ENTITY stop-movies.label "Films wisselen">
+<!ENTITY stop-movies.tooltip "Films worden niet meer geladen">
+<!ENTITY tab-list.label "Lijst met tabbladen">
+<!ENTITY tab-list.tooltip "Lijst met tabbladen weergeven">
+<!ENTITY tasks-in-view.label "Taken in beeld">
+<!ENTITY tasks-in-view.tooltip "Taken in beeld wisselen">
+<!ENTITY tasks-toggle.label "Taken wisselen">
+<!ENTITY tasks-toggle.tooltip "Taakbalk wisselen">
+<!ENTITY tb-clear-search.label "Zoekveld wissen">
+<!ENTITY tb-clear-search.tooltip "Wissen en op zoekbalk focussen">
+<!ENTITY tb-clear-url.label "URL wissen">
+<!ENTITY tb-clear-url.tooltip "Wissen en op locatiebalk focussen">
+<!ENTITY tb-edit-menu.label "Menu Bewerken">
+<!ENTITY tb-edit-menu.tooltip "Menu Bewerken weergeven">
+<!ENTITY tb-file-menu.label "Menu Bestand">
+<!ENTITY tb-file-menu.tooltip "Menu Bestand weergeven">
+<!ENTITY tb-new-event.label "Nieuwe gebeurtenis">
+<!ENTITY tb-new-event.tooltip "Een nieuwe gebeurtenis aan de kalender toevoegen.">
+<!ENTITY tb-new-task.label "Nieuwe taak">
+<!ENTITY tb-new-task.tooltip "Een nieuwe taak toevoegen aan de kalender.">
+<!ENTITY tb-search-minus.label "Zoekbalk verkleinen">
+<!ENTITY tb-search-minus.tooltip "Verkleint de breedte van de zoekbalk met 10 pixels">
+<!ENTITY tb-search-plus.label "Zoekbalk vergroten">
+<!ENTITY tb-search-plus.tooltip "Vergroot de breedte van de zoekbalk met 10 pixels">
+<!ENTITY tb-search-resize.label "Grootte zoekbalk wijzigen">
+<!ENTITY tb-search-resize.tooltip "Wijzigt de breedte van de zoekbalk">
+<!ENTITY tb-toggle-menu-bar.label "Menubalk wisselen">
+<!ENTITY tb-toggle-menu-bar.tooltip "De menubalk wisselen">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Pop-upblokkering">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Pop-upblokkering in- en uitschakelen">
+<!ENTITY tb-tools-menu.label "Menu Extra">
+<!ENTITY tb-tools-menu.tooltip "Menu Extra weergeven">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Twitter-startpagina openen">
+<!ENTITY tb-view-menu.label "Menu Beeld">
+<!ENTITY tb-view-menu.tooltip "Menu Beeld weergeven">
+<!ENTITY themes.label "Thema’s">
+<!ENTITY themes.tooltip "Themabeheerder openen">
+<!ENTITY thunderbird-extension.label "Extensies">
+<!ENTITY thunderbird-extension.tooltip "Meer Thunderbirdextensies verkrijgen">
+<!ENTITY thunderbird-theme.label "Thema’s">
+<!ENTITY thunderbird-theme.tooltip "Meer Thunderbirdthema’s verkrijgen">
+<!ENTITY tiny-url.copy.to.clipboard "Naar Klembord kopiëren">
+<!ENTITY tiny-url.email "Koppeling per e-mail versturen">
+<!ENTITY tiny-url.label "Kleine URL">
+<!ENTITY tiny-url.link.use "Koppelingsopties">
+<!ENTITY tiny-url.tooltip "Kleine URL maken">
+<!ENTITY tiny-url.use.normal "xrl.in gebruiken">
+<!ENTITY tiny-url.use.preview "preview.xrl.in gebruiken">
+<!ENTITY tiny-url.visit "xrl.in bezoeken">
+<!ENTITY toggle-proxy.label "Proxy wisselen">
+<!ENTITY toggle-proxy.tooltip "De proxy in- en uitschakelen">
+<!ENTITY toggle-read.label "Gelezen wisselen">
+<!ENTITY toggle-read.tooltip "Gelezen met ster wisselen">
+<!ENTITY toggle-starred.label "Met ster wisselen">
+<!ENTITY toggle-starred.tooltip "Sterstatus wisselen">
+<!ENTITY toggle-styles.label "Stijlen wisselen">
+<!ENTITY toggle-styles.tooltip "Door websites gedefinieerde stijlen toevoegen/verwijderen">
+<!ENTITY toggle-toolbar.label "Werkbalk wisselen">
+<!ENTITY toggle-toolbar.tooltip "De hoofdwerkbalk wisselen">
+<!ENTITY toolbar-menu.label "Werkbalken openen">
+<!ENTITY toolbar-menu.tooltip "Werkbalken verbergen/weergeven">
+<!ENTITY top-page.label "Bovenkant">
+<!ENTITY top-page.tooltip "Naar bovenkant van de pagina gaan">
+<!ENTITY translate.label "Vertalen">
+<!ENTITY translate.tooltip "Huidige pagina naar voorkeurstaal vertalen">
+<!ENTITY undo-close-tab.label "Tabblad sluiten ongedaan maken">
+<!ENTITY undo-close-tab.tooltip "Het laatst gesloten tabblad opnieuw openen">
+<!ENTITY undo.label "Ongedaan maken">
+<!ENTITY undo.tooltip "Laatste wijziging ongedaan maken">
+<!ENTITY unread-threads.label "Ongelezen discussies">
+<!ENTITY unread-threads.tooltip "Ongelezen discussies bekijken">
+<!ENTITY up-directory.label "Map omhoog">
+<!ENTITY up-directory.tooltip "Eén mapniveau omhoog gaan">
+<!ENTITY use-document-colors.label "Paginakleuren wisselen">
+<!ENTITY use-document-colors.tooltip "Wisselen tussen de standaard- en sitepaginakleuren">
+<!ENTITY use-document-fonts.label "Paginalettertypen wisselen">
+<!ENTITY use-document-fonts.tooltip "Wisselen tussen de standaard- en de sitelettertypen">
+<!ENTITY watched-with-unread-threads.label "Bekeken discussies met ongelezen berichten">
+<!ENTITY websearch.label "Het web doorzoeken">
+<!ENTITY websearch.tooltip "Het web doorzoeken met uw standaardzoekmachine">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia-startpagina laden">
+<!ENTITY with-unread-threads.label "Discussies met ongelezen berichten">
+<!ENTITY with-unread-threads.tooltip "Discussies met ongelezen berichten bekijken">
+<!ENTITY workoffline.label "Offline werken">
+<!ENTITY workoffline.tooltip "Offline werken wisselen">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Yahoo Mail openen">

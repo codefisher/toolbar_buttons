@@ -1,0 +1,165 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Ayarları değiştirmek için about:config&apos;i aç">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Yüklü ilave yazılımşları görmek için about:plugins&apos;i aç">
+<!ENTITY accountmanager.label "Hesap Ayarları">
+<!ENTITY accountmanager.tooltip "Hesap Ayarlarını Aç">
+<!ENTITY accountwizard.label "Hesap Tanımlama">
+<!ENTITY accountwizard.tooltip "Yeni bir hesap tanımlaması yapmak için sihirbazı çalıştır">
+<!ENTITY add-address.label "İleti Ekle">
+<!ENTITY add-address.tooltip "İleti Adresini Adres Defterine Kopyala">
+<!ENTITY all-threads.label "Tüm Haber Grupları">
+<!ENTITY all-threads.tooltip "Tüm Haber Gruplarını Göster">
+<!ENTITY attachments-delete.label "Ekleri Sil">
+<!ENTITY attachments-delete.tooltip "Mesajdaki Tüm Ekleri Sil">
+<!ENTITY attachments-detach.label "Ekleri Kaldır">
+<!ENTITY attachments-detach.tooltip "Mesajdaki Tüm Ekleri Kaldır">
+<!ENTITY attachments-save.label "Ekleri Kaydet">
+<!ENTITY attachments-save.tooltip "Mesajdaki Tüm Ekleri Kaydet">
+<!ENTITY clear-data.label "Bilgiyi Sil">
+<!ENTITY clear-url.label "URL çubuğunu temizle">
+<!ENTITY clear-url.tooltip "URL çubuğu metnini temizle">
+<!ENTITY close-all-tabs.label "Tümünü Kapat">
+<!ENTITY close-all-tabs.tooltip "Tüm Sekmeleri Kapat">
+<!ENTITY close-other-tabs.label "Diğerlerini Kapat">
+<!ENTITY close-tab.label "Sekmeyi Kapa">
+<!ENTITY close-tab.tooltip "Açık sekmeyi veya pencereyi kapat">
+<!ENTITY compact.label "Sıkıştır">
+<!ENTITY compact.tooltip "Klasörü Sıkıştır">
+<!ENTITY copy-address.label "İletiyi Kopyala">
+<!ENTITY copy-address.tooltip "İleti Adresini Panoya Kopyala">
+<!ENTITY create-filter.label "Filtre Oluştur">
+<!ENTITY create-filter.tooltip "Mesajdan Filtre Oluştur">
+<!ENTITY delete-event.label "Olayları Sil">
+<!ENTITY delete-event.tooltip "Seçili Olayları Sil">
+<!ENTITY delete-junk.label "Yığın Postayı Sil">
+<!ENTITY delete-junk.tooltip "Yığın Mesajları Sil">
+<!ENTITY delete-tasks.label "Görevleri Sil">
+<!ENTITY delete-tasks.tooltip "Seçili Görevleri Sil">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "eBay&apos;i Aç">
+<!ENTITY edit-draft.label "Taslağı Düzenle">
+<!ENTITY edit-draft.tooltip "Kaydedilmiş Taslağı Düzenle">
+<!ENTITY empty-trash.label "Çöp Kutusunu Boşalt">
+<!ENTITY empty-trash.tooltip "Çöp Kutusu Klasörünü Boşalt">
+<!ENTITY exit.label "Çıkış">
+<!ENTITY exit.tooltip "Uygulamadan Çık">
+<!ENTITY extensions.label "Eklentiler">
+<!ENTITY extensions.tooltip "Eklenti Yöneticisini Aç">
+<!ENTITY firefox-extension.label "Eklentiler">
+<!ENTITY firefox-extension.tooltip "Daha fazla Firefox eklentisi alın">
+<!ENTITY firefox-theme.label "Temalar">
+<!ENTITY firefox-theme.tooltip "Daha fazla Firefox teması alın">
+<!ENTITY get-inbox.label "Gelen Kutusunu Al">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Google Mail&apos;i Aç">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google ana sayfasını yükle">
+<!ENTITY help.label "Yardım">
+<!ENTITY help.tooltip "Yardım Dökümantasyonunu Aç">
+<!ENTITY hide-images.label "Resimleri Gizle">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail&apos;i Aç">
+<!ENTITY html-mode.label "HTML Modu">
+<!ENTITY html-mode.tooltip "Mesajın Düz Metin veya HTML olarak mı görüntüleneceğini ayarla">
+<!ENTITY image-toggle.label "Resimleri Tersle">
+<!ENTITY installaddons.label "Yükle">
+<!ENTITY installaddons.tooltip "Eklenti yada Tema Yükle">
+<!ENTITY java-toggle.label "Java uygulamasını Tersle">
+<!ENTITY java-toggle.tooltip "Java Aç/Kapa&apos;yı Tersle">
+<!ENTITY javaScriptConsole.label "Koınsol">
+<!ENTITY javaScriptConsole.tooltip "Hata Konsolunu Aç">
+<!ENTITY javascript-toggle.label "JavaScript&apos;i Tersle">
+<!ENTITY javascript-toggle.tooltip "JavaScript Aç/Kapa&apos;yı Tersle">
+<!ENTITY label-all-blank.label "Etiketleri Kaldır">
+<!ENTITY label-all-blank.tooltip "Tüm Sekmelerin Etiketlerini Kaldır">
+<!ENTITY label-blank.label "Etiketi Kaldır">
+<!ENTITY label-blank.tooltip "Geçerli Sekmenin Etiketini Kaldır">
+<!ENTITY msg-filter.label "Filtreler">
+<!ENTITY msg-filter.tooltip "Mesaj Filtresi Ayarları">
+<!ENTITY msg-pane.label "Mesaj Gözü">
+<!ENTITY msg-pane.tooltip "Mesaj Gözünü Tersle">
+<!ENTITY new-message.label "Yeni Mesaj">
+<!ENTITY new-message.tooltip "Yeni Email mesajı yaz">
+<!ENTITY next-tab.label "Sonraki Sekme">
+<!ENTITY next-tab.tooltip "Sonraki Sekmeye Git">
+<!ENTITY open.label "Aç">
+<!ENTITY open.tooltip "Bir dosya aç">
+<!ENTITY pageinfo.label "Sayfa Bilgisi">
+<!ENTITY pageinfo.tooltip "Sayfa Bilgisi Penceresini Aç">
+<!ENTITY pagesetup.tooltip "Sayfanın nasıl yazdırılacağını ayarla">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "PayPal&apos;ı Aç">
+<!ENTITY plainpaste.label "Düz Metin Yapıştır">
+<!ENTITY plainpaste.tooltip "Biçimlendirme Yapmadan Metni Kopyala">
+<!ENTITY preferences.label "Seçenekler">
+<!ENTITY preferences.tooltip "Seçenekleri Aç">
+<!ENTITY previous-tab.label "Önceki Sekme">
+<!ENTITY previous-tab.tooltip "Önceki Sekmeye Git">
+<!ENTITY purge.label "Temizle">
+<!ENTITY purge.tooltip "Klasörü Şıkıştır, ve Yığın postaları sil">
+<!ENTITY read-mail.label "Posta Oku">
+<!ENTITY read-mail.tooltip "Posta Oku Uygulamasını Aç">
+<!ENTITY read-message.label "Oku">
+<!ENTITY read-message.tooltip "Mesajı Oku">
+<!ENTITY read-news.label "Haberleri Oku">
+<!ENTITY read-news.tooltip "Haberleri Oku Uygulamasını Aç">
+<!ENTITY realNextMessage.label "Sonraki Mesaj">
+<!ENTITY realNextMessage.tooltip "Gerçek Sonraki Mesajı Al">
+<!ENTITY realPreviousMessage.label "Önceki Mesaj">
+<!ENTITY realPreviousMessage.tooltip "Gerçek Önceki Mesajı Al">
+<!ENTITY redo.label "Yenile">
+<!ENTITY redo.tooltip "Son Değişikliği Yenile">
+<!ENTITY reload-all-tabs.label "Sekmeleri Yeniden Yükle">
+<!ENTITY reload-all-tabs.tooltip "Açık Tüm Sekmeleri Yeniden Yükle">
+<!ENTITY restart-app.label "Yeniden Başlat">
+<!ENTITY restart-app.tooltip "Uygulamayı Yeniden Başlat">
+<!ENTITY return-receipt.label "Alındi Bilgisi Geri Dönüşü">
+<!ENTITY return-receipt.tooltip "Alındi Bilgisi Geri Dönüşü aç/kapa Tersle">
+<!ENTITY search-addresses.label "Adresleri Ara">
+<!ENTITY search-addresses.tooltip "Adresleri Aramayı Aç">
+<!ENTITY search-messages.label "Mesajları Ara">
+<!ENTITY search-messages.tooltip "Mesaj Aramayı Aç">
+<!ENTITY send-link.label "Bağlantı Gönder">
+<!ENTITY send-link.tooltip "Email&apos;de sayfa bağlantısı gönder">
+<!ENTITY send-with-no-save.label "Kaydetmeden Gönder">
+<!ENTITY send-with-no-save.tooltip "Bir kopyasını kaydetmeden mesajı gönder">
+<!ENTITY shift-delete.label "Çöp Kutusunu Atla">
+<!ENTITY shift-delete.tooltip "Mesajı Çöp Kutusuna Atmadan Sil">
+<!ENTITY statusbar-toggle.label "Durum Çubuğu">
+<!ENTITY statusbar-toggle.tooltip "Durum Çubuğunu Tersle">
+<!ENTITY stop-all.label "Tümünü Durdur">
+<!ENTITY stop-all.tooltip "Yüklenen Tüm Sekmeleri Durdur">
+<!ENTITY stop-animation.label "Animasyonu Tersle">
+<!ENTITY stop-cookies.label "Çerezleri Tersle">
+<!ENTITY stop-dinamic-content.label "Gömülü içeriği tersle">
+<!ENTITY stop-dinamic-content.tooltip "Yüklenen tüm gömülü içeriği durdur.">
+<!ENTITY stop-flash.label "Flash&apos;ı Tewrsle">
+<!ENTITY stop-flash.tooltip "Rahatsız Eden Flash dosyasını durdur">
+<!ENTITY stop-movies.label "Filmleri Tersle">
+<!ENTITY stop-movies.tooltip "Yüklenen Filmleri Tersle">
+<!ENTITY tab-list.label "Sekme Listesi">
+<!ENTITY tab-list.tooltip "Sekme Listesini Göster">
+<!ENTITY tasks-toggle.label "Görevleri Tersle">
+<!ENTITY tasks-toggle.tooltip "Görev Çubuğunu Tersle">
+<!ENTITY themes.label "Temalar">
+<!ENTITY themes.tooltip "Tema Yöneticisini Aç">
+<!ENTITY thunderbird-extension.label "Eklentiler">
+<!ENTITY thunderbird-extension.tooltip "Daha fazla Thunderbird eklentisi alın">
+<!ENTITY thunderbird-theme.label "Temalar">
+<!ENTITY thunderbird-theme.tooltip "Daha fazla Thunderbird teması alın">
+<!ENTITY undo-close-tab.label "Kapatılan Sekmeyi Geri Al">
+<!ENTITY undo-close-tab.tooltip "Son kapatılan sekmeyi yeniden aç">
+<!ENTITY undo.label "Geri Al">
+<!ENTITY undo.tooltip "Son Değişikliği Geri Al">
+<!ENTITY unread-threads.label "Okunmamış Haber Grupları">
+<!ENTITY unread-threads.tooltip "Okunmamış Haber Gruplarını Göster">
+<!ENTITY websearch.label "Web Araması">
+<!ENTITY websearch.tooltip "Varsayılan arama motorunuzla webde arayın">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia ana sayfasını yükle">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Yahoo Mail&apos;i Aç">

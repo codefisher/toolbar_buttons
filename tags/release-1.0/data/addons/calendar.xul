@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="addons"
+	label="&addons.label;"
+	tooltiptext="&addons.tooltip;"
+	command="Tools:Addons"/>

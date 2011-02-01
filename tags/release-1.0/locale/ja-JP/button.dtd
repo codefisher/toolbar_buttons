@@ -1,0 +1,304 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "キャッシュされているコンテンツを表示するのに about:cache を開きます">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "about:config を開きます">
+<!ENTITY about-disk-cache.label "about:cache ディスク">
+<!ENTITY about-disk-cache.tooltip "ハード ドライブに保存されたキャッシュされているコンテンツを表示するのにabout:cache を開きます">
+<!ENTITY about-mem-cache.label "about:cache メモリ">
+<!ENTITY about-mem-cache.tooltip "メモリにキャッシュされているコンテンツを表示するのに about:cache を開きます">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "インストールされているプラグインを表示するのに about:plugins を開きます">
+<!ENTITY accountmanager.label "アカウントの設定">
+<!ENTITY accountmanager.tooltip "アカウントの設定を開きます">
+<!ENTITY accountwizard.label "アカウント セットアップ">
+<!ENTITY accountwizard.tooltip "新しいアカウントをセットアップするのにウィザードを起動します">
+<!ENTITY add-address.label "電子メールの追加">
+<!ENTITY add-address.tooltip "アドレス帳へ電子メール アドレスをコピーします">
+<!ENTITY addons.label "アドオン">
+<!ENTITY addons.tooltip "アドオン マネージャを開きます">
+<!ENTITY all-threads.label "すべてのスレッド">
+<!ENTITY all-threads.tooltip "すべてのスレッドを表示します">
+<!ENTITY attachments-delete.label "添付の削除">
+<!ENTITY attachments-delete.tooltip "メッセージからすべての添付を削除します">
+<!ENTITY attachments-detach.label "添付の添付解除">
+<!ENTITY attachments-detach.tooltip "メッセージからすべての添付を添付解除します">
+<!ENTITY attachments-save.label "添付の保存">
+<!ENTITY attachments-save.tooltip "メッセージからすべての添付を保存します">
+<!ENTITY bookmark-manager.label "ブックマーク マネージャ">
+<!ENTITY bookmark-manager.tooltip "ブックマーク マネージャを開きます">
+<!ENTITY bookmark-nopop.label "クイック ブックマーク">
+<!ENTITY bookmark-nopop.tooltip "確認せずにブックマークを追加します">
+<!ENTITY bookmark-tabs.label "すべてブックマーク">
+<!ENTITY bookmark-tabs.tooltip "すべての開かれているタブをブックマークします">
+<!ENTITY bookmark-toolbar.label "ブックマーク ツール バー">
+<!ENTITY bookmark-toolbar.tooltip "ブックマーク ツール バーを切り替えます">
+<!ENTITY bookmark.label "ページのブックマーク">
+<!ENTITY bookmark.tooltip "現在のページをブックマークします">
+<!ENTITY bookmarks-menu-button.label "ブックマーク メニュー">
+<!ENTITY bookmarks-menu-button.tooltip "ブックマーク メニューを表示します">
+<!ENTITY bottom-page.label "末尾へ">
+<!ENTITY bottom-page.tooltip "ページの末尾へ移動します">
+<!ENTITY change-text-direction.label "テキストの方向の変更">
+<!ENTITY change-text-direction.tooltip "左から右へまたは右から左へテキストの方向を変更します">
+<!ENTITY check-for-update.label "更新">
+<!ENTITY check-for-update.tooltip "更新をチェックします">
+<!ENTITY clear-data.label "情報のクリア">
+<!ENTITY clear-data.tooltip "[個人情報のクリア] ダイアログを開きます">
+<!ENTITY clear-url.label "Url バーのクリア">
+<!ENTITY clear-url.tooltip "Url バーのテキストをクリアします">
+<!ENTITY clipboard.label "クリップボードからのリンク">
+<!ENTITY clipboard.menuitem "クリップボードからのリンクを開く">
+<!ENTITY clipboard.newtab "新しいタブにクリップボードからのリンクを開く">
+<!ENTITY clipboard.tooltip "クリップボードからリンクを取得して開きます">
+<!ENTITY close-all-tabs.label "すべて閉じる">
+<!ENTITY close-all-tabs.tooltip "すべてのタブを閉じます">
+<!ENTITY close-other-tabs.label "その他を閉じる">
+<!ENTITY close-other-tabs.tooltip "選択された以外のすべてのタブを閉じます。">
+<!ENTITY close-tab.label "タブを閉じる">
+<!ENTITY close-tab.tooltip "開かれているタブまたはウィンドウを閉じます">
+<!ENTITY compact.label "最適化">
+<!ENTITY compact.tooltip "フォルダを最適化します">
+<!ENTITY copy-address.label "電子メールのコピー">
+<!ENTITY copy-address.tooltip "クリップボードへ電子メール アドレスをコピーします">
+<!ENTITY create-filter.label "フィルタの作成">
+<!ENTITY create-filter.tooltip "メッセージからフィルタを作成します">
+<!ENTITY customize-toolbar.label "ツールバーのカスタマイズ">
+<!ENTITY customize-toolbar.tooltip "ツールバーをカスタマイズし、ボタンなどを追加または削除します">
+<!ENTITY delete-event.label "イベントの削除">
+<!ENTITY delete-event.tooltip "選択されたイベントを削除します">
+<!ENTITY delete-junk.label "迷惑メールの削除">
+<!ENTITY delete-junk.tooltip "迷惑メール メッセージを削除します">
+<!ENTITY delete-tasks.label "タスクの削除">
+<!ENTITY delete-tasks.tooltip "選択されたタスクを削除します">
+<!ENTITY delete.label "削除">
+<!ENTITY delete.tooltip "選択されたテキストを削除します">
+<!ENTITY dictionary-list.label "辞書の変更">
+<!ENTITY dictionary-list.tooltip "現在の辞書をすばやく変更します">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Ebay を開きます">
+<!ENTITY edit-draft.label "下書きの編集">
+<!ENTITY edit-draft.tooltip "保存された下書きを編集します">
+<!ENTITY empty-trash.label "ごみ箱を空にする">
+<!ENTITY empty-trash.tooltip "ごみ箱フォルダを空にする">
+<!ENTITY enlarge.label "テキストの拡大">
+<!ENTITY enlarge.tooltip "テキスト サイズを拡大します">
+<!ENTITY exit.label "終了">
+<!ENTITY exit.tooltip "アプリケーションを終了します">
+<!ENTITY extensions.label "拡張">
+<!ENTITY extensions.tooltip "拡張マネージャを開きます">
+<!ENTITY favorite-page.label "お気に入りページ">
+<!ENTITY favorite-page.tooltip "お気に入りページを開きます">
+<!ENTITY find-again.label "再び検索">
+<!ENTITY find-again.tooltip "次の一致を検索します">
+<!ENTITY find-prev.label "前を検索">
+<!ENTITY find-prev.tooltip "前の一致を検索します">
+<!ENTITY find.label "検索">
+<!ENTITY find.tooltip "テキストを検索します">
+<!ENTITY firefox-extension.label "拡張">
+<!ENTITY firefox-extension.tooltip "さらなる Firefox 拡張を取得します">
+<!ENTITY firefox-theme.label "テーマ">
+<!ENTITY firefox-theme.tooltip "さらなる Firefox テーマを取得します">
+<!ENTITY full-screen.label "全画面表示">
+<!ENTITY full-screen.tooltip "全画面表示モードへ切り替えます">
+<!ENTITY get-inbox.label "受信トレイ フォルダ">
+<!ENTITY get-inbox.tooltip "受信トレイへフォーカスされたフォルダを変更します">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Google Mail を開きます">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Google のホーム ページを読み込みます">
+<!ENTITY help.label "ヘルプ">
+<!ENTITY help.tooltip "ヘルプ資料を開きます">
+<!ENTITY hide-images.label "イメージの非表示">
+<!ENTITY hide-images.tooltip "現在のドキュメントのすべてのイメージと背景を非表示にします">
+<!ENTITY home-page-change.label "ホームの変更">
+<!ENTITY home-page-change.multiple "複数のリンクとしてホーム ページを設定する">
+<!ENTITY home-page-change.tooltip "ホーム ページを変更します">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Hotmail を開きます">
+<!ENTITY html-mode.label "HTML モード">
+<!ENTITY html-mode.tooltip "メッセージが HTML として表示されるかプレーン テキストかを設定します">
+<!ENTITY ignored-threads.label "無視されたスレッド">
+<!ENTITY ignored-threads.tooltip "無視されたスレッドを表示します">
+<!ENTITY image-toggle.label "イメージの切り替え">
+<!ENTITY image-toggle.tooltip "イメージを読み込むかのオンとオフを切り替えます">
+<!ENTITY import.label "インポート">
+<!ENTITY import.tooltip "設定とデータをインポートします">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY installaddons.label "インストール">
+<!ENTITY installaddons.tooltip "拡張またはテーマをインストールします">
+<!ENTITY java-toggle.label "Java の切り替え">
+<!ENTITY java-toggle.tooltip "Java のオンとオフを切り替えます">
+<!ENTITY javaScriptConsole.label "エラー コンソール">
+<!ENTITY javaScriptConsole.tooltip "エラー コンソールを開きます">
+<!ENTITY javascript-toggle.label "JavaScript の切り替え">
+<!ENTITY javascript-toggle.tooltip "JavaScript のオンとオフを切り替えます">
+<!ENTITY label-all-blank.label "ラベルの削除">
+<!ENTITY label-all-blank.tooltip "すべてのタブのラベルを削除します">
+<!ENTITY label-blank.label "ラベルの削除">
+<!ENTITY label-blank.tooltip "現在のタブのラベルを削除します">
+<!ENTITY link-open.label "リンクを開くの設定">
+<!ENTITY link-open.tooltip "どうリンクを開くかを設定します">
+<!ENTITY min-font-size.label "最小のフォント サイズ">
+<!ENTITY min-font-size.tooltip "最小のフォント サイズを切り替えます">
+<!ENTITY minimize-window.label "最小化">
+<!ENTITY minimize-window.tooltip "現在のウィンドウを最小化します">
+<!ENTITY msg-filter.label "フィルタ">
+<!ENTITY msg-filter.tooltip "メッセージ フィルタをセット アップします">
+<!ENTITY msg-pane.label "メッセージ ペイン">
+<!ENTITY msg-pane.tooltip "メッセージ ペインを切り替えます">
+<!ENTITY new-message.label "新しいメッセージ">
+<!ENTITY new-message.tooltip "新しい電子メール メッセージを書きます">
+<!ENTITY next-tab.label "次のタブ">
+<!ENTITY next-tab.tooltip "次のタブへ移動します">
+<!ENTITY open-current-frame.label "現在のフレームの表示">
+<!ENTITY open-current-frame.tooltip "現在選択されているフレームのみを表示します">
+<!ENTITY open.label "開く">
+<!ENTITY open.tooltip "ファイルを開きます">
+<!ENTITY page-source.label "ソース">
+<!ENTITY page-source.tooltip "ページ ソースを表示します">
+<!ENTITY pageinfo.label "ページ情報">
+<!ENTITY pageinfo.tooltip "[ページ情報] ウィンドウを開きます">
+<!ENTITY pagesetup.label "ページ設定">
+<!ENTITY pagesetup.tooltip "ページがどう印刷されるかを設定します">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Paypal を開きます">
+<!ENTITY personal-bookmarks-menu-button.label "ツール バー ブックマーク メニュー">
+<!ENTITY personal-bookmarks-menu-button.tooltip "ツール バー ブックマーク メニューを表示します">
+<!ENTITY plainpaste.label "プレーン テキスト貼り付け">
+<!ENTITY plainpaste.tooltip "フォーマットなしで貼り付けます">
+<!ENTITY preferences.label "オプション">
+<!ENTITY preferences.tooltip "オプションを開きます">
+<!ENTITY previous-tab.label "前のタブ">
+<!ENTITY previous-tab.tooltip "前のタブへ移動します">
+<!ENTITY print-preview.label "印刷プレビュー">
+<!ENTITY print-preview.tooltip "印刷プレビューを開きます">
+<!ENTITY profile-folder.label "プロファイル">
+<!ENTITY profile-folder.tooltip "プロファイル フォルダを表示します">
+<!ENTITY purge.label "一掃">
+<!ENTITY purge.tooltip "フォルダを最適化し、迷惑メールを削除します">
+<!ENTITY read-mail.label "メールを読む">
+<!ENTITY read-mail.tooltip "メールを読むのにアプリケーションを開きます">
+<!ENTITY read-message.label "読む">
+<!ENTITY read-message.tooltip "メッセージを読みますRead Message">
+<!ENTITY read-news.label "ニュースを読む">
+<!ENTITY read-news.tooltip "ニュースを読むのにアプリケーションを開きます">
+<!ENTITY realNextMessage.label "次のメッセージ">
+<!ENTITY realNextMessage.tooltip "本当の次のメッセージを取得します">
+<!ENTITY realPreviousMessage.label "前のメッセージ">
+<!ENTITY realPreviousMessage.tooltip "本当の前のメッセージを取得します">
+<!ENTITY redo.label "やり直し">
+<!ENTITY redo.tooltip "最後の変更をやり直します">
+<!ENTITY reduce.label "テキストの縮小">
+<!ENTITY reduce.tooltip "テキスト サイズを縮小します">
+<!ENTITY reload-all-tabs.label "タブの再読み込み">
+<!ENTITY reload-all-tabs.tooltip "すべての開かれているタブを再読み込みします">
+<!ENTITY reload-proxy.label "プロキシの再読み込み">
+<!ENTITY reload-proxy.tooltip "プロキシを再読み込みします">
+<!ENTITY reload-skip-cache.label "キャッシュをスキップして再読み込み">
+<!ENTITY reload-skip-cache.tooltip "ブラウザ キャッシュに格納されるコンテンツを使用せずにページを再読み込みします">
+<!ENTITY rename-tab.label "タブ名の変更">
+<!ENTITY rename-tab.tooltip "現在選択されているタブのタブ名を変更します">
+<!ENTITY reply-sender.label "送信者のみへ返信">
+<!ENTITY reply-sender.tooltip "電子メールの送信者へのみ返信します">
+<!ENTITY reset.label "テキスト サイズのリセット">
+<!ENTITY reset.tooltip "テキスト サイズをリセットします">
+<!ENTITY restart-app.label "再起動">
+<!ENTITY restart-app.tooltip "アプリケーションを再起動します">
+<!ENTITY return-receipt.label "開封確認の返送">
+<!ENTITY return-receipt.tooltip "開封確認の返送のオン/オフを切り替えます">
+<!ENTITY save-frame.label "フレームの保存">
+<!ENTITY save-frame.tooltip "ドキュメント フレームを保存します">
+<!ENTITY saveas.label "保存">
+<!ENTITY saveas.tooltip "名前を付けてドキュメントを保存します">
+<!ENTITY search-addresses.label "アドレスの検索">
+<!ENTITY search-addresses.tooltip "アドレス検索を開きます">
+<!ENTITY search-messages.label "メッセージの検索">
+<!ENTITY search-messages.tooltip "メッセージ検索を開きます">
+<!ENTITY select-all.label "すべて選択">
+<!ENTITY select-all.tooltip "すべてのテキストを選択します">
+<!ENTITY send-link.label "リンクの送信">
+<!ENTITY send-link.tooltip "電子メールでページ リンクを送信します">
+<!ENTITY send-receive.label "送受信">
+<!ENTITY send-receive.tooltip "メッセージを送信および受信します">
+<!ENTITY send-with-no-save.label "保存せずに送信">
+<!ENTITY send-with-no-save.tooltip "コピーを保存せずにメッセージを送信します">
+<!ENTITY shift-delete.label "ごみ箱のスキップ">
+<!ENTITY shift-delete.tooltip "ごみ箱へ送信せずにメッセージを削除します">
+<!ENTITY show-frame.label "フレームの表示">
+<!ENTITY show-frame.tooltip "現在のフレームのみを表示します">
+<!ENTITY snap-back.label "最初へ">
+<!ENTITY snap-back.tooltip "このタブで開かれた最初のページへ移動します">
+<!ENTITY statusbar-toggle.label "ステータス バー">
+<!ENTITY statusbar-toggle.tooltip "ステータス バーを切り替えます">
+<!ENTITY stop-all.label "すべて中止">
+<!ENTITY stop-all.tooltip "読み込みからすべてのタブを中止します">
+<!ENTITY stop-animation.label "アニメーションの切り替え">
+<!ENTITY stop-animation.tooltip "アニメーションの GIF 、Blink および Marquee タグを中止します">
+<!ENTITY stop-cookies.label "Cookie の切り替え">
+<!ENTITY stop-cookies.tooltip "設定されるのから cookie を中止します。">
+<!ENTITY stop-dinamic-content.label "埋め込みコンテンツを切り替えます">
+<!ENTITY stop-dinamic-content.tooltip "読み込みからすべての埋め込みコンテンツを中止します。">
+<!ENTITY stop-flash.label "Flash の切り替え">
+<!ENTITY stop-flash.tooltip "迷惑な Flash を中止します">
+<!ENTITY stop-iframe.label "iframes ムービーの切り替え (いくつかの広告をブロックします)">
+<!ENTITY stop-iframe.tooltip "読み込みとしばしば含む広告から iframes を中止します">
+<!ENTITY stop-movies.label "ムービーの切り替え">
+<!ENTITY stop-movies.tooltip "読み込みからムービーを中止します">
+<!ENTITY tab-list.label "タブの一覧">
+<!ENTITY tab-list.tooltip "タブの一覧を表示します">
+<!ENTITY tasks-in-view.label "表示中のタスク">
+<!ENTITY tasks-in-view.tooltip "表示中のタスクを切り替えます">
+<!ENTITY tasks-toggle.label "タスクの切り替え">
+<!ENTITY tasks-toggle.tooltip "タスク バーを切り替えます">
+<!ENTITY themes.label "テーマ">
+<!ENTITY themes.tooltip "テーマ マネージャを開きます">
+<!ENTITY thunderbird-extension.label "拡張">
+<!ENTITY thunderbird-extension.tooltip "さらなる Thunderbird 拡張を取得します">
+<!ENTITY thunderbird-theme.label "テーマ">
+<!ENTITY thunderbird-theme.tooltip "さらなる Thunderbird テーマを取得します">
+<!ENTITY tiny-url.copy.to.clipboard "クリップ ボードへコピー">
+<!ENTITY tiny-url.email "リンクの電子メール">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.link.use "リンクのオプション">
+<!ENTITY tiny-url.tooltip "Tiny Url を作成します">
+<!ENTITY tiny-url.use.normal "xrl.in の使用">
+<!ENTITY tiny-url.use.preview "preview.xrl.in の使用">
+<!ENTITY tiny-url.visit "Xrl.In の訪問">
+<!ENTITY toggle-proxy.label "プロキシの切り替え">
+<!ENTITY toggle-proxy.tooltip "プロキシのオンとオフを切り替えます">
+<!ENTITY toggle-read.label "既読の切り替え">
+<!ENTITY toggle-read.tooltip "スターが付けられた既読を切り替えます">
+<!ENTITY toggle-starred.label "スターの切り替え">
+<!ENTITY toggle-starred.tooltip "スターの状態を切り替えます">
+<!ENTITY toggle-styles.label "スタイルの切り替え">
+<!ENTITY toggle-styles.tooltip "ウェブ サイトの定義スタイルを追加/削除します">
+<!ENTITY toolbar-menu.label "ツール バー">
+<!ENTITY toolbar-menu.tooltip "ツール バーの表示/非表示を切り替えます">
+<!ENTITY top-page.label "先頭へ">
+<!ENTITY top-page.tooltip "ページの先頭へ移動します">
+<!ENTITY translate.label "翻訳">
+<!ENTITY translate.tooltip "お好みの言語へ現在のページを翻訳します">
+<!ENTITY undo-close-tab.label "[タブを閉じる] を元に戻す">
+<!ENTITY undo-close-tab.tooltip "最後に閉じられたタブを開き直します">
+<!ENTITY undo.label "元に戻す">
+<!ENTITY undo.tooltip "最後の変更を元に戻します">
+<!ENTITY unread-threads.label "未読のスレッド">
+<!ENTITY unread-threads.tooltip "未読のスレッドを表示します">
+<!ENTITY up-directory.label "上のディレクトリへ">
+<!ENTITY up-directory.tooltip "1 つ上のディレクトリへ移動します">
+<!ENTITY use-document-colors.label "ページの色の切り替え">
+<!ENTITY use-document-colors.tooltip "ページの色を既定とサイト間で切り替えます">
+<!ENTITY use-document-fonts.label "ページのフォントの切り替え">
+<!ENTITY use-document-fonts.tooltip "ページのフォントを既定とサイト間で切り替えます">
+<!ENTITY watched-with-unread-threads.label "未読のある監視中のスレッド">
+<!ENTITY websearch.label "Web 検索">
+<!ENTITY websearch.tooltip "既定の検索エンジンでウェブを検索します">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Wikipedia のホーム ページを読み込みます">
+<!ENTITY with-unread-threads.label "未読のあるスレッド">
+<!ENTITY with-unread-threads.tooltip "未読のあるスレッドを表示します">
+<!ENTITY workoffline.label "オフライン作業">
+<!ENTITY workoffline.tooltip "オフライン作業を切り替えます">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Yahoo Mail を開きます">

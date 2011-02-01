@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="read-news"
+	label="&read-news.label;"
+	tooltiptext="&read-news.tooltip;"
+	oncommand="toolbar_buttons.readNews();"/>

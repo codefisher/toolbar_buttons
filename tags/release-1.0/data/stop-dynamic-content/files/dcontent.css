@@ -1,0 +1,12 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+/*
+* Block everything
+*/
+
+object,
+embed,
+svg,
+canvas {
+ -moz-binding: url("chrome://{{chrome-name}}/content/block.xml#flash") !important;
+ min-height:50px;
+}

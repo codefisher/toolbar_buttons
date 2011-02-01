@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="undo"
+	label="&undo.label;"
+	tooltiptext="&undo.tooltip;"
+	command="cmd_undo" />

@@ -1,0 +1,289 @@
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Открыть страницу для просмотра кешированных элементов">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Открыть about:config">
+<!ENTITY about-disk-cache.label "about:cache На диске">
+<!ENTITY about-disk-cache.tooltip "Открыть страницу для просмотра кешированных элементов на диске">
+<!ENTITY about-mem-cache.label "about:cache В памяти">
+<!ENTITY about-mem-cache.tooltip "Открыть страницу для просмотра кешированных элементов в памяти">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Открыть страницу со списком установленных плагинов">
+<!ENTITY accountmanager.label "Настройки учетной записи">
+<!ENTITY accountmanager.tooltip "Открыть настройки учетной записи">
+<!ENTITY accountwizard.label "Настройки Учетной записи">
+<!ENTITY accountwizard.tooltip "Запустите программу установки чтобы создать новую учетную запись">
+<!ENTITY add-address.label "Добавить E-mail">
+<!ENTITY add-address.tooltip "Копировать адрес почты в адресную книгу">
+<!ENTITY addons.label "Дополнения">
+<!ENTITY addons.tooltip "Открыть менеджер дополнений">
+<!ENTITY attachments-delete.label "Удалить вложения">
+<!ENTITY attachments-delete.tooltip "Удалить все вложения из сообщения">
+<!ENTITY attachments-detach.label "Открепить вложения">
+<!ENTITY attachments-detach.tooltip "Открепить все вложения из сообщения">
+<!ENTITY attachments-save.label "Сохранить вложения">
+<!ENTITY attachments-save.tooltip "Сохранить все вложения из сообщения">
+<!ENTITY bookmark-manager.label "Управление Закладками">
+<!ENTITY bookmark-manager.tooltip "Открыть менеджер Закладок">
+<!ENTITY bookmark-nopop.label "Быстрая закладка">
+<!ENTITY bookmark-nopop.tooltip "Добавить закладку без подтверждения">
+<!ENTITY bookmark-tabs.label "Добавить все в Закладки">
+<!ENTITY bookmark-tabs.tooltip "Добавить в Закладки все открытые вкладки">
+<!ENTITY bookmark-toolbar.label "Панель Закладок">
+<!ENTITY bookmark-toolbar.tooltip "Показать\Скрыть Панель Закладок">
+<!ENTITY bookmark.label "Добавить в Закладки">
+<!ENTITY bookmark.tooltip "Добавить в Закладки текущую страницу">
+<!ENTITY bookmarks-menu-button.label "Меню Закладок">
+<!ENTITY bookmarks-menu-button.tooltip "Показать меню Закладок">
+<!ENTITY bottom-page.label "Вниз">
+<!ENTITY bottom-page.tooltip "Перейти к концу страницы">
+<!ENTITY change-text-direction.label "Изменить направление текста">
+<!ENTITY change-text-direction.tooltip "Изменить направление текста (слева направо или справа налево)">
+<!ENTITY check-for-update.label "Обновления">
+<!ENTITY check-for-update.tooltip "Проверить обновления">
+<!ENTITY clear-data.label "Удалить данные">
+<!ENTITY clear-data.tooltip "Открыть диалоговое окно Удаления личных данных">
+<!ENTITY clear-url.label "Очистить строку адреса">
+<!ENTITY clear-url.tooltip "Очистить строку адреса">
+<!ENTITY clipboard.label "Ссылка из буфера обмена">
+<!ENTITY clipboard.menuitem "Открыть ссылку из буфера обмена">
+<!ENTITY clipboard.newtab "Ссылка из буфера обмена в новой вкладке">
+<!ENTITY clipboard.tooltip "Открыть ссылку из буфера обмена">
+<!ENTITY close-all-tabs.label "Закрыть все">
+<!ENTITY close-all-tabs.tooltip "Закрыть все вкладки">
+<!ENTITY close-other-tabs.label "Закрыть остальные">
+<!ENTITY close-other-tabs.tooltip "Закрыть все вкладки, кроме текущей">
+<!ENTITY close-tab.label "Закрыть вкладку">
+<!ENTITY close-tab.tooltip "Закрыть открытую вкладку или окно">
+<!ENTITY compact.label "Сжать">
+<!ENTITY compact.tooltip "Сжать папку">
+<!ENTITY copy-address.label "Копировать адрес">
+<!ENTITY copy-address.tooltip "Копировать адрес почты в буфер обмена">
+<!ENTITY create-filter.label "Создать фильтр">
+<!ENTITY create-filter.tooltip "Создать фильтр из письма">
+<!ENTITY customize-toolbar.label "Панель инструментов">
+<!ENTITY customize-toolbar.tooltip "Настройка Панели инструментов">
+<!ENTITY delete-event.label "Удалить события">
+<!ENTITY delete-event.tooltip "Удалить выбранные события">
+<!ENTITY delete-junk.label "Удалить спам">
+<!ENTITY delete-junk.tooltip "Удалить спам">
+<!ENTITY delete-tasks.label "Удалить задания">
+<!ENTITY delete-tasks.tooltip "Удалить выбранные задания">
+<!ENTITY delete.label "Удалить">
+<!ENTITY delete.tooltip "Удалить выделенный текст">
+<!ENTITY dictionary-list.label "Изменить словарь">
+<!ENTITY dictionary-list.tooltip "Быстрое изменение текущего словаря">
+<!ENTITY ebay.label "Ebay">
+<!ENTITY ebay.tooltip "Открыть Ebay">
+<!ENTITY edit-draft.label "Редактировать черновик">
+<!ENTITY edit-draft.tooltip "Редактировать сохраненный черновик">
+<!ENTITY empty-trash.label "Очистить Удаленные">
+<!ENTITY empty-trash.tooltip "Очистить папку Удаленные">
+<!ENTITY enlarge.label "Увеличить">
+<!ENTITY enlarge.tooltip "Увеличить размер текста">
+<!ENTITY exit.label "Выход">
+<!ENTITY exit.tooltip "Закрыть приложение">
+<!ENTITY extensions.label "Расширения">
+<!ENTITY extensions.tooltip "Открыть менеджер расширений">
+<!ENTITY favorite-page.label "Любимая страница">
+<!ENTITY favorite-page.tooltip "Открыть Любимую страницу">
+<!ENTITY find-again.label "Искать следующее">
+<!ENTITY find-again.tooltip "Искать следующее совпадение">
+<!ENTITY find-prev.label "Искать предыдущее">
+<!ENTITY find-prev.tooltip "Искать предыдущее совпадение">
+<!ENTITY find.label "Поиск">
+<!ENTITY find.tooltip "Найти текст">
+<!ENTITY firefox-extension.label "Расширения">
+<!ENTITY firefox-extension.tooltip "Установить расширения для Firefox">
+<!ENTITY firefox-theme.label "Темы">
+<!ENTITY firefox-theme.tooltip "Установить темы для Firefox">
+<!ENTITY full-screen.label "Во весь экран">
+<!ENTITY full-screen.tooltip "Перейти в полноэкранный режим">
+<!ENTITY get-inbox.label "Перейти во Входящие">
+<!ENTITY get-inbox.tooltip "Сделать папку Входящие активной">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Открыть Google Mail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Перейти на главную страницу Google">
+<!ENTITY help.label "Справка">
+<!ENTITY help.tooltip "Справка в Сети">
+<!ENTITY hide-images.label "Скрыть изображения">
+<!ENTITY hide-images.tooltip "Скрыть все изображения и фоновые картинки на странице">
+<!ENTITY home-page-change.label "Изменить домашнюю страницу">
+<!ENTITY home-page-change.multiple "Сделать домашнюю страницу множеством ссылок">
+<!ENTITY home-page-change.tooltip "Изменить вашу домашнюю страницу">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Открыть Hotmail">
+<!ENTITY html-mode.label "Режим HTML">
+<!ENTITY html-mode.tooltip "Показать сообщение в виде HTML или обычного текста">
+<!ENTITY image-toggle.label "Переключить изображения">
+<!ENTITY image-toggle.tooltip "Включить или Отключить загрузку изображений">
+<!ENTITY import.label "Импорт">
+<!ENTITY import.tooltip "Импорт настроек и данных">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Modal Инспектор">
+<!ENTITY installaddons.label "Установить">
+<!ENTITY installaddons.tooltip "Установить расширение или тему">
+<!ENTITY java-toggle.label "Переключить Java">
+<!ENTITY java-toggle.tooltip "Включить или Выключить Java">
+<!ENTITY javaScriptConsole.label "Консоль">
+<!ENTITY javaScriptConsole.tooltip "Открыть консоль ошибок">
+<!ENTITY javascript-toggle.label "Переключить JavaScript">
+<!ENTITY javascript-toggle.tooltip "Включить или Выключить JavaScript">
+<!ENTITY label-all-blank.label "Удалить названия">
+<!ENTITY label-all-blank.tooltip "Удалить названия всех вкладок">
+<!ENTITY label-blank.label "Удалить название">
+<!ENTITY label-blank.tooltip "Удалить название текущей вкладки">
+<!ENTITY link-open.label "Настройки открытия ссылок">
+<!ENTITY link-open.tooltip "Настроить, как должны открываться ссылки">
+<!ENTITY min-font-size.label "Минимальный размер шрифта">
+<!ENTITY min-font-size.tooltip "Изменить минимальный размер шрифта">
+<!ENTITY minimize-window.label "Свернуть">
+<!ENTITY minimize-window.tooltip "Свернуть текущее окно">
+<!ENTITY msg-filter.label "Фильтры">
+<!ENTITY msg-filter.tooltip "Настроить фильтры">
+<!ENTITY msg-pane.label "Панель сообщения">
+<!ENTITY msg-pane.tooltip "Переключить панель сообщения">
+<!ENTITY new-message.label "Новое сообщение">
+<!ENTITY new-message.tooltip "Написать новое сообщение электронной почты">
+<!ENTITY next-tab.label "Следующая вкладка">
+<!ENTITY next-tab.tooltip "Перейти к следующей вкладке">
+<!ENTITY open-current-frame.label "Показать этот фрейм">
+<!ENTITY open-current-frame.tooltip "Показать только выбранный фрейм">
+<!ENTITY open.label "Открыть">
+<!ENTITY open.tooltip "Открыть файл">
+<!ENTITY page-source.label "Исходный код">
+<!ENTITY page-source.tooltip "Просмотреть исходный код страницы">
+<!ENTITY pageinfo.label "Информация о странице">
+<!ENTITY pageinfo.tooltip "Открыть окно с Информацией о странице">
+<!ENTITY pagesetup.label "Настройки страницы">
+<!ENTITY pagesetup.tooltip "Настройка параметров печати страницы">
+<!ENTITY paypal.label "Paypal">
+<!ENTITY paypal.tooltip "Открыть Paypal">
+<!ENTITY personal-bookmarks-menu-button.label "Меню панели закладок">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Показать меню панели закладок">
+<!ENTITY plainpaste.label "Вставить обычный текст">
+<!ENTITY plainpaste.tooltip "Вставить текст без форматирования">
+<!ENTITY preferences.label "Настройки">
+<!ENTITY preferences.tooltip "Открыть настройки">
+<!ENTITY previous-tab.label "Предыдущая вкладка">
+<!ENTITY previous-tab.tooltip "Перейти к предыдущей вкладке">
+<!ENTITY print-preview.label "Предварительный просмотр">
+<!ENTITY print-preview.tooltip "Предварительный просмотр страницы">
+<!ENTITY profile-folder.label "Профиль">
+<!ENTITY profile-folder.tooltip "Просмотреть папку профиля">
+<!ENTITY purge.label "Сжать">
+<!ENTITY purge.tooltip "Сжать папку и удалить спам">
+<!ENTITY read-mail.label "Читать почту">
+<!ENTITY read-mail.tooltip "Открыть приложение для чтения почты">
+<!ENTITY read-message.label "Читать">
+<!ENTITY read-message.tooltip "Читать сообщение">
+<!ENTITY read-news.label "Читать новости">
+<!ENTITY read-news.tooltip "Открыть приложение для чтения новостей">
+<!ENTITY realNextMessage.label "Следующее сообщение">
+<!ENTITY realNextMessage.tooltip "Перейти к следующему по списку сообщению">
+<!ENTITY realPreviousMessage.label "Предыдущее сообщение">
+<!ENTITY realPreviousMessage.tooltip "Перейти к предыдущему по списку сообщению">
+<!ENTITY redo.label "Повторить">
+<!ENTITY redo.tooltip "Отменить последнее изменение">
+<!ENTITY reduce.label "Уменьшить">
+<!ENTITY reduce.tooltip "Уменьшить размер текста">
+<!ENTITY reload-all-tabs.label "Обновить вкладки">
+<!ENTITY reload-all-tabs.tooltip "Обновить все открытые вкладки">
+<!ENTITY reload-proxy.label "Обновить прокси">
+<!ENTITY reload-proxy.tooltip "Обновить прокси">
+<!ENTITY reload-skip-cache.label "Обновить, минуя кеш">
+<!ENTITY reload-skip-cache.tooltip "Обновить страницу, минуя кеш">
+<!ENTITY rename-tab.label "Переименовать вкладку">
+<!ENTITY rename-tab.tooltip "Переименовать текущую вкладку">
+<!ENTITY reply-sender.label "Ответить только отправителю">
+<!ENTITY reply-sender.tooltip "Ответить только отправителю письма">
+<!ENTITY reset.label "Сбросить">
+<!ENTITY reset.tooltip "Сбросить размер текста">
+<!ENTITY restart-app.label "Перезагрузка">
+<!ENTITY restart-app.tooltip "Перезапустить приложение">
+<!ENTITY return-receipt.label "Уведомление о получении">
+<!ENTITY return-receipt.tooltip "Включить или выключить Уведомление о получении">
+<!ENTITY save-frame.label "Сохранить Фрейм">
+<!ENTITY save-frame.tooltip "Сохранить Фрейм">
+<!ENTITY saveas.label "Сохранить">
+<!ENTITY saveas.tooltip "Сохранить страницу как...">
+<!ENTITY search-addresses.label "Поиск адресов">
+<!ENTITY search-addresses.tooltip "Открыть Поиск адресов">
+<!ENTITY search-messages.label "Поиск сообщений">
+<!ENTITY search-messages.tooltip "Открыть Поиск сообщений">
+<!ENTITY select-all.label "Выделить все">
+<!ENTITY select-all.tooltip "Выделить весь текст">
+<!ENTITY send-link.label "Отправить ссылку">
+<!ENTITY send-link.tooltip "Отправить строку по Email">
+<!ENTITY send-receive.label "Отправить и Получить">
+<!ENTITY send-receive.tooltip "Отправить и Получить письма">
+<!ENTITY send-with-no-save.label "Отправить без сохранения">
+<!ENTITY send-with-no-save.tooltip "Отправить без сохранения копии">
+<!ENTITY shift-delete.label "Мимо корзины">
+<!ENTITY shift-delete.tooltip "Удалить письма, минуя корзину">
+<!ENTITY show-frame.label "Показать фрейм">
+<!ENTITY show-frame.tooltip "Показать только этот фрейм">
+<!ENTITY snap-back.label "Полный назад">
+<!ENTITY snap-back.tooltip "Перейти на самую первую страницу, открытую в этой вкладке">
+<!ENTITY statusbar-toggle.label "Строка состояния">
+<!ENTITY statusbar-toggle.tooltip "Показать/Скрыть строку состояния">
+<!ENTITY stop-all.label "Остановить все">
+<!ENTITY stop-all.tooltip "Остановить загрузку во всех открытых вкладках">
+<!ENTITY stop-animation.label "Переключить анимацию">
+<!ENTITY stop-animation.tooltip "Остановить анимированные GIF, теги Blink и Marquee">
+<!ENTITY stop-cookies.label "Переключить cookies">
+<!ENTITY stop-cookies.tooltip "Отключить регистрацию cookies">
+<!ENTITY stop-dinamic-content.label "Переключить встр. содержимое">
+<!ENTITY stop-dinamic-content.tooltip "Отключить встроенное содержимое">
+<!ENTITY stop-flash.label "Переключить Flash">
+<!ENTITY stop-flash.tooltip "Переключить Flash">
+<!ENTITY stop-iframe.label "Переключить iframe">
+<!ENTITY stop-iframe.tooltip "Отключить загрузку iframes и всю рекламу, которую они часто содержат">
+<!ENTITY stop-movies.label "Переключить видео">
+<!ENTITY stop-movies.tooltip "Переключить загрузку видео">
+<!ENTITY tab-list.label "Список вклдаок">
+<!ENTITY tab-list.tooltip "Отобразить список вкладок">
+<!ENTITY tasks-toggle.label "Переключить задания">
+<!ENTITY tasks-toggle.tooltip "Переключить панель заданий">
+<!ENTITY themes.label "Темы">
+<!ENTITY themes.tooltip "Открыть менеджер тем">
+<!ENTITY thunderbird-extension.label "Расширения">
+<!ENTITY thunderbird-extension.tooltip "Установить расширения для Thunderbird">
+<!ENTITY thunderbird-theme.label "Темы">
+<!ENTITY thunderbird-theme.tooltip "Установить темы для Thunderbird">
+<!ENTITY tiny-url.copy.to.clipboard "Копировать в буфер обмена">
+<!ENTITY tiny-url.email "Отправить ссылку">
+<!ENTITY tiny-url.label "Маленький URL">
+<!ENTITY tiny-url.link.use "Настрйоки ссылки">
+<!ENTITY tiny-url.tooltip "Создать маленький URL">
+<!ENTITY tiny-url.use.normal "Использовать xrl.in">
+<!ENTITY tiny-url.use.preview "Использовать preview.xrl.in">
+<!ENTITY tiny-url.visit "Посетить Xrl.In">
+<!ENTITY toggle-proxy.label "Переключить прокси">
+<!ENTITY toggle-proxy.tooltip "Включить или выключить прокси-сервер">
+<!ENTITY toggle-styles.label "Переключить стили">
+<!ENTITY toggle-styles.tooltip "Добавить/Удалить стили, определенные сайтами">
+<!ENTITY toolbar-menu.label "Панели инструментов">
+<!ENTITY toolbar-menu.tooltip "Показать/Скрыть Панели инструментов">
+<!ENTITY top-page.label "Вверх">
+<!ENTITY top-page.tooltip "Перейти в начало страницы">
+<!ENTITY translate.label "Перевести">
+<!ENTITY translate.tooltip "Перевести текущую страницу на предопределенный язык">
+<!ENTITY undo-close-tab.label "Отменить закрытие вкладки">
+<!ENTITY undo-close-tab.tooltip "Открыть последнюю закрытую вкладку">
+<!ENTITY undo.label "Отменить">
+<!ENTITY undo.tooltip "Отменить последнее действие">
+<!ENTITY up-directory.label "Выше">
+<!ENTITY up-directory.tooltip "Перейти на папку выше">
+<!ENTITY use-document-colors.label "Переключить цвета страницы">
+<!ENTITY use-document-colors.tooltip "Переключиться между цветами страницы и цветами по умолчанию">
+<!ENTITY use-document-fonts.label "Переключить шрифт страницы">
+<!ENTITY use-document-fonts.tooltip "Переключиться между шрифтами страницы и шрифтами по умолчанию">
+<!ENTITY websearch.label "Поиск в Сети">
+<!ENTITY websearch.tooltip "Поиск в Сети, используя ваш поисковый плагин по умолчанию">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Перейти на главную страницу Wikipedia">
+<!ENTITY workoffline.label "Работать автономно">
+<!ENTITY workoffline.tooltip "Переключить режим автономной работы">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY yahoo-button.tooltip "Открыть Yahoo Mail">

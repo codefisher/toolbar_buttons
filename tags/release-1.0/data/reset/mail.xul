@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="reset"
+	label="&reset.label;"
+	tooltiptext="&reset.tooltip;"
+	oncommand="goDoCommand('cmd_fullZoomReset');" />

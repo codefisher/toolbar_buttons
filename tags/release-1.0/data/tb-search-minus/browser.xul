@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-search-minus"
+	label="&tb-search-minus.label;"
+	tooltiptext="&tb-search-minus.tooltip;"
+	oncommand="toolbar_buttons.searchBarSize(-1);" />

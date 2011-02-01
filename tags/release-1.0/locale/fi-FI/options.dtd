@@ -1,0 +1,20 @@
+<!ENTITY options.window.title "Toolbar Buttons - Asetukset">
+<!ENTITY favorite-page.description "Käytetään painikkeessa ”Suosikkisivu”; tietyllä tavalla toinen kotisivu.">
+<!ENTITY toggle.prox.label "Välityspalvelin">
+<!ENTITY toggle.proxy.description "Painikkeella ”Välityspalvelin” voidaan siirtyä tilasta, jossa ei käytetä välityspalvelinta, yhteen alla esitetyistä tiloista.">
+<!ENTITY restart.checkbox "Älä kysy vahvistusta uudelleenkäynnistyksen yhteydessä.">
+<!ENTITY previous-next.label "Edellinen &amp; Seuraava">
+<!ENTITY toggle.checkbox "Lataa sivu uudelleen, kun tilaa vaihdetaan.">
+<!ENTITY restart.label "Uudelleenkäynnistys">
+<!ENTITY read.select.button "Valitse">
+<!ENTITY readnews.path.desc "Keskusteluryhmien lukuohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
+<!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
+<!ENTITY toggle.proxy.auto.configuration "Automaattinen välityspalvelimen asetusten määritys (PAC)">
+<!ENTITY readmail.path.desc "Sähköpostiohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
+<!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">
+<!ENTITY favorite-page.label "Suosikkisivu">
+<!ENTITY translate.label "Käännä">
+<!ENTITY translate.description "Valitse mitä kieltä haluat ”Käännä”-painikkeen käyttävän. Toiminto hyödyntää Googlen käännöspalvelua.">
+<!ENTITY previous-next.checkbox "Vaihda painikkeiden ”Edellinen” ja ”Seuraava” suuntaa.">
+<!ENTITY readmail.path.caption "Sähköpostiohjelman polku">
+<!ENTITY readnews.path.caption "Keskusteluryhmien lukuohjelman polku">

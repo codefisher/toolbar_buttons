@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="bookmark"
+	label="&bookmark.label;"
+	tooltiptext="&bookmark.tooltip;"
+	command="Browser:AddBookmarkAs"/>

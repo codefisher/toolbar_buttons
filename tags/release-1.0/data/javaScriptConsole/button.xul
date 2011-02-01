@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="javaScriptConsole"
+	label="&javaScriptConsole.label;"
+	tooltiptext="&javaScriptConsole.tooltip;"
+	command="javascriptConsole"/>

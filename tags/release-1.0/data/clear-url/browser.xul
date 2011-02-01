@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	type="checkbox"
+	id="clear-url"
+	label="&clear-url.label;"
+	tooltiptext="&clear-url.tooltip;"
+	oncommand="toolbar_buttons.hideURLText(this);"/>

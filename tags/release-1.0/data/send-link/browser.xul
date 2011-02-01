@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="send-link"
+	label="&send-link.label;"
+	tooltiptext="&send-link.tooltip;"
+	command="Browser:SendLink"/>

@@ -1,0 +1,14 @@
+<groupbox flex="1">
+	<preferences>
+		<preference id="{{pref-root}}toggle.proxy" name="{{pref-root}}toggle.proxy"
+			type="int"/>
+	</preferences>
+	<description>&toggle.proxy.description;</description>
+	<caption label="&toggle.prox.label;"/>
+	<radiogroup preference="{{pref-root}}toggle.proxy">
+		<radio value="1" label="&toggle.proxy.manual;"/>
+		<radio value="2" label="&toggle.proxy.auto.configuration;"/>
+		<radio value="4" label="&toggle.proxy.auto.detect;"/>
+		<radio value="5" label="&toggle.proxy.system;"/>
+	</radiogroup>
+</groupbox>

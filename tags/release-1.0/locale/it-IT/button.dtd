@@ -1,0 +1,346 @@
+<!ENTITY about-application.label "Informazioni su…">
+<!ENTITY about-application.tooltip "Informazioni su &brandShortName;">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Apre &apos;about:cache&apos; per visualizzare gli elementi presenti nella cache">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Apre &apos;about:config&apos;">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "Apre &apos;about:cache&apos; per visualizzare gli elementi memorizzati nel disco rigido">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY about-mem-cache.tooltip "Apre &apos;about:cache&apos; per visualizzare gli elementi memorizzati in memoria">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Apre &apos;about:plugins&apos; per visualizzare i plugin installati">
+<!ENTITY accountmanager.label "Impostazioni account…">
+<!ENTITY accountmanager.tooltip "Apre la finestra delle impostazioni degli account">
+<!ENTITY accountwizard.label "Configurazione nuovo account">
+<!ENTITY accountwizard.tooltip "Avvia la configurazione guidata di un nuovo account">
+<!ENTITY add-address.label "Aggiungi in rubrica…">
+<!ENTITY add-address.tooltip "Copia l&apos;indirizzo e-mail nella rubrica">
+<!ENTITY addons.label "Componenti aggiuntivi">
+<!ENTITY addons.tooltip "Apre la finestra dei Componenti aggiuntivi">
+<!ENTITY all-threads.label "Tutte le discussioni">
+<!ENTITY all-threads.tooltip "Visualizza tutte le discussioni">
+<!ENTITY attachments-delete.label "Elimina allegati">
+<!ENTITY attachments-delete.tooltip "Elimina tutti gli allegati del messaggio">
+<!ENTITY attachments-detach.label "Separa allegati">
+<!ENTITY attachments-detach.tooltip "Separa tutti gli allegati del messaggio">
+<!ENTITY attachments-save.label "Salva allegati">
+<!ENTITY attachments-save.tooltip "Salva tutti gli allegati del messaggio">
+<!ENTITY bookmark-manager.label "Organizza i segnalibri…">
+<!ENTITY bookmark-manager.tooltip "Apre la finestra di gestione dei segnalibri">
+<!ENTITY bookmark-nopop.label "Aggiungi ai segnalibri">
+<!ENTITY bookmark-nopop.tooltip "Aggiunge la pagina nei segnalibri senza aprire la finestra &apos;Inserimento segnalibro&apos;">
+<!ENTITY bookmark-tabs.label "Tutte le schede nei segnalibri…">
+<!ENTITY bookmark-tabs.tooltip "Aggiunge tutte le schede aperte nei segnalibri">
+<!ENTITY bookmark-toolbar.label "Barra dei segnalibri">
+<!ENTITY bookmark-toolbar.tooltip "Visualizza/nascondi la Barra dei segnalibri">
+<!ENTITY bookmark.label "Aggiungi pagina nei segnalibri…">
+<!ENTITY bookmark.tooltip "Aggiunge la pagina attuale nei segnalibri">
+<!ENTITY bookmarks-menu-button.label "Menu Segnalibri">
+<!ENTITY bookmarks-menu-button.tooltip "Mostra il menu Segnalibri">
+<!ENTITY bottom-page.label "In fondo">
+<!ENTITY bottom-page.tooltip "Vai in fondo">
+<!ENTITY change-text-direction.label "Cambia direzione testo">
+<!ENTITY change-text-direction.tooltip "Cambia la direzione del testo da sinistra a destra e viceversa">
+<!ENTITY check-for-update.label "Controlla aggiornamenti">
+<!ENTITY check-for-update.tooltip "Controlla gli aggiornamenti…">
+<!ENTITY clear-data.label "Cancella cronologia recente…">
+<!ENTITY clear-data.tooltip "Apre la finestra di cancellazione della cronologia recente">
+<!ENTITY clear-url.label "Svuota la barra degli indirizzi">
+<!ENTITY clear-url.tooltip "Nasconde il testo nella barra degli indirizzi">
+<!ENTITY clipboard.label "Apri i link dagli appunti">
+<!ENTITY clipboard.menuitem "Nella finestra attuale">
+<!ENTITY clipboard.newtab "In nuova scheda">
+<!ENTITY clipboard.newwindow "In nuova finestra">
+<!ENTITY clipboard.tooltip "Apri i link dagli appunti">
+<!ENTITY close-all-tabs.label "Chiudi tutte le schede">
+<!ENTITY close-all-tabs.tooltip "Chiudi tutte le schede">
+<!ENTITY close-other-tabs.label "Chiudi le altre schede">
+<!ENTITY close-other-tabs.tooltip "Chiudi tutte le schede tranne quella selezionata">
+<!ENTITY close-tab.label "Chiudi scheda/finestra">
+<!ENTITY close-tab.tooltip "Chiudi la scheda o la finestra aperta">
+<!ENTITY compact.label "Compatta">
+<!ENTITY compact.tooltip "Compatta le cartelle">
+<!ENTITY copy-address.label "Copia indirizzo">
+<!ENTITY copy-address.tooltip "Copia l&apos;indirizzo e-mail negli appunti">
+<!ENTITY create-filter.label "Crea filtro…">
+<!ENTITY create-filter.tooltip "Crea filtro da messaggio">
+<!ENTITY customize-toolbar.label "Barra degli strumenti">
+<!ENTITY customize-toolbar.tooltip "Personalizza la barra degli strumenti">
+<!ENTITY delete-event.label "Elimina eventi">
+<!ENTITY delete-event.tooltip "Elimina gli eventi selezionati">
+<!ENTITY delete-junk.label "Elimina posta indesiderata">
+<!ENTITY delete-junk.tooltip "Elimina la posta indesiderata">
+<!ENTITY delete-tasks.label "Elimina attività">
+<!ENTITY delete-tasks.tooltip "Elimina le attività selezionate">
+<!ENTITY delete.label "Elimina">
+<!ENTITY delete.tooltip "Elimina il testo o gli elementi selezionati">
+<!ENTITY dictionary-list.label "Seleziona dizionario">
+<!ENTITY dictionary-list.tooltip "Seleziona rapidamente il dizionario da utilizzare">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Apre la pagina di eBay">
+<!ENTITY edit-as-new.label "Modifica come nuovo…">
+<!ENTITY edit-as-new.tooltip "Modifica il messaggio selezionato come nuovo">
+<!ENTITY edit-draft.label "Modifica Bozza…">
+<!ENTITY edit-draft.tooltip "Modifica la bozza salvata">
+<!ENTITY empty-trash.label "Svuota cestino">
+<!ENTITY empty-trash.tooltip "Svuota il cestino">
+<!ENTITY enlarge.label "Aumenta">
+<!ENTITY enlarge.tooltip "Aumenta la dimensione del testo">
+<!ENTITY exit.label "Esci">
+<!ENTITY exit.tooltip "Chiudi il programma">
+<!ENTITY extensions.label "Estensioni">
+<!ENTITY extensions.tooltip "Apre la finestra di Gestione estensioni">
+<!ENTITY favorite-page.label "Pagina preferita">
+<!ENTITY favorite-page.tooltip "Apre la pagina preferita">
+<!ENTITY find-again.label "Trova successivo">
+<!ENTITY find-again.tooltip "Trova l&apos;occorrenza successiva del testo da cercare">
+<!ENTITY find-prev.label "Trova precedente">
+<!ENTITY find-prev.tooltip "Trova l&apos;occorrenza precedente del testo da cercare">
+<!ENTITY find.label "Trova">
+<!ENTITY find.tooltip "Trova l&apos;occorrenza del testo da cercare">
+<!ENTITY firefox-extension.label "Scarica estensioni">
+<!ENTITY firefox-extension.tooltip "Scarica estensioni per Firefox">
+<!ENTITY firefox-theme.label "Scarica temi">
+<!ENTITY firefox-theme.tooltip "Scarica temi per Firefox">
+<!ENTITY forward-as-attachment.label "Inoltra come allegati">
+<!ENTITY forward-as-attachment.tooltip "Inoltra i messaggi come allegati">
+<!ENTITY forward-as-inline.label "Inoltra nei messaggi">
+<!ENTITY forward-as-inline.tooltip "Inoltra i messaggi nel corpo dei messaggi">
+<!ENTITY full-screen.label "A tutto schermo">
+<!ENTITY full-screen.tooltip "Attiva/disattiva la modalità a tutto schermo">
+<!ENTITY get-inbox.label "Posta in arrivo">
+<!ENTITY get-inbox.tooltip "Seleziona la cartella &apos;Posta in arrivo&apos;">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Apre la pagina di Gmail">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Apre la pagina iniziale di Google">
+<!ENTITY help.label "?">
+<!ENTITY help.tooltip "Apre i contenuti guida">
+<!ENTITY hide-images.label "Nascondi immagini">
+<!ENTITY hide-images.tooltip "Nascondi tutte le immagini e gli sfondi nel documento attuale">
+<!ENTITY home-page-change.add-current "Aggiungi la pagina attuale alla pagina iniziale impostata">
+<!ENTITY home-page-change.current "Imposta la pagina attuale come pagina iniziale">
+<!ENTITY home-page-change.label "Cambia pagina iniziale">
+<!ENTITY home-page-change.multiple "Imposta le pagine iniziali da aprire in più schede…">
+<!ENTITY home-page-change.tooltip "Cambia la pagina iniziale">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Apre la pagina di Hotmail">
+<!ENTITY html-mode.label "Html">
+<!ENTITY html-mode.tooltip "Attiva/disattiva la visualizzazione del messaggio come html">
+<!ENTITY ignored-threads.label "Discussioni ignorate">
+<!ENTITY ignored-threads.tooltip "Visualizza le discussioni ignorate">
+<!ENTITY image-toggle.label "Attiva/disattiva le immagini">
+<!ENTITY image-toggle.tooltip "Attiva/disattiva il caricamento delle immagini">
+<!ENTITY import.label "Importa…">
+<!ENTITY import.tooltip "Importa impostazioni e dati">
+<!ENTITY inspecter.label "Analisi DOM">
+<!ENTITY inspecter.tooltip "Analisi DOM">
+<!ENTITY installaddons.label "Installa…">
+<!ENTITY installaddons.tooltip "Installa un&apos;estensione o un tema">
+<!ENTITY java-toggle.label "Attiva/disattiva Java">
+<!ENTITY java-toggle.tooltip "Attiva/disattiva Java">
+<!ENTITY javaScriptConsole.label "Console degli errori">
+<!ENTITY javaScriptConsole.tooltip "Apre la finestra della Console degli errori">
+<!ENTITY javascript-toggle.label "Attiva/disattiva JavaScript">
+<!ENTITY javascript-toggle.tooltip "Attiva/disattiva JavaScript">
+<!ENTITY label-all-blank.label "Elimina etichette">
+<!ENTITY label-all-blank.tooltip "Elimina le etichette da tutte le schede">
+<!ENTITY label-blank.label "Elimina etichetta">
+<!ENTITY label-blank.tooltip "Elimina l&apos;etichetta dalla scheda attuale">
+<!ENTITY link-open.label "Imposta apertura dei link">
+<!ENTITY link-open.tooltip "Imposta la modalità di apertura dei link">
+<!ENTITY min-font-size.label "Dimensione minima testo">
+<!ENTITY min-font-size.tooltip "Attiva/disattiva la dimensione minima del testo">
+<!ENTITY minimize-window.label "Riduci a icona">
+<!ENTITY minimize-window.tooltip "Riduci a icona la finestra attuale">
+<!ENTITY msg-filter.label "Filtri…">
+<!ENTITY msg-filter.tooltip "Imposta i filtri per i messaggi">
+<!ENTITY msg-pane.label "Pannello dei messaggi">
+<!ENTITY msg-pane.tooltip "Attiva/disattiva il pannello dei messaggi">
+<!ENTITY new-message.label "Nuovo messaggio…">
+<!ENTITY new-message.tooltip "Scrivi un nuovo messaggio">
+<!ENTITY next-tab.label "Scheda successiva">
+<!ENTITY next-tab.tooltip "Vai alla scheda successiva">
+<!ENTITY open-current-frame.label "Visualizza riquadro attuale">
+<!ENTITY open-current-frame.tooltip "Visualizza solo il riquadro attualmente selezionato">
+<!ENTITY open.label "Apri file…">
+<!ENTITY open.tooltip "Apri un file">
+<!ENTITY page-source.label "Sorgente">
+<!ENTITY page-source.tooltip "Visualizza il sorgente del documento">
+<!ENTITY pageinfo.label "Informazioni sulla pagina">
+<!ENTITY pageinfo.tooltip "Apre la finestra di informazioni sulla pagina">
+<!ENTITY pagesetup.label "Imposta pagina…">
+<!ENTITY pagesetup.tooltip "Imposta come la pagina verrà stampata">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Apre la pagina di PayPal">
+<!ENTITY personal-bookmarks-menu-button.label "Menu della Barra dei segnalibri">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Mostra il menu della Barra dei segnalibri">
+<!ENTITY plainpaste.label "Incolla senza formattazione">
+<!ENTITY plainpaste.tooltip "Incolla il testo senza formattazione">
+<!ENTITY preferences.label "Opzioni…">
+<!ENTITY preferences.tooltip "Apre la finestra delle opzioni">
+<!ENTITY previous-tab.label "Scheda precedente">
+<!ENTITY previous-tab.tooltip "Vai alla scheda precedente">
+<!ENTITY print-preview.label "Anteprima di stampa">
+<!ENTITY print-preview.tooltip "Apre la finestra di anteprima di stampa">
+<!ENTITY profile-folder.label "Profilo">
+<!ENTITY profile-folder.tooltip "Apre la cartella del profilo">
+<!ENTITY purge.label "Elimina">
+<!ENTITY purge.tooltip "Compatta le cartelle ed elimina la posta indesiderata">
+<!ENTITY read-mail.label "Leggi posta">
+<!ENTITY read-mail.tooltip "Apre il programma predefinito per la lettura della posta">
+<!ENTITY read-message.label "Leggi">
+<!ENTITY read-message.tooltip "Leggi e-mail">
+<!ENTITY read-news.label "Leggi gruppi di discussione">
+<!ENTITY read-news.tooltip "Apre il programma predefinito per la lettura dei gruppi di discussione">
+<!ENTITY realNextMessage.label "Successivo">
+<!ENTITY realNextMessage.tooltip "Vai al messaggio successivo">
+<!ENTITY realPreviousMessage.label "Precedente">
+<!ENTITY realPreviousMessage.tooltip "Vai al messaggio precedente">
+<!ENTITY redo.label "Ripeti">
+<!ENTITY redo.tooltip "Ripeti l&apos;ultima modifica">
+<!ENTITY reduce.label "Diminuisci">
+<!ENTITY reduce.tooltip "Diminuisci la dimensione del testo">
+<!ENTITY reload-all-tabs.label "Ricarica tutte le schede">
+<!ENTITY reload-all-tabs.tooltip "Ricarica tutte le schede aperte">
+<!ENTITY reload-proxy.label "Ricarica proxy">
+<!ENTITY reload-proxy.tooltip "Ricarica i proxy">
+<!ENTITY reload-skip-cache.label "Ricarica senza cache">
+<!ENTITY reload-skip-cache.tooltip "Ricarica la pagina attuale senza utilizzare i contenuti memorizzati nella cache del browser">
+<!ENTITY rename-tab.label "Rinomina scheda">
+<!ENTITY rename-tab.tooltip "Rinomina la scheda attualmente selezionata">
+<!ENTITY reply-sender.label "Rispondi al mittente">
+<!ENTITY reply-sender.tooltip "Rispondi solo al mittente del messaggio">
+<!ENTITY reset.label "Normale">
+<!ENTITY reset.tooltip "Dimensione del testo normale">
+<!ENTITY restart-app.label "Riavvia">
+<!ENTITY restart-app.tooltip "Riavvia e ripristina la sessione">
+<!ENTITY return-receipt.label "Ricevuta di ritorno">
+<!ENTITY return-receipt.tooltip "Attiva/disattiva la ricevuta di ritorno">
+<!ENTITY save-frame.label "Salva riquadro con nome…">
+<!ENTITY save-frame.tooltip "Salva il riquadro del documento">
+<!ENTITY saveas.label "Salva…">
+<!ENTITY saveas.tooltip "Salva il documento come…">
+<!ENTITY search-addresses.label "Cerca indirizzi…">
+<!ENTITY search-addresses.tooltip "Apre la ricerca degli indirizzi">
+<!ENTITY search-messages.label "Cerca messaggi…">
+<!ENTITY search-messages.tooltip "Apre la ricerca dei messaggi">
+<!ENTITY select-all.label "Seleziona tutto">
+<!ENTITY select-all.tooltip "Seleziona tutto">
+<!ENTITY send-link.label "Invia link…">
+<!ENTITY send-link.tooltip "Invia il link della pagina in una e-mail">
+<!ENTITY send-receive.label "Invia e ricevi">
+<!ENTITY send-receive.tooltip "Invia e ricevi tutti i messaggi">
+<!ENTITY send-with-no-save.label "Invia senza salvare una copia">
+<!ENTITY send-with-no-save.tooltip "Invia il messaggio senza salvarne una copia">
+<!ENTITY shift-delete.label "Elimina direttamente">
+<!ENTITY shift-delete.tooltip "Elimina il messaggio senza spostarlo nel cestino">
+<!ENTITY show-frame.label "Mostra riquadro">
+<!ENTITY show-frame.tooltip "Mostra solo il riquadro attuale">
+<!ENTITY snap-back.label "Torna alla prima pagina">
+<!ENTITY snap-back.tooltip "Torna alla prima pagina aperta nella scheda attuale">
+<!ENTITY statusbar-toggle.label "Barra di stato">
+<!ENTITY statusbar-toggle.tooltip "Visualizza/nascondi la barra di stato">
+<!ENTITY stop-all.label "Interrompi">
+<!ENTITY stop-all.tooltip "Interrompi il caricamento di tutte le schede">
+<!ENTITY stop-animation.label "Attiva/disattiva animazioni">
+<!ENTITY stop-animation.tooltip "Blocca/permette l&apos;animazione di immagini (.gif) e testo (tag &apos;blink&apos; e &apos;marquee&apos;)">
+<!ENTITY stop-cookies.label "Attiva/disattiva cookie">
+<!ENTITY stop-cookies.tooltip "Blocca/permette l&apos;impostazione dei cookie da parte dei siti web">
+<!ENTITY stop-dinamic-content.label "Attiva/disattiva contenuti incorporati">
+<!ENTITY stop-dinamic-content.tooltip "Blocca/permette il caricamento dei contenuti incorporati">
+<!ENTITY stop-flash.label "Attiva/disattiva Flash">
+<!ENTITY stop-flash.tooltip "Blocca/permette il caricamento di contenuti in Flash">
+<!ENTITY stop-iframe.label "Attiva/disattiva iframe">
+<!ENTITY stop-iframe.tooltip "Blocca/permette il caricamento di iframe permettendo il blocco di alcune pubblicità">
+<!ENTITY stop-movies.label "Attiva/disattiva video">
+<!ENTITY stop-movies.tooltip "Blocca/permette il caricamento di contenuti video">
+<!ENTITY tab-list.label "Lista delle schede">
+<!ENTITY tab-list.tooltip "Mostra la lista delle schede">
+<!ENTITY tasks-in-view.label "Attività nella vista">
+<!ENTITY tasks-in-view.tooltip "Attiva/disattiva le attività nella vista">
+<!ENTITY tasks-toggle.label "Visualizza/nascondi la lista attività">
+<!ENTITY tasks-toggle.tooltip "Visualizza/nascondi nella barra laterale la lista attività">
+<!ENTITY tb-clear-search.label "Svuota barra di ricerca">
+<!ENTITY tb-clear-search.tooltip "Svuota e seleziona la barra di ricerca">
+<!ENTITY tb-clear-url.label "Elimina URL">
+<!ENTITY tb-clear-url.tooltip "Elimina l'URL e seleziona la barra degli indirizzi">
+<!ENTITY tb-edit-menu.label "Menu Modifica">
+<!ENTITY tb-edit-menu.tooltip "Mostra il menu Modifica">
+<!ENTITY tb-file-menu.label "Menu File">
+<!ENTITY tb-file-menu.tooltip "Mostra il menu File">
+<!ENTITY tb-new-event.label "Nuovo evento">
+<!ENTITY tb-new-event.tooltip "Crea un nuovo evento">
+<!ENTITY tb-new-task.label "Nuova attività">
+<!ENTITY tb-new-task.tooltip "Crea una nuova attività">
+<!ENTITY tb-search-minus.label "Riduci barra di ricerca">
+<!ENTITY tb-search-minus.tooltip "Diminuisci la larghezza della barra di ricerca di 10 pixel">
+<!ENTITY tb-search-plus.label "Allarga barra di ricerca">
+<!ENTITY tb-search-plus.tooltip "Aumenta la larghezza della barra di ricerca di 10 pixel">
+<!ENTITY tb-search-resize.label "Larghezza barra di ricerca…">
+<!ENTITY tb-search-resize.tooltip "Imposta la larghezza della barra di ricerca">
+<!ENTITY tb-toggle-menu-bar.label "Barra dei menu">
+<!ENTITY tb-toggle-menu-bar.tooltip "Visualizza/nascondi la barra dei menu">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Blocco pop-up">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Attiva/disattiva il blocco delle finestre pop-up">
+<!ENTITY tb-tools-menu.label "Menu Strumenti">
+<!ENTITY tb-tools-menu.tooltip "Mostra il menu Strumenti">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Apre la pagina iniziale di Twitter">
+<!ENTITY tb-view-menu.label "Menu Visualizza">
+<!ENTITY tb-view-menu.tooltip "Mostra il menu Visualizza">
+<!ENTITY themes.label "Temi">
+<!ENTITY themes.tooltip "Apre la finestra di Gestione temi">
+<!ENTITY thunderbird-extension.label "Scarica estensioni">
+<!ENTITY thunderbird-extension.tooltip "Scarica estensioni per Thunderbird">
+<!ENTITY thunderbird-theme.label "Scarica temi">
+<!ENTITY thunderbird-theme.tooltip "Scarica temi per Thunderbird">
+<!ENTITY tiny-url.copy.to.clipboard "Copia link">
+<!ENTITY tiny-url.email "Invia link…">
+<!ENTITY tiny-url.label "Riduci URL">
+<!ENTITY tiny-url.link.use "Tipo di link da utilizzare">
+<!ENTITY tiny-url.tooltip "Crea un URL ridotto">
+<!ENTITY tiny-url.use.normal "Normale (xrl.in)">
+<!ENTITY tiny-url.use.preview "Anteprima (preview.xrl.in)">
+<!ENTITY tiny-url.visit "Visita Xrl.In">
+<!ENTITY toggle-proxy.label "Attiva/disattiva proxy">
+<!ENTITY toggle-proxy.tooltip "Attiva/disattiva la navigazione tramite proxy">
+<!ENTITY toggle-read.label "Letto/non letto">
+<!ENTITY toggle-read.tooltip "Marca i messaggi selezionati come letti/non letti">
+<!ENTITY toggle-starred.label "Speciale/non speciale">
+<!ENTITY toggle-starred.tooltip "Marca i messaggi selezionati come speciali/non speciali">
+<!ENTITY toggle-styles.label "Attiva/disattiva fogli di stile">
+<!ENTITY toggle-styles.tooltip "Attiva/disattiva gli stili definiti per le pagine web">
+<!ENTITY toggle-toolbar.label "Barra di navigazione">
+<!ENTITY toggle-toolbar.tooltip "Visualizza/nascondi la Barra di navigazione">
+<!ENTITY toolbar-menu.label "Barre degli strumenti">
+<!ENTITY toolbar-menu.tooltip "Visualizza/nascondi le barre degli strumenti">
+<!ENTITY top-page.label "In cima">
+<!ENTITY top-page.tooltip "Torna in cima">
+<!ENTITY translate.label "Traduci">
+<!ENTITY translate.tooltip "Traduce la pagina attuale nella lingua selezionata">
+<!ENTITY undo-close-tab.label "Riapri scheda">
+<!ENTITY undo-close-tab.tooltip "Riapri l&apos;ultima scheda chiusa">
+<!ENTITY undo.label "Annulla">
+<!ENTITY undo.tooltip "Annulla l&apos;ultima modifica">
+<!ENTITY unread-threads.label "Discussioni non lette">
+<!ENTITY unread-threads.tooltip "Visualizza le discussioni non lette">
+<!ENTITY up-directory.label "Livello superiore">
+<!ENTITY up-directory.tooltip "Sali di un livello">
+<!ENTITY use-document-colors.label "Attiva/disattiva colori pagina">
+<!ENTITY use-document-colors.tooltip "Visualizza i colori predefiniti della pagina o quelli impostati dal sito">
+<!ENTITY use-document-fonts.label "Attiva/disattiva caratteri pagina">
+<!ENTITY use-document-fonts.tooltip "Visualizza i caratteri predefiniti della pagina o quelli impostati dal sito">
+<!ENTITY watched-with-unread-threads.label "Discussioni controllate con messaggi non letti">
+<!ENTITY websearch.label "Cerca sul web">
+<!ENTITY websearch.tooltip "Effettua una ricerca sul web utilizzando il motore di ricerca predefinito">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "Apre la pagina iniziale di Wikipedia">
+<!ENTITY with-unread-threads.label "Discussioni con messaggi non letti">
+<!ENTITY with-unread-threads.tooltip "Visualizza le discussioni con messaggi non letti">
+<!ENTITY workoffline.label "Lavora non in linea">
+<!ENTITY workoffline.tooltip "Attiva/disattiva la modalità &apos;Lavora non in linea&apos;">
+<!ENTITY yahoo-button.label "Yahoo! Mail">
+<!ENTITY yahoo-button.tooltip "Apre la pagina di Yahoo! Mail">

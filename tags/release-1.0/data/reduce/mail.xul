@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="reduce"
+	label="&reduce.label;"
+	tooltiptext="&reduce.tooltip;"
+	oncommand="goDoCommand('cmd_fullZoomReduce')"/>
