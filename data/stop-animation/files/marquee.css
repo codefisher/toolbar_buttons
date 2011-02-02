@@ -6,3 +6,9 @@ marquee {
 	display      : block;
 	height       : auto !important;
 }
+
+/* Stop those fancy CSS animations! */
+* {
+	-moz-transition-property: none !important;
+	transition-property: none !important;
+}

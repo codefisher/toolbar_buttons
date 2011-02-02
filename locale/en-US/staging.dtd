@@ -4,3 +4,9 @@
 <!ENTITY tb-toggle-headers.tooltip "Toggle what email headers show">
 <!ENTITY tb-notepad.label "Notepad">
 <!ENTITY tb-notepad.tooltip "Open notepad in sidebar">
+<!ENTITY tb-pipeline-toggle.label "Toggle Pipelining">
+<!ENTITY tb-pipeline-toggle.tooltip "Toggles Pipelining On and Off">
+<!ENTITY tb-clone-tab.label "Copy Tab">
+<!ENTITY tb-clone-tab.tooltip "Makes a copy of the current tab">
+<!ENTITY tb-base64.label "Data URI Generator">
+<!ENTITY tb-base64.tooltip "Converts a file to base64">

@@ -14,7 +14,7 @@ config = {
     # makes the build system run with debuging enabled
     "debug": False,
     # if true buttons in the staging folder are also added
-    "use_staging": False,
+    "use_staging": True,
     # all the image files are put into a bit map if enabled
     "merge_images": True,
     # should a page be shown when the extension is installed
@@ -46,7 +46,7 @@ config = {
     "keyboard_custom_keys": {},
 
     "output_folder": "extensions",
-    "output_file": "toolbar_buttons.xpi",
+    "output_file": "toolbar-buttons-%(version)s.xpi",
 
     # parts of the extension are copied here, if set
     "profile_folder": "/home/michael/.mozilla/firefox/0xq1gim8.Michael",

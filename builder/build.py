@@ -84,7 +84,7 @@ def build_extension(settings):
         xpi = zipfile.ZipFile(xpi_file, "w", zipfile.ZIP_DEFLATED)
     else:
         xpi_file = None
-        file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi"))
+        file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
         xpi = zipfile.ZipFile(file_name, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
