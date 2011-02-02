@@ -21,7 +21,15 @@ base64: function() {
 	var localFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
 	localFile.initWithPath(fp.file.path);
 	if (!localFile) return;
-	var contentType = Cc["@mozilla.org/mime;1"].getService(Ci.nsIMIMEService).getTypeFromFile(localFile);
+	try{
+		var contentType = Cc["@mozilla.org/mime;1"].getService(Ci.nsIMIMEService).getTypeFromFile(localFile);
+	}
+	catch(e){
+		toolbar_buttons.sysAlert("chrome://toolbar-button/skin/24/building-go.png",
+			"Data URI Button Says","Error: Unable to detect file type",
+			"Data URI Button Says\nError: Unable to detect file type\nBTW installing Growl will make this notice less annoying on a MAC");
+		return;
+	}
 	var inputStream = Cc["@mozilla.org/network/file-input-stream;1"].createInstance(Ci.nsIFileInputStream);
 	inputStream.init(localFile, 0x01, 0600, 0);
 	var stream = Cc["@mozilla.org/binaryinputstream;1"].createInstance(Ci.nsIBinaryInputStream);
@@ -29,13 +37,18 @@ base64: function() {
 	var encoded = btoa(stream.readBytes(stream.available()));
 	Components.classes["@mozilla.org/widget/clipboardhelper;1"]
 		.getService(Components.interfaces.nsIClipboardHelper).copyString("data:" + contentType + ";base64," + encoded);
-	try {
+	toolbar_buttons.sysAlert("chrome://toolbar-button/skin/24/building-go.png",
+		"Data URI Button Says","Copied data URI to clipboard successfully",
+		"Data URI Button Says\nCopied data URI to clipboard successfully\nBTW installing Growl will make this notice less annoying on a MAC");
+}
+sysAlert: function(img,title,msg,err) {
+	try{
 		Components.classes["@mozilla.org/alerts-service;1"]
 			.getService(Components.interfaces.nsIAlertsService).showAlertNotification(
-				"chrome://toolbar-button/skin/24/building-go.png",//The 48 one may be better I could use this button to base 64 it
-				"Data URI Button Says", "Copied data URI to clipboard successfully", false, "", null);
+				img,
+				title, msg, false, "", null);
 	}
-	catch(e){
-		alert("Data URI Button Says\nCopied data URI to clipboard successfully\nBTW installing Growl will make this notice less annoying on a MAC");
+	catch(e){//probally a mac without GROWL installed
+		alert(err);
 	}
 }
