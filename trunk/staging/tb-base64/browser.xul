@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-base64"
+	label="&tb-base64.label;"
+	tooltiptext="&tb-base64.tooltip;"
+	oncommand="toolbar_buttons.base64();" />

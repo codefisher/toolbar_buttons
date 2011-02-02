@@ -310,15 +310,18 @@ class Button(SimpleButton):
                         if image_map.get(image):
                             offset = image_map.get(image)
                         else:
-                            offset = count
-                            image_map[image] = offset
-                            box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                            small_im = Image.open(os.path.join(self._settings.get("image_path"), small, image))
-                            image_map_small.paste(small_im, box)
-                            box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
-                            large_im = Image.open(os.path.join(self._settings.get("image_path"), large, image))
-                            image_map_large.paste(large_im, box)
-                            count += 1
+                            try:
+                                offset = count
+                                image_map[image] = offset
+                                box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
+                                small_im = Image.open(os.path.join(self._settings.get("image_path"), small, image))
+                                image_map_small.paste(small_im, box)
+                                box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
+                                large_im = Image.open(os.path.join(self._settings.get("image_path"), large, image))
+                                image_map_large.paste(large_im, box)
+                                count += 1
+                            except IOError:
+                                print "image %s does not exist" % image
                     else:
                         offset = count
                         image_list.append(image)
