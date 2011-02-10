@@ -9,6 +9,9 @@ from button import Button
 from util import get_button_folders, get_locale_folders, get_folders
 
 def build_extension(settings):
+    if os.path.join(settings.get("image_path")) is None:
+        print "Please set the image_path setting"
+        return
     locale_folders, locales = get_locale_folders(settings.get("locale"))
     button_locales = Locale(settings, locale_folders, locales)
     options_locales = Locale(settings, locale_folders, locales, True)

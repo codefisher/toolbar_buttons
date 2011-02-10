@@ -5,7 +5,7 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0",
+    "version": "1.0.1b1",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "http://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -14,9 +14,9 @@ config = {
     # makes the build system run with debuging enabled
     "debug": False,
     # if true buttons in the staging folder are also added
-    "use_staging": True,
+    "use_staging": False,
     # all the image files are put into a bit map if enabled
-    "merge_images": True,
+    "merge_images": False,
     # should a page be shown when the extension is installed
     "show_updated_prompt": True,
     "version_url": "http://codefisher.org/toolbar_button/version/",
@@ -34,7 +34,7 @@ config = {
     "jar_file": "tbutton.jar",
     "chrome_name": "toolbar-button",
     "icon_size": ("16", "24"),
-    "image_path": "/home/michael/Pictures/PastelSVG/png",
+    "image_path": None,
 
     # controls for the locales
     "default_locale": "en-US",
@@ -49,7 +49,7 @@ config = {
     "output_file": "toolbar-buttons-%(version)s.xpi",
 
     # parts of the extension are copied here, if set
-    "profile_folder": "/home/michael/.mozilla/firefox/0xq1gim8.Michael",
+    "profile_folder": None,
 
     # the below sets application support
     "applications_data": {
@@ -102,3 +102,9 @@ config = {
         "lightning": ("mail", "messenger")
     }
 }
+
+try:
+    from local_settings import config as local_config
+    config.update(local_config)
+except ImportError:
+    pass
