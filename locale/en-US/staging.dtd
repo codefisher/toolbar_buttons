@@ -10,3 +10,7 @@
 <!ENTITY tb-clone-tab.tooltip "Makes a copy of the current tab">
 <!ENTITY tb-base64.label "Data URI Generator">
 <!ENTITY tb-base64.tooltip "Converts a file to base64">
+<!ENTITY tb-page-info-media.label "Page Media">
+<!ENTITY tb-page-info-media.tooltip "Open page info at the media tab">
+<!ENTITY tb-open-in-conversation.label "Open in Conversation">
+<!ENTITY tb-open-in-conversation.tooltip "Open current message in Conversation">
