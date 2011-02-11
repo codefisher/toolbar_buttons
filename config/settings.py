@@ -5,7 +5,7 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.1b1",
+    "version": "1.0.1b2",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "http://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -36,6 +36,14 @@ config = {
     "icon_size": ("16", "24"),
     "image_path": None,
     "project_root": "",
+    # if include_toolbars, is positive that many toolbars will be added.
+    # if it is -1, a number will be chosen by looking at buttons_per_toolbar
+    "include_toolbars": 0,
+    "buttons_per_toolbar": 32,
+    # if the buttons should be added to the new toolbars.
+    # if all buttons can't fix given buttons_per_toolbar they will be left out
+    "put_button_on_toolbar": True,
+
 
     # controls for the locales
     "default_locale": "en-US",
@@ -102,6 +110,13 @@ config = {
          "read": "MailToolbarPalette",
          "calendar": "calendarToolbarPalette",
          "lightning": "MailToolbarPalette",
+    },
+    "file_to_toolbar_box": {
+        "browser": "navigator-toolbox",
+        "mail": "mail-toolbox",
+        "compose": "compose-toolbox",
+        "read": "mail-toolbox",
+        "calendar": "calendar-toolbox",
     },
     "file_exclude": {
         "lightning": ("mail", "messenger")

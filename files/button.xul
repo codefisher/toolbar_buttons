@@ -6,7 +6,7 @@
 ]>
 <?xml-stylesheet href="chrome://{{chrome-name}}/skin/button.css" type="text/css"?>
 <overlay id="tbutton" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
- {{script}}{{keyboard_shortcut}}
+ {{script}}{{keyboard_shortcut}}{{toolbars}}
  <toolbarpalette id="{{palette}}">
   {{buttons}}
  </toolbarpalette>
