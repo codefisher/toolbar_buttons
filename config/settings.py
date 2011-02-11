@@ -27,7 +27,7 @@ config = {
     "applications": "all",
     # this setting may include locals to skip even if we we have them
     # simply specify "all" the a "-" in front of locals to remove
-    "locale": "all,-ar,-zh-TW,-tr-TR,-da,-cs-CZ",
+    "locale": "all",
 
     # these settings change the internals of the extension
     "pref_root": "extension.tbutton.",
@@ -35,9 +35,11 @@ config = {
     "chrome_name": "toolbar-button",
     "icon_size": ("16", "24"),
     "image_path": None,
+    "project_root": "",
 
     # controls for the locales
     "default_locale": "en-US",
+    "include_local_meta": False,
     # what is done with strings that are missing, values are replace, skip or empty
     "missing_strings": "replace",
 
@@ -63,10 +65,13 @@ config = {
                       ),
         "calendar":  (
                       ("Sunbird", "{718e30fb-e89b-41dd-9da7-e25a45638b28}", "1.0pre", "1.0pre"),
-                      )
+                      ),
+        "suite": (
+                      ("SeaMonkey", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}", "2.0", "2.1b3"),
+                      ),
     },
     "files_to_overlay": {
-        "browser": ("chrome://browser/content/browser.xul", ),
+        "browser": ("chrome://browser/content/browser.xul", "chrome://navigator/content/navigator.xul"),
         "mail": ("chrome://messenger/content/messenger.xul", ),
         "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
         "read": ("chrome://messenger/content/messageWindow.xul", ),
@@ -74,13 +79,13 @@ config = {
         "lightning": ("chrome://lightning/content/messenger-overlay-toolbar.xul", )
     },
     "file_to_application": {
-         "browser": "browser",
-         "messenger": "messenger",
-         "mail": "messenger",
-         "compose": "messenger",
-         "read": "messenger",
-         "calendar": "calendar",
-         "lightning": "messenger",
+         "browser": ("browser", "suite"),
+         "messenger": ("messenger", "suite"),
+         "mail": ("messenger", "suite"),
+         "compose": ("messenger", "suite"),
+         "read": ("messenger", "suite"),
+         "calendar": ("calendar", "suite"),
+         "lightning": ("messenger", ),
     },
     "file_map": {
         "loader": ("browser","mail","compose","read","calendar"),
