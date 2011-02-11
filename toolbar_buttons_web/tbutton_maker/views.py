@@ -86,7 +86,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
                 locale_str("tooltip", buttonId), buttons_obj.get_icons(buttonId),
                 buttons_obj.description(buttonId)))
     def button_key(item):
-        return item[2].lower()
+        return item[2].lower() if item[2] else None
     locale_folders, locales_names = util.get_locale_folders(extension_settings.get("locale"), extension_settings)
     locale_meta = locales.Locale(extension_settings, locale_folders,
                 locales_names, only_meta=True)
