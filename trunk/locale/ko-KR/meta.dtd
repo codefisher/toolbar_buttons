@@ -1,0 +1,5 @@
+<!-- I am using this when displaying details about the extension
+	online and for my custom toolbar button maker -->
+<!ENTITY name "Korean">
+<!ENTITY native_name "한국어 (韓國語), 조선말 (朝鮮語)">
+<!ENTITY country "KR">
