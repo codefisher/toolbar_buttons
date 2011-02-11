@@ -1,39 +1,53 @@
 """Parses the localisation files of the extension and queries it for data"""
 
 import os
+import re
 from collections import defaultdict
+
+entity_re = re.compile(r"<!ENTITY ([\w\-\.]+) [\"'](.*?)[\"']>")
 
 class Locale(object):
     """Parses the localisation files of the extension and queries it for data"""
-    def __init__(self, settings, folders, locales, options=False, load_properites=True):
+    def __init__(self, settings, folders, locales, options=False, load_properites=True, only_meta=False):
         self._settings = settings
         self._missing_strings = settings.get("missing_strings")
         self._folders = folders
         self._locales = locales
         self._dtd = defaultdict(dict)
         self._properties = defaultdict(dict)
+        self._meta = {}
 
         for folder, locale in zip(folders, locales):
             files = [os.path.join(folder, file_name)
                      for file_name in os.listdir(folder)
                      if not file_name.startswith(".")]
             for file_name in files:
+                if only_meta and not file_name.endswith("meta.dtd"):
+                    continue
                 if not options and file_name.endswith("options.dtd"):
                     continue
                 elif options and not file_name.endswith("options.dtd"):
                     continue
                 elif not load_properites and file_name.endswith(".properties"):
                     continue
-                with open(file_name) as data:
-                    for line in data:
-                        line = line.strip()
-                        if line:
-                            if file_name.endswith(".dtd"):
-                                name, value = line[9:-1].split(' ', 1)
+                if file_name.endswith(".dtd"):
+                    with open(file_name) as data:
+                        if file_name.endswith("meta.dtd"):
+                            self._meta[locale] = (file_name, data.read())
+                        data.seek(0)
+                        for line in data:
+                            match = entity_re.match(line.strip())
+                            if match:
+                                name, value = match.group(1), match.group(2)
                                 self._dtd[locale][name] = value
-                            elif file_name.endswith(".properties"):
-                                name, value = line.split('=', 1)
+                elif file_name.endswith(".properties"):
+                    with open(file_name) as data:
+                        for line in data:
+                            name, value = line.strip().split('=', 1)
+                            if name:
                                 self._properties[locale][name] = value.strip()
+    def get_meta(self):
+        return self._meta
 
     def get_dtd_value(self, locale, name):
         """Returns the value of a given dtd string
@@ -42,7 +56,7 @@ class Locale(object):
         """
         value = self._dtd[locale].get(name,
                 self._dtd[self._settings.get("default_locale")].get(name))
-        return value.strip('"') if value else None
+        return value if value else None
 
     def get_dtd_data(self, strings):
         """Gets a set of files with all the strings wanted
@@ -54,16 +68,16 @@ class Locale(object):
             dtd_file = []
             for string in strings:
                 if self._missing_strings == "replace":
-                    dtd_file.append("""<!ENTITY %s %s>"""
+                    dtd_file.append("""<!ENTITY %s "%s">"""
                                 % (string, self._dtd[locale].get(string,
                                         self._dtd[self._settings.get("default_locale")]
                                         .get(string, ""))))
                 elif self._missing_strings == "empty":
-                    dtd_file.append("""<!ENTITY %s %s>"""
+                    dtd_file.append("""<!ENTITY %s "%s">"""
                              % (string, self._dtd[locale].get(string, "")))
                 elif (self._missing_strings == "skip"
                       and string in self._dtd[locale]):
-                    dtd_file.append("""<!ENTITY %s %s>"""
+                    dtd_file.append("""<!ENTITY %s "%s">"""
                                   % (string, self._dtd[locale][string]))
             result[locale] = "\n".join(dtd_file)
         return result

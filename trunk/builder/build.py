@@ -3,16 +3,16 @@
 
 import os
 import zipfile
-import StringIO
+import io
 from locales import Locale
 from button import Button
 from util import get_button_folders, get_locale_folders, get_folders
 
-def build_extension(settings):
+def build_extension(settings, output=None, project_root=None):
     if os.path.join(settings.get("image_path")) is None:
         print "Please set the image_path setting"
         return
-    locale_folders, locales = get_locale_folders(settings.get("locale"))
+    locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales)
     options_locales = Locale(settings, locale_folders, locales, True)
 
@@ -23,14 +23,14 @@ def build_extension(settings):
     else:
         applications = settings.get("applications")
     button_list = settings.get("buttons")
-    button_folders, buttons = get_button_folders(button_list)
+    button_folders, buttons = get_button_folders(button_list, settings)
     if settings.get("use_staging"):
-        staging_button_folders, staging_buttons = get_folders(button_list, "staging")
+        staging_button_folders, staging_buttons = get_folders(button_list, settings, "staging")
         button_folders.extend(staging_button_folders)
         buttons.extend(staging_buttons)
     buttons = Button(button_folders, buttons, settings, applications)
 
-    jar_file = StringIO.StringIO()
+    jar_file = io.BytesIO()
     jar = zipfile.ZipFile(jar_file, "w", zipfile.ZIP_STORED)
     #write files to jar
     for file, data in buttons.get_js_files().iteritems():
@@ -42,7 +42,9 @@ def build_extension(settings):
 
     for locale, data in button_locales.get_dtd_data(buttons.get_locale_strings()).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.dtd"), data)
-
+    if settings.get("include_local_meta"):
+        for locale, (path, data) in button_locales.get_meta().iteritems():
+            jar.writestr(os.path.join("locale", locale, "meta.dtd"), data)
     for locale, data in button_locales.get_properties_data(buttons.get_properties_strings()).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
@@ -63,17 +65,17 @@ def build_extension(settings):
 
     css, image_list, image_data = buttons.get_css_file()
     small, large = settings.get("icon_size")
-    jar.writestr(os.path.join("skin", "button.css"), css)
+    jar.writestr(os.path.join("skin", "button.css"), bytes(css))
     for image in set(image_list):
         try:
             jar.write(os.path.join(settings.get("image_path"), small, image), os.path.join("skin", small, image))
         except (OSError, IOError):
-            jar.write(os.path.join("files", "default16.png"), os.path.join("skin", small, image))
+            jar.write(os.path.join(settings.get("project_root"), "files", "default16.png"), os.path.join("skin", small, image))
             print "can not find file %s" % image
         try:
             jar.write(os.path.join(settings.get("image_path"), large, image), os.path.join("skin", large, image))
         except (OSError, IOError):
-            jar.write(os.path.join("files", "default24.png"), os.path.join("skin", large, image))
+            jar.write(os.path.join(settings.get("project_root"), "files", "default24.png"), os.path.join("skin", large, image))
             print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)
@@ -82,11 +84,9 @@ def build_extension(settings):
         with open(os.path.join(settings.get("profile_folder"), "extensions",
                 settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
             fp.write(jar_file.getvalue())
-    if settings.get("output_folder") == None:
-        xpi_file = StringIO.StringIO()
-        xpi = zipfile.ZipFile(xpi_file, "w", zipfile.ZIP_DEFLATED)
+    if output:
+        xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     else:
-        xpi_file = None
         file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
         xpi = zipfile.ZipFile(file_name, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
@@ -99,7 +99,6 @@ def build_extension(settings):
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
     xpi.close()
-    return xpi_file.getvalue() if xpi_file else None
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
@@ -128,7 +127,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
 
     for file_name in buttons.get_file_names():
         values["file"] = file_name
-        for overlay in settings.get("files_to_overlay")[file_name]:
+        for overlay in settings.get("files_to_overlay").get(file_name, ()):
             values["overlay"] = overlay
             lines.append("overlay\t%(overlay)s\t"
                          "chrome://%(chrome)s/content/%(file)s.xul" % values)
@@ -161,7 +160,7 @@ def create_install(settings, applications, options=[]):
                 \t\t\t\t<em:maxVersion>%s</em:maxVersion>
             \t\t\t</Description>
         \t\t</em:targetApplication>""".replace(" ","") % values)
-    template = open(os.path.join("files", "install.rdf") ,"r").read()
+    template = open(os.path.join(settings.get("project_root"), "files", "install.rdf") ,"r").read()
     return (template.replace("{{uuid}}", settings.get("extension_id"))
                     .replace("{{name}}", settings.get("name"))
                     .replace("{{version}}", settings.get("version"))

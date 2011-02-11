@@ -45,8 +45,8 @@ class SimpleButton():
                             if exclude + ".xul" in files:
                                 break
                         else:
-                            if (self._settings.get("file_to_application")[file_name]
-                                    in self._applications):
+                            if set(self._settings.get("file_to_application")[file_name]
+                                   ).intersection(self._applications):
                                 self._process_xul_file(folder, button,
                                                        xul_file, file_name)
                                 self._xul_files[button].append(os.path.join(folder, xul_file))
@@ -55,8 +55,8 @@ class SimpleButton():
             for file_name in self._window_files:
                 xul_file = file_name + ".xul"
                 if (xul_file in files
-                        and self._settings.get("file_to_application")[file_name]
-                            in self._applications):
+                        and set(self._settings.get("file_to_application")[file_name]
+                                   ).intersection(self._applications)):
                     self._process_xul_file(folder, button, xul_file, file_name)
                     self._xul_files[button].append(os.path.join(folder, xul_file))
                     button_wanted = True
@@ -82,7 +82,7 @@ class SimpleButton():
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = self._settings.get("file_to_application")[file_name]
-        self._button_applications[button].add(application)
+        self._button_applications[button].update(application)
         return application
 
     def button_applications(self):
@@ -119,8 +119,8 @@ class Button(SimpleButton):
                 js_file = file_name + ".js"
                 if (js_file in files
                     and (file_name == "button"
-                         or self._settings.get("file_to_application")[file_name]
-                            in self._applications)):
+                         or set(self._settings.get("file_to_application")[file_name]
+                                   ).intersection(self._applications))):
                     with open(os.path.join(folder, js_file)) as js:
                         self._button_js[file_name].append(js.read())
 
@@ -162,7 +162,7 @@ class Button(SimpleButton):
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = SimpleButton._process_xul_file(self, folder, button, xul_file, file_name)
-        self._suported_applications.add(application)
+        self._suported_applications.update(application)
         self._button_files.add(file_name)
         with open(os.path.join(folder, xul_file)) as xul:
             self._button_xul[file_name][button] = xul.read()
@@ -180,11 +180,11 @@ class Button(SimpleButton):
                              self._settings.get("chrome_name")))
         else:
             javascript = ""
-        with open(os.path.join("files", "options.xul"), "r") as base_window_file:
+        with open(os.path.join(self._settings.get("project_root"), "files", "options.xul"), "r") as base_window_file:
             base_window = (base_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                        .replace("{{javascript}}", javascript))
-        with open(os.path.join("files", "option.xul"), "r") as overlay_window_file:
+        with open( os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
             overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name")))
         files = defaultdict(list)
@@ -194,7 +194,7 @@ class Button(SimpleButton):
                 files[application].append(data.replace("{{pref-root}}", self._settings.get("pref_root")))
         if self._pref_list:
             limit = ".xul,".join(self._pref_list.keys()) + ".xul"
-            pref_files = get_pref_folders(limit)
+            pref_files = get_pref_folders(limit, self._settings)
             for file_name, name in zip(*pref_files):
                 data_fp = open(file_name, "r")
                 data = data_fp.read()
@@ -393,7 +393,8 @@ class Button(SimpleButton):
                         ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
-        with  open(os.path.join("files", "functions.js"), "r") as shared_functions_file:
+        with  open(os.path.join(self._settings.get("project_root"),
+                "files", "functions.js"), "r") as shared_functions_file:
             shared_functions = shared_functions_file.read()
         externals = dict((name, function) for function, name
                          in function_name_match.findall(shared_functions))
@@ -438,7 +439,7 @@ class Button(SimpleButton):
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
         if self._settings.get("show_updated_prompt"):
-            with open(os.path.join("files", "update.js"), "r") as update_js:
+            with open(os.path.join(self._settings.get("project_root"), "files", "update.js"), "r") as update_js:
                 show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.get("extension_id"))
                            .replace("{{version_url}}",
@@ -447,7 +448,7 @@ class Button(SimpleButton):
                                     self._settings.get("version"))
                            )
             js_files["button"] = show_update + "\n" + js_files["button"]
-        interfaces_data = open(os.path.join("files", "interfaces"), "r")
+        interfaces_data = open(os.path.join(self._settings.get("project_root"), "files", "interfaces"), "r")
         interfaces = {}
         for line in interfaces_data:
             name, _ = line.split(":")
@@ -476,7 +477,7 @@ class Button(SimpleButton):
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
             self._has_javascript = True
-            with open(os.path.join("files", "loader.js"), "r") as loader:
+            with open(os.path.join(self._settings.get("project_root"), "files", "loader.js"), "r") as loader:
                 js_files["loader"] = loader.read()
         return js_files
 
@@ -504,7 +505,7 @@ class Button(SimpleButton):
 
         Precondition: get_js_files() has been called
         """
-        with open(os.path.join('files', 'button.xul')) as template_file:
+        with open(os.path.join(self._settings.get("project_root"), 'files', 'button.xul')) as template_file:
             template = template_file.read()
         group_files = self._settings.get("file_map_keys")
         result = {}
@@ -519,7 +520,7 @@ class Button(SimpleButton):
                                 .replace("{{script}}", "\n ".join(js_includes))
                                 .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file))
                                 .replace("{{chrome-name}}", self._settings.get("chrome_name"))
-                                .replace("{{palette}}", self._settings.get("file_to_palette")[file])
+                                .replace("{{palette}}", self._settings.get("file_to_palette").get(file, ""))
                         )
             result[file] = xul_file
         return result
