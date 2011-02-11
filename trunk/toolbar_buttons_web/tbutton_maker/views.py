@@ -45,7 +45,7 @@ class WebButton(button.SimpleButton):
     def description(self, button):
         return self._description.get(button)
 
-def index(request, locale_name=None, applications=None):
+def index(request, locale_name=None, applications=None, template_name='tbutton_maker/index.html'):
     extension_settings = dict(config)
     extension_settings["project_root"] = settings.TBUTTON_DATA
     default_local = extension_settings.get("default_locale")
@@ -59,14 +59,13 @@ def index(request, locale_name=None, applications=None):
     if locale:
         button_locale = locales.Locale(config, locale_folder,
                 locale, load_properites=False)
-        locale_str = lambda str: button_locale.get_dtd_value(locale_name, str)
     else:
         return HttpResponseNotFound("Locale not supported")
     button_folders, buttons = util.get_button_folders("all", extension_settings)
-    buttons_obj = WebButton(button_folders, buttons, extension_settings, ",".join(applications))
+    buttons_obj = WebButton(button_folders, buttons, extension_settings, applications)
     button_data = []
     def locale_str(str, buttonId):
-        value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str))
+        value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str), buttons_obj)
         if value is None:
             if str == "label":
                 regexp = r'label="&(.*\.label);"'
@@ -75,14 +74,15 @@ def index(request, locale_name=None, applications=None):
             with open(buttons_obj.get_xul_files(buttonId)[0]) as fp:
                 data = fp.read()
                 match = re.search(regexp, data)
-                value = button_locale.get_dtd_value(locale_name, match.group(1))
+                value = button_locale.get_dtd_value(locale_name, match.group(1), buttons_obj)
             if value is None:
-                value = button_locale.get_dtd_value(default_local, match.group(1))
+                value = button_locale.get_dtd_value(default_local, match.group(1), buttons_obj)
         if value is None:
             print buttonId
         return value.replace("&brandShortName;", "")
+
     for buttonId, apps in buttons_obj.button_applications().items():
-        button_data.append((buttonId, apps, locale_str("label", buttonId),
+        button_data.append((buttonId, sorted(list(apps)), locale_str("label", buttonId),
                 locale_str("tooltip", buttonId), buttons_obj.get_icons(buttonId),
                 buttons_obj.description(buttonId)))
     def button_key(item):
@@ -100,14 +100,17 @@ def index(request, locale_name=None, applications=None):
         ))
     button_data.sort(key=button_key)
     local_data.sort(key=button_key)
+    application_data = extension_settings.get("applications_data")
+    application_names = dict((key, [item[0] for item in value]) for key, value in application_data.iteritems())
     data = {
         "locale": locale_name,
-        "all_applications": extension_settings.get("applications_data").keys(),
+        "all_applications": sorted(application_data.keys()),
         "applications": applications,
         "button_data": button_data,
+        "application_names": application_names,
         "local_data": local_data,
     }
-    return render_to_response('tbutton_maker/index.html' , data, context_instance=RequestContext(request))
+    return render_to_response(template_name, data, context_instance=RequestContext(request))
 
 
 def create(request):
@@ -135,9 +138,11 @@ def create(request):
     locale = request.POST.get("locale")
 
     # I need to set the update url
-
+    print request.POST.urlencode()
     if not locale or request.POST.get("include-all-locales") == "true":
         locale = "all"
+    if request.POST.get("create-toolbars") == "true":
+        extension_settings["include_toolbars"] = -1
     extension_settings["locale"] = locale
     applications = request.POST.get("application")
     if not applications:

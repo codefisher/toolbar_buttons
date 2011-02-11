@@ -23,12 +23,12 @@ def build_extension(settings, output=None, project_root=None):
     else:
         applications = settings.get("applications")
     button_list = settings.get("buttons")
-    button_folders, buttons = get_button_folders(button_list, settings)
+    button_folders, button_names = get_button_folders(button_list, settings)
     if settings.get("use_staging"):
         staging_button_folders, staging_buttons = get_folders(button_list, settings, "staging")
         button_folders.extend(staging_button_folders)
-        buttons.extend(staging_buttons)
-    buttons = Button(button_folders, buttons, settings, applications)
+        button_names.extend(staging_buttons)
+    buttons = Button(button_folders, button_names, settings, applications)
 
     jar_file = io.BytesIO()
     jar = zipfile.ZipFile(jar_file, "w", zipfile.ZIP_STORED)
@@ -40,12 +40,12 @@ def build_extension(settings, output=None, project_root=None):
     for file, data in buttons.get_xul_files().iteritems():
         jar.writestr(os.path.join("content", file + ".xul"), data)
 
-    for locale, data in button_locales.get_dtd_data(buttons.get_locale_strings()).iteritems():
+    for locale, data in button_locales.get_dtd_data(buttons.get_locale_strings(), buttons).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.dtd"), data)
     if settings.get("include_local_meta"):
         for locale, (path, data) in button_locales.get_meta().iteritems():
             jar.writestr(os.path.join("locale", locale, "meta.dtd"), data)
-    for locale, data in button_locales.get_properties_data(buttons.get_properties_strings()).iteritems():
+    for locale, data in button_locales.get_properties_data(buttons.get_properties_strings(), buttons).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:

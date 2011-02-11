@@ -49,21 +49,29 @@ class Locale(object):
     def get_meta(self):
         return self._meta
 
-    def get_dtd_value(self, locale, name):
+    def get_dtd_value(self, locale, name, button=None):
         """Returns the value of a given dtd string
 
         get_dtd_value(str, str) -> str
         """
         value = self._dtd[locale].get(name,
                 self._dtd[self._settings.get("default_locale")].get(name))
+        if not value and button and locale == self._settings.get("default_locale"):
+            button.get_string(name)
         return value if value else None
 
-    def get_dtd_data(self, strings):
+    def get_dtd_data(self, strings, button=None):
         """Gets a set of files with all the strings wanted
 
         get_dtd_data(list<str>) -> dict<str: str>
         """
         result = {}
+        if self._settings.get("include_toolbars"):
+            strings = list(strings)
+            strings.extend((
+                   "tb-toolbar-buttons-toggle-toolbar.label",
+                   "tb-toolbar-buttons-toggle-toolbar.tooltip",
+                   "tb-toolbar-buttons-toggle-toolbar.name"))
         for locale in self._locales:
             dtd_file = []
             for string in strings:
@@ -79,10 +87,12 @@ class Locale(object):
                       and string in self._dtd[locale]):
                     dtd_file.append("""<!ENTITY %s "%s">"""
                                   % (string, self._dtd[locale][string]))
+                elif button and button.get_string(string):
+                    dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string)))
             result[locale] = "\n".join(dtd_file)
         return result
 
-    def get_properties_data(self, strings):
+    def get_properties_data(self, strings, button=None):
         """Gets a set of files with all the .properties strings wanted
 
         get_dtd_data(list<str>) -> dict<str: str>
@@ -104,6 +114,9 @@ class Locale(object):
                       and string in self._properties[locale]):
                     properties_file.append("%s=%s"
                                   % (string, self._properties[locale][string]))
+                elif button and button.get_string(string):
+                    properties_file.append("%s=%s" % (string, button.get_string(string)))
+
             if locale == "en-US":
                 properties_file.append("%s=%s" % (description, self._settings.get("description")))
             elif description in self._properties[locale]:

@@ -344,3 +344,6 @@
 <!ENTITY workoffline.tooltip "Toggle work offline">
 <!ENTITY yahoo-button.label "Yahoo Mail">
 <!ENTITY yahoo-button.tooltip "Open Yahoo Mail">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">

@@ -1,6 +1,8 @@
 import os
 import re
 import io
+import math
+import hashlib
 from collections import defaultdict
 import grayscale
 from util import get_pref_folders
@@ -31,11 +33,11 @@ class SimpleButton():
         self._window_files = list(set(button_files).difference(self._app_files))
         self._info = []
         self._xul_files = defaultdict(list)
+        self._strings = {}
 
         for folder, button in zip(self._folders, self._buttons):
             files = os.listdir(folder)
             button_wanted = False
-
             #file that belong to more then one window
             for group_name in self._app_files:
                 xul_file = group_name + ".xul"
@@ -79,14 +81,23 @@ class SimpleButton():
                     key_shortcut = list(keys.read().partition(":"))
                     key_shortcut.pop(1)
                     self._button_keys[button] = key_shortcut
+            if "strings" in files:
+                with open(os.path.join(folder, "strings"), "r") as strings:
+                    for line in strings:
+                        name, _, value = line.strip().partition("-")
+                        if name:
+                            self._strings[name] = value
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = self._settings.get("file_to_application")[file_name]
-        self._button_applications[button].update(application)
+        self._button_applications[button].update(set(application).intersection(self._applications))
         return application
 
     def button_applications(self):
         return self._button_applications
+
+    def get_string(self, name):
+        return self._strings.get(name)
 
 class Button(SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -162,7 +173,7 @@ class Button(SimpleButton):
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = SimpleButton._process_xul_file(self, folder, button, xul_file, file_name)
-        self._suported_applications.update(application)
+        self._suported_applications.update(set(application).intersection(self._applications))
         self._button_files.add(file_name)
         with open(os.path.join(folder, xul_file)) as xul:
             self._button_xul[file_name][button] = xul.read()
@@ -256,7 +267,7 @@ class Button(SimpleButton):
             settings.append("""pref("%s%s", %s);""" % (self._settings.get("pref_root"), name, value))
         return "\n".join(settings)
 
-    def get_css_file(self):
+    def get_css_file(self, toolbars=None):
         image_list = []
         image_datas = {}
         lines = ["""@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");"""]
@@ -356,6 +367,14 @@ class Button(SimpleButton):
             image_map_large.save(large_io, "png")
             image_datas[os.path.join("skin", large, "button.png")] = large_io.getvalue()
             large_io.close()
+        if self._settings.get("include_toolbars"):
+            image_list.append("toolbar-button.png")
+            lines.append(('''#toolbar[iconsize='small'] .toolbar-buttons-toolbar-toggle {'''
+                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(small)s/toolbar-button.png);'''
+                    '''\n}\n.toolbar-buttons-toolbar-toggle {'''
+                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(large)s/toolbar-button.png);\n}''')
+                 % {"small": small, "large": large,
+                       "chrome_name": self._settings.get("chrome_name")})
         for item in set(self._button_style.values()):
             lines.append(item)
         return "\n".join(lines), image_list, image_datas
@@ -398,7 +417,8 @@ class Button(SimpleButton):
             shared_functions = shared_functions_file.read()
         externals = dict((name, function) for function, name
                          in function_name_match.findall(shared_functions))
-
+        if self._settings.get("include_toolbars"):
+            js_imports.add("toggleToolbarButtonToolbar")
         extra_functions = []
         js_imports.update(js_includes)
         loop_imports = js_imports
@@ -505,21 +525,42 @@ class Button(SimpleButton):
 
         Precondition: get_js_files() has been called
         """
+        button_hash = None
+        toolbar_template = None
+        if self._settings.get("include_toolbars"):
+            with open(os.path.join(self._settings.get("project_root"), 'files', 'toolbar-toggle.xul')) as template_file:
+                toolbar_template = template_file.read()
+            button_hash = hashlib.md5(''.join(sorted(self._buttons)))
         with open(os.path.join(self._settings.get("project_root"), 'files', 'button.xul')) as template_file:
             template = template_file.read()
         group_files = self._settings.get("file_map_keys")
         result = {}
         for file, values in self._button_xul.iteritems():
             js_includes = []
+            toolbars = []
             for group_file in group_files:
                 if self._has_javascript and group_file in self._button_js and file in self._settings.get("file_map")[group_file]:
                     js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), group_file))
             if  self._has_javascript and file in self._button_js:
                 js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), file))
+            toolbar_box = self._settings.get("file_to_toolbar_box").get(file)
+            if self._settings.get("include_toolbars") and toolbar_box:
+                number = self._settings.get("include_toolbars")
+                max_count = self._settings.get("buttons_per_toolbar")
+                if number == -1:
+                    number = math.ceil(float(len(values))/max_count)
+                buttons = values.keys()
+                for i in range(number):
+                    toolbar_buttons = buttons[i*max_count:(i+1)*max_count]
+                    button_hash.update(str(i))
+                    hash = button_hash.hexdigest()[:6]
+                    toolbars.append('''<toolbar id="tb-toolbar-%s" mode="icons" size="small" customizable="true" defaultset="%s" toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;"/>''' % (hash, ",".join(toolbar_buttons)))
+                    values[hash] = toolbar_template.replace("{{hash}}", hash)
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
                                 .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file))
                                 .replace("{{chrome-name}}", self._settings.get("chrome_name"))
+                                .replace("{{toolbars}}", "" if not toolbars else '\n<toolbox id="%s">\n%s\n</toolbox>' % (toolbar_box, '\n'.join(toolbars)))
                                 .replace("{{palette}}", self._settings.get("file_to_palette").get(file, ""))
                         )
             result[file] = xul_file
