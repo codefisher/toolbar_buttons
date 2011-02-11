@@ -79,7 +79,8 @@ config = {
                       ),
     },
     "files_to_overlay": {
-        "browser": ("chrome://browser/content/browser.xul", "chrome://navigator/content/navigator.xul"),
+        "browser": ("chrome://browser/content/browser.xul", ),
+        "suite_browser": ("chrome://navigator/content/navigator.xul", ),
         "mail": ("chrome://messenger/content/messenger.xul", ),
         "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
         "read": ("chrome://messenger/content/messageWindow.xul", ),
@@ -94,12 +95,16 @@ config = {
          "read": ("messenger", "suite"),
          "calendar": ("calendar", "suite"),
          "lightning": ("messenger", ),
+
+         "suite_browser": ("suite", )
     },
     "file_map": {
         "loader": ("browser","mail","compose","read","calendar"),
         "button": ("browser","mail","compose","read","calendar"),
         "messenger": ("mail", "compose", "read"),
         "calendar": ("lightning", "calendar"),
+
+        "browser": ("browser", "suite_browser")
     },
      # order is important
     "file_map_keys": ["loader","button", "messenger", "calendar"],
@@ -110,6 +115,8 @@ config = {
          "read": "MailToolbarPalette",
          "calendar": "calendarToolbarPalette",
          "lightning": "MailToolbarPalette",
+
+         "suite_browser": "BrowserToolbarPalette",
     },
     "file_to_toolbar_box": {
         "browser": "navigator-toolbox",
@@ -117,6 +124,8 @@ config = {
         "compose": "compose-toolbox",
         "read": "mail-toolbox",
         "calendar": "calendar-toolbox",
+
+        "suite_browser": "navigator-toolbox",
     },
     "file_exclude": {
         "lightning": ("mail", "messenger")
