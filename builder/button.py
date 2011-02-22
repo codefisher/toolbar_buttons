@@ -11,11 +11,22 @@ try:
 except ImportError:
     pass
 
+def get_image(settings, size, name):
+    if isinstance(settings.get("image_path"), str):
+        return os.path.join(settings.get("image_path"), size, name)
+    else:
+        for folder in settings.get("image_path"):
+            file_name = os.path.join(folder, size, name)
+            if os.path.exists(file_name):
+                return file_name
+    return os.path.join(settings.get("image_path")[0], size, name)
+
 class SimpleButton():
 
     def __init__(self, folders, buttons, settings, applications):
         self._folders = folders
         self._buttons = buttons
+        self._button_names = set(buttons)
         self._settings = settings
         try:
             Image
@@ -65,6 +76,7 @@ class SimpleButton():
 
             if not button_wanted:
                 continue
+                self._button_names.remove(button)
             else:
                 self._info.append((folder, button, files))
 
@@ -95,6 +107,12 @@ class SimpleButton():
 
     def button_applications(self):
         return self._button_applications
+
+    def applications(self):
+        return self._applications
+
+    def buttons(self):
+        return self._button_names
 
     def get_string(self, name):
         return self._strings.get(name)
@@ -293,8 +311,12 @@ class Button(SimpleButton):
                     name.insert(1, "-disabled")
                     _image = "".join(name)
                     opacity = 1.0 if image[0] == "-" else 0.9
-                    small_data, small_fp = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), small, image[1:]), opacity)
-                    large_data, large_fp = grayscale.image_to_graysacle(os.path.join(self._settings.get("image_path"), large, image[1:]), opacity)
+                    try:
+                        small_data, small_fp = grayscale.image_to_graysacle(get_image(self._settings, small, image[1:]), opacity)
+                        large_data, large_fp = grayscale.image_to_graysacle(get_image(self._settings, large, image[1:]), opacity)
+                    except IOError:
+                        print "image %s does not exist" % image
+                        continue
                     if self._settings.get("merge_images"):
                         if image_map.get(_image):
                             offset = image_map.get(_image)
@@ -325,10 +347,10 @@ class Button(SimpleButton):
                                 offset = count
                                 image_map[image] = offset
                                 box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                                small_im = Image.open(os.path.join(self._settings.get("image_path"), small, image))
+                                small_im = Image.open(get_image(self._settings, small, image))
                                 image_map_small.paste(small_im, box)
                                 box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
-                                large_im = Image.open(os.path.join(self._settings.get("image_path"), large, image))
+                                large_im = Image.open(get_image(self._settings, large, image))
                                 image_map_large.paste(large_im, box)
                                 count += 1
                             except IOError:

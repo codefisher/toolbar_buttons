@@ -49,6 +49,9 @@ class Locale(object):
     def get_meta(self):
         return self._meta
 
+    def get_locales(self):
+        return self._locales
+
     def get_dtd_value(self, locale, name, button=None):
         """Returns the value of a given dtd string
 
