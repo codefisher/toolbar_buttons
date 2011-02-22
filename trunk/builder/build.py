@@ -5,7 +5,7 @@ import os
 import zipfile
 import io
 from locales import Locale
-from button import Button
+from button import Button, get_image
 from util import get_button_folders, get_locale_folders, get_folders
 
 def build_extension(settings, output=None, project_root=None):
@@ -68,15 +68,15 @@ def build_extension(settings, output=None, project_root=None):
     jar.writestr(os.path.join("skin", "button.css"), bytes(css))
     for image in set(image_list):
         try:
-            jar.write(os.path.join(settings.get("image_path"), small, image), os.path.join("skin", small, image))
+            jar.write(get_image(settings, small, image), os.path.join("skin", small, image))
         except (OSError, IOError):
             jar.write(os.path.join(settings.get("project_root"), "files", "default16.png"), os.path.join("skin", small, image))
             print "can not find file %s" % image
         try:
-            jar.write(os.path.join(settings.get("image_path"), large, image), os.path.join("skin", large, image))
+            jar.write(get_image(settings, large, image), os.path.join("skin", large, image))
         except (OSError, IOError):
             jar.write(os.path.join(settings.get("project_root"), "files", "default24.png"), os.path.join("skin", large, image))
-            print "can not find file %s" % image
+            #print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)
     jar.close()
@@ -99,6 +99,7 @@ def build_extension(settings, output=None, project_root=None):
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
     xpi.close()
+    return buttons, button_locales
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
@@ -148,6 +149,10 @@ def create_install(settings, applications, options=[]):
                        "</em:optionsURL>\n" % settings.get("chrome_name"))
     else:
         options_url = ""
+    if settings.get("update_url"):
+        update_url = ("\t\t<em:updateURL>%s</em:updateURL>\n" % settings.get("update_url"))
+    else:
+        update_url = ""
     supported_applications = []
     for application in applications:
         for values in settings.get("applications_data")[application]:
@@ -169,6 +174,7 @@ def create_install(settings, applications, options=[]):
                     .replace("{{chrome-name}}", settings.get("chrome_name"))
                     .replace("{{homepageURL}}", settings.get("homepage"))
                     .replace("{{optionsURL}}", options_url)
+                    .replace("{{updateUrl}}", update_url)
                     .replace("{{applications}}",
                              "".join(supported_applications))
             )

@@ -13,24 +13,26 @@
 		<legend>Locale &amp; Application</legend>
 		<div class="form-field">
 			<label for="button-locale">Locale
-				<select name="button-locale" class="form-input">
+				<select name="button-locale" id="button-locale" class="form-input">
 					{% for value, name, native_name, country in local_data %}
 						<option{% if value == locale %} selected{% endif %}
-							value="{{ value }}" style="background: url('{% media_url %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;" alt="">{{ native_name}} [{{ value }}]</option>
+							value="{{ value }}" style="background: url('{% media_url %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} [{{ value }}]</option>
 					{% endfor %}
 				</select>
 			</label>
 		</div>
 		<fieldset>
 			<legend>Application</legend>
-			{% for value in all_applications %}
-				<div class="form-field">
-					<label for="button-application-{{ value }}">
-						<input{% if value in applications %} checked="true"{% endif %} id="button-application-{{ value }}" value="{{ value }}" name="button-application"
-							type="checkbox"><img src="{% media_url %}images/icons/{{ value }}.png"> {% for key, app_names in application_names.items %}{% if key == value %} {{ app_names|join:", " }}{% endif %} {% endfor %}
-					</label>
-				</div>
-			{% endfor %}
+			<ul id="application-list">
+				{% for value in all_applications %}
+					<li class="form-field">
+						<label for="button-application-{{ value }}">
+							<input{% if value in applications %} checked{% endif %} id="button-application-{{ value }}" value="{{ value }}" name="button-application"
+								type="checkbox"><img src="{% media_url %}images/icons/{{ value }}.png" alt=""> {% for key, app_names in application_names.items %}{% if key == value %} {{ app_names|join:", " }}{% endif %} {% endfor %}
+						</label>
+					</li>
+				{% endfor %}
+			</ul>
 		</fieldset>
 		<input type="submit" name="update-submit" value="Update">
 	</fieldset>
@@ -42,11 +44,11 @@
 				<label for="{{ button }}-checkbox">
 					<input type="checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
 					{% for app in apps %}
-						<img src="{% media_url %}images/icons/{{ app }}.png">
+						<img src="{% media_url %}images/icons/{{ app }}.png" alt="">
 					{% endfor %}
 					<span class="button-name">{{ label|safe }}</span>
 				</label>
-				<div class="button-info"><img src="{% media_url %}images/pastel-svg/16/{{ icon }}" alt="">
+				<div class="button-info"><img src="{% media_url %}images/pastel-svg/16/{{ icon }}" alt="{{ tooltip|safe }}">
 					{{ description|linebreaks }}
 				</div>
 			</li>
@@ -79,7 +81,7 @@
 		<div class="form-field">
 			<label>
 				<input type="checkbox" name="create-toolbars" value="true">
-					Create toolbars for by selected buttons.
+					Create toolbars for selected buttons.
 			</label>
 			<p>
 				If enabled a suitable number of toolbars will be created to fit your selection of buttons.

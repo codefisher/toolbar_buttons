@@ -17,9 +17,9 @@ def image_to_graysacle(file_name, drop_opacity=0.9):
     output = io.BytesIO()
     try:
         image = png.Reader(filename=file_name)
-    except IOError:
+    except IOError as err:
         print "File missing"
-        return ""
+        raise err
     except NameError:
         with open(file_name, "r") as fp:
             return fp.read()
