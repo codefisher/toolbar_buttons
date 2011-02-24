@@ -120,7 +120,8 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
     local_data.sort(key=button_key)
     application_data = extension_settings.get("applications_data")
     application_names = dict((key, [item[0] for item in value]) for key, value in application_data.iteritems())
-    #TODO: add option for what update "stream" to follow, the size of icon, and the icon set (if I get more then one)
+    #TODO: add option for what update "stream" to follow, the size of icon,
+    # and the icon set (if I get more then one)
     data = {
         "locale": locale_name,
         "all_applications": sorted(application_data.keys()),
