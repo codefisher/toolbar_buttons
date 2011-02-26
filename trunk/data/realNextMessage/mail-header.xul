@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 msgHeaderView-button"
+	id="realNextMessage"
+	label="&realNextMessage.label;"
+	tooltiptext="&realNextMessage.tooltip;"
+	oncommand="toolbar_buttons.realNextMessage(event);"/>

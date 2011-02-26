@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 msgHeaderView-button"
+	id="forward-as-attachment"
+	label="&forward-as-attachment.label;"
+	tooltiptext="&forward-as-attachment.tooltip;"
+	onclick="MsgForwardAsAttachment(event);" />

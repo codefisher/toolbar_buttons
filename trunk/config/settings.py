@@ -86,7 +86,9 @@ config = {
         "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
         "read": ("chrome://messenger/content/messageWindow.xul", ),
         "calendar": ("chrome://calendar/content/calendar.xul", "chrome://sunbird/content/calendar.xul"),
-        "lightning": ("chrome://lightning/content/messenger-overlay-toolbar.xul", )
+        "lightning": ("chrome://lightning/content/messenger-overlay-toolbar.xul", ),
+        "mail-header": ("chrome://messenger/content/msgHdrViewOverlay.xul",),
+        "mail-address-book": ("chrome://messenger/content/addressbook/addressbook.xul", )
     },
     "file_to_application": {
          "browser": ("browser", "suite"),
@@ -96,7 +98,8 @@ config = {
          "read": ("messenger", "suite"),
          "calendar": ("calendar", "suite"),
          "lightning": ("messenger", ),
-
+         "mail-header": ("messenger", ),
+         "mail-address-book": ("messenger", ),
          "suite_browser": ("suite", )
     },
     "file_map": {
@@ -104,7 +107,6 @@ config = {
         "button": ("browser","mail","compose","read","calendar"),
         "messenger": ("mail", "compose", "read"),
         "calendar": ("lightning", "calendar"),
-
         "browser": ("browser", "suite_browser")
     },
      # order is important
@@ -116,7 +118,8 @@ config = {
          "read": "MailToolbarPalette",
          "calendar": "calendarToolbarPalette",
          "lightning": "MailToolbarPalette",
-
+         "mail-header": "header-view-toolbar-palette",
+         "mail-address-book": "AddressBookToolbarPalette",
          "suite_browser": "BrowserToolbarPalette",
     },
     "file_to_toolbar_box": {
