@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+<body>
+{% block content %}
+	<h2>Toolbar Button Statistics</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Id</th>
+				<th>Count</th>
+				<th>Average</th>
+				<th>Percent</th>
+				<th>Percent Total</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>{{ count }}</td>
+				<td>{{ average|floatformat:"-3" }}</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tfoot>
+		<tbody>
+		{% for item in stats %}
+			<tr>
+				<td>{{ forloop.counter }}</td>
+				<td>{{ item.label }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.downloads }}</td>
+				<td>{{ item.average|floatformat:"-3" }}</td>
+				<td>{{ item.percent|floatformat:"-1" }}</td>
+				<td>{{ item.total|floatformat:"-1" }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
+</body>

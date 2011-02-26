@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 msgHeaderView-button"
+	id="reply-sender"
+	label="&reply-sender.label;"
+	tooltiptext="&reply-sender.tooltip;"
+	oncommand="goDoCommand('cmd_replySender');" />
