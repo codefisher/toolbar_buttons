@@ -44,6 +44,8 @@ config = {
     # if the buttons should be added to the new toolbars.
     # if all buttons can't fix given buttons_per_toolbar they will be left out
     "put_button_on_toolbar": True,
+    # if a menu should be added with all the buttons that can be changed into menu items
+    "create_menu": False,
 
 
     # controls for the locales
@@ -130,6 +132,9 @@ config = {
         "calendar": "calendar-toolbox",
 
         "suite_browser": "navigator-toolbox",
+    },
+    "file_to_menu": {
+        "browser": ("menu_ToolsPopup", "devToolsSeparator"),
     },
     "file_exclude": {
         "lightning": ("mail", "messenger")

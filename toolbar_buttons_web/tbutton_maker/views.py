@@ -151,6 +151,8 @@ def create_buttons(request, query):
         locale = "all"
     if query.get("create-toolbars") == "true":
         extension_settings["include_toolbars"] = -1
+    if query.get("create-menu") == "true":
+        extension_settings["create_menu"] = True
     extension_settings["locale"] = locale
     applications = query.get("application")
     if not applications:
