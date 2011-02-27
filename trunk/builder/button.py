@@ -73,7 +73,6 @@ class SimpleButton():
                     self._process_xul_file(folder, button, xul_file, file_name)
                     self._xul_files[button].append(os.path.join(folder, xul_file))
                     button_wanted = True
-
             if not button_wanted:
                 continue
                 self._button_names.remove(button)
@@ -194,7 +193,7 @@ class Button(SimpleButton):
         self._suported_applications.update(set(application).intersection(self._applications))
         self._button_files.add(file_name)
         with open(os.path.join(folder, xul_file)) as xul:
-            self._button_xul[file_name][button] = xul.read()
+            self._button_xul[file_name][button] = xul.read().strip()
 
     def get_manifest(self):
         return "\n".join(self._manifest)
@@ -369,7 +368,7 @@ class Button(SimpleButton):
                                  """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
                     values.update({"left": offset * int(small), "bottom": small, "right": (offset + 1) * int(small)})
                     values["size"] = small
-                    lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\t"""
+                    lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\t"""
                                  """list-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
                                  """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
                 else:
@@ -379,7 +378,7 @@ class Button(SimpleButton):
                                  """url("chrome://%(chrome_name)s/skin/%(size)s/"""
                                  """%(image)s") !important;\n}""" % values)
                     values["size"] = small
-                    lines.append("""toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
+                    lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
         if self._settings.get("merge_images"):
             small_io = io.BytesIO()
             image_map_small.save(small_io, "png")
@@ -542,6 +541,27 @@ class Button(SimpleButton):
         else:
             return ""
 
+    def _create_menu(self, file_name, buttons):
+        if not self._settings.get("file_to_menu").get(file_name):
+            return ""
+        data = []
+        menu_name, insert_after = self._settings.get("file_to_menu").get(file_name)
+        simple_button_re = re.compile(r"^<toolbarbutton.*/>$", re.DOTALL)
+        attr_match = re.compile(r'''\b([\w\-]+)=("[^"]*")''', re.DOTALL)
+        for button_id, xul in buttons.iteritems():
+            if simple_button_re.match(xul):
+                attrs = [
+                     ("%s=%s" % (name, value.replace("toolbarbutton-1", "").strip()))
+                            if name == "class" else ("%s=%s" % (name, value))
+                     for name, value in attr_match.findall(xul)
+                     if name not in ("id", "tooltiptext", "class")
+                        or (name == "class" and value != "toolbarbutton-1")]
+                attrs.append('id="%s-menu-item"' % button_id)
+                data.append("<menuitem %s/>" % "\n\t\t".join(attrs))
+        if not data:
+            return ""
+        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
+
     def get_xul_files(self):
         """
 
@@ -557,15 +577,15 @@ class Button(SimpleButton):
             template = template_file.read()
         group_files = self._settings.get("file_map_keys")
         result = {}
-        for file, values in self._button_xul.iteritems():
+        for file_name, values in self._button_xul.iteritems():
             js_includes = []
             toolbars = []
             for group_file in group_files:
-                if self._has_javascript and group_file in self._button_js and file in self._settings.get("file_map")[group_file]:
+                if self._has_javascript and group_file in self._button_js and file_name in self._settings.get("file_map")[group_file]:
                     js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), group_file))
-            if  self._has_javascript and file in self._button_js:
-                js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), file))
-            toolbar_box = self._settings.get("file_to_toolbar_box").get(file)
+            if  self._has_javascript and file_name in self._button_js:
+                js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), file_name))
+            toolbar_box = self._settings.get("file_to_toolbar_box").get(file_name)
             if self._settings.get("include_toolbars") and toolbar_box:
                 number = self._settings.get("include_toolbars")
                 max_count = self._settings.get("buttons_per_toolbar")
@@ -577,15 +597,17 @@ class Button(SimpleButton):
                     button_hash.update(str(i))
                     hash = button_hash.hexdigest()[:6]
                     toolbars.append('''<toolbar context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" size="small" customizable="true" defaultset="%s" toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;"/>''' % (hash, ",".join(toolbar_buttons)))
-                    values[hash] = toolbar_template.replace("{{hash}}", hash)
+                    values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash)
+            menu = self._create_menu(file_name, values) if self._settings.get("create_menu") else ""
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
-                                .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file))
+                                .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file_name))
                                 .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                                 .replace("{{toolbars}}", "" if not toolbars else '\n<toolbox id="%s">\n%s\n</toolbox>' % (toolbar_box, '\n'.join(toolbars)))
-                                .replace("{{palette}}", self._settings.get("file_to_palette").get(file, ""))
+                                .replace("{{palette}}", self._settings.get("file_to_palette").get(file_name, ""))
+                                .replace("{{menu}}", menu)
                         )
-            result[file] = xul_file
+            result[file_name] = xul_file
         return result
 
     def get_suported_applications(self):

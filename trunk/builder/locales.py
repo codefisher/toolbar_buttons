@@ -69,12 +69,14 @@ class Locale(object):
         get_dtd_data(list<str>) -> dict<str: str>
         """
         result = {}
+        strings = list(strings)
         if self._settings.get("include_toolbars"):
-            strings = list(strings)
             strings.extend((
                    "tb-toolbar-buttons-toggle-toolbar.label",
                    "tb-toolbar-buttons-toggle-toolbar.tooltip",
                    "tb-toolbar-buttons-toggle-toolbar.name"))
+        if self._settings.get("create_menu"):
+            strings.append("tb-toolbar-buttons.menu")
         for locale in self._locales:
             dtd_file = []
             for string in strings:

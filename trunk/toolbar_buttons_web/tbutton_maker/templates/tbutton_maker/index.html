@@ -88,6 +88,16 @@
 				Then your selection will be added onto these toolbars.
 			</p>
 		</div>
+		<div class="form-field">
+			<label>
+				<input type="checkbox" name="create-menu" value="true">
+					Create a menu of selected buttons.
+			</label>
+			<p>
+				A menu of all the selected buttons can be created and placed in the <em>Tools</em> menu.
+				This feature is experimental and some buttons may fail to work.
+			</p>
+		</div>
 		{% csrf_token %}
 		<input type="hidden" name="locale" value="{{ locale }}">
 		<input type="hidden" name="application" value="{{ applications|join:"," }}">
