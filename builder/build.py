@@ -59,7 +59,7 @@ def build_extension(settings, output=None, project_root=None):
         jar.writestr(os.path.join("content", "%s.xul" % file), data)
     options_strings = buttons.get_options_strings()
     if options_strings:
-        for locale, data in options_locales.get_dtd_data(options_strings).iteritems():
+        for locale, data in options_locales.get_dtd_data(options_strings, buttons).iteritems():
             jar.writestr(os.path.join("locale", locale, "options.dtd"), data)
     option_applicaions = buttons.get_options_applications()
 
