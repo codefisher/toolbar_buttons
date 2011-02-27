@@ -96,7 +96,7 @@ class SimpleButton():
             if "strings" in files:
                 with open(os.path.join(folder, "strings"), "r") as strings:
                     for line in strings:
-                        name, _, value = line.strip().partition("-")
+                        name, _, value = line.strip().partition("=")
                         if name:
                             self._strings[name] = value
 
@@ -114,8 +114,8 @@ class SimpleButton():
     def buttons(self):
         return self._button_names
 
-    def get_string(self, name):
-        return self._strings.get(name)
+    def get_string(self, name, locale=None):
+        return self._strings.get(name, "")
 
 class Button(SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -391,10 +391,10 @@ class Button(SimpleButton):
             large_io.close()
         if self._settings.get("include_toolbars"):
             image_list.append("toolbar-button.png")
-            lines.append(('''#toolbar[iconsize='small'] .toolbar-buttons-toolbar-toggle {'''
-                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(small)s/toolbar-button.png);'''
-                    '''\n}\n.toolbar-buttons-toolbar-toggle {'''
-                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(large)s/toolbar-button.png);\n}''')
+            lines.append(('''.toolbar-buttons-toolbar-toggle {'''
+                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(large)s/toolbar-button.png") !important;'''
+                    '''\n}\ntoolbar[iconsize='small'] .toolbar-buttons-toolbar-toggle {'''
+                    '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(small)s/toolbar-button.png") !important;\n}''')
                  % {"small": small, "large": large,
                        "chrome_name": self._settings.get("chrome_name")})
         for item in set(self._button_style.values()):
@@ -576,7 +576,7 @@ class Button(SimpleButton):
                     toolbar_buttons = buttons[i*max_count:(i+1)*max_count]
                     button_hash.update(str(i))
                     hash = button_hash.hexdigest()[:6]
-                    toolbars.append('''<toolbar id="tb-toolbar-%s" mode="icons" size="small" customizable="true" defaultset="%s" toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;"/>''' % (hash, ",".join(toolbar_buttons)))
+                    toolbars.append('''<toolbar context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" size="small" customizable="true" defaultset="%s" toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;"/>''' % (hash, ",".join(toolbar_buttons)))
                     values[hash] = toolbar_template.replace("{{hash}}", hash)
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))

@@ -82,7 +82,7 @@ class Locale(object):
                     dtd_file.append("""<!ENTITY %s "%s">"""
                                 % (string, self._dtd[locale].get(string,
                                         self._dtd[self._settings.get("default_locale")]
-                                        .get(string, ""))))
+                                        .get(string, button.get_string(string, locale) if button else ""))))
                 elif self._missing_strings == "empty":
                     dtd_file.append("""<!ENTITY %s "%s">"""
                              % (string, self._dtd[locale].get(string, "")))
@@ -90,8 +90,6 @@ class Locale(object):
                       and string in self._dtd[locale]):
                     dtd_file.append("""<!ENTITY %s "%s">"""
                                   % (string, self._dtd[locale][string]))
-                elif button and button.get_string(string):
-                    dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string)))
             result[locale] = "\n".join(dtd_file)
         return result
 
