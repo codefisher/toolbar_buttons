@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1"
-	id="reload-skip-cache"
-	label="&reload-skip-cache.label;"
-	tooltiptext="&reload-skip-cache.tooltip;"
-	oncommand="BrowserReloadSkipCache()" />

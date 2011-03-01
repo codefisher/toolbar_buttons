@@ -1,0 +1,9 @@
+Toogle Toolbar button updated so that it always keeps track of the toolbar it belongs to, the three buttons for this (one for each application) has been merged into one.
+Toogle Statusbar now uses the same function as the menu item
+The Bookmark, Exit, Save As, Print Preview, Page Setup changed to use command instead of oncommand
+Restart button correctly localized.
+The About buttons for each application have been merged.
+The Options, Addons, about:config and about:plugins now open in a tab in Thunderbird, if middle clicked.  Just like they already did in Firefox.
+The Theme and Extensions button now work in Thunerbird 3.
+Customize Toolbar button have been fixed in Thunderbird 3.
+The resize text buttons have been fixed for Thunderbird 3.

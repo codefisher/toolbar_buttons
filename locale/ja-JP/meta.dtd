@@ -1,5 +1,0 @@
-<!-- I am using this when displaying details about the extension
-	online and for my custom toolbar button maker -->
-<!ENTITY name "Japanese">
-<!ENTITY native_name "日本語">
-<!ENTITY country "JP">

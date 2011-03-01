@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1"
-	id="tb-about-blank"
-	label="&about-blank.label;"
-	tooltiptext="&about-blank.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:blank', event);" />

@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1 msgHeaderView-button"
-	id="read-message"
-	label="&read-message.label;"
-	tooltiptext="&read-message.tooltip;"
-	oncommand="MsgOpenNewWindowForMessage();"/>

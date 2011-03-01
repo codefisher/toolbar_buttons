@@ -1,0 +1,21 @@
+Locale is {{ locale }}, application is {{ applications|join:"," }}
+
+<form method="post" action="{% url toolbar_buttons_web.tbutton_maker.views.create %}">
+	<fieldset>
+		<legend>Buttons</legend>
+		<ul>
+		{% for button, apps, label, tooltip in button_data %}
+			<li>
+				<input type="checkbox" for="{{ button }}-label" name="button" value="{{ button }}">
+				<span id="{{ button }}-label">{{ label|safe }}</span>
+			</li>
+		{% endfor %}
+		</ul>
+	</fieldset>
+	<fieldset>
+		{% csrf_token %}
+		<input type="hidden" name="locale" value="{{ locale }}">
+		<input type="hidden" name="application" value="{{ applications|join:"," }}">
+		<input type="submit" value="Submit">
+	</fieldset>
+</form>

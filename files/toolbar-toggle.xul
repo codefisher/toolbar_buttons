@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1 toolbar-buttons-toolbar-toggle"
-	id="tb-toolbar-buttons-toggle-toolbar-{{hash}}"
-	label="&tb-toolbar-buttons-toggle-toolbar.label;"
-	tooltiptext="&tb-toolbar-buttons-toggle-toolbar.tooltip;"
-	oncommand="toolbar_buttons.toggleToolbar(event, 'tb-toolbar-{{hash}}', false)" />

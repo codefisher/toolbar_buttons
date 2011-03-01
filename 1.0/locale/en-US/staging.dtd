@@ -1,0 +1,6 @@
+<!ENTITY tb-cookie-manager.label "Cookie Manager">
+<!ENTITY tb-cookie-manager.tooltip "Opens the cookie manager for the current web page.">
+<!ENTITY tb-toggle-headers.label "Email Headers">
+<!ENTITY tb-toggle-headers.tooltip "Toggle what email headers show">
+<!ENTITY tb-notepad.label "Notepad">
+<!ENTITY tb-notepad.tooltip "Open notepad in sidebar">

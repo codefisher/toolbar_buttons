@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1 msgHeaderView-button"
-	id="edit-as-new"
-	label="&edit-as-new.label;"
-	tooltiptext="&edit-as-new.tooltip;"
-	command="cmd_editAsNew" />
