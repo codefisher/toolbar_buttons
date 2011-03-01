@@ -11,8 +11,7 @@ if(!this.load_toolbar_button) {
 			var ext_id = "{{uuid}}";
 			var version = "{{version}}";
 			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-			var app_name = toolbar_buttons.interfaces.XULAppInfo().name;
-			var url = "{{version_url}}" + version + "?application=" + app_name.toLowerCase();
+			var url = "{{version_url}}" + version
 
 			var extensionFlagFile = toolbar_buttons.interfaces.Properties.get("ProfD", Ci.nsIFile);
 			extensionFlagFile.append("extensions");
