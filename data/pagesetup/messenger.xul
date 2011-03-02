@@ -3,4 +3,4 @@
 	id="pagesetup"
 	label="&pagesetup.label;"
 	tooltiptext="&pagesetup.tooltip;"
-	command="cmd_printSetup"/>
+	oncommand="goDoCommand('cmd_printSetup');"/>

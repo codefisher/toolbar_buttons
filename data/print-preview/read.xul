@@ -3,4 +3,4 @@
 	id="print-preview"
 	label="&print-preview.label;"
 	tooltiptext="&print-preview.tooltip;"
-	command="cmd_printpreview"/>
+	oncommand="goDoCommand('cmd_printpreview');"/>
