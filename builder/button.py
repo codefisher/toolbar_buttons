@@ -44,6 +44,7 @@ class SimpleButton():
         self._window_files = list(set(button_files).difference(self._app_files))
         self._info = []
         self._strings = {}
+        self._xul_files = {}
         large_icon_size = settings.get("icon_size")[1]
         skip_without_icons = settings.get("skip_buttons_without_icons")
 
@@ -51,6 +52,7 @@ class SimpleButton():
             files = os.listdir(folder)
             button_wanted = False
             xul_data = []
+            xul_files = []
             #file that belong to more then one window
             for group_name in self._app_files:
                 xul_file = group_name + ".xul"
@@ -64,6 +66,7 @@ class SimpleButton():
                                    ).intersection(self._applications):
                                 xul_data.append((folder, button,
                                                        xul_file, file_name))
+                                xul_files.append(os.path.join(folder, xul_file))
                                 button_wanted = True
             #single window files
             for file_name in self._window_files:
@@ -72,6 +75,7 @@ class SimpleButton():
                         and set(self._settings.get("file_to_application")[file_name]
                                    ).intersection(self._applications)):
                     xul_data.append((folder, button, xul_file, file_name))
+                    xul_files.append(os.path.join(folder, xul_file))
                     button_wanted = True
 
             if "image" in files:
@@ -96,6 +100,7 @@ class SimpleButton():
                 for item in xul_data:
                     self._process_xul_file(*item)
                 self._info.append((folder, button, files))
+                self._xul_files[button] = xul_files
 
             if "key" in files:
                 with open(os.path.join(folder, "key"), "r") as keys:
