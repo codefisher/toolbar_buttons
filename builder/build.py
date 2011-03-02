@@ -8,6 +8,11 @@ from locales import Locale
 from button import Button, get_image
 from util import get_button_folders, get_locale_folders, get_folders
 
+def bytes_string(string):
+    if type(string) == unicode:
+        return str(string.decode("utf-8"))
+    return string
+
 def build_extension(settings, output=None, project_root=None):
     if os.path.join(settings.get("image_path")) is None:
         print "Please set the image_path setting"
@@ -38,7 +43,7 @@ def build_extension(settings, output=None, project_root=None):
                 data.replace("{{uuid}}", settings.get("extension_id")))
 
     for file, data in buttons.get_xul_files().iteritems():
-        jar.writestr(os.path.join("content", file + ".xul"), data)
+        jar.writestr(os.path.join("content", file + ".xul"), bytes_string(data))
 
     for locale, data in button_locales.get_dtd_data(buttons.get_locale_strings(), buttons).iteritems():
         jar.writestr(os.path.join("locale", locale, "button.dtd"), data)
@@ -60,18 +65,19 @@ def build_extension(settings, output=None, project_root=None):
     options_strings = buttons.get_options_strings()
     if options_strings:
         for locale, data in options_locales.get_dtd_data(options_strings, buttons).iteritems():
-            jar.writestr(os.path.join("locale", locale, "options.dtd"), data)
+            jar.writestr(os.path.join("locale", locale, "options.dtd"), bytes_string(data))
     option_applicaions = buttons.get_options_applications()
 
     css, image_list, image_data = buttons.get_css_file()
     small, large = settings.get("icon_size")
     jar.writestr(os.path.join("skin", "button.css"), bytes(css))
     for image in set(image_list):
-        try:
-            jar.write(get_image(settings, small, image), os.path.join("skin", small, image))
-        except (OSError, IOError):
-            jar.write(os.path.join(settings.get("project_root"), "files", "default16.png"), os.path.join("skin", small, image))
-            print "can not find file %s" % image
+        if small is not None:
+            try:
+                jar.write(get_image(settings, small, image), os.path.join("skin", small, image))
+            except (OSError, IOError):
+                jar.write(os.path.join(settings.get("project_root"), "files", "default16.png"), os.path.join("skin", small, image))
+                print "can not find file %s" % image
         try:
             jar.write(get_image(settings, large, image), os.path.join("skin", large, image))
         except (OSError, IOError):
@@ -150,7 +156,7 @@ def create_install(settings, applications, options=[]):
     else:
         options_url = ""
     if settings.get("update_url"):
-        update_url = ("\t\t<em:updateURL>%s</em:updateURL>\n" % settings.get("update_url"))
+        update_url = bytes_string("\t\t<em:updateURL>%s</em:updateURL>\n" % settings.get("update_url"))
     else:
         update_url = ""
     supported_applications = []

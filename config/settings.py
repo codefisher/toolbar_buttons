@@ -37,6 +37,9 @@ config = {
     "icon_size": ("16", "24"),
     "image_path": None,
     "project_root": "",
+    #buttons can be left out if their icon is not in the given set.
+    #the default action it to use a place holder image
+    "skip_buttons_without_icons": False,
     # if include_toolbars, is positive that many toolbars will be added.
     # if it is -1, a number will be chosen by looking at buttons_per_toolbar
     "include_toolbars": 0,

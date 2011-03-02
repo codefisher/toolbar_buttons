@@ -43,12 +43,14 @@ class SimpleButton():
         self._app_files.sort()
         self._window_files = list(set(button_files).difference(self._app_files))
         self._info = []
-        self._xul_files = defaultdict(list)
         self._strings = {}
+        large_icon_size = settings.get("icon_size")[1]
+        skip_without_icons = settings.get("skip_buttons_without_icons")
 
         for folder, button in zip(self._folders, self._buttons):
             files = os.listdir(folder)
             button_wanted = False
+            xul_data = []
             #file that belong to more then one window
             for group_name in self._app_files:
                 xul_file = group_name + ".xul"
@@ -60,9 +62,8 @@ class SimpleButton():
                         else:
                             if set(self._settings.get("file_to_application")[file_name]
                                    ).intersection(self._applications):
-                                self._process_xul_file(folder, button,
-                                                       xul_file, file_name)
-                                self._xul_files[button].append(os.path.join(folder, xul_file))
+                                xul_data.append((folder, button,
+                                                       xul_file, file_name))
                                 button_wanted = True
             #single window files
             for file_name in self._window_files:
@@ -70,14 +71,8 @@ class SimpleButton():
                 if (xul_file in files
                         and set(self._settings.get("file_to_application")[file_name]
                                    ).intersection(self._applications)):
-                    self._process_xul_file(folder, button, xul_file, file_name)
-                    self._xul_files[button].append(os.path.join(folder, xul_file))
+                    xul_data.append((folder, button, xul_file, file_name))
                     button_wanted = True
-            if not button_wanted:
-                continue
-                self._button_names.remove(button)
-            else:
-                self._info.append((folder, button, files))
 
             if "image" in files:
                 with open(os.path.join(folder, "image"), "r") as images:
@@ -85,8 +80,23 @@ class SimpleButton():
                         name, _, modifier = line.partition(" ")
                         self._button_image[button].append((name.strip(),
                                                            modifier.rstrip()))
+                        if skip_without_icons:
+                            name = name.strip().lstrip("*").lstrip("-")
+                            if not os.path.exists(get_image(settings, large_icon_size, name)):
+                                button_wanted = False
+                                del self._button_image[button]
+                                continue
             else:
                 raise ValueError("%s does not contain image listing." % folder)
+
+            if not button_wanted:
+                self._button_names.remove(button)
+                continue
+            else:
+                for item in xul_data:
+                    self._process_xul_file(*item)
+                self._info.append((folder, button, files))
+
             if "key" in files:
                 with open(os.path.join(folder, "key"), "r") as keys:
                     key_shortcut = list(keys.read().partition(":"))
@@ -298,7 +308,8 @@ class Button(SimpleButton):
                 for image, modifier in image_data:
                     image_set.add(image)
             image_count = len(image_set)
-            image_map_small = Image.new("RGBA", (image_count*int(small), int(small)), (0, 0, 0, 0))
+            if small is not None:
+                image_map_small = Image.new("RGBA", (image_count*int(small), int(small)), (0, 0, 0, 0))
             image_map_large = Image.new("RGBA", (image_count*int(large), int(large)), (0, 0, 0, 0))
         count = 0
         offset = 0
@@ -311,7 +322,8 @@ class Button(SimpleButton):
                     _image = "".join(name)
                     opacity = 1.0 if image[0] == "-" else 0.9
                     try:
-                        small_data, small_fp = grayscale.image_to_graysacle(get_image(self._settings, small, image[1:]), opacity)
+                        if small is not None:
+                            small_data, small_fp = grayscale.image_to_graysacle(get_image(self._settings, small, image[1:]), opacity)
                         large_data, large_fp = grayscale.image_to_graysacle(get_image(self._settings, large, image[1:]), opacity)
                     except IOError:
                         print "image %s does not exist" % image
@@ -322,19 +334,22 @@ class Button(SimpleButton):
                         else:
                             offset = count
                             image_map[_image] = offset
-                            box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                            small_fp.seek(0)
-                            image_map_small.paste(Image.open(small_fp), box)
+                            if small is not None:
+                                box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
+                                small_fp.seek(0)
+                                image_map_small.paste(Image.open(small_fp), box)
                             box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
                             large_fp.seek(0)
                             image_map_large.paste(Image.open(large_fp), box)
                             count += 1
                     else:
                         offset = count
-                        image_datas[os.path.join("skin", small, _image)] = small_data
+                        if small is not None:
+                            image_datas[os.path.join("skin", small, _image)] = small_data
                         image_datas[os.path.join("skin", large, _image)] = large_data
                         count += 1
-                    small_fp.close()
+                    if small is not None:
+                        small_fp.close()
                     large_fp.close()
                     image = _image
                 else:
@@ -345,9 +360,10 @@ class Button(SimpleButton):
                             try:
                                 offset = count
                                 image_map[image] = offset
-                                box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                                small_im = Image.open(get_image(self._settings, small, image))
-                                image_map_small.paste(small_im, box)
+                                if small is not None:
+                                    box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
+                                    small_im = Image.open(get_image(self._settings, small, image))
+                                    image_map_small.paste(small_im, box)
                                 box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
                                 large_im = Image.open(get_image(self._settings, large, image))
                                 image_map_large.paste(large_im, box)
@@ -366,24 +382,27 @@ class Button(SimpleButton):
                     lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {"""
                                  """\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
                                  """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
-                    values.update({"left": offset * int(small), "bottom": small, "right": (offset + 1) * int(small)})
-                    values["size"] = small
-                    lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\t"""
-                                 """list-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
-                                 """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
+                    if small is not None:
+                        values.update({"left": offset * int(small), "bottom": small, "right": (offset + 1) * int(small)})
+                        values["size"] = small
+                        lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\t"""
+                                     """list-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
+                                     """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
                 else:
                     values["image"] = image
                     values["size"] = large
                     lines.append("""#%(id)s%(modifier)s, toolbar #%(id)s%(modifier)s {\n\tlist-style-image:"""
                                  """url("chrome://%(chrome_name)s/skin/%(size)s/"""
                                  """%(image)s") !important;\n}""" % values)
-                    values["size"] = small
-                    lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
+                    if small is not None:
+                        values["size"] = small
+                        lines.append("""#%(id)s-menu-item%(modifier)s, toolbar[iconsize='small'] #%(id)s%(modifier)s {\n\tlist-style-image: url("chrome://%(chrome_name)s/skin/%(size)s/%(image)s") !important;\n}""" % values)
         if self._settings.get("merge_images"):
-            small_io = io.BytesIO()
-            image_map_small.save(small_io, "png")
-            image_datas[os.path.join("skin", small, "button.png")] = small_io.getvalue()
-            small_io.close()
+            if small is not None:
+                small_io = io.BytesIO()
+                image_map_small.save(small_io, "png")
+                image_datas[os.path.join("skin", small, "button.png")] = small_io.getvalue()
+                small_io.close()
             large_io = io.BytesIO()
             image_map_large.save(large_io, "png")
             image_datas[os.path.join("skin", large, "button.png")] = large_io.getvalue()
@@ -392,9 +411,12 @@ class Button(SimpleButton):
             image_list.append("toolbar-button.png")
             lines.append(('''.toolbar-buttons-toolbar-toggle {'''
                     '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(large)s/toolbar-button.png") !important;'''
-                    '''\n}\ntoolbar[iconsize='small'] .toolbar-buttons-toolbar-toggle {'''
+                    '''\n}''') % {"large": large,
+                       "chrome_name": self._settings.get("chrome_name")})
+            if small is not None:
+                lines.append(('''toolbar[iconsize='small'] .toolbar-buttons-toolbar-toggle {'''
                     '''\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(small)s/toolbar-button.png") !important;\n}''')
-                 % {"small": small, "large": large,
+                 % {"small": small,
                        "chrome_name": self._settings.get("chrome_name")})
         for item in set(self._button_style.values()):
             lines.append(item)
