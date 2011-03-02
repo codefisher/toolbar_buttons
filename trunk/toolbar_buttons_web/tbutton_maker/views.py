@@ -16,6 +16,7 @@ from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
 from django.db.models import Count
+from django.utils.html import escape
 
 from toolbar_buttons.config.settings import config
 from toolbar_buttons.builder import button, locales, util, build
@@ -35,13 +36,11 @@ class WebButton(button.SimpleButton):
                     self._description[buttonId] = description.read()
                     if not self._description[buttonId].strip():
                         print buttonId
-            if "image" in files:
-                with open(os.path.join(folder, "image"), "r") as image_fp:
-                    for line in image_fp:
-                        image, _, selector = line.strip().partition(" ")
-                        if image and not selector.strip():
-                            self._icons[buttonId] = image
-                            break
+        for buttonId, icons in self._button_image.iteritems():
+            for image, selector in icons:
+                if image and not selector:
+                    self._icons[buttonId] = image
+                    break
 
     def get_xul_files(self, button):
         return self._xul_files[button]
@@ -134,7 +133,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
 
 def create_buttons(request, query):
     buttons = query.getlist("button")
-    locale = query.get("locale")
+    locale = query.get("button-locale", query.get("locale", "all"))
 
     extension_settings = dict(config)
     extension_settings.update({
@@ -145,8 +144,6 @@ def create_buttons(request, query):
         "buttons": buttons,
     })
 
-    # I need to set the update url
-
     if not locale or query.get("include-all-locales") == "true":
         locale = "all"
     if query.get("create-toolbars") == "true":
@@ -154,14 +151,20 @@ def create_buttons(request, query):
     if query.get("create-menu") == "true":
         extension_settings["create_menu"] = True
     extension_settings["locale"] = locale
-    applications = query.get("application")
+    applications = query.getlist("button-application")
     if not applications:
-        applications = "all"
+        applications = query.get("application", "all").split(",")
     extension_settings["applications"] = applications
-
+    update_query = query.copy()
+    update_query["application"] = ",".join(applications)
+    update_query["locale"] = locale
+    allowed_options = set(("application", "locale", "button", "create-menu", "create-toolbars"))
+    for key in update_query.keys():
+        if key not in allowed_options:
+            del update_query[key]
     extension_settings["extension_id"] = "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest()
     extension_settings["update_url"] = "https://%s%s?%s" % (Site.objects.get_current().domain,
-            reverse("tbutton-update"), query.urlencode())
+            reverse("tbutton-update"), escape(update_query.urlencode()))
 
     output = io.BytesIO()
     buttons, button_locales = build.build_extension(extension_settings, output=output)

@@ -10,7 +10,7 @@
 		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
 		<em:homepageURL>{{homepageURL}}</em:homepageURL>
 		<em:unpack>true</em:unpack>
-{{optionsURL}}{{applications}}{{updateUrl}}
+{{optionsURL}}{{updateUrl}}{{applications}}
 
 		<em:translator>Thanks to the Babelzilla team!</em:translator>
 		<em:translator>Dryopteris, Fux, Team erweiterungen.de - German [de-DE]</em:translator>
