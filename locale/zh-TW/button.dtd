@@ -1,18 +1,346 @@
+<!ENTITY about-application.label "關於">
+<!ENTITY about-application.tooltip "關於 &brandShortName;">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "開啟 about:cache 查看暫存資料">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "開啟 about:config 更改設定">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "開啟 about:cache 查看暫存在硬碟中的資料內容">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY about-mem-cache.tooltip "開啟 about:cache 查看暫存在記憶體中的資料內容">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "開啟 about:plugins 查看已安裝的附加元件">
+<!ENTITY accountmanager.label "帳戶設定">
+<!ENTITY accountmanager.tooltip "開啟帳戶設定">
+<!ENTITY accountwizard.label "帳戶設定">
+<!ENTITY accountwizard.tooltip "執行 wizard 設定新帳號">
+<!ENTITY add-address.label "新增電郵">
+<!ENTITY add-address.tooltip "複製電郵到通訊錄">
+<!ENTITY addons.label "附加元件">
+<!ENTITY addons.tooltip "開啟附加元件管理程式">
+<!ENTITY all-threads.label "所有討論群">
+<!ENTITY all-threads.tooltip "查看所有討論群">
+<!ENTITY attachments-delete.label "刪除附件">
+<!ENTITY attachments-delete.tooltip "刪除訊息中的所有附件">
+<!ENTITY attachments-detach.label "移除附件">
+<!ENTITY attachments-detach.tooltip "從訊息中移除所有附件">
+<!ENTITY attachments-save.label "儲存附件">
+<!ENTITY attachments-save.tooltip "儲存訊息中的所有附件">
+<!ENTITY bookmark-manager.label "書籤管理程式">
+<!ENTITY bookmark-manager.tooltip "開啟書籤管理程式">
+<!ENTITY bookmark-nopop.label "快速加入書籤">
+<!ENTITY bookmark-nopop.tooltip "不用提示真接加入書籤">
+<!ENTITY bookmark-tabs.label "全部加入書籤">
+<!ENTITY bookmark-tabs.tooltip "將所有開啟頁面加入書籤">
+<!ENTITY bookmark-toolbar.label "書籤工具列">
+<!ENTITY bookmark-toolbar.tooltip "切換書籤工具列">
+<!ENTITY bookmark.label "此頁加入書籤">
+<!ENTITY bookmark.tooltip "本頁加入書籤">
+<!ENTITY bookmarks-menu-button.label "書籤選項單">
+<!ENTITY bookmarks-menu-button.tooltip "顯示書籤選項單">
+<!ENTITY bottom-page.label "最底部">
+<!ENTITY bottom-page.tooltip "到本頁最底部">
+<!ENTITY change-text-direction.label "改變文字方向">
+<!ENTITY change-text-direction.tooltip "改變文字方向從左到右或從右到左">
+<!ENTITY check-for-update.label "更新">
+<!ENTITY check-for-update.tooltip "檢查更新">
+<!ENTITY clear-data.label "清除資料">
+<!ENTITY clear-data.tooltip "開啟清除隱私資料對話視窗">
+<!ENTITY clear-url.label "隱藏網址">
+<!ENTITY clear-url.tooltip "隱藏網址列文字">
+<!ENTITY clipboard.label "剪貼板連結">
+<!ENTITY clipboard.menuitem "開啟剪貼板連結">
+<!ENTITY clipboard.newtab "在新分頁中">
+<!ENTITY clipboard.newwindow "在新視窗中">
+<!ENTITY clipboard.tooltip "取得剪貼板連結並開啟它">
+<!ENTITY close-all-tabs.label "全部關閉">
+<!ENTITY close-all-tabs.tooltip "關閉所有分頁">
+<!ENTITY close-other-tabs.label "關閉其他分頁">
+<!ENTITY close-other-tabs.tooltip "關閉所有分頁除了所選擇的之外">
+<!ENTITY close-tab.label "關閉分頁">
+<!ENTITY close-tab.tooltip "關閉已開啟的分頁或視窗">
+<!ENTITY compact.label "壓縮">
+<!ENTITY compact.tooltip "壓縮資料夾">
+<!ENTITY copy-address.label "複製電郵">
+<!ENTITY copy-address.tooltip "複製電郵地址到剪貼板">
+<!ENTITY create-filter.label "建立過濾器">
+<!ENTITY create-filter.tooltip "由訊息中建立過濾">
+<!ENTITY customize-toolbar.label "自訂工具列">
+<!ENTITY customize-toolbar.tooltip "自訂工具列，新增或移除按鍵等">
+<!ENTITY delete-event.label "刪除事件">
+<!ENTITY delete-event.tooltip "刪除所選事件">
+<!ENTITY delete-junk.label "刪除垃圾郵件">
+<!ENTITY delete-junk.tooltip "刪除垃圾訊息">
+<!ENTITY delete-tasks.label "刪除工作">
+<!ENTITY delete-tasks.tooltip "刪除所選工作">
+<!ENTITY delete.label "刪除">
+<!ENTITY delete.tooltip "刪除所選的文字">
+<!ENTITY dictionary-list.label "更換字典">
+<!ENTITY dictionary-list.tooltip "快速更換目前所使用的字典">
 <!ENTITY ebay.label "eBay">
-<!ENTITY ebay.tooltip "ebay.com(英文)">
-<!ENTITY firefox-extension.label "擴充套件">
-<!ENTITY firefox-extension.tooltip "取得 Firefox 擴充套件">
+<!ENTITY ebay.tooltip "開啟 Ebay">
+<!ENTITY edit-as-new.label "編輯新件">
+<!ENTITY edit-as-new.tooltip "編輯新訊息">
+<!ENTITY edit-draft.label "編輯草稿">
+<!ENTITY edit-draft.tooltip "編輯已存草稿或訊息">
+<!ENTITY empty-trash.label "清空垃圾桶">
+<!ENTITY empty-trash.tooltip "清空垃圾目錄">
+<!ENTITY enlarge.label "放大">
+<!ENTITY enlarge.tooltip "放大文字尺寸">
+<!ENTITY exit.label "結束">
+<!ENTITY exit.tooltip "結束應用程式">
+<!ENTITY extensions.label "外掛程式">
+<!ENTITY extensions.tooltip "開啟外掛程式管理員">
+<!ENTITY favorite-page.label "最愛網頁">
+<!ENTITY favorite-page.tooltip "開啟最愛網頁">
+<!ENTITY find-again.label "再尋找">
+<!ENTITY find-again.tooltip "找下一個符合">
+<!ENTITY find-prev.label "找前一個">
+<!ENTITY find-prev.tooltip "找前一個符合">
+<!ENTITY find.label "尋找">
+<!ENTITY find.tooltip "尋找文字">
+<!ENTITY firefox-extension.label "外掛程式">
+<!ENTITY firefox-extension.tooltip "取得更多 Firefox 外掛程式">
 <!ENTITY firefox-theme.label "佈景主題">
-<!ENTITY firefox-theme.tooltip "取得 Firefox 佈景主題">
+<!ENTITY firefox-theme.tooltip "取得更多 Firefox 佈景主題">
+<!ENTITY forward-as-attachment.label "當成附件轉寄">
+<!ENTITY forward-as-attachment.tooltip "將訊息當成附件轉寄">
+<!ENTITY forward-as-inline.label "當成本文轉寄">
+<!ENTITY forward-as-inline.tooltip "將訊息當成電郵內文的一部分轉寄">
+<!ENTITY full-screen.label "全螢幕">
+<!ENTITY full-screen.tooltip "切換成全螢幕型式">
+<!ENTITY get-inbox.label "取得收件匣">
+<!ENTITY get-inbox.tooltip "更改所選文件夾文收件匣">
 <!ENTITY gmail.label "Gmail">
-<!ENTITY gmail.tooltip "Gmail 信箱">
+<!ENTITY gmail.tooltip "開啟 Google 郵件">
 <!ENTITY google.label "Google">
-<!ENTITY google.tooltip "Google 首頁">
+<!ENTITY google.tooltip "載入 Google 首頁">
+<!ENTITY help.label "說明">
+<!ENTITY help.tooltip "開啟說明文件">
+<!ENTITY hide-images.label "隱藏圖形">
+<!ENTITY hide-images.tooltip "在目前文件中隱藏所有圖形及背景">
+<!ENTITY home-page-change.add-current "新增目前頁面">
+<!ENTITY home-page-change.current "設定為目前頁面">
+<!ENTITY home-page-change.label "更改首頁">
+<!ENTITY home-page-change.multiple "設定數個連結">
+<!ENTITY home-page-change.tooltip "更改首頁">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "開啟 Hotmail">
+<!ENTITY html-mode.label "HTML 型式">
+<!ENTITY html-mode.tooltip "設定訊息以 HTML 或純文字顯示">
+<!ENTITY ignored-threads.label "被忽略的討論群">
+<!ENTITY ignored-threads.tooltip "流覽被忽略的討論群">
+<!ENTITY image-toggle.label "切換圖形">
+<!ENTITY image-toggle.tooltip "切換圖形載入閞啟及關閉">
+<!ENTITY import.label "載入">
+<!ENTITY import.tooltip "載入設定及資料">
+<!ENTITY inspecter.label "DOMi">
+<!ENTITY inspecter.tooltip "Document Object Model Inspector">
+<!ENTITY installaddons.label "安裝">
+<!ENTITY installaddons.tooltip "安裝外掛或佈景">
+<!ENTITY java-toggle.label "切換 Java">
+<!ENTITY java-toggle.tooltip "切換 Java 關啟及關閉">
+<!ENTITY javaScriptConsole.label "控制台">
+<!ENTITY javaScriptConsole.tooltip "開啟錯誤控制台">
+<!ENTITY javascript-toggle.label "切換 JavaScript">
+<!ENTITY javascript-toggle.tooltip "切換 JavaScript 開啟及關閉">
+<!ENTITY label-all-blank.label "移除標籤">
+<!ENTITY label-all-blank.tooltip "移除所有分頁標籤">
+<!ENTITY label-blank.label "移除標籤">
+<!ENTITY label-blank.tooltip "移除目前分頁標籤">
+<!ENTITY link-open.label "連結設定">
+<!ENTITY link-open.tooltip "設定如何開啟連結">
+<!ENTITY min-font-size.label "最小字體尺寸">
+<!ENTITY min-font-size.tooltip "切換最小字體尺寸">
+<!ENTITY minimize-window.label "縮小化">
+<!ENTITY minimize-window.tooltip "縮小目前視窗">
+<!ENTITY msg-filter.label "過濾器">
+<!ENTITY msg-filter.tooltip "設定訊息過濾器">
+<!ENTITY msg-pane.label "訊息框">
+<!ENTITY msg-pane.tooltip "切換訊息框">
+<!ENTITY new-message.label "新訊息">
+<!ENTITY new-message.tooltip "建立新郵件">
+<!ENTITY next-tab.label "新分頁">
+<!ENTITY next-tab.tooltip "到下一個分頁">
+<!ENTITY open-current-frame.label "目前欄框">
+<!ENTITY open-current-frame.tooltip "只顯示目前所選的欄框">
+<!ENTITY open.label "開啟">
+<!ENTITY open.tooltip "開啟檔案">
+<!ENTITY page-source.label "原始碼">
+<!ENTITY page-source.tooltip "檢視頁面原始碼">
+<!ENTITY pageinfo.label "頁面資訊">
+<!ENTITY pageinfo.tooltip "開啟頁面資訊視窗">
+<!ENTITY pagesetup.label "設定頁面">
+<!ENTITY pagesetup.tooltip "設定如何列印頁面">
 <!ENTITY paypal.label "PayPal">
-<!ENTITY paypal.tooltip "登入 Paypal">
-<!ENTITY thunderbird-extension.label "擴充套件">
-<!ENTITY thunderbird-extension.tooltip "取得 Thunderbird 擴充套件">
-<!ENTITY thunderbird-theme.label "佈景主題">
-<!ENTITY thunderbird-theme.tooltip "取得 Thunderbird 佈景主題">
-<!ENTITY wikipedia.label "維基百科">
-<!ENTITY wikipedia.tooltip "維基百科首頁">
+<!ENTITY paypal.tooltip "開啟 Paypal">
+<!ENTITY personal-bookmarks-menu-button.label "工具列書籤選單">
+<!ENTITY personal-bookmarks-menu-button.tooltip "顯示工具列書籤選單">
+<!ENTITY plainpaste.label "貼上純文字">
+<!ENTITY plainpaste.tooltip "貼上未格式化文字">
+<!ENTITY preferences.label "選項">
+<!ENTITY preferences.tooltip "開啟選項">
+<!ENTITY previous-tab.label "前一個分頁">
+<!ENTITY previous-tab.tooltip "到前一個分頁">
+<!ENTITY print-preview.label "預覽列印">
+<!ENTITY print-preview.tooltip "開啟列印預覽">
+<!ENTITY profile-folder.label "個人設定檔">
+<!ENTITY profile-folder.tooltip "檢視個人設定檔案夾">
+<!ENTITY purge.label "清除">
+<!ENTITY purge.tooltip "壓縮文件來及刪除垃圾">
+<!ENTITY read-mail.label "讀取電郵">
+<!ENTITY read-mail.tooltip "開啟應用程式讀取電郵">
+<!ENTITY read-message.label "讀取">
+<!ENTITY read-message.tooltip "讀取訊息">
+<!ENTITY read-news.label "讀取新聞">
+<!ENTITY read-news.tooltip "開啟應用程式讀取新聞">
+<!ENTITY realNextMessage.label "下一個訊息">
+<!ENTITY realNextMessage.tooltip "Get Real 下一個訊息">
+<!ENTITY realPreviousMessage.label "上一個訊息">
+<!ENTITY realPreviousMessage.tooltip "Get Real 上一個訊息">
+<!ENTITY redo.label "重做">
+<!ENTITY redo.tooltip "重做前次更改">
+<!ENTITY reduce.label "縮小">
+<!ENTITY reduce.tooltip "縮小文字尺寸">
+<!ENTITY reload-all-tabs.label "重新載入分頁">
+<!ENTITY reload-all-tabs.tooltip "重新載入所有分頁">
+<!ENTITY reload-proxy.label "重新載入代理伺服器">
+<!ENTITY reload-proxy.tooltip "重新載入代理伺服器">
+<!ENTITY reload-skip-cache.label "重新載入略過快速緩衝貯存區">
+<!ENTITY reload-skip-cache.tooltip "重新載入頁面而不使用瀏覽器快取暫存區的內容">
+<!ENTITY rename-tab.label "重新命名標籤">
+<!ENTITY rename-tab.tooltip "重新命名目前所選分頁標籤">
+<!ENTITY reply-sender.label "只回覆寄件者">
+<!ENTITY reply-sender.tooltip "只回覆給此郵件寄件者">
+<!ENTITY reset.label "重設焦距">
+<!ENTITY reset.tooltip "重設文字尺寸">
+<!ENTITY restart-app.label "重新開始">
+<!ENTITY restart-app.tooltip "重新執行應用程式">
+<!ENTITY return-receipt.label "簽收回條">
+<!ENTITY return-receipt.tooltip "切換簽收回條開關">
+<!ENTITY save-frame.label "儲存欄框">
+<!ENTITY save-frame.tooltip "儲存文件欄框">
+<!ENTITY saveas.label "儲存">
+<!ENTITY saveas.tooltip "另存文件為">
+<!ENTITY search-addresses.label "尋找電郵地址">
+<!ENTITY search-addresses.tooltip "開啟尋找電郵地址">
+<!ENTITY search-messages.label "尋找訊息">
+<!ENTITY search-messages.tooltip "開啟尋找訊息">
+<!ENTITY select-all.label "全部選取">
+<!ENTITY select-all.tooltip "選取所有文字">
+<!ENTITY send-link.label "傳送連結">
+<!ENTITY send-link.tooltip "傳送頁面連結在電郵中">
+<!ENTITY send-receive.label "寄件 &amp; 收件">
+<!ENTITY send-receive.tooltip "傳送和接收訊息">
+<!ENTITY send-with-no-save.label "傳送而不儲存">
+<!ENTITY send-with-no-save.tooltip "傳送訊息而不儲存副本">
+<!ENTITY shift-delete.label "略過垃圾桶">
+<!ENTITY shift-delete.tooltip "刪除訊息而不送到垃圾桶">
+<!ENTITY show-frame.label "顯示欄框">
+<!ENTITY show-frame.tooltip "只顯示目前欄框">
+<!ENTITY snap-back.label "立即返回">
+<!ENTITY snap-back.tooltip "回到此分頁第一個開啟的頁面">
+<!ENTITY statusbar-toggle.label "狀態列">
+<!ENTITY statusbar-toggle.tooltip "切換狀態列">
+<!ENTITY stop-all.label "全部停止">
+<!ENTITY stop-all.tooltip "停止所有分頁載入">
+<!ENTITY stop-animation.label "動畫">
+<!ENTITY stop-animation.tooltip "停止動畫 GIF&apos;s, 閃爍以及Marquee 標籤">
+<!ENTITY stop-cookies.label "切換 Cookies">
+<!ENTITY stop-cookies.tooltip "停止設定 cookies">
+<!ENTITY stop-dinamic-content.label "切換嵌入內容">
+<!ENTITY stop-dinamic-content.tooltip "停止載入所有嵌入內容">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY stop-flash.tooltip "停止 Flash 干擾">
+<!ENTITY stop-iframe.label "iframes">
+<!ENTITY stop-iframe.tooltip "停止 iframes 載入廣告">
+<!ENTITY stop-movies.label "電影">
+<!ENTITY stop-movies.tooltip "停止正下載的電影">
+<!ENTITY tab-list.label "標籤清單">
+<!ENTITY tab-list.tooltip "顯示標籤清單">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY tasks-in-view.tooltip "切換 Tasks in View">
+<!ENTITY tasks-toggle.label "切換工作">
+<!ENTITY tasks-toggle.tooltip "切換工作列">
+<!ENTITY tb-clear-search.label "清除搜尋">
+<!ENTITY tb-clear-search.tooltip "清除並注意搜尋列">
+<!ENTITY tb-clear-url.label "清除網址">
+<!ENTITY tb-clear-url.tooltip "清除並注意網址列">
+<!ENTITY tb-edit-menu.label "編輯選單">
+<!ENTITY tb-edit-menu.tooltip "顯示編輯選單">
+<!ENTITY tb-file-menu.label "檔案選單">
+<!ENTITY tb-file-menu.tooltip "顯示檔案選單">
+<!ENTITY tb-new-event.label "新增事件">
+<!ENTITY tb-new-event.tooltip "新增事件到月曆上">
+<!ENTITY tb-new-task.label "新增工作">
+<!ENTITY tb-new-task.tooltip "新增工作到月曆上">
+<!ENTITY tb-search-minus.label "縮小搜尋列尺寸">
+<!ENTITY tb-search-minus.tooltip "縮小搜尋列寬度 10 圖像點">
+<!ENTITY tb-search-plus.label "加大搜尋列尺寸">
+<!ENTITY tb-search-plus.tooltip "加大搜尋列寬度 10 圖像點">
+<!ENTITY tb-search-resize.label "重設搜尋尺寸">
+<!ENTITY tb-search-resize.tooltip "重設搜尋列的寬度">
+<!ENTITY tb-toggle-menu-bar.label "切換選單列">
+<!ENTITY tb-toggle-menu-bar.tooltip "切換選單列">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "彈跳視窗阻擋器">
+<!ENTITY tb-toggle-popup-blocker.tooltip "切換彈跳視窗阻擋器">
+<!ENTITY tb-tools-menu.label "工具選單">
+<!ENTITY tb-tools-menu.tooltip "顯示工具選單">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "開啟 Twitter 首頁">
+<!ENTITY tb-view-menu.label "檢視選單">
+<!ENTITY tb-view-menu.tooltip "顯示檢視選單">
+<!ENTITY themes.label "佈景">
+<!ENTITY themes.tooltip "開啟佈景管理員">
+<!ENTITY thunderbird-extension.label "外掛程式">
+<!ENTITY thunderbird-extension.tooltip "取得更多 Thunderbird 外掛程式">
+<!ENTITY thunderbird-theme.label "佈景">
+<!ENTITY thunderbird-theme.tooltip "取得更多 Thunderbird 佈景">
+<!ENTITY tiny-url.copy.to.clipboard "複製到剪貼板">
+<!ENTITY tiny-url.email "電郵連結">
+<!ENTITY tiny-url.label "Tiny Url">
+<!ENTITY tiny-url.link.use "連結選項">
+<!ENTITY tiny-url.tooltip "Create a Tiny Url">
+<!ENTITY tiny-url.use.normal "使用 xrl.in">
+<!ENTITY tiny-url.use.preview "使用 preview.xrl.in">
+<!ENTITY tiny-url.visit "Visit Xrl.In">
+<!ENTITY toggle-proxy.label "切換代理伺服器">
+<!ENTITY toggle-proxy.tooltip "切換代理伺服器開關">
+<!ENTITY toggle-read.label "切換閱覽">
+<!ENTITY toggle-read.tooltip "切換訊息閱覽狀態">
+<!ENTITY toggle-starred.label "切換已標星記號">
+<!ENTITY toggle-starred.tooltip "切換已標星記號狀態">
+<!ENTITY toggle-styles.label "切換樣式">
+<!ENTITY toggle-styles.tooltip "新增/移除網站預設樣式">
+<!ENTITY toggle-toolbar.label "切換工具列">
+<!ENTITY toggle-toolbar.tooltip "切換主工具列">
+<!ENTITY toolbar-menu.label "工具列">
+<!ENTITY toolbar-menu.tooltip "隱藏/顯示工具列">
+<!ENTITY top-page.label "最上層">
+<!ENTITY top-page.tooltip "回到頁面最上層">
+<!ENTITY translate.label "翻譯">
+<!ENTITY translate.tooltip "將本頁翻譯成喜好的語言">
+<!ENTITY undo-close-tab.label "復原關閉分頁">
+<!ENTITY undo-close-tab.tooltip "重新開啟上次關閉的分頁">
+<!ENTITY undo.label "取消">
+<!ENTITY undo.tooltip "取消上次改變">
+<!ENTITY unread-threads.label "未讀討論群">
+<!ENTITY unread-threads.tooltip "查看未讀討論群">
+<!ENTITY up-directory.label "上層目錄">
+<!ENTITY up-directory.tooltip "回上一層目錄">
+<!ENTITY use-document-colors.label "頁面色彩">
+<!ENTITY use-document-colors.tooltip "切換預設色彩與網站色彩">
+<!ENTITY use-document-fonts.label "頁面字體">
+<!ENTITY use-document-fonts.tooltip "切換預設字體與網站字體">
+<!ENTITY watched-with-unread-threads.label "檢視未讀的討論群">
+<!ENTITY websearch.label "搜尋網頁">
+<!ENTITY websearch.tooltip "使用預設搜尋器搜尋網頁">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY wikipedia.tooltip "載入 Wikipedia 首頁">
+<!ENTITY with-unread-threads.label "未讀討論群">
+<!ENTITY with-unread-threads.tooltip "查看未讀討論群">
+<!ENTITY workoffline.label "離線工作">
+<!ENTITY workoffline.tooltip "切換離線工作">
+<!ENTITY yahoo-button.label "Yahoo 郵件">
+<!ENTITY yahoo-button.tooltip "開啟 Yahoo 郵件">
