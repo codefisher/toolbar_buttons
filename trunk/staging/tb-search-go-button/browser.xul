@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-search-go-button"
+	label="&tb-search-go-button.label;"
+	tooltiptext="&tb-search-go-button.tooltip;"
+	onclick="handleSearchCommand(event);" />
