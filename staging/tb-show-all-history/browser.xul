@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-show-all-history"
+	label="&tb-show-all-history.label;"
+	tooltiptext="&tb-show-all-history.tooltip;"
+	command="Browser:ShowAllHistory" />
