@@ -2,23 +2,21 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<rdf:Description
-		rdf:about="urn:mozilla:extension:{{ extension_id }}">
+		rdf:about="urn:mozilla:extension:{{ extension_uuid }}">
 		<em:updates>
 			<rdf:Seq>
 				<rdf:li>
 					<rdf:Description>
 						<em:version>{{ version }}</em:version>
-						{% for name, uuid, min, max in applications %}
-						<!--  {{ name }} -->
+						<!--  Firefox -->
 						<em:targetApplication>
 							<rdf:Description>
-								<em:id>{{ uuid }}</em:id>
-								<em:minVersion>{{ min }}</em:minVersion>
-								<em:maxVersion>{{ max }}</em:maxVersion>
+								<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+								<em:minVersion>3.0</em:minVersion>
+								<em:maxVersion>{{ max_version }}</em:maxVersion>
 								<em:updateLink>{{ update_url }}</em:updateLink>
 							</rdf:Description>
 						</em:targetApplication>
-						{% endfor %}
 					</rdf:Description>
 				</rdf:li>
 			</rdf:Seq>

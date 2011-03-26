@@ -6,6 +6,8 @@
 		<script type="text/javascript" src="{% media_url %}js/tbutton.js"></script>
 {% endblock %}
 
+{% block page_title %}Custom Toolbar Button Maker{% endblock %}
+
 {% block content %}
 
 <form method="post" action="{% url tbutton-create %}" class="form-field">
@@ -27,8 +29,11 @@
 				{% for value in all_applications %}
 					<li class="form-field">
 						<label for="button-application-{{ value }}">
-							<input{% if value in applications %} checked{% endif %} id="button-application-{{ value }}" value="{{ value }}" name="button-application"
-								type="checkbox"><img src="{% media_url %}images/icons/{{ value }}.png" alt=""> {% for key, app_names in application_names.items %}{% if key == value %} {{ app_names|join:", " }}{% endif %} {% endfor %}
+							<input{% if value in applications %} checked{% endif %}
+								id="button-application-{{ value }}" value="{{ value }}" name="button-application"type="checkbox">
+							<img src="{% media_url %}images/icons/{{ value }}.png"
+								width="16" height="16" alt="">
+							{% for key, app_names in application_names.items %}{% if key == value %}{{ app_names|join:", " }}{% endif %}{% endfor %}
 						</label>
 					</li>
 				{% endfor %}
@@ -44,11 +49,12 @@
 				<label for="{{ button }}-checkbox">
 					<input type="checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
 					{% for app in apps %}
-						<img src="{% media_url %}images/icons/{{ app }}.png" alt="">
+						<img src="{% media_url %}images/icons/{{ app }}.png" width="16" height="16" alt="">
 					{% endfor %}
 					<span class="button-name">{{ label|safe }}</span>
 				</label>
-				<div class="button-info"><img src="{% media_url %}images/pastel-svg/16/{{ icon }}" alt="{{ tooltip|safe }}">
+				<div class="button-info">
+					<img src="{% media_url %}images/pastel-svg/16/{{ icon }}" width="16" height="16" alt="{{ tooltip|safe }}">
 					{{ description|linebreaks }}
 				</div>
 			</li>
@@ -66,16 +72,6 @@
 				Normally extensions get installed into Firefox, but if you intend
 				to install the created extension into Thunderbird etc. check this box
 				and you will be prompted to download the extension instead.
-			</p>
-		</div>
-		<div class="form-field">
-			<label>
-				<input type="checkbox" name="include-all-locales" value="true">
-					Include all available locales.
-			</label>
-			<p>
-				By default only the locale selected is included.  Check this and all
-				locales will be included.
 			</p>
 		</div>
 		<div class="form-field">
@@ -98,9 +94,65 @@
 				This feature is experimental and some buttons may fail to work.
 			</p>
 		</div>
+		<div class="form-field">
+			<label>
+				Icon Set
+				<select name="icon-set">
+					{% for name, label in icon_sets %}
+						<option{% if name == default_icons%} selected{% endif %} value="{{ name }}">{{ label }}</option>
+					{% endfor %}
+				</select>
+			</label>
+			<p>
+				The icon set that you would like that buttons to use.
+			</p>
+		</div>
 		{% csrf_token %}
 		<input type="hidden" name="locale" value="{{ locale }}">
 		<input type="hidden" name="application" value="{{ applications|join:"," }}">
+		<input type="submit" name="create-submit" value="Submit">
+	</fieldset>
+	<fieldset>
+		<legend>Advanced Settings</legend>
+		<div class="form-field">
+			<label>
+				<input type="checkbox" name="include-all-locales" value="true">
+					Include all available locales.
+			</label>
+			<p>
+				By default only the locale selected is included.  Check this and all
+				locales will be included.
+			</p>
+		</div>
+		<div class="form-field">
+			<label>
+				Version
+				<select name="version">
+					{% for version, label in versions %}
+						<option{% if version == current_version %} selected{% endif %} value="{{ version }}">{{ label }}</option>
+					{% endfor %}
+				</select>
+			</label>
+			<p>
+				Older versions of the extension can be used for building the extension.'
+				Some buttons maybe missing in older versions, if selected they will be left out.
+			</p>
+		</div>
+		<div class="form-filed">
+			<label>
+				Update Stream
+				<select name="update-stream">
+					<option value="none">None</option>
+					<option selected value="stable">Stable</option>
+					<option value="unstable">Unstable</option>
+				</select>
+			</label>
+			<p>
+				The extension can follow several options for when it gets updated.
+				Stable will follow the same releases as the main extension.  Unstable
+				will follow the code repository directly.
+			</p>
+		</div>
 		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
 </form>

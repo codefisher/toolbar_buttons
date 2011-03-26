@@ -7,16 +7,31 @@ import io
 from locales import Locale
 from button import Button, get_image
 from util import get_button_folders, get_locale_folders, get_folders
+from app_versions import get_app_versions
+
 
 def bytes_string(string):
     if type(string) == unicode:
         return str(string.decode("utf-8"))
     return string
 
+def apply_max_version(settings):
+    versions = get_app_versions()
+    app_data = settings.get("applications_data")
+    for key, app_set in app_data.iteritems():
+        rows = []
+        for item in app_set:
+            item = list(item)
+            item[3] = versions.get(item[1], item[3])
+            rows.append(item)
+        app_data[key] = rows
+
 def build_extension(settings, output=None, project_root=None):
     if os.path.join(settings.get("image_path")) is None:
         print "Please set the image_path setting"
         return
+    if settings.get("lookup_max_versions"):
+        apply_max_version(settings)
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales)
     options_locales = Locale(settings, locale_folders, locales, True)
@@ -170,7 +185,7 @@ def create_install(settings, applications, options=[]):
                 \t\t\t\t<em:minVersion>%s</em:minVersion>
                 \t\t\t\t<em:maxVersion>%s</em:maxVersion>
             \t\t\t</Description>
-        \t\t</em:targetApplication>""".replace(" ","") % values)
+        \t\t</em:targetApplication>""".replace(" ","") % tuple(values))
     template = open(os.path.join(settings.get("project_root"), "files", "install.rdf") ,"r").read()
     return (template.replace("{{uuid}}", settings.get("extension_id"))
                     .replace("{{name}}", settings.get("name"))

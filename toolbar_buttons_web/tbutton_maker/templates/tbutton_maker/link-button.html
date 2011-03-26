@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load djangopress_tags %}
+
+{% block head_tags %}
+        <link type="text/css" rel="stylesheet" href="{% media_url %}themes/default/tbutton.css">
+		<script type="text/javascript" src="{% media_url %}js/tbutton.js"></script>
+{% endblock %}
+
+{% block page_title %}Custom Link Button Maker{% endblock %}
+
+{% block content %}
+      <p>
+ I have had many people ask me to include one link or another in Toolbar Buttons, so here finally is my answer.  A tool for creating a your own toolbar button that links to what ever page you want.  Feel free to distribute these extensions from your own site, but you must provide a like back to this page and you may not edit the extensions to change their homepage, creator, update link etc.
+</p>
+
+<form action="{% url lbutton-create %}" id="link-button-form"
+	enctype="multipart/form-data" method="post"  class="field-form">
+
+<fieldset>
+ <legend>URL</legend>
+
+  <p>
+   Type into the below box the URL (include the http:// part) that you would like to use.
+  </p>
+  <label for="url">Url:
+   <input type="text" name="url" id="url" value="http://" onblur="loadFavIcons();">
+  </label>
+  <p>
+   <small>Can be any valid url that could be typed into Firefox's urlbar; http, https, javascript etc.</small>
+  </p>
+</fieldset>
+<fieldset>
+
+ <legend>Title &amp; Labels</legend>
+  <p>
+   The extension needs a name, so please chose one for your version.
+  </p>
+  <label for="title">Extension Name:
+   <input type="text" name="title" id="title" value="MySite.com Toolbar Button" onfocus="focusSet(this, 'MySite.com Toolbar Button');" onblur="blurSet(this, 'MySite.com Toolbar Button');">
+  </label>
+  <p>
+
+   The toolbar button needs a label that is seen below the button, and a tooltip (the text the appears in the little yellow box when you hover over the button).
+  </p>
+  <label for="label">Button Label:
+   <input type="text" name="label" id="label" value="MySite.com" onfocus="focusSet(this, 'MySite.com');" onblur="blurSet(this, 'MySite.com');">
+  </label>
+  <label for="tooltip">Button Tooltip:
+   <input type="text" name="tooltip" id="tooltip" value="Open MySite.com" onfocus="focusSet(this, 'Open MySite.com');" onblur="blurSet(this, 'Open MySite.com');">
+  </label>
+</fieldset>
+
+<fieldset>
+ <legend>Icons</legend>
+
+  <p>
+   The extension needs an icon for the toolbar button.  This can be one of several default icons supplied, the site's "favicon" or one of your own.
+  </p>
+  <fieldset id="ext-icons">
+   <legend>Default Icons</legend>
+   <p>
+   <label for="default-icon-type">
+       <input type="radio" value="default" checked id="default-icon-type" name="icon-type">  Use one of the below icons in the extenion.
+   </label>
+   </p>
+   {% for i in icon_range %}
+   <label for="www-{{ i }}">
+     <input type="radio" value="www-{{ i }}" id="www-{{ i }}" name="default-icon" >
+     <img src="{% media_url %}images/link-icons/www-{{ i }}-24.png" alt="www-{{ i }}" width="24" height="24">
+   </label>
+   {% endfor %}
+
+  </fieldset>
+  <fieldset id="fav-icons" style="display:none">
+   <legend>Favicons</legend>
+   <p>
+   <label for="favicon-icon-type">
+       <input type="radio" value="favicon" id="favicon-icon-type" name="icon-type">  Use the sites favicon in the extension.
+   </label>
+   </p>
+   <div id="favicons"></div>
+  </fieldset>
+  <script type="text/javascript">document.getElementById("fav-icons").style.display = "block";</script>
+  <fieldset id="custom-icons">
+   <legend>Custom Icons</legend>
+    <p>
+      You may choose to use your own icon in the extension.  If the wrong size is provided the image will be resized.  If you don't supply all sizes the other icons are resized to create those needed.
+    </p>
+    <p>
+   <label for="custom-icon-type">
+       <input type="radio" value="custom" id="custom-icon-type" name="icon-type">  Use my own icons in the extension
+   </label>
+   </p>
+    <div>
+      <label for="icon-16">16x16 icon:
+        <input type="file" name="icon-16" size="40" id="icon-16">
+      </label>
+    </div>
+    <div>
+      <label for="icon-24">24x24 icon:
+        <input type="file" name="icon-24" size="40" id="icon-24">
+      </label>
+    </div>
+    <div>
+      <label for="icon-32">32x32 icon:
+        <input type="file" name="icon-32" size="40" id="icon-32">
+      </label>
+    </div>
+  </fieldset>
+</fieldset>
+	<div>
+	{% csrf_token %}
+	 <input type="submit" value="Create">
+	</div>
+</form>
+
+{% endblock %}

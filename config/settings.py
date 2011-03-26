@@ -5,7 +5,7 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.1b2",
+    "version": "1.0.1b3",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "http://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -71,19 +71,22 @@ config = {
     "applications_data": {
         "browser":   (
                       ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0.*"),
-                      ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.5.*")
+                      ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.6.*")
                       ),
         "messenger": (
-                      ("Thunderbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0", "3.3a2pre"),
-                      ("Postbox", "postbox@postbox-inc.com", "1.0.0", "2.0.*")
+                      ("Thunderbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0", "3.3a3pre"),
+                      ("Postbox", "postbox@postbox-inc.com", "1.0.0", "2.1.*")
                       ),
         "calendar":  (
-                      ("Sunbird", "{718e30fb-e89b-41dd-9da7-e25a45638b28}", "1.0pre", "1.0pre"),
+                      ("Sunbird", "{718e30fb-e89b-41dd-9da7-e25a45638b28}", "1.0b1", "1.0pre"),
                       ),
         "suite": (
                       ("SeaMonkey", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}", "2.0", "2.1b3"),
                       ),
     },
+    # the latest max version for support applications can be lookup
+    # and changed to what ever values are found.
+    "lookup_max_versions": False,
     "files_to_overlay": {
         "browser": ("chrome://browser/content/browser.xul", ),
         "suite_browser": ("chrome://navigator/content/navigator.xul", ),

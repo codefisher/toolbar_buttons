@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load show_pagination %}
+{% load djangopress_tags %}
+
+{% block head_tags %}
+        <link type="text/css" rel="stylesheet" href="{% media_url %}themes/default/tbutton.css">
+		<script type="text/javascript" src="{% media_url %}js/tbutton.js"></script>
+{% endblock %}
+
+{% block page_title %}
+	{% for key, app_names in application_names.items %}{% if key == application %} {{ app_names|join:", " }}{% endif %} {% endfor %} Toolbar Buttons
+{% endblock %}
+
+{% block content %}
+
+<p>
+	These are a ready make selection of some of the most popular buttons from the <a href="{% url tbutton-custom %}">Custom Toolbar Buttom Maker</a>
+</p>
+
+<h2>
+<img src="{% media_url %}images/icons/{{ application }}.png" alt="">
+	{% for key, app_names in application_names.items %}{% if key == application %} {{ app_names|join:", " }}{% endif %} {% endfor %}
+</h2>
+
+{% for button, apps, label, tooltip, icon, description in entries.object_list %}
+	    <h3>{{ label }}</h3>
+
+			<img class="button-icon" src="{% media_url %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
+
+			{{ description|linebreaks }}
+
+			<p class="clear">
+				<a href="{% url tbutton-make-button %}?button={{ button }}&amp;application={{ application }}">Install {{ label }}</a>
+			</p>
+{% endfor %}
+
+{% show_pagination entries %}
+
+{% endblock %}
