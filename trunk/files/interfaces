@@ -1,4 +1,5 @@
 AppStartup:Cc["@mozilla.org/toolkit/app-startup;1"].getService(Ci.nsIAppStartup)
+CacheService:Cc["@mozilla.org/network/cache-service;1"].getService(Ci.nsICacheService)
 Clipboard:Cc['@mozilla.org/widget/clipboard;1'].getService(Ci.nsIClipboard)
 DialogParamBlock:Cc['@mozilla.org/embedcomp/dialogparam;1'].getService(Ci.nsIDialogParamBlock)
 EffectiveTLDService:Cc["@mozilla.org/network/effective-tld-service;1"].getService(Ci.nsIEffectiveTLDService)

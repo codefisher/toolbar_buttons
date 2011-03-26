@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+<!--
+ THIS EXTENSION IS COPY RIGHT OF CODEFISHER.ORG
+ YOU MAY NOT EDIT THIS EXTENSION WITH OUT THE
+ CREATOR'S PREMISSION.
+ THE EXTENSION'S HOME PAGE IS
+ http://codefisher.org/toolbar_button/link-button-maker
+ YOU MAY DISTRIBUTE THE EXTENSION BUT YOU MUST
+ PROVIDE A LINK TO THE ABOVE PAGE TO MAKE
+ IT CLEAR WHERE THE EXTENSION CAME FROM.
+-->
+<Description about="urn:mozilla:install-manifest">
+<em:id>{{ extension_uuid }}</em:id>
+<em:name>{{ name }}</em:name>
+<em:version>{{ version }}</em:version>
+<em:description>A Customized Toolbar Link Button.</em:description>
+<em:creator>Michael Buckley</em:creator>
+<em:iconURL>chrome://{{ chrome_name }}/skin/icon-32.png</em:iconURL>
+<em:homepageURL>{{ home_page }}</em:homepageURL>
+<em:updateURL>{{ update_url }}</em:updateURL>
+
+<!-- Firefox -->
+<em:targetApplication>
+ <Description>
+    <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+    <em:minVersion>3.0</em:minVersion>
+    <em:maxVersion>{{ max_version }}</em:maxVersion>
+ </Description>
+</em:targetApplication>
+
+</Description>
+</RDF>

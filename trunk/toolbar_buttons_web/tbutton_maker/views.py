@@ -17,12 +17,12 @@ from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.utils.html import escape
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from toolbar_buttons.config.settings import config
 from toolbar_buttons.builder import button, locales, util, build
 
 from toolbar_buttons.toolbar_buttons_web.tbutton_maker.models import Application, Button, DownloadSession
-
 
 class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -128,7 +128,11 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         "button_data": button_data,
         "application_names": application_names,
         "local_data": local_data,
+        "icon_sets": [(name, label) for name, (label, _) in settings.TBUTTON_ICONS.items()],
+        "default_icons": settings.TBUTTON_DEFAULT_ICONS,
     }
+    if template_name is None:
+        return data
     return render_to_response(template_name, data, context_instance=RequestContext(request))
 
 def create_buttons(request, query):
@@ -169,7 +173,8 @@ def create_buttons(request, query):
     output = io.BytesIO()
     buttons, button_locales = build.build_extension(extension_settings, output=output)
     responce = HttpResponse(output.getvalue(), mimetype="application/x-xpinstall")
-    if request.POST.get("offer-download") == "true":
+    output.close()
+    if request.POST.get("offer-download") == "true" or ("browser" not in applications):
         responce['Content-Disposition'] = 'attachment; filename=%s' % (extension_settings.get("output_file") % extension_settings)
     else:
         responce['Content-Disposition'] = 'filename=%s' % (extension_settings.get("output_file") % extension_settings)
@@ -239,7 +244,40 @@ def update(request):
         "extension_id": "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest(),
     }
 
-    return render_to_response("tbutton_maker/update.rdf", data, mimetype="text/xml")
+    return render_to_response("tbutton_maker/update.rdf", data, mimetype="application/xml+rdf")
 
 def make(request):
     return create_buttons(request, request.GET)
+
+def page_it(request, entries_list):
+    paginator = Paginator(entries_list, 10)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    try:
+        entries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        entries = paginator.page(paginator.num_pages)
+    return entries
+
+def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/app_list.html'):
+    app_data = config.get("applications_data")
+    if app_name not in app_data:
+        for key, items in app_data.iteritems():
+            if app_name.lower() in [item[0].lower() for item in items]:
+                app_name = key
+                break
+        else:
+            raise Http404
+    time = datetime.datetime.now() - datetime.timedelta(days)
+    buttons = Button.objects.filter(session__time__gt=time)
+    stats = dict((item["name"], item["downloads"]) for item in buttons.values('name').annotate(downloads=Count('name')).order_by("-downloads"))
+    def button_key(item):
+        stats.get(item[0], 0)
+    data = index(request, applications=app_name, template_name=None)
+    data["button_data"].sort(key=button_key)
+    data["entries"] = page_it(request, data["button_data"])
+    data["application"] = app_name
+    return render_to_response(template_name, data)

@@ -1,0 +1,4 @@
+content	{{ chrome_name }}						./
+skin	{{ chrome_name }}	classic/1.0				./
+overlay chrome://browser/content/browser.xul chrome://{{ chrome_name }}/content/button.xul
+style chrome://global/content/customizeToolbar.xul chrome://{{ chrome_name }}/skin/button.css

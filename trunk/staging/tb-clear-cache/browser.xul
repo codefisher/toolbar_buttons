@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="tb-clear-cache"
+	label="&tb-clear-cache.label;"
+	tooltiptext="&tb-clear-cache.tooltip;"
+	onclick="toolbar_buttons.goClearBrowserCache();" />

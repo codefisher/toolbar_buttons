@@ -35,12 +35,14 @@ class AppVersionParser(HTMLParser.HTMLParser):
                 for uuid, versions in self._apps]
 
 def get_app_versions():
-    data = urllib.urlopen(AMO_VERSION_PAGE).read()
+    try:
+        data = urllib.urlopen(AMO_VERSION_PAGE).read()
+    except IOError:
+        return {}
     parser = AppVersionParser()
     parser.feed(data)
     parser.close()
-    print parser.get_latest()
-
+    return dict(parser.get_latest())
 
 if __name__ == "__main__":
-    get_app_versions()
+    print get_app_versions()
