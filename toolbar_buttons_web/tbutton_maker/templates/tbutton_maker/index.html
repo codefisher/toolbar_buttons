@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form method="post" action="{% url tbutton-create %}" class="form-field">
+<form method="post" action="{% url 'tbutton-create' %}" class="form-field">
 	<fieldset>
 		<legend>Locale &amp; Application</legend>
 		<div class="form-field">
@@ -94,6 +94,7 @@
 				This feature is experimental and some buttons may fail to work.
 			</p>
 		</div>
+		{% comment %}
 		<div class="form-field">
 			<label>
 				Icon Set
@@ -107,11 +108,13 @@
 				The icon set that you would like that buttons to use.
 			</p>
 		</div>
+		{% endcomment %}
 		{% csrf_token %}
 		<input type="hidden" name="locale" value="{{ locale }}">
 		<input type="hidden" name="application" value="{{ applications|join:"," }}">
 		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
+	{% comment %}
 	<fieldset>
 		<legend>Advanced Settings</legend>
 		<div class="form-field">
@@ -155,5 +158,6 @@
 		</div>
 		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
+	{% endcomment %}
 </form>
 {% endblock %}
