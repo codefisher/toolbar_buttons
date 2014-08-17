@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url, include
 
 urlpatterns = patterns('toolbar_buttons.toolbar_buttons_web.tbutton_maker',
     url(r'^custom/create-addon/$', 'views.create', name='tbutton-create'),

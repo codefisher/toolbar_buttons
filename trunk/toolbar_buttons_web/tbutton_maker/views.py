@@ -233,18 +233,27 @@ def old_update(request):
     return redirect("%s?%s" % (reverse('tbutton-update'), query.urlencode()))
 
 def update(request):
+    def flat(l):
+        return [item for sublist in l for item in sublist]
     buttons = request.GET.getlist("button")
+    applications = request.GET.getlist("button-application")
+    if not applications:
+        applications = request.GET.get("application", "all").split(",")
+    if applications == ["all"]:
+        app_data = flat(config.get("applications_data").values())
+    else:
+        app_data = flat([config.get("applications_data").get(app) for app in applications])
     update_url = "https://%s%s?%s" % (Site.objects.get_current().domain,
             reverse("tbutton-make-button"), request.GET.urlencode())
-
+    
     data = {
-        "applications": sum(config.get("applications_data").values(), ()),
+        "applications": app_data,
         "version": config.get("version"),
         "update_url": update_url,
         "extension_id": "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest(),
     }
 
-    return render_to_response("tbutton_maker/update.rdf", data, mimetype="application/xml+rdf")
+    return render_to_response("tbutton_maker/update.rdf", data, mimetype="text/plain") #, mimetype="application/xml+rdf")
 
 def make(request):
     return create_buttons(request, request.GET)
