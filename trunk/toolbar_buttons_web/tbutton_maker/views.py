@@ -253,7 +253,7 @@ def update(request):
         "extension_id": "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest(),
     }
 
-    return render_to_response("tbutton_maker/update.rdf", data, mimetype="text/plain") #, mimetype="application/xml+rdf")
+    return render_to_response("tbutton_maker/update.rdf", data, mimetype="application/xml+rdf")
 
 def make(request):
     return create_buttons(request, request.GET)
