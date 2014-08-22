@@ -151,9 +151,11 @@ def create_buttons(request, query):
     if not locale or query.get("include-all-locales") == "true":
         locale = "all"
     if query.get("create-toolbars") == "true":
+        extension_settings["put_button_on_toolbar"] = True
         extension_settings["include_toolbars"] = -1
-    if query.get("create-menu") == "true":
-        extension_settings["create_menu"] = True
+    else:
+        extension_settings["include_toolbars"] = 0
+    extension_settings["create_menu"] = query.get("create-menu") == "true"
     extension_settings["locale"] = locale
     applications = query.getlist("button-application")
     if not applications:
@@ -166,6 +168,9 @@ def create_buttons(request, query):
     for key in update_query.keys():
         if key not in allowed_options:
             del update_query[key]
+    icons_size = settings.TBUTTON_ICON_SET_SIZES.get(settings.TBUTTON_DEFAULT_ICONS).get(query.get("icon-size"))
+    if icons_size:
+        extension_settings["icon_size"] = icons_size
     extension_settings["extension_id"] = "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest()
     extension_settings["update_url"] = "https://%s%s?%s" % (Site.objects.get_current().domain,
             reverse("tbutton-update"), escape(update_query.urlencode()))
