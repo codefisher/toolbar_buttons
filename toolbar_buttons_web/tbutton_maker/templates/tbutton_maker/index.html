@@ -112,8 +112,25 @@
 		{% csrf_token %}
 		<input type="hidden" name="locale" value="{{ locale }}">
 		<input type="hidden" name="application" value="{{ applications|join:"," }}">
-		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
+    <fieldset>
+        <legend>Icon Sizes</legend>
+        <div class="form-field">
+            <label>
+                <input type="radio" name="icon-size" checked="checked" value="standard">
+                    Standard: Use the standard 16x16 icons as the small size and 24x24 as the larger.
+            </label>
+            <label>
+                <input type="radio" name="icon-size" value="large">
+                    Large: Use 24x24 icons as the small size and 32x32 as the larger.
+            </label>
+            <label>
+                <input type="radio" name="icon-size" value="jumbo">
+                    Jumbo: Use 32x32 icons as the small size and 48x48 as the larger.
+            </label>
+        </div>
+    </fieldset>
+        <input type="submit" name="create-submit" value="Submit">
 	{% comment %}
 	<fieldset>
 		<legend>Advanced Settings</legend>
