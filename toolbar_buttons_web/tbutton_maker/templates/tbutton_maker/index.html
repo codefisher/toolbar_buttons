@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'tbutton-create' %}" class="form-field">
+<form method="get" action="{% url 'tbutton-create' %}" class="form-field">
 	<fieldset>
 		<legend>Locale &amp; Application</legend>
 		<div class="form-field">
@@ -109,29 +109,35 @@
 			</p>
 		</div>
 		{% endcomment %}
-		{% csrf_token %}
 		<input type="hidden" name="locale" value="{{ locale }}">
 		<input type="hidden" name="application" value="{{ applications|join:"," }}">
 	</fieldset>
     <fieldset>
         <legend>Icon Sizes</legend>
         <div class="form-field">
+            <div>
             <label>
                 <input type="radio" name="icon-size" checked="checked" value="standard">
                     Standard: Use the standard 16x16 icons as the small size and 24x24 as the larger.
             </label>
+            </div>
+            <div>
             <label>
                 <input type="radio" name="icon-size" value="large">
                     Large: Use 24x24 icons as the small size and 32x32 as the larger.
             </label>
+            </div>
+            <div>
             <label>
                 <input type="radio" name="icon-size" value="jumbo">
                     Jumbo: Use 32x32 icons as the small size and 48x48 as the larger.
             </label>
+            </div>
         </div>
-    </fieldset>
         <input type="submit" name="create-submit" value="Submit">
-	{% comment %}
+    </fieldset>
+
+	
 	<fieldset>
 		<legend>Advanced Settings</legend>
 		<div class="form-field">
@@ -144,6 +150,7 @@
 				locales will be included.
 			</p>
 		</div>
+		{% comment %}
 		<div class="form-field">
 			<label>
 				Version
@@ -173,8 +180,8 @@
 				will follow the code repository directly.
 			</p>
 		</div>
+        {% endcomment %}
 		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
-	{% endcomment %}
 </form>
 {% endblock %}

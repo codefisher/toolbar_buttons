@@ -7,12 +7,14 @@ from PIL import Image, ImageDraw, ImageFont
 class IconButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
         button.SimpleButton.__init__(self, folders, buttons, settings, applications)
-        self._icons = {}
+        self._icons = set()
 
-        for buttonId, icons in self._button_image.iteritems():
+        for button_id, icons in self._button_image.iteritems():
+            if not button_id in self._button_names:
+                continue
             for image, selector in icons:
                 if image and not selector:
-                    self._icons[buttonId] = image
+                    self._icons.add(image)
                     break
 
     def get_icons(self):
@@ -25,7 +27,8 @@ def create_screenshot(settings):
     button_list = settings.get("buttons")
     button_folders, button_names = get_button_folders(button_list, settings)
     buttons = IconButton(button_folders, button_names, settings, settings.get("applications"))
-    icons = buttons.get_icons().values()
+    icons = list(buttons.get_icons())
+    icons.sort()
     icons_per_row = settings.get("icons_per_row", 18)
     rows = int(math.ceil(float(len(icons))/icons_per_row))
     top_image = Image.open(os.path.join("files", "top.png"))

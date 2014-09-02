@@ -14,7 +14,7 @@
 {% block content %}
 
 <p>
-	These are a ready make selection of some of the most popular buttons from the <a href="{% url tbutton-custom %}">Custom Toolbar Buttom Maker</a>
+	These are a ready make selection of some of the most popular buttons from the <a href="{% url 'tbutton-custom' %}">Custom Toolbar Buttom Maker</a>
 </p>
 
 <h2>
@@ -30,10 +30,10 @@
 			{{ description|linebreaks }}
 
 			<p class="clear">
-				<a href="{% url tbutton-make-button %}?button={{ button }}&amp;application={{ application }}">Install {{ label }}</a>
+				<a href="{% url 'tbutton-make-button' %}?button={{ button }}&amp;application={{ application }}">Install {{ label }}</a>
 			</p>
 {% endfor %}
 
-{% show_pagination entries %}
+{% query_pagination entries %}
 
 {% endblock %}
