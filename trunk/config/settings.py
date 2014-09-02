@@ -70,18 +70,17 @@ config = {
     # the below sets application support
     "applications_data": {
         "browser":   (
-                      ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "4.0.*"),
-                      ("Flock", "{a463f10c-3994-11da-9945-000d60ca027b}", "2.0", "2.6.*")
+                      ("Firefox", "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "3.0", "35.0"),
                       ),
         "messenger": (
-                      ("Thunderbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0", "3.3a3pre"),
-                      ("Postbox", "postbox@postbox-inc.com", "1.0.0", "2.1.*")
+                      ("Thunderbird", "{3550f703-e582-4d05-9a08-453d09bdfdc6}","3.0", "35.0"),
+                      ("Postbox", "postbox@postbox-inc.com", "1.0.0", "3.0.*")
                       ),
         "calendar":  (
                       ("Sunbird", "{718e30fb-e89b-41dd-9da7-e25a45638b28}", "1.0b1", "1.0pre"),
                       ),
         "suite": (
-                      ("SeaMonkey", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}", "2.0", "2.1b3"),
+                      ("SeaMonkey", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}", "2.0", "2.32"),
                       ),
     },
     # the latest max version for support applications can be lookup

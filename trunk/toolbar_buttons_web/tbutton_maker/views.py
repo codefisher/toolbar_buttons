@@ -8,16 +8,16 @@ import datetime
 import hashlib
 
 from django.contrib.sites.models import Site
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponse, Http404, QueryDict
-from django.template import RequestContext
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
 from django.db.models import Count
 from django.utils.html import escape
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.views.decorators.csrf import csrf_exempt
 
 from toolbar_buttons.config.settings import config
 from toolbar_buttons.builder import button, locales, util, build
@@ -133,7 +133,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
     }
     if template_name is None:
         return data
-    return render_to_response(template_name, data, context_instance=RequestContext(request))
+    return render(request, template_name, data)
 
 def create_buttons(request, query):
     buttons = query.getlist("button")
@@ -164,7 +164,7 @@ def create_buttons(request, query):
     update_query = query.copy()
     update_query["application"] = ",".join(applications)
     update_query["locale"] = locale
-    allowed_options = set(("application", "locale", "button", "create-menu", "create-toolbars"))
+    allowed_options = set(("application", "locale", "button", "create-menu", "create-toolbars", "icon-size"))
     for key in update_query.keys():
         if key not in allowed_options:
             del update_query[key]
@@ -177,7 +177,7 @@ def create_buttons(request, query):
 
     output = io.BytesIO()
     buttons, button_locales = build.build_extension(extension_settings, output=output)
-    responce = HttpResponse(output.getvalue(), mimetype="application/x-xpinstall")
+    responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
     output.close()
     if request.POST.get("offer-download") == "true" or ("browser" not in applications):
         responce['Content-Disposition'] = 'attachment; filename=%s' % (extension_settings.get("output_file") % extension_settings)
@@ -192,20 +192,21 @@ def create_buttons(request, query):
         Application.objects.create(name=button, session=session)
     return responce
 
+@csrf_exempt
 def create(request):
-    if request.method != "POST":
-        raise Http404()
-    buttons = request.POST.getlist("button")
-    if not buttons or "update-submit" in request.POST:
-        applications = ",".join(request.POST.getlist("button-application"))
-        locale = request.POST.get("button-locale")
+    #if request.method != "POST":
+    #    raise Http404()
+    buttons = request.GET.getlist("button")
+    if not buttons or "update-submit" in request.GET:
+        applications = ",".join(request.GET.getlist("button-application"))
+        locale = request.GET.get("button-locale")
         kwargs = {}
         if locale:
             kwargs["locale_name"] = locale
         if applications:
             kwargs["applications"] = applications
         return redirect(reverse("tbutton-custom", kwargs=kwargs))
-    return create_buttons(request, request.POST)
+    return create_buttons(request, request.GET)
 
 
 def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
@@ -228,7 +229,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
     data = {
         "stats": stats,
         "count": sum,
-        "average": float(sum)/(len(stats)*days)
+        "average": float(sum)/(len(stats)*days) if stats else 0
     }
     return render_to_response(template_name, data, RequestContext(request))
 
@@ -258,13 +259,14 @@ def update(request):
         "extension_id": "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest(),
     }
 
-    return render_to_response("tbutton_maker/update.rdf", data, mimetype="application/xml+rdf")
+    return render(request, "tbutton_maker/update.rdf", data, content_type="application/xml+rdf")
 
 def make(request):
     return create_buttons(request, request.GET)
 
 def page_it(request, entries_list):
     paginator = Paginator(entries_list, 10)
+    # todo: this does not work now
     try:
         page = int(request.GET.get('page', '1'))
     except ValueError:
@@ -273,6 +275,7 @@ def page_it(request, entries_list):
     try:
         entries = paginator.page(page)
     except (EmptyPage, InvalidPage):
+        # todo: better raise a redirect
         entries = paginator.page(paginator.num_pages)
     return entries
 
@@ -294,4 +297,4 @@ def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/ap
     data["button_data"].sort(key=button_key)
     data["entries"] = page_it(request, data["button_data"])
     data["application"] = app_name
-    return render_to_response(template_name, data)
+    return render(request, template_name, data)

@@ -1,6 +1,6 @@
 import os
 import re
-import io
+import io # we might not need this as much now, that PIL as .tobytes()
 import math
 import hashlib
 from collections import defaultdict
@@ -78,7 +78,7 @@ class SimpleButton():
                     xul_files.append(os.path.join(folder, xul_file))
                     button_wanted = True
 
-            if "image" in files:
+            if "image" in files and button_wanted:
                 with open(os.path.join(folder, "image"), "r") as images:
                     for line in images:
                         name, _, modifier = line.partition(" ")
@@ -90,7 +90,7 @@ class SimpleButton():
                                 button_wanted = False
                                 del self._button_image[button]
                                 continue
-            else:
+            elif button_wanted:
                 raise ValueError("%s does not contain image listing." % folder)
 
             if not button_wanted:
@@ -326,10 +326,11 @@ class Button(SimpleButton):
                     name.insert(1, "-disabled")
                     _image = "".join(name)
                     opacity = 1.0 if image[0] == "-" else 0.9
+                    
                     try:
                         if small is not None:
-                            small_data, small_fp = grayscale.image_to_graysacle(get_image(self._settings, small, image[1:]), opacity)
-                        large_data, large_fp = grayscale.image_to_graysacle(get_image(self._settings, large, image[1:]), opacity)
+                            small_data = grayscale.image_to_graysacle(get_image(self._settings, small, image[1:]), opacity)
+                        large_data = grayscale.image_to_graysacle(get_image(self._settings, large, image[1:]), opacity)
                     except IOError:
                         print "image %s does not exist" % image
                         continue
@@ -341,11 +342,9 @@ class Button(SimpleButton):
                             image_map[_image] = offset
                             if small is not None:
                                 box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                                small_fp.seek(0)
-                                image_map_small.paste(Image.open(small_fp), box)
+                                image_map_small.paste(Image.frombytes(small_data), box)
                             box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
-                            large_fp.seek(0)
-                            image_map_large.paste(Image.open(large_fp), box)
+                            image_map_large.paste(Image.frombytes(large_data), box)
                             count += 1
                     else:
                         offset = count
@@ -353,9 +352,6 @@ class Button(SimpleButton):
                             image_datas[os.path.join("skin", small, _image)] = small_data
                         image_datas[os.path.join("skin", large, _image)] = large_data
                         count += 1
-                    if small is not None:
-                        small_fp.close()
-                    large_fp.close()
                     image = _image
                 else:
                     if self._settings.get("merge_images"):

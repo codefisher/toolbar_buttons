@@ -5,6 +5,9 @@ import zipfile
 import io
 import hashlib
 import os
+import urllib
+
+from PIL import Image
 
 from django.contrib.sites.models import Site
 from django.template import RequestContext
@@ -14,6 +17,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponse, QueryDict
 from django.conf import settings
 from django.utils.html import escape
+from django.views.decorators.csrf import csrf_exempt
 
 from codefisher_apps.favicon_getter.views import get_sized_icons
 from toolbar_buttons.builder.app_versions import get_app_versions
@@ -24,47 +28,71 @@ def index(request, template_name="tbutton_maker/link-button.html"):
     }
     return render_to_response(template_name, data, context_instance=RequestContext(request))
 
+@csrf_exempt
 def create(request):
-    url = request.REQUEST.get("url")
+    url = request.POST.get("url")
     parsed_url = urlparse.urlparse(url)
     if parsed_url[0] == "":
         url = "http://" + url
     elif parsed_url[0] not in ["http", "https", "ftp", "ftps", "javascript", "file"]:
         redirect(reverse('lbutton-custom'))
     button_id = "lbutton-%s" % hashlib.md5(url).hexdigest()
-    icon_type = request.REQUEST.get("icon-type")
+    icon_type = request.POST.get("icon-type")
     icon_data = {}
     if icon_type == "default":
-        icon_name = request.REQUEST.get("default-icon")
+        icon_name = request.POST.get("default-icon")
         for size in [16, 24, 32]:
             icon_path = os.path.join(settings.MEDIA_ROOT, settings.DEFAULT_LINK_ICONS, '%s-%s.png' % (icon_name, size))
             if os.path.exists(icon_path):
                 with open(icon_path) as fp:
                     icon_data["icon-%s" % size] = base64.encodestring(fp.read())
     elif icon_type == "favicon":
-        icons = get_sized_icons(url, sizes)
+        icons = get_sized_icons(url, [16, 24, 32])
         if icons is None:
-            redirect(reverse('lbutton-custom'))
-
+            return redirect(reverse('lbutton-custom'))
+        for size in [16, 24, 32]:
+            value = io.BytesIO()
+            icons[size].save(value, "png")
+            icon_data["icon-%s" % size] = base64.b64encode(value.getvalue())
+            value.close()
     elif icon_type == "custom":
-        pass
+        have = []
+        for size in [16, 24, 32]:
+            if "icon-%s" % size in request.FILES:
+                have.append("icon-%s" % size)
+                icon_data["icon-%s" % size] = base64.encodestring("".join(c for c in request.FILES["icon-%s" % size].chunks()))
+        if len(have) == 0:
+            return redirect(reverse('lbutton-custom'))
+        elif len(have) != 3:
+            for size in [16, 24, 32]:
+                if "icon-%s" % size not in have:
+                    imagefile  = io.BytesIO("".join(c for c in request.FILES[have[-1]].chunks()))
+                    im = Image.open(imagefile)
+                    im = im.resize((size, size), Image.BICUBIC)
+                    png = io.BytesIO()
+                    im.save(png, format='PNG')
+                    imagefile.close()
+                    icon_data["icon-%s" % size] = base64.encodestring(png.getvalue())
     else:
-        redirect(reverse('lbutton-custom'))
+        return redirect(reverse('lbutton-custom'))
     data = {
         "button_id": button_id,
         "button_url": url,
         "chrome_name": button_id,
         "extension_uuid": "%s@codefisher.org" % button_id,
-        "name":request.REQUEST.get("title"),
-        "version":"1.0.0",
-        "button_label": request.REQUEST.get("label"),
-        "button_tooltip": request.REQUEST.get("tooltip"),
+        "name":request.POST.get("title"),
+        "button_label": request.POST.get("label"),
+        "button_tooltip": request.POST.get("tooltip"),
     }
     data.update(icon_data)
-    return build(request, data)
+    # we can't build here, we had to take a POST request to be able to have the 
+    # files, but if firefox interrupts the download, because our site does not have
+    # permissions, it will be restarted as a GET, loosing all sent data
+    #return build(request, data)
+    return redirect("%s?%s" % (reverse('lbutton-make'), urllib.urlencode(data)))
 
 def make(request):
-    return build(request, data.REQUEST)
+    return build(request, request.GET)
 
 def build(request, data):
     update_query = QueryDict("").copy()
@@ -77,12 +105,13 @@ def build(request, data):
     }
     extra_query = "&".join("%s=%s" % (key, value) for key, value in app_data.items())
     domain = Site.objects.get_current().domain
+    data = dict(data.items())
     data.update({
         "update_url": "https://%s%s?%s&%s" % (domain, reverse("lbutton-update"),
                 update_query.urlencode(), extra_query),
         "home_page": "http://%s%s" % (domain, reverse("lbutton-custom")),
         # firefox max version number
-        "max_version": get_app_versions().get("{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "4.0.*"),
+        "max_version": get_app_versions().get("{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "35.0"),
     })
     output = io.BytesIO()
     xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
@@ -94,7 +123,7 @@ def build(request, data):
     xpi.writestr(os.path.join("defaults", "preferences", "link.js"),
         """pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data)
     xpi.close()
-    responce = HttpResponse(output.getvalue(), mimetype="application/octet-stream")#"application/x-xpinstall"
+    responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
     responce['Content-Disposition'] = 'filename=%(button_id)s.xpi' % data
     #output.close()
     return responce
@@ -122,8 +151,9 @@ def update(request):
                 update_query.urlencode()),
         "extension_uuid": request.GET.get("extension_uuid")
     }
-    return render_to_response("tbutton_maker/link/update.rdf", data, mimetype="text/plain")#"application/xml+rdf")
+    return render_to_response("tbutton_maker/link/update.rdf", data, content_type="application/xml+rdf")
 
+@csrf_exempt
 def favicons(request):
     if not request.REQUEST.get("url"):
         return HttpResponse("fail")
@@ -143,5 +173,5 @@ def favicons(request):
         icons[size].save(value, "png")
         data = "data:image/png;base64," + base64.b64encode(value.getvalue())
         value.close()
-        tags.append('<img src="%s" width="%s" heiht="%s" alt="">' % (data, size, size))
+        tags.append('<img src="%s" width="%s" height="%s" alt="">' % (data, size, size))
     return HttpResponse("\n".join(tags))

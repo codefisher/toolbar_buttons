@@ -13,7 +13,7 @@
 <Description about="urn:mozilla:install-manifest">
 <em:id>{{ extension_uuid }}</em:id>
 <em:name>{{ name }}</em:name>
-<em:version>{{ version }}</em:version>
+<em:version>1.0.1</em:version>
 <em:description>A Customized Toolbar Link Button.</em:description>
 <em:creator>Michael Buckley</em:creator>
 <em:iconURL>chrome://{{ chrome_name }}/skin/icon-32.png</em:iconURL>

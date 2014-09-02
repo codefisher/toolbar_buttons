@@ -13,7 +13,7 @@
  I have had many people ask me to include one link or another in Toolbar Buttons, so here finally is my answer.  A tool for creating a your own toolbar button that links to what ever page you want.  Feel free to distribute these extensions from your own site, but you must provide a like back to this page and you may not edit the extensions to change their homepage, creator, update link etc.
 </p>
 
-<form action="{% url lbutton-create %}" id="link-button-form"
+<form action="{% url 'lbutton-create' %}" id="link-button-form"
 	enctype="multipart/form-data" method="post"  class="field-form">
 
 <fieldset>
@@ -109,7 +109,6 @@
   </fieldset>
 </fieldset>
 	<div>
-	{% csrf_token %}
 	 <input type="submit" value="Create">
 	</div>
 </form>

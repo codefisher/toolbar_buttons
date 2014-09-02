@@ -9,11 +9,12 @@ import os
 import hashlib
 
 def image_to_graysacle(file_name, drop_opacity=0.9):
-    temp_path = os.path.join(tempfile.gettempdir(),
-            "grayscale.%s.png" % hashlib.md5(file_name + str(drop_opacity)).hexdigest())
-    if os.path.exists(temp_path):
-        fp = open(temp_path, "r")
-        return fp.read(), fp
+    #this could be used as a kind of caching method, but I don't want to now.
+    #temp_path = os.path.join(tempfile.gettempdir(),
+    #        "grayscale.%s.png" % hashlib.md5(file_name + str(drop_opacity)).hexdigest())
+    #if os.path.exists(temp_path):
+    #    fp = open(temp_path, "r")
+    #    return fp.read(), fp
     output = io.BytesIO()
     try:
         image = png.Reader(filename=file_name)
@@ -29,10 +30,10 @@ def image_to_graysacle(file_name, drop_opacity=0.9):
     out_image = png.Writer(**info)
     out_image.write_packed(output, gray_data(color_data, info, drop_opacity))
     data = output.getvalue()
-    output
-    with open(temp_path, "w") as fp:
-        fp.write(data)
-    return data, output
+    output.close()
+    #with open(temp_path, "w") as fp:
+    #    fp.write(data)
+    return data
 
 def gray_data(color_data, info, drop_opacity=0.9):
     data = []
