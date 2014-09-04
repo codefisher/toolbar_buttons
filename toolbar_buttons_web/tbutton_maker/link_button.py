@@ -18,6 +18,7 @@ from django.http import HttpResponse, QueryDict
 from django.conf import settings
 from django.utils.html import escape
 from django.views.decorators.csrf import csrf_exempt
+from django.core.cache import cache
 
 from codefisher_apps.favicon_getter.views import get_sized_icons
 from toolbar_buttons.builder.app_versions import get_app_versions
@@ -30,66 +31,78 @@ def index(request, template_name="tbutton_maker/link-button.html"):
 
 @csrf_exempt
 def create(request):
-    url = request.POST.get("url")
-    parsed_url = urlparse.urlparse(url)
-    if parsed_url[0] == "":
-        url = "http://" + url
-    elif parsed_url[0] not in ["http", "https", "ftp", "ftps", "javascript", "file"]:
-        redirect(reverse('lbutton-custom'))
-    button_id = "lbutton-%s" % hashlib.md5(url).hexdigest()
-    icon_type = request.POST.get("icon-type")
-    icon_data = {}
-    if icon_type == "default":
-        icon_name = request.POST.get("default-icon")
-        for size in [16, 24, 32]:
-            icon_path = os.path.join(settings.MEDIA_ROOT, settings.DEFAULT_LINK_ICONS, '%s-%s.png' % (icon_name, size))
-            if os.path.exists(icon_path):
-                with open(icon_path) as fp:
-                    icon_data["icon-%s" % size] = base64.encodestring(fp.read())
-    elif icon_type == "favicon":
-        icons = get_sized_icons(url, [16, 24, 32])
-        if icons is None:
-            return redirect(reverse('lbutton-custom'))
-        for size in [16, 24, 32]:
-            value = io.BytesIO()
-            icons[size].save(value, "png")
-            icon_data["icon-%s" % size] = base64.b64encode(value.getvalue())
-            value.close()
-    elif icon_type == "custom":
-        have = []
-        for size in [16, 24, 32]:
-            if "icon-%s" % size in request.FILES:
-                have.append("icon-%s" % size)
-                icon_data["icon-%s" % size] = base64.encodestring("".join(c for c in request.FILES["icon-%s" % size].chunks()))
-        if len(have) == 0:
-            return redirect(reverse('lbutton-custom'))
-        elif len(have) != 3:
+    if request.method == 'POST':
+        url = request.POST.get("url")
+        parsed_url = urlparse.urlparse(url)
+        if parsed_url[0] == "":
+            url = "http://" + url
+        elif parsed_url[0] not in ["http", "https", "ftp", "ftps", "javascript", "file"]:
+            redirect(reverse('lbutton-custom'))
+        button_id = "lbutton-%s" % hashlib.md5(url).hexdigest()
+        icon_type = request.POST.get("icon-type")
+        icon_data = {}
+        if icon_type == "default":
+            icon_name = request.POST.get("default-icon")
             for size in [16, 24, 32]:
-                if "icon-%s" % size not in have:
-                    imagefile  = io.BytesIO("".join(c for c in request.FILES[have[-1]].chunks()))
-                    im = Image.open(imagefile)
-                    im = im.resize((size, size), Image.BICUBIC)
-                    png = io.BytesIO()
-                    im.save(png, format='PNG')
-                    imagefile.close()
-                    icon_data["icon-%s" % size] = base64.encodestring(png.getvalue())
+                icon_path = os.path.join(settings.BASE_DIR, settings.DEFAULT_LINK_ICONS, '%s-%s.png' % (icon_name, size))
+                if os.path.exists(icon_path):
+                    with open(icon_path) as fp:
+                        icon_data["icon-%s" % size] = base64.encodestring(fp.read())
+        elif icon_type == "favicon":
+            icons = get_sized_icons(url, [16, 24, 32])
+            if icons is None:
+                return redirect(reverse('lbutton-custom'))
+            for size in [16, 24, 32]:
+                value = io.BytesIO()
+                icons[size].save(value, "png")
+                icon_data["icon-%s" % size] = base64.b64encode(value.getvalue())
+                value.close()
+        elif icon_type == "custom":
+            have = []
+            for size in [16, 24, 32]:
+                if "icon-%s" % size in request.FILES:
+                    have.append("icon-%s" % size)
+                    icon_data["icon-%s" % size] = base64.encodestring("".join(c for c in request.FILES["icon-%s" % size].chunks()))
+            if len(have) == 0:
+                return redirect(reverse('lbutton-custom'))
+            elif len(have) != 3:
+                for size in [16, 24, 32]:
+                    if "icon-%s" % size not in have:
+                        imagefile  = io.BytesIO("".join(c for c in request.FILES[have[-1]].chunks()))
+                        im = Image.open(imagefile)
+                        im = im.resize((size, size), Image.BICUBIC)
+                        png = io.BytesIO()
+                        im.save(png, format='PNG')
+                        imagefile.close()
+                        icon_data["icon-%s" % size] = base64.encodestring(png.getvalue())
+        else:
+            return redirect(reverse('lbutton-custom'))
+        data = {
+            "button_id": button_id,
+            "button_url": url,
+            "chrome_name": button_id,
+            "extension_uuid": "%s@codefisher.org" % button_id,
+            "name":request.POST.get("title"),
+            "button_label": request.POST.get("label"),
+            "button_tooltip": request.POST.get("tooltip"),
+        }
+        data.update(icon_data)
+        url_data = urllib.urlencode(data)
+        key = 'lbytton-%s' % hashlib.sha1(url_data).hexdigest()
+        cache.set(key, url_data, 3*60*60)
+        request.session["lbutton-key"] = key
+        return build(request, data)
     else:
-        return redirect(reverse('lbutton-custom'))
-    data = {
-        "button_id": button_id,
-        "button_url": url,
-        "chrome_name": button_id,
-        "extension_uuid": "%s@codefisher.org" % button_id,
-        "name":request.POST.get("title"),
-        "button_label": request.POST.get("label"),
-        "button_tooltip": request.POST.get("tooltip"),
-    }
-    data.update(icon_data)
-    # we can't build here, we had to take a POST request to be able to have the 
-    # files, but if firefox interrupts the download, because our site does not have
-    # permissions, it will be restarted as a GET, loosing all sent data
-    #return build(request, data)
-    return redirect("%s?%s" % (reverse('lbutton-make'), urllib.urlencode(data)))
+        if request.session.get("lbutton-key"):
+            # this means they have already requested it, but firefox kill the request
+            # because our site did not have permissions to install and addon
+            # it then restarts the request, as a GET, without the POST data
+            # so if we are saved that, we use it
+            data = QueryDict(cache.get(request.session.get("lbutton-key")))
+            del request.session['lbutton-key']
+            return build(request, data)
+        else:
+            return redirect(reverse('lbutton-custom'))
 
 def make(request):
     return build(request, request.GET)
@@ -155,9 +168,9 @@ def update(request):
 
 @csrf_exempt
 def favicons(request):
-    if not request.REQUEST.get("url"):
+    if not request.POST.get("url"):
         return HttpResponse("fail")
-    url = request.REQUEST.get("url")
+    url = request.POST.get("url")
     parsed_url = urlparse.urlparse(url)
     if parsed_url[0] == "":
         url = "http://" + url

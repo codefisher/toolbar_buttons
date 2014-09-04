@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% load djangopress_tags %}
+
 
 {% block head_tags %}
-        <link type="text/css" rel="stylesheet" href="{% media_url %}themes/default/tbutton.css">
-		<script type="text/javascript" src="{% media_url %}js/tbutton.js"></script>
+        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}themes/default/tbutton.css">
+		<script type="text/javascript" src="{{ STATIC_URL }}js/tbutton.js"></script>
 {% endblock %}
 
 {% block page_title %}Custom Toolbar Button Maker{% endblock %}
@@ -18,7 +18,7 @@
 				<select name="button-locale" id="button-locale" class="form-input">
 					{% for value, name, native_name, country in local_data %}
 						<option{% if value == locale %} selected{% endif %}
-							value="{{ value }}" style="background: url('{% media_url %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} [{{ value }}]</option>
+							value="{{ value }}" style="background: url('{{ STATIC_URL }}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} [{{ value }}]</option>
 					{% endfor %}
 				</select>
 			</label>
@@ -31,7 +31,7 @@
 						<label for="button-application-{{ value }}">
 							<input{% if value in applications %} checked{% endif %}
 								id="button-application-{{ value }}" value="{{ value }}" name="button-application"type="checkbox">
-							<img src="{% media_url %}images/icons/{{ value }}.png"
+							<img src="{{ STATIC_URL }}images/icons/{{ value }}.png"
 								width="16" height="16" alt="">
 							{% for key, app_names in application_names.items %}{% if key == value %}{{ app_names|join:", " }}{% endif %}{% endfor %}
 						</label>
@@ -49,12 +49,12 @@
 				<label for="{{ button }}-checkbox">
 					<input type="checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
 					{% for app in apps %}
-						<img src="{% media_url %}images/icons/{{ app }}.png" width="16" height="16" alt="">
+						<img src="{{ STATIC_URL }}images/icons/{{ app }}.png" width="16" height="16" alt="">
 					{% endfor %}
 					<span class="button-name">{{ label|safe }}</span>
 				</label>
 				<div class="button-info">
-					<img src="{% media_url %}images/pastel-svg/16/{{ icon }}" width="16" height="16" alt="{{ tooltip|safe }}">
+					<img src="{{ STATIC_URL }}images/pastel-svg/16/{{ icon }}" width="16" height="16" alt="{{ tooltip|safe }}">
 					{{ description|linebreaks }}
 				</div>
 			</li>
