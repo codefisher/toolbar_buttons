@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block head_tags %}
-        <link type="text/css" rel="stylesheet" href="{{ STATIC_URL }}themes/default/tbutton.css">
-		<script type="text/javascript" src="{{ STATIC_URL }}js/tbutton.js"></script>
+        <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}themes/default/tbutton.css">
+		<script type="text/javascript" src="{% get_static_prefix %}js/tbutton.js"></script>
 {% endblock %}
 
 {% block page_title %}Custom Link Button Maker{% endblock %}
@@ -66,7 +66,7 @@
    {% for i in icon_range %}
    <label for="www-{{ i }}">
      <input type="radio" value="www-{{ i }}" id="www-{{ i }}" name="default-icon" >
-     <img src="{{ STATIC_URL }}images/link-icons/www-{{ i }}-24.png" alt="www-{{ i }}" width="24" height="24">
+     <img src="{% get_static_prefix %}images/link-icons/www-{{ i }}-24.png" alt="www-{{ i }}" width="24" height="24">
    </label>
    {% endfor %}
 
