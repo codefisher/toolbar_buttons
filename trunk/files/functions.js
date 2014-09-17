@@ -139,7 +139,7 @@ showAMenu: function(aEvent) {
 		toolbar_buttons.wrongVersion();
 	}
 	var popup = aMenu.firstChild.cloneNode(true);
-	if(aEvent.target.firstChild) {
+	while(aEvent.target.firstChild) {
 		aEvent.target.removeChild(aEvent.target.firstChild);
 	}
 	aEvent.target.appendChild(popup);
