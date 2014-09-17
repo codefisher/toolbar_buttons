@@ -3,4 +3,4 @@
 	id="import"
 	label="&import.label;"
 	tooltiptext="&import.tooltip;"
-	oncommand="BrowserImport();"/>
+	oncommand="toolbar_buttons.openMigrateWindow();"/>

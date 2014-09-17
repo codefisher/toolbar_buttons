@@ -30,7 +30,7 @@
 			{{ description|linebreaks }}
 
 			<p class="clear">
-				<a href="{% url 'tbutton-make-button' %}?button={{ button }}&amp;application={{ application }}">Install {{ label }}</a>
+				<a rel="nofollow" href="{% url 'tbutton-make-button' %}?button={{ button }}&amp;application={{ application }}">Install {{ label }}</a>
 			</p>
 {% endfor %}
 

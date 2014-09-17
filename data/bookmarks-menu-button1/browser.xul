@@ -4,8 +4,7 @@
 	id="bookmarks-menu-button1"
 	label="&bookmarks-menu-button.label;"
 	tooltiptext="&bookmarks-menu-button.tooltip;"
-	oncommand="toolbar_buttons.showAMenu(event,'bookmarksMenu');"
-	ondragenter="PlacesMenuDNDController.onBookmarksMenuDragEnter(event);"
-	ondrop="nsDragAndDrop.drop(event, BookmarksMenuDropHandler);"
-	ondragover="nsDragAndDrop.dragOver(event, BookmarksMenuDropHandler);"
-	ondragexit="nsDragAndDrop.dragExit(event, BookmarksMenuDropHandler);"/>
+	oncommand="this._placesView = null; toolbar_buttons.showAMenu(event,'bookmarksMenu');"
+	ondragenter="PlacesMenuDNDHandler.onDragEnter(event);" 
+	ondragover="PlacesMenuDNDHandler.onDragOver(event);"
+	ondrop="PlacesMenuDNDHandler.onDrop(event);" />

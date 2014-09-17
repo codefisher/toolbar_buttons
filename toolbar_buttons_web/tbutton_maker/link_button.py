@@ -19,6 +19,8 @@ from django.conf import settings
 from django.utils.html import escape
 from django.views.decorators.csrf import csrf_exempt
 from django.core.cache import cache
+from django.utils.encoding import force_str
+
 
 from codefisher_apps.favicon_getter.views import get_sized_icons
 from toolbar_buttons.builder.app_versions import get_app_versions
@@ -82,9 +84,9 @@ def create(request):
             "button_url": url,
             "chrome_name": button_id,
             "extension_uuid": "%s@codefisher.org" % button_id,
-            "name":request.POST.get("title"),
-            "button_label": request.POST.get("label"),
-            "button_tooltip": request.POST.get("tooltip"),
+            "name": force_str(request.POST.get("title")),
+            "button_label": force_str(request.POST.get("label")),
+            "button_tooltip": force_str(request.POST.get("tooltip")),
         }
         data.update(icon_data)
         url_data = urllib.urlencode(data)
@@ -95,9 +97,9 @@ def create(request):
     else:
         if request.session.get("lbutton-key"):
             # this means they have already requested it, but firefox kill the request
-            # because our site did not have permissions to install and addon
+            # because our site did not have permissions to install an addon
             # it then restarts the request, as a GET, without the POST data
-            # so if we are saved that, we use it
+            # so if we have saved data, we use it
             data = QueryDict(cache.get(request.session.get("lbutton-key")))
             del request.session['lbutton-key']
             return build(request, data)
