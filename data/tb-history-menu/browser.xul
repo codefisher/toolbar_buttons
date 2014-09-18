@@ -1,6 +1,6 @@
 <toolbarbutton
 	class="toolbarbutton-1"
-	id="tb-file-menu"
-	label="&tb-file-menu.label;"
-	tooltiptext="&tb-file-menu.tooltip;"
+	id="tb-history-menu"
+	label="&tb-history-menu.label;"
+	tooltiptext="&tb-history-menu.tooltip;"
 	oncommand="toolbar_buttons.showAMenu(event, 'history-menu');" />
