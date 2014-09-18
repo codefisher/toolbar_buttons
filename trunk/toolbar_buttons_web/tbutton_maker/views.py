@@ -52,11 +52,11 @@ class WebButton(button.SimpleButton):
         return self._description.get(button)
 
 def locale_string(button_locale, locale_name, buttons_obj):
-    def locale_str(str, buttonId):
+    def locale_str(str_type, buttonId):
         default_local = "en-US" #TODO: make a setting for this
-        value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str), buttons_obj)
+        value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str_type), buttons_obj)
         if value is None:
-            if str == "label":
+            if str_type == "label":
                 regexp = r'label="&(.*\.label);"'
             else:
                 regexp = r'tooltiptext="&(.*\.tooltip);"'
@@ -67,7 +67,7 @@ def locale_string(button_locale, locale_name, buttons_obj):
             if value is None:
                 value = button_locale.get_dtd_value(default_local, match.group(1), buttons_obj)
         if value is None:
-            print buttonId
+            return '' #print buttonId
         return value.replace("&brandShortName;", "").replace("&apos;", "'")
     return locale_str
 
