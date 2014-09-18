@@ -53,6 +53,7 @@ class WebButton(button.SimpleButton):
 
 def locale_string(button_locale, locale_name, buttons_obj):
     def locale_str(str, buttonId):
+        default_local = "en-US" #TODO: make a setting for this
         value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str), buttons_obj)
         if value is None:
             if str == "label":
