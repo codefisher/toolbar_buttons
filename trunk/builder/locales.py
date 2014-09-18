@@ -60,7 +60,7 @@ class Locale(object):
         value = self._dtd[locale].get(name,
                 self._dtd[self._settings.get("default_locale")].get(name))
         if not value and button and locale == self._settings.get("default_locale"):
-            button.get_string(name)
+            value = button.get_string(name)
         return value if value else None
 
     def get_dtd_data(self, strings, button=None):
@@ -68,6 +68,7 @@ class Locale(object):
 
         get_dtd_data(list<str>) -> dict<str: str>
         """
+        default_locale = self._settings.get("default_locale")
         result = {}
         strings = list(strings)
         if self._settings.get("include_toolbars"):
@@ -83,23 +84,26 @@ class Locale(object):
                 if self._missing_strings == "replace":
                     dtd_file.append("""<!ENTITY %s "%s">"""
                                 % (string, self._dtd[locale].get(string,
-                                        self._dtd[self._settings.get("default_locale")]
+                                        self._dtd[default_locale]
                                         .get(string, button.get_string(string, locale) if button else ""))))
                 elif self._missing_strings == "empty":
                     dtd_file.append("""<!ENTITY %s "%s">"""
-                             % (string, self._dtd[locale].get(string, "")))
-                elif (self._missing_strings == "skip"
-                      and string in self._dtd[locale]):
-                    dtd_file.append("""<!ENTITY %s "%s">"""
-                                  % (string, self._dtd[locale][string]))
+                             % (string, self._dtd[locale].get(string, 
+                                    button.get_string(string, locale) if button and locale == default_locale else "")))
+                elif self._missing_strings == "skip":
+                    if string in self._dtd[locale]:
+                        dtd_file.append("""<!ENTITY %s "%s">"""  % (string, self._dtd[locale][string]))
+                    elif button and locale == default_locale and button.get_string(string, locale):
+                        dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string, locale)))
             result[locale] = "\n".join(dtd_file)
         return result
 
     def get_properties_data(self, strings, button=None):
         """Gets a set of files with all the .properties strings wanted
 
-        get_dtd_data(list<str>) -> dict<str: str>
+        get_properties_data(list<str>) -> dict<str: str>
         """
+        default_locale = self._settings.get("default_locale")
         description = "extensions.%s.description" % self._settings.get("extension_id")
         result = {}
         for locale in self._locales:
@@ -108,19 +112,21 @@ class Locale(object):
                 if self._missing_strings == "replace":
                     properties_file.append("%s=%s"
                                 % (string, self._properties[locale].get(string,
-                                        self._properties[self._settings.get("default_locale")]
-                                        .get(string, ""))))
+                                        self._properties[default_locale]
+                                        .get(string, button.get_string(string, locale) if button else ""))))
                 elif self._missing_strings == "empty":
                     properties_file.append("%s=%s"
-                             % (string, self._properties[locale].get(string, "")))
-                elif (self._missing_strings == "skip"
-                      and string in self._properties[locale]):
-                    properties_file.append("%s=%s"
+                             % (string, self._properties[locale].get(string,  
+                                    button.get_string(string, locale) if button and locale == default_locale else "")))
+                elif self._missing_strings == "skip":
+                    if string in self._properties[locale]:
+                        properties_file.append("%s=%s"
                                   % (string, self._properties[locale][string]))
+                    elif button and locale == default_locale and button.get_string(string, locale):
+                        properties_file.append("""%s=%s""" % (string, button.get_string(string, locale)))
                 elif button and button.get_string(string):
                     properties_file.append("%s=%s" % (string, button.get_string(string)))
-
-            if locale == "en-US":
+            if locale == default_locale:
                 properties_file.append("%s=%s" % (description, self._settings.get("description")))
             elif description in self._properties[locale]:
                 properties_file.append("%s=%s" % (description, self._properties[locale][description]))
