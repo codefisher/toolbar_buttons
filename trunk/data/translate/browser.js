@@ -20,7 +20,7 @@ UpdateTranslateOverlay: function() {
 	file.append("translate-options.xul");
 	if(!file.exists() || ((new Date()).getTime() - file.lastModifiedTime) > 1000*60*60*24*7) {
 		var XMLhttp = new XMLHttpRequest();
-		XMLhttp.open("GET", "http://www.google.com/language_tools");
+		XMLhttp.open("GET", "https://translate.google.com/");
 		XMLhttp.onload = toolbar_buttons.UpdateTranslateOverlayOnload;
 		XMLhttp.send(null);
 	}
@@ -29,11 +29,11 @@ UpdateTranslateOverlay: function() {
 UpdateTranslateOverlayOnload: function(XMLhttp) {
 	var data = XMLhttp.target.responseText.match(/<select[^>]*name=tl[^>]*>.*?<\/select>/);
 	var languages = {};
-	var items = data.toString().match(/<option value=".*?">.*?<\/option>/g);
+	var items = data.toString().match(/<option.*?value="?[^>"]+"?>.*?<\/option>/g);
 	var xul = '<?xml version="1.0"?><overlay id="translate-options" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"><menupopup id="translate-languages">';
 	for(item in items) {
-		var lang = items[item].toString().match(/<option value="(.*?)".*?>(.*?)<\/option>/);
-		xul += '<menuitem value="' + lang[1] + '" label="' + lang[2] + '"/>';
+		var lang = items[item].toString().match(/<option.*?value="?([^>"]+)"?.*?>(.*?)<\/option>/);
+		xul += '<menuitem value="' + lang[1] + '" label="' + lang[2] + '"/>\n';
 	}
 	xul += '</menupopup><menulist id="translate-languages-menu-dummy" hidden="true"/><menulist id="translate-languages-menu" hidden="false" /></overlay>';
 

@@ -3,4 +3,4 @@
 	id="tb-search-go-button"
 	label="&tb-search-go-button.label;"
 	tooltiptext="&tb-search-go-button.tooltip;"
-	onclick="handleSearchCommand(event);" />
+	onclick="document.getElementById('searchbar').handleSearchCommand(event);" />

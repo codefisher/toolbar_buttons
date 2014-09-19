@@ -7,7 +7,7 @@
 	ondragenter="PlacesMenuDNDHandler.onDragEnter(event);" 
 	ondragover="PlacesMenuDNDHandler.onDragOver(event);"
 	ondrop="PlacesMenuDNDHandler.onDrop(event);">
-	<menupopup id="bookmarksMenuPopupCustomPersonal"
+	<menupopup id="bookmarksMenuPopupCustom"
 		type="places"
 		place="place:folder=BOOKMARKS_MENU"
 		context="placesContext"
