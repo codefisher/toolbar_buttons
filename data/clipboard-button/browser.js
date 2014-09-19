@@ -34,7 +34,7 @@ clipboardLink: {
 	OpenWindow: function() {
 		try {
 			openNewWindowWith(this.getText(), window.content.document,
-					null, null, false);
+					null, false);
 		} catch (e) {} // no clipboard data
 	}
 }

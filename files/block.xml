@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0"?>
-<!--
-	This file comes from the FlashBlock extension.  They gave me premission to
-	use their code. It is currently avilable under the MPL 1.1/GPL 2.0/LGPL 2.1
-	licences.
- -->
+
 <bindings
    xmlns="http://www.mozilla.org/xbl"
    xmlns:html="http://www.w3.org/1999/xhtml"
@@ -13,12 +9,13 @@
   <implementation>
     <constructor>
         <![CDATA[
+
 //From Jesse's XPCNativeWrapper: http://mavra.perilith.com/~luser/content/native.js
 function nativeMethod(untrustedObject, methodName)
 {
   // happier stack traces and faster multiple calls
   var fun = Components.lookupMethod(untrustedObject, methodName);
-
+  
   return function()
   {
     return fun.apply(untrustedObject, arguments);
@@ -27,8 +24,14 @@ function nativeMethod(untrustedObject, methodName)
 
 function flashblockCreatePlaceholder(isStandalone) {
 	// Create placeholder
-	var flashblockCreateElement = nativeMethod(document, "createElementNS");
-	var placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	var flashblockCreateElement;
+	var placeholder;
+	try {
+		flashblockCreateElement = nativeMethod(document, "createElementNS");
+		placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	} catch (e) {
+		placeholder = document.createElementNS( "http://www.w3.org/1999/xhtml", "div"); 
+	}
 	placeholder.isStandalone = isStandalone;
 	return placeholder;
 }
@@ -58,7 +61,7 @@ function flashblockShowPlaceholder() {
 		current.width = current.height = 0;
 	} else {
 		placeholder.flashblock = "normal";
-		parent.removeChild(current);
+		parent.removeChild(current); 
 	}
 }
 
@@ -67,6 +70,7 @@ function flashblockShowFlash(event) {
 	if( event.type == "keypress" && event.keyCode != KeyEvent.DOM_VK_RETURN)
 		return false;
 	event.stopPropagation();
+	var parent = placeholder.parentNode;
 	if(placeholder.flashblock == "frame") {
 		current.height = current.prevHeight;
 		current.width = current.prevWidth;
@@ -123,13 +127,13 @@ function flashblockIsWhitelisted(node, type) {
 function flashblockSetImage(placeholder, type) {
 	var inactiveurl = "#ffffff url(resource://{{chrome-name}}/block.png) no-repeat center";
 	var playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
-	/* switch (type) {
+	/*switch (type) {
 		case "silverlight":
-			playimage = "url(resource://{{chrome-name}}/silverplay.png)";
+			playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
 			break;
 		default:
 			break;
-	} */
+	}*/
 	var activeurl = playimage + " no-repeat center";
 	placeholder.setAttribute("bgInactive", inactiveurl);
 	placeholder.setAttribute("bgActive", activeurl);
@@ -168,7 +172,7 @@ function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
 		height = flash.height;
 	else if (height)
 		height = Math.max(height,32) + "px";
-	else
+	else 
 		height = "32px"
 	placeholder.style.height = height;
 
@@ -179,6 +183,7 @@ function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
 	var disp = fStyle.getPropertyValue("display");
 	placeholder.style.display = disp == "block" ? "block" : "inline-block";
 	placeholder.style.setProperty("visibility", "visible", "important");
+	placeholder.style.setProperty("opacity", "100", "important");
 
 	// The size of the placeholder should include borders too,
 	// otherwise scrollbars appear for blocked standalone objects
@@ -290,8 +295,13 @@ flashblockStylePlaceholder(current, placeholder, isStandalone);
 flashblockSetTitle(current, placeholder, isStandalone);
 
 // Replace the flash document with a placeholder.
-var flashblockSetTimeout = nativeMethod(window, "setTimeout");
-flashblockSetTimeout(flashblockShowPlaceholder, 0);
+try {
+    var flashblockSetTimeout = nativeMethod(window, "setTimeout");
+    flashblockSetTimeout(flashblockShowPlaceholder, 0);
+}
+catch (e) {
+    window.setTimeout(flashblockShowPlaceholder, 0);
+}
 
 // Change the placeholder background when the mouse enters/exits the div.
 placeholder.addEventListener("mouseover",
@@ -351,7 +361,7 @@ function nativeMethod(untrustedObject, methodName)
 {
   // happier stack traces and faster multiple calls
   var fun = Components.lookupMethod(untrustedObject, methodName);
-
+  
   return function()
   {
     return fun.apply(untrustedObject, arguments);
@@ -360,8 +370,14 @@ function nativeMethod(untrustedObject, methodName)
 
 function flashblockCreatePlaceholder(isStandalone) {
 	// Create placeholder
-	var flashblockCreateElement = nativeMethod(document, "createElementNS");
-	var placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	var flashblockCreateElement;
+	var placeholder;
+	try {
+		flashblockCreateElement = nativeMethod(document, "createElementNS");
+		placeholder = flashblockCreateElement("http://www.w3.org/1999/xhtml", "div");
+	} catch (e) {
+		placeholder = document.createElementNS( "http://www.w3.org/1999/xhtml", "div"); 
+	}
 	placeholder.isStandalone = isStandalone;
 	return placeholder;
 }
@@ -391,7 +407,7 @@ function flashblockShowPlaceholder() {
 		current.width = current.height = 0;
 	} else {
 		placeholder.flashblock = "normal";
-		parent.removeChild(current);
+		parent.removeChild(current); 
 	}
 }
 
@@ -400,6 +416,7 @@ function flashblockShowFlash(event) {
 	if( event.type == "keypress" && event.keyCode != KeyEvent.DOM_VK_RETURN)
 		return false;
 	event.stopPropagation();
+	var parent = placeholder.parentNode;
 	if(placeholder.flashblock == "frame") {
 		current.height = current.prevHeight;
 		current.width = current.prevWidth;
@@ -454,15 +471,15 @@ function flashblockIsWhitelisted(node, type) {
 }
 
 function flashblockSetImage(placeholder, type) {
-	var inactiveurl = "url(chrome://flashblock/content/" + type + ".png) no-repeat center";
-	var playimage = "url(chrome://flashblock/content/flashplay.png)";
-	switch (type) {
+	var inactiveurl = "#ffffff url(resource://{{chrome-name}}/block.png) no-repeat center";
+	var playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
+	/* switch (type) {
 		case "silverlight":
-			playimage = "url(chrome://flashblock/content/silverplay.png)";
+			playimage = "url(resource://{{chrome-name}}/play.png)";
 			break;
 		default:
 			break;
-	}
+	} */
 	var activeurl = playimage + " no-repeat center";
 	placeholder.setAttribute("bgInactive", inactiveurl);
 	placeholder.setAttribute("bgActive", activeurl);
@@ -501,7 +518,7 @@ function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
 		height = flash.height;
 	else if (height)
 		height = Math.max(height,32) + "px";
-	else
+	else 
 		height = "32px"
 	placeholder.style.height = height;
 
@@ -512,6 +529,7 @@ function flashblockStylePlaceholder(flash, placeholder, isStandalone) {
 	var disp = fStyle.getPropertyValue("display");
 	placeholder.style.display = disp == "block" ? "block" : "inline-block";
 	placeholder.style.setProperty("visibility", "visible", "important");
+	placeholder.style.setProperty("opacity", "100", "important");
 
 	// The size of the placeholder should include borders too,
 	// otherwise scrollbars appear for blocked standalone objects
@@ -648,8 +666,13 @@ flashblockStylePlaceholder(current, placeholder, isStandalone);
 flashblockSetTitle(current, placeholder, isStandalone);
 
 // Replace the flash document with a placeholder.
-var flashblockSetTimeout = nativeMethod(window, "setTimeout");
-flashblockSetTimeout(flashblockShowPlaceholder, 0);
+try {
+    var flashblockSetTimeout = nativeMethod(window, "setTimeout");
+    flashblockSetTimeout(flashblockShowPlaceholder, 0, placeholder, current, parent);
+}
+catch (e) {
+    window.setTimeout(flashblockShowPlaceholder, 0, placeholder, current, parent);
+}
 
 // Change the placeholder background when the mouse enters/exits the div.
 placeholder.addEventListener("mouseover",
@@ -723,6 +746,7 @@ if(event) {
 }
 
 this.style.setProperty("visibility", "visible", "important");
+placeholder.style.setProperty("opacity", "100", "important");
 this.style.setProperty("display", "block", "important");
 this.style.setProperty("left", "auto", "important");
 this.style.setProperty("top", "auto", "important");

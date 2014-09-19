@@ -1,4 +1,8 @@
 disableStyle: function() {
 	var viewStyle = getMarkupDocumentViewer().authorStyleDisabled;
-	setStyleDisabled(!viewStyle);
+	if(viewStyle) {
+		gPageStyleMenu.switchStyleSheet('');		
+	} else {
+		gPageStyleMenu.disableStyle();
+	}
 }
