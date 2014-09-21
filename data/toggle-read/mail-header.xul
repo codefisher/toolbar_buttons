@@ -3,4 +3,4 @@
 	id="toggle-read"
 	label="&toggle-read.label;"
 	tooltiptext="&toggle-read.tooltip;"
-	oncommand="goDoCommand('cmd_markAsRead');" />
+	oncommand="goDoCommand('cmd_toggleRead');" />

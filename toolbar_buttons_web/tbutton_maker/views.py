@@ -232,7 +232,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
         "count": sum,
         "average": float(sum)/(len(stats)*days) if stats else 0
     }
-    return render_to_response(template_name, data, RequestContext(request))
+    return render(request, template_name, data)
 
 def old_update(request):
     query = QueryDict('').copy()

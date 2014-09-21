@@ -87,6 +87,7 @@ def create(request):
             "name": force_str(request.POST.get("title")),
             "button_label": force_str(request.POST.get("label")),
             "button_tooltip": force_str(request.POST.get("tooltip")),
+            "offer-download": request.POST.get("offer-download") == "true",
         }
         data.update(icon_data)
         url_data = urllib.urlencode(data)
@@ -112,6 +113,7 @@ def make(request):
 def build(request, data):
     update_query = QueryDict("").copy()
     update_query.update(data)
+    del update_query['offer-download']
     app_data = {
         "item_id": "%ITEM_ID%",
         "item_version": "%ITEM_VERSION%",
@@ -138,9 +140,12 @@ def build(request, data):
     xpi.writestr(os.path.join("defaults", "preferences", "link.js"),
         """pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data)
     xpi.close()
-    responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
-    responce['Content-Disposition'] = 'filename=%(button_id)s.xpi' % data
-    #output.close()
+    if data.get('offer-download'):
+        responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
+        responce['Content-Disposition'] = 'attachment; filename=%(button_id)s.xpi' % data
+    else:
+        responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
+        responce['Content-Disposition'] = 'filename=%(button_id)s.xpi' % data
     return responce
 
 def compare_versions(version, other):
