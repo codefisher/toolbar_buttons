@@ -621,8 +621,9 @@ class Button(SimpleButton):
                         defaultset = 'defaultset="%s"' % ",".join(buttons[i*max_count:(i+1)*max_count])
                     button_hash.update(str(i))
                     hash = button_hash.hexdigest()[:6]
-                    toolbars.append('''<toolbar persist="collapsed,hidden" context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;"/>''' % (hash, defaultset))
-                    values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash)
+                    label_number = "" if number == 1 else " %s" % (i + 1)
+                    toolbars.append('''<toolbar persist="collapsed,hidden" context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;%s"/>''' % (hash, defaultset, label_number))
+                    values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash).replace("{{ number }}", label_number)
             menu = self._create_menu(file_name, values) if self._settings.get("create_menu") else ""
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
