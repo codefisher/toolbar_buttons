@@ -30,7 +30,7 @@
 					<li class="form-field">
 						<label for="button-application-{{ value }}">
 							<input{% if value in applications %} checked{% endif %}
-								id="button-application-{{ value }}" value="{{ value }}" name="button-application"type="checkbox">
+								id="button-application-{{ value }}" value="{{ value }}" name="button-application" type="checkbox">
 							<img src="{% get_static_prefix %}images/icons/{{ value }}.png"
 								width="16" height="16" alt="">
 							{% for key, app_names in application_names.items %}{% if key == value %}{{ app_names|join:", " }}{% endif %}{% endfor %}

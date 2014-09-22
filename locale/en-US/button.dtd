@@ -334,6 +334,7 @@
 <!ENTITY use-document-fonts.label "Page Fonts">
 <!ENTITY use-document-fonts.tooltip "Toggle between the default and the sites fonts">
 <!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
 <!ENTITY websearch.label "Web Search">
 <!ENTITY websearch.tooltip "Search the web with your default Search Engine">
 <!ENTITY wikipedia.label "Wikipedia">
