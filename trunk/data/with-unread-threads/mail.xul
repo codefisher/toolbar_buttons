@@ -3,4 +3,4 @@
 	id="with-unread-threads"
 	label="&with-unread-threads.label;"
 	tooltiptext="&with-unread-threads.tooltip;"
-	oncommand="goDoCommand('cmd_viewThreadsWithUnread');" />
+	oncommand="toolbar_buttons.threadsWithUnread()" />
