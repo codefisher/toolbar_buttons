@@ -8,6 +8,7 @@ if(!this.toolbar_buttons) {
 		interfaces: {},
 		// the important global objects used by the extension
 		toolbar_button_loader: function(parent, child){
+			var object_name;
 			for(object_name in child){
 				parent[object_name] = child[object_name];
 			}
