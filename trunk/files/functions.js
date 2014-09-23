@@ -42,13 +42,11 @@ loadToggleToolbar: function(button_id, toolbar_id){
 				var toolbar = document.getElementById(toolbar_id);
 				if(toolbar) {
 					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
-					toolbar.addEventListener(
-							"DOMAttrModified",
-							function(aEvent) {
-								toolbar_buttons.toggleToolbarButtonUpdate(aEvent,
-										button_id, toolbar_id);
-							},
-					false);
+					var mutationObserver = new MutationObserver(function(mutations) {
+								var button = document.getElementById(button_id);
+								button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
+							});
+					mutationObserver.observe(toolbar, { attributes: true, subtree: true });
 				}
 			},
 	true);
