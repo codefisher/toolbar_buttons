@@ -3,4 +3,4 @@
 	id="undo"
 	label="&undo.label;"
 	tooltiptext="&undo.tooltip;"
-	oncommand="CommandUpdate_UndoRedo(); goDoCommand('cmd_undo');"/>
+	oncommand="try { CommandUpdate_UndoRedo(); } catch(e) {} goDoCommand('cmd_undo');"/>

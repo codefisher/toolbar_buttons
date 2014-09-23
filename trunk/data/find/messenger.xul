@@ -3,4 +3,4 @@
 	id="find"
 	label="&find.label;"
 	tooltiptext="&find.tooltip;"
-	command="cmd_find"/>
+	oncommand="goDoCommand('cmd_find');"/>

@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "정보">
+<!ENTITY about-application.tooltip "&brandShortName;에 대해서">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "캐쉬 내용을 보기 위해 about:cache 열기">
 <!ENTITY about-config.label "about:config">
@@ -49,6 +51,7 @@
 <!ENTITY clipboard.label "클립보드로부터 연결">
 <!ENTITY clipboard.menuitem "클립보드로부터 링크 열기">
 <!ENTITY clipboard.newtab "새 탭으로 클립보드로부터 링크 열기">
+<!ENTITY clipboard.newwindow "새 창으로">
 <!ENTITY clipboard.tooltip "링크를 클립보드에서 얻어 열기">
 <!ENTITY close-all-tabs.label "모두 닫기">
 <!ENTITY close-all-tabs.tooltip "모든 탭 닫기">
@@ -76,6 +79,8 @@
 <!ENTITY dictionary-list.tooltip "현재 디렉토리 빠르게 변경">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "eBay 열기">
+<!ENTITY edit-as-new.label "새 문서로 편집">
+<!ENTITY edit-as-new.tooltip "새 문서로 메세지 편집">
 <!ENTITY edit-draft.label "초안 편집">
 <!ENTITY edit-draft.tooltip "저장된 초안 편집">
 <!ENTITY empty-trash.label "휴지통 비우기">
@@ -114,6 +119,8 @@
 <!ENTITY help.tooltip "도움말 문서 열기">
 <!ENTITY hide-images.label "그림 감추기">
 <!ENTITY hide-images.tooltip "현재 문서 내 모든 그림 및 배경 감추기">
+<!ENTITY home-page-change.add-current "현재 페이지 추가">
+<!ENTITY home-page-change.current "현재 페이지로 설정">
 <!ENTITY home-page-change.label "홈페이지 변경">
 <!ENTITY home-page-change.multiple "다중 링크로 홈 페이지 설정">
 <!ENTITY home-page-change.tooltip "홈 페이지 변경">
@@ -255,16 +262,33 @@
 <!ENTITY tasks-in-view.tooltip "작업 내용 전환">
 <!ENTITY tasks-toggle.label "작업 전환">
 <!ENTITY tasks-toggle.tooltip "작업 막대 전환">
+<!ENTITY tb-clear-search.label "검색 지우기">
+<!ENTITY tb-clear-search.tooltip "검색창을 지우고 지정">
 <!ENTITY tb-clear-url.label "Url 지우기">
 <!ENTITY tb-clear-url.tooltip "주소막대의 내용을 지우고 커서를 맞춥니다.">
 <!ENTITY tb-edit-menu.label "편집 메뉴">
 <!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
 <!ENTITY tb-file-menu.label "파일 메뉴">
 <!ENTITY tb-file-menu.tooltip "파일 메뉴를 표시합니다">
+<!ENTITY tb-new-event.label "새 이벤트">
+<!ENTITY tb-new-event.tooltip "캘린더에 새 이벤트를 추가합니다.">
+<!ENTITY tb-new-task.label "새 작업">
+<!ENTITY tb-new-task.tooltip "캘린더에 새 작업을 추가합니다.">
+<!ENTITY tb-search-minus.label "검색막대 크기 축소">
+<!ENTITY tb-search-minus.tooltip "검색막대의 폭을 10픽셀씩 줄입니다">
+<!ENTITY tb-search-plus.label "검색막대 크기 확대">
+<!ENTITY tb-search-plus.tooltip "검색막대의 폭을 10픽셀씩 늘립니다">
+<!ENTITY tb-search-resize.label "검색창 크기 재지정">
+<!ENTITY tb-search-resize.tooltip "검색막대의 폭을 재지정합니다">
 <!ENTITY tb-toggle-menu-bar.label "메뉴 막대 전환">
 <!ENTITY tb-toggle-menu-bar.tooltip "메뉴 막대를 전환합니다">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "팝업 차단기">
+<!ENTITY tb-toggle-popup-blocker.tooltip "팝업 차단기 전환">
 <!ENTITY tb-tools-menu.label "도구 메뉴">
 <!ENTITY tb-tools-menu.tooltip "도구 메뉴를 표시합니다">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Twitter 홈페이지 열기">
 <!ENTITY tb-view-menu.label "보기 메뉴">
 <!ENTITY tb-view-menu.tooltip "보기 메뉴를 표시합니다">
 <!ENTITY themes.label "테마">
@@ -289,6 +313,8 @@
 <!ENTITY toggle-starred.tooltip "별표 상태를 전환">
 <!ENTITY toggle-styles.label "스타일 전환">
 <!ENTITY toggle-styles.tooltip "웹 사이트 지정 스타일 추가/삭제">
+<!ENTITY toggle-toolbar.label "도구막대 전환">
+<!ENTITY toggle-toolbar.tooltip "도구모음 전환">
 <!ENTITY toolbar-menu.label "도구막대">
 <!ENTITY toolbar-menu.tooltip "도구막대 숨기기/보이기">
 <!ENTITY top-page.label "맨 위로">

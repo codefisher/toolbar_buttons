@@ -1,5 +1,6 @@
 <!-- I am using this when displaying details about the extension
-	online and for my custom toolbar button maker -->
+	online and for my custom toolbar button maker 
+-->
 <!ENTITY name "Turkish">
 <!ENTITY native_name "Türkçe">
 <!ENTITY country "TR">

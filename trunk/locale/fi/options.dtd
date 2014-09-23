@@ -13,8 +13,11 @@
 <!ENTITY readmail.path.desc "Sähköpostiohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
 <!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">
 <!ENTITY favorite-page.label "Suosikkisivu">
+<!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY translate.label "Käännä">
 <!ENTITY translate.description "Valitse mitä kieltä haluat ”Käännä”-painikkeen käyttävän. Toiminto hyödyntää Googlen käännöspalvelua.">
 <!ENTITY previous-next.checkbox "Vaihda painikkeiden ”Edellinen” ja ”Seuraava” suuntaa.">
 <!ENTITY readmail.path.caption "Sähköpostiohjelman polku">
+<!ENTITY toggle.label "Näytä/piilota painikkeet">
+<!ENTITY translate.not-in-use "Panike ei ole käytössä. Lisää työkalupalkkiin ja käynnistä uudelleen.">
 <!ENTITY readnews.path.caption "Keskusteluryhmien lukuohjelman polku">
