@@ -342,9 +342,9 @@ class Button(SimpleButton):
                             image_map[_image] = offset
                             if small is not None:
                                 box = (offset * int(small), 0, (offset + 1) * int(small), int(small))
-                                image_map_small.paste(Image.frombytes(small_data), box)
+                                image_map_small.paste(Image.open(io.BytesIO(small_data)), box)
                             box = (offset * int(large), 0, (offset + 1) * int(large), int(large))
-                            image_map_large.paste(Image.frombytes(large_data), box)
+                            image_map_large.paste(Image.open(io.BytesIO(large_data)), box)
                             count += 1
                     else:
                         offset = count

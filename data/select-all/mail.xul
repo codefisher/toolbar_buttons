@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1"
-	id="select-all"
-	label="&select-all.label;"
-	tooltiptext="&select-all.tooltip;"
-	oncommand="goDoCommand('cmd_selectAll');"/>

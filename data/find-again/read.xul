@@ -3,4 +3,4 @@
 	id="find-again"
 	label="&find-again.label;"
 	tooltiptext="&find-again.tooltip;"
-	command="cmd_findAgain"/>
+	oncommand="goDoCommand('cmd_findAgain');"/>

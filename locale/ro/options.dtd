@@ -1,14 +1,14 @@
 <!ENTITY options.window.title "Opțiuni Toolbar Buttons">
-<!ENTITY favorite-page.description "Adresă pentru „Pagina favorită“ (un fel de a doua pagină de pornire):">
+<!ENTITY favorite-page.description "Adresă pentru „Pagina favorită” (un fel de a doua pagină de pornire):">
 <!ENTITY toggle.prox.label "Proxy">
-<!ENTITY toggle.proxy.description "Comutare între „Fără proxy“ și una dintre opțiunile următoare:">
+<!ENTITY toggle.proxy.description "Comutare între „Fără proxy” și una dintre opțiunile următoare:">
 <!ENTITY restart.checkbox "Nu cere confirmare înainte de repornire">
 <!ENTITY previous-next.label "Butoane Înapoi și Înainte">
 <!ENTITY toggle.checkbox "Reîncarcă pagina curentă după comutarea unor configurații (Java, Flash, video, etc.)">
 <!ENTITY restart.label "Repornire">
 <!ENTITY read.select.button "Redefinește">
 <!ENTITY readnews.path.desc "Cale către cititorul favorit de știri (dacă butonul nu funcționează):">
-<!ENTITY toggle.proxy.auto.detect "Detectare automată a configuraţiei proxy">
+<!ENTITY toggle.proxy.auto.detect "Detectare automată a configurației proxy">
 <!ENTITY toggle.proxy.auto.configuration "Configurare automată a proxy (PAC)">
 <!ENTITY readmail.path.desc "Cale către clientul favorit de poștă electronică (dacă butonul nu funcționează):">
 <!ENTITY toggle.proxy.manual "Configurare manuală a proxy">

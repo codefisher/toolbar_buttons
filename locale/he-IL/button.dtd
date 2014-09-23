@@ -1,0 +1,27 @@
+<!ENTITY about-application.label "אודות">
+<!ENTITY about-application.tooltip "אודות &brandShortName;">
+<!ENTITY about-cache.label "אודות:מטמון">
+<!ENTITY about-cache.tooltip "פתח את אודות:מטמון לצפיה בתוכן המאוחסן במטמון">
+<!ENTITY about-config.label "אודות:תצורה">
+<!ENTITY about-config.tooltip "פתיחת אודות:תצורה לשינוי הגדרות (מתקדמות) בפיירפוקס">
+<!ENTITY about-disk-cache.label "אודות:מטמון דיסק">
+<!ENTITY about-disk-cache.tooltip "פתיחת אודות:מטמון לצפיה בתוכן המאוחסן במטמון בדיסק הקשיח שלך">
+<!ENTITY about-mem-cache.label "אודות:מטמון זכרון">
+<!ENTITY about-mem-cache.tooltip "פתיחת אודות:מטמון לצפיה בתוכן המטמון המאוחסן בזכרון">
+<!ENTITY about-plugins.label "אודות:פלאגנים">
+<!ENTITY tiny-url.email "שלח קישור">
+<!ENTITY tiny-url.label "כתובת אינטרנט זעירה">
+<!ENTITY tiny-url.link.use "אפשרויות קישור">
+<!ENTITY tiny-url.tooltip "צור כתובת אינטרנט זעירה">
+<!ENTITY tiny-url.use.normal "השתמש בשירות של xrl.in">
+<!ENTITY tiny-url.use.preview "השתמש בתצוגה מקדימה של xrl.in">
+<!ENTITY tiny-url.visit "בקר ב xrl.in">
+<!ENTITY toggle-proxy.label "שנה מצב פרוקסי">
+<!ENTITY toggle-proxy.tooltip "שנה פרוקסי למצב פעיל או כבוי">
+<!ENTITY toggle-read.label "שנה מצב קריאה">
+<!ENTITY toggle-read.tooltip "שינוי מצב של קריאת הודעה">
+<!ENTITY toggle-starred.label "שנה מצב של סימניה המסומנת בכוכב">
+<!ENTITY toggle-starred.tooltip "שינוי מצב סימניה המסומנת בכוכב">
+<!ENTITY toggle-styles.label "שנה סגנונות עיצוב">
+<!ENTITY toggle-styles.tooltip "הוספה/הסרה של אתרי אינטרנט המגדרים סגנונות עיצוב">
+<!ENTITY toggle-toolbar.label "הצג או הסתר את סרגל הכלים">

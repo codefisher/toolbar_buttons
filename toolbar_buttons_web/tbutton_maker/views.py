@@ -88,6 +88,10 @@ def get_extenion_data(locale_name=None, applications=None):
     else:
         raise Http404
     button_folders, buttons = util.get_button_folders("all", extension_settings)
+    if extension_settings.get("use_staging"):
+        staging_button_folders, staging_buttons = util.get_button_folders("all", extension_settings, "staging")
+        button_folders.extend(staging_button_folders)
+        buttons.extend(staging_buttons)
     buttons_obj = WebButton(button_folders, buttons, extension_settings, applications)
     locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
     return buttons_obj, locale_str, extension_settings, locale_name, applications
@@ -293,7 +297,7 @@ def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/ap
     buttons = Button.objects.filter(session__time__gt=time)
     stats = dict((item["name"], item["downloads"]) for item in buttons.values('name').annotate(downloads=Count('name')).order_by("-downloads"))
     def button_key(item):
-        stats.get(item[0], 0)
+        stats.get(item[0], [None, 0])[1]
     data = index(request, applications=app_name, template_name=None)
     data["button_data"].sort(key=button_key)
     data["entries"] = page_it(request, data["button_data"])
