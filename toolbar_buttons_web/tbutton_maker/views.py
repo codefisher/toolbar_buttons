@@ -182,12 +182,15 @@ def create_buttons(request, query):
 
     output = io.BytesIO()
     buttons, button_locales = build.build_extension(extension_settings, output=output)
-    responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
+    content_type = 'application/x-xpinstall'
+    disposition = 'filename=%s'
+    if query.get('offer-download') == 'true' or ('browser' not in applications):
+        content_type = 'application/octet-stream'
+        disposition = 'attachment; filename=%s'
+    responce = HttpResponse(output.getvalue(), content_type=content_type)
     output.close()
-    if request.POST.get("offer-download") == "true" or ("browser" not in applications):
-        responce['Content-Disposition'] = 'attachment; filename=%s' % (extension_settings.get("output_file") % extension_settings)
-    else:
-        responce['Content-Disposition'] = 'filename=%s' % (extension_settings.get("output_file") % extension_settings)
+    responce['Content-Disposition'] = disposition % (extension_settings.get('output_file') % extension_settings)
+      
     session = DownloadSession()
     session.query_string = query.urlencode()
     session.save()
