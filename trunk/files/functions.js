@@ -195,12 +195,15 @@ initApp: function(Application) {
 			return;
 		} catch(e) {}
 	}
-	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
-	var title = stringBundle.GetStringFromName("no-path-title");
-	var error = stringBundle.GetStringFromName("no-path-message-version");
-	toolbar_buttons.interfaces.PromptService.alert(window, title, error);
-
+	try {
+		toMessengerWindow(); // if this is SeaMonkey, this might be a good fall back?
+	} catch(e) {
+		var stringBundle = toolbar_buttons.interfaces.StringBundleService
+			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		var title = stringBundle.GetStringFromName("no-path-title");
+		var error = stringBundle.GetStringFromName("no-path-message-version");
+		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+	}
 }
 
 getFile: function(name) {
