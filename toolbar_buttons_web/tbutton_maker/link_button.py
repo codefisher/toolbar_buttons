@@ -45,6 +45,8 @@ def create(request):
         icon_data = {}
         if icon_type == "default":
             icon_name = request.POST.get("default-icon")
+            if not icon_name in ["www-%s" % i for i in range(1,11)]:
+                icon_name = "www-1"
             for size in [16, 24, 32]:
                 icon_path = os.path.join(settings.BASE_DIR, settings.DEFAULT_LINK_ICONS, '%s-%s.png' % (icon_name, size))
                 if os.path.exists(icon_path):
