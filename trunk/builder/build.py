@@ -44,10 +44,11 @@ def build_extension(settings, output=None, project_root=None):
         applications = settings.get("applications")
     button_list = settings.get("buttons")
     button_folders, button_names = get_button_folders(button_list, settings)
-    if settings.get("use_staging"):
-        staging_button_folders, staging_buttons = get_folders(button_list, settings, "staging")
-        button_folders.extend(staging_button_folders)
-        button_names.extend(staging_buttons)
+    for name, use_setting in (('staging', 'use_staging'), ('pre', 'use_pre')):
+        if settings.get(use_setting):
+            staging_button_folders, staging_buttons = get_folders(button_list, settings, name)
+            button_folders.extend(staging_button_folders)
+            button_names.extend(staging_buttons)
     buttons = Button(button_folders, button_names, settings, applications)
 
     jar_file = io.BytesIO()

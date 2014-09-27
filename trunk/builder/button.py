@@ -595,7 +595,7 @@ class Button(SimpleButton):
         if self._settings.get("include_toolbars"):
             with open(os.path.join(self._settings.get("project_root"), 'files', 'toolbar-toggle.xul')) as template_file:
                 toolbar_template = template_file.read()
-            button_hash = hashlib.md5(''.join(sorted(self._buttons)))
+            button_hash = hashlib.md5(self._settings.get('extension_id'))
         with open(os.path.join(self._settings.get("project_root"), 'files', 'button.xul')) as template_file:
             template = template_file.read()
         group_files = self._settings.get("file_map_keys")
