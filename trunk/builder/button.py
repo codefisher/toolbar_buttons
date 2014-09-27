@@ -436,7 +436,7 @@ class Button(SimpleButton):
         include_match_replace = re.compile("^#include [a-zA-Z0-9_]*\n?",
                                            re.MULTILINE)
         detect_depandancy = re.compile("(?<=toolbar_buttons.)[a-zA-Z]*")
-        string_match = re.compile("StringFromName\(\"([a-zA-Z.-]*?)\"")
+        string_match = re.compile("StringFromName\(\"([a-zA-Z0-9.-]*?)\"")
 
         multi_line_replace = re.compile("\n{2,}")
         js_files = defaultdict(str)

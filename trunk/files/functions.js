@@ -44,6 +44,7 @@ loadToggleToolbar: function(button_id, toolbar_id){
 					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
 					var mutationObserver = new MutationObserver(function(mutations) {
 								var button = document.getElementById(button_id);
+								if(button == null) return;
 								button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
 							});
 					mutationObserver.observe(toolbar, { attributes: true, subtree: true });

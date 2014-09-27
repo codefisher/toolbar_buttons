@@ -21,13 +21,14 @@ base64: function() {
 	var localFile = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
 	localFile.initWithPath(fp.file.path);
 	if (!localFile) return;
-	try{
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
+		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+	var title = stringBundle.GetStringFromName("tb-base64-alert");
+	
+	try {
 		var contentType = Cc["@mozilla.org/mime;1"].getService(Ci.nsIMIMEService).getTypeFromFile(localFile);
-	}
-	catch(e){
-		toolbar_buttons.sysAlert("chrome://toolbar-button/skin/24/building-go.png",
-			"Data URI Button Says","Error: Unable to detect file type",
-			"Data URI Button Says\nError: Unable to detect file type\nBTW installing Growl will make this notice less annoying on a MAC");
+	} catch(e){
+		toolbar_buttons.interfaces.PromptService.alert(window, title, stringBundle.GetStringFromName("tb-base64-alert-content-type"));
 		return;
 	}
 	var inputStream = Cc["@mozilla.org/network/file-input-stream;1"].createInstance(Ci.nsIFileInputStream);
@@ -37,18 +38,5 @@ base64: function() {
 	var encoded = btoa(stream.readBytes(stream.available()));
 	Components.classes["@mozilla.org/widget/clipboardhelper;1"]
 		.getService(Components.interfaces.nsIClipboardHelper).copyString("data:" + contentType + ";base64," + encoded);
-	toolbar_buttons.sysAlert("chrome://toolbar-button/skin/24/building-go.png",
-		"Data URI Button Says","Copied data URI to clipboard successfully",
-		"Data URI Button Says\nCopied data URI to clipboard successfully\nBTW installing Growl will make this notice less annoying on a MAC");
-}
-sysAlert: function(img,title,msg,err) {
-	try{
-		Components.classes["@mozilla.org/alerts-service;1"]
-			.getService(Components.interfaces.nsIAlertsService).showAlertNotification(
-				img,
-				title, msg, false, "", null);
-	}
-	catch(e){//probally a mac without GROWL installed
-		alert(err);
-	}
+	toolbar_buttons.interfaces.PromptService.alert(window, title, stringBundle.GetStringFromName("tb-base64-alert-copied"));
 }
