@@ -88,10 +88,11 @@ def get_extenion_data(locale_name=None, applications=None):
     else:
         raise Http404
     button_folders, buttons = util.get_button_folders("all", extension_settings)
-    if extension_settings.get("use_staging"):
-        staging_button_folders, staging_buttons = util.get_button_folders("all", extension_settings, "staging")
-        button_folders.extend(staging_button_folders)
-        buttons.extend(staging_buttons)
+    for name, use_setting in (('staging', 'use_staging'), ('pre', 'use_pre')):
+        if extension_settings.get(use_setting):
+            staging_button_folders, staging_buttons = util.get_button_folders("all", extension_settings, name)
+            button_folders.extend(staging_button_folders)
+            buttons.extend(staging_buttons)
     buttons_obj = WebButton(button_folders, buttons, extension_settings, applications)
     locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
     return buttons_obj, locale_str, extension_settings, locale_name, applications
