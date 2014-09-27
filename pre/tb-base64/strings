@@ -1,0 +1,5 @@
+tb-base64.label=Data URI Generator
+tb-base64.tooltip=Converts a file to base64
+tb-base64-alert=Data URI Button
+tb-base64-alert-content-type=Error: Unable to detect file type
+tb-base64-alert-copied=Copied data URI to clipboard successfully
