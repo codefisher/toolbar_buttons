@@ -143,7 +143,7 @@ def build(request, data):
         """pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data)
     xpi.close()
     if data.get('offer-download'):
-        responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
+        responce = HttpResponse(output.getvalue(), content_type="application/octet-stream")
         responce['Content-Disposition'] = 'attachment; filename=%(button_id)s.xpi' % data
     else:
         responce = HttpResponse(output.getvalue(), content_type="application/x-xpinstall")
