@@ -37,6 +37,7 @@ config = {
     "chrome_name": "toolbar-button",
     "icon_size": ("16", "24"),
     "image_path": None,
+    "include_icons_for_custom_window": False,
     "project_root": "",
     #buttons can be left out if their icon is not in the given set.
     #the default action it to use a place holder image

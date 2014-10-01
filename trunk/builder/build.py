@@ -85,20 +85,16 @@ def build_extension(settings, output=None, project_root=None):
     option_applicaions = buttons.get_options_applications()
 
     css, image_list, image_data = buttons.get_css_file()
-    small, large = settings.get("icon_size")
+    icon_sizes = set(buttons.get_icon_size().values())
     jar.writestr(os.path.join("skin", "button.css"), bytes(css))
     for image in set(image_list):
-        if small is not None:
-            try:
-                jar.write(get_image(settings, small, image), os.path.join("skin", small, image))
-            except (OSError, IOError):
-                jar.write(os.path.join(settings.get("project_root"), "files", "default16.png"), os.path.join("skin", small, image))
-                print "can not find file %s" % image
-        try:
-            jar.write(get_image(settings, large, image), os.path.join("skin", large, image))
-        except (OSError, IOError):
-            jar.write(os.path.join(settings.get("project_root"), "files", "default24.png"), os.path.join("skin", large, image))
-            #print "can not find file %s" % image
+        for size in icon_sizes:
+            if size is not None:
+                try:
+                    jar.write(get_image(settings, size, image), os.path.join("skin", size, image))
+                except (OSError, IOError):
+                    jar.write(get_image(settings, size, "picture-empty.png"), os.path.join("skin", size, image))
+                    print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
         jar.writestr(file_name, data)
     jar.close()
