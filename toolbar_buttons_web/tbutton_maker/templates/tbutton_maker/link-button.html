@@ -65,7 +65,7 @@
    </p>
    {% for i in icon_range %}
    <label for="www-{{ i }}">
-     <input type="radio" value="www-{{ i }}"{% if forloop.first %}checked="checked" {% endif %} id="www-{{ i }}" name="default-icon" >
+     <input type="radio" value="www-{{ i }}"{% if forloop.first %} checked="checked"{% endif %} id="www-{{ i }}" name="default-icon" >
      <img src="{% get_static_prefix %}images/link-icons/www-{{ i }}-24.png" alt="www-{{ i }}" width="24" height="24">
    </label>
    {% endfor %}
@@ -93,17 +93,17 @@
    </p>
     <div>
       <label for="icon-16">16x16 icon:
-        <input type="file" name="icon-16" size="40" id="icon-16">
+        <input type="file" name="icon-16" id="icon-16">
       </label>
     </div>
     <div>
       <label for="icon-24">24x24 icon:
-        <input type="file" name="icon-24" size="40" id="icon-24">
+        <input type="file" name="icon-24" id="icon-24">
       </label>
     </div>
     <div>
       <label for="icon-32">32x32 icon:
-        <input type="file" name="icon-32" size="40" id="icon-32">
+        <input type="file" name="icon-32" id="icon-32">
       </label>
     </div>
   </fieldset>
