@@ -136,11 +136,11 @@ def build(request, data):
     xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     for template in ["button.css", "button.js", "button.xul", "chrome.manifest", "install.rdf"]:
         xpi.writestr(template,
-            render_to_string(os.path.join("tbutton_maker", "link", template), data))
+            render_to_string(os.path.join("tbutton_maker", "link", template), data).encode("utf-8"))
     for name in ["icon-16", "icon-24", "icon-32"]:
         xpi.writestr("%s.png" % name, base64.b64decode(data[name]))
     xpi.writestr(os.path.join("defaults", "preferences", "link.js"),
-        """pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data)
+        ("""pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data).encode("utf-8"))
     xpi.close()
     if data.get('offer-download'):
         responce = HttpResponse(output.getvalue(), content_type="application/octet-stream")
