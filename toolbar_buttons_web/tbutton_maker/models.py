@@ -1,10 +1,8 @@
 import datetime
 from django.db import models
 
-# Create your models here.
-
 class DownloadSession(models.Model):
-    time = models.DateTimeField(default=datetime.datetime.now)
+    time = models.DateTimeField(auto_now_add=True)
     query_string = models.TextField()
 
     def save(self, *args, **kwargs):

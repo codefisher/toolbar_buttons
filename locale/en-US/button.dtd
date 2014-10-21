@@ -174,8 +174,8 @@
 <!ENTITY pagesetup.tooltip "Setup how the page is printed">
 <!ENTITY paypal.label "PayPal">
 <!ENTITY paypal.tooltip "Open Paypal">
-<!ENTITY personal-bookmarks-menu-button.label "Toolbar Bookmark Menu">
-<!ENTITY personal-bookmarks-menu-button.tooltip "Show Toolbar Bookmark Menu">
+<!ENTITY personal-bookmarks-menu-button.label "Bookmark Toolbar Menu">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Show Bookmark Toolbar Menu">
 <!ENTITY plainpaste.label "Plain Text Paste">
 <!ENTITY plainpaste.tooltip "Paste Text With No Formatting">
 <!ENTITY preferences.label "Options">
@@ -248,7 +248,7 @@
 <!ENTITY stop-animation.tooltip "Stop Animated GIF&apos;s, Blink and Marquee tags">
 <!ENTITY stop-cookies.label "Toggle Cookies">
 <!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
-<!ENTITY stop-dinamic-content.label "Toggle embedded content">
+<!ENTITY stop-dinamic-content.label "Toggle embedded">
 <!ENTITY stop-dinamic-content.tooltip "Stop all embedded content from loading.">
 <!ENTITY stop-flash.label "Flash">
 <!ENTITY stop-flash.tooltip "Stop Flash from Annoying you">

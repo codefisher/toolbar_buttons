@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_tags %}
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/upvote.css">
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/upvotes/jquery-ui.css">
+    <script type="text/javascript" src="{% get_static_prefix %}js/upvotes/jquery-ui.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="content-box">
+    <a href="/toolbar_button/">Toolbar Buttons</a> &bull; <a href="{% url 'tbutton-request' %}">Button Requets</a>
+</div>
+
+<h1>Toolbar Button Requets</h1>
+
+<p>
+    Welcome to Toolbar Button Requets.  Here you can see what others have asked for, and vote for there requests, or follow the request meaning you will be notified when the request is implemented.  Finally you can <a href="{% url 'tbutton-request-make' %}">make a new button request</a>.
+</p>
+
+{% for request in page %}
+<div class="content-box upvote-request">
+    <h3 id="request-{{ request.pk }}"><a href="{% url 'tbutton-request' request_id=request.pk %}">{{ request.title }}</a></h3>
+    <small>{{ request.posted }} by {{ request.author_name }}</small>
+    <div>
+        {% if request.closed %}
+            <div class="votes"><span class="vote">{{ request.votes }}</span> Votes</div>
+        {% else %}
+            <div class="votes content-box"><a class="vote-link" href="{% url 'tbutton-request-vote' request_id=request.pk %}"><span class="vote">{{ request.votes }}</span> Vote up</a></div>
+        {% endif %}
+        <div class="follow content-box"><a href="{% url 'tbutton-request-follow' request_id=request.pk %}">Follow</a></div>
+    </div>
+    <div class="request-message">
+        {{ request.get_message }}
+        {% if request.application %}
+        <hr />
+        <p>
+            Request is for: {{ request.get_application_display }}
+        </p>
+        {% endif %}
+        {% if request.closed %}
+            <hr />
+            <p>This has been closed because: {{ request.close_reason }}.</p>
+        {% endif %}
+    </div>
+    <div class="content-box">
+        <h3>Comments</h3>
+        {% for comment in upvote_request.get_comments %}
+            <p class="request-comment">{{ comment.message }} - {{ comment.author_name }} at {{ comment.posted }}</p>
+            <hr />
+        {% empty %}
+            <p>There are no comments.</p>
+        {% endfor %}
+        <p>
+        <a href="{% url 'tbutton-request' request_id=request.pk %}#comment">Make Comment</a>
+        </p>
+    </div>
+</div>
+<script type="text/javascript" src="{% get_static_prefix %}js/upvotes.js"></script>
+
+{% empty %}
+    <p>Currently no toolbar button requests have been made, be the first to ask!</p>
+{% endfor %}
+
+
+{% endblock %}

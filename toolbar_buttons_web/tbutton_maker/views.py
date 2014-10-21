@@ -24,6 +24,7 @@ from toolbar_buttons.builder import button, locales, util, build
 
 from toolbar_buttons.toolbar_buttons_web.tbutton_maker.models import Application, Button, DownloadSession
 
+
 class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
         button.SimpleButton.__init__(self, folders, buttons, settings, applications)
@@ -285,7 +286,8 @@ def page_it(request, entries_list):
         entries = paginator.page(page)
     except (EmptyPage, InvalidPage):
         # todo: better raise a redirect
-        entries = paginator.page(paginator.num_pages)
+        if page != 1:
+            entries = paginator.page(paginator.num_pages)
     return entries
 
 def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/app_list.html'):

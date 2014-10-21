@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load field_form %}
+
+{% block content %}
+
+<div class="content-box">
+    <a href="/toolbar_button/">Toolbar Button</a> &bull; <a href="{% url 'tbutton-request' %}">Toolbar Button Requets</a> &bull; Make new toolbar button request
+</div>
+
+    <h1>Toolbar Buttons Requests</h1>
+    <p>
+        Please describe the button that you would like added as best as you can.  If similar funtional already exist in a menu item, mention where to find it.  Or if an extension has something similar, please mention it.
+    </p>
+    <p> Please note that requests will be rejected if:</p>
+    <ul>
+        <li>They ask for button that open web pages, use the <a href="/toolbar_button/link-button-maker/">Link Button Maker</a> instead.</li>
+        <li>They would depend on another extension to work.  It is better to ask the developer of that extension to add the button.</li>
+    </ul>
+    <form action="{% url 'tbutton-request-make' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {% if not request.user.is_authenticated %}
+        <p><small>Please note that you are not <a href="{% url 'login' %}?next={{request.path}}">logged in</a>.  This request will not be connected to your account, and you will not be notified when it is implemented.</small></p>
+        {% endif %}
+        {% form form %}
+        <input type="submit" value="Submit Request">
+    </form>
+    <p>
+        <small>Please note the format used for display the message is markdown.</small>
+    </p>
+{% endblock %}
