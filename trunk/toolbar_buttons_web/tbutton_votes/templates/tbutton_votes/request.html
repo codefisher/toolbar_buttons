@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load field_form %}
+
+{% block head_tags %}
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/upvote.css">
+    <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/upvotes/jquery-ui.css">
+    <script type="text/javascript" src="{% get_static_prefix %}js/upvotes/jquery-ui.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="content-box">
+    <a href="/toolbar_button/">Toolbar Buttons</a> &bull; <a href="{% url 'tbutton-request' %}">Toolbar Button Requets</a> &bull; {{ upvote_request.title }}
+</div>
+
+<div class="content-box upvote-request">
+    <h1 id="request-{{ upvote_request.pk }}">{{ upvote_request.title }}</h1>
+    <small>{{ upvote_request.posted }} by {{ upvote_request.author_name }}</small>
+    <div>
+        {% if upvote_request.closed %}
+            <div class="votes"><span class="vote">{{ upvote_request.votes }}</span> Votes</div>
+        {% else %}
+            <div class="votes content-box"><a class="vote-link" href="{% url 'tbutton-request-vote' request_id=upvote_request.pk %}"><span class="vote">{{ upvote_request.votes }}</span> Vote up</a></div>
+        {% endif %}
+        <div class="follow content-box"><a href="{% url 'tbutton-request-follow' request_id=upvote_request.pk %}">Follow</a></div>
+    </div>
+    <div class="request-message">
+        {{ upvote_request.get_message }}
+        {% if upvote_request.concept_icon %}
+        <hr />
+        <p>
+            Concept Icon: <img src="{{ upvote_request.concept_icon.url }}" alt="">
+        </p>
+        {% endif %}
+        {% if upvote_request.closed %}
+            <hr />
+            <p>This has been closed because: {{ upvote_request.close_reason }}.</p>
+        {% endif %}
+    </div>
+    <div class="content-box">
+        <h3>Comments</h3>
+        {% for comment in upvote_request.get_comments %}
+            <p class="request-comment">{{ comment.message }} - {{ comment.author_name }} at {{ comment.posted }}</p>
+            <hr />
+        {% empty %}
+            <p>There are no comments.</p>
+        {% endfor %}
+        <form id="comment" method="post" action="{% url 'tbutton-request' request_id=upvote_request.pk %}">
+            {% csrf_token %}
+            {% form form %}
+            <input type="submit" value="Submit Comment">
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="{% get_static_prefix %}js/upvotes.js"></script>
+{% endblock %}
