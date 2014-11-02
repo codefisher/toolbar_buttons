@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-page-go"
+	label="&tb-page-go.label;"
+	onclick="gURLBar.handleCommand(event);"
+	tooltiptext="&tb-page-go.tooltip;"/>
