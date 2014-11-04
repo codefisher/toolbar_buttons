@@ -99,9 +99,12 @@ def build_extension(settings, output=None, project_root=None):
         jar.writestr(file_name, data)
     jar.close()
     if settings.get("profile_folder"):
-        with open(os.path.join(settings.get("profile_folder"), "extensions",
+        try:
+            with open(os.path.join(settings.get("profile_folder"), "extensions",
                 settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
-            fp.write(jar_file.getvalue())
+                fp.write(jar_file.getvalue())
+        except IOError:
+            print("Failed to write extension to profile folder")
     if output:
         xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     else:

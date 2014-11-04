@@ -88,16 +88,19 @@ def get_extenion_data(locale_name=None, applications=None):
             locale, load_properites=False)
     else:
         raise Http404
+    buttons_obj = get_buttons_obj(extension_settings, applications)
+    locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
+    return buttons_obj, locale_str, extension_settings, locale_name, applications
+
+def get_buttons_obj(extension_settings, applications):
     button_folders, buttons = util.get_button_folders("all", extension_settings)
     for name, use_setting in (('staging', 'use_staging'), ('pre', 'use_pre')):
         if extension_settings.get(use_setting):
             staging_button_folders, staging_buttons = util.get_button_folders("all", extension_settings, name)
             button_folders.extend(staging_button_folders)
             buttons.extend(staging_buttons)
-    buttons_obj = WebButton(button_folders, buttons, extension_settings, applications)
-    locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
-    return buttons_obj, locale_str, extension_settings, locale_name, applications
-
+    return WebButton(button_folders, buttons, extension_settings, applications)
+    
 def list_buttons(request, locale_name=None, applications=None, template_name='tbutton_maker/list.html'):
     return index(request, locale_name, applications, template_name)
 
@@ -220,17 +223,21 @@ def create(request):
 
 
 def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
-    locale_str = get_extenion_data()[1]
-
+    buttons_obj, locale_str = get_extenion_data()[:2]
     time = datetime.datetime.now() - datetime.timedelta(days)
     buttons = Button.objects.filter(session__time__gt=time)
     stats = list(buttons.values('name').annotate(downloads=Count('name')).order_by("-downloads"))
     sum = buttons.count()
+    applications = dict(buttons_obj.button_applications().items())
     total = 0
     for item in stats:
         count = item["downloads"]
         total += count
+        apps = list(applications[item["name"]])
+        apps.sort()
         item.update({
+            "applications": apps,
+            "icon": buttons_obj.get_icons(item["name"]),
             "label": locale_str('label', item["name"]),
             "average": (float(count) / days),
             "percent": (float(count) / sum * 100),
