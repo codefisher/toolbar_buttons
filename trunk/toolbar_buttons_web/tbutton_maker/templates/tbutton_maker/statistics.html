@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block page_title %}Toolbar Button Statistics{% endblock %}
 
@@ -9,6 +10,7 @@
 			<tr>
 				<th>#</th>
 				<th>Name</th>
+				<th>Applications</th>
 				<th>Id</th>
 				<th>Count</th>
 				<th>Average</th>
@@ -18,6 +20,7 @@
 		</thead>
 		<tfoot>
 			<tr>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -31,12 +34,18 @@
 		{% for item in stats %}
 			<tr>
 				<td>{{ forloop.counter }}</td>
-				<td>{{ item.label }}</td>
+				<td><img src="{% get_static_prefix %}images/pastel-svg/16/{{ item.icon }}" width="16" height="16" alt="{{ item.name|safe }}">
+                    {{ item.label }}</td>
+				<td>                    
+				    {% for app in item.applications %}
+                        <img src="{% get_static_prefix %}images/icons/{{ app }}.png" width="16" height="16" alt="">
+                    {% endfor %}
+                </td>
 				<td>{{ item.name }}</td>
 				<td>{{ item.downloads }}</td>
-				<td>{{ item.average|floatformat:"-3" }}</td>
-				<td>{{ item.percent|floatformat:"-1" }}</td>
-				<td>{{ item.total|floatformat:"-1" }}</td>
+				<td>{{ item.average|floatformat:"-2" }}</td>
+				<td>{{ item.percent|floatformat:"-2" }}</td>
+				<td>{{ item.total|floatformat:"-2" }}</td>
 			</tr>
 		{% endfor %}
 		</tbody>
