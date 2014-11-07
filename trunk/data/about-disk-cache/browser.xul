@@ -3,4 +3,4 @@
 	id="about-disk-cache"
 	label="&about-disk-cache.label;"
 	tooltiptext="&about-disk-cache.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:cache?device=disk', event);" />
+	onclick="toolbar_buttons.LoadURL('about:cache?storage=disk', event);" />
