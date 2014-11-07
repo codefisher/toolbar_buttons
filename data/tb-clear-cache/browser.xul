@@ -3,4 +3,4 @@
 	id="tb-clear-cache"
 	label="&tb-clear-cache.label;"
 	tooltiptext="&tb-clear-cache.tooltip;"
-	onclick="toolbar_buttons.goClearBrowserCache();" />
+	oncommand="toolbar_buttons.goClearBrowserCache();" />
