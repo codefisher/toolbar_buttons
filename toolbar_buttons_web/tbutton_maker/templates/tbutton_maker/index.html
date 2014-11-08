@@ -41,9 +41,10 @@
 		</fieldset>
 		<input type="submit" name="update-submit" value="Update">
 	</fieldset>
-	<fieldset>
+	<fieldset id="button-list-field">
 		<legend>Buttons</legend>
-		<ul id="button-list">
+		<div class="content-box center" style="margin:1em"><label for="filter-list">Filter <input class="search" type="text" id="filter-list" placeholder="Filter" /></label></div>
+		<ul id="button-list" class="list">
 		{% for button, apps, label, tooltip, icon, description in button_data %}
 			<li class="button-item">
 				<label for="{{ button }}-checkbox">
@@ -55,11 +56,18 @@
 				</label>
 				<div class="button-info">
 					<img src="{% get_static_prefix %}images/pastel-svg/16/{{ icon }}" width="16" height="16" alt="{{ tooltip|safe }}">
-					{{ description|linebreaks }}
+					<div class="button-description">{{ description|linebreaks }}</div>
 				</div>
 			</li>
 		{% endfor %}
 		</ul>
+		<script src="{% get_static_prefix %}/js/list.min.js"></script>
+		<script>
+		var options = {
+          valueNames: ['button-name', 'button-description']
+        };        
+        var buttonList = new List('button-list-field', options);
+        </script>
 	</fieldset>
 	<fieldset>
 		<legend>Settings</legend>
