@@ -1,0 +1,8 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    observes="devtoolsMenuBroadcaster_ResponsiveUI"
+    id="tb-responsive-ui"
+    label="&tb-responsive-ui.label;"
+    tooltiptext="&tb-responsive-ui.tooltip;"
+    type="checkbox"
+    oncommand="ResponsiveUI.toggle();"/>
