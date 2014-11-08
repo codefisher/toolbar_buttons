@@ -1,0 +1,9 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    id="tb-all-menus"
+	type="menu-button"
+    label="&tb-all-menus.label;"
+    tooltiptext="&tb-all-menus.tooltip;"
+    oncommand="this.firstChild.showPopup();">
+		<menupopup onpopupshowing="toolbar_buttons.loadAllMenusMenu(this);" oncommand="event.stopPropagation();" />
+</toolbarbutton>
