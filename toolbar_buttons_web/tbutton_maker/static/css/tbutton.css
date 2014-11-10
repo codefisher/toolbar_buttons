@@ -1,11 +1,7 @@
 #button-list,
 #application-list {
 	column-count: 2;
-    column-gap: 5%;
-    column-width: 47.5%;
 	-moz-column-count: 2;
-    -moz-column-gap: 5%;
-    -moz-column-width: 47.5%;
 	margin:0;
 	padding:0;
 }
