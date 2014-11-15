@@ -1,9 +1,8 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="tab-list"
-	type="menu-button"
+	type="menu"
 	label="&tab-list.label;"
-	tooltiptext="&tab-list.tooltip;"
-	oncommand="this.firstChild.showPopup();">
+	tooltiptext="&tab-list.tooltip;">
 		<menupopup onpopupshowing="toolbar_buttons.tabListDropDown(this);" oncommand="event.stopPropagation();" />
 </toolbarbutton>

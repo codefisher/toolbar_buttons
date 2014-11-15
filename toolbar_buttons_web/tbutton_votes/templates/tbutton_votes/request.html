@@ -21,7 +21,11 @@
         {% if upvote_request.closed %}
             <div class="votes"><span class="vote">{{ upvote_request.votes }}</span> Votes</div>
         {% else %}
-            <div class="votes content-box"><a class="vote-link" href="{% url 'tbutton-request-vote' request_id=upvote_request.pk %}"><span class="vote">{{ upvote_request.votes }}</span> Vote up</a></div>
+            <form method="post" action="{% url 'tbutton-request-vote' %}" class="votes content-box">
+                {% csrf_token %}
+                <input type="hidden" value="{{ upvote_request.pk }}" name="request" />
+                <button class="vote-link" type="submit"><span class="vote">{{ upvote_request.votes }}</span> Vote up</button>
+             </form>
         {% endif %}
         <div class="follow content-box"><a href="{% url 'tbutton-request-follow' request_id=upvote_request.pk %}">Follow</a></div>
     </div>
@@ -37,6 +41,11 @@
             <hr />
             <p>This has been closed because: {{ upvote_request.close_reason }}.</p>
         {% endif %}
+        <form method="post" action="{% url 'tbutton-request-follow' %}" class="follow content-box">
+            {% csrf_token %}
+            <input type="hidden" value="{{ upvote_request.pk }}" name="request" />
+            <button type="submit">Follow</button>            
+        </form>
     </div>
     <div class="content-box">
         <h3>Comments</h3>
