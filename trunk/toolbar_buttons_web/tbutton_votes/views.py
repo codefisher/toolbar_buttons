@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from toolbar_buttons.toolbar_buttons_web.tbutton_votes.models import TbuttonRequest, TbuttonRequestComment
 
-from upvotes.views import MakeRequest, RequestList, RequestView, RequestVote, RequestVoteAjax, RequestFollow
+from upvotes.views import MakeRequest, RequestList, RequestView, RequestVote, RequestFollow
 from upvotes.forms import get_request_form, get_anon_request_form, get_request_comment_form, get_anon_request_comment_form
 
 TbuttonRequestForm = get_request_form(TbuttonRequest, ('application', ))
@@ -25,18 +25,12 @@ class TbuttonRequestView(RequestView):
     request_url = 'tbutton-request'
     comment_form = TbuttonRequestCommentForm
     comment_anonymous_form = TbuttonRequestCommentAnonymousForm
-
-class TbuttonVote(object):
+  
+class TbuttonRequestVote(RequestVote):
     request_class = TbuttonRequest
     session_id = 'tbutton-voted-%s'
     request_url = 'tbutton-request'
     duplicate_vote_message = "You can not up vote a button request multiple times."
-    
-class TbuttonRequestVote(TbuttonVote, RequestVote):
-    pass
-
-class TbuttonRequestVoteAjax(TbuttonVote, RequestVoteAjax):
-    pass
 
 class TbuttonRequestFollow(RequestFollow):
     request_class = TbuttonRequest

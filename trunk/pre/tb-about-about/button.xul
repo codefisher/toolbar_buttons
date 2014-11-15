@@ -1,9 +1,8 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="tb-about-about"
-	type="menu-button"
+	type="menu"
 	label="&tb-about-about.label;"
-	tooltiptext="&tb-about-about.tooltip;"
-	oncommand="this.firstChild.showPopup();">
+	tooltiptext="&tb-about-about.tooltip;">
 		<menupopup onpopupshowing="toolbar_buttons.aboutAboutMenu(this);" oncommand="event.stopPropagation();" />
 </toolbarbutton>

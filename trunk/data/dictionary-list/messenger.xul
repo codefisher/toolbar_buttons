@@ -1,10 +1,9 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="dictionary-list"
-	type="menu-button"
+	type="menu"
 	label="&dictionary-list.label;"
-	tooltiptext="&dictionary-list.tooltip;"
-	oncommand="this.firstChild.showPopup();">
+	tooltiptext="&dictionary-list.tooltip;">
 	<menupopup onpopupshowing="toolbar_buttons.addDictionaryList(this);"
 		oncommand="event.stopPropagation();" />
 </toolbarbutton>

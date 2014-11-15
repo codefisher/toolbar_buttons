@@ -1,9 +1,8 @@
 <toolbarbutton 
     class="toolbarbutton-1"
     id="tb-all-menus"
-	type="menu-button"
+	type="menu"
     label="&tb-all-menus.label;"
-    tooltiptext="&tb-all-menus.tooltip;"
-    oncommand="this.firstChild.showPopup();">
+    tooltiptext="&tb-all-menus.tooltip;">
 		<menupopup onpopupshowing="toolbar_buttons.loadAllMenusMenu(this);" oncommand="event.stopPropagation();" />
 </toolbarbutton>
