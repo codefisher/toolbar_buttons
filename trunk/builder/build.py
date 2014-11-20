@@ -26,6 +26,25 @@ def apply_max_version(settings):
             rows.append(item)
         app_data[key] = rows
 
+
+def get_buttons(settings, cls=Button):
+    if settings.get("applications", "all") == "all":
+        applications = settings.get("applications_data").keys()
+    elif isinstance(settings.get("applications"), basestring):
+        applications = settings.get("applications").split(',')
+    else:
+        applications = settings.get("applications")
+    button_list = settings.get("buttons")
+    button_folders, button_names = get_button_folders(button_list, settings)
+    for name, use_setting in ('staging', 'use_staging'), ('pre', 'use_pre'):
+        if settings.get(use_setting):
+            staging_button_folders, staging_buttons = get_folders(button_list, settings, name)
+            button_folders.extend(staging_button_folders)
+            button_names.extend(staging_buttons)
+    
+    buttons = cls(button_folders, button_names, settings, applications)
+    return buttons
+
 def build_extension(settings, output=None, project_root=None):
     if os.path.join(settings.get("image_path")) is None:
         print "Please set the image_path setting"
@@ -35,21 +54,7 @@ def build_extension(settings, output=None, project_root=None):
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales)
     options_locales = Locale(settings, locale_folders, locales, True)
-
-    if settings.get("applications", "all") == "all":
-        applications = settings.get("applications_data").keys()
-    elif isinstance(settings.get("applications"), basestring):
-        applications = settings.get("applications").split(',')
-    else:
-        applications = settings.get("applications")
-    button_list = settings.get("buttons")
-    button_folders, button_names = get_button_folders(button_list, settings)
-    for name, use_setting in (('staging', 'use_staging'), ('pre', 'use_pre')):
-        if settings.get(use_setting):
-            staging_button_folders, staging_buttons = get_folders(button_list, settings, name)
-            button_folders.extend(staging_button_folders)
-            button_names.extend(staging_buttons)
-    buttons = Button(button_folders, button_names, settings, applications)
+    buttons = get_buttons(settings)
 
     jar_file = io.BytesIO()
     jar = zipfile.ZipFile(jar_file, "w", zipfile.ZIP_STORED)
@@ -99,12 +104,13 @@ def build_extension(settings, output=None, project_root=None):
         jar.writestr(file_name, data)
     jar.close()
     if settings.get("profile_folder"):
-        try:
-            with open(os.path.join(settings.get("profile_folder"), "extensions",
-                settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
-                fp.write(jar_file.getvalue())
-        except IOError:
-            print("Failed to write extension to profile folder")
+        for folder in settings.get("profile_folder"):
+            try:
+                with open(os.path.join(folder, "extensions",
+                    settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
+                    fp.write(jar_file.getvalue())
+            except IOError:
+                print("Failed to write extension to profile folder")
     if output:
         xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     else:

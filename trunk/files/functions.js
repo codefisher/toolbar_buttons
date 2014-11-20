@@ -43,11 +43,21 @@ loadToggleToolbar: function(button_id, toolbar_id){
 				if(toolbar) {
 					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
 					var mutationObserver = new MutationObserver(function(mutations) {
+								var attribute = false;
+								for(var mut in mutations) {
+									attribute = attribute || (mut.type == "attributes");
+								}
+								if(!mut) return;
+								var attributeName = false;
+								for(var attr in mutations) {
+									attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
+								}
+								if(!attributeName) return;
 								var button = document.getElementById(button_id);
 								if(button == null) return;
 								button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
 							});
-					mutationObserver.observe(toolbar, { attributes: true, subtree: true });
+					mutationObserver.observe(toolbar, { attributes: true, subtree: false });
 				}
 			},
 	true);
@@ -67,9 +77,11 @@ OpenAddonsMgr: function(type, typeUrl) {
 			addonManager.gViewController.loadView(typeUrl);
 		} else {
 			var contents = toolbar_buttons.getUrlContents("chrome://mozapps/content/extensions/extensions.xul");
-			window.openDialog(
-					"chrome://mozapps/content/extensions/extensions.xul", "",
-					"chrome,menubar,extra-chrome,toolbar,dialog=no,resizable", contents.match("Addons:Manager") ? {"view" :typeUrl} : type);
+			var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+                   .getService(Components.interfaces.nsIWindowWatcher);
+			var win = ww.openWindow(window, "chrome://mozapps/content/extensions/extensions.xul",
+			                        "Addons:Manager", "chrome,centerscreen", null);
+			win.addEventListener("load", function() { win.gViewController.loadView(typeUrl); }, false);
 		}
 	}
 }
@@ -147,13 +159,13 @@ showAMenu: function(aEvent) {
 
 openMessengerWindowOrTab: function(url, event) {
 	if(event.button == 0) {
-		window.openDialog(url);
+		toolbar_buttons.openDialog(window, url, "", "chrome,centerscreen");
 	} else if(event.button == 1) {
 		var tabmail = document.getElementById('tabmail');
 		if(tabmail) {
 			tabmail.openTab('contentTab', {contentPage: url});
 		} else {
-			window.openDialog(url);
+			toolbar_buttons.openDialog(window, url, "", "chrome,centerscreen");
 		}
 	}
 }
@@ -250,7 +262,7 @@ PreferenceWatcher: function() {
 
 	this.startup = function(pref, button, func) {
 		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
-		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
+		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch);
 		this.prefs.addObserver("", this, false);
 		if(button)
 			this.button = document.getElementById(button);
@@ -565,4 +577,18 @@ openPermissions: function(type, title, text) {
 				   introText	  : bundlePreferences.GetStringFromName(text) };
 	window.openDialog("chrome://browser/content/preferences/permissions.xul",
 			"Browser:Permissions", "", params);
+}
+
+openDialog: function(parentWindow, url, windowName, features) {
+    var array = Components.classes["@mozilla.org/array;1"]
+                          .createInstance(Components.interfaces.nsIMutableArray);
+    for (var i = 4; i < arguments.length; i++) {
+        var variant = Components.classes["@mozilla.org/variant;1"]
+                                .createInstance(Components.interfaces.nsIWritableVariant);
+        variant.setFromVariant(arguments[i]);
+        array.appendElement(variant, false);
+    }
+    var watcher = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+                            .getService(Components.interfaces.nsIWindowWatcher);
+    return watcher.openWindow(parentWindow, url, windowName, features, array);
 }

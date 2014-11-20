@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "Tietoja">
+<!ENTITY about-application.tooltip "Tietoja &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Avaa about:cache-sivu, jossa voi tarkastella välimuistin sisältöä">
 <!ENTITY about-config.label "about:config">
@@ -40,15 +42,14 @@
 <!ENTITY bottom-page.tooltip "Siirry sivun alareunaan">
 <!ENTITY change-text-direction.label "Vaihda tekstin suunta">
 <!ENTITY change-text-direction.tooltip "Vaihda tekstin suunta: vasemmalta oikealle tai oikealta vasemmalle">
-<!ENTITY check-for-update.label "Päivitä">
-<!ENTITY check-for-update.tooltip "Tarkista päivitykset">
 <!ENTITY clear-data.label "Poista tietoja">
 <!ENTITY clear-data.tooltip "Avaa yksityistietojen poiston ponnahdusikkuna">
 <!ENTITY clear-url.label "Piilota URL">
 <!ENTITY clear-url.tooltip "Piilota URL-palkin sisältö">
 <!ENTITY clipboard.label "Linkki leikepöydältä">
 <!ENTITY clipboard.menuitem "Avaa linkki leikepöydältä">
-<!ENTITY clipboard.newtab "Avaa linkki leikepöydältä uuteen välilehteen">
+<!ENTITY clipboard.newtab "Uuteen välilehteen">
+<!ENTITY clipboard.newwindow "Uuteen ikkunaan">
 <!ENTITY clipboard.tooltip "Hae linkki leikepöydältä ja avaa se">
 <!ENTITY close-all-tabs.label "Sulje kaikki">
 <!ENTITY close-all-tabs.tooltip "Sulje kaikki välilehdet">
@@ -76,6 +77,8 @@
 <!ENTITY dictionary-list.tooltip "Pikanäppäin nykyisen oikolukusanaston vaihtamiseen">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Avaa eBay">
+<!ENTITY edit-as-new.label "Muokkaa uutena">
+<!ENTITY edit-as-new.tooltip "Muokkaa viesti uutena">
 <!ENTITY edit-draft.label "Muokkaa luonnosta">
 <!ENTITY edit-draft.tooltip "Muokkaa tallennettua viestiluonnosta">
 <!ENTITY empty-trash.label "Tyhjennä roskakori">
@@ -114,6 +117,8 @@
 <!ENTITY help.tooltip "Avaa ohjedokumentaatio">
 <!ENTITY hide-images.label "Piilota kuvat">
 <!ENTITY hide-images.tooltip "Piilota kaikki kuvat ja taustakuvat nykyisessä asiakirjassa">
+<!ENTITY home-page-change.add-current "Lisää nykysivu">
+<!ENTITY home-page-change.current "Aseta nykysivuksi">
 <!ENTITY home-page-change.label "Vaihda aloitussivu">
 <!ENTITY home-page-change.multiple "Aseta useampi linkki aloitussivuksi">
 <!ENTITY home-page-change.tooltip "Vaihda Firefoxin aloitussivu">
@@ -255,16 +260,57 @@
 <!ENTITY tasks-in-view.tooltip "Näytä/piilota tehtävät kalenterissa">
 <!ENTITY tasks-toggle.label "Tehtäväpalkki">
 <!ENTITY tasks-toggle.tooltip "Näytä/piilota tehtäväpalkki">
+<!ENTITY tb-about-blank.label "Tyhjennä välilehti">
+<!ENTITY tb-about-blank.tooltip "Avaa/lataa tyhjä välilehti">
+<!ENTITY tb-clear-cache.label "Tyhjennä välimuisti">
+<!ENTITY tb-clear-cache.tooltip "Tyhjentää selaimen välimuistin">
+<!ENTITY tb-clear-search.label "Tyhjennä haku">
+<!ENTITY tb-clear-search.tooltip "Siirtyy hakupalkkiin ja tyhjentää sen">
 <!ENTITY tb-clear-url.label "Tyhjennä URL">
 <!ENTITY tb-clear-url.tooltip "Tyhjennä URL-palkki ja siirry siihen">
+<!ENTITY tb-clone-tab.label "Kopioi välilehti">
+<!ENTITY tb-clone-tab.tooltip "Tekee tämän välilehden kopion">
+<!ENTITY tb-cookie-manager.label "Evästeiden hallinta">
+<!ENTITY tb-cookie-manager.tooltip "Avaa tämän sivun evästeiden hallinnan">
+<!ENTITY tb-download-sync.label "Lataa/synkronoi nyt">
+<!ENTITY tb-download-sync.tooltip "Suorita lataus ja synkronointi ennen offline-tilaan menoa">
 <!ENTITY tb-edit-menu.label "Muokkaa-valikko">
 <!ENTITY tb-edit-menu.tooltip "Näytä Muokkaa-valikko">
 <!ENTITY tb-file-menu.label "Tiedostovalikko">
 <!ENTITY tb-file-menu.tooltip "Näytä tiedostovalikko">
+<!ENTITY tb-history-menu.label "Historia">
+<!ENTITY tb-history-menu.tooltip "Avaa historiavalikon">
+<!ENTITY tb-new-event.label "Uusi tapahtuma">
+<!ENTITY tb-new-event.tooltip "Lisää uuden tapahtuman kalenteriin.">
+<!ENTITY tb-new-task.label "Uusi tehtävä">
+<!ENTITY tb-new-task.tooltip "Lisää uuden tehtävän kalenteriin.">
+<!ENTITY tb-open-in-conversation.label "Avaa keskusteluna">
+<!ENTITY tb-open-in-conversation.tooltip "Avaa tämä viesti keskusteluna">
+<!ENTITY tb-page-info-media.label "Mediainfosivu">
+<!ENTITY tb-page-info-media.tooltip "Avaa mediainfosivun">
+<!ENTITY tb-search-go-button.label "Suorita haku">
+<!ENTITY tb-search-go-button.tooltip "Käynnistää verkkohaun">
+<!ENTITY tb-search-minus.label "Pienennä hakupalkin kokoa">
+<!ENTITY tb-search-minus.tooltip "Pienentää hakupalkkia 10 pikselin verran">
+<!ENTITY tb-search-plus.label "Lissä hakupalkin kokoa">
+<!ENTITY tb-search-plus.tooltip "Lisä hakupalkkia 10 pikselin verran">
+<!ENTITY tb-search-resize.label "Muuta hakupalkin kokoa">
+<!ENTITY tb-search-resize.tooltip "Muuttaa hakupalkin leveyttä">
+<!ENTITY tb-show-all-history.label "Näytä kaikki historia">
+<!ENTITY tb-show-all-history.tooltip "Avaa kaikki historiatiedot esittävän ikkunan">
+<!ENTITY tb-toggle-headers.label "Sähköpostin otsakkeet">
+<!ENTITY tb-toggle-headers.tooltip "Valitsee sähköpostin otsakkeiden näyttötavan">
 <!ENTITY tb-toggle-menu-bar.label "Valikkopalkki">
 <!ENTITY tb-toggle-menu-bar.tooltip "Näytä/piilota valikkopalkki">
+<!ENTITY tb-toggle-popup-blocker.key "Q">
+<!ENTITY tb-toggle-popup-blocker.label "Ponnahdusikkunoiden estäjä">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Valitsee käytetäänkö ponnahdusikkunoiden estäjää">
 <!ENTITY tb-tools-menu.label "Työkalut-valikko">
 <!ENTITY tb-tools-menu.tooltip "Näytä Työkalut-valikko">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Avaa Twitterin etusivun">
+<!ENTITY tb-url-go-button.label "Mene osoitteeseen">
+<!ENTITY tb-url-go-button.tooltip "Mene tähän osoitteeseen">
 <!ENTITY tb-view-menu.label "Näytä-valikko">
 <!ENTITY tb-view-menu.tooltip "Näytä Näytä-valikko">
 <!ENTITY themes.label "Teemat">
@@ -273,14 +319,6 @@
 <!ENTITY thunderbird-extension.tooltip "Hae lisää Thunderbirdin laajennuksia">
 <!ENTITY thunderbird-theme.label "Teemat">
 <!ENTITY thunderbird-theme.tooltip "Hae lisää Thunderbirdin teemoja">
-<!ENTITY tiny-url.copy.to.clipboard "Kopioi leikepöydälle">
-<!ENTITY tiny-url.email "Lähetä linkki sähköpostina">
-<!ENTITY tiny-url.label "Pienois-URL">
-<!ENTITY tiny-url.link.use "Linkin valinnat">
-<!ENTITY tiny-url.tooltip "Luo pienois-URL">
-<!ENTITY tiny-url.use.normal "Käytä xrl.in-sivua">
-<!ENTITY tiny-url.use.preview "Käytä preview.xrl.in-sivua">
-<!ENTITY tiny-url.visit "Vieraile Xrl.in-sivustolla">
 <!ENTITY toggle-proxy.label "Välityspalvelin">
 <!ENTITY toggle-proxy.tooltip "Ota välityspalvelin käyttöön/pois käytöstä">
 <!ENTITY toggle-read.label "Luettu">
@@ -289,6 +327,8 @@
 <!ENTITY toggle-starred.tooltip "Lisää/poista tähti">
 <!ENTITY toggle-styles.label "Tyylit">
 <!ENTITY toggle-styles.tooltip "Ota sivuston määrittämät tyylit käyttöön/pois käytöstä">
+<!ENTITY toggle-toolbar.label "Työkalupalkin valitsin">
+<!ENTITY toggle-toolbar.tooltip "Avaa/sulkee päätyökalupalkin">
 <!ENTITY toolbar-menu.label "Työkalupalkit">
 <!ENTITY toolbar-menu.tooltip "Piilota/Näytä työkalupalkit">
 <!ENTITY top-page.label "Yläreuna">
@@ -308,6 +348,7 @@
 <!ENTITY use-document-fonts.label "Sivun kirjasinlajit">
 <!ENTITY use-document-fonts.tooltip "Siirry oletuskirjasinlajien ja sivun omien kirjasinlajien välillä">
 <!ENTITY watched-with-unread-threads.label "Seuratut, joissa lukemattomia">
+<!ENTITY watched-with-unread-threads.tooltip "Katso seuratut, joissa lukemattomia">
 <!ENTITY websearch.label "Web-haku">
 <!ENTITY websearch.tooltip "Hae tietoa webistä käyttäen oletushakukonettasi">
 <!ENTITY wikipedia.label "Wikipedia">

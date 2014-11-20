@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Atteindre le bas de page">
 <!ENTITY change-text-direction.label "Modifier la direction du texte">
 <!ENTITY change-text-direction.tooltip "Modifier la direction de gauche à droite ou de droite à gauche">
-<!ENTITY check-for-update.label "Mettre à jour">
-<!ENTITY check-for-update.tooltip "Rechercher des mises à jour">
 <!ENTITY clear-data.label "Effacer les données">
 <!ENTITY clear-data.tooltip "Ouvrir le panneau de gestion des informations privées">
 <!ENTITY clear-url.label "Vider la barre d&apos;adresse">
@@ -262,24 +260,46 @@
 <!ENTITY tasks-in-view.tooltip "Afficher / masquer les tâches à réaliser">
 <!ENTITY tasks-toggle.label "Tâches">
 <!ENTITY tasks-toggle.tooltip "Afficher/masquer la barre des tâches">
+<!ENTITY tb-about-blank.label "Onglet vide">
+<!ENTITY tb-about-blank.tooltip "Ouvre / charge un onglet vide">
+<!ENTITY tb-clear-cache.label "Effacer le cache">
+<!ENTITY tb-clear-cache.tooltip "Effacer le cache du navigateur">
 <!ENTITY tb-clear-search.label "Effacer la recherche">
 <!ENTITY tb-clear-search.tooltip "Effacer et placer le curseur dans la barre de recherche">
 <!ENTITY tb-clear-url.label "Effacer l&apos;URL">
 <!ENTITY tb-clear-url.tooltip "Effacer l&apos;URL et laisser le curseur dans la barre d&apos;adresse">
+<!ENTITY tb-clone-tab.label "Copier l'onglet">
+<!ENTITY tb-clone-tab.tooltip "Fait une copie de l'onglet courant">
+<!ENTITY tb-cookie-manager.label "Gestionnaire de cookies">
+<!ENTITY tb-cookie-manager.tooltip "Ouvre le gestionnaire de cookies pour la page courante">
+<!ENTITY tb-download-sync.label "Télécharger / synchro. maintenant">
+<!ENTITY tb-download-sync.tooltip "Télécharge et synchronise avant de passer hors connexion">
 <!ENTITY tb-edit-menu.label "Menu « Édition »">
 <!ENTITY tb-edit-menu.tooltip "Afficher le menu « Édition »">
 <!ENTITY tb-file-menu.label "Menu « Fichier »">
 <!ENTITY tb-file-menu.tooltip "Afficher le menu « Fichier »">
+<!ENTITY tb-history-menu.label "Historique">
+<!ENTITY tb-history-menu.tooltip "Ouvre le menu de l'historique">
 <!ENTITY tb-new-event.label "Nouvel évènement">
 <!ENTITY tb-new-event.tooltip "Ajouter un nouvel évènement dans le calendrier.">
 <!ENTITY tb-new-task.label "Nouvelle Tâche">
 <!ENTITY tb-new-task.tooltip "Ajouter une nouvelle tâche au calendrier.">
+<!ENTITY tb-open-in-conversation.label "Ouvrir dans la discussion">
+<!ENTITY tb-open-in-conversation.tooltip "Ouvre le message courant dans la discussion">
+<!ENTITY tb-page-info-media.label "Médias de la page">
+<!ENTITY tb-page-info-media.tooltip "Ouvre les infos de la page à l'onglet médias">
+<!ENTITY tb-search-go-button.label "Recherche">
+<!ENTITY tb-search-go-button.tooltip "Fait une recherche Web">
 <!ENTITY tb-search-minus.label "Réduire la taille de la barre de recherche">
 <!ENTITY tb-search-minus.tooltip "Réduit la largeur de la barre de recherche de 10 pixels">
 <!ENTITY tb-search-plus.label "Augmenter la taille de la barre de recherche">
 <!ENTITY tb-search-plus.tooltip "Augmente la largeur de la barre de recherche de 10 pixels">
 <!ENTITY tb-search-resize.label "Taille de la barre de recherche">
 <!ENTITY tb-search-resize.tooltip "Modifie la taille de la barre de recherche">
+<!ENTITY tb-show-all-history.label "Afficher toute l'historique">
+<!ENTITY tb-show-all-history.tooltip "Ouvre la fenêtre de toute l'historique">
+<!ENTITY tb-toggle-headers.label "Entêtes de courriel">
+<!ENTITY tb-toggle-headers.tooltip "Affiche/masque les entêtes de courriel">
 <!ENTITY tb-toggle-menu-bar.label "Barre de menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Afficher / masquer la barre de menu">
 <!ENTITY tb-toggle-popup-blocker.key "P">
@@ -289,6 +309,8 @@
 <!ENTITY tb-tools-menu.tooltip "Afficher le menu « Outils »">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Ouvrir le site Twitter">
+<!ENTITY tb-url-go-button.label "S'y rendre">
+<!ENTITY tb-url-go-button.tooltip "Se rend à l'adresse courante">
 <!ENTITY tb-view-menu.label "Menu « Affichage »">
 <!ENTITY tb-view-menu.tooltip "Afficher le menu « Affichage »">
 <!ENTITY themes.label "Thèmes">
@@ -297,14 +319,6 @@
 <!ENTITY thunderbird-extension.tooltip "Obtenir davantage d&apos;extensions pour Thunderbird">
 <!ENTITY thunderbird-theme.label "Thèmes">
 <!ENTITY thunderbird-theme.tooltip "Obtenir davantage de thèmes pour Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Copier vers le presse-papiers">
-<!ENTITY tiny-url.email "Lien courriel">
-<!ENTITY tiny-url.label "Réduire l&apos;URL">
-<!ENTITY tiny-url.link.use "Options du lien">
-<!ENTITY tiny-url.tooltip "Créer une URL réduite avec Xrl.in">
-<!ENTITY tiny-url.use.normal "Utiliser xrl.in">
-<!ENTITY tiny-url.use.preview "Utiliser preview.xrl.in">
-<!ENTITY tiny-url.visit "Consulter Xrl.in">
 <!ENTITY toggle-proxy.label "Proxy">
 <!ENTITY toggle-proxy.tooltip "Activer / désactiver le proxy">
 <!ENTITY toggle-read.label "Modifier l&apos;état de lecture">
@@ -334,6 +348,7 @@
 <!ENTITY use-document-fonts.label "Modifier les polices">
 <!ENTITY use-document-fonts.tooltip "Utiliser soit les polices par défaut soit celles du site">
 <!ENTITY watched-with-unread-threads.label "Sujets lus avec non lus">
+<!ENTITY watched-with-unread-threads.tooltip "Affiche les fils de discussions suivis avec non lus">
 <!ENTITY websearch.label "Recherche Web">
 <!ENTITY websearch.tooltip "Rechercher sur Internet en utilisant votre moteur de recherche par défaut">
 <!ENTITY wikipedia.label "Wikipédia">

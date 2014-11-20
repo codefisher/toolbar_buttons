@@ -30,6 +30,10 @@ class WebButton(button.SimpleButton):
         button.SimpleButton.__init__(self, folders, buttons, settings, applications)
         self._description = {}
         self._icons = {}
+        self._source_folder = {}
+        for folder in folders:
+            head, button_id = os.path.split(folder)
+            self._source_folder[button_id] = os.path.split(head)[1]
 
         for folder, buttonId, files in self._info:
             if "description" in files:
@@ -42,6 +46,9 @@ class WebButton(button.SimpleButton):
                 if image and not selector:
                     self._icons[buttonId] = image
                     break
+                
+    def get_source_folder(self, button):
+        return self._source_folder[button] 
 
     def get_xul_files(self, button):
         return self._xul_files[button]
@@ -241,7 +248,8 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
             "label": locale_str('label', item["name"]),
             "average": (float(count) / days),
             "percent": (float(count) / sum * 100),
-            "total": (float(total) / sum * 100)
+            "total": (float(total) / sum * 100),
+            "folder": buttons_obj.get_source_folder(item["name"]),
         })
     data = {
         "stats": stats,

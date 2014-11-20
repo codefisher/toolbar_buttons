@@ -17,7 +17,7 @@
 <!ENTITY add-address.label "Adres toevoegen">
 <!ENTITY add-address.tooltip "E-mailadres kopiëren naar Adresboek">
 <!ENTITY addons.label "Add-ons">
-<!ENTITY addons.tooltip "Add-onsbeheerder openen">
+<!ENTITY addons.tooltip "Add-onbeheerder openen">
 <!ENTITY all-threads.label "Alle discussies">
 <!ENTITY all-threads.tooltip "Alle discussies bekijken">
 <!ENTITY attachments-delete.label "Bijlagen verwijderen">
@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Naar onderkant van de pagina gaan">
 <!ENTITY change-text-direction.label "Tekstrichting wijzigen">
 <!ENTITY change-text-direction.tooltip "De tekstrichting wijzigen van links naar rechts of rechts naar links">
-<!ENTITY check-for-update.label "Bijwerken">
-<!ENTITY check-for-update.tooltip "Op updates controleren">
 <!ENTITY clear-data.label "Gegevens opruimen">
 <!ENTITY clear-data.tooltip "Dialoogvenster ‘Privégegevens opruimen’ openen">
 <!ENTITY clear-url.label "URL verbergen">
@@ -262,24 +260,46 @@
 <!ENTITY tasks-in-view.tooltip "Taken in beeld wisselen">
 <!ENTITY tasks-toggle.label "Taken wisselen">
 <!ENTITY tasks-toggle.tooltip "Taakbalk wisselen">
+<!ENTITY tb-about-blank.label "Tabblad wissen">
+<!ENTITY tb-about-blank.tooltip "Een leeg tabblad openen/laden">
+<!ENTITY tb-clear-cache.label "Buffer opschonen">
+<!ENTITY tb-clear-cache.tooltip "Browserbuffer opschonen">
 <!ENTITY tb-clear-search.label "Zoekveld wissen">
 <!ENTITY tb-clear-search.tooltip "Wissen en op zoekbalk focussen">
 <!ENTITY tb-clear-url.label "URL wissen">
 <!ENTITY tb-clear-url.tooltip "Wissen en op locatiebalk focussen">
+<!ENTITY tb-clone-tab.label "Tabbald kopiëren">
+<!ENTITY tb-clone-tab.tooltip "Maakt een kopie van het huidige tabblad">
+<!ENTITY tb-cookie-manager.label "Cookiebeheerder">
+<!ENTITY tb-cookie-manager.tooltip "Opent de cookiebeheerder voor de huidige webpagina.">
+<!ENTITY tb-download-sync.label "Nu downloaden/synchroniseren">
+<!ENTITY tb-download-sync.tooltip "Download en synchronisatie uitvoeren alvorens offline te gaan">
 <!ENTITY tb-edit-menu.label "Menu Bewerken">
 <!ENTITY tb-edit-menu.tooltip "Menu Bewerken weergeven">
 <!ENTITY tb-file-menu.label "Menu Bestand">
 <!ENTITY tb-file-menu.tooltip "Menu Bestand weergeven">
+<!ENTITY tb-history-menu.label "Geschiedenis">
+<!ENTITY tb-history-menu.tooltip "Menu Geschiedenis openen">
 <!ENTITY tb-new-event.label "Nieuwe gebeurtenis">
 <!ENTITY tb-new-event.tooltip "Een nieuwe gebeurtenis aan de kalender toevoegen.">
 <!ENTITY tb-new-task.label "Nieuwe taak">
 <!ENTITY tb-new-task.tooltip "Een nieuwe taak toevoegen aan de kalender.">
+<!ENTITY tb-open-in-conversation.label "Openen in discussie">
+<!ENTITY tb-open-in-conversation.tooltip "Huidige bericht in discussie openen">
+<!ENTITY tb-page-info-media.label "Pagina-media">
+<!ENTITY tb-page-info-media.tooltip "Pagina-informatie openen op mediatabblad">
+<!ENTITY tb-search-go-button.label "Zoekopdracht uitvoeren">
+<!ENTITY tb-search-go-button.tooltip "Op het web zoeken">
 <!ENTITY tb-search-minus.label "Zoekbalk verkleinen">
 <!ENTITY tb-search-minus.tooltip "Verkleint de breedte van de zoekbalk met 10 pixels">
 <!ENTITY tb-search-plus.label "Zoekbalk vergroten">
 <!ENTITY tb-search-plus.tooltip "Vergroot de breedte van de zoekbalk met 10 pixels">
 <!ENTITY tb-search-resize.label "Grootte zoekbalk wijzigen">
 <!ENTITY tb-search-resize.tooltip "Wijzigt de breedte van de zoekbalk">
+<!ENTITY tb-show-all-history.label "Alle geschiedenis weergeven">
+<!ENTITY tb-show-all-history.tooltip "Het venster Alle geschiedenis tonen openen">
+<!ENTITY tb-toggle-headers.label "E-mailheaders">
+<!ENTITY tb-toggle-headers.tooltip "Weergave e-mailheaders wisselen">
 <!ENTITY tb-toggle-menu-bar.label "Menubalk wisselen">
 <!ENTITY tb-toggle-menu-bar.tooltip "De menubalk wisselen">
 <!ENTITY tb-toggle-popup-blocker.key "Q">
@@ -289,6 +309,8 @@
 <!ENTITY tb-tools-menu.tooltip "Menu Extra weergeven">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Twitter-startpagina openen">
+<!ENTITY tb-url-go-button.label "Adres zoeken">
+<!ENTITY tb-url-go-button.tooltip "Naar huidig adres gaan">
 <!ENTITY tb-view-menu.label "Menu Beeld">
 <!ENTITY tb-view-menu.tooltip "Menu Beeld weergeven">
 <!ENTITY themes.label "Thema’s">
@@ -297,14 +319,6 @@
 <!ENTITY thunderbird-extension.tooltip "Meer Thunderbirdextensies verkrijgen">
 <!ENTITY thunderbird-theme.label "Thema’s">
 <!ENTITY thunderbird-theme.tooltip "Meer Thunderbirdthema’s verkrijgen">
-<!ENTITY tiny-url.copy.to.clipboard "Naar Klembord kopiëren">
-<!ENTITY tiny-url.email "Koppeling per e-mail versturen">
-<!ENTITY tiny-url.label "Kleine URL">
-<!ENTITY tiny-url.link.use "Koppelingsopties">
-<!ENTITY tiny-url.tooltip "Kleine URL maken">
-<!ENTITY tiny-url.use.normal "xrl.in gebruiken">
-<!ENTITY tiny-url.use.preview "preview.xrl.in gebruiken">
-<!ENTITY tiny-url.visit "xrl.in bezoeken">
 <!ENTITY toggle-proxy.label "Proxy wisselen">
 <!ENTITY toggle-proxy.tooltip "De proxy in- en uitschakelen">
 <!ENTITY toggle-read.label "Gelezen wisselen">
@@ -334,6 +348,7 @@
 <!ENTITY use-document-fonts.label "Paginalettertypen wisselen">
 <!ENTITY use-document-fonts.tooltip "Wisselen tussen de standaard- en de sitelettertypen">
 <!ENTITY watched-with-unread-threads.label "Bekeken discussies met ongelezen berichten">
+<!ENTITY watched-with-unread-threads.tooltip "Gevolgde conversaties met ongelezen berichten bekijken">
 <!ENTITY websearch.label "Het web doorzoeken">
 <!ENTITY websearch.tooltip "Het web doorzoeken met uw standaardzoekmachine">
 <!ENTITY wikipedia.label "Wikipedia">

@@ -1,15 +1,17 @@
-{% extends "base.html" %}
+{% extends "simple.html" %}
 {% load static %}
 
 {% block page_title %}Toolbar Button Statistics{% endblock %}
 
 {% block content %}
+    
 	<h2>Toolbar Button Statistics</h2>
 	<table>
 		<thead>
 			<tr>
 				<th>#</th>
 				<th>Name</th>
+				<th>Folder</th>
 				<th>Applications</th>
 				<th>Id</th>
 				<th>Count</th>
@@ -20,6 +22,7 @@
 		</thead>
 		<tfoot>
 			<tr>
+				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
@@ -36,6 +39,7 @@
 				<td>{{ forloop.counter }}</td>
 				<td><img src="{% get_static_prefix %}images/pastel-svg/16/{{ item.icon }}" width="16" height="16" alt="{{ item.name|safe }}">
                     {{ item.label }}</td>
+                <td>{{ item.folder }}</td>
 				<td>                    
 				    {% for app in item.applications %}
                         <img src="{% get_static_prefix %}images/icons/{{ app }}.png" width="16" height="16" alt="">
