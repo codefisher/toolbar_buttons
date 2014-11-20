@@ -5,7 +5,7 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.2b1",
+    "version": "1.0.2",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "https://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
