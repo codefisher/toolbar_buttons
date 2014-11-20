@@ -14,15 +14,16 @@ TranslatePage: function() {
 UpdateTranslateOverlay: function() {
 	if(!document.getElementById('translate'))
 		return;
-	var file = toolbar_buttons.interfaces.Properties.get('ProfD', Ci.nsIFile);
-	file.append("extensions");
-	file.append("{{uuid}}");
-	file.append("translate-options.xul");
-	if(!file.exists() || ((new Date()).getTime() - file.lastModifiedTime) > 1000*60*60*24*7) {
-		var XMLhttp = new XMLHttpRequest();
-		XMLhttp.open("GET", "https://translate.google.com/");
-		XMLhttp.onload = toolbar_buttons.UpdateTranslateOverlayOnload;
-		XMLhttp.send(null);
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");
+	AddonManager.getAddonByID("{{uuid}}", function(addon) {
+		var file = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
+		file.append("translate-options.xul");
+		if(!file.exists() || ((new Date()).getTime() - file.lastModifiedTime) > 1000*60*60*24*7) {
+			var XMLhttp = new XMLHttpRequest();
+			XMLhttp.open("GET", "https://translate.google.com/");
+			XMLhttp.onload = toolbar_buttons.UpdateTranslateOverlayOnload;
+			XMLhttp.send(null);
+		}
 	}
 }
 

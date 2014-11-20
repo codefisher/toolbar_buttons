@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form method="get" action="{% url 'tbutton-create' %}" class="form-field">
+<form method="get" action="{% url 'tbutton-create' %}" id="tbutton-form" class="form-field">
 	<fieldset>
 		<legend>Locale &amp; Application</legend>
 		<div class="form-field">
@@ -45,14 +45,14 @@
 		<legend>Buttons</legend>
 		<div class="content-box center" style="margin:1em"><label for="filter-list">Filter <input class="search" type="text" id="filter-list" placeholder="Filter" /></label></div>
 		<ul id="button-list" class="list">
-		{% for button, apps, label, tooltip, icon, description in button_data %}
-			<li class="button-item">
+		{% for button, apps, label, tooltip, icon, description, folder in button_data %}
+			<li class="button-item" id="{{ button }}-list-item">
 				<label for="{{ button }}-checkbox">
-					<input type="checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
+					<input type="checkbox" class="button-checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
 					{% for app in apps %}
 						<img src="{% get_static_prefix %}images/icons/{{ app }}.png" width="16" height="16" alt="">
 					{% endfor %}
-					<span class="button-name">{{ label|safe }}</span>
+					<span class="button-name">{{ label|safe }}{% if folder != 'data' %} *{% endif %}</span>
 				</label>
 				<div class="button-info">
 					<img src="{% get_static_prefix %}images/pastel-svg/16/{{ icon }}" width="16" height="16" alt="{{ tooltip|safe }}">
@@ -61,8 +61,18 @@
 			</li>
 		{% endfor %}
 		</ul>
+		<p>
+		    * These buttons are not in the official release, but will be added if they are popular here.
+		</p>
+		<div id="suggestion-box">
+		    <p>People who used the buttons you picked, also used these buttons.</p>
+    		<ul id="suggestsions">
+    		
+    		</ul>
+		</div>
 		<script src="{% get_static_prefix %}/js/list.min.js"></script>
 		<script>
+		setSuggestions();
 		var options = {
           valueNames: ['button-name', 'button-description']
         };        
