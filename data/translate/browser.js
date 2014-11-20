@@ -24,7 +24,7 @@ UpdateTranslateOverlay: function() {
 			XMLhttp.onload = toolbar_buttons.UpdateTranslateOverlayOnload;
 			XMLhttp.send(null);
 		}
-	}
+	});
 }
 
 UpdateTranslateOverlayOnload: function(XMLhttp) {
