@@ -3,7 +3,7 @@ installAddons: function() {
 			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var title = stringBundle.GetStringFromName("installaddons");
 	var fp = toolbar_buttons.interfaces.FilePicker();
-	fp.init(window, title, fp.modeOpen);
+	fp.init(window, title, fp.modeOpenMultiple);
 	fp.appendFilter(stringBundle
 			.GetStringFromName("installaddons-addons"), "*.xpi; *.jar");
 	fp.appendFilter(stringBundle
@@ -11,24 +11,40 @@ installAddons: function() {
 	fp.appendFilter(stringBundle
 			.GetStringFromName("installaddons-themes"), "*.jar");
 	fp.appendFilters(fp.filterAll);
-	if (fp.show() == fp.returnOK) {
-		var path = fp.file.path;
-		var cutFileType = path.lastIndexOf(".") + 1;
-		var fileType = path.substring(cutFileType);
-		var fileProtocolHandler = toolbar_buttons.interfaces.IOService
-									.getProtocolHandler("file")
-									.QueryInterface(Ci.nsIFileProtocolHandler);
-		var url = fileProtocolHandler.newFileURI(fp.file)
-					.QueryInterface(Ci.nsIURL);
-		if (fileType == "xpi") {
-			var xpi = {};
-			xpi[decodeURIComponent(url.fileBaseName)] = url.spec;
-			InstallTrigger.install(xpi);
-		} else if (fileType == "jar") {
-			InstallTrigger.installChrome(InstallTrigger.SKIN, url.spec,
-					decodeURIComponent(url.fileBaseName));
+
+	// taken from /mozilla/toolkit/mozapps/extensions/content/extensions.js
+        if (fp.show() != fp.returnOK)
+          return;
+
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");
+	
+        var files = fp.files;
+        var installs = [];
+
+		function getBrowserElement() {
+		  return window.QueryInterface(Ci.nsIInterfaceRequestor)
+		               .getInterface(Ci.nsIDocShell)
+		               .chromeEventHandler;
 		}
-	}
+
+        function buildNextInstall() {
+          if (!files.hasMoreElements()) {
+            if (installs.length > 0) {
+              // Display the normal install confirmation for the installs
+              AddonManager.installAddonsFromWebpage("application/x-xpinstall",
+                                                    getBrowserElement(), null, installs);
+            }
+            return;
+          }
+
+          var file = files.getNext();
+          AddonManager.getInstallForFile(file, function cmd_installFromFile_getInstallForFile(aInstall) {
+            installs.push(aInstall);
+            buildNextInstall();
+          });
+        }
+
+        buildNextInstall();
 }
 
 viewAddonsExceptions: function(event) {

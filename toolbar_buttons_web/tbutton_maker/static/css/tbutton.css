@@ -1,3 +1,27 @@
+#suggestion-box {
+    position:fixed;
+    z-index:10;
+    right:1em;
+    top:15%;
+    width:200px;
+
+    border:2px solid #000;
+    background:#000;
+    background:rgba(0,0,0, 0.8);
+    border-radius:6px;
+    color:#fff;
+    padding:1em;
+}
+
+#suggestion-box ul {
+	list-style-type:none;
+	padding:0;
+}
+
+#suggestion-box img {
+	padding:0 5px;
+}
+
 #button-list,
 #application-list {
 	column-count: 2;

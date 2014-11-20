@@ -6,6 +6,7 @@ import operator
 import io
 import datetime
 import hashlib
+import json
 
 from django.contrib.sites.models import Site
 from django.shortcuts import render, redirect
@@ -18,6 +19,7 @@ from django.db.models import Count
 from django.utils.html import escape
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.views.decorators.csrf import csrf_exempt
+
 
 from toolbar_buttons.config.settings import config
 from toolbar_buttons.builder import button, locales, util, build
@@ -118,7 +120,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
     for buttonId, apps in buttons_obj.button_applications().items():
         button_data.append((buttonId, sorted(list(apps)), locale_str("label", buttonId),
                 locale_str("tooltip", buttonId), buttons_obj.get_icons(buttonId),
-                buttons_obj.description(buttonId)))
+                buttons_obj.description(buttonId), buttons_obj.get_source_folder(buttonId)))
     def button_key(item):
         return item[2].lower() if item[2] else None
     locale_folders, locales_names = util.get_locale_folders(extension_settings.get("locale"), extension_settings)
@@ -257,6 +259,18 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
         "average": float(sum)/(len(stats)*days) if stats else 0
     }
     return render(request, template_name, data)
+
+def suggestions(request):
+    days = 30
+    time = datetime.datetime.now() - datetime.timedelta(days)
+    button = request.GET.getlist('button')
+    inner_qs = Button.objects.filter(name__in=button, session__time__gt=time).values('session')
+    results = Button.objects.filter(session__in=inner_qs).exclude(name__in=button)
+    stats = list(results.values('name').annotate(downloads=Count('name')).order_by("-downloads"))[0:int(request.GET.get('count', 10))]
+    return HttpResponse(
+        json.dumps(stats),
+        content_type = 'application/javascript; charset=utf8'
+    )
 
 def old_update(request):
     query = QueryDict('').copy()
