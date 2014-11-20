@@ -1,4 +1,5 @@
 if(!this.load_toolbar_button) {
+	Components.utils.import("resource://gre/modules/AddonManager.jsm");
 	var load_toolbar_button = {
 		start: function() {
 			var test_ids = ["status-bar"], i;
@@ -11,19 +12,18 @@ if(!this.load_toolbar_button) {
 			var ext_id = "{{uuid}}";
 			var version = "{{version}}";
 			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-			var url = "{{version_url}}" + version
+			var url = "{{version_url}}{{version}}";
+			AddonManager.getAddonByID(ext_id, function(addon) {
+				var extensionFlagFile = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
+				extensionFlagFile.append("installed");
 
-			var extensionFlagFile = toolbar_buttons.interfaces.Properties.get("ProfD", Ci.nsIFile);
-			extensionFlagFile.append("extensions");
-			extensionFlagFile.append(ext_id);
-			extensionFlagFile.append("installed");
-
-			if(!extensionFlagFile.exists() && prefs.getCharPref("current.version") != version){
-				prefs.setCharPref("current.version", version);
-				load_toolbar_button.file_put_contents(extensionFlagFile,version);
-				load_toolbar_button.load_url(url);
-			}
-			window.removeEventListener("load", load_toolbar_button.init, false);
+				if(!extensionFlagFile.exists() && prefs.getCharPref("current.version") != version){
+					prefs.setCharPref("current.version", version);
+					load_toolbar_button.file_put_contents(extensionFlagFile,version);
+					load_toolbar_button.load_url(url);
+				}
+				window.removeEventListener("load", load_toolbar_button.init, false);
+			});
 		},
 		file_put_contents: function(file,data){
 			var foStream = toolbar_buttons.interfaces.FileOutputStream();
@@ -41,8 +41,8 @@ if(!this.load_toolbar_button) {
 			}
 		},
 		init: function() {
-			setTimeout(load_toolbar_button.start, 100);
+			setTimeout(load_toolbar_button.start, 3000);
 		}
 	}
-	window.addEventListener("load", load_toolbar_button.init, false);
+	window.addEventListener("DOMContentLoaded", load_toolbar_button.init, false);
 }

@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1"
-	id="print-preview"
-	label="&print-preview.label;"
-	tooltiptext="&print-preview.tooltip;"
-	command="Browser:PrintPreview" />

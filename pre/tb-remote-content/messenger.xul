@@ -1,0 +1,6 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    id="tb-remote-content"
+    label="&tb-remote-content.label;"
+    tooltiptext="&tb-remote-content.tooltip;"
+    oncommand="toolbar_buttons.openRemoteContent();"/>

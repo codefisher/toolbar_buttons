@@ -5,9 +5,9 @@ config = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.1b3",
+    "version": "1.0.2b1",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
-    "homepage": "http://codefisher.org/toolbar_button/",
+    "homepage": "https://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
     "licence": os.path.join("files", "LICENCE"),
     "update_url": None,
@@ -21,7 +21,7 @@ config = {
     "merge_images": False,
     # should a page be shown when the extension is installed
     "show_updated_prompt": True,
-    "version_url": "http://codefisher.org/toolbar_button/version/",
+    "version_url": "https://codefisher.org/toolbar_button/version/",
 
     # sets what is added to the extension, this is either a comer seperated
     # list of values, or the special value "all"
@@ -112,14 +112,14 @@ config = {
          "suite_browser": ("suite", )
     },
     "file_map": {
-        "loader": ("browser","mail","compose","read","calendar"),
-        "button": ("browser","mail","compose","read","calendar"),
+        "loader": ("browser","mail","compose","read","calendar","suite_browser"),
+        "button": ("browser","mail","compose","read","calendar","suite_browser"),
         "messenger": ("mail", "compose", "read"),
         "calendar": ("lightning", "calendar"),
-        "browser": ("browser", "suite_browser")
+        "browser": ("browser", "suite_browser"),
     },
      # order is important
-    "file_map_keys": ["loader","button", "messenger", "calendar"],
+    "file_map_keys": ["loader","button", "messenger", "calendar", "browser"],
     "file_to_palette": {
          "browser": "BrowserToolbarPalette",
          "mail": "MailToolbarPalette",
@@ -137,11 +137,14 @@ config = {
         "compose": "compose-toolbox",
         "read": "mail-toolbox",
         "calendar": "calendar-toolbox",
-
         "suite_browser": "navigator-toolbox",
     },
     "file_to_menu": {
         "browser": ("menu_ToolsPopup", "devToolsSeparator"),
+        "mail": ("taskPopup", "devToolsSeparator"),
+        "compose": ("taskPopup", "tasksMenuMail"),
+        "read": ("taskPopup", "devToolsSeparator"),
+        "suite_browser": ("menu_ToolsPopup", "devToolsSeparator"),
     },
     "file_exclude": {
         "lightning": ("mail", "messenger")

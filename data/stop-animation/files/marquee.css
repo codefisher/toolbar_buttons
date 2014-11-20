@@ -9,6 +9,5 @@ marquee {
 
 /* Stop those fancy CSS animations! */
 * {
-	-moz-transition-property: none !important;
 	transition-property: none !important;
 }

@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Zum Seitenende gehen">
 <!ENTITY change-text-direction.label "Textrichtung umkehren">
 <!ENTITY change-text-direction.tooltip "Textrichtung von links nach rechts oder von rechts nach links umkehren">
-<!ENTITY check-for-update.label "Aktualisieren">
-<!ENTITY check-for-update.tooltip "Auf Aktualisierungen prüfen">
 <!ENTITY clear-data.label "Private Daten löschen">
 <!ENTITY clear-data.tooltip "Dialog &quot;Private Daten löschen&quot; öffnen">
 <!ENTITY clear-url.label "Leere Adressleiste">
@@ -262,24 +260,39 @@
 <!ENTITY tasks-in-view.tooltip "Aufgaben im Kalender anzeigen/nicht anzeigen">
 <!ENTITY tasks-toggle.label "Aufgaben">
 <!ENTITY tasks-toggle.tooltip "Aufgabenbereich ein-/ausblenden">
+<!ENTITY tb-about-blank.tooltip "Einen leeren Tab öffnen oder laden">
+<!ENTITY tb-clear-cache.label "Cache leeren">
+<!ENTITY tb-clear-cache.tooltip "Leert den Cache des Browsers">
 <!ENTITY tb-clear-search.label "Suchleiste leeren">
 <!ENTITY tb-clear-search.tooltip "Die Suchleiste jetzt leeren und die Schreibmarke hineinsetzen">
 <!ENTITY tb-clear-url.label "Adressleiste leeren">
 <!ENTITY tb-clear-url.tooltip "Adressleiste leeren und und die Schreibmarke hineinsetzen">
+<!ENTITY tb-clone-tab.label "Tab kopieren">
+<!ENTITY tb-clone-tab.tooltip "Den aktuellen Tab duplizieren">
+<!ENTITY tb-cookie-manager.label "Cookie-Verwaltung">
+<!ENTITY tb-cookie-manager.tooltip "Die Cookie-Verwaltung für die aktuelle Webseite öffnen.">
+<!ENTITY tb-download-sync.label "Jetzt Herunterladen oder Synchronisieren">
 <!ENTITY tb-edit-menu.label "Menü &quot;Bearbeiten&quot;">
 <!ENTITY tb-edit-menu.tooltip "Menü &quot;Bearbeiten&quot; anzeigen">
 <!ENTITY tb-file-menu.label "Menü &quot;Datei&quot;">
 <!ENTITY tb-file-menu.tooltip "Menü &quot;Datei&quot; anzeigen">
+<!ENTITY tb-history-menu.label "Chronik">
+<!ENTITY tb-history-menu.tooltip "Öffnet das Chronik-Menü">
 <!ENTITY tb-new-event.label "Neues Ereignis">
 <!ENTITY tb-new-event.tooltip "Fügt ein neues Ereignis dem Kalender hinzu.">
 <!ENTITY tb-new-task.label "Neue Aufgabe">
 <!ENTITY tb-new-task.tooltip "Fügt eine neue Aufgabe dem Kalender hinzu.">
+<!ENTITY tb-open-in-conversation.label "In Themenbaum anzeigen">
+<!ENTITY tb-open-in-conversation.tooltip "Aktuelle Nachricht in Themenbaum anzeigen">
+<!ENTITY tb-search-go-button.label "Suche beginnen">
 <!ENTITY tb-search-minus.label "Suchleistenbreite verkleinern">
 <!ENTITY tb-search-minus.tooltip "Verringert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
 <!ENTITY tb-search-plus.label "Suchleistenbreite vergrößern">
 <!ENTITY tb-search-plus.tooltip "Erweitert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
 <!ENTITY tb-search-resize.label "Größe der Suchleiste ändern">
 <!ENTITY tb-search-resize.tooltip "Die Breite der Suchleiste festlegen">
+<!ENTITY tb-show-all-history.label "Gesamte Chronik anzeigen">
+<!ENTITY tb-toggle-headers.label "E-Mail-Header">
 <!ENTITY tb-toggle-menu-bar.label "Menüleiste">
 <!ENTITY tb-toggle-menu-bar.tooltip "Menüleiste ein-/ausblenden">
 <!ENTITY tb-toggle-popup-blocker.key "Q">
@@ -297,14 +310,6 @@
 <!ENTITY thunderbird-extension.tooltip "Erweiterungen für Thunderbird herunterladen">
 <!ENTITY thunderbird-theme.label "Themes">
 <!ENTITY thunderbird-theme.tooltip "Themes für Thunderbird herunterladen">
-<!ENTITY tiny-url.copy.to.clipboard "In die Zwischenablage kopieren">
-<!ENTITY tiny-url.email "Kurz-URL per E-Mail versenden">
-<!ENTITY tiny-url.label "Kurz-URL">
-<!ENTITY tiny-url.link.use "Link-Einstellungen">
-<!ENTITY tiny-url.tooltip "Kurz-URL erzeugen">
-<!ENTITY tiny-url.use.normal "Xrl.in verwenden">
-<!ENTITY tiny-url.use.preview "Preview.xrl.in verwenden">
-<!ENTITY tiny-url.visit "Xrl.in besuchen">
 <!ENTITY toggle-proxy.label "Proxy">
 <!ENTITY toggle-proxy.tooltip "Proxy ein-/ausschalten">
 <!ENTITY toggle-read.label "Gelesen">

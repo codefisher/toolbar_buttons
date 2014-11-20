@@ -102,11 +102,12 @@ class SimpleButton():
                 self._info.append((folder, button, files))
                 self._xul_files[button] = xul_files
 
-            if "key" in files:
+            if "key" in files and self._settings.get("use_keyboard_shortcuts"):
                 with open(os.path.join(folder, "key"), "r") as keys:
                     key_shortcut = list(keys.read().partition(":"))
                     key_shortcut.pop(1)
                     self._button_keys[button] = key_shortcut
+                    
             if "strings" in files:
                 with open(os.path.join(folder, "strings"), "r") as strings:
                     for line in strings:
@@ -168,7 +169,7 @@ class Button(SimpleButton):
                         self._button_js[file_name].append(js.read())
 
             if button in self._settings.get("keyboard_custom_keys"):
-                self._button_keys[button] = self._settings.get("keyboard_custom_keys")[button]
+                self._button_keys[button].update(self._settings.get("keyboard_custom_keys")[button])
 
             if "preferences" in files:
                 with open(os.path.join(folder, "preferences"), "r") as preferences:
@@ -196,6 +197,9 @@ class Button(SimpleButton):
             if "style.css" in files:
                 with open(os.path.join(folder, "style.css"), "r") as style:
                     self._button_style[button] = style.read()
+                    
+    def get_button_xul(self):
+        return self._button_xul
 
     def get_extra_files(self):
         return self._extra_files
@@ -332,11 +336,18 @@ class Button(SimpleButton):
                     image_set.add(image)
             image_count = len(image_set)
             image_map_size = {}
+            image_map_x = {}
             for size in icon_size_set:
                 if size is not None:
-                    image_map_size[size] = Image.new("RGBA", (image_count*int(size), int(size)), (0, 0, 0, 0))
+                    y, x = int(math.ceil(image_count*int(size) / 1000.0)), (1000 / int(size))                    
+                    image_map_x[size] = x
+                    image_map_size[size] = Image.new("RGBA", (x * int(size), y * int(size)), (0, 0, 0, 0))
         count = 0
         offset = 0
+        def box_cmp(x, offset):
+            y_offset = offset / x
+            x_offset = offset % x
+            return (x_offset * int(size), y_offset * int(size), (x_offset + 1) * int(size), (y_offset + 1) * int(size))
         for button, image_data in self._button_image.iteritems():
             values["id"] = button
             for image, modifier in image_data:
@@ -363,8 +374,7 @@ class Button(SimpleButton):
                             image_map = {}
                             for size in icon_size_set:
                                 if size is not None:
-                                    box = (offset * int(size), 0, (offset + 1) * int(size), int(size))
-                                    image_map_size[size].paste(Image.open(io.BytesIO(data[size])), box)
+                                    image_map_size[size].paste(Image.open(io.BytesIO(data[size])), box_cmp(image_map_x[size], offset))
                             count += 1
                     else:
                         offset = count
@@ -383,9 +393,8 @@ class Button(SimpleButton):
                                 image_map[image] = offset
                                 for size in icon_size_set:
                                     if size is not None:
-                                        box = (offset * int(size), 0, (offset + 1) * int(size), int(size))
                                         im = Image.open(get_image(self._settings, size, image))
-                                        image_map_size[size].paste(im, box)
+                                        image_map_size[size].paste(im, box_cmp(image_map_x[size], offset))
                                 count += 1
                             except IOError:
                                 print "image %s does not exist" % image
@@ -407,12 +416,12 @@ class Button(SimpleButton):
                     elif name == "window":
                         selectors[size].append("#%s%s" % (button, modifier))
                 if self._settings.get("merge_images"):
-                    values["top"] = 0
                     for size in icon_size_set:
                         if size is not None:
                             values["size"] = size        
-                            values["selectors"] = ", ".join(selectors[size])          
-                            values.update({"left": offset * int(size), "bottom": size, "right": (offset + 1) * int(size)})
+                            values["selectors"] = ", ".join(selectors[size])
+                            left, top, right, bottom = box_cmp(image_map_x[size], offset)
+                            values.update({"top": top, "left": left, "bottom": bottom, "right": right})
                             lines.append("""%(selectors)s {"""
                                      """\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(size)s/button.png") !important;"""
                                      """\n\t-moz-image-region: rect(%(top)spx %(right)spx %(bottom)spx %(left)spx);\n}""" % values)
@@ -576,12 +585,14 @@ class Button(SimpleButton):
         return self._properties_strings
 
     def get_keyboard_shortcuts(self, application):
-        if not self._settings.get("use_keyboard_shortcuts") and not self._settings.get("keyboard_custom_keys"):
+        if not self._settings.get("use_keyboard_shortcuts"):
             return ""
         keys = []
         for button, (key, modifier) in self._button_keys.iteritems():
             if application in self._button_applications[button]:
                 keys.append("""<key key="%s" modifiers="%s" id="%s-key" command="%s" />""" % (key, modifier, button, button))
+                if self._settings.get("create_menu"):
+                    keys.append("""<key key="%s" modifiers="%s" id="%s-key" command="%s-menu-item" />""" % (key, modifier, button, button))
         if keys:
             return """\n <keyset id="mainKeyset">\n\t%s\n </keyset>""" % "\n\t".join(keys)
         else:
@@ -603,6 +614,8 @@ class Button(SimpleButton):
                      if name not in ("id", "tooltiptext", "class")
                         or (name == "class" and value != "toolbarbutton-1")]
                 attrs.append('id="%s-menu-item"' % button_id)
+                if self._settings.get("use_keyboard_shortcuts") and button_id in self._button_keys:
+                    attrs.append('key="%s-key"' % button_id)
                 data.append("<menuitem %s/>" % "\n\t\t".join(attrs))
         if not data:
             return ""

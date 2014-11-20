@@ -1,0 +1,6 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    id="tb-cookie-exceptions"
+    label="&tb-cookie-exceptions.label;"
+    tooltiptext="&tb-cookie-exceptions.tooltip;"
+	oncommand="toolbar_buttons.openCookieExceptions();" />

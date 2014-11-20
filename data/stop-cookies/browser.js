@@ -1,3 +1,6 @@
+#include getETDL
+#include openPermissions
+
 toggleCookies: function(button) {
 	toolbar_buttons.prefToggleNumber(button, 'network.cookie.cookieBehavior', [1,2,0,0]);
 }

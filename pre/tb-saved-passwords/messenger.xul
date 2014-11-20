@@ -1,0 +1,6 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    id="tb-saved-passwords"
+    label="&tb-saved-passwords.label;"
+    tooltiptext="&tb-saved-passwords.tooltip;"
+    onclick="toolbar_buttons.openMessengerWindowOrTab('chrome://passwordmgr/content/passwordManager.xul', event);"/>
