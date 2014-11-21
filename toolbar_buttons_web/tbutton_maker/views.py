@@ -81,7 +81,7 @@ def locale_string(button_locale, locale_name, buttons_obj):
         return value.replace("&brandShortName;", "").replace("&apos;", "'")
     return locale_str
 
-def get_extenion_data(locale_name=None, applications=None):
+def get_extenion_data(locale_name=None, applications=None, buttons_ids="all"):
     extension_settings = dict(config)
     extension_settings["project_root"] = settings.TBUTTON_DATA
     default_local = extension_settings.get("default_locale")
@@ -97,15 +97,15 @@ def get_extenion_data(locale_name=None, applications=None):
             locale, load_properites=False)
     else:
         raise Http404
-    buttons_obj = get_buttons_obj(extension_settings, applications)
+    buttons_obj = get_buttons_obj(extension_settings, applications, buttons_ids)
     locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
     return buttons_obj, locale_str, extension_settings, locale_name, applications
 
-def get_buttons_obj(extension_settings, applications):
-    button_folders, buttons = util.get_button_folders("all", extension_settings)
+def get_buttons_obj(extension_settings, applications, buttons_ids="all"):
+    button_folders, buttons = util.get_button_folders(buttons_ids, extension_settings)
     for name, use_setting in (('staging', 'use_staging'), ('pre', 'use_pre')):
         if extension_settings.get(use_setting):
-            staging_button_folders, staging_buttons = util.get_button_folders("all", extension_settings, name)
+            staging_button_folders, staging_buttons = util.get_button_folders(buttons_ids, extension_settings, name)
             button_folders.extend(staging_button_folders)
             buttons.extend(staging_buttons)
     return WebButton(button_folders, buttons, extension_settings, applications)
@@ -154,6 +154,13 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         return data
     return render(request, template_name, data)
 
+def get_labels(buttons, locale_name, buttons_ids):
+    result = []
+    buttons_obj, locale_str, extension_settings, locale_name, applications = get_extenion_data(locale_name, None, buttons_ids)
+    for button in buttons:
+        result.append(locale_str("label", button))
+    return result, buttons_obj
+
 def create_buttons(request, query):
     buttons = query.getlist("button")
     locale = query.get("button-locale", query.get("locale", "all"))
@@ -169,6 +176,15 @@ def create_buttons(request, query):
 
     if not locale or query.get("include-all-locales") == "true":
         locale = "all"
+        
+    labels, buttons_obj = get_labels(buttons, locale, buttons)
+    labels.sort(key=str.lower)
+    extension_settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
+
+    if len(buttons) == 1:
+        extension_settings["name"] = "%s Button" % get_labels(buttons, "all", locale)[0]
+        extension_settings["icon"] = button.get_image(extension_settings, "32", buttons_obj.get_icons(buttons[0]))
+
     if query.get("create-toolbars") == "true":
         extension_settings["put_button_on_toolbar"] = True
         extension_settings["include_toolbars"] = -1
@@ -190,6 +206,7 @@ def create_buttons(request, query):
     icons_size = settings.TBUTTON_ICON_SET_SIZES.get(settings.TBUTTON_DEFAULT_ICONS).get(query.get("icon-size"))
     if icons_size:
         extension_settings["icon_size"] = icons_size
+    extension_settings["chrome_name"] = "toolbar-button-%s" % hashlib.md5("_".join(buttons)).hexdigest()[0:10]
     extension_settings["extension_id"] = "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest()
     extension_settings["update_url"] = "https://%s%s?%s" % (Site.objects.get_current().domain,
             reverse("tbutton-update"), escape(update_query.urlencode()))
@@ -208,10 +225,10 @@ def create_buttons(request, query):
     session = DownloadSession()
     session.query_string = query.urlencode()
     session.save()
-    for button in buttons.buttons():
-        Button.objects.create(name=button, session=session)
-    for button in buttons.applications():
-        Application.objects.create(name=button, session=session)
+    for button_record in buttons.buttons():
+        Button.objects.create(name=button_record, session=session)
+    for button_record in buttons.applications():
+        Application.objects.create(name=button_record, session=session)
     return responce
 
 @csrf_exempt

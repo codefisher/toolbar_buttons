@@ -114,6 +114,9 @@ class SimpleButton():
                         name, _, value = line.strip().partition("=")
                         if name:
                             self._strings[name] = value
+                            
+    def __len__(self):
+        return len(self._buttons)
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = self._settings.get("file_to_application")[file_name]

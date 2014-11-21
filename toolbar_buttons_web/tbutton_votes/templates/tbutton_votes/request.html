@@ -27,7 +27,11 @@
                 <button class="vote-link" type="submit"><span class="vote">{{ upvote_request.votes }}</span> Vote up</button>
              </form>
         {% endif %}
-        <div class="follow content-box"><a href="{% url 'tbutton-request-follow' request_id=upvote_request.pk %}">Follow</a></div>
+        <form method="post" action="{% url 'pastel-svg-request-follow' %}" class="follow content-box">
+            {% csrf_token %}
+            <input type="hidden" value="{{ upvote_request.pk }}" name="request" />
+            <button type="submit">Follow</button>            
+        </form>
     </div>
     <div class="request-message">
         {{ upvote_request.get_message }}
