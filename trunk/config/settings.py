@@ -1,6 +1,6 @@
 import os
 
-config = {
+config_default = {
     # Meta data the belongs to the extension
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
@@ -64,7 +64,7 @@ config = {
     "keyboard_custom_keys": {},
 
     "output_folder": "extensions",
-    "output_file": "toolbar-buttons-%(version)s.xpi",
+    "output_file": "%(chrome_name)s-%(version)s.xpi",
 
     # parts of the extension are copied here, if set
     "profile_folder": None,
@@ -150,6 +150,8 @@ config = {
         "lightning": ("mail", "messenger")
     }
 }
+
+config = dict(config_default)
 
 try:
     from local_settings import config as local_config
