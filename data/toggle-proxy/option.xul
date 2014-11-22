@@ -6,6 +6,7 @@
 	<description>&toggle.proxy.description;</description>
 	<caption label="&toggle.prox.label;"/>
 	<radiogroup preference="{{pref-root}}toggle.proxy">
+		<radio value="0" label="&toggle.proxy.direct;"/>
 		<radio value="1" label="&toggle.proxy.manual;"/>
 		<radio value="2" label="&toggle.proxy.auto.configuration;"/>
 		<radio value="4" label="&toggle.proxy.auto.detect;"/>

@@ -12,6 +12,7 @@
 <!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
 <!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
 <!ENTITY toggle.proxy.manual "Manual proxy configuration">
+<!ENTITY toggle.proxy.direct "Direct connection, no proxy">
 <!ENTITY favorite-page.label "Favorite Page">
 <!ENTITY toggle.proxy.system "Use system proxy settings">
 <!ENTITY translate.label "Translate">

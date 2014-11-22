@@ -1,5 +1,4 @@
 if(!this.load_toolbar_button) {
-	Components.utils.import("resource://gre/modules/AddonManager.jsm");
 	var load_toolbar_button = {
 		start: function() {
 			var test_ids = ["status-bar"], i;
@@ -13,6 +12,7 @@ if(!this.load_toolbar_button) {
 			var version = "{{version}}";
 			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 			var url = "{{version_url}}{{version}}";
+			Components.utils.import("resource://gre/modules/AddonManager.jsm");				
 			AddonManager.getAddonByID(ext_id, function(addon) {
 				var extensionFlagFile = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
 				extensionFlagFile.append("installed");
