@@ -51,6 +51,9 @@ config_default = {
     "put_button_on_toolbar": True,
     # if a menu should be added with all the buttons that can be changed into menu items
     "create_menu": False,
+    # if set, the disciption will be change to list the buttons in the extension
+    # and if there is only one button, also the title and icon will be change
+    "fix_meta": False,
 
 
     # controls for the locales

@@ -32,8 +32,12 @@ class SimpleButton():
             Image
         except NameError:
             self._settings["merge_images"] = False
-        self._applications = applications
+        if applications == "all":
+            self._applications = applications
+        else:
+            self._applications = self._settings["applications_data"].keys()
         self._button_image = defaultdict(list)
+        self._icons = {}
         self._button_keys = {}
         self._button_applications = defaultdict(set)
 
@@ -89,7 +93,9 @@ class SimpleButton():
                             if not os.path.exists(get_image(settings, large_icon_size, name)):
                                 button_wanted = False
                                 del self._button_image[button]
-                                continue
+                        if name and not modifier:
+                            self._icons[button] = name
+                            
             elif button_wanted:
                 raise ValueError("%s does not contain image listing." % folder)
 
@@ -130,10 +136,36 @@ class SimpleButton():
         return self._applications
 
     def buttons(self):
-        return self._button_names
+        return list(self._button_names)
 
     def get_string(self, name, locale=None):
         return self._strings.get(name, "")
+
+    def get_icons(self, button):
+        return self._icons[button]
+    
+    def get_xul_files(self, button):
+        return self._xul_files[button]
+    
+    def locale_string(self, button_locale, locale_name):
+        def locale_str(str_type, button_id):
+            default_locale = self._settings.get('default_locale', 'en-US')
+            value = button_locale.get_dtd_value(locale_name, "%s.%s" % (button_id, str_type), self)
+            if value is None:
+                if str_type == "tooltip":
+                    regexp = r'tooltiptext="&(.*\.tooltip);"'
+                else:
+                    regexp = r'label="&(.*\.label);"'                
+                with open(self.get_xul_files(button_id)[0]) as fp:
+                    data = fp.read()
+                    match = re.search(regexp, data)
+                    value = button_locale.get_dtd_value(locale_name, match.group(1), self)
+                if value is None:
+                    value = button_locale.get_dtd_value(default_locale, match.group(1), self)
+            if value is None:
+                return '' #print button_id
+            return value.replace("&brandShortName;", "").replace("&apos;", "'")
+        return locale_str
 
 class Button(SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
