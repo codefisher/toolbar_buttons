@@ -4,11 +4,14 @@ toggleTheProxy: function() {
 		extPrefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var proxyState = prefs.getIntPref("network.proxy.type");
 	var defaultState = toolbar_buttons.interfaces.PrefService.getDefaultBranch(null).getIntPref("network.proxy.type");
-	if (proxyState == defaultState) {
-		prefs.setIntPref("network.proxy.type", extPrefs.getIntPref("toggle.proxy"));
-	} else {
-		extPrefs.setIntPref("toggle.proxy", proxyState);
+	var customState = extPrefs.getIntPref("toggle.proxy");
+	if(customState == defaultState) {
+		defaultState = 0;
+	}
+	if (proxyState == customState) {
 		prefs.setIntPref("network.proxy.type", defaultState);
+	} else {
+		prefs.setIntPref("network.proxy.type", customState);
 	}
 }
 

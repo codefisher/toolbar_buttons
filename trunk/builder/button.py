@@ -94,7 +94,7 @@ class SimpleButton():
                                 button_wanted = False
                                 del self._button_image[button]
                         if name and not modifier:
-                            self._icons[button] = name
+                            self._icons[button] = name.strip()
                             
             elif button_wanted:
                 raise ValueError("%s does not contain image listing." % folder)
@@ -144,9 +144,6 @@ class SimpleButton():
     def get_icons(self, button):
         return self._icons[button]
     
-    def get_xul_files(self, button):
-        return self._xul_files[button]
-    
     def locale_string(self, button_locale, locale_name):
         def locale_str(str_type, button_id):
             default_locale = self._settings.get('default_locale', 'en-US')
@@ -156,7 +153,7 @@ class SimpleButton():
                     regexp = r'tooltiptext="&(.*\.tooltip);"'
                 else:
                     regexp = r'label="&(.*\.label);"'                
-                with open(self.get_xul_files(button_id)[0]) as fp:
+                with open(self._xul_files[button_id][0]) as fp:
                     data = fp.read()
                     match = re.search(regexp, data)
                     value = button_locale.get_dtd_value(locale_name, match.group(1), self)

@@ -119,10 +119,9 @@ def build_extension(settings, output=None, project_root=None):
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
     
-    locale_str = buttons.locale_string(button_locale=button_locales, locale_name=locales[0] if len(locales) == 1 else None)
-    labels = sorted([locale_str("label", button) for button in buttons.buttons()], key=str.lower)
-    
     if settings.get("fix_meta"):
+        locale_str = buttons.locale_string(button_locale=button_locales, locale_name=locales[0] if len(locales) == 1 else None)
+        labels = sorted([locale_str("label", button) for button in buttons.buttons()], key=str.lower)
         settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
 
     if settings.get("fix_meta") and len(buttons) == 1:
