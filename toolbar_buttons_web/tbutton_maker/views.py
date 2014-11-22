@@ -31,75 +31,45 @@ class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
         button.SimpleButton.__init__(self, folders, buttons, settings, applications)
         self._description = {}
-        self._icons = {}
         self._source_folder = {}
         for folder in folders:
             head, button_id = os.path.split(folder)
             self._source_folder[button_id] = os.path.split(head)[1]
 
-        for folder, buttonId, files in self._info:
+        for folder, button_id, files in self._info:
             if "description" in files:
                 with open(os.path.join(folder, "description"), "r") as description:
-                    self._description[buttonId] = description.read()
-                    if not self._description[buttonId].strip():
-                        print buttonId
-        for buttonId, icons in self._button_image.iteritems():
-            for image, selector in icons:
-                if image and not selector:
-                    self._icons[buttonId] = image
-                    break
-                
+                    self._description[button_id] = description.read()
+                    if not self._description[button_id].strip():
+                        print button_id
+              
     def get_source_folder(self, button):
         return self._source_folder[button] 
-
-    def get_xul_files(self, button):
-        return self._xul_files[button]
-
-    def get_icons(self, button):
-        return self._icons[button]
 
     def description(self, button):
         return self._description.get(button)
 
-def locale_string(button_locale, locale_name, buttons_obj):
-    def locale_str(str_type, buttonId):
-        default_locale = config.get('default_locale', 'en-US')
-        value = button_locale.get_dtd_value(locale_name, "%s.%s" % (buttonId, str_type), buttons_obj)
-        if value is None:
-            if str_type == "label":
-                regexp = r'label="&(.*\.label);"'
-            else:
-                regexp = r'tooltiptext="&(.*\.tooltip);"'
-            with open(buttons_obj.get_xul_files(buttonId)[0]) as fp:
-                data = fp.read()
-                match = re.search(regexp, data)
-                value = button_locale.get_dtd_value(locale_name, match.group(1), buttons_obj)
-            if value is None:
-                value = button_locale.get_dtd_value(default_locale, match.group(1), buttons_obj)
-        if value is None:
-            return '' #print buttonId
-        return value.replace("&brandShortName;", "").replace("&apos;", "'")
-    return locale_str
-
-def get_extenion_data(locale_name=None, applications=None, buttons_ids="all"):
-    extension_settings = dict(config)
-    extension_settings["project_root"] = settings.TBUTTON_DATA
-    default_local = extension_settings.get("default_locale")
-    if locale_name == None:
-        locale_name = default_local
+def get_extenion_data(extension_settings, locale_name=None, applications=None, buttons_ids="all"):
     if applications == None:
         applications = extension_settings.get("applications_data").keys()
     else:
-        applications = applications.split(',')
+        applications = applications.split(',')        
+    button_locale, locale_folder, locale_name = get_locale_obj(extension_settings, locale_name)
+    buttons_obj = get_buttons_obj(extension_settings, applications, buttons_ids)
+    locale_str = buttons_obj.locale_string(button_locale=button_locale, locale_name=locale_name)
+    return buttons_obj, locale_str, locale_name, applications
+
+def get_locale_obj(extension_settings, locale_name):
+    default_local = extension_settings.get("default_locale")
+    if locale_name == None:
+        locale_name = default_local
     locale_folder, locale = util.get_locale_folders(set([locale_name, default_local]), extension_settings)
     if locale:
-        button_locale = locales.Locale(config, locale_folder,
+        button_locale = locales.Locale(extension_settings, locale_folder,
             locale, load_properites=False)
     else:
-        raise Http404
-    buttons_obj = get_buttons_obj(extension_settings, applications, buttons_ids)
-    locale_str = locale_string(button_locale=button_locale, locale_name=locale_name, buttons_obj=buttons_obj)
-    return buttons_obj, locale_str, extension_settings, locale_name, applications
+        raise Http404 
+    return button_locale, locale_folder, locale_name
 
 def get_buttons_obj(extension_settings, applications, buttons_ids="all"):
     button_folders, buttons = util.get_button_folders(buttons_ids, extension_settings)
@@ -114,13 +84,15 @@ def list_buttons(request, locale_name=None, applications=None, template_name='tb
     return index(request, locale_name, applications, template_name)
 
 def index(request, locale_name=None, applications=None, template_name='tbutton_maker/index.html'):
-    buttons_obj, locale_str, extension_settings, locale_name, applications = get_extenion_data(locale_name, applications)
+    extension_settings = dict(config)
+    extension_settings["project_root"] = settings.TBUTTON_DATA
+    buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, applications)
 
     button_data = []
-    for buttonId, apps in buttons_obj.button_applications().items():
-        button_data.append((buttonId, sorted(list(apps)), locale_str("label", buttonId),
-                locale_str("tooltip", buttonId), buttons_obj.get_icons(buttonId),
-                buttons_obj.description(buttonId), buttons_obj.get_source_folder(buttonId)))
+    for button_id, apps in buttons_obj.button_applications().items():
+        button_data.append((button_id, sorted(list(apps)), locale_str("label", button_id),
+                locale_str("tooltip", button_id), buttons_obj.get_icons(button_id),
+                buttons_obj.description(button_id), buttons_obj.get_source_folder(button_id)))
     def button_key(item):
         return item[2].lower() if item[2] else None
     locale_folders, locales_names = util.get_locale_folders(extension_settings.get("locale"), extension_settings)
@@ -154,13 +126,6 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         return data
     return render(request, template_name, data)
 
-def get_labels(buttons, locale_name, buttons_ids):
-    result = []
-    buttons_obj, locale_str, extension_settings, locale_name, applications = get_extenion_data(locale_name, None, buttons_ids)
-    for button in buttons:
-        result.append(locale_str("label", button))
-    return result, buttons_obj
-
 def create_buttons(request, query):
     buttons = query.getlist("button")
     locale = query.get("button-locale", query.get("locale", "all"))
@@ -177,14 +142,8 @@ def create_buttons(request, query):
     if not locale or query.get("include-all-locales") == "true":
         locale = "all"
         
-    labels, buttons_obj = get_labels(buttons, locale, buttons)
-    labels.sort(key=str.lower)
-    extension_settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
-
-    if len(buttons) == 1:
-        extension_settings["name"] = "%s Button" % get_labels(buttons, "all", locale)[0]
-        extension_settings["icon"] = button.get_image(extension_settings, "32", buttons_obj.get_icons(buttons[0]))
-
+    extension_settings["fix_meta"] = True
+     
     if query.get("create-toolbars") == "true":
         extension_settings["put_button_on_toolbar"] = True
         extension_settings["include_toolbars"] = -1
@@ -249,7 +208,9 @@ def create(request):
 
 
 def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
-    buttons_obj, locale_str = get_extenion_data()[:2]
+    extension_settings = dict(config)
+    extension_settings["project_root"] = settings.TBUTTON_DATA
+    buttons_obj, locale_str = get_extenion_data(extension_settings)[:2]
     time = datetime.datetime.now() - datetime.timedelta(days)
     buttons = Button.objects.filter(session__time__gt=time)
     stats = list(buttons.values('name').annotate(downloads=Count('name')).order_by("-downloads"))

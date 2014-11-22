@@ -266,7 +266,7 @@ PreferenceWatcher: function() {
 		this.prefs.addObserver("", this, false);
 		if(button)
 			this.button = document.getElementById(button);
-		this.buttonId = button
+		this.button_id = button
 		this.func = func;
 		this.pref = pref;
 		//try {
@@ -310,7 +310,7 @@ PreferenceWatcher: function() {
 		}
 		//try {
 			if(!this.button)
-				this.button = document.getElementById(this.buttonId);
+				this.button = document.getElementById(this.button_id);
 			this.setStatus();
 		//} catch(e) {} // button might not exist
 	};
@@ -382,11 +382,11 @@ prefToggleNumber: function(button, pref, next) {
 	return next[setting];
 }
 
-cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
+cssFileToUserContent: function(aCssFile, remove, toggle, button_id) {
 	var sss = toolbar_buttons.interfaces.StyleSheetService,
 		ios = toolbar_buttons.interfaces.IOService;
 	var url = ios.newURI(aCssFile, null, null),
-		button = document.getElementById(buttonId);
+		button = document.getElementById(button_id);
 	if (sss.sheetRegistered(url, sss.USER_SHEET)) {
 		if (!button || remove || toggle) {
 			sss.unregisterSheet(url, sss.USER_SHEET);
@@ -401,14 +401,14 @@ cssFileToUserContent: function(aCssFile, remove, toggle, buttonId) {
 	return false;
 }
 
-loadUserContentSheet: function(sheet, pref, buttonId) {
+loadUserContentSheet: function(sheet, pref, button_id) {
 	var sss = toolbar_buttons.interfaces.StyleSheetService,
 		ios = toolbar_buttons.interfaces.IOService,
 		prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var url = ios.newURI(sheet, null, null);
 	try {
 		if (!prefs.getBoolPref(pref)
-				&& document.getElementById(buttonId)
+				&& document.getElementById(button_id)
 				&& !sss.sheetRegistered(url, sss.USER_SHEET)) {
 			sss.loadAndRegisterSheet(url, sss.USER_SHEET);
 		}
@@ -422,27 +422,27 @@ stopContent: function(button, pref) {
 	toolbar_buttons.extensionPrefToggleStatus(button, pref);
 }
 
-loadContectBlocker: function(fullPref, prefName, buttonId, sheet, func) {
+loadContectBlocker: function(fullPref, prefName, button_id, sheet, func) {
 	window.addEventListener("load", function(e) {
 		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(fullPref, buttonId, func ? func : function(state) {
-			var button = document.getElementById(buttonId);
+		prefWatch.startup(fullPref, button_id, func ? func : function(state) {
+			var button = document.getElementById(button_id);
 			if(button) {
-				toolbar_buttons.cssFileToUserContent(sheet, state, false, buttonId);
+				toolbar_buttons.cssFileToUserContent(sheet, state, false, button_id);
 				button.setAttribute("activated", state);
 			}
 		});
-		toolbar_buttons.loadUserContentSheet(sheet, prefName, buttonId);
+		toolbar_buttons.loadUserContentSheet(sheet, prefName, button_id);
 		window.addEventListener("unload", function(e) {
 			prefWatch.shutdown();
 		}, false);
 	}, false);
 }
 
-loadPrefWatcher: function(pref, buttonId, func) {
+loadPrefWatcher: function(pref, button_id, func) {
 	window.addEventListener("load", function(e) {
 		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(pref, buttonId, func);
+		prefWatch.startup(pref, button_id, func);
 		window.addEventListener("unload", function(e) {
 			prefWatch.shutdown();
 		}, false);

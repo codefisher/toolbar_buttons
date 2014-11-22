@@ -118,10 +118,20 @@ def build_extension(settings, output=None, project_root=None):
         xpi = zipfile.ZipFile(file_name, "w", zipfile.ZIP_DEFLATED)
     xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
     jar_file.close()
+    
+    locale_str = buttons.locale_string(button_locale=button_locales, locale_name=locales[0] if len(locales) == 1 else None)
+    labels = sorted([locale_str("label", button) for button in buttons.buttons()], key=str.lower)
+    
+    if settings.get("fix_meta"):
+        settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
 
+    if settings.get("fix_meta") and len(buttons) == 1:
+        settings["name"] = "%s Button" % labels[0]
+        xpi.write(get_image(settings, "32", buttons.get_icons(buttons.buttons()[0])), "icon.png")
+    else:
+        xpi.write(settings.get("icon"), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
-    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
-    xpi.write(settings.get("icon"), "icon.png")
+    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))    
     xpi.write(settings.get("licence"), "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
