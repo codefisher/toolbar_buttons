@@ -1,0 +1,21 @@
+<toolbarbutton 
+    class="toolbarbutton-1"
+    id="tb-codefisher"
+	type="menu-button"
+    label="&tb-codefisher.label;"
+    tooltiptext="&tb-codefisher.tooltip;"
+    onclick="toolbar_buttons.openPageTab('https://codefisher.org/', event);"
+    oncommand="toolbar_buttons.openPage('https://codefisher.org/');" >
+	<menupopup onclick="event.stopPropagation();"
+		oncommand="event.stopPropagation();" >
+		<menuitem label="&tb-codefisher.toolbar-buttons;"
+			onclick="toolbar_buttons.openPageTab('https://codefisher.org/toolbar_button/', event);"
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/toolbar_button/');"/>
+		<menuitem label="&tb-codefisher.pastel-svg;"
+			onclick="toolbar_buttons.openPageTab('https://codefisher.org/pastel-svg/', event);"
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/pastel-svg/');"/>
+		<menuitem label="&tb-codefisher.twitter;"
+			onclick="toolbar_buttons.openPageTab('https://twitter.com/codefisher/', event);"
+    		oncommand="toolbar_buttons.openPage('https://twitter.com/codefisher/');"/>
+	</menupopup>
+</toolbarbutton>

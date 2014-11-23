@@ -1,66 +1,16 @@
 /* functions that are used by more then one button */
 
-toggleToolbar: function(aEvent, toolbar_id, force) {
-	if(toolbar_id != aEvent.originalTarget.parentNode.id) {
-		var toolbar = document.getElementById(toolbar_id);
-		try {
-			// Firefox 4, mainly the bookmark toolbar button
-			setToolbarVisibility(toolbar, toolbar.collapsed);
-			if(force)
-				toolbar.collapsed = !toolbar.collapsed;
-		} catch(e) {
-			toolbar.collapsed = !toolbar.collapsed;
-			document.persist(toolbar_id, "collapsed");
-		}
+setButtonStatus: function(button, status) {
+	button.setAttribute("activated", status);
+	var menu_item = document.getElementById(button.id + '-menu-item');
+	if(menu_item) {
+		menu_item.setAttribute("activated", status);
 	}
-}
-
-toggleToolbarButtonUpdate: function(aEvent, button_id, toolbar_id) {
-	// normal toolbars use collapsed, the statusbar uses hidden
-	if(aEvent.attrName == "collapsed" || aEvent.attrName == "hidden") {
-		var button = document.getElementById(button_id);
-		if(button && aEvent.originalTarget.id == toolbar_id) {
-			var toolbar = aEvent.originalTarget;
-			button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
-		}
-	}
-}
-
-setToggleToolbar: function(toolbar_id, button_id) {
-	var button = document.getElementById(button_id);
-	if(button) {
-		var toolbar = document.getElementById(toolbar_id);
-		button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
+	if(button.parentNode.getAttribute("mode") == "text") {
+		button.setAttribute("checked", Boolean(status));
+	} else {
 		button.removeAttribute("checked");
 	}
-}
-
-loadToggleToolbar: function(button_id, toolbar_id){
-	window.addEventListener(
-			"load",
-			function(aEvent) {
-				var toolbar = document.getElementById(toolbar_id);
-				if(toolbar) {
-					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
-					var mutationObserver = new MutationObserver(function(mutations) {
-								var attribute = false;
-								for(var mut in mutations) {
-									attribute = attribute || (mut.type == "attributes");
-								}
-								if(!mut) return;
-								var attributeName = false;
-								for(var attr in mutations) {
-									attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
-								}
-								if(!attributeName) return;
-								var button = document.getElementById(button_id);
-								if(button == null) return;
-								button.setAttribute("activated", toolbar.collapsed || toolbar.hidden);
-							});
-					mutationObserver.observe(toolbar, { attributes: true, subtree: false });
-				}
-			},
-	true);
 }
 
 OpenAddonsMgr: function(type, typeUrl) {
@@ -96,35 +46,6 @@ getUrlContents: function(aURL){
 	scriptableStream.close();
 	input.close();
 	return str;
-}
-
-LoadURL: function(url, event) {
-	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-	if (event.button == 1 || prefs.getBoolPref("always.new.tab")) {
-		var newPage = getBrowser().addTab(url);
-		getBrowser().selectedTab = newPage;
-	} else if (event.button == 0) {
-		loadURI(url);
-	}
-}
-
-OpenLinkFromPref: function(name, event) {
-	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-	var url = prefs.getCharPref(name);
-	if (event.button == 1 || prefs.getBoolPref("always.new.tab")) {
-		var newPage = getBrowser().addTab(url);
-		getBrowser().selectedTab = newPage;
-	} else if (event.button == 0) {
-		loadURI(url);
-	}
-}
-
-OpenMailLink: function(name, event) {
-	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-	var url = prefs.getCharPref(name);
-	var uri = toolbar_buttons.interfaces.IOService
-			  .newURI(url, null, null);
-	toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
 }
 
 wrongVersion: function(event) {
@@ -238,84 +159,6 @@ checkBrowserReload: function() {
 	}
 }
 
-prefToggleStatus: function(button, pref) {
-	var prefs = toolbar_buttons.interfaces.PrefBranch,
-		state = prefs.getBoolPref(pref);
-	prefs.setBoolPref(pref, !state);
-	button.setAttribute("activated", !state);
-	return !state;
-}
-
-extensionPrefToggleStatus: function(button, pref) {
-	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch,
-		state = prefs.getBoolPref(pref);
-	prefs.setBoolPref(pref, !state);
-	button.setAttribute("activated", !state);
-	return !state;
-}
-
-PreferenceWatcher: function() {
-	this.prefs = null;
-	this.button = null;
-	this.pref = null;
-	this.func = null;
-
-	this.startup = function(pref, button, func) {
-		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
-		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch);
-		this.prefs.addObserver("", this, false);
-		if(button)
-			this.button = document.getElementById(button);
-		this.button_id = button
-		this.func = func;
-		this.pref = pref;
-		//try {
-			this.setStatus();
-		//} catch(e) {} // pref might not exist
-	};
-
-	this.shutdown = function() {
-		this.prefs.removeObserver("", this);
-	};
-
-	this.setStatus = function() {
-		if(!this.button)
-			return
-		// remove the checked state of any old buttons
-		this.button.removeAttribute("checked");
-		var prefs = toolbar_buttons.interfaces.PrefBranch, state = null;
-		switch(prefs.getPrefType(this.pref)) {
-			case prefs.PREF_BOOL:
-				state = prefs.getBoolPref(this.pref);
-				break;
-			case prefs.PREF_INT:
-				state = prefs.getIntPref(this.pref);
-				break;
-			case prefs.PREF_STRING:
-				state = prefs.getCharPref(this.pref);
-				break;
-			default:
-				return;
-		}
-		if(this.func) {
-			this.func(state);
-		} else {
-			this.button.setAttribute("activated", state);
-		}
-	};
-
-	this.observe = function(subject, topic, data) {
-		if (topic != "nsPref:changed") {
-			return;
-		}
-		//try {
-			if(!this.button)
-				this.button = document.getElementById(this.button_id);
-			this.setStatus();
-		//} catch(e) {} // button might not exist
-	};
-}
-
 PluginHelper: {
 	/*
 	 * Credit for much of this code belongs to Prefbar, and is used under the
@@ -374,14 +217,6 @@ PluginHelper: {
 	},
 }
 
-prefToggleNumber: function(button, pref, next) {
-	var prefs = toolbar_buttons.interfaces.PrefBranch,
-		setting = prefs.getIntPref(pref);
-	prefs.setIntPref(pref, next[setting]);
-	button.setAttribute("activated", next[setting]);
-	return next[setting];
-}
-
 cssFileToUserContent: function(aCssFile, remove, toggle, button_id) {
 	var sss = toolbar_buttons.interfaces.StyleSheetService,
 		ios = toolbar_buttons.interfaces.IOService;
@@ -429,20 +264,10 @@ loadContectBlocker: function(fullPref, prefName, button_id, sheet, func) {
 			var button = document.getElementById(button_id);
 			if(button) {
 				toolbar_buttons.cssFileToUserContent(sheet, state, false, button_id);
-				button.setAttribute("activated", state);
+				toolbar_buttons.setButtonStatus(button, state);
 			}
 		});
 		toolbar_buttons.loadUserContentSheet(sheet, prefName, button_id);
-		window.addEventListener("unload", function(e) {
-			prefWatch.shutdown();
-		}, false);
-	}, false);
-}
-
-loadPrefWatcher: function(pref, button_id, func) {
-	window.addEventListener("load", function(e) {
-		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(pref, button_id, func);
 		window.addEventListener("unload", function(e) {
 			prefWatch.shutdown();
 		}, false);
@@ -489,7 +314,7 @@ showOnlyThisFrame: function() {
 
 searchBarSize: function(opp) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://toolbar-button/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var item = document.getElementById("search-container"), toolbar = item, size;
 	if(item) {
 		do {

@@ -11,7 +11,7 @@ togglePopUp: function() {
 		toolbar_buttons.interfaces.PrefBranch.setIntPref("privacy.popups.disable_from_plugins", 2);
 	}
 	toolbar_buttons.interfaces.PrefBranch.setBoolPref("dom.disable_open_during_load", !blockPopUp);
-	button.setAttribute("activated", !blockPopUp);
+	toolbar_buttons.setButtonStatus(button, !blockPopUP);
 }
 
 viewPopupExceptions: function(event) {

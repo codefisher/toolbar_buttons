@@ -1,5 +1,3 @@
-#include toggleToolbar
-
 toggleTasks: function(event) {
 	try {
 		return toolbar_buttons.toggleToolbar(event, 'taskBox');

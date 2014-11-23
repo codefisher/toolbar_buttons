@@ -362,10 +362,10 @@ class Button(SimpleButton):
         image_count = 0
         image_map = {}
         if self._settings.get("merge_images"):
-            image_set = set()
+            image_set = list()
             for button, image_data in self._button_image.iteritems():
                 for image, modifier in image_data:
-                    image_set.add(image)
+                    image_set.append(image)
             image_count = len(image_set)
             image_map_size = {}
             image_map_x = {}
@@ -488,6 +488,7 @@ class Button(SimpleButton):
         return "\n".join(lines), image_list, image_datas
 
     def get_js_files(self):
+       
         interface_match = re.compile("(?<=toolbar_buttons.interfaces.)[a-zA-Z]*")
         function_match = re.compile("^[a-zA-Z0-9_]*\s*:\s*"
                                     "(?:function\([^\)]*\)\s*)?{.*?^}[^\n]*",
@@ -508,6 +509,12 @@ class Button(SimpleButton):
         js_includes = set()
         js_options_include = set()
         js_imports = set()
+        
+        # we look though the XUL for functions first
+        for file_name, values in self._button_xul.iteritems():
+            for button, xul in values.iteritems():
+                js_imports.update(detect_depandancy.findall(xul))
+        
         for file_name, js in self._button_js.iteritems():
             js_file = "\n".join(js)
             js_includes.update(include_match.findall(js_file))
@@ -520,9 +527,12 @@ class Button(SimpleButton):
                         ",\n".join(js_functions).split("\n"))
             js_files_end[file_name] = multi_line_replace.sub("\n",
                                         function_match.sub("", js_file).strip())
-        with  open(os.path.join(self._settings.get("project_root"),
-                "files", "functions.js"), "r") as shared_functions_file:
-            shared_functions = shared_functions_file.read()
+        shared = []
+        lib_folder = os.path.join(self._settings.get("project_root"), "files", "lib")
+        for file_name in os.listdir(lib_folder):
+            with open(os.path.join(lib_folder, file_name), "r") as shared_functions_file:
+                shared.append(shared_functions_file.read())
+        shared_functions = "\n\n".join(shared)
         externals = dict((name, function) for function, name
                          in function_name_match.findall(shared_functions))
         if self._settings.get("include_toolbars"):
@@ -555,6 +565,7 @@ class Button(SimpleButton):
             for button, value in self._button_options_js.iteritems():
                 # dependency resolution is not enabled here yet
                 js_options_include.update(include_match.findall(value))
+                js_options_include.update(detect_depandancy.findall(self._button_options[button]))
                 value = include_match_replace.sub("", value)
                 js_functions = function_match.findall(value)
                 self._button_options_js[button] = ",\n".join(js_functions)

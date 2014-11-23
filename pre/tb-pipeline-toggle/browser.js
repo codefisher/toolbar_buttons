@@ -1,7 +1,3 @@
-#include checkBrowserReload
-#include prefToggleStatus
-#include loadPrefWatcher
-
 togglePipeline: function(button) {
 	toolbar_buttons.prefToggleStatus(button, "network.http.pipelining");
 	toolbar_buttons.checkBrowserReload();
