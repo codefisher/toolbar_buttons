@@ -17,7 +17,7 @@ toggleMsgHeaders: function() {
 styleMsgHeaders: function(state) {
 	var button = document.getElementById('tb-toggle-headers');
 	if(button) {
-		document.getElementById('tb-toggle-headers').setAttribute("activated", state);
+		toolbar_buttons.setButtonStatus(document.getElementById('tb-toggle-headers'), state);
 		toolbar_buttons.styleMsgHeadersLoadSheet(state);
 	}
 }

@@ -18,7 +18,7 @@ JavaToggle: {
 			prefs = toolbar_buttons.interfaces.PrefBranch;
 		prefs.setBoolPref("security.enable_java", !state);
 		toolbar_buttons.PluginHelper.SetPluginEnabled(this.prefbarRegExJava, !state, "Java");
-		button.setAttribute("activated", !state);
+		toolbar_buttons.setButtonStatus(button, !state);
 		toolbar_buttons.checkBrowserReload();
 	},
 

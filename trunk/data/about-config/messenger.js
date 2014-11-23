@@ -1,2 +1,0 @@
-#include openMessengerWindowOrTab
-#include openDialog

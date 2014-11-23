@@ -1,5 +1,3 @@
-#include toggleToolbar
-
 toggleStatusBar: function(event) {
 	if(document.getElementById("addon-bar")) {
 		toolbar_buttons.toggleToolbar(event, 'addon-bar');

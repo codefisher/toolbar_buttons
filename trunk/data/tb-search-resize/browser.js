@@ -1,5 +1,3 @@
-#include searchBarSize
-
 SearchResizeLoad: function() {
 	var searchBar = document.getElementById("search-container");
 	if((!document.getElementById('tb-search-resize')

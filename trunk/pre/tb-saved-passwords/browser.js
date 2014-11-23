@@ -1,5 +1,3 @@
-#include getETDL
-
 openPasswordsTab: function(event) {
 	if(event.button == 1) {
 		var newPage = getBrowser().addTab("chrome://passwordmgr/content/passwordManager.xul");

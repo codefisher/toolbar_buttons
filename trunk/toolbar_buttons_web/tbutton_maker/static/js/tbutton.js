@@ -22,8 +22,14 @@ function updateSuggestions() {
 		success: function(data){
 			var suggestsions = $("#suggestsions");
 			suggestsions.empty();
+			var show = false;
 			for(var item in data) {
-				var title = $('#' + data[item].name + '-list-item .button-name').clone();
+				var title = $('#' + data[item].name + '-list-item .button-name');
+				if(!title.length) {
+					continue;
+				}
+				show = true;
+				title = title.clone();
 				var image = $('#' + data[item].name + '-list-item .button-info img').clone();
 				var li = $('<li></li>');
 				var label = $('<label></label>');
@@ -39,7 +45,11 @@ function updateSuggestions() {
 				li.append(label);
 				suggestsions.append(li);
 			}
-			$("#suggestion-box").show();
+			if(show) {
+				$("#suggestion-box").show();
+			} else {
+				$("#suggestion-box").hide();
+			}
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			$("#suggestion-box").hide();
