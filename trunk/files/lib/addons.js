@@ -53,3 +53,8 @@ viewAddonsExceptions: function(event) {
 				"addons_permissions_title", "addonspermissionstext");
 	}
 }
+
+openAddonsExceptions: function() {
+		toolbar_buttons.openPermissions("install",
+				"addons_permissions_title", "addonspermissionstext");
+}

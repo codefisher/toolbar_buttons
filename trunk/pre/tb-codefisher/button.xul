@@ -14,6 +14,9 @@
 		<menuitem label="&tb-codefisher.pastel-svg;"
 			onclick="toolbar_buttons.openPageTab('https://codefisher.org/pastel-svg/', event);"
     		oncommand="toolbar_buttons.openPage('https://codefisher.org/pastel-svg/');"/>
+		<menuitem label="&tb-codefisher.forum;"
+			onclick="toolbar_buttons.openPageTab('https://codefisher.org/forum/', event);"
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/forum/');"/>
 		<menuitem label="&tb-codefisher.twitter;"
 			onclick="toolbar_buttons.openPageTab('https://twitter.com/codefisher/', event);"
     		oncommand="toolbar_buttons.openPage('https://twitter.com/codefisher/');"/>

@@ -15,4 +15,19 @@ toggleTheProxy: function() {
 	}
 }
 
+setProxyMenuItem: function(event, item) {
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
+	var proxyState = prefs.getIntPref("network.proxy.type");
+	for(var menuitem in item.childNodes) {
+		if(item.childNodes[menuitem].getAttribute('value') == proxyState) {
+			item.childNodes[menuitem].setAttribute('checked', 'true');
+		}
+	}
+}
+
+setProxyValue: function(event) {
+	var prefs = toolbar_buttons.interfaces.PrefBranch;
+	prefs.setIntPref("network.proxy.type", event.originalTarget.getAttribute('value'));
+}
+
 toolbar_buttons.loadPrefWatcher("network.proxy.type", "toggle-proxy");

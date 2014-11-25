@@ -1,1 +1,0 @@
-overlay	chrome://%(chrome)s/content/options.xul	chrome://%(chrome)s-root/content/translate-options.xul

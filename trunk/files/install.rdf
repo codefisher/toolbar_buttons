@@ -9,7 +9,8 @@
 		<em:creator>{{creator}}</em:creator>
 		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
 		<em:homepageURL>{{homepageURL}}</em:homepageURL>
-		<em:unpack>true</em:unpack>
+		<!--<em:bootstrap>true</em:bootstrap>-->
+		
 {{optionsURL}}{{updateUrl}}{{applications}}
 
 		<em:translator>Thanks to the Babelzilla team!</em:translator>

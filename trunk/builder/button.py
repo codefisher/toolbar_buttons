@@ -325,15 +325,20 @@ class Button(SimpleButton):
             strings.extend(locale_match.findall(value))
         return list(set(strings))
 
-    def get_defaults(self):
+    def get_defaults(self, format_dict=False):
         settings = []
-        settings.append("""pref("extensions.%s.description","chrome://%s/locale/button.properties");"""
-                        % (self._settings.get("extension_id"), self._settings.get("chrome_name")))
+        settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
+                         """'chrome://%s/locale/button.properties'""" % self._settings.get("chrome_name")))
         if self._settings.get("show_updated_prompt"):
-            settings.append("""pref("%scurrent.version", "");""" % self._settings.get("pref_root"))
+            settings.append(("%scurrent.version" % self._settings.get("pref_root"), ""))
         for name, value in self._preferences.iteritems():
-            settings.append("""pref("%s%s", %s);""" % (self._settings.get("pref_root"), name, value))
-        return "\n".join(settings)
+            settings.append(("%s%s" % (self._settings.get("pref_root"), name), value))
+        if format_dict:
+            result = ["%s: %s," % setting for setting in settings]
+            return "\n\t".join(result)
+        else:
+            result = ["pref('%s', %s);" % setting for setting in settings]
+            return "\n".join(result)
     
     def get_icon_size(self):
         small, large = self._settings.get("icon_size")

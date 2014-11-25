@@ -1,6 +1,16 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="addons"
+	type="menu-button"
+	key="key_openAddons"
 	label="&addons.label;"
 	tooltiptext="&addons.tooltip;"
-	command="Tools:Addons"/>
+	command="Tools:Addons" >
+	<menupopup onclick="event.stopPropagation();"
+		oncommand="event.stopPropagation();" >
+		<menuitem label="&extensions.label;" oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');"/>
+		<menuitem label="&themes.label;" oncommand="toolbar_buttons.OpenAddonsMgr('themes', 'addons://list/theme');" />
+		<menuseparator />
+		<menuitem label="&installaddons.label;" oncommand="toolbar_buttons.installAddons()" />
+	</menupopup>
+</toolbarbutton>
