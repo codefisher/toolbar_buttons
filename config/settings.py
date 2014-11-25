@@ -34,7 +34,7 @@ config_default = {
     # these settings change the internals of the extension
     "pref_root": "extension.tbutton.",
     "jar_file": "tbutton.jar",
-    "chrome_name": "toolbar-button",
+    "chrome_name": "toolbar-buttons",
     "icon_size": ("16", "24"),
     "image_path": None,
     "include_icons_for_custom_window": False,

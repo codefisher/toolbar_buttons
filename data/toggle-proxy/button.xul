@@ -1,6 +1,17 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="toggle-proxy"
+	type="menu-button"
 	label="&toggle-proxy.label;"
 	tooltiptext="&toggle-proxy.tooltip;"
-	oncommand="toolbar_buttons.toggleTheProxy();" />
+	oncommand="toolbar_buttons.toggleTheProxy();" >
+	<menupopup onclick="event.stopPropagation();"
+		onpopupshowing="toolbar_buttons.setProxyMenuItem(event, this);"
+		oncommand="toolbar_buttons.setProxyValue(event); event.stopPropagation();" >
+		<menuitem type="radio" name="toggle-proxy-settings" value="0" label="&toggle.proxy.direct;"/>
+		<menuitem type="radio" name="toggle-proxy-settings" value="1" label="&toggle.proxy.manual;"/>
+		<menuitem type="radio" name="toggle-proxy-settings" value="2" label="&toggle.proxy.auto.configuration;"/>
+		<menuitem type="radio" name="toggle-proxy-settings" value="4" label="&toggle.proxy.auto.detect;"/>
+		<menuitem type="radio" name="toggle-proxy-settings" value="5" label="&toggle.proxy.system;"/>
+	</menupopup>
+</toolbarbutton>

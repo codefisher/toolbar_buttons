@@ -18,6 +18,8 @@
 <!ENTITY add-address.tooltip "Copy Email Address to Address Book">
 <!ENTITY addons.label "Add-ons">
 <!ENTITY addons.tooltip "Open Add-ons Manager">
+<!ENTITY tb-addons-exceptions.label "Add-ons Allowed Sites">
+<!ENTITY tb-addons-exceptions.tooltip "Open Dialog for Add-ons Allowed Installation Sites">
 <!ENTITY all-threads.label "All Threads">
 <!ENTITY all-threads.tooltip "View All Threads">
 <!ENTITY attachments-delete.label "Delete Attachments">

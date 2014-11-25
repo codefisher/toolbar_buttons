@@ -52,72 +52,59 @@ def build_extension(settings, output=None, project_root=None):
     if settings.get("lookup_max_versions"):
         apply_max_version(settings)
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
-    button_locales = Locale(settings, locale_folders, locales)
-    options_locales = Locale(settings, locale_folders, locales, True)
+    button_locales = Locale(settings, locale_folders, locales, all_files=True)
+    options_locales = Locale(settings, locale_folders, locales, options=True)
     buttons = get_buttons(settings)
 
-    jar_file = io.BytesIO()
-    jar = zipfile.ZipFile(jar_file, "w", zipfile.ZIP_STORED)
-    #write files to jar
+    xpi_file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
+    if output:
+        xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
+    else:
+        xpi = zipfile.ZipFile(xpi_file_name, "w", zipfile.ZIP_DEFLATED)
+        
     for file, data in buttons.get_js_files().iteritems():
-        jar.writestr(os.path.join("content", file + ".js"),
+        xpi.writestr(os.path.join("chrome", "content", file + ".js"),
                 data.replace("{{uuid}}", settings.get("extension_id")))
 
     for file, data in buttons.get_xul_files().iteritems():
-        jar.writestr(os.path.join("content", file + ".xul"), bytes_string(data))
+        xpi.writestr(os.path.join("chrome", "content", file + ".xul"), bytes_string(data))
 
     for locale, data in button_locales.get_dtd_data(buttons.get_locale_strings(), buttons).iteritems():
-        jar.writestr(os.path.join("locale", locale, "button.dtd"), data)
+        xpi.writestr(os.path.join("chrome", "locale", locale, "button.dtd"), data)
     if settings.get("include_local_meta"):
         for locale, (path, data) in button_locales.get_meta().iteritems():
-            jar.writestr(os.path.join("locale", locale, "meta.dtd"), data)
+            xpi.writestr(os.path.join("chrome", "locale", locale, "meta.dtd"), data)
     for locale, data in button_locales.get_properties_data(buttons.get_properties_strings(), buttons).iteritems():
-        jar.writestr(os.path.join("locale", locale, "button.properties"), data)
+        xpi.writestr(os.path.join("chrome", "locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
-            jar.writestr(os.path.join("content", name), fp.read().replace("{{chrome-name}}", settings.get("chrome_name")))
+            xpi.writestr(os.path.join("chrome", "content", name), fp.read().replace("{{chrome-name}}", settings.get("chrome_name")))
     resources = buttons.get_resource_files()
     has_resources = bool(resources)
     for name, path in resources.iteritems():
-        jar.write(path, os.path.join("resources", name))
+        xpi.write(path, os.path.join("chrome", "resources", name))
 
     for file, data in buttons.get_options().iteritems():
-        jar.writestr(os.path.join("content", "%s.xul" % file), data)
+        xpi.writestr(os.path.join("chrome", "content", "%s.xul" % file), data)
     options_strings = buttons.get_options_strings()
     if options_strings:
         for locale, data in options_locales.get_dtd_data(options_strings, buttons).iteritems():
-            jar.writestr(os.path.join("locale", locale, "options.dtd"), bytes_string(data))
+            xpi.writestr(os.path.join("chrome", "locale", locale, "options.dtd"), bytes_string(data))
     option_applicaions = buttons.get_options_applications()
 
     css, image_list, image_data = buttons.get_css_file()
     icon_sizes = set(buttons.get_icon_size().values())
-    jar.writestr(os.path.join("skin", "button.css"), bytes(css))
+    xpi.writestr(os.path.join("chrome", "skin", "button.css"), bytes(css))
     for image in set(image_list):
         for size in icon_sizes:
             if size is not None:
                 try:
-                    jar.write(get_image(settings, size, image), os.path.join("skin", size, image))
+                    xpi.write(get_image(settings, size, image), os.path.join("chrome", "skin", size, image))
                 except (OSError, IOError):
-                    jar.write(get_image(settings, size, "picture-empty.png"), os.path.join("skin", size, image))
+                    xpi.write(get_image(settings, size, "picture-empty.png"), os.path.join("chrome", "skin", size, image))
                     print "can not find file %s" % image
     for file_name, data in image_data.iteritems():
-        jar.writestr(file_name, data)
-    jar.close()
-    if settings.get("profile_folder"):
-        for folder in settings.get("profile_folder"):
-            try:
-                with open(os.path.join(folder, "extensions",
-                    settings.get("extension_id"), "chrome", settings.get("jar_file")), "w") as fp:
-                    fp.write(jar_file.getvalue())
-            except IOError:
-                print("Failed to write extension to profile folder")
-    if output:
-        xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
-    else:
-        file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
-        xpi = zipfile.ZipFile(file_name, "w", zipfile.ZIP_DEFLATED)
-    xpi.writestr(os.path.join("chrome", settings.get("jar_file")), jar_file.getvalue())
-    jar_file.close()
+        xpi.writestr(os.path.join("chrome", file_name), data)
     
     if settings.get("fix_meta"):
         locale_str = buttons.locale_string(button_locale=button_locales, locale_name=locales[0] if len(locales) == 1 else None)
@@ -130,20 +117,36 @@ def build_extension(settings, output=None, project_root=None):
     else:
         xpi.write(settings.get("icon"), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
-    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))    
+    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))   
+    xpi.writestr("bootstrap.js", create_bootstrp(settings, buttons))
     xpi.write(settings.get("licence"), "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
     xpi.close()
+    if not output and settings.get("profile_folder"):
+        with open(xpi_file_name, "r") as xpi_fp:
+            for folder in settings.get("profile_folder"):
+                try:
+                    with open(os.path.join(folder, "extensions",
+                        settings.get("extension_id") + ".xpi"), "w") as fp:
+                        fp.write(xpi_fp.read())
+                except IOError:
+                    print("Failed to write extension to profile folder")
     return buttons, button_locales
+
+def create_bootstrp(settings, buttons):
+    template = open(os.path.join(settings.get("project_root"), "files", "bootstrap.js") ,"r").read()
+    return (template.replace("{{pref_root}}", settings.get("pref_root"))
+                    .replace("{{prefs}}", buttons.get_defaults(True))
+    ) 
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
     values = {"chrome": settings.get("chrome_name"), "jar": settings.get("jar_file")}
 
-    lines.append("content\t%(chrome)s\tjar:chrome/%(jar)s!/content/" % values)
+    lines.append("content\t%(chrome)s\tchrome/content/" % values)
     lines.append("skin\t%(chrome)s\tclassic/1.0\t"
-                 "jar:chrome/%(jar)s!/skin/" % values)
+                 "chrome/skin/" % values)
     lines.append("style\tchrome://global/content/customizeToolbar.xul"
                  "\tchrome://%(chrome)s/skin/button.css" % values)
 
@@ -153,7 +156,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines.append("override\tchrome://%(chrome)s/skin/icon.png\t"
                  "chrome://%(chrome)s-root/skin/icon.png" % values)
     if has_resources:
-        lines.append("resource\t%(chrome)s\tjar:chrome/%(jar)s!/resources/" % values)
+        lines.append("resource\t%(chrome)s\tchrome/resources/" % values)
     for option in options:
         values["application"] = option
         for _, application_id, _, _ in settings.get("applications_data")[option]:
@@ -175,7 +178,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
     for locale in locales:
         values["locale"] = locale
         lines.append("locale\t%(chrome)s\t%(locale)s"
-                     "\tjar:chrome/%(jar)s!/locale/%(locale)s/" % values)
+                     "\tchrome/locale/%(locale)s/" % values)
     return "\n".join(lines)
 
 def create_install(settings, applications, options=[]):

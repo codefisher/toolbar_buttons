@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-addons-exceptions"
+	label="&tb-addons-exceptions.label;"
+	tooltiptext="&tb-addons-exceptions.tooltip;"
+	oncommand="toolbar_buttons.openAddonsExceptions();"/>

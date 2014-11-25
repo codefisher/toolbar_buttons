@@ -8,7 +8,7 @@ entity_re = re.compile(r"<!ENTITY ([\w\-\.]+) [\"'](.*?)[\"']>")
 
 class Locale(object):
     """Parses the localisation files of the extension and queries it for data"""
-    def __init__(self, settings, folders, locales, options=False, load_properites=True, only_meta=False):
+    def __init__(self, settings, folders, locales, options=False, load_properites=True, only_meta=False, all_files=False):
         self._settings = settings
         self._missing_strings = settings.get("missing_strings")
         self._folders = folders
@@ -22,14 +22,15 @@ class Locale(object):
                      for file_name in os.listdir(folder)
                      if not file_name.startswith(".")]
             for file_name in files:
-                if only_meta and not file_name.endswith("meta.dtd"):
-                    continue
-                if not options and file_name.endswith("options.dtd"):
-                    continue
-                elif options and not file_name.endswith("options.dtd"):
-                    continue
-                elif not load_properites and file_name.endswith(".properties"):
-                    continue
+                if not all_files:
+                    if only_meta and not file_name.endswith("meta.dtd"):
+                        continue
+                    if not options and file_name.endswith("options.dtd"):
+                        continue
+                    elif options and not file_name.endswith("options.dtd"):
+                        continue
+                    elif not load_properites and file_name.endswith(".properties"):
+                        continue
                 if file_name.endswith(".dtd"):
                     with open(file_name) as data:
                         if file_name.endswith("meta.dtd"):
