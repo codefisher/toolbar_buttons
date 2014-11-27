@@ -9,4 +9,16 @@ viewCookieExceptions: function(event) {
 	}
 }
 
+deleteAllCookies: function() {
+	var stringBundle = toolbar_buttons.interfaces.StringBundleService
+		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+	var question = stringBundle.GetStringFromName("stop-cookies-delete.question");
+	var title = stringBundle.GetStringFromName("stop-cookies-delete.title");
+	if(toolbar_buttons.interfaces.PromptService.confirm(null, title, question)) {
+	    var cookieMgr = Components.classes["@mozilla.org/cookiemanager;1"]
+	                          .getService(Ci.nsICookieManager);
+	    cookieMgr.removeAll();
+	}
+}
+
 toolbar_buttons.loadPrefWatcher("network.cookie.cookieBehavior", "stop-cookies");

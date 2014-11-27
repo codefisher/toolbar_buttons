@@ -1,5 +1,6 @@
+<prefpane id="toolbar-buttons-prefpane-readmail" label="&readmail.path.caption;">
+<vbox>
 <groupbox flex="1">
-	<caption label="&readmail.path.caption;"/>
 	<preferences>
 		<preference id="{{pref-root}}readmail.path" name="{{pref-root}}readmail.path" type="unichar"/>
 	</preferences>
@@ -11,3 +12,5 @@
 		<button label="&read.select.button;" style="float:right" oncommand="toolbar_buttons.getFile('readmailpath');"/>
 	</box>
 </groupbox>
+</vbox>
+</prefpane>

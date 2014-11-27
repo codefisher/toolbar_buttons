@@ -1,15 +1,23 @@
+<prefpane id="toolbar-buttons-prefpane-translate" label="&translate.label;">
+<vbox>
 <groupbox>
-	<caption label="&translate.label;"/>
 	<preferences>
 		<preference id="{{pref-root}}translate.lang" name="{{pref-root}}translate.lang"
 			type="unichar"/>
+		<preference id="{{pref-root}}translate.service" name="{{pref-root}}translate.service"
+			type="unichar"/>
 	</preferences>
-	<description>&translate.description;
-	</description>
-	<menulist id="translate-languages-menu" hidden="true" preference="{{pref-root}}translate.lang">
-		<menupopup id="translate-languages" />
+	<description>&translate.description;</description>
+	<menulist id="translate-languages-menu" disabled="true" preference="{{pref-root}}translate.lang">
+		<menupopup id="translate-languages-popup">
+			<menuitem label="&translate.loading;" selected="true" />
+		</menupopup>
 	</menulist>
-	<menulist id="translate-languages-menu-dummy" disabled="true">
-		<menupopup><menuitem label="&translate.not-in-use;" /></menupopup>
-	</menulist>
+	<description>&translate.service.description;</description>
+	<radiogroup preference="{{pref-root}}translate.service">
+		<radio value="google" label="&translate.service.google;"/>
+		<radio value="bing" label="&translate.service.bing;"/>
+	</radiogroup>
 </groupbox>
+</vbox>
+</prefpane>

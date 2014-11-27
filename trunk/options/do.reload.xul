@@ -1,4 +1,6 @@
-<groupbox flex="1">
+<prefpane id="toolbar-buttons-prefpane-reload" label="&previous-next.label;">
+<vbox>
+<groupbox>
 	<preferences>
 		<preference id="{{pref-root}}do.reload" name="{{pref-root}}do.reload"
 			type="bool"/>
@@ -6,3 +8,5 @@
 	<caption label="&toggle.label;"/>
 	<checkbox preference="{{pref-root}}do.reload" label="&toggle.checkbox;"/>
 </groupbox>
+</vbox>
+</prefpane>

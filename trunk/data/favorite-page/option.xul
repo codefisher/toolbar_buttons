@@ -1,5 +1,6 @@
+<prefpane id="toolbar-buttons-prefpane-favorite" label="&favorite-page.label;">
+<vbox>
 <groupbox flex="1">
-	<caption label="&favorite-page.label;"/>
 	<preferences>
 		<preference id="{{pref-root}}url.favorite" name="{{pref-root}}url.favorite"
 			type="unichar"/>
@@ -7,3 +8,5 @@
 	<description>&favorite-page.description;</description>
 	<textbox preference="{{pref-root}}url.favorite"/>
 </groupbox>
+</vbox>
+</prefpane>

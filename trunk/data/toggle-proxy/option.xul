@@ -1,10 +1,11 @@
+<prefpane id="toolbar-buttons-prefpane-proxy" label="&toggle.prox.label;">
+<vbox>
 <groupbox flex="1">
 	<preferences>
 		<preference id="{{pref-root}}toggle.proxy" name="{{pref-root}}toggle.proxy"
 			type="int"/>
 	</preferences>
 	<description>&toggle.proxy.description;</description>
-	<caption label="&toggle.prox.label;"/>
 	<radiogroup preference="{{pref-root}}toggle.proxy">
 		<radio value="0" label="&toggle.proxy.direct;"/>
 		<radio value="1" label="&toggle.proxy.manual;"/>
@@ -13,3 +14,5 @@
 		<radio value="5" label="&toggle.proxy.system;"/>
 	</radiogroup>
 </groupbox>
+</vbox>
+</prefpane>
