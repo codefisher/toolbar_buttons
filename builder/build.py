@@ -118,7 +118,7 @@ def build_extension(settings, output=None, project_root=None):
         xpi.write(settings.get("icon"), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))   
-    xpi.writestr("bootstrap.js", create_bootstrp(settings, buttons))
+    #xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons))
     xpi.write(settings.get("licence"), "LICENCE")
     xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
                  buttons.get_defaults())
@@ -134,7 +134,7 @@ def build_extension(settings, output=None, project_root=None):
                     print("Failed to write extension to profile folder")
     return buttons, button_locales
 
-def create_bootstrp(settings, buttons):
+def create_bootstrap(settings, buttons):
     template = open(os.path.join(settings.get("project_root"), "files", "bootstrap.js") ,"r").read()
     return (template.replace("{{pref_root}}", settings.get("pref_root"))
                     .replace("{{prefs}}", buttons.get_defaults(True))
@@ -161,7 +161,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
         values["application"] = option
         for _, application_id, _, _ in settings.get("applications_data")[option]:
             values["id"] = application_id
-            lines.append("overlay\tchrome://%(chrome)s/content/options.xul\t"
+            lines.append("override\tchrome://%(chrome)s/content/options.xul\t"
                          "chrome://%(chrome)s/content/%(application)s"
                          "-options.xul\tapplication=%(id)s" % values)
 

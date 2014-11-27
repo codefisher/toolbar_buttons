@@ -1,7 +1,18 @@
 <toolbarbutton
 	class="toolbarbutton-1"
 	id="stop-cookies"
+	type="menu-button"
 	label="&stop-cookies.label;"
 	tooltiptext="&stop-cookies.tooltip;"
 	onclick="toolbar_buttons.viewCookieExceptions(event);"
-	oncommand="toolbar_buttons.toggleCookies(this);" />
+	oncommand="toolbar_buttons.toggleCookies(this);" >
+	<menupopup onclick="event.stopPropagation();"
+		oncommand="event.stopPropagation();" >
+		<menuitem label="&tb-cookie-manager.label;"
+			oncommand="toolbar_buttons.viewCookies();"/>
+		<menuitem label="&tb-cookie-exceptions.label;"
+			oncommand="toolbar_buttons.openCookieExceptions();" />
+		<menuitem label="&stop-cookies.delete;"
+			oncommand="toolbar_buttons.deleteAllCookies();" />
+	</menupopup>
+</toolbarbutton>

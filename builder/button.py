@@ -259,13 +259,10 @@ class Button(SimpleButton):
                              self._settings.get("chrome_name")))
         else:
             javascript = ""
-        with open(os.path.join(self._settings.get("project_root"), "files", "options.xul"), "r") as base_window_file:
-            base_window = (base_window_file.read()
-                       .replace("{{chrome-name}}", self._settings.get("chrome_name"))
-                       .replace("{{javascript}}", javascript))
         with open( os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
             overlay_window = (overlay_window_file.read()
-                       .replace("{{chrome-name}}", self._settings.get("chrome_name")))
+                       .replace("{{chrome-name}}", self._settings.get("chrome_name"))
+                       .replace("{{javascript}}", javascript))
         files = defaultdict(list)
         for button, data in self._button_options.iteritems():
             for application in self._button_applications[button]:
@@ -286,8 +283,6 @@ class Button(SimpleButton):
                     self._button_options[button] = data
                 for application in applications:
                     files[application].append(data.replace("{{pref-root}}", self._settings.get("pref_root")))
-        if files:
-            result["options"] = base_window
         for application, data in files.iteritems():
             result["%s-options" % application] = overlay_window.replace("{{options}}",
                                     "\n\t\t\t".join("\n".join(data).split("\n")))
@@ -330,7 +325,7 @@ class Button(SimpleButton):
         settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
                          """'chrome://%s/locale/button.properties'""" % self._settings.get("chrome_name")))
         if self._settings.get("show_updated_prompt"):
-            settings.append(("%scurrent.version" % self._settings.get("pref_root"), ""))
+            settings.append(("%scurrent.version" % self._settings.get("pref_root"), "''"))
         for name, value in self._preferences.iteritems():
             settings.append(("%s%s" % (self._settings.get("pref_root"), name), value))
         if format_dict:

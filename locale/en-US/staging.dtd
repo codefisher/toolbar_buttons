@@ -12,3 +12,5 @@
 <!ENTITY tb-page-info-media.tooltip "Open page info at the media tab">
 <!ENTITY tb-open-in-conversation.label "Open in Conversation">
 <!ENTITY tb-open-in-conversation.tooltip "Open current message in Conversation">
+<!ENTITY tb-cookie-exceptions.label "Cookie Exceptions">
+<!ENTITY tb-cookie-exceptions.tooltip "Open the Cookie Exceptions dialog">

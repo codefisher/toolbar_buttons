@@ -5,8 +5,8 @@ homePageStrings: function() {
 		'title': stringBundle.GetStringFromName("home-page.title"),
 		'message': stringBundle.GetStringFromName("home-page.message"),
 		'next': stringBundle.GetStringFromName("next"),
-		'done': stringBundle.GetStringFromName("done")
-	}
+		'done': stringBundle.GetStringFromName("done"),
+	};
 }
 
 homePageChange: function() {
@@ -22,46 +22,53 @@ homePageChange: function() {
 
 homePageChangeMultiple: function() {
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
-	var args = toolbar_buttons.interfaces.DialogParamBlock;
 	var strings = toolbar_buttons.homePageStrings();
 	var value = prefs.getCharPref("browser.startup.homepage");
 	var str = value.split("|");
 	var links = "";
+	
+	Components.utils.import("resource://gre/modules/SharedPromptUtils.jsm");
+	//var bunService = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
+	//var bundle = bunService.createBundle("chrome://global/locale/commonDialogs.properties");
+	
+	var args = {
+		promptType: "prompt",
+		value: "http://",
+		title: strings["title"],
+		text: strings["message"],
+		button0Label: strings["next"],
+		//button1Label: bundle.GetStringFromName("Cancel"),
+		button1Label: strings["done"],
+	};
 	var i = 0;
-
-	args.SetInt(2, 3);
-	args.SetInt(3, 1);
-	args.SetString(8, strings["next"]);
-	args.SetString(10, strings["done"]);
-	args.SetInt(0, 0);
-	args.SetString(12, strings["title"]);
-	args.SetString(4, strings["message"]);
-	while (args.GetInt(0) == 0) {
+	do {		
 		if (str[i] != null) {
-			args.SetString(6, str[i]);
+			args["value"] = str[i];
 		} else {
-			args.SetString(6, "http://");
+			args["value"] = "http://";
 		}
-		var arg2 = Array();
-		arg2.returnbutton2 = true;
-		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", args, arg2);
-		if (args.GetInt(0) == 1) {
-			return;
-		}
-		if (args.GetString(6) != "http://" && args.GetString(6) != "") {
-			if (args.GetInt(0) == 0) {
-				links += args.GetString(6) + "|";
+		var propBag = PromptUtils.objectToPropBag(args);
+		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", propBag);
+		var value = propBag.getPropertyAsAString('value');
+		var button = propBag.getPropertyAsInt32('buttonNumClicked');
+		alert(button);
+		//if (button == 1) {
+		//	return;
+		//}
+		if (value != "http://" && value != "") {
+			if (links) {
+				links += "|" + value;
 			} else {
-				links += args.GetString(6);
+				links = value;
 			}
 		}
 		i++;
-	}
+	} while(button == 0);
 	prefs.setCharPref("browser.startup.homepage", links);
 }
 
 homePageSetCurrent: function() {
-	toolbar_buttons.interfaces.PrefBranch.setCharPref("browser.startup.homepage", window.content.document.location.href)
+	toolbar_buttons.interfaces.PrefBranch.setCharPref("browser.startup.homepage", window.content.document.location.href);
 }
 
 homePageAddCurrent: function() {
@@ -70,7 +77,7 @@ homePageAddCurrent: function() {
 	if(homePage)
 		homePage += "|";
 	homePage += window.content.document.location.href;
-	prefs.setCharPref("browser.startup.homepage", homePage)
+	prefs.setCharPref("browser.startup.homepage", homePage);
 }
 
 homeList: function(item) {

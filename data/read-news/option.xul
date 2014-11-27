@@ -1,6 +1,6 @@
+<prefpane id="toolbar-buttons-prefpane-readnews" label="&readnews.path.caption;">
+<vbox>
 <groupbox flex="1">
-	<caption label="&readnews.path.caption;"/>
-
 	<preferences>
 		<preference id="{{pref-root}}readnews.path" name="{{pref-root}}readnews.path" type="unichar"/>
 	</preferences>
@@ -12,3 +12,5 @@
 		<button label="&read.select.button;" style="float:right" oncommand="toolbar_buttons.getFile('readnewspath');"/>
 	</box>
 </groupbox>
+</vbox>
+</prefpane>
