@@ -1,10 +1,8 @@
-<prefpane id="toolbar-buttons-prefpane-restart" label="&restart.label;">
-<vbox>
+confirm.caption:application-error.png
 <groupbox flex="1">
+	<caption label="&restart.label;" />
 	<preferences>
 		<preference id="{{pref-root}}restart" name="{{pref-root}}restart" type="bool"/>
 	</preferences>
 	<checkbox preference="{{pref-root}}restart" label="&restart.checkbox;"/>
 </groupbox>
-</vbox>
-</prefpane>

@@ -184,6 +184,8 @@ class Button(SimpleButton):
         self._res = {}
         self._pref_list = defaultdict(list)
         self._button_style = {}
+        self._option_titles = set()
+        self._option_icons = set()
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -214,7 +216,7 @@ class Button(SimpleButton):
                     self._manifest.append(manifest.read())
             if "option.xul" in files:
                 with open(os.path.join(folder, "option.xul"), "r") as option:
-                    self._button_options[button] = option.read()
+                    self._button_options[button] = (option.readline(), option.read())
             if "option.js" in files:
                 with open(os.path.join(folder, "option.js"), "r") as option:
                     self._button_options_js[button] = option.read()
@@ -263,16 +265,23 @@ class Button(SimpleButton):
             overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                        .replace("{{javascript}}", javascript))
-        files = defaultdict(list)
-        for button, data in self._button_options.iteritems():
+        files = defaultdict(dict)
+        def append(files, application, first, data):
+            title, _, icon = first.strip().partition(':')
+            if title in files[application]:
+                files[application][title]['data'].append(data)
+            else:
+                files[application][title] = {'data': [data], 'icon': icon}
+        for button, (first, data) in self._button_options.iteritems():
             for application in self._button_applications[button]:
                 self._option_applications.add(application)
-                files[application].append(data.replace("{{pref-root}}", self._settings.get("pref_root")))
+                append(files, application, first, data.replace("{{pref-root}}", self._settings.get("pref_root")))
         if self._pref_list:
             limit = ".xul,".join(self._pref_list.keys()) + ".xul"
             pref_files = get_pref_folders(limit, self._settings)
             for file_name, name in zip(*pref_files):
                 data_fp = open(file_name, "r")
+                first = data_fp.readline()
                 data = data_fp.read()
                 data_fp.close()
                 applications = set()
@@ -280,12 +289,21 @@ class Button(SimpleButton):
                     for application in self._button_applications[button]:
                         self._option_applications.add(application)
                         applications.add(application)
-                    self._button_options[button] = data
+                    self._button_options[button] = (first, data)
                 for application in applications:
-                    files[application].append(data.replace("{{pref-root}}", self._settings.get("pref_root")))
+                    append(files, application, first, data.replace("{{pref-root}}", self._settings.get("pref_root")))
         for application, data in files.iteritems():
+            button_pref = []
+            for panel, info in data.iteritems():
+                icon = info['icon']
+                self._option_icons.add(icon)
+                self._option_titles.add(panel)
+                data = "\n\t\t\t\t".join("\n".join(info['data']).split("\n"))
+                panel_xml = """\t\t\t<prefpane id="toolbar-buttons-prefpane-%s" image="chrome://%s/skin/option/%s" label="&%s;"><vbox>%s</vbox></prefpane>"""  % (
+                                    panel.replace('.', '-'), self._settings.get("chrome_name"), icon, panel, data)
+                button_pref.append(panel_xml)
             result["%s-options" % application] = overlay_window.replace("{{options}}",
-                                    "\n\t\t\t".join("\n".join(data).split("\n")))
+                                    "\n".join(button_pref))
         return result
 
     def get_options_applications(self):
@@ -295,6 +313,13 @@ class Button(SimpleButton):
         """
         return self._option_applications
 
+    def get_option_icons(self):
+        """Returns a list of icons used by the options window
+
+        precondition: get_options() has been called
+        """
+        return self._option_icons
+        
     def get_file_names(self):
         return self._button_files
 
@@ -312,11 +337,15 @@ class Button(SimpleButton):
         return strings
 
     def get_options_strings(self):
+        """Returns a list of strings used by the options window
+
+        precondition: get_options() has been called
+        """
         locale_match = re.compile("&([a-zA-Z0-9.-]*);")
-        strings = []
+        strings = list(self._option_titles)
         if self._button_options:
             strings.append("options.window.title")
-        for value in self._button_options.itervalues():
+        for first, value in self._button_options.itervalues():
             strings.extend(locale_match.findall(value))
         return list(set(strings))
 
@@ -565,7 +594,7 @@ class Button(SimpleButton):
             for button, value in self._button_options_js.iteritems():
                 # dependency resolution is not enabled here yet
                 js_options_include.update(include_match.findall(value))
-                js_options_include.update(detect_depandancy.findall(self._button_options[button]))
+                js_options_include.update(detect_depandancy.findall(self._button_options[button][1]))
                 value = include_match_replace.sub("", value)
                 js_functions = function_match.findall(value)
                 self._button_options_js[button] = ",\n".join(js_functions)

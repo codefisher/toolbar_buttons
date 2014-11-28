@@ -1,8 +1,9 @@
-<prefpane id="toolbar-buttons-prefpane-translate" label="&translate.label;">
-<vbox>
+translate.label:pencil.png
 <groupbox>
 	<preferences>
 		<preference id="{{pref-root}}translate.lang" name="{{pref-root}}translate.lang"
+			type="unichar"/>
+		<preference id="{{pref-root}}translate.popup" name="{{pref-root}}translate.popup"
 			type="unichar"/>
 		<preference id="{{pref-root}}translate.service" name="{{pref-root}}translate.service"
 			type="unichar"/>
@@ -13,11 +14,15 @@
 			<menuitem label="&translate.loading;" selected="true" />
 		</menupopup>
 	</menulist>
+	<menulist id="translate-languages-promt" hidden="true" preference="{{pref-root}}translate.promt">
+		<menupopup id="translate-promt-popup">
+			<menuitem label="&translate.loading;" selected="true" />
+		</menupopup>
+	</menulist>
 	<description>&translate.service.description;</description>
 	<radiogroup preference="{{pref-root}}translate.service">
-		<radio value="google" label="&translate.service.google;"/>
-		<radio value="bing" label="&translate.service.bing;"/>
+		<radio value="google" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.google;"/>
+		<radio value="promt" onclick="toolbar_buttons.showPromtTranslate();" label="&translate.service.promt;"/>
+		<radio value="bing" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>
 	</radiogroup>
 </groupbox>
-</vbox>
-</prefpane>
