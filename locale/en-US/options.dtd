@@ -23,4 +23,9 @@
 <!ENTITY translate.service.description "Select which translation service you want to use.">
 <!ENTITY translate.service.google "Google Translate">
 <!ENTITY translate.service.bing "Bing Translator">
+<!ENTITY translate.service.promt "PROMT Online Translator">
 <!ENTITY readnews.path.caption "News Path">
+<!ENTITY links.caption "Links">
+<!ENTITY settings.label "Settings">
+<!ENTITY confirm.caption "Confirm">
+

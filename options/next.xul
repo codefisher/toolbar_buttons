@@ -1,11 +1,9 @@
-<prefpane id="toolbar-buttons-prefpane-next" label="&previous-next.label;">
-<vbox>
+settings.label:cog.png
 <groupbox>
+	<caption label="&previous-next.label;" />
 	<preferences>
 		<preference id="{{pref-root}}next" name="{{pref-root}}next"
 			type="bool"/>
 	</preferences>
 	<checkbox preference="{{pref-root}}next" label="&previous-next.checkbox;"/>
 </groupbox>
-</vbox>
-</prefpane>

@@ -1,6 +1,6 @@
-<prefpane id="toolbar-buttons-prefpane-proxy" label="&toggle.prox.label;">
-<vbox>
+toggle.prox.label:world-network.png
 <groupbox flex="1">
+	<caption label="&toggle.prox.label;" />
 	<preferences>
 		<preference id="{{pref-root}}toggle.proxy" name="{{pref-root}}toggle.proxy"
 			type="int"/>
@@ -14,5 +14,3 @@
 		<radio value="5" label="&toggle.proxy.system;"/>
 	</radiogroup>
 </groupbox>
-</vbox>
-</prefpane>
