@@ -8,7 +8,7 @@ TranslatePage: function() {
 		script.type = 'text/javascript';
 		script.src = 'http://labs.microsofttranslator.com/bookmarklet/default.aspx?f=js&to=' + to; 
 		doc.body.insertBefore(script, doc.body.firstChild);	
-	} else if(translator = "promt") {
+	} else if(translator == "promt") {
 		// this will not work yet, because we need the correct value for 'to'
 		var targetURI = getWebNavigation().currentURI.spec;
 		var service = 'http://www.online-translator.com/siteTranslation/autolink/?direction=' + to + '&template=General&sourceURL=' + encodeURIComponent(targetURI)
