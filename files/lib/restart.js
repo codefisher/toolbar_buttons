@@ -13,7 +13,7 @@ restartMozilla: function() {
 		toolbar_buttons.interfaces.ExtensionPrefBranch.setBoolPref(
 				"restart", check.value);
 		if (result == false) {
-			return
+			return;
 		}
 	}
 	// now ask all other interested parties

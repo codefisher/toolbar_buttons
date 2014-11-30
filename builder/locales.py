@@ -105,7 +105,6 @@ class Locale(object):
         get_properties_data(list<str>) -> dict<str: str>
         """
         default_locale = self._settings.get("default_locale")
-        description = "extensions.%s.description" % self._settings.get("extension_id")
         result = {}
         for locale in self._locales:
             properties_file = []
@@ -127,9 +126,11 @@ class Locale(object):
                         properties_file.append("""%s=%s""" % (string, button.get_string(string, locale)))
                 elif button and button.get_string(string):
                     properties_file.append("%s=%s" % (string, button.get_string(string)))
-            if locale == default_locale:
-                properties_file.append("%s=%s" % (description, self._settings.get("description")))
-            elif description in self._properties[locale]:
-                properties_file.append("%s=%s" % (description, self._properties[locale][description]))
+            if self._settings.get("translate_description"):
+                description = "extensions.%s.description" % self._settings.get("extension_id")
+                if locale == default_locale:
+                    properties_file.append("%s=%s" % (description, self._settings.get("description")))
+                elif description in self._properties[locale]:
+                    properties_file.append("%s=%s" % (description, self._properties[locale][description]))
             result[locale] = "\n".join(properties_file)
         return result

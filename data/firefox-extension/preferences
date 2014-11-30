@@ -1,1 +1,2 @@
 url.firefox-ext:"https://addons.mozilla.org/firefox/extensions/"
+always.new.tab:false

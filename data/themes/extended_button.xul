@@ -1,0 +1,12 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="themes"
+	type="menu-button"
+	label="&themes.label;"
+	tooltiptext="&themes.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('themes', 'addons://list/theme');">
+		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'theme');" oncommand="event.stopPropagation();">
+			<menuseparator />
+			<menuitem id="tb-themes-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons()" />
+		</menupopup>
+</toolbarbutton>

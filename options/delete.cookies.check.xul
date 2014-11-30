@@ -1,0 +1,8 @@
+confirm.caption:application-error.png
+<groupbox flex="1">
+	<caption label="&tb-delete-cookies.label;" />
+	<preferences>
+		<preference id="{{pref-root}}delete.cookies.check" name="{{pref-root}}delete.cookies.check" type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref-root}}delete.cookies.check" label="&delete.cookies.checkbox;"/>
+</groupbox>

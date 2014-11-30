@@ -53,7 +53,7 @@ def build_extension(settings, output=None, project_root=None):
         apply_max_version(settings)
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales, all_files=True)
-    options_locales = Locale(settings, locale_folders, locales, options=True)
+    options_locales = Locale(settings, locale_folders, locales, all_files=True)
     buttons = get_buttons(settings)
 
     xpi_file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
@@ -78,11 +78,11 @@ def build_extension(settings, output=None, project_root=None):
         xpi.writestr(os.path.join("chrome", "locale", locale, "button.properties"), data)
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
-            xpi.writestr(os.path.join("chrome", "content", name), fp.read().replace("{{chrome-name}}", settings.get("chrome_name")))
+            xpi.writestr(os.path.join("chrome", "content", "files", name), fp.read().replace("{{chrome-name}}", settings.get("chrome_name")))
     resources = buttons.get_resource_files()
     has_resources = bool(resources)
     for name, path in resources.iteritems():
-        xpi.write(path, os.path.join("chrome", "resources", name))
+        xpi.write(path, os.path.join("chrome", "content", "resources", name))
 
     for file, data in buttons.get_options().iteritems():
         xpi.writestr(os.path.join("chrome", "content", "%s.xul" % file), data)
@@ -114,24 +114,28 @@ def build_extension(settings, output=None, project_root=None):
         settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
 
     if settings.get("fix_meta") and len(buttons) == 1:
+        button = buttons.buttons()[0]
         settings["name"] = "%s Button" % labels[0]
-        xpi.write(get_image(settings, "32", buttons.get_icons(buttons.buttons()[0])), "icon.png")
+        settings["description"] = buttons.get_description(button)
+        xpi.write(get_image(settings, "32", buttons.get_icons(button)), "icon.png")
     else:
         xpi.write(settings.get("icon"), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))   
     #xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons))
     xpi.write(settings.get("licence"), "LICENCE")
-    xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"),
-                 buttons.get_defaults())
+    defaults =  buttons.get_defaults()
+    if defaults:
+        xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)
     xpi.close()
     if not output and settings.get("profile_folder"):
         with open(xpi_file_name, "r") as xpi_fp:
+            data = xpi_fp.read()
             for folder in settings.get("profile_folder"):
                 try:
                     with open(os.path.join(folder, "extensions",
                         settings.get("extension_id") + ".xpi"), "w") as fp:
-                        fp.write(xpi_fp.read())
+                        fp.write(data)
                 except IOError:
                     print("Failed to write extension to profile folder")
     return buttons, button_locales
@@ -158,7 +162,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines.append("override\tchrome://%(chrome)s/skin/icon.png\t"
                  "chrome://%(chrome)s-root/skin/icon.png" % values)
     if has_resources:
-        lines.append("resource\t%(chrome)s\tchrome/resources/" % values)
+        lines.append("resource\t%(chrome)s\tchrome://%(chrome)s/content/resources/" % values)
     for option in options:
         values["application"] = option
         for _, application_id, _, _ in settings.get("applications_data")[option]:

@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&tb-twitter-button.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.twitter" name="{{pref-root}}url.twitter"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.twitter"/>
+</groupbox>

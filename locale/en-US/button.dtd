@@ -250,7 +250,11 @@
 <!ENTITY stop-animation.tooltip "Stop Animated GIF&apos;s, Blink and Marquee tags">
 <!ENTITY stop-cookies.label "Toggle Cookies">
 <!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
-<!ENTITY stop-cookies.delete "Delete All Cookies">
+<!ENTITY stop-cookies.allow "Allow All Cookies">
+<!ENTITY stop-cookies.thirdparty "Allow for originating site">
+<!ENTITY stop-cookies.block "Block Cookies">
+<!ENTITY stop-cookies.privacy "Allow based on privacy settings">
+<!ENTITY tb-delete-session-cookies.label "Delete Session Cookies">
 <!ENTITY stop-dinamic-content.label "Toggle embedded">
 <!ENTITY stop-dinamic-content.tooltip "Stop all embedded content from loading.">
 <!ENTITY stop-flash.label "Flash">

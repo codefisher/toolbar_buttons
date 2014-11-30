@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&paypal.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.paypal" name="{{pref-root}}url.paypal"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.paypal"/>
+</groupbox>
