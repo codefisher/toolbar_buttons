@@ -11,12 +11,12 @@ translate.label:pencil.png
 	<description>&translate.description;</description>
 	<menulist id="translate-languages-menu" disabled="true" preference="{{pref-root}}translate.lang">
 		<menupopup id="translate-languages-popup">
-			<menuitem label="&translate.loading;" selected="true" />
+			<menuitem label="&translate.loading;" id="translate-loading" />
 		</menupopup>
 	</menulist>
-	<menulist id="translate-languages-promt" hidden="true" preference="{{pref-root}}translate.promt">
+	<menulist id="translate-languages-promt" disabled="true" hidden="true" preference="{{pref-root}}translate.promt">
 		<menupopup id="translate-promt-popup">
-			<menuitem label="&translate.loading;" selected="true" />
+			<menuitem label="&translate.loading;" id="translate-promt-loading" />
 		</menupopup>
 	</menulist>
 	<description>&translate.service.description;</description>

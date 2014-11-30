@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&gmail.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.gmail" name="{{pref-root}}url.gmail"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.gmail"/>
+</groupbox>

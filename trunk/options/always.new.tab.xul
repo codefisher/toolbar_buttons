@@ -1,0 +1,12 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&open-new-tab.label;" />
+	<preferences>
+		<preference id="{{pref-root}}always.new.tab" name="{{pref-root}}always.new.tab"
+			type="bool"/>
+	</preferences>
+	<radiogroup preference="{{pref-root}}always.new.tab">
+		<radio value="true" label="&open-new-tab.new;"/>
+		<radio value="false" label="&open-new-tab.current;"/>
+	</radiogroup>
+</groupbox>

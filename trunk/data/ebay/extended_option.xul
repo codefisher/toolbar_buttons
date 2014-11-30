@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&ebay.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.ebay" name="{{pref-root}}url.ebay"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.ebay"/>
+</groupbox>

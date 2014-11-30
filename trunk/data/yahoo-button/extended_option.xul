@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&yahoo-button.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.yahoo" name="{{pref-root}}url.yahoo"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.yahoo"/>
+</groupbox>

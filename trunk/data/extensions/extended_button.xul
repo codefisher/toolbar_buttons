@@ -1,0 +1,12 @@
+<toolbarbutton
+	class="toolbarbutton-1"
+	id="extensions"
+	type="menu-button"
+	label="&extensions.label;"
+	tooltiptext="&extensions.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');">
+		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'extension');" oncommand="event.stopPropagation();">
+			<menuseparator />
+			<menuitem id="tb-extensions-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons()" />
+		</menupopup>
+</toolbarbutton>

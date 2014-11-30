@@ -417,3 +417,19 @@ openDialog: function(parentWindow, url, windowName, features) {
                             .getService(Components.interfaces.nsIWindowWatcher);
     return watcher.openWindow(parentWindow, url, windowName, features, array);
 }
+
+sortMenu: function(event, aMenu) {
+	if(aMenu.sorted){
+		return;
+	}
+	var menuitems = [];
+	while(aMenu.firstChild) {
+		menuitems.push(aMenu.firstChild.cloneNode(true));
+		aMenu.removeChild(aMenu.firstChild);
+	}
+	menuitems.sort(function(a, b) { return a.getAttribute('label') > b.getAttribute('label'); });
+	for(var i in menuitems) {
+		aMenu.appendChild(menuitems[i]);
+	}
+	aMenu.sorted = true;
+}

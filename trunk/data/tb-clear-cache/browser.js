@@ -3,7 +3,8 @@ goClearBrowserCache: function() {
 		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
 	var question = stringBundle.GetStringFromName("tb-clear-cache.question");
 	var title = stringBundle.GetStringFromName("tb-clear-cache.label");
-	if(toolbar_buttons.interfaces.PromptService.confirm(null, title, question)) {
+	var prompt = toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("clear.cache.check");
+	if(!prompt || toolbar_buttons.interfaces.PromptService.confirm(null, title, question)) {
 		// copied from chrome://browser/content/sanitize.js
 	    var cache = Cc["@mozilla.org/netwerk/cache-storage-service;1"].
 	                getService(Ci.nsICacheStorageService);

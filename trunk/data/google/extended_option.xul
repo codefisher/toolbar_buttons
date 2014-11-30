@@ -1,0 +1,9 @@
+links.caption:link.png
+<groupbox flex="1">
+	<caption label="&google.label;" />
+	<preferences>
+		<preference id="{{pref-root}}url.google" name="{{pref-root}}url.google"
+			type="unichar"/>
+	</preferences>
+	<textbox preference="{{pref-root}}url.google"/>
+</groupbox>

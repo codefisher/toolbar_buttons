@@ -30,6 +30,8 @@ config_default = {
     # this setting may include locals to skip even if we we have them
     # simply specify "all" the a "-" in front of locals to remove
     "locale": "all",
+    
+    "exclude_buttons": None,
 
     # these settings change the internals of the extension
     "pref_root": "extension.tbutton.",
@@ -54,6 +56,12 @@ config_default = {
     # if set, the disciption will be change to list the buttons in the extension
     # and if there is only one button, also the title and icon will be change
     "fix_meta": False,
+    # if the setting is included so that the discription can be translated
+    "translate_description": False,
+    # load the extended_option.xul file
+    "extra_options":False,
+    # use the more extended versions of some buttons
+    "extended_buttons": False,
 
 
     # controls for the locales

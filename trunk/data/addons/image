@@ -1,1 +1,5 @@
 plugin.png
+plugin-add.png  #tb-addons-install
+plugin-key.png  #tb-addons-allowed-sites
+plugin.png  #tb-addons-extensions
+palette.png  #tb-addons-themes

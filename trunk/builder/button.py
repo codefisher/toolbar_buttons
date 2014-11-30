@@ -49,10 +49,13 @@ class SimpleButton():
         self._info = []
         self._strings = {}
         self._xul_files = {}
+        self._button_folders = {}
         large_icon_size = settings.get("icon_size")[1]
         skip_without_icons = settings.get("skip_buttons_without_icons")
 
         for folder, button in zip(self._folders, self._buttons):
+            if self._settings.get("exclude_buttons") and button in self._settings.get("exclude_buttons"):
+                continue
             files = os.listdir(folder)
             button_wanted = False
             xul_data = []
@@ -68,6 +71,8 @@ class SimpleButton():
                         else:
                             if set(self._settings.get("file_to_application")[file_name]
                                    ).intersection(self._applications):
+                                if self._settings.get("extended_buttons") and ("extended_%s" % xul_file) in files:
+                                    xul_file = "extended_%s" % xul_file
                                 xul_data.append((folder, button,
                                                        xul_file, file_name))
                                 xul_files.append(os.path.join(folder, xul_file))
@@ -78,6 +83,8 @@ class SimpleButton():
                 if (xul_file in files
                         and set(self._settings.get("file_to_application")[file_name]
                                    ).intersection(self._applications)):
+                    if self._settings.get("extended_buttons") and ("extended_%s" % xul_file) in files:
+                        xul_file = "extended_%s" % xul_file
                     xul_data.append((folder, button, xul_file, file_name))
                     xul_files.append(os.path.join(folder, xul_file))
                     button_wanted = True
@@ -106,6 +113,7 @@ class SimpleButton():
                 for item in xul_data:
                     self._process_xul_file(*item)
                 self._info.append((folder, button, files))
+                self._button_folders[button] = folder
                 self._xul_files[button] = xul_files
 
             if "key" in files and self._settings.get("use_keyboard_shortcuts"):
@@ -192,15 +200,17 @@ class Button(SimpleButton):
         self._button_js["button"].append("")
 
         for folder, button, files in self._info:
-
             for file_name in (self._window_files + self._app_files):
                 js_file = file_name + ".js"
-                if (js_file in files
-                    and (file_name == "button"
-                         or set(self._settings.get("file_to_application")[file_name]
-                                   ).intersection(self._applications))):
-                    with open(os.path.join(folder, js_file)) as js:
-                        self._button_js[file_name].append(js.read())
+                if (file_name == "button"
+                         or set(self._settings.get("file_to_application").get(file_name, [])
+                                   ).intersection(self._applications)):
+                    if js_file in files:
+                        with open(os.path.join(folder, js_file)) as js:
+                            self._button_js[file_name].append(js.read())
+                    if self._settings.get("extended_buttons") and ("extended_%s" % js_file) in files:
+                        with open(os.path.join(folder, "extended_%s" % js_file)) as js:
+                            self._button_js[file_name].append(js.read())
 
             if button in self._settings.get("keyboard_custom_keys"):
                 self._button_keys[button].update(self._settings.get("keyboard_custom_keys")[button])
@@ -217,6 +227,9 @@ class Button(SimpleButton):
             if "option.xul" in files:
                 with open(os.path.join(folder, "option.xul"), "r") as option:
                     self._button_options[button] = (option.readline(), option.read())
+            if self._settings.get("extra_options") and "extended_option.xul" in files:
+                with open(os.path.join(folder, "extended_option.xul"), "r") as option:
+                    self._button_options[button] = (option.readline(), option.read())
             if "option.js" in files:
                 with open(os.path.join(folder, "option.js"), "r") as option:
                     self._button_options_js[button] = option.read()
@@ -224,10 +237,20 @@ class Button(SimpleButton):
                 for file in os.listdir(os.path.join(folder, "files")):
                     if file[0] != ".":
                         self._extra_files[file] = os.path.join(folder, "files", file)
+            if "file_list" in files:
+                with open(os.path.join(folder, "file_list"), "r") as file_list:
+                    for file in file_list:
+                        if file.strip():
+                            self._extra_files[file.strip()] = os.path.join(self._settings.get("project_root"), "files", file.strip())
             if "res" in files:
                 for file in os.listdir(os.path.join(folder, "res")):
                     if file[0] != ".":
                         self._res[file] = os.path.join(folder, "res", file)
+            if "res_list" in files:
+                with open(os.path.join(folder, "res_list"), "r") as res_list:
+                    for file in res_list:
+                        if file.strip():
+                            self._res[file.strip()] = os.path.join(self._settings.get("project_root"), "files", file.strip())
             if "style.css" in files:
                 with open(os.path.join(folder, "style.css"), "r") as style:
                     self._button_style[button] = style.read()
@@ -240,6 +263,12 @@ class Button(SimpleButton):
 
     def get_resource_files(self):
         return self._res
+    
+    def get_description(self, button):
+        folder = self._button_folders[button]
+        with open(os.path.join(folder, "description"), "r") as description:
+            return description.read()
+        return ""
 
     def _process_xul_file(self, folder, button, xul_file, file_name):
         application = SimpleButton._process_xul_file(self, folder, button, xul_file, file_name)
@@ -289,7 +318,7 @@ class Button(SimpleButton):
                     for application in self._button_applications[button]:
                         self._option_applications.add(application)
                         applications.add(application)
-                    self._button_options[button] = (first, data)
+                    self._button_options[file_name] = (first, data)
                 for application in applications:
                     append(files, application, first, data.replace("{{pref-root}}", self._settings.get("pref_root")))
         for application, data in files.iteritems():
@@ -351,7 +380,8 @@ class Button(SimpleButton):
 
     def get_defaults(self, format_dict=False):
         settings = []
-        settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
+        if self._settings.get("translate_description"):
+            settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
                          """'chrome://%s/locale/button.properties'""" % self._settings.get("chrome_name")))
         if self._settings.get("show_updated_prompt"):
             settings.append(("%scurrent.version" % self._settings.get("pref_root"), "''"))
@@ -543,6 +573,8 @@ class Button(SimpleButton):
         for file_name, values in self._button_xul.iteritems():
             for button, xul in values.iteritems():
                 js_imports.update(detect_depandancy.findall(xul))
+        if self._settings.get("create_menu"):
+            js_imports.add("sortMenu")
         
         for file_name, js in self._button_js.iteritems():
             js_file = "\n".join(js)
@@ -675,23 +707,32 @@ class Button(SimpleButton):
             return ""
         data = []
         menu_name, insert_after = self._settings.get("file_to_menu").get(file_name)
-        simple_button_re = re.compile(r"^<toolbarbutton.*/>$", re.DOTALL)
+        simple_button_re = re.compile(r"^<toolbarbutton(.*)/>$", re.DOTALL)
+        menu_button_re = re.compile(r"^<toolbarbutton(.*?)>(.*)</toolbarbutton>", re.DOTALL)
         attr_match = re.compile(r'''\b([\w\-]+)=("[^"]*")''', re.DOTALL)
         for button_id, xul in buttons.iteritems():
-            if simple_button_re.match(xul):
-                attrs = [
-                     ("%s=%s" % (name, value.replace("toolbarbutton-1", "").strip()))
-                            if name == "class" else ("%s=%s" % (name, value))
-                     for name, value in attr_match.findall(xul)
-                     if name not in ("id", "tooltiptext", "class")
-                        or (name == "class" and value != "toolbarbutton-1")]
-                attrs.append('id="%s-menu-item"' % button_id)
-                if self._settings.get("use_keyboard_shortcuts") and button_id in self._button_keys:
-                    attrs.append('key="%s-key"' % button_id)
+            attr_data_match = simple_button_re.findall(xul)
+            menu = None
+            if attr_data_match:
+                attr_data = attr_data_match[0]
+            else:
+                attr_data, menu = menu_button_re.findall(xul)[0]
+            attrs = [
+                 ("%s=%s" % (name, value.replace("toolbarbutton-1", "menu-iconic menuitem-iconic").strip()))
+                        if name == "class" else ("%s=%s" % (name, value))
+                 for name, value in attr_match.findall(attr_data)
+                 if name not in ("id", "tooltiptext", "class")
+                    or (name == "class" and value != "toolbarbutton-1")]
+            attrs.append('id="%s-menu-item"' % button_id)
+            if self._settings.get("use_keyboard_shortcuts") and button_id in self._button_keys:
+                attrs.append('key="%s-key"' % button_id)
+            if menu:
+                data.append("<menu %s>%s</menu>" % ("\n\t\t".join(attrs), menu))
+            else:
                 data.append("<menuitem %s/>" % "\n\t\t".join(attrs))
         if not data:
             return ""
-        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
+        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup onpopupshowing="toolbar_buttons.sortMenu(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
 
     def get_xul_files(self):
         """

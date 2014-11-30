@@ -1,0 +1,14 @@
+extensions-about=About
+extensions-preference=Preferences
+extensions-disable=Disable
+extensions-enable=Enable
+extensions-remove=Remove
+
+extensions-disable-restart=Disabled (Needs Restart)
+extensions-enable-restart=Enabled (Needs Restart)
+extensions-remove-restart=Remove (Needs Restart)
+
+extensions-undo=Undo
+extensions-restart=Restart
+
+extension-cancel-install=Cancel Install

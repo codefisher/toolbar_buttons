@@ -2,7 +2,9 @@
 <!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
 <!ENTITY toggle.prox.label "Proxy">
 <!ENTITY toggle.proxy.description "The proxy toggle button can toggle between system proxy and one of the below options.">
-<!ENTITY restart.checkbox "Don&apos;t prompt before restart.">
+<!ENTITY restart.checkbox "Do not prompt before restart.">
+<!ENTITY delete.cookies.checkbox "Prompt before deleting cookies.">
+<!ENTITY clear.cache.checkbox "Prompt before clearing the cache.">
 <!ENTITY previous-next.label "Previous &amp; Next">
 <!ENTITY toggle.checkbox "Reload page after toggling setting.">
 <!ENTITY restart.label "Restart">
@@ -28,4 +30,8 @@
 <!ENTITY links.caption "Links">
 <!ENTITY settings.label "Settings">
 <!ENTITY confirm.caption "Confirm">
+<!ENTITY translate.loading "Loading...">
+<!ENTITY open-new-tab.label "How Link Buttons Open">
+<!ENTITY open-new-tab.new "Open in a new tab.">
+<!ENTITY open-new-tab.current "Open in current tab.">
 

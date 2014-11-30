@@ -21,6 +21,7 @@ setProxyMenuItem: function(event, item) {
 	for(var menuitem in item.childNodes) {
 		if(item.childNodes[menuitem].getAttribute('value') == proxyState) {
 			item.childNodes[menuitem].setAttribute('checked', 'true');
+			return;
 		}
 	}
 }
