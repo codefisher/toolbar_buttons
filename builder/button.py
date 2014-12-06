@@ -194,6 +194,7 @@ class Button(SimpleButton):
         self._button_style = {}
         self._option_titles = set()
         self._option_icons = set()
+        self._modules = set()
 
         # we always want these file
         self._button_js["loader"].append("")
@@ -254,6 +255,9 @@ class Button(SimpleButton):
             if "style.css" in files:
                 with open(os.path.join(folder, "style.css"), "r") as style:
                     self._button_style[button] = style.read()
+            if "modules" in files:
+                with open(os.path.join(folder, "modules"), "r") as modules:
+                    self._modules.update(line.strip() for line in modules.readlines())
                     
     def get_button_xul(self):
         return self._button_xul
@@ -361,6 +365,9 @@ class Button(SimpleButton):
         for key, modifies in self._button_keys.itervalues():
             strings.extend(locale_match.findall(key))
             strings.extend(locale_match.findall(modifies))
+        for file_name in self._extra_files.itervalues():
+            with open(file_name, 'r') as xul:
+                strings.extend(locale_match.findall(xul.read()))
         strings = list(set(strings))
         strings.sort()
         return strings
@@ -676,9 +683,10 @@ class Button(SimpleButton):
                     self._settings.get("pref_root"))
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
+            modules = "\n" + "\n".join("Cu.import('%s');" % mod for mod in self._modules if mod)
             self._has_javascript = True
             with open(os.path.join(self._settings.get("project_root"), "files", "loader.js"), "r") as loader:
-                js_files["loader"] = loader.read()
+                js_files["loader"] = loader.read() + modules
         return js_files
 
     def get_properties_strings(self):

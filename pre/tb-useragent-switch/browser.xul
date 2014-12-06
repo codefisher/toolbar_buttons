@@ -1,0 +1,16 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-useragent-switch"
+	type="menu"
+	label="&tb-useragent-switch.label;"
+	tooltiptext="&tb-useragent-switch.tooltip;">
+	<menupopup onclick="event.stopPropagation();"
+		onpopupshowing="toolbar_buttons.openUserAgentMenu(event, this);"
+		oncommand="event.stopPropagation();" >
+		<menuitem id="tb-useragent-default" type="checkbox" oncommand="toolbar_buttons.resetUserAgentString();" label="&tb-useragent-switch.default;" />
+		<menuseparator id="tb-useragent-switch-default-sep" />
+		
+		<menuseparator id="tb-useragent-switch-config-sep"/>
+		<menuitem oncommand="toolbar_buttons.openUserAgentSettings();" label="&tb-useragent-switch.config;" />
+	</menupopup>
+</toolbarbutton>
