@@ -1,0 +1,4 @@
+tb-useragent-switch.label=User Agent
+tb-useragent-switch.tooltip=Change the current user agent string
+tb-useragent-switch.default=Default
+tb-useragent-switch.config=Configure

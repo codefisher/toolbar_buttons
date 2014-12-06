@@ -1,0 +1,13 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-external-application"
+	type="menu"
+	label="&tb-external-application.label;"
+	tooltiptext="&tb-external-application.tooltip;">
+	<menupopup onclick="event.stopPropagation();"
+		onpopupshowing="toolbar_buttons.openExternalApplicationMenu(event, this);"
+		oncommand="event.stopPropagation();" >
+		<menuseparator/>
+		<menuitem oncommand="toolbar_buttons.openExternalApplicationSettings();" label="&tb-external-application.config;" />
+	</menupopup>
+</toolbarbutton>

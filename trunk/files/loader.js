@@ -3,6 +3,9 @@ if (!this.Cc)
 	this.Cc = Components.classes;
 if (!this.Ci)
 	this.Ci = Components.interfaces;
+if (!this.Cu)
+	this.Cu = Components.utils;
+
 if(!this.toolbar_buttons) {
 	this.toolbar_buttons = {
 		interfaces: {},

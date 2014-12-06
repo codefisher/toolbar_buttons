@@ -27,8 +27,8 @@ openExtensionMenu: function(aMenu, aType) {
 			  	var menuItem = document.createElement("menu");
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
 			  	// this does not work for some reason
-			  	//menuItem.setAttribute("image", addon.iconURL);
-			  	//menuItem.className = "menuitem-iconic";
+			  	menuItem.setAttribute("image", addon.iconURL);
+			  	menuItem.className = "menu-iconic";
 			  	var menupopup = document.createElement("menupopup");
 			  	menupopup.addEventListener("popupshowing", toolbar_buttons.openAddonControlMenu(menupopup, addon, stringBundle), false);
 			  	menuItem.appendChild(menupopup);

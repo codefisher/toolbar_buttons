@@ -14,3 +14,14 @@
 <!ENTITY tb-open-in-conversation.tooltip "Open current message in Conversation">
 <!ENTITY tb-cookie-exceptions.label "Cookie Exceptions">
 <!ENTITY tb-cookie-exceptions.tooltip "Open the Cookie Exceptions dialog">
+
+<!ENTITY tb-string-preference.close "Close">
+<!ENTITY tb-string-preference.name "Name">
+<!ENTITY tb-string-preference.value "Value">
+<!ENTITY tb-string-preference.add "Add">
+<!ENTITY tb-string-preference.delete "Delete">
+<!ENTITY tb-string-preference.edit "Edit">
+<!ENTITY tb-string-preference.save "Save">
+<!ENTITY tb-string-preference.browse "Browse">
+
+<!ENTITY bookmark-manager.tab.checkbox "Open Bookmark Manger in a new tab.">

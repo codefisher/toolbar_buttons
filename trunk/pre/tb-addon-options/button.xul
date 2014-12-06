@@ -1,0 +1,8 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	type="menu"
+	id="tb-addon-options"
+	label="&tb-addon-options.label;"
+	tooltiptext="&tb-addon-options.tooltip;">
+		<menupopup onpopupshowing="toolbar_buttons.extensionOptionsMenu(this);" oncommand="event.stopPropagation();" />
+</toolbarbutton>

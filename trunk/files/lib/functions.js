@@ -427,9 +427,15 @@ sortMenu: function(event, aMenu) {
 		menuitems.push(aMenu.firstChild.cloneNode(true));
 		aMenu.removeChild(aMenu.firstChild);
 	}
-	menuitems.sort(function(a, b) { return a.getAttribute('label') > b.getAttribute('label'); });
+	menuitems.sort(function(a, b) { return a.getAttribute('label').toLowerCase() > b.getAttribute('label').toLowerCase(); });
 	for(var i in menuitems) {
 		aMenu.appendChild(menuitems[i]);
 	}
 	aMenu.sorted = true;
+}
+
+logMessage: function(string) {
+	var consoleService = Components.classes["@mozilla.org/consoleservice;1"]
+                     .getService(Components.interfaces.nsIConsoleService);
+    consoleService.logStringMessage(string);
 }

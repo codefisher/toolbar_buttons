@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load show_pagination %}
 
 {% block head_tags %}
     <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/upvote.css">
@@ -71,5 +72,6 @@
     <p>Currently no toolbar button requests have been made, be the first to ask!</p>
 {% endfor %}
 
+{% show_pagination page first_request %}
 
 {% endblock %}
