@@ -81,7 +81,10 @@ class Locale(object):
             strings.append("tb-toolbar-buttons.menu")
         for locale in self._locales:
             dtd_file = []
+            count = 0
             for string in strings:
+                if self._dtd[locale].get(string):
+                    count += 1
                 if self._missing_strings == "replace":
                     dtd_file.append("""<!ENTITY %s "%s">"""
                                 % (string, self._dtd[locale].get(string,
@@ -96,7 +99,8 @@ class Locale(object):
                         dtd_file.append("""<!ENTITY %s "%s">"""  % (string, self._dtd[locale][string]))
                     elif button and locale == default_locale and button.get_string(string, locale):
                         dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string, locale)))
-            result[locale] = "\n".join(dtd_file)
+            if count:
+                result[locale] = "\n".join(dtd_file)
         return result
 
     def get_properties_data(self, strings, button=None):

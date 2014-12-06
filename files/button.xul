@@ -2,7 +2,7 @@
 <!DOCTYPE overlay
 [
   <!ENTITY % brand SYSTEM "chrome://global/locale/brand.dtd"> %brand;
-  <!ENTITY % tbutton SYSTEM "chrome://{{chrome-name}}/locale/button.dtd"> %tbutton;
+  <!ENTITY % tbutton SYSTEM "chrome://{{chrome-name}}/locale/{{locale_file_prefix}}button.dtd"> %tbutton;
 ]>
 <?xml-stylesheet href="chrome://{{chrome-name}}/skin/button.css" type="text/css"?>
 <overlay id="tbutton" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
