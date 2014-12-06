@@ -297,6 +297,7 @@ class Button(SimpleButton):
         with open( os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
             overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name"))
+                       .replace("{{locale_file_prefix}}", self._settings.get("locale_file_prefix"))
                        .replace("{{javascript}}", javascript))
         files = defaultdict(dict)
         def append(files, application, first, data):
@@ -786,6 +787,7 @@ class Button(SimpleButton):
                                 .replace("{{script}}", "\n ".join(js_includes))
                                 .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file_name))
                                 .replace("{{chrome-name}}", self._settings.get("chrome_name"))
+                                .replace("{{locale_file_prefix}}", self._settings.get("locale_file_prefix"))
                                 .replace("{{toolbars}}", "" if not toolbars else '\n<toolbox id="%s">\n%s\n</toolbox>' % (toolbar_box, '\n'.join(toolbars)))
                                 .replace("{{palette}}", self._settings.get("file_to_palette").get(file_name, ""))
                                 .replace("{{menu}}", menu)

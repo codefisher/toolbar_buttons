@@ -156,7 +156,7 @@
         <input type="submit" name="create-submit" value="Submit">
     </fieldset>
 
-	
+    {% comment %}
 	<fieldset>
 		<legend>Advanced Settings</legend>
 		<div class="form-field">
@@ -169,7 +169,7 @@
 				locales will be included.
 			</p>
 		</div>
-		{% comment %}
+
 		<div class="form-field">
 			<label>
 				Version
@@ -199,8 +199,8 @@
 				will follow the code repository directly.
 			</p>
 		</div>
-        {% endcomment %}
 		<input type="submit" name="create-submit" value="Submit">
 	</fieldset>
+    {% endcomment %}
 </form>
 {% endblock %}

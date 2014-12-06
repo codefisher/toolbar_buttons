@@ -69,6 +69,7 @@ config_default = {
     "include_local_meta": False,
     # what is done with strings that are missing, values are replace, skip or empty
     "missing_strings": "replace",
+    "locale_file_prefix": "",
 
     # keyboard short cuts
     "use_keyboard_shortcuts": False,
