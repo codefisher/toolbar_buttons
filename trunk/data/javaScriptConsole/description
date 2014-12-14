@@ -1,3 +1,5 @@
 Open the error console to view errors caused by scripts.
 
 The error console is every developers best friend.  Trying to find the line where you went wrong can be very hard with out so clue particularly in long or complex scripts.  It shows errors from JavaScript, CSS, XML and even from the program itself should that be enabled.
+
+If the error console is disabled, this button will, depending on its setting, open the "Web Console" or "Browser Console" which now serve the same function.

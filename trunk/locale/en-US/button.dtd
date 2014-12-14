@@ -52,9 +52,10 @@
 <!ENTITY clear-url.tooltip "Hide the Url Bar Text">
 <!ENTITY clipboard.label "Clipboard Link">
 <!ENTITY clipboard.menuitem "Open link from clipboard">
+<!ENTITY clipboard.currenttab "In Current Tab">
 <!ENTITY clipboard.newtab "In New Tab">
 <!ENTITY clipboard.newwindow "In New Window">
-<!ENTITY clipboard.tooltip "Get link from clipboard and open it">
+<!ENTITY clipboard.tooltip "Get link from clipboard &amp; open it">
 <!ENTITY close-all-tabs.label "Close All">
 <!ENTITY close-all-tabs.tooltip "Close All Tabs">
 <!ENTITY close-other-tabs.label "Close Other Tabs">
@@ -352,7 +353,6 @@
 <!ENTITY workoffline.tooltip "Toggle work offline">
 <!ENTITY yahoo-button.label "Yahoo Mail">
 <!ENTITY yahoo-button.tooltip "Open Yahoo Mail">
-
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">

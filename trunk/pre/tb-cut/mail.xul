@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-cut"
+	label="&tb-cut.label;"
+	tooltiptext="&tb-cut.tooltip;"
+	command="cmd_cut"/>

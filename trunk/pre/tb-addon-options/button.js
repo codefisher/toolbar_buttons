@@ -10,6 +10,7 @@ extensionOptionsMenu: function(aMenu) {
 			if(addon.optionsURL) {
 			  	var menuItem = document.createElement("menuitem");
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
+			  	menuItem.setAttribute("image", addon.iconURL);
 				menuItem.addEventListener("command", toolbar_buttons.extensionOptionsOpen(addon), false);
 				aMenu.appendChild(menuItem);
 			}

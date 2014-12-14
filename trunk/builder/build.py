@@ -53,7 +53,7 @@ def build_extension(settings, output=None, project_root=None):
         apply_max_version(settings)
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales, all_files=True)
-    options_locales = Locale(settings, locale_folders, locales, all_files=True)
+    options_locales = button_locales #Locale(settings, locale_folders, locales, all_files=True)
     buttons = get_buttons(settings)
 
     xpi_file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
@@ -70,7 +70,7 @@ def build_extension(settings, output=None, project_root=None):
         xpi.writestr(os.path.join("chrome", "content", file + ".xul"), bytes_string(data))
 
     locale_prefix = settings.get("locale_file_prefix")
-    dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons)
+    dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
     locales_inuse = set(dtd_data.keys())
     for locale, data in dtd_data.iteritems():
         xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), data)

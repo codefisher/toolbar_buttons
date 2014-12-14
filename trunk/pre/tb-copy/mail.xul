@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-copy"
+	label="&tb-copy.label;"
+	tooltiptext="&tb-copy.tooltip;"
+	command="cmd_copy"/>

@@ -26,6 +26,9 @@ from toolbar_buttons.builder import button, locales, util, build
 
 from toolbar_buttons.toolbar_buttons_web.tbutton_maker.models import Application, Button, DownloadSession
 
+from codefisher_apps.extension_downloads.models import ExtensionDownload
+from codefisher_apps.downloads.models import DownloadGroup
+
 
 class WebButton(button.SimpleButton):
     def __init__(self, folders, buttons, settings, applications):
@@ -277,6 +280,20 @@ def update(request):
     }
 
     return render(request, "tbutton_maker/update.rdf", data, content_type="application/xml+rdf")
+
+def update_static(request):
+    app_data = [item for sublist in config.get("applications_data").values() for item in sublist]
+    group = DownloadGroup.objects.get(identifier=config.get("extension_id"))
+    extension = ExtensionDownload.objects.get(pk=group.latest.pk)
+    site = Site.objects.get_current()
+    scheme = "https" if request.is_secure() else "http"
+    data = {
+        "applications": app_data,
+        "version": config.get("version"),
+        "update_url": "%s://%s%s" % (scheme, site.domain, extension.get_absolute_url()),
+        "extension_id": config.get("extension_id"),
+    }
+    return render(request, "tbutton_maker/update.rdf", data, content_type="application/xml+rdf")  
 
 def make(request):
     return create_buttons(request, request.GET)

@@ -26,7 +26,6 @@ openExtensionMenu: function(aMenu, aType) {
 			} else {
 			  	var menuItem = document.createElement("menu");
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
-			  	// this does not work for some reason
 			  	menuItem.setAttribute("image", addon.iconURL);
 			  	menuItem.className = "menu-iconic";
 			  	var menupopup = document.createElement("menupopup");
@@ -62,6 +61,13 @@ openAddonControlMenu: function(menupopup, addon, stringBundle) {
 		  	var option = document.createElement("menuitem");
 		  	option.setAttribute("label", stringBundle.GetStringFromName("extensions-preference"));
 			option.addEventListener("command", toolbar_buttons.extensionOptionsOpen(addon), false);
+			menupopup.appendChild(option);
+		}
+		
+		if(addon.homepageURL) {
+		  	var option = document.createElement("menuitem");
+		  	option.setAttribute("label", stringBundle.GetStringFromName("extensions-homepage"));
+			option.addEventListener("command", toolbar_buttons.extensionHomepageOpen(addon), false);
 			menupopup.appendChild(option);
 		}
 		
@@ -107,6 +113,19 @@ openAddonControlMenu: function(menupopup, addon, stringBundle) {
 				disable.addEventListener("command", toolbar_buttons.setExtensionDisabled(addon, true), false);
 			  	menupopup.appendChild(disable);
 			}
+		}
+	};
+}
+
+extensionHomepageOpen: function(addon) {
+	return function() {
+		var url = addon.homepageURL;
+		try {
+			var browser = getBrowser();
+			browser.selectedTab = browser.addTab(url);
+		} catch(e) {
+			var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
+			toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
 		}
 	};
 }

@@ -1,0 +1,4 @@
+javaScriptConsole.setting.description=If the Error Console is disabled open:
+javaScriptConsole.web=Web Console
+javaScriptConsole.browser=Browser Console
+javaScriptConsole.errorconsole=Enable Error Console
