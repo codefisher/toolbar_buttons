@@ -3,7 +3,7 @@
 	id="clipboard-button"
 	label="&clipboard.label;"
 	tooltiptext="&clipboard.tooltip;"
-	oncommand="toolbar_buttons.clipboardLink.OpenLink();"
+	oncommand="toolbar_buttons.clipboardLink.openCommand();"
 	onclick="toolbar_buttons.clipboardLink.open(event);">
 	<menupopup id="clipboard-button-menu" oncommand="event.stopPropagation();">
 		<menuitem id="clipboard-button-load" label="&clipboard.menuitem;"

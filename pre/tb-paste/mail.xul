@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-paste"
+	label="&tb-paste.label;"
+	tooltiptext="&tb-paste.tooltip;"
+	command="cmd_paste"/>

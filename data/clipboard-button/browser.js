@@ -19,6 +19,17 @@ clipboardLink: {
 			this.OpenNewTab();
 		}
 	},
+	openCommand: function () {
+		var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+		var mode = prefs.getIntPref("clipboard.open.mode");
+		if(mode == 2) {
+			this.OpenWindow();
+		} else if(mode == 1) {
+			this.OpenNewTab();
+		} else {
+			this.OpenLink();
+		}
+	},
 	OpenNewTab: function() {
 		try {
 			var newPage = getBrowser().addTab(this.getText());

@@ -44,6 +44,8 @@ class Locale(object):
                 elif file_name.endswith(".properties"):
                     with open(file_name) as data:
                         for line in data:
+                            if not line.strip():
+                                continue
                             name, value = line.strip().split('=', 1)
                             if name:
                                 self._properties[locale][name] = value.strip()
@@ -64,7 +66,7 @@ class Locale(object):
             value = button.get_string(name)
         return value if value else None
 
-    def get_dtd_data(self, strings, button=None):
+    def get_dtd_data(self, strings, button=None, untranslated=True):
         """Gets a set of files with all the strings wanted
 
         get_dtd_data(list<str>) -> dict<str: str>
@@ -99,7 +101,7 @@ class Locale(object):
                         dtd_file.append("""<!ENTITY %s "%s">"""  % (string, self._dtd[locale][string]))
                     elif button and locale == default_locale and button.get_string(string, locale):
                         dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string, locale)))
-            if count:
+            if count or untranslated:
                 result[locale] = "\n".join(dtd_file)
         return result
 

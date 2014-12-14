@@ -44,7 +44,7 @@ loadTranslateOnload: function(XMLhttp) {
 	while(promt.firstChild) {
 		promt.removeChild(promt.firstChild);
 	}
-	for(item in items) {
+	for(var item in items) {
 		var lang = items[item].toString().match(/<option.*?value="?([^>"]+)"?.*?>(.*?)<\/option>/);
 		var menuItem = document.createElement("menuitem");
 		menuItem.setAttribute("value", lang[1]);

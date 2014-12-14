@@ -64,4 +64,4 @@ openExternalApplicationSettings: function() {
 			"ExternalApplication:Permissions", "chrome,centerscreen,dialog=no,resizable", arguments);
 }
 
-toolbar_buttons.setUpStringDatabase("external_application_strings", toolbar_buttons.setDefaultUserAgents);
+toolbar_buttons.setUpStringDatabase("external_application_strings", null);

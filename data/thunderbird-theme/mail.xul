@@ -3,4 +3,4 @@
 	id="thunderbird-theme"
 	label="&thunderbird-theme.label;"
 	tooltiptext="&thunderbird-theme.tooltip;"
-	oncommand="toolbar_buttons.OpenMailLink('url.thunderbird-theme', event);" />
+	oncommand="toolbar_buttons.OpenMailLink('url.thunderbird-theme');" />

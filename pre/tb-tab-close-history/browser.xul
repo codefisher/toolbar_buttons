@@ -1,0 +1,8 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-tab-close-history"
+	type="menu"
+	label="&tb-tab-close-history.label;"
+	tooltiptext="&tb-tab-close-history.tooltip;">
+		<menupopup placespopup="true" onpopupshowing="toolbar_buttons.populateUndoSubmenu(event, this);"/>
+</toolbarbutton>

@@ -102,6 +102,8 @@ class SimpleButton():
                                 del self._button_image[button]
                         if name and not modifier:
                             self._icons[button] = name.strip()
+                    if skip_without_icons and not len(self._button_image[button]):
+                        button_wanted = False
                             
             elif button_wanted:
                 raise ValueError("%s does not contain image listing." % folder)
@@ -650,8 +652,8 @@ class Button(SimpleButton):
             with open(os.path.join(self._settings.get("project_root"), "files", "update.js"), "r") as update_js:
                 show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.get("extension_id"))
-                           .replace("{{version_url}}",
-                                    self._settings.get("version_url"))
+                           .replace("{{homepage_url}}",
+                                    self._settings.get("homepage"))
                            .replace("{{version}}",
                                     self._settings.get("version"))
                            )

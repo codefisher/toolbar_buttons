@@ -43,7 +43,7 @@ OpenLinkFromPref: function(name, event) {
 	}
 }
 
-OpenMailLink: function(name, event) {
+OpenMailLink: function(name) {
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var url = prefs.getCharPref(name);
 	var uri = toolbar_buttons.interfaces.IOService

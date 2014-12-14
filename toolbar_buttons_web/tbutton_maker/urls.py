@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^button_list/(?P<locale_name>[a-z]{2}(-[A-Z]{2})?)/(?P<applications>[\w,]+)/$',
         views.list_buttons, name='tbutton-list'),
     url(r'^custom_update', views.old_update),
+    url(r'^static_update.rdf', views.update_static),
     url(r'^update.rdf', views.update, name='tbutton-update'),
     url(r'^make_button/', views.make, name='tbutton-make-button'),
 
