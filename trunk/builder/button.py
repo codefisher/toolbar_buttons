@@ -382,8 +382,7 @@ class Button(SimpleButton):
         """
         locale_match = re.compile("&([a-zA-Z0-9.-]*);")
         strings = list(self._option_titles)
-        if self._button_options:
-            strings.append("options.window.title")
+        strings.append("options.window.title")
         for first, value in self._button_options.itervalues():
             strings.extend(locale_match.findall(value))
         return list(set(strings))

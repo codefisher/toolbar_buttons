@@ -13,12 +13,13 @@
 <Description about="urn:mozilla:install-manifest">
 <em:id>{{ extension_uuid }}</em:id>
 <em:name>{{ name }}</em:name>
-<em:version>1.0.1</em:version>
-<em:description>A Customized Toolbar Link Button.</em:description>
+<em:version>1.1.0</em:version>
+<em:description>A Customized Link Toolbar Button.</em:description>
 <em:creator>Michael Buckley</em:creator>
-<em:iconURL>chrome://{{ chrome_name }}/skin/icon-32.png</em:iconURL>
+<em:iconURL>chrome://{{ chrome_name }}/skin/icon.png</em:iconURL>
 <em:homepageURL>{{ home_page }}</em:homepageURL>
 <em:updateURL>{{ update_url }}</em:updateURL>
+<em:optionsURL>chrome://lbutton/content/option_window.xul</em:optionsURL>
 
 <!-- Firefox -->
 <em:targetApplication>

@@ -89,3 +89,15 @@ function blurSet(item, value) {
 	if(item.value == '')
 		item.value = value;
 }
+
+function setOtherLabels(item) {
+	var value = item.value;
+	var tooltip = document.getElementById('tooltip');
+	var title = document.getElementById('title');
+	if(tooltip.value == "" || tooltip.value == "Open MySite.com") {
+		tooltip.value = "Open " + value;
+	}
+	if(title.value == "" || title.value == "MySite.com Toolbar Button") {
+		title.value = value + " Toolbar Button";
+	}
+}

@@ -26,27 +26,27 @@
    <input type="text" name="url" id="url" value="http://" onblur="loadFavIcons();">
   </label>
   <p>
-   <small>Can be any valid url that could be typed into Firefox's urlbar; http, https, javascript etc.</small>
+   <small>Can be any valid url that could be typed into Firefox's urlbar; http, https, javascript etc. It can be changed later in the options window.</small>
   </p>
 </fieldset>
 <fieldset>
 
  <legend>Title &amp; Labels</legend>
   <p>
-   The extension needs a name, so please chose one for your version.
-  </p>
-  <label for="title">Extension Name:
-   <input type="text" name="title" id="title" value="MySite.com Toolbar Button" onfocus="focusSet(this, 'MySite.com Toolbar Button');" onblur="blurSet(this, 'MySite.com Toolbar Button');">
-  </label>
-  <p>
 
    The toolbar button needs a label that is seen below the button, and a tooltip (the text the appears in the little yellow box when you hover over the button).
   </p>
   <label for="label">Button Label:
-   <input type="text" name="label" id="label" value="MySite.com" onfocus="focusSet(this, 'MySite.com');" onblur="blurSet(this, 'MySite.com');">
+   <input type="text" name="label" id="label" value="MySite.com" onchange="setOtherLabels(this);" onfocus="focusSet(this, 'MySite.com');" onblur="blurSet(this, 'MySite.com');">
   </label>
   <label for="tooltip">Button Tooltip:
    <input type="text" name="tooltip" id="tooltip" value="Open MySite.com" onfocus="focusSet(this, 'Open MySite.com');" onblur="blurSet(this, 'Open MySite.com');">
+  </label>
+  <p>
+   The extension needs a name, so please chose one for your version.
+  </p>
+  <label for="title">Extension Name:
+   <input type="text" name="title" id="title" value="MySite.com Toolbar Button" onfocus="focusSet(this, 'MySite.com Toolbar Button');" onblur="blurSet(this, 'MySite.com Toolbar Button');">
   </label>
 </fieldset>
 
@@ -113,15 +113,37 @@
 </fieldset>
 	<fieldset>
 		<legend>Settings</legend>
+		
+        <div class="form-field">
+            <p>
+                The links can open in a number of different ways.  This can be changed latter in the options window.
+             </p>
+           <div>
+           <label for="open-default">
+               <input type="radio" value="0" checked="checked" id="open-default" name="open-method">  Open in current tab, and new tab on middle click.
+           </label>
+           </div>
+           <div>
+           <label for="open-newtab">
+               <input type="radio" value="1" id="open-newtab" name="open-method">  Always open in new tab.
+           </label>
+           </div>
+           <div>
+           <label for="open-current">
+               <input type="radio" value="2" id="open-current" name="open-method">  Always open in current tab.
+           </label>
+           </div>
+        </div>
+        
 		<div class="form-field">
+            <p>
+                Normally extensions get installed into Firefox, but if check this box
+                you will be prompted to download the extension instead.
+            </p>
 			<label>
 				<input type="checkbox" name="offer-download" value="true">
 					Offer for download instead of installing.
 			</label>
-			<p>
-				Normally extensions get installed into Firefox, but if check this box
-				you will be prompted to download the extension instead.
-			</p>
 		</div>
 	</fieldset>
 	<div>
