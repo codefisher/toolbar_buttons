@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://{{ chrome_name }}/skin/button.css" type="text/css"?>
 <overlay id="{{ button_id }}-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-	<script type="application/x-javascript" src="button.js"/>
+	<script type="application/x-javascript" src="chrome://lbutton/content/button.js"/>
 	<toolbarpalette id="BrowserToolbarPalette">
 		<toolbarbutton
 			class="toolbarbutton-1"

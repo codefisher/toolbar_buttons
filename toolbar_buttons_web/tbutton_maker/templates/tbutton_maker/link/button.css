@@ -1,5 +1,5 @@
 #{{ button_id }} {
-	list-style-image: url("icon-32.png");
+	list-style-image: url("icon.png");
 }
 
 toolbar #{{ button_id }} {

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<overlay id="tbutton-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<prefwindow id="lbutton-options">
+<prefpane id="lbutton-prefpage-{{ button_id }}" image="chrome://{{ chrome_name }}/content/icon.png" label="{{ button_label|escape }}"><vbox>
+	<groupbox flex="1">
+		<caption label="Button Location" />
+		<preferences>
+			<preference id="extension.link-buttons.url.{{ button_id }}" name="extension.link-buttons.url.{{ button_id }}" type="unichar"/>
+		</preferences>
+		<box>
+			<textbox preference="extension.link-buttons.url.{{ button_id }}" flex="1"/>
+		</box>
+	</groupbox>
+	<groupbox flex="1">
+		<caption label="How the button window opens" />
+		<preferences>
+			<preference id="extension.link-buttons.mode.{{ button_id }}" name="extension.link-buttons.mode.{{ button_id }}"
+				type="int"/>
+		</preferences>
+		<radiogroup preference="extension.link-buttons.mode.{{ button_id }}">
+			<radio value="0" label="Open in current tab, and new tab on middle click."/>
+			<radio value="1" label="Always open in new tab."/>
+			<radio value="2" label="Always open in current tab."/>
+		</radiogroup>
+	</groupbox>
+</vbox></prefpane>
+</prefwindow>
+</overlay>

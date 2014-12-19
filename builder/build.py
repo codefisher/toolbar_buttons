@@ -90,12 +90,13 @@ def build_extension(settings, output=None, project_root=None):
     for name, path in resources.iteritems():
         xpi.write(path, os.path.join("chrome", "content", "resources", name))
 
-    for file, data in buttons.get_options().iteritems():
+    options = buttons.get_options()
+    for file, data in options.iteritems():
         xpi.writestr(os.path.join("chrome", "content", "%s.xul" % file), data)
     for image in buttons.get_option_icons():
         xpi.write(get_image(settings, "32", image), os.path.join("chrome", "skin", "option", image))
-    options_strings = buttons.get_options_strings()
-    if options_strings:
+    if options:
+        options_strings = buttons.get_options_strings()
         for locale, data in options_locales.get_dtd_data(options_strings, buttons).iteritems():
             if locale in locales_inuse:
                 xpi.writestr(os.path.join("chrome", "locale", locale, "%soptions.dtd" % locale_prefix), bytes_string(data))

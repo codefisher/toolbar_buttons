@@ -81,9 +81,17 @@ def create(request):
                         icon_data["icon-%s" % size] = base64.encodestring(png.getvalue())
         else:
             return redirect(reverse('lbutton-custom'))
+        button_mode = request.POST.get("open-method", "0")
+        if button_mode.isdigit():
+            button_mode = int(button_mode)
+        else:
+            button_mode = 0
         data = {
+            "icon_type": icon_type,
+            "icon_name": request.POST.get("default-icon"),
             "button_id": button_id,
             "button_url": url,
+            "button_mode": button_mode,
             "chrome_name": button_id,
             "extension_uuid": "%s@codefisher.org" % button_id,
             "name": force_str(request.POST.get("title")),
@@ -115,7 +123,9 @@ def make(request):
 def build(request, data):
     update_query = QueryDict("").copy()
     update_query.update(data)
-    del update_query['offer-download']
+    for key in ['offer-download', 'icon-16', 'icon-24', 'icon-32']:
+        if key in update_query:
+            del update_query[key]
     app_data = {
         "item_id": "%ITEM_ID%",
         "item_version": "%ITEM_VERSION%",
@@ -125,22 +135,48 @@ def build(request, data):
     extra_query = "&".join("%s=%s" % (key, value) for key, value in app_data.items())
     domain = Site.objects.get_current().domain
     data = dict(data.items())
+    icon_type = data.get("icon_type", "custom")
+    if icon_type != "custom":
+        data["update_url"] = "https://%s%s?%s&%s" % (domain, reverse("lbutton-update"),
+                update_query.urlencode(), extra_query)
+        if "icon-16" not in data:
+            if icon_type == "favicon":
+                icons = get_sized_icons(data["button_url"], [16, 24, 32])
+                if icons is None:
+                    icon_type = "default"
+                else:
+                    for size in [16, 24, 32]:
+                        value = io.BytesIO()
+                        icons[size].save(value, "png")
+                        data["icon-%s" % size] = base64.b64encode(value.getvalue())
+                        value.close()
+            if icon_type == "default":
+                icon_name = data["icon_name"]
+                if not icon_name in ["www-%s" % i for i in range(1,11)]:
+                    icon_name = "www-1"
+                for size in [16, 24, 32]:
+                    icon_path = os.path.join(settings.BASE_DIR, settings.DEFAULT_LINK_ICONS, '%s-%s.png' % (icon_name, size))
+                    if os.path.exists(icon_path):
+                        with open(icon_path) as fp:
+                            data["icon-%s" % size] = base64.encodestring(fp.read())
     data.update({
-        "update_url": "https://%s%s?%s&%s" % (domain, reverse("lbutton-update"),
-                update_query.urlencode(), extra_query),
         "home_page": "http://%s%s" % (domain, reverse("lbutton-custom")),
         # firefox max version number
         "max_version": get_app_versions().get("{ec8030f7-c20a-464f-9b0e-13a3a9e97384}", "35.0"),
     })
     output = io.BytesIO()
     xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
-    for template in ["button.css", "button.js", "button.xul", "chrome.manifest", "install.rdf"]:
+    for template in ["button.css", "button.js", "button.xul", "chrome.manifest", "install.rdf", "option_window.xul", "option.xul"]:
         xpi.writestr(template,
             render_to_string(os.path.join("tbutton_maker", "link", template), data).encode("utf-8"))
     for name in ["icon-16", "icon-24", "icon-32"]:
-        xpi.writestr("%s.png" % name, base64.b64decode(data[name]))
+        if name == "icon-32":
+            file_name = "icon"
+        else:
+            file_name = name
+        xpi.writestr("%s.png" % file_name, base64.b64decode(data[name]))
     xpi.writestr(os.path.join("defaults", "preferences", "link.js"),
-        ("""pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");""" % data).encode("utf-8"))
+        ("""pref("extension.link-buttons.url.%(button_id)s", "%(button_url)s");\npref("extension.link-buttons.mode.%(button_id)s", %(button_mode)s);\n""" % data).encode("utf-8"))
     xpi.close()
     if data.get('offer-download'):
         responce = HttpResponse(output.getvalue(), content_type="application/octet-stream")
