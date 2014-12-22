@@ -8,16 +8,19 @@
 <!ENTITY restart.label "Uudelleenkäynnistys">
 <!ENTITY read.select.button "Valitse">
 <!ENTITY readnews.path.desc "Keskusteluryhmien lukuohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
-<!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
 <!ENTITY toggle.proxy.auto.configuration "Automaattinen välityspalvelimen asetusten määritys (PAC)">
 <!ENTITY readmail.path.desc "Sähköpostiohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
-<!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">
+<!ENTITY confirm.caption "Vahvista">
 <!ENTITY favorite-page.label "Suosikkisivu">
-<!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY translate.label "Käännä">
-<!ENTITY translate.description "Valitse mitä kieltä haluat ”Käännä”-painikkeen käyttävän. Toiminto hyödyntää Googlen käännöspalvelua.">
+<!ENTITY tb-clear-cache.label "Tyhjennä välimuisti">
+<!ENTITY translate.description "Valitse mitä kieltä haluat ”Käännä”-painikkeen käyttävän.">
 <!ENTITY previous-next.checkbox "Vaihda painikkeiden ”Edellinen” ja ”Seuraava” suuntaa.">
 <!ENTITY readmail.path.caption "Sähköpostiohjelman polku">
 <!ENTITY toggle.label "Näytä/piilota painikkeet">
-<!ENTITY translate.not-in-use "Panike ei ole käytössä. Lisää työkalupalkkiin ja käynnistä uudelleen.">
+<!ENTITY links.caption "Linkit">
+<!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY readnews.path.caption "Keskusteluryhmien lukuohjelman polku">
+<!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
+<!ENTITY settings.label "Asetukset">
+<!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">

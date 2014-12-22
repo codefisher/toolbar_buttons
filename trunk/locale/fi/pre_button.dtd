@@ -1,0 +1,28 @@
+<!ENTITY send-link.label "Lähetä linkki">
+<!ENTITY send-link.tooltip "Lähetä sivun linkki sähköpostiviestinä">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopioi">
+<!ENTITY tb-cut.label "Leikkaa">
+<!ENTITY tb-download-sync.label "Lataa/synkronoi nyt">
+<!ENTITY tb-download-sync.tooltip "Suorita lataus ja synkronointi ennen offline-tilaan menoa">
+<!ENTITY tb-new-tab.label "Uusi välilehti">
+<!ENTITY tb-page-go.label "Siirry">
+<!ENTITY tb-page-reload.label "Päivitä">
+<!ENTITY tb-page-stop.label "Pysäytä">
+<!ENTITY tb-paste-as-quote.label "Liitä lainauksena">
+<!ENTITY tb-paste.label "Liitä">
+<!ENTITY tb-paste.tooltip "Liitä">
+<!ENTITY tb-print-page.label "Tulosta">
+<!ENTITY tb-print-page.tooltip "Tulosta sivu">
+<!ENTITY tb-saved-passwords.label "Salasanat">
+<!ENTITY tb-string-preference.add "Lisää">
+<!ENTITY tb-string-preference.browse "Selaa">
+<!ENTITY tb-string-preference.close "Sulje">
+<!ENTITY tb-string-preference.delete "Poista">
+<!ENTITY tb-string-preference.edit "Muokkaa">
+<!ENTITY tb-string-preference.name "Nimi">
+<!ENTITY tb-string-preference.save "Save">
+<!ENTITY tb-string-preference.value "Arvo">
+<!ENTITY tb-tab-close-history.label "Suljetut välilehdet">
+<!ENTITY tb-useragent-switch.default "Oletus">
+<!ENTITY tb-useragent-switch.label "Selaintunniste">

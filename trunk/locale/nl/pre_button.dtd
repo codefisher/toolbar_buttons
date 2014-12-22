@@ -1,0 +1,28 @@
+<!ENTITY send-link.label "Koppeling versturen">
+<!ENTITY send-link.tooltip "Paginakoppeling per e-mail versturen">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopiëren">
+<!ENTITY tb-cut.label "Knippen">
+<!ENTITY tb-download-sync.label "Nu downloaden/synchroniseren">
+<!ENTITY tb-download-sync.tooltip "Download en synchronisatie uitvoeren alvorens offline te gaan">
+<!ENTITY tb-new-tab.label "&#xad;Nieuw tabblad">
+<!ENTITY tb-page-go.label "Ga">
+<!ENTITY tb-page-reload.label "Vernieuwen">
+<!ENTITY tb-page-stop.label "Stoppen">
+<!ENTITY tb-paste-as-quote.label "Plakken als citaat">
+<!ENTITY tb-paste.label "Plakken">
+<!ENTITY tb-paste.tooltip "Plakken">
+<!ENTITY tb-print-page.label "Afdrukken">
+<!ENTITY tb-print-page.tooltip "Deze pagina afdrukken">
+<!ENTITY tb-saved-passwords.label "Wachtwoorden">
+<!ENTITY tb-string-preference.add "Toevoegen">
+<!ENTITY tb-string-preference.browse "Bladeren">
+<!ENTITY tb-string-preference.close "Sluiten">
+<!ENTITY tb-string-preference.delete "Verwijderen">
+<!ENTITY tb-string-preference.edit "Bewerken">
+<!ENTITY tb-string-preference.name "Naam">
+<!ENTITY tb-string-preference.save "Opslaan">
+<!ENTITY tb-string-preference.value "Waarde">
+<!ENTITY tb-tab-close-history.label "Onlangs gesloten tabbladen">
+<!ENTITY tb-useragent-switch.default "Standaard">
+<!ENTITY tb-useragent-switch.label "Useragent">

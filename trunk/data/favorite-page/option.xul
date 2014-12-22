@@ -1,5 +1,5 @@
 links.caption:link.png
-<groupbox flex="1">
+<groupbox>
 	<caption label="&favorite-page.label;" />
 	<preferences>
 		<preference id="{{pref-root}}url.favorite" name="{{pref-root}}url.favorite"

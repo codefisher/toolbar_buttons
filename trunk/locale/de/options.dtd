@@ -8,16 +8,19 @@
 <!ENTITY restart.label "Neustart">
 <!ENTITY read.select.button "Durchsuchen…">
 <!ENTITY readnews.path.desc "Der Pfad zu Ihrer bevorzugten Anwendung für das Lesen von Newsgruppen. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen der Anwendung nicht funktionieren.">
-<!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
 <!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
 <!ENTITY readmail.path.desc "Der Pfad zu Ihrem bevorzugten E-Mail-Programm. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen des Programms nicht funktionieren.">
-<!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
+<!ENTITY confirm.caption "Bestätigen">
 <!ENTITY favorite-page.label "Lieblingsseite">
-<!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY translate.label "Übersetzen">
-<!ENTITY translate.description "Auswählen, in welche Sprache mit der &quot;Übersetzen&quot;-Schaltfläche übersetzt werden soll. Genutzt wird der Übersetzungsdienst von Google.">
+<!ENTITY tb-clear-cache.label "Cache leeren">
+<!ENTITY translate.description "Auswählen, in welche Sprache mit der &quot;Übersetzen&quot;-Schaltfläche übersetzt werden soll.">
 <!ENTITY previous-next.checkbox "Richtung umkehren, in der die Schaltflächen &quot;Vorherige Nachricht&quot; und &quot;Nächste Nachricht&quot; wirken.">
 <!ENTITY readmail.path.caption "E-Mail-Programm">
 <!ENTITY toggle.label "Schaltflächen umschalten">
-<!ENTITY translate.not-in-use "Schaltfläche wird nicht verwendet. Zur Symbolleiste hinzufügen und neu starten.">
+<!ENTITY links.caption "Links">
+<!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY readnews.path.caption "Anwendung für das Lesen von Newsgruppen">
+<!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
+<!ENTITY settings.label "Einstellungen">
+<!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">

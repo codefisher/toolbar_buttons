@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Ir para o final da página">
 <!ENTITY change-text-direction.label "Alterar direção de texto">
 <!ENTITY change-text-direction.tooltip "Mudar a direção do texto da esquerda para direita ou direita para esquerda">
-<!ENTITY check-for-update.label "Verificar por atualizações">
-<!ENTITY check-for-update.tooltip "Verificar por atualizações">
 <!ENTITY clear-data.label "Limpar Dados">
 <!ENTITY clear-data.tooltip "Abrir Diálogo para Limpar Dados Privados">
 <!ENTITY clear-url.label "Esconder URL">
@@ -262,33 +260,62 @@
 <!ENTITY tasks-in-view.tooltip "Alterar para tarefas em vista">
 <!ENTITY tasks-toggle.label "Alternas Tarefas">
 <!ENTITY tasks-toggle.tooltip "Alternar na barra de tarefas">
+<!ENTITY tb-about-blank.label "Limpar Aba">
+<!ENTITY tb-about-blank.tooltip "Abrir/Carregar uma aba vazia">
+<!ENTITY tb-clear-cache.label "Limpar Cache">
+<!ENTITY tb-clear-cache.tooltip "Limpar o cache do navegador">
 <!ENTITY tb-clear-search.label "Limpar pesquisa">
 <!ENTITY tb-clear-search.tooltip "Limpar e focar na barra de pesquisa">
 <!ENTITY tb-clear-url.label "Limpar Url">
 <!ENTITY tb-clear-url.tooltip "Limpar e focar na barra da URL">
+<!ENTITY tb-clone-tab.label "Copiar Aba">
+<!ENTITY tb-clone-tab.tooltip "Fazer uma cópia da aba corrente">
+<!ENTITY tb-cookie-manager.label "Gerenciador de Cookie">
+<!ENTITY tb-cookie-manager.tooltip "Abrir o gerenciador de cookie na página atual.">
+<!ENTITY tb-download-sync.label "Download/Sync agora">
+<!ENTITY tb-download-sync.tooltip "Executar download e sincronismo antes de ficar offline">
 <!ENTITY tb-edit-menu.label "Editar Menu">
 <!ENTITY tb-edit-menu.tooltip "Mostrar Editar Menu">
 <!ENTITY tb-file-menu.label "Menu de Arquivo">
 <!ENTITY tb-file-menu.tooltip "Mostrar menu de arquivo">
+<!ENTITY tb-history-menu.label "Histórico">
+<!ENTITY tb-history-menu.tooltip "Abrir menu do Histórico">
 <!ENTITY tb-new-event.label "Novo Evento">
 <!ENTITY tb-new-event.tooltip "Adicionar novo evento ao calendário.">
+<!ENTITY tb-new-tab.label "Nova aba">
 <!ENTITY tb-new-task.label "Nova tarefa">
 <!ENTITY tb-new-task.tooltip "Adicionar nova tarefa ao calendário.">
+<!ENTITY tb-open-in-conversation.label "Abrir uma Conversação">
+<!ENTITY tb-open-in-conversation.tooltip "Abrir mensagem atual na Conversação">
+<!ENTITY tb-page-info-media.label "Página de Mídia">
+<!ENTITY tb-page-info-media.tooltip "Abrir informação da página na aba de mídia">
+<!ENTITY tb-page-reload.label "Recarregar">
+<!ENTITY tb-page-stop.label "Parar">
+<!ENTITY tb-print-page.label "Imprimir">
+<!ENTITY tb-print-page.tooltip "Imprimir a página">
+<!ENTITY tb-saved-passwords.label "Senhas">
+<!ENTITY tb-search-go-button.label "Pesquisar">
+<!ENTITY tb-search-go-button.tooltip "Ir para pesquisa Web">
 <!ENTITY tb-search-minus.label "Diminuir tamanho da barra de pesquisa">
 <!ENTITY tb-search-minus.tooltip "Diminui a largura da barra de pesquisa para 10 pixles">
 <!ENTITY tb-search-plus.label "Aumentar tamanho da barra de pesquisa">
 <!ENTITY tb-search-plus.tooltip "Aumentar a largura da barra de pesquisa para 10 pixles">
 <!ENTITY tb-search-resize.label "Redimensionar o tamanho da Pesquisa">
 <!ENTITY tb-search-resize.tooltip "Redimensiona a largura da barra de pesquisa">
+<!ENTITY tb-show-all-history.label "Mostrar Todos Históricos">
+<!ENTITY tb-show-all-history.tooltip "Abrir o mostrar todos os históricos na janela">
+<!ENTITY tb-toggle-headers.label "Cabeçalho de E-mail">
+<!ENTITY tb-toggle-headers.tooltip "Alterar o cabeçalho de e-mail mostrado">
 <!ENTITY tb-toggle-menu-bar.label "Alternar barra de menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Alternar a barra de menu">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "Bloquear PopUp">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Alternar o bloqueador de PopUp">
 <!ENTITY tb-tools-menu.label "Menu de Ferramentas">
 <!ENTITY tb-tools-menu.tooltip "Mostrar menu de ferramentas">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Abrir página do Twitter">
+<!ENTITY tb-url-go-button.label "Ir para o endereço">
+<!ENTITY tb-url-go-button.tooltip "Ir para o endereço atual">
 <!ENTITY tb-view-menu.label "Visualizar Menu">
 <!ENTITY tb-view-menu.tooltip "Mostrar Visualizar Menu">
 <!ENTITY themes.label "Temas">
@@ -297,14 +324,6 @@
 <!ENTITY thunderbird-extension.tooltip "Ver mais extensões do Thunderbird">
 <!ENTITY thunderbird-theme.label "Temas">
 <!ENTITY thunderbird-theme.tooltip "Ver mais temas do Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Copiar para Área de Transferência">
-<!ENTITY tiny-url.email "Link por E-mail">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "Opções do Link">
-<!ENTITY tiny-url.tooltip "Criar Tiny Url">
-<!ENTITY tiny-url.use.normal "Usar xrl.in">
-<!ENTITY tiny-url.use.preview "Usar preview.xrl.in">
-<!ENTITY tiny-url.visit "Visitar Xrl.In">
 <!ENTITY toggle-proxy.label "Alternar Proxy">
 <!ENTITY toggle-proxy.tooltip "Alternar o proxy para Ligado/Desligado">
 <!ENTITY toggle-read.label "Alternar para Lidas">
@@ -315,6 +334,10 @@
 <!ENTITY toggle-styles.tooltip "Adicionar/Remover definições de estilos dos sites">
 <!ENTITY toggle-toolbar.label "Alternar Barra de Ferramentas">
 <!ENTITY toggle-toolbar.tooltip "Alternar a Barra Principal">
+<!ENTITY toggle.proxy.auto.configuration "Auto Configuração de Proxy (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Auto detecção de configurações de proxy">
+<!ENTITY toggle.proxy.manual "Configuração Manual de Proxy">
+<!ENTITY toggle.proxy.system "Usar configurações de proxy do sistema">
 <!ENTITY toolbar-menu.label "Barra de ferramentas">
 <!ENTITY toolbar-menu.tooltip "Esconder/Mostrar Barra de ferramentas">
 <!ENTITY top-page.label "Topo">
@@ -334,6 +357,7 @@
 <!ENTITY use-document-fonts.label "Alternar fontes da página">
 <!ENTITY use-document-fonts.tooltip "Alternar entre as fontes padrão e do site">
 <!ENTITY watched-with-unread-threads.label "Visualizar tópicos Não Lidos">
+<!ENTITY watched-with-unread-threads.tooltip "Ver Tópicos Visualizado como Não Lidos">
 <!ENTITY websearch.label "Pesquisa Web">
 <!ENTITY websearch.tooltip "Pesquisar na web com seu buscador padrão">
 <!ENTITY wikipedia.label "Wikipedia">

@@ -9,13 +9,74 @@
 <!ENTITY about-mem-cache.label "אודות:מטמון זכרון">
 <!ENTITY about-mem-cache.tooltip "פתיחת אודות:מטמון לצפיה בתוכן המטמון המאוחסן בזכרון">
 <!ENTITY about-plugins.label "אודות:פלאגנים">
-<!ENTITY tiny-url.email "שלח קישור">
-<!ENTITY tiny-url.label "כתובת אינטרנט זעירה">
-<!ENTITY tiny-url.link.use "אפשרויות קישור">
-<!ENTITY tiny-url.tooltip "צור כתובת אינטרנט זעירה">
-<!ENTITY tiny-url.use.normal "השתמש בשירות של xrl.in">
-<!ENTITY tiny-url.use.preview "השתמש בתצוגה מקדימה של xrl.in">
-<!ENTITY tiny-url.visit "בקר ב xrl.in">
+<!ENTITY accountmanager.label "Account Settings">
+<!ENTITY addons.label "תוספות">
+<!ENTITY addons.tooltip "פתיחת מנהל התוספות">
+<!ENTITY bookmark.label "צור סימנייה לדף זה">
+<!ENTITY bottom-page.label "למטה">
+<!ENTITY close-other-tabs.label "סגירת לשוניות אחרות">
+<!ENTITY close-tab.label "סגירת לשונית">
+<!ENTITY compact.label "כווץ">
+<!ENTITY customize-toolbar.label "התאמה אישית של סרגל כלים">
+<!ENTITY delete.label "מחיקה">
+<!ENTITY empty-trash.label "רוקן אשפה">
+<!ENTITY enlarge.label "התקרבות">
+<!ENTITY exit.label "יציאה">
+<!ENTITY extensions.label "הרחבות">
+<!ENTITY find-again.label "מצא שוב">
+<!ENTITY find-prev.label "מצא את הקודם">
+<!ENTITY find.label "מצא">
+<!ENTITY firefox-extension.label "הרחבות">
+<!ENTITY firefox-theme.label "Themes">
+<!ENTITY forward-as-attachment.label "Forward As Attachment">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY full-screen.label "מסך מלא">
+<!ENTITY help.label "עזרה">
+<!ENTITY ignored-threads.label "נושאי דיון מהם מתעלמים">
+<!ENTITY import.label "יבוא">
+<!ENTITY import.tooltip "יבא נתונים והגדרות:">
+<!ENTITY installaddons.label "התקנה">
+<!ENTITY javaScriptConsole.label "מסוף שגיאות">
+<!ENTITY label-blank.label "הסר תווית">
+<!ENTITY minimize-window.label "מזער חלון">
+<!ENTITY msg-filter.label "מסננים">
+<!ENTITY msg-pane.label "חלונית הודעה">
+<!ENTITY new-message.label "הודעה חדשה">
+<!ENTITY open.label "פתח">
+<!ENTITY open.tooltip "Open a File">
+<!ENTITY page-source.tooltip "הצגת מקור הדף">
+<!ENTITY pageinfo.label "מידע על הדף">
+<!ENTITY pagesetup.label "הגדרת עמוד">
+<!ENTITY preferences.label "אפשרויות">
+<!ENTITY preferences.tooltip "פתיחת אפשרויות">
+<!ENTITY print-preview.label "הצג לפני הדפסה">
+<!ENTITY read-message.label "נקראה">
+<!ENTITY redo.label "ביצוע שוב">
+<!ENTITY reduce.label "התרחקות">
+<!ENTITY reply-sender.label "השב לשולח בלבד">
+<!ENTITY restart-app.label "הפעלה מחדש">
+<!ENTITY return-receipt.label "קבלה חוזרת">
+<!ENTITY saveas.label "שמירה">
+<!ENTITY search-messages.label "חפש בהודעות">
+<!ENTITY select-all.label "בחירת הכול">
+<!ENTITY send-link.label "שליחת קישור בדוא״ל">
+<!ENTITY send-link.tooltip "שליחת קישור לדף זה בדוא״ל">
+<!ENTITY statusbar-toggle.label "שורת מצב">
+<!ENTITY stop-animation.label "Animation">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY tb-history-menu.label "היסטוריה">
+<!ENTITY tb-new-tab.label "לשונית חדשה">
+<!ENTITY tb-open-in-conversation.label "פתח בדיון">
+<!ENTITY tb-page-reload.label "טעינה מחדש">
+<!ENTITY tb-page-stop.label "עצירה">
+<!ENTITY tb-print-page.label "הדפסה">
+<!ENTITY tb-print-page.tooltip "הדפסת דף זה">
+<!ENTITY tb-saved-passwords.label "ססמאות">
+<!ENTITY tb-show-all-history.label "הצגת כול ההיסטוריה">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY themes.label "Themes">
+<!ENTITY thunderbird-extension.label "הרחבות">
+<!ENTITY thunderbird-theme.label "Themes">
 <!ENTITY toggle-proxy.label "שנה מצב פרוקסי">
 <!ENTITY toggle-proxy.tooltip "שנה פרוקסי למצב פעיל או כבוי">
 <!ENTITY toggle-read.label "שנה מצב קריאה">
@@ -25,3 +86,12 @@
 <!ENTITY toggle-styles.label "שנה סגנונות עיצוב">
 <!ENTITY toggle-styles.tooltip "הוספה/הסרה של אתרי אינטרנט המגדרים סגנונות עיצוב">
 <!ENTITY toggle-toolbar.label "הצג או הסתר את סרגל הכלים">
+<!ENTITY toggle.proxy.system "השתמש בהגדרות השרת המתווך של המערכת">
+<!ENTITY toolbar-menu.label "סרגלי כלים">
+<!ENTITY top-page.label "למעלה">
+<!ENTITY translate.label "תרגום">
+<!ENTITY undo-close-tab.label "בטל סגירת לשונית">
+<!ENTITY undo.label "ביטול">
+<!ENTITY watched-with-unread-threads.label "נושאי דיון במעקב שלא נקראו">
+<!ENTITY with-unread-threads.label "נושאי דיון שלא נקראו">
+<!ENTITY workoffline.label "עבודה לא־מקוונת">

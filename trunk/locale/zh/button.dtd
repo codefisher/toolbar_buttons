@@ -1,0 +1,6 @@
+<!ENTITY favorite-page.label "收藏頁面">
+<!ENTITY toggle.proxy.auto.configuration "代理自動設置(PAC)">
+<!ENTITY toggle.proxy.auto.detect "自動監測代理設置">
+<!ENTITY toggle.proxy.manual "手動代理設置">
+<!ENTITY toggle.proxy.system "使用系統代理設定">
+<!ENTITY translate.label "翻譯">

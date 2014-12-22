@@ -35,8 +35,8 @@ def get_buttons(settings, cls=Button):
     else:
         applications = settings.get("applications")
     button_list = settings.get("buttons")
-    button_folders, button_names = get_button_folders(button_list, settings)
-    for name, use_setting in ('staging', 'use_staging'), ('pre', 'use_pre'):
+    button_folders, button_names = [], []
+    for name, use_setting in ('data', 'use_data'), ('staging', 'use_staging'), ('pre', 'use_pre'):
         if settings.get(use_setting):
             staging_button_folders, staging_buttons = get_folders(button_list, settings, name)
             button_folders.extend(staging_button_folders)

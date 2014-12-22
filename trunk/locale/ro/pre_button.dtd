@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Expediază legătura">
+<!ENTITY send-link.tooltip "Expediază adresa paginii curente prin poșta electronică">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Copiază">
+<!ENTITY tb-cut.label "Taie">
+<!ENTITY tb-new-tab.label "Filă nouă">
+<!ENTITY tb-page-go.label "Mergi">
+<!ENTITY tb-page-reload.label "Reîncarcă">
+<!ENTITY tb-page-stop.label "Oprește">
+<!ENTITY tb-paste-as-quote.label "Lipește ca citat">
+<!ENTITY tb-paste.label "Lipește">
+<!ENTITY tb-paste.tooltip "Lipește">
+<!ENTITY tb-print-page.label "Tipărește">
+<!ENTITY tb-print-page.tooltip "Tipărește această pagină">
+<!ENTITY tb-saved-passwords.label "Parole">
+<!ENTITY tb-string-preference.add "Adaugă">
+<!ENTITY tb-string-preference.browse "Răsfoiește">
+<!ENTITY tb-string-preference.close "Închide">
+<!ENTITY tb-string-preference.delete "Șterge">
+<!ENTITY tb-string-preference.edit "Editare">
+<!ENTITY tb-string-preference.name "Nume">
+<!ENTITY tb-string-preference.save "Salvează">
+<!ENTITY tb-string-preference.value "Valoare">
+<!ENTITY tb-tab-close-history.label "File închise recent">
+<!ENTITY tb-useragent-switch.default "Implicit">
+<!ENTITY tb-useragent-switch.label "Agent de utilizator">

@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Αποστολή δεσμού">
+<!ENTITY send-link.tooltip "Αποστολή δεσμού από σελίδα σε διεύθυνση ηλεκτρονικού ταχυδρομείου">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Αντιγραφή">
+<!ENTITY tb-cut.label "Αποκοπή">
+<!ENTITY tb-new-tab.label "Νέα καρτέλα">
+<!ENTITY tb-page-go.label "Μετάβαση">
+<!ENTITY tb-page-reload.label "Ανανέωση">
+<!ENTITY tb-page-stop.label "Διακοπή">
+<!ENTITY tb-paste-as-quote.label "Επικόλληση ως παράθεση">
+<!ENTITY tb-paste.label "Επικόλληση">
+<!ENTITY tb-paste.tooltip "Επικόλληση">
+<!ENTITY tb-print-page.label "Εκτύπωση">
+<!ENTITY tb-print-page.tooltip "Εκτύπωση αυτής της σελίδας">
+<!ENTITY tb-saved-passwords.label "Κωδικοί">
+<!ENTITY tb-string-preference.add "Προσθήκη">
+<!ENTITY tb-string-preference.browse "Εξερεύνηση">
+<!ENTITY tb-string-preference.close "Κλείσιμο">
+<!ENTITY tb-string-preference.delete "Διαγραφή">
+<!ENTITY tb-string-preference.edit "Επεξεργασία">
+<!ENTITY tb-string-preference.name "Όνομα">
+<!ENTITY tb-string-preference.save "Αποθήκευση">
+<!ENTITY tb-string-preference.value "Τιμή">
+<!ENTITY tb-tab-close-history.label "Πρόσφατα κλεισμένες καρτέλες">
+<!ENTITY tb-useragent-switch.default "Προεπιλεγμένο">
+<!ENTITY tb-useragent-switch.label "User Agent">

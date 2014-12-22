@@ -1,0 +1,27 @@
+<!ENTITY send-link.label "Link senden">
+<!ENTITY send-link.tooltip "Link der aktuellen Seite per E-Mail versenden">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopieren">
+<!ENTITY tb-cut.label "Ausschneiden">
+<!ENTITY tb-download-sync.label "Jetzt Herunterladen oder Synchronisieren">
+<!ENTITY tb-new-tab.label "Neuer Tab">
+<!ENTITY tb-page-go.label "Navigation">
+<!ENTITY tb-page-reload.label "Neu laden">
+<!ENTITY tb-page-stop.label "Stopp">
+<!ENTITY tb-paste-as-quote.label "Als Zitat einfügen">
+<!ENTITY tb-paste.label "Einfügen">
+<!ENTITY tb-paste.tooltip "Einfügen">
+<!ENTITY tb-print-page.label "Drucken">
+<!ENTITY tb-print-page.tooltip "Diese Seite drucken">
+<!ENTITY tb-saved-passwords.label "Passwörter">
+<!ENTITY tb-string-preference.add "Hinzufügen">
+<!ENTITY tb-string-preference.browse "Durchsuchen">
+<!ENTITY tb-string-preference.close "Schließen">
+<!ENTITY tb-string-preference.delete "Löschen">
+<!ENTITY tb-string-preference.edit "Bearbeiten">
+<!ENTITY tb-string-preference.name "Name">
+<!ENTITY tb-string-preference.save "Speichern">
+<!ENTITY tb-string-preference.value "Wert">
+<!ENTITY tb-tab-close-history.label "Kürzlich geschlossene Tabs">
+<!ENTITY tb-useragent-switch.default "Standard">
+<!ENTITY tb-useragent-switch.label "User-Agent">

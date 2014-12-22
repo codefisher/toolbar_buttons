@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "О дополнении">
+<!ENTITY about-application.tooltip "О &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Открыть страницу для просмотра кешированных элементов">
 <!ENTITY about-config.label "about:config">
@@ -38,8 +40,6 @@
 <!ENTITY bottom-page.tooltip "Перейти к концу страницы">
 <!ENTITY change-text-direction.label "Изменить направление текста">
 <!ENTITY change-text-direction.tooltip "Изменить направление текста (слева направо или справа налево)">
-<!ENTITY check-for-update.label "Обновления">
-<!ENTITY check-for-update.tooltip "Проверить обновления">
 <!ENTITY clear-data.label "Удалить данные">
 <!ENTITY clear-data.tooltip "Открыть диалоговое окно Удаления личных данных">
 <!ENTITY clear-url.label "Очистить строку адреса">
@@ -96,6 +96,8 @@
 <!ENTITY firefox-extension.tooltip "Установить расширения для Firefox">
 <!ENTITY firefox-theme.label "Темы">
 <!ENTITY firefox-theme.tooltip "Установить темы для Firefox">
+<!ENTITY forward-as-attachment.label "Переслать как вложение">
+<!ENTITY forward-as-inline.label "Переслать внутри сообщения">
 <!ENTITY full-screen.label "Во весь экран">
 <!ENTITY full-screen.tooltip "Перейти в полноэкранный режим">
 <!ENTITY get-inbox.label "Перейти во Входящие">
@@ -115,6 +117,7 @@
 <!ENTITY hotmail-button.tooltip "Открыть Hotmail">
 <!ENTITY html-mode.label "Режим HTML">
 <!ENTITY html-mode.tooltip "Показать сообщение в виде HTML или обычного текста">
+<!ENTITY ignored-threads.label "Пропущенные">
 <!ENTITY image-toggle.label "Переключить изображения">
 <!ENTITY image-toggle.tooltip "Включить или Отключить загрузку изображений">
 <!ENTITY import.label "Импорт">
@@ -245,24 +248,30 @@
 <!ENTITY tab-list.tooltip "Отобразить список вкладок">
 <!ENTITY tasks-toggle.label "Переключить задания">
 <!ENTITY tasks-toggle.tooltip "Переключить панель заданий">
+<!ENTITY tb-history-menu.label "Журнал">
+<!ENTITY tb-new-tab.label "Новая вкладка">
+<!ENTITY tb-open-in-conversation.label "Открыть в разговоре">
+<!ENTITY tb-page-reload.label "Обновить">
+<!ENTITY tb-page-stop.label "Остановить">
+<!ENTITY tb-print-page.label "Печать">
+<!ENTITY tb-print-page.tooltip "Распечатать эту страницу">
+<!ENTITY tb-saved-passwords.label "Пароли">
+<!ENTITY tb-show-all-history.label "Показать весь журнал">
+<!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY themes.label "Темы">
 <!ENTITY themes.tooltip "Открыть менеджер тем">
 <!ENTITY thunderbird-extension.label "Расширения">
 <!ENTITY thunderbird-extension.tooltip "Установить расширения для Thunderbird">
 <!ENTITY thunderbird-theme.label "Темы">
 <!ENTITY thunderbird-theme.tooltip "Установить темы для Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Копировать в буфер обмена">
-<!ENTITY tiny-url.email "Отправить ссылку">
-<!ENTITY tiny-url.label "Маленький URL">
-<!ENTITY tiny-url.link.use "Настрйоки ссылки">
-<!ENTITY tiny-url.tooltip "Создать маленький URL">
-<!ENTITY tiny-url.use.normal "Использовать xrl.in">
-<!ENTITY tiny-url.use.preview "Использовать preview.xrl.in">
-<!ENTITY tiny-url.visit "Посетить Xrl.In">
 <!ENTITY toggle-proxy.label "Переключить прокси">
 <!ENTITY toggle-proxy.tooltip "Включить или выключить прокси-сервер">
 <!ENTITY toggle-styles.label "Переключить стили">
 <!ENTITY toggle-styles.tooltip "Добавить/Удалить стили, определенные сайтами">
+<!ENTITY toggle.proxy.auto.configuration "Автоматическая настройка прокси">
+<!ENTITY toggle.proxy.auto.detect "Автоопределение настроек прокси">
+<!ENTITY toggle.proxy.manual "Ручная настройка прокси">
+<!ENTITY toggle.proxy.system "Использовать системные настройки прокси">
 <!ENTITY toolbar-menu.label "Панели инструментов">
 <!ENTITY toolbar-menu.tooltip "Показать/Скрыть Панели инструментов">
 <!ENTITY top-page.label "Вверх">
@@ -279,10 +288,12 @@
 <!ENTITY use-document-colors.tooltip "Переключиться между цветами страницы и цветами по умолчанию">
 <!ENTITY use-document-fonts.label "Переключить шрифт страницы">
 <!ENTITY use-document-fonts.tooltip "Переключиться между шрифтами страницы и шрифтами по умолчанию">
+<!ENTITY watched-with-unread-threads.label "Отслеживаемые с непрочитанными сообщениями">
 <!ENTITY websearch.label "Поиск в Сети">
 <!ENTITY websearch.tooltip "Поиск в Сети, используя ваш поисковый плагин по умолчанию">
 <!ENTITY wikipedia.label "Wikipedia">
 <!ENTITY wikipedia.tooltip "Перейти на главную страницу Wikipedia">
+<!ENTITY with-unread-threads.label "С непрочитанными сообщениями">
 <!ENTITY workoffline.label "Работать автономно">
 <!ENTITY workoffline.tooltip "Переключить режим автономной работы">
 <!ENTITY yahoo-button.label "Yahoo Mail">

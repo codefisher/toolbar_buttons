@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "링크 보내기">
+<!ENTITY send-link.tooltip "Email로 페이지 링크 보내기">
+<!ENTITY tb-codefisher.twitter "트위터">
+<!ENTITY tb-copy.label "복사하기">
+<!ENTITY tb-cut.label "잘라내기">
+<!ENTITY tb-new-tab.label "새 탭">
+<!ENTITY tb-page-go.label "이동">
+<!ENTITY tb-page-reload.label "새로 고침">
+<!ENTITY tb-page-stop.label "중지">
+<!ENTITY tb-paste-as-quote.label "인용 형식으로 붙여넣기">
+<!ENTITY tb-paste.label "붙여넣기">
+<!ENTITY tb-paste.tooltip "붙여넣기">
+<!ENTITY tb-print-page.label "인쇄">
+<!ENTITY tb-print-page.tooltip "현재 페이지 인쇄">
+<!ENTITY tb-saved-passwords.label "암호 관리">
+<!ENTITY tb-string-preference.add "추가">
+<!ENTITY tb-string-preference.browse "찾아보기">
+<!ENTITY tb-string-preference.close "닫기">
+<!ENTITY tb-string-preference.delete "삭제">
+<!ENTITY tb-string-preference.edit "편집">
+<!ENTITY tb-string-preference.name "이름">
+<!ENTITY tb-string-preference.save "저장">
+<!ENTITY tb-string-preference.value "값">
+<!ENTITY tb-tab-close-history.label "최근에 닫은 탭">
+<!ENTITY tb-useragent-switch.default "기본">
+<!ENTITY tb-useragent-switch.label "사용자 에이전트">

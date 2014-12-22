@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "O tym dodatku">
+<!ENTITY about-application.tooltip "O programie &brandShortName;">
 <!ENTITY about-cache.label "O buforze">
 <!ENTITY about-cache.tooltip "Wyświetl informacje o buforze">
 <!ENTITY about-config.label "O konfiguracji aplikacji">
@@ -40,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Przejdź na koniec strony">
 <!ENTITY change-text-direction.label "Zmień kierunek tekstu">
 <!ENTITY change-text-direction.tooltip "Zmień kierunek tekstu z lewej do prawej lub z prawej do lewej">
-<!ENTITY check-for-update.label "Aktualizacja">
-<!ENTITY check-for-update.tooltip "Sprawdź dostępność aktualizacji">
 <!ENTITY clear-data.label "Wyczyść prywatne dane">
 <!ENTITY clear-data.tooltip "Wyczyść prywatne dane">
 <!ENTITY clear-url.label "Wyczyść pasek adresu">
@@ -261,10 +261,20 @@
 <!ENTITY tb-edit-menu.tooltip "Pokaż menu Edytuj">
 <!ENTITY tb-file-menu.label "Menu Plik">
 <!ENTITY tb-file-menu.tooltip "Pokaż menu Plik">
+<!ENTITY tb-history-menu.label "Historia">
+<!ENTITY tb-new-tab.label "Nowa karta">
+<!ENTITY tb-open-in-conversation.label "Otwórz wątek w karcie">
+<!ENTITY tb-page-reload.label "Odśwież">
+<!ENTITY tb-page-stop.label "Zatrzymaj">
+<!ENTITY tb-print-page.label "Drukuj">
+<!ENTITY tb-print-page.tooltip "Drukuj bieżącą stronę">
+<!ENTITY tb-saved-passwords.label "Hasła">
+<!ENTITY tb-show-all-history.label "Wyświetl całą historię">
 <!ENTITY tb-toggle-menu-bar.label "Pasek menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Przełącz pasek menu">
 <!ENTITY tb-tools-menu.label "Menu Narzędzia">
 <!ENTITY tb-tools-menu.tooltip "Pokaż menu Narzędzia">
+<!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-view-menu.label "Menu Widok">
 <!ENTITY tb-view-menu.tooltip "Pokaż menu Widok">
 <!ENTITY themes.label "Motywy">
@@ -273,14 +283,6 @@
 <!ENTITY thunderbird-extension.tooltip "Pobierz więcej rozszerzeń">
 <!ENTITY thunderbird-theme.label "Motywy">
 <!ENTITY thunderbird-theme.tooltip "Pobierz więcej motywów">
-<!ENTITY tiny-url.copy.to.clipboard "Kopiuj do schowka">
-<!ENTITY tiny-url.email "Adres e-mail">
-<!ENTITY tiny-url.label "Skróć adres">
-<!ENTITY tiny-url.link.use "Opcje odnośników">
-<!ENTITY tiny-url.tooltip "Stwórz skrócony adres url">
-<!ENTITY tiny-url.use.normal "Użyj skróconego adresu">
-<!ENTITY tiny-url.use.preview "Użyj podglądu skróconego adresu">
-<!ENTITY tiny-url.visit "Odwiedź skrócony adres">
 <!ENTITY toggle-proxy.label "Proxy">
 <!ENTITY toggle-proxy.tooltip "Włącz/Wyłącz proxy">
 <!ENTITY toggle-read.label "Czytana">
@@ -289,6 +291,10 @@
 <!ENTITY toggle-starred.tooltip "Pokaż/Ukryj stan oznaczenia gwiazdką">
 <!ENTITY toggle-styles.label "Styl">
 <!ENTITY toggle-styles.tooltip "Włącz/Wyłącz zdefiniowany styl stron">
+<!ENTITY toggle.proxy.auto.configuration "Automatyczna konfiguracja proxy">
+<!ENTITY toggle.proxy.auto.detect "Wykrywaj automatycznie ustawienia proxy">
+<!ENTITY toggle.proxy.manual "Ręczna konfiguracja proxy">
+<!ENTITY toggle.proxy.system "Używaj systemowych ustawień serwerów proxy">
 <!ENTITY toolbar-menu.label "Paski narzędzi">
 <!ENTITY toolbar-menu.tooltip "Ukryj/Pokaż paski narzędzi">
 <!ENTITY top-page.label "Początek strony">

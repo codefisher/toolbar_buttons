@@ -282,12 +282,18 @@
 <!ENTITY tb-history-menu.tooltip "Menu Geschiedenis openen">
 <!ENTITY tb-new-event.label "Nieuwe gebeurtenis">
 <!ENTITY tb-new-event.tooltip "Een nieuwe gebeurtenis aan de kalender toevoegen.">
+<!ENTITY tb-new-tab.label "&#xad;Nieuw tabblad">
 <!ENTITY tb-new-task.label "Nieuwe taak">
 <!ENTITY tb-new-task.tooltip "Een nieuwe taak toevoegen aan de kalender.">
 <!ENTITY tb-open-in-conversation.label "Openen in discussie">
 <!ENTITY tb-open-in-conversation.tooltip "Huidige bericht in discussie openen">
 <!ENTITY tb-page-info-media.label "Pagina-media">
 <!ENTITY tb-page-info-media.tooltip "Pagina-informatie openen op mediatabblad">
+<!ENTITY tb-page-reload.label "Vernieuwen">
+<!ENTITY tb-page-stop.label "Stoppen">
+<!ENTITY tb-print-page.label "Afdrukken">
+<!ENTITY tb-print-page.tooltip "Deze pagina afdrukken">
+<!ENTITY tb-saved-passwords.label "Wachtwoorden">
 <!ENTITY tb-search-go-button.label "Zoekopdracht uitvoeren">
 <!ENTITY tb-search-go-button.tooltip "Op het web zoeken">
 <!ENTITY tb-search-minus.label "Zoekbalk verkleinen">
@@ -302,7 +308,6 @@
 <!ENTITY tb-toggle-headers.tooltip "Weergave e-mailheaders wisselen">
 <!ENTITY tb-toggle-menu-bar.label "Menubalk wisselen">
 <!ENTITY tb-toggle-menu-bar.tooltip "De menubalk wisselen">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "Pop-upblokkering">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Pop-upblokkering in- en uitschakelen">
 <!ENTITY tb-tools-menu.label "Menu Extra">
@@ -329,6 +334,10 @@
 <!ENTITY toggle-styles.tooltip "Door websites gedefinieerde stijlen toevoegen/verwijderen">
 <!ENTITY toggle-toolbar.label "Werkbalk wisselen">
 <!ENTITY toggle-toolbar.tooltip "De hoofdwerkbalk wisselen">
+<!ENTITY toggle.proxy.auto.configuration "Automatische proxyconfiguratie (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
+<!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">
+<!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY toolbar-menu.label "Werkbalken openen">
 <!ENTITY toolbar-menu.tooltip "Werkbalken verbergen/weergeven">
 <!ENTITY top-page.label "Bovenkant">

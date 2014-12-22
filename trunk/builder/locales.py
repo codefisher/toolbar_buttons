@@ -4,7 +4,7 @@ import os
 import re
 from collections import defaultdict
 
-entity_re = re.compile(r"<!ENTITY ([\w\-\.]+) [\"'](.*?)[\"']>")
+entity_re = re.compile(r"<!ENTITY\s+([\w\-\.]+?)\s+[\"'](.*?)[\"']\s*>")
 
 class Locale(object):
     """Parses the localisation files of the extension and queries it for data"""
@@ -16,7 +16,15 @@ class Locale(object):
         self._dtd = defaultdict(dict)
         self._properties = defaultdict(dict)
         self._meta = {}
-
+        self._search_data = {}
+        
+        if self._missing_strings == "search":
+            with open(os.path.join(settings.get('project_root'), 'app_locale', 'strings')) as string_data:
+                for line in string_data:
+                    string, name, file_name, entities = line.split('\t', 4)
+                    for entity in entities.split(','):
+                        self._search_data[entity.strip()] = {"name": name, "file_name": file_name}
+        
         for folder, locale in zip(folders, locales):
             files = [os.path.join(folder, file_name)
                      for file_name in os.listdir(folder)
@@ -65,6 +73,42 @@ class Locale(object):
         if not value and button and locale == self._settings.get("default_locale"):
             value = button.get_string(name)
         return value if value else None
+    
+    def find_string(self, string, locale):
+        item = self._search_data.get(string)
+        if item == None:
+            return None
+        name = item.get('name')
+        file_name = os.path.join(self._settings.get('project_root'), item.get('file_name').replace('en-US', locale))
+        if not os.path.exists(file_name):
+            return None
+        elif file_name.endswith(".dtd"):
+            return self.find_entities(name, file_name)
+        elif file_name.endswith(".properties"):
+            return self.find_properties(name, file_name)
+        return None
+    
+    def find_entities(self, string, path):
+        with open(path) as data:
+            for line in data:
+                match = entity_re.match(line.strip())
+                if match:
+                    name, value = match.group(1), match.group(2)
+                    if name in string:
+                        return value
+        return None
+                        
+    def find_properties(self, string, path):
+        with open(path) as data:
+            for line in data:
+                if not line.strip() or not '=' in line:
+                    continue
+                name, value = line.strip().split('=', 1)
+                value = value.strip()
+                name = name.strip()
+                if name in string:
+                    return value
+        return None
 
     def get_dtd_data(self, strings, button=None, untranslated=True):
         """Gets a set of files with all the strings wanted
@@ -88,19 +132,27 @@ class Locale(object):
                 if self._dtd[locale].get(string):
                     count += 1
                 if self._missing_strings == "replace":
-                    dtd_file.append("""<!ENTITY %s "%s">"""
-                                % (string, self._dtd[locale].get(string,
+                    value = self._dtd[locale].get(string,
                                         self._dtd[default_locale]
-                                        .get(string, button.get_string(string, locale) if button else ""))))
+                                        .get(string, button.get_string(string, locale) if button else ""))
+                    if value:
+                        dtd_file.append("""<!ENTITY %s "%s">""" % (string, value))
+                    else:
+                        print string, value, locale
                 elif self._missing_strings == "empty":
                     dtd_file.append("""<!ENTITY %s "%s">"""
                              % (string, self._dtd[locale].get(string, 
                                     button.get_string(string, locale) if button and locale == default_locale else "")))
-                elif self._missing_strings == "skip":
+                elif self._missing_strings == "skip" or self._missing_strings == "search":
                     if string in self._dtd[locale]:
                         dtd_file.append("""<!ENTITY %s "%s">"""  % (string, self._dtd[locale][string]))
                     elif button and locale == default_locale and button.get_string(string, locale):
                         dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string, locale)))
+                    elif self._missing_strings == "search":
+                        value = self.find_string(string, locale)
+                        if value:
+                            dtd_file.append("""<!ENTITY %s "%s">""" % (string, value))
+                    
             if count or untranslated:
                 result[locale] = "\n".join(dtd_file)
         return result
@@ -116,22 +168,25 @@ class Locale(object):
             properties_file = []
             for string in strings:
                 if self._missing_strings == "replace":
-                    properties_file.append("%s=%s"
-                                % (string, self._properties[locale].get(string,
+                    value = self._properties[locale].get(string,
                                         self._properties[default_locale]
-                                        .get(string, button.get_string(string, locale) if button else ""))))
+                                        .get(string, button.get_string(string, locale) if button else ""))
+                    if value:
+                        properties_file.append("%s=%s" % (string, value))
                 elif self._missing_strings == "empty":
                     properties_file.append("%s=%s"
                              % (string, self._properties[locale].get(string,  
                                     button.get_string(string, locale) if button and locale == default_locale else "")))
-                elif self._missing_strings == "skip":
+                elif self._missing_strings == "skip" or self._missing_strings == "search":
                     if string in self._properties[locale]:
                         properties_file.append("%s=%s"
                                   % (string, self._properties[locale][string]))
                     elif button and locale == default_locale and button.get_string(string, locale):
-                        properties_file.append("""%s=%s""" % (string, button.get_string(string, locale)))
-                elif button and button.get_string(string):
-                    properties_file.append("%s=%s" % (string, button.get_string(string)))
+                        properties_file.append("%s=%s" % (string, button.get_string(string, locale)))
+                    elif self._missing_strings == "search":
+                        value = self.find_string(string, locale)
+                        if value:
+                            properties_file.append("%s=%s" % (string, value))
             if self._settings.get("translate_description"):
                 description = "extensions.%s.description" % self._settings.get("extension_id")
                 if locale == default_locale:

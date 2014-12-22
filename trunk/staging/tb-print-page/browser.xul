@@ -2,5 +2,5 @@
 	class="toolbarbutton-1"
 	id="tb-print-page"
 	label="&tb-print-page.label;"
-	command="cmd_print"
-	tooltiptext="&print-page.tooltip;"/>
+	tooltiptext="&tb-print-page.tooltip;"
+	command="cmd_print" />

@@ -5,10 +5,15 @@
 <!ENTITY restart.checkbox "再起動前に確認しない。">
 <!ENTITY previous-next.label "[前へ] と [次へ]">
 <!ENTITY restart.label "再起動">
-<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY read.select.button "選択">
 <!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
-<!ENTITY toggle.proxy.manual "手動のプロキシの構成">
+<!ENTITY confirm.caption "確認">
 <!ENTITY favorite-page.label "お気に入りページ">
 <!ENTITY translate.label "翻訳">
-<!ENTITY translate.description "翻訳ボタンに使用したい言語を選択します。 ボタンは Google 翻訳サービスを使用します">
+<!ENTITY translate.description "翻訳ボタンに使用したい言語を選択します。">
 <!ENTITY previous-next.checkbox "[前へ] および [次へ] ボタンの方向を変更する。">
+<!ENTITY links.caption "リンク">
+<!ENTITY toggle.proxy.system "システムのプロキシ設定を利用する">
+<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY settings.label "設定">
+<!ENTITY toggle.proxy.manual "手動のプロキシの構成">

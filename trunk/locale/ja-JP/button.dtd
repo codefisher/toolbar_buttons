@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "このアドオンについて">
+<!ENTITY about-application.tooltip "&brandShortName; について">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "キャッシュされているコンテンツを表示するのに about:cache を開きます">
 <!ENTITY about-config.label "about:config">
@@ -40,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "ページの末尾へ移動します">
 <!ENTITY change-text-direction.label "テキストの方向の変更">
 <!ENTITY change-text-direction.tooltip "左から右へまたは右から左へテキストの方向を変更します">
-<!ENTITY check-for-update.label "更新">
-<!ENTITY check-for-update.tooltip "更新をチェックします">
 <!ENTITY clear-data.label "情報のクリア">
 <!ENTITY clear-data.tooltip "[個人情報のクリア] ダイアログを開きます">
 <!ENTITY clear-url.label "Url バーのクリア">
@@ -98,6 +98,8 @@
 <!ENTITY firefox-extension.tooltip "さらなる Firefox 拡張を取得します">
 <!ENTITY firefox-theme.label "テーマ">
 <!ENTITY firefox-theme.tooltip "さらなる Firefox テーマを取得します">
+<!ENTITY forward-as-attachment.label "添付ファイルとして転送">
+<!ENTITY forward-as-inline.label "メッセージ本文として転送">
 <!ENTITY full-screen.label "全画面表示">
 <!ENTITY full-screen.tooltip "全画面表示モードへ切り替えます">
 <!ENTITY get-inbox.label "受信トレイ フォルダ">
@@ -251,20 +253,22 @@
 <!ENTITY tasks-in-view.tooltip "表示中のタスクを切り替えます">
 <!ENTITY tasks-toggle.label "タスクの切り替え">
 <!ENTITY tasks-toggle.tooltip "タスク バーを切り替えます">
+<!ENTITY tb-history-menu.label "履歴">
+<!ENTITY tb-new-tab.label "新しいタブ">
+<!ENTITY tb-open-in-conversation.label "スレッドを新しいタブで開く">
+<!ENTITY tb-page-reload.label "更新">
+<!ENTITY tb-page-stop.label "中止">
+<!ENTITY tb-print-page.label "印刷">
+<!ENTITY tb-print-page.tooltip "このページを印刷します">
+<!ENTITY tb-saved-passwords.label "パスワード">
+<!ENTITY tb-show-all-history.label "すべての履歴を表示">
+<!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY themes.label "テーマ">
 <!ENTITY themes.tooltip "テーマ マネージャを開きます">
 <!ENTITY thunderbird-extension.label "拡張">
 <!ENTITY thunderbird-extension.tooltip "さらなる Thunderbird 拡張を取得します">
 <!ENTITY thunderbird-theme.label "テーマ">
 <!ENTITY thunderbird-theme.tooltip "さらなる Thunderbird テーマを取得します">
-<!ENTITY tiny-url.copy.to.clipboard "クリップ ボードへコピー">
-<!ENTITY tiny-url.email "リンクの電子メール">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "リンクのオプション">
-<!ENTITY tiny-url.tooltip "Tiny Url を作成します">
-<!ENTITY tiny-url.use.normal "xrl.in の使用">
-<!ENTITY tiny-url.use.preview "preview.xrl.in の使用">
-<!ENTITY tiny-url.visit "Xrl.In の訪問">
 <!ENTITY toggle-proxy.label "プロキシの切り替え">
 <!ENTITY toggle-proxy.tooltip "プロキシのオンとオフを切り替えます">
 <!ENTITY toggle-read.label "既読の切り替え">
@@ -273,6 +277,10 @@
 <!ENTITY toggle-starred.tooltip "スターの状態を切り替えます">
 <!ENTITY toggle-styles.label "スタイルの切り替え">
 <!ENTITY toggle-styles.tooltip "ウェブ サイトの定義スタイルを追加/削除します">
+<!ENTITY toggle.proxy.auto.configuration "プロキシの自動構成 (PAC)">
+<!ENTITY toggle.proxy.auto.detect "プロキシの設定を自動検出する">
+<!ENTITY toggle.proxy.manual "手動のプロキシの構成">
+<!ENTITY toggle.proxy.system "システムのプロキシ設定を利用する">
 <!ENTITY toolbar-menu.label "ツール バー">
 <!ENTITY toolbar-menu.tooltip "ツール バーの表示/非表示を切り替えます">
 <!ENTITY top-page.label "先頭へ">
