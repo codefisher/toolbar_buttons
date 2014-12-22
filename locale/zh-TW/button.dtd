@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "到本頁最底部">
 <!ENTITY change-text-direction.label "改變文字方向">
 <!ENTITY change-text-direction.tooltip "改變文字方向從左到右或從右到左">
-<!ENTITY check-for-update.label "更新">
-<!ENTITY check-for-update.tooltip "檢查更新">
 <!ENTITY clear-data.label "清除資料">
 <!ENTITY clear-data.tooltip "開啟清除隱私資料對話視窗">
 <!ENTITY clear-url.label "隱藏網址">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "顯示編輯選單">
 <!ENTITY tb-file-menu.label "檔案選單">
 <!ENTITY tb-file-menu.tooltip "顯示檔案選單">
+<!ENTITY tb-history-menu.label "歷史">
 <!ENTITY tb-new-event.label "新增事件">
 <!ENTITY tb-new-event.tooltip "新增事件到月曆上">
+<!ENTITY tb-new-tab.label "開新分頁">
 <!ENTITY tb-new-task.label "新增工作">
 <!ENTITY tb-new-task.tooltip "新增工作到月曆上">
+<!ENTITY tb-open-in-conversation.label "以討論串檢視模式開啟">
+<!ENTITY tb-page-reload.label "重新載入">
+<!ENTITY tb-page-stop.label "停止">
+<!ENTITY tb-print-page.label "列印">
+<!ENTITY tb-print-page.tooltip "列印此頁">
+<!ENTITY tb-saved-passwords.label "密碼">
 <!ENTITY tb-search-minus.label "縮小搜尋列尺寸">
 <!ENTITY tb-search-minus.tooltip "縮小搜尋列寬度 10 圖像點">
 <!ENTITY tb-search-plus.label "加大搜尋列尺寸">
 <!ENTITY tb-search-plus.tooltip "加大搜尋列寬度 10 圖像點">
 <!ENTITY tb-search-resize.label "重設搜尋尺寸">
 <!ENTITY tb-search-resize.tooltip "重設搜尋列的寬度">
+<!ENTITY tb-show-all-history.label "顯示所有瀏覽記錄">
 <!ENTITY tb-toggle-menu-bar.label "切換選單列">
 <!ENTITY tb-toggle-menu-bar.tooltip "切換選單列">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "彈跳視窗阻擋器">
 <!ENTITY tb-toggle-popup-blocker.tooltip "切換彈跳視窗阻擋器">
 <!ENTITY tb-tools-menu.label "工具選單">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "取得更多 Thunderbird 外掛程式">
 <!ENTITY thunderbird-theme.label "佈景">
 <!ENTITY thunderbird-theme.tooltip "取得更多 Thunderbird 佈景">
-<!ENTITY tiny-url.copy.to.clipboard "複製到剪貼板">
-<!ENTITY tiny-url.email "電郵連結">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "連結選項">
-<!ENTITY tiny-url.tooltip "Create a Tiny Url">
-<!ENTITY tiny-url.use.normal "使用 xrl.in">
-<!ENTITY tiny-url.use.preview "使用 preview.xrl.in">
-<!ENTITY tiny-url.visit "Visit Xrl.In">
 <!ENTITY toggle-proxy.label "切換代理伺服器">
 <!ENTITY toggle-proxy.tooltip "切換代理伺服器開關">
 <!ENTITY toggle-read.label "切換閱覽">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "新增/移除網站預設樣式">
 <!ENTITY toggle-toolbar.label "切換工具列">
 <!ENTITY toggle-toolbar.tooltip "切換主工具列">
+<!ENTITY toggle.proxy.auto.configuration "代理自動設置(PAC)">
+<!ENTITY toggle.proxy.auto.detect "自動監測代理設置">
+<!ENTITY toggle.proxy.manual "手動代理設置">
+<!ENTITY toggle.proxy.system "使用系統代理設定">
 <!ENTITY toolbar-menu.label "工具列">
 <!ENTITY toolbar-menu.tooltip "隱藏/顯示工具列">
 <!ENTITY top-page.label "最上層">

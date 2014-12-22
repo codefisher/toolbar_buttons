@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Odoslať odkaz">
+<!ENTITY send-link.tooltip "Odoslať odkaz na stránku elektronickou poštou">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopírovať">
+<!ENTITY tb-cut.label "Vystrihnúť">
+<!ENTITY tb-new-tab.label "Nová karta">
+<!ENTITY tb-page-go.label "Prejsť na">
+<!ENTITY tb-page-reload.label "Obnoviť">
+<!ENTITY tb-page-stop.label "Zastaviť">
+<!ENTITY tb-paste-as-quote.label "Prilepiť ako citáciu">
+<!ENTITY tb-paste.label "Prilepiť">
+<!ENTITY tb-paste.tooltip "Prilepiť">
+<!ENTITY tb-print-page.label "Tlačiť">
+<!ENTITY tb-print-page.tooltip "Umožní vytlačiť túto stránku">
+<!ENTITY tb-saved-passwords.label "Heslá">
+<!ENTITY tb-string-preference.add "Pridať">
+<!ENTITY tb-string-preference.browse "Prehľadávať">
+<!ENTITY tb-string-preference.close "Zavrieť">
+<!ENTITY tb-string-preference.delete "Odstrániť">
+<!ENTITY tb-string-preference.edit "Upraviť">
+<!ENTITY tb-string-preference.name "Názov">
+<!ENTITY tb-string-preference.save "Uložiť">
+<!ENTITY tb-string-preference.value "Hodnota">
+<!ENTITY tb-tab-close-history.label "Nedávno zatvorené karty">
+<!ENTITY tb-useragent-switch.default "Štandardné">
+<!ENTITY tb-useragent-switch.label "Reťazec User Agent">

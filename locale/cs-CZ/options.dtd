@@ -3,7 +3,12 @@
 <!ENTITY restart.checkbox "Neptat se před restartem">
 <!ENTITY previous-next.label "Předchozí a Další">
 <!ENTITY restart.label "Restartovat aplikaci">
+<!ENTITY read.select.button "Vybrat">
+<!ENTITY confirm.caption "Potvrzení">
 <!ENTITY favorite-page.label "Oblíbené">
 <!ENTITY translate.label "Přeložit">
-<!ENTITY translate.description "Vyberte jazyk, do kterého má tlačítko Překlad přkládat. Aplikace používá překladové služby Google Translation Service">
+<!ENTITY translate.description "Vyberte jazyk, do kterého má tlačítko Překlad přkládat.">
 <!ENTITY previous-next.checkbox "Změnený význam tlačítek Předchozí a Další.">
+<!ENTITY links.caption "Odkazy">
+<!ENTITY toggle.proxy.system "Použít nastavení proxy serverů v systému">
+<!ENTITY settings.label "Nastavení">

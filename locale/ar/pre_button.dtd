@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "إرسال الرابط">
+<!ENTITY send-link.tooltip "إرسال رابط الصفحة في بريد إلكتروني">
+<!ENTITY tb-codefisher.twitter "تويتر">
+<!ENTITY tb-copy.label "انسخ">
+<!ENTITY tb-cut.label "قصّ">
+<!ENTITY tb-new-tab.label "لسان جديد">
+<!ENTITY tb-page-go.label "اذهب">
+<!ENTITY tb-page-reload.label "أعد التحميل">
+<!ENTITY tb-page-stop.label "أوقف">
+<!ENTITY tb-paste-as-quote.label "ألصق كاقتباس">
+<!ENTITY tb-paste.label "ألصق">
+<!ENTITY tb-paste.tooltip "ألصق">
+<!ENTITY tb-print-page.label "اطبع">
+<!ENTITY tb-print-page.tooltip "اطبع هذه الصفحة">
+<!ENTITY tb-saved-passwords.label "كلمات السر">
+<!ENTITY tb-string-preference.add "أضِفْ">
+<!ENTITY tb-string-preference.browse "استعرض">
+<!ENTITY tb-string-preference.close "أغلق">
+<!ENTITY tb-string-preference.delete "احذف">
+<!ENTITY tb-string-preference.edit "تحرير">
+<!ENTITY tb-string-preference.name "الاسم">
+<!ENTITY tb-string-preference.save "احفظ">
+<!ENTITY tb-string-preference.value "القيمة">
+<!ENTITY tb-tab-close-history.label "الألسنة المُغلقة حديثًا">
+<!ENTITY tb-useragent-switch.default "مبدئي">
+<!ENTITY tb-useragent-switch.label "عميل المستخدم">

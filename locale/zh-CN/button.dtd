@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "关于">
+<!ENTITY about-application.tooltip "关于 &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "打开 about:cache 查看缓存">
 <!ENTITY about-config.label "about:config">
@@ -40,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "转到页面按钮">
 <!ENTITY change-text-direction.label "更改文本方向">
 <!ENTITY change-text-direction.tooltip "更改文本方向，从左到右或从右到左">
-<!ENTITY check-for-update.label "更新">
-<!ENTITY check-for-update.tooltip "检查更新">
 <!ENTITY clear-data.label "清除数据">
 <!ENTITY clear-data.tooltip "打开清除私有数据对话框">
 <!ENTITY clear-url.label "清空地址栏">
@@ -261,10 +261,20 @@
 <!ENTITY tb-edit-menu.tooltip "显示编辑菜单">
 <!ENTITY tb-file-menu.label "文件菜单">
 <!ENTITY tb-file-menu.tooltip "显示文件菜单">
+<!ENTITY tb-history-menu.label "历史">
+<!ENTITY tb-new-tab.label "新建标签页">
+<!ENTITY tb-open-in-conversation.label "在会话中打开">
+<!ENTITY tb-page-reload.label "重新载入">
+<!ENTITY tb-page-stop.label "停止">
+<!ENTITY tb-print-page.label "打印">
+<!ENTITY tb-print-page.tooltip "打印当前页">
+<!ENTITY tb-saved-passwords.label "密码">
+<!ENTITY tb-show-all-history.label "管理所有历史记录">
 <!ENTITY tb-toggle-menu-bar.label "收起菜单栏">
 <!ENTITY tb-toggle-menu-bar.tooltip "收起该菜单栏">
 <!ENTITY tb-tools-menu.label "工具菜单">
 <!ENTITY tb-tools-menu.tooltip "显示工具菜单">
+<!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-view-menu.label "查看菜单">
 <!ENTITY tb-view-menu.tooltip "显示查看菜单">
 <!ENTITY themes.label "主题">
@@ -273,14 +283,6 @@
 <!ENTITY thunderbird-extension.tooltip "获取更多 Thunderbird 扩展">
 <!ENTITY thunderbird-theme.label "主题">
 <!ENTITY thunderbird-theme.tooltip "获取更多 Thunderbird 主题">
-<!ENTITY tiny-url.copy.to.clipboard "复制到剪贴板">
-<!ENTITY tiny-url.email "Email发送链接">
-<!ENTITY tiny-url.label "小URL">
-<!ENTITY tiny-url.link.use "链接选项">
-<!ENTITY tiny-url.tooltip "创建一个小URL">
-<!ENTITY tiny-url.use.normal "使用xrl.in">
-<!ENTITY tiny-url.use.preview "启用preview.xrl.in">
-<!ENTITY tiny-url.visit "访问Xrl.in">
 <!ENTITY toggle-proxy.label "固定代理">
 <!ENTITY toggle-proxy.tooltip "固定代理开启/关闭">
 <!ENTITY toggle-read.label "固定已读">
@@ -289,6 +291,10 @@
 <!ENTITY toggle-starred.tooltip "固定已加星标的状态">
 <!ENTITY toggle-styles.label "切换样式">
 <!ENTITY toggle-styles.tooltip "添加/删除网站定义的样式">
+<!ENTITY toggle.proxy.auto.configuration "自动配置代理(PAC)">
+<!ENTITY toggle.proxy.auto.detect "自动监测代理设置">
+<!ENTITY toggle.proxy.manual "手动配置代理">
+<!ENTITY toggle.proxy.system "使用系统代理设置">
 <!ENTITY toolbar-menu.label "工具栏">
 <!ENTITY toolbar-menu.tooltip "隐藏/显示 工具栏">
 <!ENTITY top-page.label "顶部">

@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "페이지의 맨 아래로 가기">
 <!ENTITY change-text-direction.label "글자 방향 변경">
 <!ENTITY change-text-direction.tooltip "왼쪽에서 오른쪽으로 또는 오른쪽에서 왼쪽으로 글자 방향 변경합니다">
-<!ENTITY check-for-update.label "갱신">
-<!ENTITY check-for-update.tooltip "갱신여부 확인">
 <!ENTITY clear-data.label "자료 청소">
 <!ENTITY clear-data.tooltip "개인 자료 청소 대화상자 열기">
 <!ENTITY clear-url.label "Url 막대 청소">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
 <!ENTITY tb-file-menu.label "파일 메뉴">
 <!ENTITY tb-file-menu.tooltip "파일 메뉴를 표시합니다">
+<!ENTITY tb-history-menu.label "이동">
 <!ENTITY tb-new-event.label "새 이벤트">
 <!ENTITY tb-new-event.tooltip "캘린더에 새 이벤트를 추가합니다.">
+<!ENTITY tb-new-tab.label "새 탭">
 <!ENTITY tb-new-task.label "새 작업">
 <!ENTITY tb-new-task.tooltip "캘린더에 새 작업을 추가합니다.">
+<!ENTITY tb-open-in-conversation.label "새 탭으로 대화 열기">
+<!ENTITY tb-page-reload.label "새로 고침">
+<!ENTITY tb-page-stop.label "중지">
+<!ENTITY tb-print-page.label "인쇄">
+<!ENTITY tb-print-page.tooltip "현재 페이지 인쇄">
+<!ENTITY tb-saved-passwords.label "암호 관리">
 <!ENTITY tb-search-minus.label "검색막대 크기 축소">
 <!ENTITY tb-search-minus.tooltip "검색막대의 폭을 10픽셀씩 줄입니다">
 <!ENTITY tb-search-plus.label "검색막대 크기 확대">
 <!ENTITY tb-search-plus.tooltip "검색막대의 폭을 10픽셀씩 늘립니다">
 <!ENTITY tb-search-resize.label "검색창 크기 재지정">
 <!ENTITY tb-search-resize.tooltip "검색막대의 폭을 재지정합니다">
+<!ENTITY tb-show-all-history.label "방문 기록 보기">
 <!ENTITY tb-toggle-menu-bar.label "메뉴 막대 전환">
 <!ENTITY tb-toggle-menu-bar.tooltip "메뉴 막대를 전환합니다">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "팝업 차단기">
 <!ENTITY tb-toggle-popup-blocker.tooltip "팝업 차단기 전환">
 <!ENTITY tb-tools-menu.label "도구 메뉴">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "더 많은 Thunderbird 확장기능">
 <!ENTITY thunderbird-theme.label "테마">
 <!ENTITY thunderbird-theme.tooltip "더 많은 Thunderbird 테마">
-<!ENTITY tiny-url.copy.to.clipboard "클립보드로 복사">
-<!ENTITY tiny-url.email "이메일 연결">
-<!ENTITY tiny-url.label "간략 Url">
-<!ENTITY tiny-url.link.use "선택사항 연결">
-<!ENTITY tiny-url.tooltip "간략 Url 생성">
-<!ENTITY tiny-url.use.normal "xrl.in 사용">
-<!ENTITY tiny-url.use.preview "xrl.in 미리보기 사용">
-<!ENTITY tiny-url.visit "Xrl.In 방문">
 <!ENTITY toggle-proxy.label "프록시 전환">
 <!ENTITY toggle-proxy.tooltip "프록시 켜거나 끄기를 전환합니다">
 <!ENTITY toggle-read.label "읽음으로 전환">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "웹 사이트 지정 스타일 추가/삭제">
 <!ENTITY toggle-toolbar.label "도구막대 전환">
 <!ENTITY toggle-toolbar.tooltip "도구모음 전환">
+<!ENTITY toggle.proxy.auto.configuration "프록시 자동 환경설정(PAC)">
+<!ENTITY toggle.proxy.auto.detect "프록시 자동검색 설정">
+<!ENTITY toggle.proxy.manual "수동 프록시 환경설정">
+<!ENTITY toggle.proxy.system "시스템 프록시 설정 사용">
 <!ENTITY toolbar-menu.label "도구막대">
 <!ENTITY toolbar-menu.tooltip "도구막대 숨기기/보이기">
 <!ENTITY top-page.label "맨 위로">

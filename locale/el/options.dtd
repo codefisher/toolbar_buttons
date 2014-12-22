@@ -8,16 +8,18 @@
 <!ENTITY restart.label "Επανεκκίνηση">
 <!ENTITY read.select.button "Επιλογή">
 <!ENTITY readnews.path.desc "Η διαδρομή για τον πελάτη συζητήσεων που χρησιμοποιείτε, χρησιμοποιήστε το αν δεν λειτουργεί το κουμπί.">
-<!ENTITY toggle.proxy.auto.detect "Αυτόματος εντοπισμός ρυθμίσεων διαμεσολαβητή">
 <!ENTITY toggle.proxy.auto.configuration "Αυτόματη ρύθμιση διαμεσολαβητή μέσω αρχείου PAC">
 <!ENTITY readmail.path.desc "Η διαδρομή για τον πελάτη ηλεκτρονικής αλληλογραφίας που χρησιμοποιείτε, χρησιμοποιήστε το αν δεν λειτουργεί το κουμπί.">
-<!ENTITY toggle.proxy.manual "Χειρωνακτική ρύθμιση διαμεσολαβητή">
+<!ENTITY confirm.caption "Επιβεβαίωση">
 <!ENTITY favorite-page.label "Προτιμώμενη σελίδα">
-<!ENTITY toggle.proxy.system "Χρήση ρυθμίσεων συστήματος για διαμεσολαβητές">
 <!ENTITY translate.label "Μετάφραση">
-<!ENTITY translate.description "Επιλέξτε ποια γλώσσα θα χρησιμοποιεί το κουμπί «Μετάφραση». Χρησιμοποιείται η υπηρεσία μεταφράσεων της Google.">
+<!ENTITY translate.description "Επιλέξτε ποια γλώσσα θα χρησιμοποιεί το κουμπί «Μετάφραση».">
 <!ENTITY previous-next.checkbox "Αλλαγή κατεύθυνσης για τα κουμπιά «Πίσω» και «Μπροστά»">
 <!ENTITY readmail.path.caption "Διαδρομή εφαρμογής ηλεκτρονικής αλληλογραφίας">
 <!ENTITY toggle.label "Εναλλαγή κουμπιών">
-<!ENTITY translate.not-in-use "Δεν είναι ενεργό το κουμπί. Προσθέστε το στην εργαλειοθήκη και κάντε επανεκκίνηση.">
+<!ENTITY links.caption "Links">
+<!ENTITY toggle.proxy.system "Χρήση ρυθμίσεων συστήματος για διαμεσολαβητές">
 <!ENTITY readnews.path.caption "Διαδρομή εφαρμογής παρακολούθησης συζητήσεων">
+<!ENTITY toggle.proxy.auto.detect "Αυτόματος εντοπισμός ρυθμίσεων διαμεσολαβητή">
+<!ENTITY settings.label "Ρυθμίσεις">
+<!ENTITY toggle.proxy.manual "Χειρωνακτική ρύθμιση διαμεσολαβητή">

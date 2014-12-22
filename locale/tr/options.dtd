@@ -2,7 +2,12 @@
 <!ENTITY restart.checkbox "Yeniden başlatırken Sorma.">
 <!ENTITY previous-next.label "Önce-Sonra">
 <!ENTITY restart.label "Yeniden Başlat">
+<!ENTITY read.select.button "Seçin">
+<!ENTITY confirm.caption "Onayla">
 <!ENTITY favorite-page.label "Favori Sayfa">
 <!ENTITY translate.label "Çevir">
-<!ENTITY translate.description "Çevir düğmesinde kullanmak istediğiniz dili seçin. Düğme Google Çeviri Servisini kullanır">
+<!ENTITY translate.description "Çevir düğmesinde kullanmak istediğiniz dili seçin.">
 <!ENTITY previous-next.checkbox "Önce ve Sonra düğme yönünü değiştir.">
+<!ENTITY links.caption "Bağlantılar">
+<!ENTITY toggle.proxy.system "Sistem vekil sunucu ayarlarını kullan">
+<!ENTITY settings.label "Ayarlar">

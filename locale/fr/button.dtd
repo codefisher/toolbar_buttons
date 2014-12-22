@@ -282,12 +282,18 @@
 <!ENTITY tb-history-menu.tooltip "Ouvre le menu de l'historique">
 <!ENTITY tb-new-event.label "Nouvel évènement">
 <!ENTITY tb-new-event.tooltip "Ajouter un nouvel évènement dans le calendrier.">
+<!ENTITY tb-new-tab.label "&#xad;Nouvel onglet">
 <!ENTITY tb-new-task.label "Nouvelle Tâche">
 <!ENTITY tb-new-task.tooltip "Ajouter une nouvelle tâche au calendrier.">
 <!ENTITY tb-open-in-conversation.label "Ouvrir dans la discussion">
 <!ENTITY tb-open-in-conversation.tooltip "Ouvre le message courant dans la discussion">
 <!ENTITY tb-page-info-media.label "Médias de la page">
 <!ENTITY tb-page-info-media.tooltip "Ouvre les infos de la page à l'onglet médias">
+<!ENTITY tb-page-reload.label "Actualiser">
+<!ENTITY tb-page-stop.label "Arrêter">
+<!ENTITY tb-print-page.label "Imprimer">
+<!ENTITY tb-print-page.tooltip "Imprimer cette page">
+<!ENTITY tb-saved-passwords.label "Mots de passe">
 <!ENTITY tb-search-go-button.label "Recherche">
 <!ENTITY tb-search-go-button.tooltip "Fait une recherche Web">
 <!ENTITY tb-search-minus.label "Réduire la taille de la barre de recherche">
@@ -302,7 +308,6 @@
 <!ENTITY tb-toggle-headers.tooltip "Affiche/masque les entêtes de courriel">
 <!ENTITY tb-toggle-menu-bar.label "Barre de menu">
 <!ENTITY tb-toggle-menu-bar.tooltip "Afficher / masquer la barre de menu">
-<!ENTITY tb-toggle-popup-blocker.key "P">
 <!ENTITY tb-toggle-popup-blocker.label "Bloqueur de fenêtres popup">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Activer/désactiver le bloqueur de fenêtres popup">
 <!ENTITY tb-tools-menu.label "Menu « Outils »">
@@ -329,6 +334,10 @@
 <!ENTITY toggle-styles.tooltip "Ajouter / supprimer les styles définis par les pages Web">
 <!ENTITY toggle-toolbar.label "Afficher/masquer la barre d'outils">
 <!ENTITY toggle-toolbar.tooltip "Afficher/masquer la barre d'outils principale">
+<!ENTITY toggle.proxy.auto.configuration "Configuration automatique du proxy (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Détection automatique des paramètres du proxy">
+<!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
+<!ENTITY toggle.proxy.system "Utiliser les paramètres de proxy du système">
 <!ENTITY toolbar-menu.label "Barres d&apos;outils">
 <!ENTITY toolbar-menu.tooltip "Afficher / masquer les barres d&apos;outils">
 <!ENTITY top-page.label "Haut">

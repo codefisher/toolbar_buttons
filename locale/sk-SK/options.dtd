@@ -8,13 +8,17 @@
 <!ENTITY restart.label "Reštartovať">
 <!ENTITY read.select.button "Vybrať">
 <!ENTITY readnews.path.desc "Cesta k vašej čítačke kanálov, použite ak tlačidlo nefunguje">
-<!ENTITY toggle.proxy.auto.detect "Automaticky zistiť nastavenia proxy">
 <!ENTITY toggle.proxy.auto.configuration "Automatická konfigurácia proxy">
 <!ENTITY readmail.path.desc "Cesta k vášmu poštovému klientovi, použite ak tlačidlo nefunguje">
-<!ENTITY toggle.proxy.manual "Manuálne nastavenie proxy">
+<!ENTITY confirm.caption "Potvrdenie">
 <!ENTITY favorite-page.label "Obľúbená stránka">
 <!ENTITY translate.label "Preložiť">
-<!ENTITY translate.description "Vyberte jazyk, ktorý bude používaný tlačidlom Preložiť. Tlačidlo využíva službu Google Translation Service">
+<!ENTITY translate.description "Vyberte jazyk, ktorý bude používaný tlačidlom Preložiť.">
 <!ENTITY previous-next.checkbox "Vymeniť smer tlačidiel Predchádzajúci a Nasledujúci.">
 <!ENTITY readmail.path.caption "Cestá k poštovému klientovi">
+<!ENTITY links.caption "Odkazy">
+<!ENTITY toggle.proxy.system "Použiť systémové nastavenia serverov proxy">
 <!ENTITY readnews.path.caption "Cesta k čítačke kanálov">
+<!ENTITY toggle.proxy.auto.detect "Automaticky zistiť nastavenia proxy">
+<!ENTITY settings.label "Nastavenie">
+<!ENTITY toggle.proxy.manual "Manuálne nastavenie proxy">

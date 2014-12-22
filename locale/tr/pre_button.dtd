@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Bağlantı Gönder">
+<!ENTITY send-link.tooltip "Email&apos;de sayfa bağlantısı gönder">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopyala">
+<!ENTITY tb-cut.label "Kes">
+<!ENTITY tb-new-tab.label "Yeni sekme">
+<!ENTITY tb-page-go.label "Git">
+<!ENTITY tb-page-reload.label "Tazele">
+<!ENTITY tb-page-stop.label "Durdur">
+<!ENTITY tb-paste-as-quote.label "Alıntı olarak yapıştır">
+<!ENTITY tb-paste.label "Yapıştır">
+<!ENTITY tb-paste.tooltip "Yapıştır">
+<!ENTITY tb-print-page.label "Yazdır">
+<!ENTITY tb-print-page.tooltip "Bu sayfayı yazdır">
+<!ENTITY tb-saved-passwords.label "Parolalar">
+<!ENTITY tb-string-preference.add "Ekle">
+<!ENTITY tb-string-preference.browse "Gözat">
+<!ENTITY tb-string-preference.close "Kapat">
+<!ENTITY tb-string-preference.delete "Sil">
+<!ENTITY tb-string-preference.edit "Düzen">
+<!ENTITY tb-string-preference.name "Adı">
+<!ENTITY tb-string-preference.save "Kaydet">
+<!ENTITY tb-string-preference.value "Değer">
+<!ENTITY tb-tab-close-history.label "Yeni kapatılan sekmeler">
+<!ENTITY tb-useragent-switch.default "Varsayılan">
+<!ENTITY tb-useragent-switch.label "Kullanıcı aracı">

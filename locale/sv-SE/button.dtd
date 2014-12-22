@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Gå till sidans nederkant">
 <!ENTITY change-text-direction.label "Ändra textriktning">
 <!ENTITY change-text-direction.tooltip "Ändra textriktningen från vänster till höger eller från höger till vänster">
-<!ENTITY check-for-update.label "Uppdatera">
-<!ENTITY check-for-update.tooltip "Sök efter uppdateringar">
 <!ENTITY clear-data.label "Rensa data">
 <!ENTITY clear-data.tooltip "Öppna dialogen Rensa ut tidigare historik">
 <!ENTITY clear-url.label "Göm URL">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "Visa Redigera-menyn">
 <!ENTITY tb-file-menu.label "Filmeny">
 <!ENTITY tb-file-menu.tooltip "Visa filmenyn">
+<!ENTITY tb-history-menu.label "Historik">
 <!ENTITY tb-new-event.label "Ny händelse">
 <!ENTITY tb-new-event.tooltip "Lägg till en ny händelse i kalendern.">
+<!ENTITY tb-new-tab.label "Ny flik">
 <!ENTITY tb-new-task.label "Ny uppgift">
 <!ENTITY tb-new-task.tooltip "Lägg till en ny uppgift i kalendern.">
+<!ENTITY tb-open-in-conversation.label "Öppna i konversationen">
+<!ENTITY tb-page-reload.label "Uppdatera">
+<!ENTITY tb-page-stop.label "Stopp">
+<!ENTITY tb-print-page.label "Skriv ut">
+<!ENTITY tb-print-page.tooltip "Skriv ut denna sida">
+<!ENTITY tb-saved-passwords.label "Lösenord">
 <!ENTITY tb-search-minus.label "Minska sökfältsstorleken">
 <!ENTITY tb-search-minus.tooltip "Minskar bredden på sökfältet med 10 pixlar">
 <!ENTITY tb-search-plus.label "Öka sökfältsstorleken">
 <!ENTITY tb-search-plus.tooltip "Ökar bredden på sökfältet med 10 pixlar">
 <!ENTITY tb-search-resize.label "Ändra sökfältsstorleken">
 <!ENTITY tb-search-resize.tooltip "Ändrar bredden på sökfältet">
+<!ENTITY tb-show-all-history.label "Visa all historik">
 <!ENTITY tb-toggle-menu-bar.label "Växla menyrad">
 <!ENTITY tb-toggle-menu-bar.tooltip "Växla menyraden">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "Popup-blockeraren">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Växla Popup-blockeraren">
 <!ENTITY tb-tools-menu.label "Verktyg-menyn">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "Hämta fler Thunderbird-tillägg">
 <!ENTITY thunderbird-theme.label "Teman">
 <!ENTITY thunderbird-theme.tooltip "Hämta fler Thunderbird-teman">
-<!ENTITY tiny-url.copy.to.clipboard "Kopiera till Urklipp">
-<!ENTITY tiny-url.email "E-posta länk">
-<!ENTITY tiny-url.label "Kortlänk">
-<!ENTITY tiny-url.link.use "Länkalternativ">
-<!ENTITY tiny-url.tooltip "Skapa en kortlänk">
-<!ENTITY tiny-url.use.normal "Använd xrl.in">
-<!ENTITY tiny-url.use.preview "Använd preview.xrl.in">
-<!ENTITY tiny-url.visit "Besök xrl.in">
 <!ENTITY toggle-proxy.label "Växla proxy">
 <!ENTITY toggle-proxy.tooltip "Växla proxyns läge mellan av &amp; på">
 <!ENTITY toggle-read.label "Växla läst">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "Lägg till/Ta bort webbplatsdefinierade stilar">
 <!ENTITY toggle-toolbar.label "Växla verktygsfältet">
 <!ENTITY toggle-toolbar.tooltip "Växla huvudverktygsfältet">
+<!ENTITY toggle.proxy.auto.configuration "Automatisk konfiguration av proxy (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Identifiera proxyinställningar automatiskt">
+<!ENTITY toggle.proxy.manual "Manuell proxykonfiguration">
+<!ENTITY toggle.proxy.system "Använd datorns proxyinställningar">
 <!ENTITY toolbar-menu.label "Verktygsfält">
 <!ENTITY toolbar-menu.tooltip "Göm/Visa verktygsfält">
 <!ENTITY top-page.label "Överst">

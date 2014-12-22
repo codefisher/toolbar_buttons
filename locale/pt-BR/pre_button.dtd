@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Enviar Link">
+<!ENTITY send-link.tooltip "Enviar Link da Página em um Email">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Copiar">
+<!ENTITY tb-cut.label "Recortar">
+<!ENTITY tb-new-tab.label "Nova aba">
+<!ENTITY tb-page-go.label "Ir">
+<!ENTITY tb-page-reload.label "Recarregar">
+<!ENTITY tb-page-stop.label "Parar">
+<!ENTITY tb-paste-as-quote.label "Colar como citação">
+<!ENTITY tb-paste.label "Colar">
+<!ENTITY tb-paste.tooltip "Colar">
+<!ENTITY tb-print-page.label "Imprimir">
+<!ENTITY tb-print-page.tooltip "Imprimir a página">
+<!ENTITY tb-saved-passwords.label "Senhas">
+<!ENTITY tb-string-preference.add "Adicionar">
+<!ENTITY tb-string-preference.browse "Procurar…">
+<!ENTITY tb-string-preference.close "Fechar">
+<!ENTITY tb-string-preference.delete "Excluir">
+<!ENTITY tb-string-preference.edit "Editar">
+<!ENTITY tb-string-preference.name "Nome">
+<!ENTITY tb-string-preference.save "Salvar">
+<!ENTITY tb-string-preference.value "Valor">
+<!ENTITY tb-tab-close-history.label "Reabrir aba">
+<!ENTITY tb-useragent-switch.default "Padrão">
+<!ENTITY tb-useragent-switch.label "User Agent">

@@ -1,5 +1,5 @@
 confirm.caption:application-error.png
-<groupbox flex="1">
+<groupbox>
 	<caption label="&restart.label;" />
 	<preferences>
 		<preference id="{{pref-root}}restart" name="{{pref-root}}restart" type="bool"/>

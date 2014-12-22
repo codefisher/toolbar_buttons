@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "リンクの送信">
+<!ENTITY send-link.tooltip "電子メールでページ リンクを送信します">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "コピー">
+<!ENTITY tb-cut.label "切り取り">
+<!ENTITY tb-new-tab.label "新しいタブ">
+<!ENTITY tb-page-go.label "移動">
+<!ENTITY tb-page-reload.label "更新">
+<!ENTITY tb-page-stop.label "中止">
+<!ENTITY tb-paste-as-quote.label "引用文として貼り付け">
+<!ENTITY tb-paste.label "貼り付け">
+<!ENTITY tb-paste.tooltip "貼り付け">
+<!ENTITY tb-print-page.label "印刷">
+<!ENTITY tb-print-page.tooltip "このページを印刷します">
+<!ENTITY tb-saved-passwords.label "パスワード">
+<!ENTITY tb-string-preference.add "追加">
+<!ENTITY tb-string-preference.browse "参照">
+<!ENTITY tb-string-preference.close "閉じる">
+<!ENTITY tb-string-preference.delete "削除">
+<!ENTITY tb-string-preference.edit "編集">
+<!ENTITY tb-string-preference.name "名前">
+<!ENTITY tb-string-preference.save "保存">
+<!ENTITY tb-string-preference.value "値">
+<!ENTITY tb-tab-close-history.label "最近閉じたタブ">
+<!ENTITY tb-useragent-switch.default "標準">
+<!ENTITY tb-useragent-switch.label "ユーザエージェント">

@@ -8,16 +8,18 @@
 <!ENTITY restart.label "Reinicio">
 <!ENTITY read.select.button "Seleccionar">
 <!ENTITY readnews.path.desc "La ruta de su cliente de noticias (definir aquí si el botón no funciona).">
-<!ENTITY toggle.proxy.auto.detect "Auto detectar configuración de proxy">
 <!ENTITY toggle.proxy.auto.configuration "Configuración automática de proxy (CAP)">
 <!ENTITY readmail.path.desc "La ruta de su cliente de correo (definir aquí si el botón no funciona).">
-<!ENTITY toggle.proxy.manual "Configuración manual de proxy">
+<!ENTITY confirm.caption "Confirmar">
 <!ENTITY favorite-page.label "Página favorita">
-<!ENTITY toggle.proxy.system "Usar configuración de proxy del sistema">
 <!ENTITY translate.label "Traducir">
-<!ENTITY translate.description "Seleccione el lenguaje para usar con el botón &apos;Traducir&apos;. El botón usa el servicio de Google Translate">
+<!ENTITY translate.description "Seleccione el lenguaje para usar con el botón &apos;Traducir&apos;.">
 <!ENTITY previous-next.checkbox "Cambiar la dirección de los botones &apos;Anterior&apos; y &apos;Siguiente&apos;.">
 <!ENTITY readmail.path.caption "Definir ruta del cliente de correo">
 <!ENTITY toggle.label "Alternar botones">
-<!ENTITY translate.not-in-use "Botón aún no usado. Añádalo a alguna barra de herramientas y reinicie.">
+<!ENTITY links.caption "Enlaces">
+<!ENTITY toggle.proxy.system "Usar configuración de proxy del sistema">
 <!ENTITY readnews.path.caption "Definir ruta del cliente de noticias">
+<!ENTITY toggle.proxy.auto.detect "Auto detectar configuración de proxy">
+<!ENTITY settings.label "Configuración">
+<!ENTITY toggle.proxy.manual "Configuración manual de proxy">

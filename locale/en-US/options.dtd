@@ -1,37 +1,65 @@
+<!ENTITY gmail.label "Gmail">
 <!ENTITY options.window.title "Toolbar Buttons Options">
-<!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
+<!ENTITY google.label "Google">
 <!ENTITY toggle.prox.label "Proxy">
+<!ENTITY firefox-theme.label "Themes">
+<!ENTITY translate.service.description "Select which translation service you want to use.">
+<!ENTITY thunderbird-theme.label "Themes">
 <!ENTITY toggle.proxy.description "The proxy toggle button can toggle between system proxy and one of the below options.">
-<!ENTITY restart.checkbox "Do not prompt before restart.">
+<!ENTITY clipboard.newwindow "In New Window">
+<!ENTITY thunderbird-extension.label "Extensions">
 <!ENTITY delete.cookies.checkbox "Prompt before deleting cookies.">
-<!ENTITY clear.cache.checkbox "Prompt before clearing the cache.">
+<!ENTITY restart.checkbox "Do not prompt before restart.">
+<!ENTITY tb-delete-cookies.label "Delete Cookies">
 <!ENTITY previous-next.label "Previous &amp; Next">
+<!ENTITY translate.loading "Loading...">
 <!ENTITY toggle.checkbox "Reload page after toggling setting.">
+<!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
 <!ENTITY restart.label "Restart">
+<!ENTITY clipboard.label "Clipboard Link">
 <!ENTITY read.select.button "Select">
+<!ENTITY open-new-tab.label "How Link Buttons Open">
 <!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
+<!ENTITY bookmark-manager.label "Bookmark Manager">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY open-new-tab.new "Open in a new tab.">
 <!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
 <!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
 <!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
-<!ENTITY toggle.proxy.manual "Manual proxy configuration">
-<!ENTITY toggle.proxy.direct "Direct connection, no proxy">
-<!ENTITY favorite-page.label "Favorite Page">
+<!ENTITY confirm.caption "Confirm">
+<!ENTITY favorite-page.label "Favourite Page">
 <!ENTITY toggle.proxy.system "Use system proxy settings">
 <!ENTITY translate.label "Translate">
-<!ENTITY translate.description "Select what language you want the translate button to use.">
-<!ENTITY previous-next.checkbox "Change Previous and Next button direction.">
-<!ENTITY readmail.path.caption "Mail Path">
-<!ENTITY toggle.label "Toggle Buttons">
-<!ENTITY translate.service.description "Select which translation service you want to use.">
-<!ENTITY translate.service.google "Google Translate">
-<!ENTITY translate.service.bing "Bing Translator">
-<!ENTITY translate.service.promt "PROMT Online Translator">
-<!ENTITY readnews.path.caption "News Path">
-<!ENTITY links.caption "Links">
-<!ENTITY settings.label "Settings">
-<!ENTITY confirm.caption "Confirm">
-<!ENTITY translate.loading "Loading...">
-<!ENTITY open-new-tab.label "How Link Buttons Open">
-<!ENTITY open-new-tab.new "Open in a new tab.">
 <!ENTITY open-new-tab.current "Open in current tab.">
-
+<!ENTITY toggle.proxy.manual "Manual proxy configuration">
+<!ENTITY clipboard.currenttab "In Current Tab">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY translate.description "Select what language you want the translate button to use.">
+<!ENTITY translate.service.google "Google Translate">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY bookmark-manager.tab.checkbox "Open Bookmark Manger in a new tab.">
+<!ENTITY previous-next.checkbox "Change Previous and Next button direction.">
+<!ENTITY firefox-extension.label "Extensions">
+<!ENTITY readmail.path.caption "Mail Path">
+<!ENTITY javaScriptConsole.browser "Browser Console">
+<!ENTITY toggle.label "Toggle Buttons">
+<!ENTITY javaScriptConsole.web "Web Console">
+<!ENTITY links.caption "Links">
+<!ENTITY translate.service.bing "Bing Translator">
+<!ENTITY javaScriptConsole.label "Console">
+<!ENTITY javaScriptConsole.errorconsole "Enable Error Console">
+<!ENTITY translate.service.promt "PROMT Online Translator">
+<!ENTITY javaScriptConsole.setting.description "If the Error Console is disabled open:">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY toggle.proxy.direct "Direct connection, no proxy">
+<!ENTITY yahoo-button.label "Yahoo Mail">
+<!ENTITY clear.cache.checkbox "Prompt before clearing the cache.">
+<!ENTITY ebay.label "eBay">
+<!ENTITY settings.label "Settings">
+<!ENTITY readnews.path.caption "News Path">
+<!ENTITY tb-clear-cache.label "Clear Cache">
+<!ENTITY clipboard.newtab "In New Tab">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">

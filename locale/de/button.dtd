@@ -280,10 +280,16 @@
 <!ENTITY tb-history-menu.tooltip "Öffnet das Chronik-Menü">
 <!ENTITY tb-new-event.label "Neues Ereignis">
 <!ENTITY tb-new-event.tooltip "Fügt ein neues Ereignis dem Kalender hinzu.">
+<!ENTITY tb-new-tab.label "Neuer Tab">
 <!ENTITY tb-new-task.label "Neue Aufgabe">
 <!ENTITY tb-new-task.tooltip "Fügt eine neue Aufgabe dem Kalender hinzu.">
 <!ENTITY tb-open-in-conversation.label "In Themenbaum anzeigen">
 <!ENTITY tb-open-in-conversation.tooltip "Aktuelle Nachricht in Themenbaum anzeigen">
+<!ENTITY tb-page-reload.label "Neu laden">
+<!ENTITY tb-page-stop.label "Stopp">
+<!ENTITY tb-print-page.label "Drucken">
+<!ENTITY tb-print-page.tooltip "Diese Seite drucken">
+<!ENTITY tb-saved-passwords.label "Passwörter">
 <!ENTITY tb-search-go-button.label "Suche beginnen">
 <!ENTITY tb-search-minus.label "Suchleistenbreite verkleinern">
 <!ENTITY tb-search-minus.tooltip "Verringert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
@@ -295,7 +301,6 @@
 <!ENTITY tb-toggle-headers.label "E-Mail-Header">
 <!ENTITY tb-toggle-menu-bar.label "Menüleiste">
 <!ENTITY tb-toggle-menu-bar.tooltip "Menüleiste ein-/ausblenden">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "Pop-up-Blocker">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Pop-up-Blocker ein-/ausschalten">
 <!ENTITY tb-tools-menu.label "Menü &quot;Extras&quot;">
@@ -320,6 +325,10 @@
 <!ENTITY toggle-styles.tooltip "Von Webseite angebotenen Webseiten-Stil ein-/ausschalten">
 <!ENTITY toggle-toolbar.label "Symbolleiste ein-/ausblenden">
 <!ENTITY toggle-toolbar.tooltip "Navigations-Symbolleiste ein-/ausblenden">
+<!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
+<!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
+<!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
+<!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY toolbar-menu.label "Symbolleisten">
 <!ENTITY toolbar-menu.tooltip "Symbolleisten ein-/ausblenden">
 <!ENTITY top-page.label "Nach oben">

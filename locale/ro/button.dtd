@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Mergi la sfârșitul paginii">
 <!ENTITY change-text-direction.label "Schimbă orientarea textului">
 <!ENTITY change-text-direction.tooltip "Schimbă orientarea textului de la dreapta spre stânga sau invers">
-<!ENTITY check-for-update.label "Actualizează">
-<!ENTITY check-for-update.tooltip "Verifică actualizările">
 <!ENTITY clear-data.label "Şterge datele private">
 <!ENTITY clear-data.tooltip "Deschide caseta de ștergere a datelor private">
 <!ENTITY clear-url.label "Ascunde adresa">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "Afișează meniul „Editare”">
 <!ENTITY tb-file-menu.label "Meniu contextual file">
 <!ENTITY tb-file-menu.tooltip "Afișează meniul contextual al barei de file">
+<!ENTITY tb-history-menu.label "Istoric">
 <!ENTITY tb-new-event.label "Eveniment nou">
 <!ENTITY tb-new-event.tooltip "Crează un eveniment nou în calendar">
+<!ENTITY tb-new-tab.label "Filă nouă">
 <!ENTITY tb-new-task.label "Sarcină nouă">
 <!ENTITY tb-new-task.tooltip "Crează o sarcină nouă în calendar">
+<!ENTITY tb-open-in-conversation.label "Deschide în conversație">
+<!ENTITY tb-page-reload.label "Reîncarcă">
+<!ENTITY tb-page-stop.label "Oprește">
+<!ENTITY tb-print-page.label "Tipărește">
+<!ENTITY tb-print-page.tooltip "Tipărește această pagină">
+<!ENTITY tb-saved-passwords.label "Parole">
 <!ENTITY tb-search-minus.label "Micșorează bara de căutare">
 <!ENTITY tb-search-minus.tooltip "Micșorează dimensiunea barei de căutare cu 10 pixeli">
 <!ENTITY tb-search-plus.label "Mărește bara de căutare">
 <!ENTITY tb-search-plus.tooltip "Mărește dimensiunea barei de căutare cu 10 pixeli">
 <!ENTITY tb-search-resize.label "Redimensionează bara de căutare">
 <!ENTITY tb-search-resize.tooltip "Stabilește dimensiunea barei de căutare">
+<!ENTITY tb-show-all-history.label "Arată tot istoricul">
 <!ENTITY tb-toggle-menu-bar.label "Meniu principal">
 <!ENTITY tb-toggle-menu-bar.tooltip "Afișează/ascunde meniul principal">
-<!ENTITY tb-toggle-popup-blocker.key "I">
 <!ENTITY tb-toggle-popup-blocker.label "Ferestre instantanee">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Activează/dezactivează blocarea ferestrelor instantanee">
 <!ENTITY tb-tools-menu.label "Unelte">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "Obține mai multe suplimente Thunderbird">
 <!ENTITY thunderbird-theme.label "Teme">
 <!ENTITY thunderbird-theme.tooltip "Obține mai multe teme Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Copiază în memoria tampon">
-<!ENTITY tiny-url.email "Trimite prin poșta electronică">
-<!ENTITY tiny-url.label "Adresă scurtă">
-<!ENTITY tiny-url.link.use "Opțiuni">
-<!ENTITY tiny-url.tooltip "Crează o adresă scurtă pentru pagina curentă">
-<!ENTITY tiny-url.use.normal "Folosește xrl.in">
-<!ENTITY tiny-url.use.preview "Folosește preview.xrl.in">
-<!ENTITY tiny-url.visit "Vizitează xrl.in">
 <!ENTITY toggle-proxy.label "Proxy">
 <!ENTITY toggle-proxy.tooltip "Activează/dezactivează utilizarea serverului proxy">
 <!ENTITY toggle-read.label "Citit">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "Activează/dezactivează stilurile definite ale paginii">
 <!ENTITY toggle-toolbar.label "Bară de unelte">
 <!ENTITY toggle-toolbar.tooltip "Afișează/ascunde bara de unelte principală">
+<!ENTITY toggle.proxy.auto.configuration "Configurare automată a proxy (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Detectare automată a configurației proxy">
+<!ENTITY toggle.proxy.manual "Configurare manuală a proxy">
+<!ENTITY toggle.proxy.system "Utilizare a configurației proxy a sistemului">
 <!ENTITY toolbar-menu.label "Meniu și bare">
 <!ENTITY toolbar-menu.tooltip "Afișează/ascunde meniul și barele de unelte">
 <!ENTITY top-page.label "La început">

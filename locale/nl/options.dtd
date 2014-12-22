@@ -8,16 +8,19 @@
 <!ENTITY restart.label "Herstarten">
 <!ENTITY read.select.button "Selecteren">
 <!ENTITY readnews.path.desc "Het pad naar uw nieuwsprogramma, gebruik dit als de knop niet werkt.">
-<!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
 <!ENTITY toggle.proxy.auto.configuration "Automatische proxyconfiguratie (PAC)">
 <!ENTITY readmail.path.desc "Het pad naar uw mailprogramma, gebruik dit als de knop niet werkt.">
-<!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">
+<!ENTITY confirm.caption "Bevestigen">
 <!ENTITY favorite-page.label "Favoriete pagina">
-<!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY translate.label "Vertalen">
-<!ENTITY translate.description "Selecteer welke taal u aan de Vertalen-knop wilt toewijzen. De knop maakt gebruik van de Google Translation service">
+<!ENTITY tb-clear-cache.label "Buffer opschonen">
+<!ENTITY translate.description "Selecteer welke taal u aan de Vertalen-knop wilt toewijzen.">
 <!ENTITY previous-next.checkbox "Vorige en Volgende knop wijzigen">
 <!ENTITY readmail.path.caption "Pad naar mailprogramma">
 <!ENTITY toggle.label "Knoppen wisselen">
-<!ENTITY translate.not-in-use "Knop wordt niet gebruikt. Voeg deze aan de werkbalk toe en start opnieuw.">
+<!ENTITY links.caption "Koppelingen">
+<!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY readnews.path.caption "Pad naar nieuwsprogramma">
+<!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
+<!ENTITY settings.label "Instellingen">
+<!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">

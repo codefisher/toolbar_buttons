@@ -1,5 +1,5 @@
 readmail.path.caption:email.png
-<groupbox flex="1">
+<groupbox>
 	<caption label="&readmail.path.caption;" />
 	<preferences>
 		<preference id="{{pref-root}}readmail.path" name="{{pref-root}}readmail.path" type="unichar"/>

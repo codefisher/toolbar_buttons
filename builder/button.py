@@ -335,7 +335,7 @@ class Button(SimpleButton):
                 self._option_icons.add(icon)
                 self._option_titles.add(panel)
                 data = "\n\t\t\t\t".join("\n".join(info['data']).split("\n"))
-                panel_xml = """\t\t\t<prefpane id="toolbar-buttons-prefpane-%s" image="chrome://%s/skin/option/%s" label="&%s;"><vbox>%s</vbox></prefpane>"""  % (
+                panel_xml = """\t\t\t<prefpane id="toolbar-buttons-prefpane-%s" image="chrome://%s/skin/option/%s" label="&%s;" flex="1"><vbox flex="1" style="overflow:auto; max-height:min(100%%, 400px);">%s</vbox></prefpane>"""  % (
                                     panel.replace('.', '-'), self._settings.get("chrome_name"), icon, panel, data)
                 button_pref.append(panel_xml)
             result["%s-options" % application] = overlay_window.replace("{{options}}",

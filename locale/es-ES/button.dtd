@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Ir al final de la página">
 <!ENTITY change-text-direction.label "Dirección de texto">
 <!ENTITY change-text-direction.tooltip "Cambiar dirección del texto, de izquierda a derecha o de derecha a izquierda">
-<!ENTITY check-for-update.label "Actualizar">
-<!ENTITY check-for-update.tooltip "Buscar actualizaciones">
 <!ENTITY clear-data.label "Borrar datos">
 <!ENTITY clear-data.tooltip "Abrir el diálogo para borrar datos privados">
 <!ENTITY clear-url.label "Ocultar direcciones">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "Mostrar el menú Editar">
 <!ENTITY tb-file-menu.label "Menú Archivo">
 <!ENTITY tb-file-menu.tooltip "Mostrar el menú Archivo">
+<!ENTITY tb-history-menu.label "Historial">
 <!ENTITY tb-new-event.label "Nuevo evento">
 <!ENTITY tb-new-event.tooltip "Añadir un nuevo evento al calendario">
+<!ENTITY tb-new-tab.label "Nueva pestaña">
 <!ENTITY tb-new-task.label "Nueva tarea">
 <!ENTITY tb-new-task.tooltip "Añadir una nueva tarea al calendario">
+<!ENTITY tb-open-in-conversation.label "Abrir en la conversación">
+<!ENTITY tb-page-reload.label "Recargar">
+<!ENTITY tb-page-stop.label "Detener">
+<!ENTITY tb-print-page.label "Imprimir">
+<!ENTITY tb-print-page.tooltip "Imprimir esta página">
+<!ENTITY tb-saved-passwords.label "Contraseñas">
 <!ENTITY tb-search-minus.label "Reducir barra de búsquedas">
 <!ENTITY tb-search-minus.tooltip "Reducir el ancho de la barra de búsquedas (10 pixeles cada vez)">
 <!ENTITY tb-search-plus.label "Expandir barra de búsquedas">
 <!ENTITY tb-search-plus.tooltip "Aumentar el ancho de la barra de búsquedas (10 pixeles cada vez)">
 <!ENTITY tb-search-resize.label "Ajustar barra de búsquedas">
 <!ENTITY tb-search-resize.tooltip "Especificar manualmente el ancho de la barra de búsquedas">
+<!ENTITY tb-show-all-history.label "Mostrar todo el historial">
 <!ENTITY tb-toggle-menu-bar.label "Barra de menúes">
 <!ENTITY tb-toggle-menu-bar.tooltip "Mostrar u ocultar la barra de menúes">
-<!ENTITY tb-toggle-popup-blocker.key "B">
 <!ENTITY tb-toggle-popup-blocker.label "Ventanas emergentes">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Activar o desactivar el bloqueador de ventanas emergentes">
 <!ENTITY tb-tools-menu.label "Menú Herramientas">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "Obtener más extensiones para Thunderbird">
 <!ENTITY thunderbird-theme.label "Más temas (Tb)">
 <!ENTITY thunderbird-theme.tooltip "Obtener más temas para Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Obtener y copiar al portapapeles">
-<!ENTITY tiny-url.email "Enviar enlace por correo electrónico">
-<!ENTITY tiny-url.label "Obtener URL corta">
-<!ENTITY tiny-url.link.use "Opciones para el enlace">
-<!ENTITY tiny-url.tooltip "Crear una URL corta">
-<!ENTITY tiny-url.use.normal "Utilizar xrl.in">
-<!ENTITY tiny-url.use.preview "Utilizar preview.xrl.in">
-<!ENTITY tiny-url.visit "Visitar Xrl.in">
 <!ENTITY toggle-proxy.label "Proxy">
 <!ENTITY toggle-proxy.tooltip "Activar o desactivar el uso de proxy">
 <!ENTITY toggle-read.label "Mensaje leído">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "Añadir o quitar los estilos definidos por los sitios web">
 <!ENTITY toggle-toolbar.label "Barra de herramientas">
 <!ENTITY toggle-toolbar.tooltip "Mostrar u ocultar la barra de herramientas principal">
+<!ENTITY toggle.proxy.auto.configuration "Configuración automática de proxy (CAP)">
+<!ENTITY toggle.proxy.auto.detect "Auto detectar configuración de proxy">
+<!ENTITY toggle.proxy.manual "Configuración manual de proxy">
+<!ENTITY toggle.proxy.system "Usar configuración de proxy del sistema">
 <!ENTITY toolbar-menu.label "Barras de herramientas">
 <!ENTITY toolbar-menu.tooltip "Mostrar u ocultar determinadas barras de herramientas">
 <!ENTITY top-page.label "Inicio">

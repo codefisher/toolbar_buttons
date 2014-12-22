@@ -8,13 +8,17 @@
 <!ENTITY restart.label "Uruchom ponownie">
 <!ENTITY read.select.button "Wybierz">
 <!ENTITY readnews.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta wiadomości nie działa.">
-<!ENTITY toggle.proxy.auto.detect "Wykrywaj automatycznie ustawienia proxy">
 <!ENTITY toggle.proxy.auto.configuration "Automatyczna konfiguracja proxy">
 <!ENTITY readmail.path.desc "Podaj ścieżkę lokalizacji, jeżeli przycisk klienta pocztowego nie działa.">
-<!ENTITY toggle.proxy.manual "Ręczna konfiguracja proxy">
-<!ENTITY favorite-page.label "Ulubiona">
+<!ENTITY confirm.caption "Potwierdź">
+<!ENTITY favorite-page.label "Ulubiona strona">
 <!ENTITY translate.label "Przetłumacz">
-<!ENTITY translate.description "Wybierz język tłumaczenia, jaki ma być stosowany. Przycisk stosuje serwis &quot;Google Translation&quot;">
+<!ENTITY translate.description "Wybierz język tłumaczenia, jaki ma być stosowany.">
 <!ENTITY previous-next.checkbox "Zamień kierunek przycisku &quot;Poprzednia/Następna strona&quot;">
 <!ENTITY readmail.path.caption "Ścieżka lokalizacji klienta pocztowego">
+<!ENTITY links.caption "Odnośniki">
+<!ENTITY toggle.proxy.system "Używaj systemowych ustawień serwerów proxy">
 <!ENTITY readnews.path.caption "Ścieżka lokalizacji klienta wiadomości">
+<!ENTITY toggle.proxy.auto.detect "Wykrywaj automatycznie ustawienia proxy">
+<!ENTITY settings.label "Ustawienia">
+<!ENTITY toggle.proxy.manual "Ręczna konfiguracja proxy">

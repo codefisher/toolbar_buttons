@@ -1,5 +1,5 @@
 confirm.caption:application-error.png
-<groupbox flex="1">
+<groupbox>
 	<caption label="&tb-clear-cache.label;" />
 	<preferences>
 		<preference id="{{pref-root}}clear.cache.check" name="{{pref-root}}clear.cache.check" type="bool"/>

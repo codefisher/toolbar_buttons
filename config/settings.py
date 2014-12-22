@@ -5,7 +5,7 @@ config_default = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and Sunbird.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "https://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -15,6 +15,7 @@ config_default = {
     # makes the build system run with debuging enabled
     "debug": False,
     # if true buttons in the staging folder are also added
+    "use_data": True,
     "use_staging": False,
     "use_pre": False,
     # all the image files are put into a bit map if enabled
@@ -118,7 +119,7 @@ config_default = {
          "compose": ("messenger", "suite"),
          "read": ("messenger", "suite"),
          "calendar": ("calendar", "suite"),
-         "lightning": ("messenger", ),
+         "lightning": ("messenger",),
          "mail-header": ("messenger", ),
          "mail-address-book": ("messenger", ),
          "suite_browser": ("suite", )

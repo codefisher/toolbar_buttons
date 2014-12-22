@@ -1,0 +1,27 @@
+<!ENTITY send-link.label "Wyślij odnośnik">
+<!ENTITY send-link.tooltip "Wyślij odnośnik do strony przez e-mail">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopiuj">
+<!ENTITY tb-cut.label "Wytnij">
+<!ENTITY tb-new-tab.label "Nowa karta">
+<!ENTITY tb-page-go.label "Przejdź">
+<!ENTITY tb-page-reload.label "Odśwież">
+<!ENTITY tb-page-stop.label "Zatrzymaj">
+<!ENTITY tb-paste-as-quote.label "Wklej jako cytat">
+<!ENTITY tb-paste.label "Wklej">
+<!ENTITY tb-paste.tooltip "Wklej">
+<!ENTITY tb-print-page.label "Drukuj">
+<!ENTITY tb-print-page.tooltip "Drukuj bieżącą stronę">
+<!ENTITY tb-saved-passwords.label "Hasła">
+<!ENTITY tb-string-preference.add "Dodaj">
+<!ENTITY tb-string-preference.browse "Przeglądaj">
+<!ENTITY tb-string-preference.close "Zamknij">
+<!ENTITY tb-string-preference.delete "Usuń">
+<!ENTITY tb-string-preference.edit "Edycja">
+<!ENTITY tb-string-preference.name "Nazwa">
+<!ENTITY tb-string-preference.save "Zapisz">
+<!ENTITY tb-string-preference.value "Wartość">
+<!ENTITY tb-tab-close-history.label "Ostatnio zamknięte karty">
+<!ENTITY tb-useragent-switch.default "Domyślny">
+<!ENTITY tb-useragent-switch.label "Identyfikator programu">
+<!ENTITY tb-addons-exceptions.label "Uprawnione witryny - Instalacja dodatków">

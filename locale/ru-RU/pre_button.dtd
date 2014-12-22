@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Отправить ссылку">
+<!ENTITY send-link.tooltip "Отправить строку по Email">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Копировать">
+<!ENTITY tb-cut.label "Вырезать">
+<!ENTITY tb-new-tab.label "Новая вкладка">
+<!ENTITY tb-page-go.label "Переход">
+<!ENTITY tb-page-reload.label "Обновить">
+<!ENTITY tb-page-stop.label "Остановить">
+<!ENTITY tb-paste-as-quote.label "Вставить как цитату">
+<!ENTITY tb-paste.label "Вставить">
+<!ENTITY tb-paste.tooltip "Вставить">
+<!ENTITY tb-print-page.label "Печать">
+<!ENTITY tb-print-page.tooltip "Распечатать эту страницу">
+<!ENTITY tb-saved-passwords.label "Пароли">
+<!ENTITY tb-string-preference.add "Добавить">
+<!ENTITY tb-string-preference.browse "Обзор">
+<!ENTITY tb-string-preference.close "Закрыть">
+<!ENTITY tb-string-preference.delete "Удалить">
+<!ENTITY tb-string-preference.edit "Правка">
+<!ENTITY tb-string-preference.name "Имя">
+<!ENTITY tb-string-preference.save "Сохранить">
+<!ENTITY tb-string-preference.value "Значение">
+<!ENTITY tb-tab-close-history.label "Недавно закрытые вкладки">
+<!ENTITY tb-useragent-switch.default "По умолчанию">
+<!ENTITY tb-useragent-switch.label "User Agent">

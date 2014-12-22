@@ -282,12 +282,18 @@
 <!ENTITY tb-history-menu.tooltip "Avaa historiavalikon">
 <!ENTITY tb-new-event.label "Uusi tapahtuma">
 <!ENTITY tb-new-event.tooltip "Lisää uuden tapahtuman kalenteriin.">
+<!ENTITY tb-new-tab.label "Uusi välilehti">
 <!ENTITY tb-new-task.label "Uusi tehtävä">
 <!ENTITY tb-new-task.tooltip "Lisää uuden tehtävän kalenteriin.">
 <!ENTITY tb-open-in-conversation.label "Avaa keskusteluna">
 <!ENTITY tb-open-in-conversation.tooltip "Avaa tämä viesti keskusteluna">
 <!ENTITY tb-page-info-media.label "Mediainfosivu">
 <!ENTITY tb-page-info-media.tooltip "Avaa mediainfosivun">
+<!ENTITY tb-page-reload.label "Päivitä">
+<!ENTITY tb-page-stop.label "Pysäytä">
+<!ENTITY tb-print-page.label "Tulosta">
+<!ENTITY tb-print-page.tooltip "Tulosta sivu">
+<!ENTITY tb-saved-passwords.label "Salasanat">
 <!ENTITY tb-search-go-button.label "Suorita haku">
 <!ENTITY tb-search-go-button.tooltip "Käynnistää verkkohaun">
 <!ENTITY tb-search-minus.label "Pienennä hakupalkin kokoa">
@@ -302,7 +308,6 @@
 <!ENTITY tb-toggle-headers.tooltip "Valitsee sähköpostin otsakkeiden näyttötavan">
 <!ENTITY tb-toggle-menu-bar.label "Valikkopalkki">
 <!ENTITY tb-toggle-menu-bar.tooltip "Näytä/piilota valikkopalkki">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "Ponnahdusikkunoiden estäjä">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Valitsee käytetäänkö ponnahdusikkunoiden estäjää">
 <!ENTITY tb-tools-menu.label "Työkalut-valikko">
@@ -329,6 +334,10 @@
 <!ENTITY toggle-styles.tooltip "Ota sivuston määrittämät tyylit käyttöön/pois käytöstä">
 <!ENTITY toggle-toolbar.label "Työkalupalkin valitsin">
 <!ENTITY toggle-toolbar.tooltip "Avaa/sulkee päätyökalupalkin">
+<!ENTITY toggle.proxy.auto.configuration "Automaattinen välityspalvelimen asetusten määritys (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
+<!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">
+<!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY toolbar-menu.label "Työkalupalkit">
 <!ENTITY toolbar-menu.tooltip "Piilota/Näytä työkalupalkit">
 <!ENTITY top-page.label "Yläreuna">

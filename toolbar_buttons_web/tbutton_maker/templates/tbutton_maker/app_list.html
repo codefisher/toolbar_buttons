@@ -24,20 +24,15 @@
 
 {% for button, apps, label, tooltip, icon, description in entries.object_list %}
 	    <h3>{{ label }}</h3>
-
-			<img class="button-icon" src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
-
-			{{ description|linebreaks }}
-
-			<p class="clear">
-				<form method="get" action="{% url 'tbutton-make-button' %}">
-				    <input type="hidden" value="{{ button }}" name="button">
-				    <input type="hidden" value="{{ application }}" name="application">
-				    <button type="submit">
-				        <img src="{% get_static_prefix %}images/pastel-svg/16/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
-				        Install {{ label }}</button>
-				 </form>
-			</p>
+		<img class="button-icon" src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
+		{{ description|linebreaks }}
+		<form method="get" class="clear" action="{% url 'tbutton-make-button' %}">
+		    <input type="hidden" value="{{ button }}" name="button">
+		    <input type="hidden" value="{{ application }}" name="application">
+		    <button type="submit">
+		        <img src="{% get_static_prefix %}images/pastel-svg/16/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
+		        Install {{ label }}</button>
+		 </form>
 {% endfor %}
 
 {% query_pagination entries %}

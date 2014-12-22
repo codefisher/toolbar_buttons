@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "Skicka länk">
+<!ENTITY send-link.tooltip "Skicka sidlänk i ett e-brev">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "Kopiera">
+<!ENTITY tb-cut.label "Klipp ut">
+<!ENTITY tb-new-tab.label "Ny flik">
+<!ENTITY tb-page-go.label "Gå till">
+<!ENTITY tb-page-reload.label "Uppdatera">
+<!ENTITY tb-page-stop.label "Stopp">
+<!ENTITY tb-paste-as-quote.label "Klistra in som citat">
+<!ENTITY tb-paste.label "Klistra in">
+<!ENTITY tb-paste.tooltip "Klistra in">
+<!ENTITY tb-print-page.label "Skriv ut">
+<!ENTITY tb-print-page.tooltip "Skriv ut denna sida">
+<!ENTITY tb-saved-passwords.label "Lösenord">
+<!ENTITY tb-string-preference.add "Lägg till">
+<!ENTITY tb-string-preference.browse "Bläddra">
+<!ENTITY tb-string-preference.close "Stäng">
+<!ENTITY tb-string-preference.delete "Ta bort">
+<!ENTITY tb-string-preference.edit "Redigera">
+<!ENTITY tb-string-preference.name "Namn">
+<!ENTITY tb-string-preference.save "Spara">
+<!ENTITY tb-string-preference.value "Värde">
+<!ENTITY tb-tab-close-history.label "Nyligen stängda flikar">
+<!ENTITY tb-useragent-switch.default "Grundinställning">
+<!ENTITY tb-useragent-switch.label "Användaragent">

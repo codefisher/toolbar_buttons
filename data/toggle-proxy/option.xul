@@ -1,5 +1,5 @@
 toggle.prox.label:world-network.png
-<groupbox flex="1">
+<groupbox>
 	<caption label="&toggle.prox.label;" />
 	<preferences>
 		<preference id="{{pref-root}}toggle.proxy" name="{{pref-root}}toggle.proxy"

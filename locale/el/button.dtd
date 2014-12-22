@@ -42,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Μετάβαση στο τέλος της σελίδας">
 <!ENTITY change-text-direction.label "Αλλαγή κατεύθυνσης κειμένου">
 <!ENTITY change-text-direction.tooltip "Αλλαγή της κατεύθυνσης του κειμένου από αριστερά προς δεξιά σε δεξιά προς αριστερά">
-<!ENTITY check-for-update.label "Ενημέρωση">
-<!ENTITY check-for-update.tooltip "Έλεγχος για ενημερώσεις">
 <!ENTITY clear-data.label "Εκκαθάριση δεδομένων">
 <!ENTITY clear-data.tooltip "Άνοιγμα του διαλόγου εκκαθάρισης πρόσφατου ιστορικού">
 <!ENTITY clear-url.label "Απόκρυψη Url">
@@ -270,19 +268,27 @@
 <!ENTITY tb-edit-menu.tooltip "Προβολή του μενού επεξεργασίας">
 <!ENTITY tb-file-menu.label "Μενού αρχείου">
 <!ENTITY tb-file-menu.tooltip "Προβολή του μενού αρχείου">
+<!ENTITY tb-history-menu.label "Ιστορικό">
 <!ENTITY tb-new-event.label "Νέο γεγονός">
 <!ENTITY tb-new-event.tooltip "Προσθήκη νέου γεγονότος στο ημερολόγιο.">
+<!ENTITY tb-new-tab.label "Νέα καρτέλα">
 <!ENTITY tb-new-task.label "Νέα εργασία">
 <!ENTITY tb-new-task.tooltip "Προσθήκη νέας εργασίας στο ημερολόγιο.">
+<!ENTITY tb-open-in-conversation.label "Άνοιγμα σε συζήτηση">
+<!ENTITY tb-page-reload.label "Ανανέωση">
+<!ENTITY tb-page-stop.label "Διακοπή">
+<!ENTITY tb-print-page.label "Εκτύπωση">
+<!ENTITY tb-print-page.tooltip "Εκτύπωση αυτής της σελίδας">
+<!ENTITY tb-saved-passwords.label "Κωδικοί">
 <!ENTITY tb-search-minus.label "Μείωση μεγέθους εργαλειοθήκης αναζήτησης">
 <!ENTITY tb-search-minus.tooltip "Μειώνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
 <!ENTITY tb-search-plus.label "Αύξηση μεγέθους εργαλειοθήκης αναζήτησης">
 <!ENTITY tb-search-plus.tooltip "Αυξάνει το μήκος της εργαλειοθήκης αναζήτησης κατά 10 pixel.">
 <!ENTITY tb-search-resize.label "Αλλαγή μεγέθους εργαλειοθήκης αναζήτησης">
 <!ENTITY tb-search-resize.tooltip "Αλλάζει το μέγεθος της εργαλειοθήκης αναζήτησης">
+<!ENTITY tb-show-all-history.label "Show All History">
 <!ENTITY tb-toggle-menu-bar.label "Εναλλαγή εργαλειοθήκης μενού">
 <!ENTITY tb-toggle-menu-bar.tooltip "Εναλλαγή προβολής της εργαλειοθήκης μενού">
-<!ENTITY tb-toggle-popup-blocker.key "δ">
 <!ENTITY tb-toggle-popup-blocker.label "Φραγή αναδυόμενων">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Εναλλαγή φραγής αναδυόμενων">
 <!ENTITY tb-tools-menu.label "Μενού εργαλείων">
@@ -297,14 +303,6 @@
 <!ENTITY thunderbird-extension.tooltip "Κάντε λήψη περισσότερων επεκτάσεων για τον Thunderbird">
 <!ENTITY thunderbird-theme.label "Λήψη θεμάτων">
 <!ENTITY thunderbird-theme.tooltip "Κάντε λήψη περισσότερων θεμάτων για τον Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Αντιγραφή στο πρόχειρο">
-<!ENTITY tiny-url.email "Αποστολή δεσμού με μήνυμα ηλ. ταχυδρομείου">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "Επιλογές δεσμού">
-<!ENTITY tiny-url.tooltip "Δημιουργία Tiny Url">
-<!ENTITY tiny-url.use.normal "Χρήση xrl.in">
-<!ENTITY tiny-url.use.preview "Χρήση preview.xrl.in">
-<!ENTITY tiny-url.visit "Μετάβαση στο Xrl.In">
 <!ENTITY toggle-proxy.label "Εναλλαγή διαμεσολαβητή">
 <!ENTITY toggle-proxy.tooltip "Εναλλαγή κατάστασης λειτουργίας διαμεσολαβητή (ενεργός/ανενεργός)">
 <!ENTITY toggle-read.label "Εναλλαγή αναγνωσμένου">
@@ -315,6 +313,10 @@
 <!ENTITY toggle-styles.tooltip "Προσθήκη/αφαίρεση φύλλων στυλ για τη σελίδα">
 <!ENTITY toggle-toolbar.label "Εναλλαγή εργαλειοθήκης">
 <!ENTITY toggle-toolbar.tooltip "Εναλλαγή προβολής εργαλειοθήκης μενού">
+<!ENTITY toggle.proxy.auto.configuration "Αυτόματη ρύθμιση διαμεσολαβητή μέσω αρχείου PAC">
+<!ENTITY toggle.proxy.auto.detect "Αυτόματος εντοπισμός ρυθμίσεων διαμεσολαβητή">
+<!ENTITY toggle.proxy.manual "Χειρωνακτική ρύθμιση διαμεσολαβητή">
+<!ENTITY toggle.proxy.system "Χρήση ρυθμίσεων συστήματος για διαμεσολαβητές">
 <!ENTITY toolbar-menu.label "Εργαλειοθήκες">
 <!ENTITY toolbar-menu.tooltip "Προβολή/απόκρυψη εργαλειοθηκών">
 <!ENTITY top-page.label "Κορυφή">

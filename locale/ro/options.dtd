@@ -8,16 +8,18 @@
 <!ENTITY restart.label "Repornire">
 <!ENTITY read.select.button "Redefinește">
 <!ENTITY readnews.path.desc "Cale către cititorul favorit de știri (dacă butonul nu funcționează):">
-<!ENTITY toggle.proxy.auto.detect "Detectare automată a configurației proxy">
 <!ENTITY toggle.proxy.auto.configuration "Configurare automată a proxy (PAC)">
 <!ENTITY readmail.path.desc "Cale către clientul favorit de poștă electronică (dacă butonul nu funcționează):">
-<!ENTITY toggle.proxy.manual "Configurare manuală a proxy">
-<!ENTITY favorite-page.label "Pagină favorită">
-<!ENTITY toggle.proxy.system "Utilizare a configurației proxy a sistemului">
-<!ENTITY translate.label "Traducere">
-<!ENTITY translate.description "Limba în care se traduce (se folosește serviciul de traducere al Google):">
+<!ENTITY confirm.caption "Confirmare">
+<!ENTITY favorite-page.label "Pagina favorită">
+<!ENTITY translate.label "Tradu">
+<!ENTITY translate.description "Limba în care se traduce:">
 <!ENTITY previous-next.checkbox "Schimbă direcția de acțiune a butoanelor Înapoi și Înainte">
 <!ENTITY readmail.path.caption "Client de poștă electronică">
 <!ENTITY toggle.label "Comutatoare">
-<!ENTITY translate.not-in-use "Butonul nu este folosit. Adăugați-l pe bară și reporniți navigatorul.">
+<!ENTITY links.caption "Legături">
+<!ENTITY toggle.proxy.system "Utilizare a configurației proxy a sistemului">
 <!ENTITY readnews.path.caption "Cititorul de știri">
+<!ENTITY toggle.proxy.auto.detect "Detectare automată a configurației proxy">
+<!ENTITY settings.label "Setări">
+<!ENTITY toggle.proxy.manual "Configurare manuală a proxy">

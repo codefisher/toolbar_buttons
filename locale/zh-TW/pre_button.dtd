@@ -1,0 +1,26 @@
+<!ENTITY send-link.label "傳送連結">
+<!ENTITY send-link.tooltip "傳送頁面連結在電郵中">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-copy.label "複製">
+<!ENTITY tb-cut.label "剪下">
+<!ENTITY tb-new-tab.label "開新分頁">
+<!ENTITY tb-page-go.label "前往">
+<!ENTITY tb-page-reload.label "重新載入">
+<!ENTITY tb-page-stop.label "停止">
+<!ENTITY tb-paste-as-quote.label "以引言方式貼上">
+<!ENTITY tb-paste.label "貼上">
+<!ENTITY tb-paste.tooltip "貼上">
+<!ENTITY tb-print-page.label "列印">
+<!ENTITY tb-print-page.tooltip "列印此頁">
+<!ENTITY tb-saved-passwords.label "密碼">
+<!ENTITY tb-string-preference.add "新增">
+<!ENTITY tb-string-preference.browse "瀏覽">
+<!ENTITY tb-string-preference.close "關閉">
+<!ENTITY tb-string-preference.delete "刪除">
+<!ENTITY tb-string-preference.edit "編輯">
+<!ENTITY tb-string-preference.name "名稱">
+<!ENTITY tb-string-preference.save "儲存">
+<!ENTITY tb-string-preference.value "值">
+<!ENTITY tb-tab-close-history.label "最近關閉的分頁">
+<!ENTITY tb-useragent-switch.default "預設">
+<!ENTITY tb-useragent-switch.label "使用者代理字串（User Agent）">

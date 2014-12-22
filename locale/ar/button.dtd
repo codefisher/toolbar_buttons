@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "عن">
+<!ENTITY about-application.tooltip "عن &brandShortName;">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "فتح about:cache لرؤية المحتوى المخزن">
 <!ENTITY about-config.label "about:config">
@@ -8,6 +10,9 @@
 <!ENTITY about-mem-cache.tooltip "فتح about:cache لرؤية المحتوى المخزن في الذاكرة">
 <!ENTITY about-plugins.label "about:plugins">
 <!ENTITY about-plugins.tooltip "فتح about:plugins لرؤية الإضافات المعدة">
+<!ENTITY accountmanager.label "Account Settings">
+<!ENTITY addons.label "الإضافات">
+<!ENTITY addons.tooltip "افتح مدير الإضافات">
 <!ENTITY bookmark-manager.label "مدير المفضلة">
 <!ENTITY bookmark-manager.tooltip "فتح مدير المفضلة">
 <!ENTITY bookmark-nopop.label "إضافة سريعة للمفضلة">
@@ -34,24 +39,37 @@
 <!ENTITY close-other-tabs.tooltip "إغلاق كل التبويبات ما عدا المختارة">
 <!ENTITY close-tab.label "إغلاق تبويبة">
 <!ENTITY close-tab.tooltip "إغلاق التبويبة أو النافذة المفتوحة">
+<!ENTITY compact.label "ضغط">
+<!ENTITY customize-toolbar.label "خصّص شريط الأدوات">
 <!ENTITY delete-event.label "حذف الأحداث">
 <!ENTITY delete-event.tooltip "حذف الأحداث المختارة">
 <!ENTITY delete-tasks.label "حذف الواجبات">
 <!ENTITY delete-tasks.tooltip "حذف الواجبات المختارة">
+<!ENTITY delete.label "احذف">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "فتح Ebay">
+<!ENTITY empty-trash.label "أفرغ سلة المهملات">
+<!ENTITY enlarge.label "قرّب">
+<!ENTITY exit.label "اخرج">
+<!ENTITY extensions.label "الامتدادات">
 <!ENTITY favorite-page.label "الصفحة المفضلة">
 <!ENTITY favorite-page.tooltip "فتح الصفحة المفضلة">
+<!ENTITY find-again.label "ابحث مجددًا">
+<!ENTITY find-prev.label "ابحث عن السابق">
+<!ENTITY find.label "ابحث">
 <!ENTITY firefox-extension.label "إضافات">
 <!ENTITY firefox-extension.tooltip "الحصول على إضافات Firefox أخرى">
 <!ENTITY firefox-theme.label "ثيمات">
 <!ENTITY firefox-theme.tooltip "الحصول على ثيمات Firefox أخرى">
+<!ENTITY forward-as-attachment.label "مرِّر مرفقة">
+<!ENTITY forward-as-inline.label "مرِّر ضمن المتن">
 <!ENTITY full-screen.label "ملأ الشاشة">
 <!ENTITY full-screen.tooltip "الانتقال إلى وضع ملأ الشاشة">
 <!ENTITY gmail.label "Gmail">
 <!ENTITY gmail.tooltip "فتح بريد Google">
 <!ENTITY google.label "Google">
 <!ENTITY google.tooltip "تحميل صفحة Google الأساسية">
+<!ENTITY help.label "مساعدة">
 <!ENTITY hide-images.label "إخفاء الصور">
 <!ENTITY hide-images.tooltip "إخفاء كل الصور و الخلفيات في المستند الحالي">
 <!ENTITY home-page-change.label "تغيير الصفحة الرئيسية">
@@ -59,10 +77,15 @@
 <!ENTITY home-page-change.tooltip "قم بتغيير الصفحة الرئيسية الخاصة بك">
 <!ENTITY hotmail-button.label "Hotmail">
 <!ENTITY hotmail-button.tooltip "فتح Hotmail">
+<!ENTITY ignored-threads.label "النقاشات المُتجاهلة">
 <!ENTITY image-toggle.label "نقل الصور">
 <!ENTITY image-toggle.tooltip "نقل الصور بين تفعيل التحميل و إطفاؤه">
+<!ENTITY import.label "استيراد">
+<!ENTITY import.tooltip "استورد الإعدادات و البيانات">
+<!ENTITY installaddons.label "ثبّت">
 <!ENTITY java-toggle.label "نقل جافا">
 <!ENTITY java-toggle.tooltip "نقل جافا بين التشغيل و الإطفاء">
+<!ENTITY javaScriptConsole.label "معراض الأخطاء">
 <!ENTITY javascript-toggle.label "نقل جافاسكريبت">
 <!ENTITY javascript-toggle.tooltip "نقل جافاسكريبت بين التشغيل و الإطفاء">
 <!ENTITY label-all-blank.label "حذف العناوين">
@@ -71,53 +94,90 @@
 <!ENTITY label-blank.tooltip "حذف عنوان التبويبة الحالية">
 <!ENTITY link-open.label "إعدادات فتح الروابط">
 <!ENTITY link-open.tooltip "قم بضبط كيف تفتح الروابط">
+<!ENTITY minimize-window.label "صغّر">
+<!ENTITY msg-filter.label "المرشحات">
+<!ENTITY msg-pane.label "لوح الرسائل">
 <!ENTITY new-message.label "رسالة جديدة">
 <!ENTITY new-message.tooltip "كتابة رسالة بريد إلكتروني جديدة">
 <!ENTITY next-tab.label "التبويبة التالية">
 <!ENTITY next-tab.tooltip "الذهاب للتبويبة التالية">
 <!ENTITY open.label "فتح">
 <!ENTITY open.tooltip "فتح ملف">
+<!ENTITY page-source.tooltip "اعرض مصدر هذه الصفحة">
 <!ENTITY pageinfo.label "معلومات الصفحة">
 <!ENTITY pageinfo.tooltip "فتح نافذة معلومات الصفحة">
+<!ENTITY pagesetup.label "إعداد الصّفحة">
 <!ENTITY paypal.label "PayPal">
 <!ENTITY paypal.tooltip "فتح Paypal">
+<!ENTITY preferences.label "الخيارات">
+<!ENTITY preferences.tooltip "افتح الخيارات">
 <!ENTITY previous-tab.label "التبويبة السابقة">
 <!ENTITY previous-tab.tooltip "الذهاب للتبويبة السابقة">
+<!ENTITY print-preview.label "معاينة الطباعة">
 <!ENTITY read-mail.label "قراءة البريد">
 <!ENTITY read-mail.tooltip "فتح تطبيق لقراءة البريد">
+<!ENTITY read-message.label "مقروء">
 <!ENTITY read-news.label "قراءة الأخبار">
 <!ENTITY read-news.tooltip "فتح التطبيق لقراءة الأخبار">
+<!ENTITY redo.label "أعِد">
+<!ENTITY reduce.label "بعّد">
 <!ENTITY reload-all-tabs.label "إعادة تحميل التبويبات">
 <!ENTITY reload-all-tabs.tooltip "إعادة تحميل كل التبويبات المفتوحة">
 <!ENTITY rename-tab.label "إعادة تسمية التبويبة">
 <!ENTITY rename-tab.tooltip "إعادة تسمية التبويبة المختارة">
+<!ENTITY reply-sender.label "رُد إلى المُرسِل فقط">
+<!ENTITY restart-app.label "أعِد التشغيل">
+<!ENTITY return-receipt.label "إعلام الوصول">
 <!ENTITY save-frame.label "حفظ إطار">
 <!ENTITY save-frame.tooltip "حفظ إطار المستند">
+<!ENTITY saveas.label "احفظ">
+<!ENTITY search-messages.label "ابحث في الرّسائل">
+<!ENTITY select-all.label "اختر الكل">
 <!ENTITY send-link.label "إرسال الرابط">
 <!ENTITY send-link.tooltip "إرسال رابط الصفحة في بريد إلكتروني">
 <!ENTITY show-frame.label "عرض الإطار">
 <!ENTITY show-frame.tooltip "عرض الإطار الحالي فقط">
+<!ENTITY statusbar-toggle.label "شريط الحالة">
 <!ENTITY stop-all.label "إيقاف الكل">
 <!ENTITY stop-all.tooltip "إيقاف كل التبويبات من التحميل">
+<!ENTITY stop-animation.label "رسم متحرك">
+<!ENTITY stop-flash.label "Flash">
 <!ENTITY tab-list.label "قائمة التبويبات">
 <!ENTITY tab-list.tooltip "عرض قائمة التبويبات">
 <!ENTITY tasks-toggle.label "نقل الواجبات">
 <!ENTITY tasks-toggle.tooltip "نقل شريط الواجبات">
+<!ENTITY tb-history-menu.label "تأريخ">
+<!ENTITY tb-new-tab.label "لسان جديد">
+<!ENTITY tb-open-in-conversation.label "افتح في محادثة">
+<!ENTITY tb-page-reload.label "أعد التحميل">
+<!ENTITY tb-page-stop.label "أوقف">
+<!ENTITY tb-print-page.label "اطبع">
+<!ENTITY tb-print-page.tooltip "اطبع هذه الصفحة">
+<!ENTITY tb-saved-passwords.label "كلمات السر">
+<!ENTITY tb-show-all-history.label "أظهر كل التأريخ">
+<!ENTITY tb-twitter-button.label "تويتر">
+<!ENTITY themes.label "Themes">
 <!ENTITY thunderbird-extension.label "إضافات">
 <!ENTITY thunderbird-extension.tooltip "الحصول على إضافات Thunderbird أخرى">
 <!ENTITY thunderbird-theme.label "ثيمات">
 <!ENTITY thunderbird-theme.tooltip "الحصول على ثيمات Thunderbird أخرى">
 <!ENTITY toggle-styles.label "نقل الستايلات">
 <!ENTITY toggle-styles.tooltip "إضافة\حذف ستايلات محددة لمواقع الويب">
+<!ENTITY toggle.proxy.system "استخدم إعدادات النظام للوسيط">
+<!ENTITY toolbar-menu.label "أشرطة الأدوات">
 <!ENTITY top-page.label "الأعلى">
 <!ENTITY top-page.tooltip "الذهاب إلى أعلى الصفحة">
 <!ENTITY translate.label "ترجمة">
 <!ENTITY translate.tooltip "ترجمة الصفحة الحالية إلى اللغة المفضلة">
 <!ENTITY undo-close-tab.label "التراجع عن إغلاق التبويبة">
 <!ENTITY undo-close-tab.tooltip "إعادة فتح آخر تبويبة تم إغلاقتها">
+<!ENTITY undo.label "تراجع">
+<!ENTITY watched-with-unread-threads.label "النقاشات المُراقبة ضمن غير المقروءة">
 <!ENTITY websearch.label "البحث في الويب">
 <!ENTITY websearch.tooltip "البحث في الويب باستخدام محرك البحث الافتراضي الخاص بك">
 <!ENTITY wikipedia.label "Wikipedia">
 <!ENTITY wikipedia.tooltip "تحميل صفحة Wikipedia الرئيسية">
+<!ENTITY with-unread-threads.label "النقاشات ضمن غير المقروءة">
+<!ENTITY workoffline.label "اعمل دون اتصال">
 <!ENTITY yahoo-button.label "بريد Yahoo">
 <!ENTITY yahoo-button.tooltip "فتح بريد Yahoo">

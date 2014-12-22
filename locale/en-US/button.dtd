@@ -18,8 +18,6 @@
 <!ENTITY add-address.tooltip "Copy Email Address to Address Book">
 <!ENTITY addons.label "Add-ons">
 <!ENTITY addons.tooltip "Open Add-ons Manager">
-<!ENTITY tb-addons-exceptions.label "Add-ons Allowed Sites">
-<!ENTITY tb-addons-exceptions.tooltip "Open Dialog for Add-ons Allowed Installation Sites">
 <!ENTITY all-threads.label "All Threads">
 <!ENTITY all-threads.tooltip "View All Threads">
 <!ENTITY attachments-delete.label "Delete Attachments">
@@ -44,15 +42,12 @@
 <!ENTITY bottom-page.tooltip "Go to Bottom of Page">
 <!ENTITY change-text-direction.label "Change Text Direction">
 <!ENTITY change-text-direction.tooltip "Change the text direction from left to right or right to left">
-<!ENTITY check-for-update.label "Update">
-<!ENTITY check-for-update.tooltip "Check For Updates">
 <!ENTITY clear-data.label "Clear Data">
 <!ENTITY clear-data.tooltip "Open Clear Private Data Dialog">
 <!ENTITY clear-url.label "Hide Url">
 <!ENTITY clear-url.tooltip "Hide the Url Bar Text">
 <!ENTITY clipboard.label "Clipboard Link">
 <!ENTITY clipboard.menuitem "Open link from clipboard">
-<!ENTITY clipboard.currenttab "In Current Tab">
 <!ENTITY clipboard.newtab "In New Tab">
 <!ENTITY clipboard.newwindow "In New Window">
 <!ENTITY clipboard.tooltip "Get link from clipboard &amp; open it">
@@ -106,7 +101,7 @@
 <!ENTITY firefox-extension.tooltip "Get more Firefox extensions">
 <!ENTITY firefox-theme.label "Themes">
 <!ENTITY firefox-theme.tooltip "Get more Firefox themes">
-<!ENTITY forward-as-attachment.label "Forward as Attachment">
+<!ENTITY forward-as-attachment.label "Forward As Attachment">
 <!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
 <!ENTITY forward-as-inline.label "Forward Inline">
 <!ENTITY forward-as-inline.tooltip "Forward message as part of the email">
@@ -136,14 +131,14 @@
 <!ENTITY image-toggle.label "Toggle Images">
 <!ENTITY image-toggle.tooltip "Toggle if Images Load On and Off">
 <!ENTITY import.label "Import">
-<!ENTITY import.tooltip "Import settings and data">
-<!ENTITY inspecter.label "DOMi">
+<!ENTITY import.tooltip "Import Settings and Data">
+<!ENTITY inspecter.label "DOM Inspector">
 <!ENTITY inspecter.tooltip "Document Object Model Inspector">
 <!ENTITY installaddons.label "Install">
 <!ENTITY installaddons.tooltip "Install an extension or theme">
 <!ENTITY java-toggle.label "Toggle Java">
 <!ENTITY java-toggle.tooltip "Toggle Java On and Off">
-<!ENTITY javaScriptConsole.label "Console">
+<!ENTITY javaScriptConsole.label "Error Console">
 <!ENTITY javaScriptConsole.tooltip "Open the Error Console">
 <!ENTITY javascript-toggle.label "Toggle JavaScript">
 <!ENTITY javascript-toggle.tooltip "Toggle JavaScript On and Off">
@@ -182,9 +177,10 @@
 <!ENTITY plainpaste.label "Plain Text Paste">
 <!ENTITY plainpaste.tooltip "Paste Text With No Formatting">
 <!ENTITY preferences.label "Options">
-<!ENTITY preferences.tooltip "Open Options">
+<!ENTITY preferences.tooltip "Open options">
 <!ENTITY previous-tab.label "Previous Tab">
 <!ENTITY previous-tab.tooltip "Go to the Previous Tab">
+<!ENTITY print-page.tooltip "">
 <!ENTITY print-preview.label "Print Preview">
 <!ENTITY print-preview.tooltip "Open Print Preview">
 <!ENTITY profile-folder.label "Profile">
@@ -231,8 +227,8 @@
 <!ENTITY search-messages.tooltip "Open Message Search">
 <!ENTITY select-all.label "Select All">
 <!ENTITY select-all.tooltip "Select All Text">
-<!ENTITY send-link.label "Send Link">
-<!ENTITY send-link.tooltip "Send Page Link in an Email">
+<!ENTITY send-link.label "Email Link">
+<!ENTITY send-link.tooltip "Email a link to this page">
 <!ENTITY send-receive.label "Send &amp; Receive">
 <!ENTITY send-receive.tooltip "Send and receive messages">
 <!ENTITY send-with-no-save.label "Send Without Save">
@@ -249,13 +245,12 @@
 <!ENTITY stop-all.tooltip "Stop all Tabs From Loading">
 <!ENTITY stop-animation.label "Animation">
 <!ENTITY stop-animation.tooltip "Stop Animated GIF&apos;s, Blink and Marquee tags">
-<!ENTITY stop-cookies.label "Toggle Cookies">
-<!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
 <!ENTITY stop-cookies.allow "Allow All Cookies">
-<!ENTITY stop-cookies.thirdparty "Allow for originating site">
 <!ENTITY stop-cookies.block "Block Cookies">
+<!ENTITY stop-cookies.label "Toggle Cookies">
 <!ENTITY stop-cookies.privacy "Allow based on privacy settings">
-<!ENTITY tb-delete-session-cookies.label "Delete Session Cookies">
+<!ENTITY stop-cookies.thirdparty "Allow for originating site">
+<!ENTITY stop-cookies.tooltip "Stop cookies from being set.">
 <!ENTITY stop-dinamic-content.label "Toggle embedded">
 <!ENTITY stop-dinamic-content.tooltip "Stop all embedded content from loading.">
 <!ENTITY stop-flash.label "Flash">
@@ -270,33 +265,124 @@
 <!ENTITY tasks-in-view.tooltip "Toggle Tasks in View">
 <!ENTITY tasks-toggle.label "Toggle Tasks">
 <!ENTITY tasks-toggle.tooltip "Toggle the task bar">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "List and open any of the about pages">
+<!ENTITY tb-about-blank.label "Clear Tab">
+<!ENTITY tb-about-blank.tooltip "Open/Load an empty tab">
+<!ENTITY tb-addon-options.label "Add-on Preferences">
+<!ENTITY tb-addon-options.tooltip "Open the preference window of an add-on.">
+<!ENTITY tb-addons-exceptions.label "Add-ons Allowed Sites">
+<!ENTITY tb-addons-exceptions.tooltip "Open Dialog for Add-ons Allowed Installation Sites">
+<!ENTITY tb-all-menus.label "Menu">
+<!ENTITY tb-all-menus.tooltip "All menus">
+<!ENTITY tb-base64.label "Data URI Generator">
+<!ENTITY tb-base64.tooltip "Converts a file to base64">
+<!ENTITY tb-clear-cache.label "Clear Cache">
+<!ENTITY tb-clear-cache.tooltip "Clear the browsers cache">
 <!ENTITY tb-clear-search.label "Clear Search">
 <!ENTITY tb-clear-search.tooltip "Clear and focus on the search bar">
 <!ENTITY tb-clear-url.label "Clear Url">
 <!ENTITY tb-clear-url.tooltip "Clear and focus on the urlbar">
+<!ENTITY tb-clone-tab.label "Copy Tab">
+<!ENTITY tb-clone-tab.tooltip "Makes a copy of the current tab">
+<!ENTITY tb-codefisher.forum "Forum">
+<!ENTITY tb-codefisher.label "Codefisher">
+<!ENTITY tb-codefisher.pastel-svg "Pastel SVG">
+<!ENTITY tb-codefisher.toolbar-buttons "Toolbar Buttons">
+<!ENTITY tb-codefisher.tooltip "Open Codefisher.org">
+<!ENTITY tb-codefisher.twitter "Twitter">
+<!ENTITY tb-cookie-exceptions.label "Cookie Exceptions">
+<!ENTITY tb-cookie-exceptions.tooltip "Open the Cookie Exceptions dialog">
+<!ENTITY tb-cookie-manager.label "Cookie Manager">
+<!ENTITY tb-cookie-manager.tooltip "Opens the cookie manager for the current web page.">
+<!ENTITY tb-copy.label "Copy">
+<!ENTITY tb-copy.tooltip "Copy Selected Text">
+<!ENTITY tb-cut.label "Cut">
+<!ENTITY tb-cut.tooltip "Cut Selected Text">
+<!ENTITY tb-delete-cookies.label "Delete Cookies">
+<!ENTITY tb-delete-cookies.tooltip "Delete all browser cookies.">
+<!ENTITY tb-delete-session-cookies.label "Delete Session Cookies">
+<!ENTITY tb-download-sync.label "Download/Sync Now…">
+<!ENTITY tb-download-sync.tooltip "Run download and sync before going offline">
 <!ENTITY tb-edit-menu.label "Edit Menu">
 <!ENTITY tb-edit-menu.tooltip "Show the edit menu">
+<!ENTITY tb-external-application.config "Edit Applications">
+<!ENTITY tb-external-application.label "Run Application">
+<!ENTITY tb-external-application.tooltip "Run an external application">
 <!ENTITY tb-file-menu.label "File Menu">
 <!ENTITY tb-file-menu.tooltip "Show the file menu">
+<!ENTITY tb-history-menu.label "History">
+<!ENTITY tb-history-menu.tooltip "Open History Menu">
 <!ENTITY tb-new-event.label "New Event">
 <!ENTITY tb-new-event.tooltip "Add a new event to the calendar.">
+<!ENTITY tb-new-tab.label "New Tab">
+<!ENTITY tb-new-tab.tooltip "Open a new browser tab">
 <!ENTITY tb-new-task.label "New Task">
 <!ENTITY tb-new-task.tooltip "Add a new task to the calendar.">
+<!ENTITY tb-open-in-conversation.label "Open in Conversation">
+<!ENTITY tb-open-in-conversation.tooltip "Open current message in Conversation">
+<!ENTITY tb-page-go.label "Go">
+<!ENTITY tb-page-go.tooltip "Go to the address in the Location Bar.">
+<!ENTITY tb-page-info-media.label "Page Media">
+<!ENTITY tb-page-info-media.tooltip "Open page info at the media tab">
+<!ENTITY tb-page-reload.label "Reload">
+<!ENTITY tb-page-reload.tooltip "Reload the current page">
+<!ENTITY tb-page-stop.label "Stop">
+<!ENTITY tb-page-stop.tooltip "Stop the page loading">
+<!ENTITY tb-paste-as-quote.label "Paste As Quotation">
+<!ENTITY tb-paste-as-quote.tooltip "Paste as a Quotation">
+<!ENTITY tb-paste.label "Paste">
+<!ENTITY tb-paste.tooltip "Paste">
+<!ENTITY tb-pipeline-toggle.label "Toggle Pipelining">
+<!ENTITY tb-pipeline-toggle.tooltip "Toggles Pipelining On and Off">
+<!ENTITY tb-print-page.label "Print">
+<!ENTITY tb-print-page.tooltip "Print this page">
+<!ENTITY tb-reload-all-tabs.label "Reload All Tabs">
+<!ENTITY tb-reload-all-tabs.tooltip "Reload All Tabs">
+<!ENTITY tb-remote-content.label "Remote Content">
+<!ENTITY tb-remote-content.tooltip "Set the exceptions for what remote content can load.">
+<!ENTITY tb-responsive-ui.label "Responsive Design">
+<!ENTITY tb-responsive-ui.tooltip "Open Responsive Design View">
+<!ENTITY tb-saved-passwords.label "Passwords">
+<!ENTITY tb-saved-passwords.tooltip "Open Password Manager">
+<!ENTITY tb-search-go-button.label "Search Go">
+<!ENTITY tb-search-go-button.tooltip "Go do Web Search">
 <!ENTITY tb-search-minus.label "Decrease Searchbar Size">
 <!ENTITY tb-search-minus.tooltip "Decreases the width of the searchbar by 10 pixles">
 <!ENTITY tb-search-plus.label "Increase Searchbar Size">
 <!ENTITY tb-search-plus.tooltip "Increases the width of the searchbar by 10 pixles">
 <!ENTITY tb-search-resize.label "Resize Search Size">
 <!ENTITY tb-search-resize.tooltip "Resizes the width of the searchbar">
+<!ENTITY tb-show-all-history.label "Show All History">
+<!ENTITY tb-show-all-history.tooltip "Open the show all history window">
+<!ENTITY tb-string-preference.add "Add">
+<!ENTITY tb-string-preference.browse "Browse">
+<!ENTITY tb-string-preference.close "Close">
+<!ENTITY tb-string-preference.delete "Delete">
+<!ENTITY tb-string-preference.edit "Edit">
+<!ENTITY tb-string-preference.name "Name">
+<!ENTITY tb-string-preference.save "Save">
+<!ENTITY tb-string-preference.value "Value">
+<!ENTITY tb-tab-close-history.label "Recently Closed Tabs">
+<!ENTITY tb-tab-close-history.tooltip "Open a list of the recently closed tabs.">
+<!ENTITY tb-toggle-headers.label "Email Headers">
+<!ENTITY tb-toggle-headers.tooltip "Toggle what email headers show">
 <!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
 <!ENTITY tb-toggle-menu-bar.tooltip "Toggle the menu bar">
-<!ENTITY tb-toggle-popup-blocker.key "Q">
 <!ENTITY tb-toggle-popup-blocker.label "PopUp Blocker">
 <!ENTITY tb-toggle-popup-blocker.tooltip "Toggle the PopUp Blocker">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-tools-menu.label "Tools Menu">
 <!ENTITY tb-tools-menu.tooltip "Show the tools menu">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Open Twitter home page">
+<!ENTITY tb-url-go-button.label "Address Go">
+<!ENTITY tb-url-go-button.tooltip "Go to current address">
+<!ENTITY tb-useragent-switch.config "Configure">
+<!ENTITY tb-useragent-switch.default "Default">
+<!ENTITY tb-useragent-switch.label "User Agent">
+<!ENTITY tb-useragent-switch.tooltip "Change the current user agent string">
 <!ENTITY tb-view-menu.label "View Menu">
 <!ENTITY tb-view-menu.tooltip "Show the view menu">
 <!ENTITY themes.label "Themes">
@@ -305,14 +391,6 @@
 <!ENTITY thunderbird-extension.tooltip "Get more Thunderbird extensions">
 <!ENTITY thunderbird-theme.label "Themes">
 <!ENTITY thunderbird-theme.tooltip "Get more Thunderbird themes">
-<!ENTITY tiny-url.copy.to.clipboard "Copy to Clip Board">
-<!ENTITY tiny-url.email "Email Link">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "Link Options">
-<!ENTITY tiny-url.tooltip "Create a Tiny Url">
-<!ENTITY tiny-url.use.normal "Use xrl.in">
-<!ENTITY tiny-url.use.preview "Use preview.xrl.in">
-<!ENTITY tiny-url.visit "Visit Xrl.In">
 <!ENTITY toggle-proxy.label "Toggle Proxy">
 <!ENTITY toggle-proxy.tooltip "Toggle The Proxy On &amp; Off">
 <!ENTITY toggle-read.label "Toggle Read">
@@ -323,6 +401,11 @@
 <!ENTITY toggle-styles.tooltip "Add/Remove web sites defined styles">
 <!ENTITY toggle-toolbar.label "Toggle Toolbar">
 <!ENTITY toggle-toolbar.tooltip "Toggle the Main Toolbar">
+<!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
+<!ENTITY toggle.proxy.direct "Direct connection, no proxy">
+<!ENTITY toggle.proxy.manual "Manual proxy configuration">
+<!ENTITY toggle.proxy.system "Use system proxy settings">
 <!ENTITY toolbar-menu.label "Toolbars">
 <!ENTITY toolbar-menu.tooltip "Hide/Show Toolbars">
 <!ENTITY top-page.label "Top">
@@ -338,16 +421,16 @@
 <!ENTITY up-directory.label "Up Directory">
 <!ENTITY up-directory.tooltip "Go up one directory">
 <!ENTITY use-document-colors.label "Page Colours">
-<!ENTITY use-document-colors.tooltip "Toggle between the default and the sites page colours">
+<!ENTITY use-document-colors.tooltip "Toggle between the default and the site&apos;s page colours">
 <!ENTITY use-document-fonts.label "Page Fonts">
 <!ENTITY use-document-fonts.tooltip "Toggle between the default and the sites fonts">
-<!ENTITY watched-with-unread-threads.label "Watched Threads With Unread">
+<!ENTITY watched-with-unread-threads.label "Watched Threads with Unread">
 <!ENTITY watched-with-unread-threads.tooltip "View Watched Threads With Unread">
 <!ENTITY websearch.label "Web Search">
 <!ENTITY websearch.tooltip "Search the web with your default Search Engine">
 <!ENTITY wikipedia.label "Wikipedia">
 <!ENTITY wikipedia.tooltip "Load Wikipedia home page">
-<!ENTITY with-unread-threads.label "Threads With Unread">
+<!ENTITY with-unread-threads.label "Threads with Unread">
 <!ENTITY with-unread-threads.tooltip "View Threads With Unread">
 <!ENTITY workoffline.label "Work Offline">
 <!ENTITY workoffline.tooltip "Toggle work offline">

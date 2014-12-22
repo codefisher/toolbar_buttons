@@ -1,3 +1,5 @@
+<!ENTITY about-application.label "O doplnku">
+<!ENTITY about-application.tooltip "O prehliadači &brandShortName;">
 <!ENTITY about-cache.label "Správca vyrovnávacej pamäte">
 <!ENTITY about-cache.tooltip "Otvorí Správcu vyrovnávacej pamäte a zobrazí uložený obsah">
 <!ENTITY about-config.label "Editor nastavení">
@@ -40,8 +42,6 @@
 <!ENTITY bottom-page.tooltip "Prejsť na koniec stránky">
 <!ENTITY change-text-direction.label "Zmeniť smer textu">
 <!ENTITY change-text-direction.tooltip "Zmeniť smer textu">
-<!ENTITY check-for-update.label "Aktualizovať">
-<!ENTITY check-for-update.tooltip "Vyhľadať aktualizácie">
 <!ENTITY clear-data.label "Vymazať údaje">
 <!ENTITY clear-data.tooltip "Otvoriť dialóg vymazania osobných údajov">
 <!ENTITY clear-url.label "Vymazať panel s adresou">
@@ -261,10 +261,20 @@
 <!ENTITY tb-edit-menu.tooltip "Zobrazí ponuku Upraviť">
 <!ENTITY tb-file-menu.label "Ponuka Súbor">
 <!ENTITY tb-file-menu.tooltip "Zobrazí ponuku Súbor">
+<!ENTITY tb-history-menu.label "História">
+<!ENTITY tb-new-tab.label "Nová karta">
+<!ENTITY tb-open-in-conversation.label "Otvoriť ako konverzáciu">
+<!ENTITY tb-page-reload.label "Obnoviť">
+<!ENTITY tb-page-stop.label "Zastaviť">
+<!ENTITY tb-print-page.label "Tlačiť">
+<!ENTITY tb-print-page.tooltip "Umožní vytlačiť túto stránku">
+<!ENTITY tb-saved-passwords.label "Heslá">
+<!ENTITY tb-show-all-history.label "Zobraziť celú históriu">
 <!ENTITY tb-toggle-menu-bar.label "Prepnúť panel ponuky">
 <!ENTITY tb-toggle-menu-bar.tooltip "Prepne panel ponuky">
 <!ENTITY tb-tools-menu.label "Ponuka Nástroje">
 <!ENTITY tb-tools-menu.tooltip "Zobrazí ponuku Nástroje">
+<!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-view-menu.label "Ponuka Zobraziť">
 <!ENTITY tb-view-menu.tooltip "Zobrazí ponuku Zobraziť">
 <!ENTITY themes.label "Témy">
@@ -273,14 +283,6 @@
 <!ENTITY thunderbird-extension.tooltip "Získať viac rozšírení pre Thunderbird">
 <!ENTITY thunderbird-theme.label "Témy">
 <!ENTITY thunderbird-theme.tooltip "Získať viac rozšírení pre Thunderbird">
-<!ENTITY tiny-url.copy.to.clipboard "Do schránky">
-<!ENTITY tiny-url.email "E-mail">
-<!ENTITY tiny-url.label "Tiny Url">
-<!ENTITY tiny-url.link.use "Možnosti odkazu">
-<!ENTITY tiny-url.tooltip "Vytvorí Tiny Url">
-<!ENTITY tiny-url.use.normal "Použiť xrl.in">
-<!ENTITY tiny-url.use.preview "Použiť preview.xrl.in">
-<!ENTITY tiny-url.visit "Navštíviť Xrl.in">
 <!ENTITY toggle-proxy.label "Zapnúť proxy">
 <!ENTITY toggle-proxy.tooltip "Zapnúť/vypnúť proxy">
 <!ENTITY toggle-read.label "Prečítané">
@@ -289,6 +291,10 @@
 <!ENTITY toggle-starred.tooltip "Zobrazí príspevky s hviezdičkou">
 <!ENTITY toggle-styles.label "Zapnúť štýly">
 <!ENTITY toggle-styles.tooltip "Pridať/odstrániť definované štýly stránky">
+<!ENTITY toggle.proxy.auto.configuration "Automatická konfigurácia proxy">
+<!ENTITY toggle.proxy.auto.detect "Automaticky zistiť nastavenia proxy">
+<!ENTITY toggle.proxy.manual "Manuálne nastavenie proxy">
+<!ENTITY toggle.proxy.system "Použiť systémové nastavenia serverov proxy">
 <!ENTITY toolbar-menu.label "Panely nástrojov">
 <!ENTITY toolbar-menu.tooltip "Skryť/Zobraziť panely nástrojov">
 <!ENTITY top-page.label "Navrch">
