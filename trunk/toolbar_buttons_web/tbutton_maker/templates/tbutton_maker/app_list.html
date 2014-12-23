@@ -26,9 +26,10 @@
 	    <h3>{{ label }}</h3>
 		<img class="button-icon" src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
 		{{ description|linebreaks }}
-		<form method="get" class="clear" action="{% url 'tbutton-make-button' %}">
+		<form method="get" class="clear" action="{% url 'tbutton-create' %}">
 		    <input type="hidden" value="{{ button }}" name="button">
 		    <input type="hidden" value="{{ application }}" name="application">
+		    <input type="hidden" value="true" name="add-to-toolbar">
 		    <button type="submit">
 		        <img src="{% get_static_prefix %}images/pastel-svg/16/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
 		        Install {{ label }}</button>
