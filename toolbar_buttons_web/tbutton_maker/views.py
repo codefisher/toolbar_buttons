@@ -153,8 +153,8 @@ def create_buttons(request, query, log_creation=True):
         extension_settings["include_toolbars"] = -1
     else:
         extension_settings["include_toolbars"] = 0
-    if query.get("add-to-toolbar") == "true":
-        extension_settings["add_to_main_toolbar"] = buttons
+
+        
     extension_settings["create_menu"] = query.get("create-menu") == "true"
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
@@ -176,7 +176,9 @@ def create_buttons(request, query, log_creation=True):
     extension_settings["extension_id"] = "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest()
     extension_settings["update_url"] = "https://%s%s?%s" % (Site.objects.get_current().domain,
             reverse("tbutton-update"), escape(update_query.urlencode()))
-
+    if query.get("add-to-toolbar") == "true":
+        extension_settings["add_to_main_toolbar"] = buttons
+        extension_settings["current_version_pref"] = "current.version.%s" % extension_settings["chrome_name"]
     output = io.BytesIO()
     buttons, button_locales = build.build_extension(extension_settings, output=output)
     content_type = 'application/x-xpinstall'
