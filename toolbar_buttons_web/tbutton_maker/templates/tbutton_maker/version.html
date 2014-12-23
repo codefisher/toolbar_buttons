@@ -4,7 +4,7 @@
 
 
 {% block content %}
-   <h2><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /><a href="/toolbar_buttons/">Toolbar Buttons {{ tbutton.version }}</a> Release Notes</h2>
+   <h2><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /><a href="/toolbar_button/">Toolbar Buttons {{ tbutton.version }}</a> Release Notes</h2>
    {{ tbutton.release_notes|safe }}
    
         {% if tbutton.previous_release and tbutton.previous_release.release_notes %}
