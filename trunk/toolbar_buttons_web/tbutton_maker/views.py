@@ -148,7 +148,7 @@ def create_buttons(request, query, log_creation=True):
     extension_settings["fix_meta"] = True
      
     if query.get("create-toolbars") == "true":
-        if not if query.get("add-to-toolbar") == "true":
+        if not query.get("add-to-toolbar") == "true":
             extension_settings["put_button_on_toolbar"] = True
         extension_settings["include_toolbars"] = -1
     else:
