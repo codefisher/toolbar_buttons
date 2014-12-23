@@ -82,6 +82,15 @@
 	</fieldset>
 	<fieldset>
 		<legend>Settings</legend>
+        <div class="form-field">
+            <label>
+                <input type="checkbox" name="add-to-toolbar" checked="checked" value="true">
+                    Automatically add buttons to main toolbar.
+            </label>
+            <p>
+                Normally the buttons would just be added to the "Customise Toolbar" window.  But we can also run a script when the extension is first installed to add them into the main toolbar for you.  After you can still customise where they placed as before.
+            </p>
+        </div>
 		<div class="form-field">
 			<label>
 				<input type="checkbox" name="offer-download" value="true">
@@ -100,7 +109,7 @@
 			</label>
 			<p>
 				If enabled a suitable number of toolbars will be created to fit your selection of buttons.
-				Then your selection will be added onto these toolbars.
+				Then your selection will be added onto these toolbars (unless you have selected to have them added to the main toolbar).
 			</p>
 		</div>
 		<div class="form-field">

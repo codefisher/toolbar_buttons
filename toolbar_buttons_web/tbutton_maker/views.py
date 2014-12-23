@@ -148,11 +148,12 @@ def create_buttons(request, query, log_creation=True):
     extension_settings["fix_meta"] = True
      
     if query.get("create-toolbars") == "true":
-        extension_settings["put_button_on_toolbar"] = True
+        if not if query.get("add-to-toolbar") == "true":
+            extension_settings["put_button_on_toolbar"] = True
         extension_settings["include_toolbars"] = -1
     else:
         extension_settings["include_toolbars"] = 0
-    if query.get("add-to-toolbar"):
+    if query.get("add-to-toolbar") == "true":
         extension_settings["add_to_main_toolbar"] = buttons
     extension_settings["create_menu"] = query.get("create-menu") == "true"
     extension_settings["locale"] = "all" # always include everything
@@ -164,7 +165,7 @@ def create_buttons(request, query, log_creation=True):
     #update_query["application"] = ",".join(applications)
     update_query.setlist('button-application', applications)
     update_query["locale"] = locale
-    allowed_options = set(("button-application", "locale", "button", "create-menu", "create-toolbars", "icon-size", "add-to-toolbar"))
+    allowed_options = set(("button-application", "locale", "button", "create-menu", "create-toolbars", "icon-size"))
     for key in update_query.keys():
         if key not in allowed_options:
             del update_query[key]
