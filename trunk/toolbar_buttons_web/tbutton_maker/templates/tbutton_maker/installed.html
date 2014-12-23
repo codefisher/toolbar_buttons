@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load donate_tags %}
 
 {% block page_title %}Toolbar Buttons {{ tbutton.version }} Installed{% endblock %}
 
@@ -116,8 +117,26 @@
       </div>
      </div>
     </div>
+
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2>Top Donations</h2>
+        {% show_best_donations 5 %}
+      </div>
+     </div>
+     
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2>Recent Donations</h2>
+        {% show_latest_donations 5 %}
+      </div>
+     </div>
+    </div>
     
    </div>
+   
+
     
    </div>   
         </div>
