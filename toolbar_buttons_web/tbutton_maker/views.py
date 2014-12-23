@@ -129,7 +129,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         return data
     return render(request, template_name, data)
 
-def create_buttons(request, query):
+def create_buttons(request, query, log_creation=True):
     buttons = query.getlist("button")
     locale = query.get("button-locale", query.get("locale", "all"))
 
@@ -152,6 +152,8 @@ def create_buttons(request, query):
         extension_settings["include_toolbars"] = -1
     else:
         extension_settings["include_toolbars"] = 0
+    if query.get("add-to-toolbar"):
+        extension_settings["add_to_main_toolbar"] = buttons
     extension_settings["create_menu"] = query.get("create-menu") == "true"
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
@@ -159,9 +161,10 @@ def create_buttons(request, query):
         applications = query.get("application", "all").split(",")
     extension_settings["applications"] = applications
     update_query = query.copy()
-    update_query["application"] = ",".join(applications)
+    #update_query["application"] = ",".join(applications)
+    update_query.setlist('button-application', applications)
     update_query["locale"] = locale
-    allowed_options = set(("application", "locale", "button", "create-menu", "create-toolbars", "icon-size"))
+    allowed_options = set(("button-application", "locale", "button", "create-menu", "create-toolbars", "icon-size", "add-to-toolbar"))
     for key in update_query.keys():
         if key not in allowed_options:
             del update_query[key]
@@ -183,14 +186,15 @@ def create_buttons(request, query):
     responce = HttpResponse(output.getvalue(), content_type=content_type)
     output.close()
     responce['Content-Disposition'] = disposition % (extension_settings.get('output_file') % extension_settings)
-      
-    session = DownloadSession()
-    session.query_string = query.urlencode()
-    session.save()
-    for button_record in buttons.buttons():
-        Button.objects.create(name=button_record, session=session)
-    for button_record in buttons.applications():
-        Application.objects.create(name=button_record, session=session)
+    
+    if log_creation:
+        session = DownloadSession()
+        session.query_string = query.urlencode()
+        session.save()
+        for button_record in buttons.buttons():
+            Button.objects.create(name=button_record, session=session)
+        for button_record in buttons.applications():
+            Application.objects.create(name=button_record, session=session)
     return responce
 
 @csrf_exempt
@@ -216,11 +220,14 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
     buttons_obj, locale_str = get_extenion_data(extension_settings)[:2]
     time = datetime.datetime.now() - datetime.timedelta(days)
     buttons = Button.objects.filter(session__time__gt=time)
+    sessions = DownloadSession.objects.filter(time__gt=time).count()
     stats = list(buttons.values('name').annotate(downloads=Count('name')).order_by("-downloads"))
     sum = buttons.count()
     applications = dict(buttons_obj.button_applications().items())
     total = 0
+    found = set()
     for item in stats:
+        found.add(item["name"])
         count = item["downloads"]
         total += count
         apps = list(applications[item["name"]])
@@ -234,9 +241,24 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
             "total": (float(total) / sum * 100),
             "folder": buttons_obj.get_source_folder(item["name"]),
         })
+    for name in set(buttons_obj.buttons()).difference(found):
+        apps = list(applications[item["name"]])
+        apps.sort()
+        stats.append({
+               "name": name,
+               "downloads": 0,  
+               "applications": apps,
+               "icon": buttons_obj.get_icons(name),
+               "label": locale_str('label', name),
+               "average": 0,
+               "percent": 0,
+               "total": (float(total) / sum * 100),
+               "folder": buttons_obj.get_source_folder(name),   
+        })
     data = {
         "stats": stats,
         "count": sum,
+        "sessions": sessions,
         "average": float(sum)/(len(stats)*days) if stats else 0
     }
     return render(request, template_name, data)
@@ -296,7 +318,7 @@ def update_static(request):
     return render(request, "tbutton_maker/update.rdf", data, content_type="application/xml+rdf")  
 
 def make(request):
-    return create_buttons(request, request.GET)
+    return create_buttons(request, request.GET, log_creation=False)
 
 def page_it(request, entries_list):
     paginator = Paginator(entries_list, 10)

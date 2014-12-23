@@ -392,8 +392,8 @@ class Button(SimpleButton):
         if self._settings.get("translate_description"):
             settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
                          """'chrome://%s/locale/button.properties'""" % self._settings.get("chrome_name")))
-        if self._settings.get("show_updated_prompt"):
-            settings.append(("%scurrent.version" % self._settings.get("pref_root"), "''"))
+        if self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar"):
+            settings.append(("%s%s" % (self._settings.get("pref_root"), self._settings.get("current_version_pref")), "''"))
         for name, value in self._preferences.iteritems():
             settings.append(("%s%s" % (self._settings.get("pref_root"), name), value))
         if format_dict:
@@ -647,7 +647,7 @@ class Button(SimpleButton):
             js_files["option"] = (
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
-        if self._settings.get("show_updated_prompt"):
+        if self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar"):
             with open(os.path.join(self._settings.get("project_root"), "files", "update.js"), "r") as update_js:
                 show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.get("extension_id"))
@@ -655,7 +655,13 @@ class Button(SimpleButton):
                                     self._settings.get("homepage"))
                            .replace("{{version}}",
                                     self._settings.get("version"))
+                           .replace("{{current_version_pref}}",
+                                    self._settings.get("current_version_pref"))
                            )
+            if self._settings.get("show_updated_prompt"):
+                show_update += "load_toolbar_button.callbacks.push(load_toolbar_button.load_url);\n"
+            if self._settings.get("add_to_main_toolbar"):
+                show_update += "load_toolbar_button.callbacks.push(function(previousVersion, currentVersion) { if(previousVersion == '') load_toolbar_button.add_buttons(%s) });\n" % self._settings.get("add_to_main_toolbar")
             js_files["button"] = show_update + "\n" + js_files["button"]
         interfaces_data = open(os.path.join(self._settings.get("project_root"), "files", "interfaces"), "r")
         interfaces = {}

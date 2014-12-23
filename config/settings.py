@@ -23,6 +23,7 @@ config_default = {
     # should a page be shown when the extension is installed
     "show_updated_prompt": True,
     "version_url": "https://codefisher.org/toolbar_button/version/",
+    "current_version_pref": "current.version",
 
     # sets what is added to the extension, this is either a comer seperated
     # list of values, or the special value "all"
@@ -52,6 +53,8 @@ config_default = {
     # if the buttons should be added to the new toolbars.
     # if all buttons can't fix given buttons_per_toolbar they will be left out
     "put_button_on_toolbar": True,
+    # a list of buttons to be loaded onto the main toolbar
+    "add_to_main_toolbar": None,
     # if a menu should be added with all the buttons that can be changed into menu items
     "create_menu": False,
     # if set, the disciption will be change to list the buttons in the extension
@@ -151,6 +154,13 @@ config_default = {
         "read": "mail-toolbox",
         "calendar": "calendar-toolbox",
         "suite_browser": "navigator-toolbox",
+    },
+    "file_to_main_toolbar": {
+        "browser": "nav-bar",
+        "mail": "mail-bar3",
+        "compose": "composeToolbar2",
+        "read": "mail-bar3",
+        "suite_browser": "nav-bar",
     },
     "file_to_menu": {
         "browser": ("menu_ToolsPopup", "devToolsSeparator"),

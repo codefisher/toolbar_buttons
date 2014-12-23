@@ -1,15 +1,12 @@
 if(!this.load_toolbar_button) {
 	var load_toolbar_button = {
+		callbacks: [],
+		
 		start: function() {
 			var version = "{{version}}";
 			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
-			var currentVersion = prefs.getCharPref("current.version");
+			var currentVersion = prefs.getCharPref("{{current_version_pref}}");
 			
-			var url = "{{homepage_url}}updated/{{version}}/";
-			if(currentVersion == "") {
-				url = "{{homepage_url}}installed/{{version}}/";
-			}
-
 			var extensionFlagFile = toolbar_buttons.interfaces.Properties.get("ProfD", Ci.nsIFile);
 			extensionFlagFile.append("tb-{{chrome_name}}-installed");
 			var extensionVersion = null;
@@ -18,9 +15,12 @@ if(!this.load_toolbar_button) {
 			}
 				
 			if(extensionVersion != version && currentVersion != version){
-				prefs.setCharPref("current.version", version);
+				prefs.setCharPref("{{current_version_pref}}", version);
 				load_toolbar_button.file_put_contents(extensionFlagFile, version);
-				load_toolbar_button.load_url(url);
+				//load_toolbar_button.load_url(currentVersion, version);
+				for(var i in load_toolbar_button.callbacks) {
+					load_toolbar_button.callbacks[i](currentVersion, version);
+				}
 			}
 			window.removeEventListener("load", load_toolbar_button.start, false);
 			
@@ -48,12 +48,28 @@ if(!this.load_toolbar_button) {
 			fstream.close();
 			return data;
 		},
-		load_url: function(url) {
+		load_url: function(previousVersion, currentVersion) {
+			var url = "{{homepage_url}}updated/{{version}}/";
+			if(previousVersion == "") {
+				url = "{{homepage_url}}installed/{{version}}/";
+			}
 			try {
 				getBrowser().addTab(url);
 			} catch (e) {
 				var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
 				toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
+			}
+		},
+		add_buttons: function(buttons) {
+			Cu.import("resource:///modules/CustomizableUI.jsm");
+			var toolbars = ['nav-bar', 'mail-bar3', 'composeToolbar2'];
+			for(var i in toolbars) {
+				if(document.getElementById(toolbars[i])) {
+					for(var b in buttons) {
+						CustomizableUI.addWidgetToArea(buttons[b], toolbars[i]);
+					}
+					return;
+				}				
 			}
 		},
 		observe: function(aSubject, aTopic, aData) {
