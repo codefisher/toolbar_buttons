@@ -21,6 +21,8 @@ urlpatterns = patterns('',
     url(r'^static_update.rdf', views.update_static),
     url(r'^update.rdf', views.update, name='tbutton-update'),
     url(r'^make_button/', views.make, name='tbutton-make-button'),
+    
+    url(r'^(?P<mode>updated|installed|version)/(?P<version>[\w\.]+)/?', views.installed, name='tbutton-installed'),
 
     url(r'^link-button-maker/', link_button.index, name='lbutton-custom'),
     url(r'^link-button-create/', link_button.create, name='lbutton-create'),

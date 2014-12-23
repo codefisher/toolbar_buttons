@@ -9,7 +9,7 @@ import hashlib
 import json
 
 from django.contrib.sites.models import Site
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.conf import settings
 from django.http import HttpResponseNotFound, HttpResponse, Http404, QueryDict
@@ -355,3 +355,8 @@ def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/ap
     data["entries"] = page_it(request, data["button_data"])
     data["application"] = app_name
     return render(request, template_name, data)
+
+def installed(request, mode, version):
+    tbutton = get_object_or_404(ExtensionDownload, version=version, group__identifier='{03B08592-E5B4-45ff-A0BE-C1D975458688}')
+    template_name = "tbutton_maker/%s.html" % mode
+    return render(request, template_name, {"tbutton": tbutton})
