@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1><img src="/static/images/pastel-svg/32/toolbar-button.png" width="32" height="32" alt="" /> Toolbar Buttons {{ tbutton.version }}</h1>
+
+<p>
+    Toolbar Buttons is the single biggest button pack for Firefox orThunderbird there is.  There are now over 100 Firefox, 50 for Thunderbird. You will find buttons that enable hidden functionality or is too many clicks away, but some of the best buttons are those unique to the extension.  For example from some of out most popular buttons, there are menu items for, Options,  Bookmark Manager, Bookmark Page, and Add-ons, but for Snap Back, Restart and about:config there is no existing user interface.
+</p>
+<p>
+    To find out more information about each of the buttons, please see our <a href="/toolbar_button/button_list/"><strong>Button List</strong></a> which has descriptions of all the buttons.
+</p>
+
+   <div class="front-page">
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2><img src="/static/images/pastel-svg/32/drive-down.png" width="32" height="32" alt="" /> Download</h2>
+        <p style="font-size:1.5em;">
+        <img src="{% get_static_prefix %}images/icons/browser.png" width="16" height="16" alt="">
+            <a href="{{ tbutton.get_absolute_url }}">Install - For Firefox</a> <br />
+        <img src="{% get_static_prefix %}images/icons/messenger.png" width="16" height="16" alt="">
+            <a href="{{ tbutton.get_absolute_url }}?download=true" download="{{ tbutton.file_name }}">Download - For Thunderbird</a> 
+        </p>
+        
+        <a href="/tech/installing_addons">Installation Help</a>
+      </div>
+     </div>
+    </div>
+    </div>
+    
+    <p>
+    Once installed to get started using the buttons open the Customize Coolbar window by either right clicking on the toolbar and selecting <strong>Customize</strong> from the pop up menu or going <strong>View</strong> then <strong>Toolbars</strong> then <strong>Customize</strong> and from the window that opens up you can drag the buttons to your toolbar. 
+        </p>
+        
+{% include "tbutton_maker/snipits/help-new.html" %}
+
+<h2>Future Goals</h2>
+
+<ul>
+    <li>We have received many requests for new buttons to be added to the extension, and we are working towards adding them in. </li>
+    <li>Working towards having the translations updated.</li>
+    <li>Re-touching some of larger 24x24 icons.</li>
+    <li>Fixing any bugs found or reported.</li>
+</ul>
+
+{% include "tbutton_maker/snipits/release-notes.html" %} 
+{% include "tbutton_maker/snipits/link-pastel.html" %}
+{% include "tbutton_maker/snipits/format-toolbar.html" %}  
+
+{% endblock %}
