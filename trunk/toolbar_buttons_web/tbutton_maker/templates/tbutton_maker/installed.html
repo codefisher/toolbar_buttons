@@ -24,7 +24,7 @@
         <h2><img src="/static/images/pastel-svg/32/star.png" width="32" height="32" alt="" /> Getting Started</h2>
         {% block getting_started %}
         <p>
-            You have just installed <a href="/toolbar_button/">Toolbar Buttons</a>. To get started using them open the customize toolbar window by either right clicking on the toolbar and selecting customize from the pop up menu or going View then Toolbars then Customize and from the window that opens up you can drag the buttons to your toolbar. 
+            You have just installed <a href="/toolbar_button/">Toolbar Buttons</a>. To get started using the buttons open the Customize Toolbar window by either right clicking on the toolbar and selecting <strong>Customize</strong> from the pop up menu or going <strong>View</strong> then <strong>Toolbars</strong> then <strong>Customize</strong> and from the window that opens up you can drag the buttons to your toolbar. 
         </p>
         <p>
             To find out more information about each of the buttons, please see our <a href="/toolbar_button/button_list/"><strong>Button List</strong></a> which has descriptions of all the buttons.
@@ -35,89 +35,14 @@
      </div>
     </div>
     </div>
-    <div class="front-page">
-    <div class="front-page-row">
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/help.png" width="32" height="32" alt="" /> Help &amp; Support</h2>
-        <p>If you find bugs or have a question just post on our <a href="/forum/2/">Forums</a> or check the <a href="/toolbar_button/faq/">FAQ</a>.</p>
-        <p>Have an idea for a new button that you would like?  We are eager to hear your ideas, just make a suggestion on our <a href="/forum/2/">Forums</a> (No need to register!)</p>
-      </div>
-     </div>
-     
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/information.png" width="32" height="32" alt="" /> News &amp; Updates</h2>
-        <ul>
-            <li><img src="/static/images/pastel-svg/16/twitter.png" alt=""> 
-            <a href="https://twitter.com/codefisher/">Follow codefisher on Twitter</a></li>
-            <li><a href="/blog/">Read our Blog.</a></li>
-        </ul>
-      </div>
-     </div>
-    </div>
     
-   </div>
+    {% include "tbutton_maker/snipits/help-new.html" %}
    
-   <div class="front-page">
-    <div class="front-page-row">
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /> {{ tbutton.version }} Release Notes</h2>
-       {{ tbutton.release_notes|safe }}
-      </div>
-     </div>
-    </div>
-    <div class="front-page-row">
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/cog.png" width="32" height="32" alt="" /> <a href="/toolbar_button/toolbar_button_maker/">Custom Button Maker</a></h2>
-        <p>
-            If you don't want to have all the button in this extension, but rather just the sub set that you want, you can use the <a href="/toolbar_button/toolbar_button_maker/">Custom Button Maker</a> to create just that.  It also has a number of extra features over the main release:
-        </p>
-       <ul>
-            <li>New buttons that we have made, but have not yet decided to put into the released version of Toolbar Buttons. </li>
-            <li>The option of generating toolbars to hold the buttons that you want.</li>
-            <li>The option of using larger icon sizes.</li>
-            <li>An optional experimental feature that creates a menu to access all the buttons.</li>
-            <li>Extra settings to change in the options window, and extra features on a few buttons.</li>
-        </ul>
-      </div>
-     </div>
-    </div>
-    <div class="front-page-row">
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/pencil.png" width="32" height="32" alt="" /> Translation, Please Help!</h2>
-        <p>
-            Toolbar Buttons depends on volunteers for translations.  Could you help out?  Can you be that one in 10,000 person that needs to respond to have all the translations finished?  If you can, please head over to <a href="http://www.babelzilla.org/forum/index.php?showtopic=1868">BabelZilla</a> and sign up to Toolbar Buttons translation team! 
-        </p>
-      </div>
-     </div>
-    </div>
-    </div>
+    {% include "tbutton_maker/snipits/release-notes.html" %}    
+    
+    {% include "tbutton_maker/snipits/link-pastel.html" %}
     
     <div class="front-page">
-    <div class="front-page-row">
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/world.png" width="32" height="32" alt="" /> <a href="/toolbar_button/link-button-maker/">Link Buttons</a></h2>
-        <p>
-            We have been asked for buttons that open many different web pages, so we created a simple tool, the <a href="/toolbar_button/link-button-maker/">link button maker</a>, so that you can easily create toolbar buttons to any page you wish.
-        </p>
-      </div>
-     </div>
-     
-     <div class="front-page-cell">
-      <div class="front-page-cell-content">
-        <h2><img src="/static/images/pastel-svg/32/color-wheel.png" width="32" height="32" alt="" /> <a href="/pastel-svg/">Pastel SVG</a></h2>
-        <p>
-            Do you like the icons we use?  We certainly do, that is why we created them.  If you like then to, visit the <a href="/pastel-svg/">Pastel SVG home page</a> and download them for your own use too.
-        </p>
-      </div>
-     </div>
-    </div>
-
     <div class="front-page-row">
      <div class="front-page-cell">
       <div class="front-page-cell-content">
@@ -136,7 +61,7 @@
     
    </div>
    
-
+   {% include "tbutton_maker/snipits/format-toolbar.html" %}   
     
    </div>   
         </div>

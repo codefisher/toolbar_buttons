@@ -1,0 +1,48 @@
+   <div class="front-page">
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /> {{ tbutton.version }} Release Notes</h2>
+        <small>Released {{ tbutton.release_date|date:"DATE_FORMAT" }}</small>
+           {{ tbutton.release_notes|safe }}
+           
+           <p>
+               <small>Compatibility: {% for app, min, max in compatibility %}{% if not forloop.first %},{% endif %} {{ app }} {{ min }} to {{ max }}{% endfor %}</small>
+           </p>
+           <p>
+              For other versions of toolbar buttons see: <a href="{% url 'tbutton-installed' mode='version' version=tbutton.version %}/">all release notes</a>.
+           </p>
+      </div>
+     </div>
+    </div>
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2><img src="/static/images/pastel-svg/32/cog.png" width="32" height="32" alt="" /> <a href="/toolbar_button/toolbar_button_maker/">Custom Button Maker</a></h2>
+        <p>
+            If you don't want to have all the button in this extension, but rather just the sub set that you want, you can use the <a href="/toolbar_button/toolbar_button_maker/">Custom Button Maker</a> to create just that. It allows you to select buttons from a list and have an extension made with just your selection. It also has a number of extra features over the main release:
+        </p>
+       <ul>
+            <li>New buttons that we have made, but have not yet decided to put into the released version of Toolbar Buttons. </li>
+            <li>The option of generating toolbars to hold the buttons that you want.</li>
+            <li>The option of using larger icon sizes.</li>
+            <li>An optional experimental feature that creates a menu to access all the buttons.</li>
+            <li>Extra settings to change in the options window, and extra features on a few buttons.</li>
+        </ul>
+        <p>
+            The Custom Button Maker also servers as a testing ground for new buttons and features, those that prove popular are added to the main extension. 
+        </p>
+      </div>
+     </div>
+    </div>
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2><img src="/static/images/pastel-svg/32/pencil.png" width="32" height="32" alt="" /> Translation, Please Help!</h2>
+        <p>
+            Toolbar Buttons depends on volunteers for translations.  Could you help out?  Can you be that one in 10,000 person that needs to respond to have all the translations finished?  If you can, please head over to <a href="http://www.babelzilla.org/forum/index.php?showtopic=1868">BabelZilla</a> and sign up to Toolbar Buttons translation team! 
+        </p>
+      </div>
+     </div>
+    </div>
+    </div>

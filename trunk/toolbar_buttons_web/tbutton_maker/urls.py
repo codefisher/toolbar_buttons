@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url, include
 from toolbar_buttons.toolbar_buttons_web.tbutton_maker import views, link_button
 
 urlpatterns = patterns('',
+    url(r'^$', views.homepage, name='tbutton-homepage'),
     url(r'^custom/create-addon/$', views.create, name='tbutton-create'),
     url(r'^statistics/', views.statistics, name='tbutton-statistics'),
     url(r'^toolbar_button_maker/$', views.index, name='tbutton-custom'),

@@ -4,14 +4,34 @@
 
 
 {% block content %}
-   <h2><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /><a href="/toolbar_button/">Toolbar Buttons {{ tbutton.version }}</a> Release Notes</h2>
+   <h1><img src="/static/images/pastel-svg/32/note.png" width="32" height="32" alt="" /><a href="/toolbar_button/">Toolbar Buttons</a> Release Notes</h1>
+   
+   <p><small>{{ tbutton.description }}</small></p>
+   
+   <h2>Toolbar Buttons {{ tbutton.version }}</h2>
+   
+   <small>Released {{ tbutton.release_date|date:"DATE_FORMAT" }}</small>
    {{ tbutton.release_notes|safe }}
+   
+   <p>
+       <small>Compatibility: {% for app, min, max in compatibility %}{% if not forloop.first %},{% endif %} {{ app }} {{ min }} to {{ max }}{% endfor %}</small>
+   </p>
+   
+   {% if tbutton.previous_release and tbutton.previous_release.release_notes %}
+    <h2>Previous Versions</h2>
+   {% endif %}
+   <div style="font-size:0.8em">
+   {% for version in previous %}
+     <h3>Toolbar Buttons {{ version.version }}</h3>
+     {{ version.release_notes|safe }}
+   {% endfor %}
    
         {% if tbutton.previous_release and tbutton.previous_release.release_notes %}
            <p>
-            <a href="{{ tbutton.previous_release.get_release_url }}">Previous Version &raquo; </a>
+            <a href="{{ tbutton.previous_release.get_release_url }}">Previous Version</a>
            </p>
         {% endif %}
+   </div>
 {% endblock %}
 
 
