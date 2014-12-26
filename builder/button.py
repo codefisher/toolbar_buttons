@@ -97,7 +97,7 @@ class SimpleButton():
                                                            modifier.rstrip()))
                         if skip_without_icons:
                             name = name.strip().lstrip("*").lstrip("-")
-                            if not os.path.exists(get_image(settings, large_icon_size, name)):
+                            if not os.path.exists(get_image(settings, large_icon_size, name.strip())):
                                 button_wanted = False
                                 del self._button_image[button]
                         if name and not modifier:
