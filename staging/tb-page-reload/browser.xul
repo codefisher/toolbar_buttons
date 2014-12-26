@@ -2,6 +2,7 @@
 	class="toolbarbutton-1"
 	id="tb-page-reload"
 	label="&tb-page-reload.label;"
+	key="key_reload"
 	command="Browser:ReloadOrDuplicate"
 	onclick="checkForMiddleClick(this, event);"
 	tooltiptext="&tb-page-reload.tooltip;"/>

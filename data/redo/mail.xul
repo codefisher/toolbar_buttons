@@ -3,4 +3,5 @@
 	id="redo"
 	label="&redo.label;"
 	tooltiptext="&redo.tooltip;"
+	key="key_redo"
 	oncommand="CommandUpdate_UndoRedo(); goDoCommand('cmd_redo');" />

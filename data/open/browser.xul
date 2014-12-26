@@ -3,4 +3,5 @@
 	id="open"
 	label="&open.label;"
 	tooltiptext="&open.tooltip;"
+	key="openFileKb"
 	command="Browser:OpenFile"/>

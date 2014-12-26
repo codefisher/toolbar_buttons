@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-network-monitor"
+	label="&tb-network-monitor.label;"
+	tooltiptext="&tb-network-monitor.tooltip;"
+	key="key_netmonitor"
+	oncommand="gDevToolsBrowser.selectToolCommand(gBrowser, 'netmonitor');"/>

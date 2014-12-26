@@ -3,4 +3,5 @@
 	id="reset"
 	label="&reset.label;"
 	tooltiptext="&reset.tooltip;"
+	key="key_fullZoomReset"
 	command="cmd_fullZoomReset" />

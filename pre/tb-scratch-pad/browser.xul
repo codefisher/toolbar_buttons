@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-scratch-pad"
+	label="&tb-scratch-pad.label;"
+	tooltiptext="&tb-scratch-pad.tooltip;"
+	key="key_scratchpad"
+	oncommand="Scratchpad.openScratchpad();"/>

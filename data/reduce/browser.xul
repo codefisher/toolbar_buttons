@@ -3,4 +3,5 @@
 	id="reduce"
 	label="&reduce.label;"
 	tooltiptext="&reduce.tooltip;"
+	key="key_fullZoomReduce"
 	command="cmd_fullZoomReduce"/>

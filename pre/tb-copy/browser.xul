@@ -3,4 +3,5 @@
 	id="tb-copy"
 	label="&tb-copy.label;"
 	tooltiptext="&tb-copy.tooltip;"
+	key="key_copy"
 	command="cmd_copy"/>

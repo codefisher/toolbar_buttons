@@ -3,4 +3,5 @@
 	id="enlarge"
 	label="&enlarge.label;"
 	tooltiptext="&enlarge.tooltip;"
+	key="key_fullZoomEnlarge"
 	command="cmd_fullZoomEnlarge" />

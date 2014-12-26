@@ -3,4 +3,5 @@
 	id="delete-button"
 	label="&delete.label;"
 	tooltiptext="&delete.tooltip;"
+	key="key_delete"
 	command="cmd_delete"/>

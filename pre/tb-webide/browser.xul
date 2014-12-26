@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-webide"
+	label="&tb-webide.label;"
+	tooltiptext="&tb-webide.tooltip;"
+	key="key_webide"
+	oncommand="gDevToolsBrowser.openWebIDE();"/>

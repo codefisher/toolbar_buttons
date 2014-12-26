@@ -584,6 +584,7 @@ class Button(SimpleButton):
                 js_imports.update(detect_depandancy.findall(xul))
         if self._settings.get("create_menu"):
             js_imports.add("sortMenu")
+            js_imports.add("handelMenuLoaders")
         
         for file_name, js in self._button_js.iteritems():
             js_file = "\n".join(js)
@@ -709,14 +710,22 @@ class Button(SimpleButton):
             return ""
         keys = []
         for button, (key, modifier) in self._button_keys.iteritems():
+            attr = 'key' if len(key) == 1 else "keycode"
             if application in self._button_applications[button]:
-                keys.append("""<key key="%s" modifiers="%s" id="%s-key" command="%s" />""" % (key, modifier, button, button))
                 if self._settings.get("create_menu"):
-                    keys.append("""<key key="%s" modifiers="%s" id="%s-key" command="%s-menu-item" />""" % (key, modifier, button, button))
+                    keys.append("""<key %s="%s" modifiers="%s" id="%s-key" command="%s-menu-item" />""" % (attr, key, modifier, button, button))
+                else:
+                    keys.append("""<key %s="%s" modifiers="%s" id="%s-key" command="%s" />""" % (attr, key, modifier, button, button))
         if keys:
             return """\n <keyset id="mainKeyset">\n\t%s\n </keyset>""" % "\n\t".join(keys)
         else:
             return ""
+        
+    def _list_has_str(self, lst, text):
+        for item in lst:
+            if text in item:
+                return True
+        return False
 
     def _create_menu(self, file_name, buttons):
         if not self._settings.get("file_to_menu").get(file_name):
@@ -739,6 +748,8 @@ class Button(SimpleButton):
                  for name, value in attr_match.findall(attr_data)
                  if name not in ("id", "tooltiptext", "class")
                     or (name == "class" and value != "toolbarbutton-1")]
+            if self._list_has_str(attrs, 'toolbar_buttons.showAMenu'):
+                menu = "<menupopup />"
             attrs.append('id="%s-menu-item"' % button_id)
             if self._settings.get("use_keyboard_shortcuts") and button_id in self._button_keys:
                 attrs.append('key="%s-key"' % button_id)
@@ -748,7 +759,7 @@ class Button(SimpleButton):
                 data.append("<menuitem %s/>" % "\n\t\t".join(attrs))
         if not data:
             return ""
-        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup onpopupshowing="toolbar_buttons.sortMenu(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
+        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup onpopupshowing="toolbar_buttons.sortMenu(event, this); toolbar_buttons.handelMenuLoaders(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
 
     def get_xul_files(self):
         """

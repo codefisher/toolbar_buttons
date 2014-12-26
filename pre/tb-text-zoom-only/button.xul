@@ -1,0 +1,6 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-text-zoom-only"
+	label="&tb-text-zoom-only.label;"
+	tooltiptext="&tb-text-zoom-only.tooltip;"
+	command="cmd_fullZoomToggle" />
