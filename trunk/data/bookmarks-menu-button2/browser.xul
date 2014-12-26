@@ -3,7 +3,7 @@
 	id="bookmarks-menu-button2"
 	label="&bookmarks-menu-button.label;"
 	tooltiptext="&bookmarks-menu-button.tooltip;"
-	oncommand="this.firstChild.openPopup(this, 'after_start');"
+	type="menu"
 	ondragenter="PlacesMenuDNDHandler.onDragEnter(event);" 
 	ondragover="PlacesMenuDNDHandler.onDragOver(event);"
 	ondrop="PlacesMenuDNDHandler.onDrop(event);">

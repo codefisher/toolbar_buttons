@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-style-editor"
+	label="&tb-style-editor.label;"
+	tooltiptext="&tb-style-editor.tooltip;"
+	key="key_styleeditor"
+	oncommand="gDevToolsBrowser.selectToolCommand(gBrowser, 'styleeditor');"/>

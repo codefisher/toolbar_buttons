@@ -3,4 +3,5 @@
 	id="close-tab"
 	label="&close-tab.label;"
 	tooltiptext="&close-tab.tooltip;"
+	key="key_close"
 	command="cmd_close"/>

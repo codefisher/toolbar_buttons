@@ -7,6 +7,7 @@ setButtonStatus: function(button, status) {
 		menu_item.setAttribute("activated", status);
 	}
 	if(button.parentNode.getAttribute("mode") == "text") {
+		button.setAttribute("type", "checkbox");
 		button.setAttribute("checked", Boolean(status));
 	} else {
 		button.removeAttribute("checked");
@@ -75,7 +76,11 @@ showAMenu: function(aEvent) {
 		aEvent.target.removeChild(aEvent.target.firstChild);
 	}
 	aEvent.target.appendChild(popup);
-	aEvent.target.firstChild.openPopup(aEvent.target, "after_start");
+	if(aEvent.target.nodeName == 'menuitem' || aEvent.target.nodeName == 'menu') {
+		aEvent.target.firstChild.openPopup(aEvent.target, "end_before");
+	} else {
+		aEvent.target.firstChild.openPopup(aEvent.target, "after_start");
+	}
 }
 
 openMessengerWindowOrTab: function(url, event) {
@@ -432,6 +437,26 @@ sortMenu: function(event, aMenu) {
 		aMenu.appendChild(menuitems[i]);
 	}
 	aMenu.sorted = true;
+}
+
+handelMenuLoaders: function(event, item) {
+	if(item._handelMenuLoaders)
+		return;
+	item.addEventListener('DOMMenuItemActive', function(event) {
+		var menuitem = event.originalTarget;
+		var command = menuitem.getAttribute('oncommand');
+		if(command.indexOf('toolbar_buttons.showAMenu') > -1) {
+			// so this is one of those menu items that as a fake submenu, show it
+			var cEvent = new Event('command', {
+			    'view': window,
+			    'bubbles': false,
+			    'cancelable': true,
+			    'target': menuitem,
+			});
+			menuitem.dispatchEvent(cEvent);
+		}
+	}, false);
+	item._handelMenuLoaders = true;
 }
 
 logMessage: function(string) {

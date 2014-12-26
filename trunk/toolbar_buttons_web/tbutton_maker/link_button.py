@@ -6,6 +6,7 @@ import io
 import hashlib
 import os
 import urllib
+import httplib2
 
 from PIL import Image
 
@@ -122,6 +123,8 @@ def make(request):
 
 def build(request, data):
     update_query = QueryDict("").copy()
+    if 'button_mode' not in data:
+        data['button_mode'] = '0'
     update_query.update(data)
     for key in ['offer-download', 'icon-16', 'icon-24', 'icon-32']:
         if key in update_query:
@@ -210,6 +213,9 @@ def update(request):
         "extension_uuid": request.GET.get("extension_uuid")
     }
     return render_to_response("tbutton_maker/link/update.rdf", data, content_type="application/xml+rdf")
+
+def update_legacy(request):
+    return HttpResponse('') # we deleted the data, so now we can't do more :(
 
 @csrf_exempt
 def favicons(request):

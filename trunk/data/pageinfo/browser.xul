@@ -3,4 +3,5 @@
 	id="pageinfo"
 	label="&pageinfo.label;"
 	tooltiptext="&pageinfo.tooltip;"
+	key="key_viewInfo"
 	command="View:PageInfo"/>

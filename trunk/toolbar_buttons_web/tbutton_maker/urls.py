@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^link-button-create/', link_button.create, name='lbutton-create'),
     url(r'^link-button-make/', link_button.make, name='lbutton-make'),
     url(r'^link-button-update.rdf', link_button.update, name='lbutton-update'),
+    url(r'^update-clb', link_button.update_legacy, name='lbutton-update-legacy'),
     url(r'^get_icons/', link_button.favicons, name='lbutton-custom-favicons'),
 
     url(r'^(?P<app_name>[\w]+)/', views.list_app_buttons, name='tbutton-make-button'),

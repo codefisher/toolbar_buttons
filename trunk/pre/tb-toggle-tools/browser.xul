@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-toggle-tools"
+	label="&tb-toggle-tools.label;"
+	tooltiptext="&tb-toggle-tools.tooltip;"
+	key="key_devToolboxMenuItem"
+	oncommand="gDevToolsBrowser.toggleToolboxCommand(gBrowser);"/>

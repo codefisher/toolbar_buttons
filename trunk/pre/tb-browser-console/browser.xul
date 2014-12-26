@@ -1,0 +1,7 @@
+<toolbarbutton 
+	class="toolbarbutton-1"
+	id="tb-browser-console"
+	label="&tb-browser-console.label;"
+	tooltiptext="&tb-browser-console.tooltip;"
+	key="key_browserConsole"
+	oncommand="HUDService.toggleBrowserConsole();"/>

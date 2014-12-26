@@ -75,6 +75,7 @@
 <!ENTITY delete.tooltip "Delete Selected Text">
 <!ENTITY dictionary-list.label "Change Dictionary">
 <!ENTITY dictionary-list.tooltip "Quickly Change the Current Dictonary">
+<!ENTITY dictionary-list.add "Add Dictionaries…">
 <!ENTITY ebay.label "eBay">
 <!ENTITY ebay.tooltip "Open Ebay">
 <!ENTITY edit-as-new.label "Edit as New">

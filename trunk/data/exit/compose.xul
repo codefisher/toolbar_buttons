@@ -3,4 +3,5 @@
 	id="exit"
 	label="&exit.label;"
 	tooltiptext="&exit.tooltip;"
+	key="key_quitApplication"
 	oncommand="goQuitApplication()" />

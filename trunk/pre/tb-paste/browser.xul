@@ -3,4 +3,5 @@
 	id="tb-paste"
 	label="&tb-paste.label;"
 	tooltiptext="&tb-paste.tooltip;"
+	key="key_paste"
 	command="cmd_paste"/>

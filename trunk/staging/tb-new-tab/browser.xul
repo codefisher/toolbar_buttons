@@ -3,4 +3,5 @@
     id="tb-new-tab"
     label="&tb-new-tab.label;"
     tooltiptext="&tb-new-tab.tooltip;"
+    key="key_newNavigatorTab"
     command="cmd_newNavigatorTab"/>

@@ -5,5 +5,8 @@
 	label="&dictionary-list.label;"
 	tooltiptext="&dictionary-list.tooltip;">
 	<menupopup onpopupshowing="toolbar_buttons.addDictionaryList(this);"
-		oncommand="event.stopPropagation();" />
+		oncommand="event.stopPropagation();">
+		<menuseparator />
+		<menuitem label="&dictionary-list.add;" oncommand="toolbar_buttons.addDictionaries();"/>
+	</menupopup>
 </toolbarbutton>

@@ -3,6 +3,6 @@
 	class="toolbarbutton-1"
 	label="&toolbar-menu.label;"
 	tooltiptext="&toolbar-menu.tooltip;"
-	oncommand="document.getElementById('toolbar-popup').openPopup(event.target, 'after_start');">
+	type="menu">
 	<menupopup onpopupshowing="onViewToolbarsPopupShowing(event);" id="toolbar-popup" oncommand="event.stopPropagation();" />
 </toolbarbutton>

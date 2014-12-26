@@ -1,7 +1,8 @@
 addDictionaryList: function(item) {
-	while (item.firstChild) {
+	while (item.firstChild && item.firstChild.nodeName != 'menuseparator') {
 		item.removeChild(item.firstChild);
 	}
+	var sep = item.firstChild;
 	try {
 		var prefs = toolbar_buttons.interfaces.PrefBranch;
 		var current = prefs.getCharPref("spellchecker.dictionary");
@@ -25,6 +26,9 @@ addDictionaryList: function(item) {
 			.createBundle("chrome://global/locale/languageNames.properties");
 		var regionBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://global/locale/regionNames.properties");
+			
+		
+						
 		var i = 0;
 		for (i = 0; i < count; i++) {
 			var menuitem = document.createElement("menuitem");
@@ -37,13 +41,11 @@ addDictionaryList: function(item) {
 			menuitem.setAttribute("type", "radio");
 			menuitem.setAttribute("label", toolbar_buttons.getDictionaryName(language, languageBundle, regionBundle));
 			menuitem.language = language;
-			menuitem.addEventListener("command", function() {
-				prefs.setCharPref("spellchecker.dictionary", this.language);
-				try {
-					editorSpellChecker.SetCurrentDictionary(this.language);
-				} catch(e) {}
+			menuitem.addEventListener("command", function() {				
+				 // this is done by SetCurrentDictionary so if that works, this is not needed
+				 prefs.setCharPref("spellchecker.dictionary", this.language);
 			}, false);
-			item.appendChild(menuitem);
+			item.insertBefore(menuitem, sep);
 		}
 	} catch(e) {
 		menuitem = document.createElement("menuitem");
@@ -52,21 +54,21 @@ addDictionaryList: function(item) {
 		var empty = stringBundle.GetStringFromName("empty");
 		menuitem.setAttribute("label", empty);
 		menuitem.setAttribute("disabled", true);
-		item.appendChild(menuitem);
+		item.insertBefore(menuitem, sep);
 	}
 }
 getDictionaryName: function(langId, languageBundle, regionBundle) {
 	// copied out of Firefox, with minor change to use GetStringFromName
     try
     {
-      isoStrArray = langId.split(/[-_]/);
-
+      var isoStrArray = langId.split(/[-_]/);
+	  var langLabel;
       if (languageBundle && isoStrArray[0])
         langLabel = languageBundle.GetStringFromName(isoStrArray[0].toLowerCase());
 
       if (regionBundle && langLabel && isoStrArray.length > 1 && isoStrArray[1])
       {
-        menuStr2 = regionBundle.GetStringFromName(isoStrArray[1].toLowerCase());
+        var menuStr2 = regionBundle.GetStringFromName(isoStrArray[1].toLowerCase());
         if (menuStr2)
           langLabel += "/" + menuStr2;
       }
@@ -84,4 +86,30 @@ getDictionaryName: function(langId, languageBundle, regionBundle) {
       langLabel = langId;
     }
     return langLabel;
+}
+
+// copied off the content menu 
+addDictionaries: function() {
+    var uri = formatURL("browser.dictionaries.download.url", true);
+
+    var locale = "-";
+    try {
+      locale = gPrefService.getComplexValue("intl.accept_languages",
+                                            Ci.nsIPrefLocalizedString).data;
+    }
+    catch (e) { }
+
+    var version = "-";
+    try {
+      version = Cc["@mozilla.org/xre/app-info;1"].
+                getService(Ci.nsIXULAppInfo).version;
+    }
+    catch (e) { }
+
+    uri = uri.replace(/%LOCALE%/, escape(locale)).replace(/%VERSION%/, version);
+
+    var newWindowPref = gPrefService.getIntPref("browser.link.open_newwindow");
+    var where = newWindowPref == 3 ? "tab" : "window";
+
+    openUILinkIn(uri, where);
 }

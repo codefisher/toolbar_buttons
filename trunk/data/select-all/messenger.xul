@@ -3,4 +3,5 @@
 	id="select-all"
 	label="&select-all.label;"
 	tooltiptext="&select-all.tooltip;"
+	key="key_selectAll"
 	oncommand="goDoCommand('cmd_selectAll');"/>
