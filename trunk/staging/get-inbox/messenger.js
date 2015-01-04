@@ -1,5 +1,5 @@
 focusInbox: function() {
-	var aServer = GetSelectedMsgFolders()[0].server;
+	var aServer = window.GetSelectedMsgFolders()[0].server;
 	try {
 		window.OpenInboxForServer(aServer);
 	} catch (ex) {}

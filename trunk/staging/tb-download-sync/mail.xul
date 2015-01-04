@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-download-sync"
 	label="&tb-download-sync.label;"
 	tooltiptext="&tb-download-sync.tooltip;"
-	oncommand="goDoCommand('cmd_synchronizeOffline')" />
+	oncommand="window.goDoCommand('cmd_synchronizeOffline')" />

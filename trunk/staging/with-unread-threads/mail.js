@@ -1,7 +1,7 @@
 threadsWithUnread: function() {
-	if(gFolderDisplay.view.specialViewThreadsWithUnread) {
-		goDoCommand('cmd_viewAllMsgs');
+	if(window.gFolderDisplay.view.specialViewThreadsWithUnread) {
+		window.goDoCommand('cmd_viewAllMsgs');
 	} else {
-		goDoCommand('cmd_viewThreadsWithUnread');
+		window.goDoCommand('cmd_viewThreadsWithUnread');
 	}
 }

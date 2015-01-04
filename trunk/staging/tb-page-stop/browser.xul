@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-page-stop"
 	label="&tb-page-stop.label;"
 	command="Browser:Stop"

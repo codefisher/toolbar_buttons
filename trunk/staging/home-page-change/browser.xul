@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="home-page-change"
 	type="menu-button"
 	label="&home-page-change.label;"
