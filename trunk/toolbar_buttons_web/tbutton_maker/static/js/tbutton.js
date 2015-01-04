@@ -101,3 +101,10 @@ function setOtherLabels(item) {
 		title.value = value + " Toolbar Button";
 	}
 }
+
+function createShareLink() {
+	var args = $('#tbutton-form').serialize();
+	$('#share-filedset').show();
+	var loc = document.location;
+	$('#share-url').val(loc.origin + loc.pathname + '?' + args);
+}

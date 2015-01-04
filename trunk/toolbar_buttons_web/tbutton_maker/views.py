@@ -19,6 +19,7 @@ from django.db.models import Count
 from django.utils.html import escape
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import F
 
 
 from toolbar_buttons.config.settings import config
@@ -54,9 +55,7 @@ class WebButton(button.SimpleButton):
 
 def get_extenion_data(extension_settings, locale_name=None, applications=None, buttons_ids="all"):
     if applications == None:
-        applications = extension_settings.get("applications_data").keys()
-    else:
-        applications = applications.split(',')        
+        applications = extension_settings.get("applications_data").keys()     
     button_locale, locale_folder, locale_name = get_locale_obj(extension_settings, locale_name)
     buttons_obj = get_buttons_obj(extension_settings, applications, buttons_ids)
     locale_str = buttons_obj.locale_string(button_locale=button_locale, locale_name=locale_name)
@@ -89,6 +88,15 @@ def list_buttons(request, locale_name=None, applications=None, template_name='tb
 def index(request, locale_name=None, applications=None, template_name='tbutton_maker/index.html'):
     extension_settings = dict(config)
     extension_settings["project_root"] = settings.TBUTTON_DATA
+    if locale_name == None:
+        locale_name = request.GET.get('button-locale')
+    if applications == None:
+        applications = request.GET.getlist('button-application')
+    else:
+        if ',' in applications:
+            applications = applications.split(",")
+        else:
+            applications = applications.split("-")
     buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, applications)
 
     button_data = []
@@ -113,17 +121,21 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
     local_data.sort(key=button_key)
     application_data = extension_settings.get("applications_data")
     application_names = dict((key, [item[0] for item in value]) for key, value in application_data.iteritems())
-    #TODO: add option for what update "stream" to follow, the size of icon,
-    # and the icon set (if I get more then one)
     data = {
         "locale": locale_name,
         "all_applications": sorted(application_data.keys()),
         "applications": applications,
         "button_data": button_data,
+        "buttons": request.GET.getlist('button'),
         "application_names": application_names,
         "local_data": local_data,
         "icon_sets": [(name, label) for name, (label, _) in settings.TBUTTON_ICONS.items()],
         "default_icons": settings.TBUTTON_DEFAULT_ICONS,
+        "add_to_toolbar": request.GET.get('add-to-toolbar'),
+        "offer_download": request.GET.get('offer-download'),
+        "create_toolbars": request.GET.get('create-toolbars'),
+        "create_menu": request.GET.get('create-menu'),
+        "icon_size": request.GET.get('icon-size', 'standard'),
     }
     if template_name is None:
         return data
@@ -131,7 +143,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
 
 def create_buttons(request, query, log_creation=True):
     buttons = query.getlist("button")
-    locale = query.get("button-locale", query.get("locale", "all"))
+    locale = query.get("button-locale", "all")
 
     extension_settings = dict(config)
     extension_settings.update({
@@ -159,7 +171,7 @@ def create_buttons(request, query, log_creation=True):
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
     if not applications:
-        applications = query.get("application", "all").split(",")
+        applications = "all"
     extension_settings["applications"] = applications
     update_query = query.copy()
     #update_query["application"] = ",".join(applications)
@@ -206,7 +218,7 @@ def create(request):
     #    raise Http404()
     buttons = request.GET.getlist("button")
     if not buttons or "update-submit" in request.GET:
-        applications = ",".join(request.GET.getlist("button-application"))
+        applications = "-".join(request.GET.getlist("button-application"))
         locale = request.GET.get("button-locale")
         kwargs = {}
         if locale:
@@ -245,7 +257,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
             "folder": buttons_obj.get_source_folder(item["name"]),
         })
     for name in set(buttons_obj.buttons()).difference(found):
-        apps = list(applications[item["name"]])
+        apps = list(applications[name])
         apps.sort()
         stats.append({
                "name": name,
@@ -289,7 +301,11 @@ def update(request):
     buttons = request.GET.getlist("button")
     applications = request.GET.getlist("button-application")
     if not applications:
-        applications = request.GET.get("application", "all").split(",")
+        applications = request.GET.get("application", "all")
+        if ',' in applications:
+            applications = applications.split(",")
+        else:
+            applications = applications.split("-")
     if applications == ["all"]:
         app_data = flat(config.get("applications_data").values())
     else:
@@ -372,8 +388,7 @@ def installed(request, mode, version):
     return render(request, template_name, {"tbutton": tbutton, "previous": previous_notes(tbutton), "compatibility": compatibility})
 
 def homepage(request):
-    group = DownloadGroup.objects.get(identifier='{03B08592-E5B4-45ff-A0BE-C1D975458688}')
-    tbutton = ExtensionDownload.objects.get(pk=group.latest.pk)
+    tbutton = ExtensionDownload.objects.select_related('group').get(group__identifier='{03B08592-E5B4-45ff-A0BE-C1D975458688}', group__latest=F('pk'))
     compatibility = [(settings.MOZ_APP_NAMES.get(compat.app_id), compat.min_version, compat.max_version)
                               for compat in tbutton.compatibility.all() if compat.app_id in settings.MOZ_APP_NAMES]
     compatibility.sort()

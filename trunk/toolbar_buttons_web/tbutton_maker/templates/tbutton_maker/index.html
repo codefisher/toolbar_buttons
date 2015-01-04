@@ -10,7 +10,17 @@
 
 {% block content %}
 
-<form method="get" action="{% url 'tbutton-create' %}" id="tbutton-form" class="form-field">
+<form onsubmit="createShareLink();" method="get" action="{% url 'tbutton-create' %}" id="tbutton-form" class="form-field">
+   {% if buttons %}
+    <fieldset>
+        <legend>Create</legend>
+        <button style="font-size:1.5em" type="submit" id="create-submit" name="create-submit"><img alt="" src="/static/images/pastel-svg/32/drive-down.png" height="32" width="32"> Download</button>
+        <p>
+            This customized version of Toolbar Buttons has already been configuired for you.  To install just press the download button above.  If you want to change the configueration, just scroll down and change the selection.
+        </p>
+    </fieldset>
+   {% endif %}
+
 	<fieldset>
 		<legend>Locale &amp; Application</legend>
 		<div class="form-field">
@@ -18,7 +28,7 @@
 				<select name="button-locale" id="button-locale" class="form-input">
 					{% for value, name, native_name, country in local_data %}
 						<option{% if value == locale %} selected{% endif %}
-							value="{{ value }}" style="background: url('{% get_static_prefix %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} [{{ value }}]</option>
+							value="{{ value }}" style="background: url('{% get_static_prefix %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} ({{ value }})</option>
 					{% endfor %}
 				</select>
 			</label>
@@ -29,7 +39,7 @@
 				{% for value in all_applications %}
 					<li class="form-field">
 						<label for="button-application-{{ value }}">
-							<input{% if value in applications %} checked{% endif %}
+							<input{% if value in applications or not applications %} checked{% endif %}
 								id="button-application-{{ value }}" value="{{ value }}" name="button-application" type="checkbox">
 							<img src="{% get_static_prefix %}images/icons/{{ value }}.png"
 								width="16" height="16" alt="">
@@ -48,7 +58,7 @@
 		{% for button, apps, label, tooltip, icon, description, folder in button_data %}
 			<li class="button-item" id="{{ button }}-list-item">
 				<label for="{{ button }}-checkbox">
-					<input type="checkbox" class="button-checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
+					<input type="checkbox" {% if button in buttons %}checked="checked" {% endif %}class="button-checkbox" id="{{ button }}-checkbox" name="button" value="{{ button }}">
 					{% for app in apps %}
 						<img src="{% get_static_prefix %}images/icons/{{ app }}.png" width="16" height="16" alt="">
 					{% endfor %}
@@ -84,7 +94,7 @@
 		<legend>Settings</legend>
         <div class="form-field">
             <label>
-                <input type="checkbox" name="add-to-toolbar" checked="checked" value="true">
+                <input type="checkbox" name="add-to-toolbar" value="true"{% if add_to_toolbar or not buttons %} checked="checked"{% endif %}>
                     Automatically add buttons to main toolbar.
             </label>
             <p>
@@ -93,7 +103,7 @@
         </div>
 		<div class="form-field">
 			<label>
-				<input type="checkbox" name="offer-download" value="true">
+				<input type="checkbox" name="offer-download" value="true"{% if offer_download %} checked="checked"{% endif %}>
 					Offer for download instead of installing.
 			</label>
 			<p>
@@ -104,7 +114,7 @@
 		</div>
 		<div class="form-field">
 			<label>
-				<input type="checkbox" name="create-toolbars" value="true">
+				<input type="checkbox" name="create-toolbars" value="true"{% if create_toolbars %} checked="checked"{% endif %}>
 					Create toolbars for selected buttons.
 			</label>
 			<p>
@@ -114,7 +124,7 @@
 		</div>
 		<div class="form-field">
 			<label>
-				<input type="checkbox" name="create-menu" value="true">
+				<input type="checkbox" name="create-menu" value="true"{% if create_menu %} checked="checked"{% endif %}>
 					Create a menu of selected buttons.
 			</label>
 			<p>
@@ -137,79 +147,44 @@
 			</p>
 		</div>
 		{% endcomment %}
-		<input type="hidden" name="locale" value="{{ locale }}">
-		<input type="hidden" name="application" value="{{ applications|join:"," }}">
 	</fieldset>
     <fieldset>
         <legend>Icon Sizes</legend>
         <div class="form-field">
             <div>
             <label>
-                <input type="radio" name="icon-size" checked="checked" value="standard">
+                <input type="radio" name="icon-size" value="standard"{% if icon_size == 'standard' %} checked="checked"{% endif %}>
                     Standard: Use the standard 16x16 icons as the small size and 24x24 as the larger.
             </label>
             </div>
             <div>
             <label>
-                <input type="radio" name="icon-size" value="large">
+                <input type="radio" name="icon-size" value="large"{% if icon_size == 'large' %} checked="checked"{% endif %}>
                     Large: Use 24x24 icons as the small size and 32x32 as the larger.
             </label>
             </div>
             <div>
             <label>
-                <input type="radio" name="icon-size" value="jumbo">
+                <input type="radio" name="icon-size" value="jumbo"{% if icon_size == 'jumbo' %} checked="checked"{% endif %}>
                     Jumbo: Use 32x32 icons as the small size and 48x48 as the larger.
             </label>
             </div>
         </div>
-        <input type="submit" name="create-submit" value="Submit">
     </fieldset>
-
-    {% comment %}
 	<fieldset>
-		<legend>Advanced Settings</legend>
-		<div class="form-field">
-			<label>
-				<input type="checkbox" name="include-all-locales" value="true">
-					Include all available locales.
-			</label>
-			<p>
-				By default only the locale selected is included.  Check this and all
-				locales will be included.
-			</p>
-		</div>
-
-		<div class="form-field">
-			<label>
-				Version
-				<select name="version">
-					{% for version, label in versions %}
-						<option{% if version == current_version %} selected{% endif %} value="{{ version }}">{{ label }}</option>
-					{% endfor %}
-				</select>
-			</label>
-			<p>
-				Older versions of the extension can be used for building the extension.'
-				Some buttons maybe missing in older versions, if selected they will be left out.
-			</p>
-		</div>
-		<div class="form-filed">
-			<label>
-				Update Stream
-				<select name="update-stream">
-					<option value="none">None</option>
-					<option selected value="stable">Stable</option>
-					<option value="unstable">Unstable</option>
-				</select>
-			</label>
-			<p>
-				The extension can follow several options for when it gets updated.
-				Stable will follow the same releases as the main extension.  Unstable
-				will follow the code repository directly.
-			</p>
-		</div>
-		<input type="submit" name="create-submit" value="Submit">
+        <legend>Submit</legend>
+		<button style="font-size:1.5em" type="submit" id="create-submit" name="create-submit"><img alt="" src="/static/images/pastel-svg/32/drive-down.png" height="32" width="32"> Download</button>
 	</fieldset>
-    {% endcomment %}
+
 </form>
+<fieldset id="share-filedset" style="display:none">
+    <legend>Share</legend>
+    <label>
+        Share URL
+        <input type="text" size="50" onclick="this.select();" id="share-url" />
+    </label>
+    <p>
+        If you should like to share the the extension you have created, you can use the above link.
+    </p>
+</fieldset>
 {% endblock %}
