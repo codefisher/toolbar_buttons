@@ -1,0 +1,5 @@
+<toolbarbutton 
+	id="tb-delete-session-cookies"
+	label="&tb-delete-session-cookies.label;"
+	tooltiptext="&tb-delete-session-cookies.tooltip;"
+	oncommand="toolbar_buttons.deleteSessionCookie();"/>

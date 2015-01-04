@@ -1,0 +1,5 @@
+<toolbarbutton 
+	id="tb-sidebar"
+	label="&tb-sidebar.label;"
+	tooltiptext="&tb-sidebar.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'viewSidebarMenuMenu');"/>

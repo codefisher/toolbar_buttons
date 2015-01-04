@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-paste-as-quote"
 	label="&tb-paste-as-quote.label;"
 	tooltiptext="&tb-paste-as-quote.tooltip;"

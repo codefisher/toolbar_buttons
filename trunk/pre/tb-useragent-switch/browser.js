@@ -22,34 +22,34 @@ openUserAgentMenu: function(event, aMenu) {
 	} catch(e) {}
 	defaultItem.setAttribute('checked', currentValue == '');
 	
-	let stmt = toolbar_buttons.database_connection.createStatement("SELECT rowid, name, value FROM user_agent_strings ORDER BY name");
+	let stmt = toolbar_buttons.database_connection.createAsyncStatement("SELECT rowid, name, value FROM user_agent_strings ORDER BY name");
 
 	stmt.executeAsync({
-	  handleResult: function(aResultSet) {
-	    for (let row = aResultSet.getNextRow();
-	         row;
-	         row = aResultSet.getNextRow()) {
-	
-			let name = row.getResultByName("name");
-			let value = row.getResultByName("value");
-		  	var menuItem = document.createElement("menuitem");
-		  	menuItem.setAttribute("label", name);
-		  	menuItem.setAttribute("type", "checkbox");
-			if(currentValue == value) {
-				menuItem.setAttribute('checked', true);
+		handleResult: function(aResultSet) {
+			for (let row = aResultSet.getNextRow();
+				row;
+				row = aResultSet.getNextRow()) {
+		
+				let name = row.getResultByName("name");
+				let value = row.getResultByName("value");
+				var menuItem = document.createElement("menuitem");
+				menuItem.setAttribute("label", name);
+				menuItem.setAttribute("type", "checkbox");
+				if(currentValue == value) {
+					menuItem.setAttribute('checked', true);
+				}
+				menuItem.userAgent = value;
+				menuItem.generated = true;
+				menuItem.addEventListener("command", toolbar_buttons.setUserAgent, false);
+				aMenu.insertBefore(menuItem, sep);
 			}
-		  	menuItem.userAgent = value;
-		  	menuItem.generated = true;
-			menuItem.addEventListener("command", toolbar_buttons.setUserAgent, false);
-			aMenu.insertBefore(menuItem, sep);
-	    }
-	  },
+		},
 	
-	  handleError: function(aError) {
-	  },
-	
-	  handleCompletion: function(aReason) {
-	  }
+		handleError: function(aError) {
+		},
+		
+		handleCompletion: function(aReason) {
+		}
 	});
 	stmt.finalize();
 }
@@ -64,7 +64,7 @@ resetUserAgentString: function() {
 
 openUserAgentSettings: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-useragent-switch.label");
 	var arguments = {
 		title: title,
@@ -85,7 +85,7 @@ setDefaultUserAgents: function() {
 	]
 	let file = FileUtils.getFile("ProfD", ["toolbar_buttons.sqlite"]);
 	toolbar_buttons['database_connection'] = Services.storage.openDatabase(file);
-	let stmt = toolbar_buttons.database_connection.createStatement("INSERT INTO user_agent_strings (name, value) VALUES(:name, :value)");
+	let stmt = toolbar_buttons.database_connection.createAsyncStatement("INSERT INTO user_agent_strings (name, value) VALUES(:name, :value)");
 	let params = stmt.newBindingParamsArray();
 	for(var i in defaultData) {
 		let bp = params.newBindingParams();

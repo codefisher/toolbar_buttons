@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-web-developer-menu"
 	label="&tb-web-developer-menu.label;"
 	tooltiptext="&tb-web-developer-menu.tooltip;"

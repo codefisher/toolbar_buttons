@@ -1,7 +1,6 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-developer-toolbar"
 	label="&tb-developer-toolbar.label;"
 	tooltiptext="&tb-developer-toolbar.tooltip;"
 	key="key_devToolbar"
-	oncommand="DeveloperToolbar.toggle();"/>
+	oncommand="window.DeveloperToolbar.toggle();"/>

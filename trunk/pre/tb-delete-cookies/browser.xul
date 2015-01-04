@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-delete-cookies"
 	label="&tb-delete-cookies.label;"
 	tooltiptext="&tb-delete-cookies.tooltip;"

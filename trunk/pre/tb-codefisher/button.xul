@@ -1,5 +1,4 @@
 <toolbarbutton 
-    class="toolbarbutton-1"
     id="tb-codefisher"
 	type="menu-button"
     label="&tb-codefisher.label;"

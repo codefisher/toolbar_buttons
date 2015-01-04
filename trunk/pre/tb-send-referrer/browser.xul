@@ -1,0 +1,5 @@
+<toolbarbutton 
+	id="tb-send-referrer"
+	label="&tb-send-referrer.label;"
+	tooltiptext="&tb-send-referrer.tooltip;"
+	oncommand="toolbar_buttons.toggleSendReferrer(this);"/>
