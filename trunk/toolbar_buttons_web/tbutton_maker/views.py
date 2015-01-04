@@ -245,7 +245,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
         found.add(item["name"])
         count = item["downloads"]
         total += count
-        apps = list(applications[item["name"]])
+        apps = list(applications.get(item["name"], ()))
         apps.sort()
         item.update({
             "applications": apps,
@@ -257,7 +257,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
             "folder": buttons_obj.get_source_folder(item["name"]),
         })
     for name in set(buttons_obj.buttons()).difference(found):
-        apps = list(applications[name])
+        apps = list(applications.get(name, ()))
         apps.sort()
         stats.append({
                "name": name,
