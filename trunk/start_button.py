@@ -23,7 +23,6 @@ def main():
     strings.close()
     xul = open(os.path.join("pre", button_id, "%s.xul" % files[app]), 'w+')
     xul.write("""<toolbarbutton 
-	class="toolbarbutton-1"
 	id="%s"
 	label="&%s.label;"
 	tooltiptext="&%s.tooltip;"

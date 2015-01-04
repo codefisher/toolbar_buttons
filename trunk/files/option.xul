@@ -8,7 +8,6 @@
 <prefwindow id="tbutton-options"  
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
 	persist="screenX screenY" title="&options.window.title;" >
-	<script type="application/x-javascript" src="chrome://{{chrome-name}}/content/options.js"/>
 	{{javascript}}
 	{{options}}
 </prefwindow>

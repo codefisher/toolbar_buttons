@@ -66,20 +66,36 @@ def build_extension(settings, output=None, project_root=None):
         xpi.writestr(os.path.join("chrome", "content", file + ".js"),
                 data.replace("{{uuid}}", settings.get("extension_id")))
 
-    for file, data in buttons.get_xul_files().iteritems():
-        xpi.writestr(os.path.join("chrome", "content", file + ".xul"), bytes_string(data))
+    if settings.get('restartless'):
+        for file, data in buttons.get_jsm_files().iteritems():
+            xpi.writestr(os.path.join("chrome", "content", file + ".jsm"), bytes_string(data))
+    else:
+        for file, data in buttons.get_xul_files().iteritems():
+            xpi.writestr(os.path.join("chrome", "content", file + ".xul"), bytes_string(data)) 
 
-    locale_prefix = settings.get("locale_file_prefix")
-    dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
+    locale_prefix = settings.get("locale_file_prefix")    
+    if settings.get('restartless'):
+        dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False, format="%s=%s")
+        for locale, data in dtd_data.iteritems():
+            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton_labels.properties" % locale_prefix), data)
+    else:
+        dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
+        for locale, data in dtd_data.iteritems():
+            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), data)
     locales_inuse = set(dtd_data.keys())
-    for locale, data in dtd_data.iteritems():
-        xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), data)
+    extra_strings = button_locales.get_dtd_data(buttons.get_extra_locale_strings(), buttons)
+    if extra_strings[settings.get("default_locale")]:
+        for locale, data in extra_strings.iteritems():
+            if locale in locales_inuse:
+                xpi.writestr(os.path.join("chrome", "locale", locale, "%sfiles.dtd" % locale_prefix), bytes_string(data))
     if settings.get("include_local_meta"):
         for locale, (path, data) in button_locales.get_meta().iteritems():
             xpi.writestr(os.path.join("chrome", "locale", locale, "meta.dtd"), data)
-    for locale, data in button_locales.get_properties_data(buttons.get_properties_strings(), buttons).iteritems():
-        if locale in locales_inuse:
-            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.properties" % locale_prefix), data)
+    properties_data = button_locales.get_properties_data(buttons.get_properties_strings(), buttons)
+    if properties_data[settings.get("default_locale")]:
+        for locale, data in properties_data.iteritems():
+            if locale in locales_inuse:
+                xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.properties" % locale_prefix), data)
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
             xpi.writestr(os.path.join("chrome", "content", "files", name), 
@@ -129,12 +145,16 @@ def build_extension(settings, output=None, project_root=None):
     else:
         xpi.write(settings.get("icon"), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
-    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))   
-    #xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons))
+    xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
+    if settings.get('restartless'):
+        xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons, has_resources))
     xpi.write(settings.get("licence"), "LICENCE")
     defaults =  buttons.get_defaults()
     if defaults:
-        xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)
+        if settings.get('restartless'):
+            xpi.writestr(os.path.join("chrome", "content", "defaultprefs.js"), defaults)   
+        else:
+            xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)        
     xpi.close()
     if not output and settings.get("profile_folder"):
         with open(xpi_file_name, "r") as xpi_fp:
@@ -148,11 +168,30 @@ def build_extension(settings, output=None, project_root=None):
                     print("Failed to write extension to profile folder")
     return buttons, button_locales
 
-def create_bootstrap(settings, buttons):
+def create_bootstrap(settings, buttons, has_resources):
+    values = {"chrome": settings.get("chrome_name")}
+    loaders = []
+    resource = ""
+    if has_resources:
+        resource = "createResource('%(chrome)s', 'chrome://%(chrome)s/content/resources/');" % values
+    install = ""
+    for file_name in buttons.get_file_names():
+        values["file"] = file_name
+        for overlay in settings.get("files_to_overlay").get(file_name, ()):
+            values["overlay"] = overlay
+            loaders.append("(uri == '%(overlay)s') {\n\t\t\t"
+                         "module = Cu.import('chrome://%(chrome)s/content/%(file)s.jsm');\n\t\t}" % values)            
     template = open(os.path.join(settings.get("project_root"), "files", "bootstrap.js") ,"r").read()
-    return (template.replace("{{pref_root}}", settings.get("pref_root"))
-                    .replace("{{prefs}}", buttons.get_defaults(True))
-    ) 
+    if settings.get("show_updated_prompt"):
+        install = (open(os.path.join(settings.get("project_root"), "files", "install.js") ,"r").read()
+                            .replace("{{homepage_url}}", settings.get("homepage"))
+                            .replace("{{version}}", settings.get("version"))
+                            .replace("{{pref-root}}", settings.get("pref_root"))
+                            .replace("{{current_version_pref}}", settings.get("current_version_pref")))
+    return (template.replace("{{chrome-name}}", settings.get("chrome_name"))
+                    .replace("{{resource}}", resource)
+                    .replace("{{install}}", install)
+                    .replace("{{loaders}}", "if" + " else if".join(loaders)))
 
 def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines = []
@@ -161,7 +200,8 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
     lines.append("content\t%(chrome)s\tchrome/content/" % values)
     lines.append("skin\t%(chrome)s\tclassic/1.0\t"
                  "chrome/skin/" % values)
-    lines.append("style\tchrome://global/content/customizeToolbar.xul"
+    if not settings.get('restartless'):
+        lines.append("style\tchrome://global/content/customizeToolbar.xul"
                  "\tchrome://%(chrome)s/skin/button.css" % values)
 
     lines.append("content\t%(chrome)s-root\t./" % values)
@@ -169,7 +209,7 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
 
     lines.append("override\tchrome://%(chrome)s/skin/icon.png\t"
                  "chrome://%(chrome)s-root/skin/icon.png" % values)
-    if has_resources:
+    if has_resources and not settings.get('restartless'):
         lines.append("resource\t%(chrome)s\tchrome://%(chrome)s/content/resources/" % values)
     for option in options:
         values["application"] = option
@@ -179,12 +219,13 @@ def create_manifest(settings, locales, buttons, has_resources, options=[]):
                          "chrome://%(chrome)s/content/%(application)s"
                          "-options.xul\tapplication=%(id)s" % values)
 
-    for file_name in buttons.get_file_names():
-        values["file"] = file_name
-        for overlay in settings.get("files_to_overlay").get(file_name, ()):
-            values["overlay"] = overlay
-            lines.append("overlay\t%(overlay)s\t"
-                         "chrome://%(chrome)s/content/%(file)s.xul" % values)
+    if not settings.get('restartless'):
+        for file_name in buttons.get_file_names():
+            values["file"] = file_name
+            for overlay in settings.get("files_to_overlay").get(file_name, ()):
+                values["overlay"] = overlay
+                lines.append("overlay\t%(overlay)s\t"
+                             "chrome://%(chrome)s/content/%(file)s.xul" % values)
     manifest = buttons.get_manifest()
     if manifest:
         lines.append(manifest % values)
@@ -202,6 +243,10 @@ def create_install(settings, applications, options=[]):
                        "</em:optionsURL>\n" % settings.get("chrome_name"))
     else:
         options_url = ""
+    if settings.get("restartless"):
+        bootstrap = "<em:bootstrap>true</em:bootstrap>"
+    else:
+        bootstrap = ""
     if settings.get("update_url"):
         update_url = bytes_string("\t\t<em:updateURL>%s</em:updateURL>\n" % settings.get("update_url"))
     else:
@@ -227,6 +272,7 @@ def create_install(settings, applications, options=[]):
                     .replace("{{chrome-name}}", settings.get("chrome_name"))
                     .replace("{{homepageURL}}", settings.get("homepage"))
                     .replace("{{optionsURL}}", options_url)
+                    .replace("{{bootstrap}}", bootstrap)
                     .replace("{{updateUrl}}", update_url)
                     .replace("{{applications}}",
                              "".join(supported_applications))

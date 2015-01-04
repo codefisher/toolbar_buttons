@@ -110,11 +110,13 @@ class Locale(object):
                     return value
         return None
 
-    def get_dtd_data(self, strings, button=None, untranslated=True):
+    def get_dtd_data(self, strings, button=None, untranslated=True, format=None):
         """Gets a set of files with all the strings wanted
 
         get_dtd_data(list<str>) -> dict<str: str>
         """
+        if not format:
+            format = """<!ENTITY %s "%s">"""
         default_locale = self._settings.get("default_locale")
         result = {}
         strings = list(strings)
@@ -136,22 +138,22 @@ class Locale(object):
                                         self._dtd[default_locale]
                                         .get(string, button.get_string(string, locale) if button else ""))
                     if value:
-                        dtd_file.append("""<!ENTITY %s "%s">""" % (string, value))
+                        dtd_file.append(format % (string, value))
                     else:
                         print string, value, locale
                 elif self._missing_strings == "empty":
-                    dtd_file.append("""<!ENTITY %s "%s">"""
+                    dtd_file.append(format
                              % (string, self._dtd[locale].get(string, 
                                     button.get_string(string, locale) if button and locale == default_locale else "")))
                 elif self._missing_strings == "skip" or self._missing_strings == "search":
                     if string in self._dtd[locale]:
-                        dtd_file.append("""<!ENTITY %s "%s">"""  % (string, self._dtd[locale][string]))
+                        dtd_file.append(format  % (string, self._dtd[locale][string]))
                     elif button and locale == default_locale and button.get_string(string, locale):
-                        dtd_file.append("""<!ENTITY %s "%s">""" % (string, button.get_string(string, locale)))
+                        dtd_file.append(format % (string, button.get_string(string, locale)))
                     elif self._missing_strings == "search":
                         value = self.find_string(string, locale)
                         if value:
-                            dtd_file.append("""<!ENTITY %s "%s">""" % (string, value))
+                            dtd_file.append(format % (string, value))
                     
             if count or untranslated:
                 result[locale] = "\n".join(dtd_file)

@@ -1,18 +1,16 @@
 restartMozilla: function() {
 	// aks the user if they realy do want to restart
-	if (toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref(
-			"restart") != true) {
+	if (toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("restart") !== true) {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var restartQuestion = stringBundle.GetStringFromName("restart-question");
 		var dontAsk = stringBundle.GetStringFromName("dont-ask");
 		var restartTitle = stringBundle.GetStringFromName("restart");
 		var check = {value: false};
 		var result = toolbar_buttons.interfaces.PromptService.confirmCheck(null,
 				restartTitle, restartQuestion, dontAsk, check);
-		toolbar_buttons.interfaces.ExtensionPrefBranch.setBoolPref(
-				"restart", check.value);
-		if (result == false) {
+		toolbar_buttons.interfaces.ExtensionPrefBranch.setBoolPref("restart", check.value);
+		if (result === false) {
 			return;
 		}
 	}

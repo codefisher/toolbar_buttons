@@ -6,6 +6,7 @@ import hashlib
 from collections import defaultdict
 import grayscale
 from util import get_pref_folders
+import xml.etree.ElementTree as ET
 try:
     from PIL import Image
 except ImportError:
@@ -32,7 +33,7 @@ class SimpleButton():
             Image
         except NameError:
             self._settings["merge_images"] = False
-        if applications == "all":
+        if applications:
             self._applications = applications
         else:
             self._applications = self._settings["applications_data"].keys()
@@ -149,6 +150,10 @@ class SimpleButton():
         return list(self._button_names)
 
     def get_string(self, name, locale=None):
+        if name[-4:] == ".key":
+            return self._button_keys.get(name[:-4])[0]
+        elif name[-9:] == ".modifier":
+            return self._button_keys.get(name[:-9])[1]
         return self._strings.get(name, "")
 
     def get_icons(self, button):
@@ -182,7 +187,7 @@ class Button(SimpleButton):
 
         SimpleButton.__init__(self, folders, buttons, settings, applications)
 
-        self._button_js = defaultdict(list)
+        self._button_js = defaultdict(dict)
         self._properties_strings = set()
         self._preferences = {}
         self._button_options = {}
@@ -196,11 +201,13 @@ class Button(SimpleButton):
         self._button_style = {}
         self._option_titles = set()
         self._option_icons = set()
-        self._modules = set()
+        self._modules = defaultdict(set)
+        self._button_js_setup = defaultdict(dict)
+        self._button_commands = dict()
 
         # we always want these file
-        self._button_js["loader"].append("")
-        self._button_js["button"].append("")
+        self._button_js["loader"]["_"] = ""
+        self._button_js["button"]["_"] = ""
 
         for folder, button, files in self._info:
             for file_name in (self._window_files + self._app_files):
@@ -210,10 +217,10 @@ class Button(SimpleButton):
                                    ).intersection(self._applications)):
                     if js_file in files:
                         with open(os.path.join(folder, js_file)) as js:
-                            self._button_js[file_name].append(js.read())
+                            self._button_js[file_name][button] = js.read()
                     if self._settings.get("extended_buttons") and ("extended_%s" % js_file) in files:
                         with open(os.path.join(folder, "extended_%s" % js_file)) as js:
-                            self._button_js[file_name].append(js.read())
+                            self._button_js[file_name][button] = js.read()
 
             if button in self._settings.get("keyboard_custom_keys"):
                 self._button_keys[button].update(self._settings.get("keyboard_custom_keys")[button])
@@ -259,7 +266,7 @@ class Button(SimpleButton):
                     self._button_style[button] = style.read()
             if "modules" in files:
                 with open(os.path.join(folder, "modules"), "r") as modules:
-                    self._modules.update(line.strip() for line in modules.readlines())
+                    self._modules[button].update(line.strip() for line in modules.readlines())
                     
     def get_button_xul(self):
         return self._button_xul
@@ -296,11 +303,24 @@ class Button(SimpleButton):
                              self._settings.get("chrome_name")))
         else:
             javascript = ""
-        with open( os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
+        with open(os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
             overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                        .replace("{{locale_file_prefix}}", self._settings.get("locale_file_prefix"))
                        .replace("{{javascript}}", javascript))
+        if self._settings.get("create_menu"):
+            with open(os.path.join(self._settings.get("project_root"), "files", "showmenu-option.xul"), "r") as menu_option_file:
+                menu_option_tempate = menu_option_file.read() 
+            if self._settings.get("as_submenu"):
+                menu_id, menu_label = self._settings.get("menu_meta")
+                self._button_options[menu_id] = ("tb-show-a-menu.option.title:menu.png", 
+                        menu_option_tempate.replace("{{menu_id}}", menu_id).replace("{{menu_label}}", menu_label))
+                self._button_applications[menu_id] = self._applications
+            else:
+                for button in self._buttons:
+                    self._button_options["%s-menu-item" % button] = ("tb-show-a-menu.option.title:menu.png", 
+                        menu_option_tempate.replace("{{menu_id}}", "%s-menu-item" % button).replace("{{menu_label}}", "%s.label" % button))
+                    self._button_applications["%s-menu-item" % button] = self._applications
         files = defaultdict(dict)
         def append(files, application, first, data):
             title, _, icon = first.strip().partition(':')
@@ -365,9 +385,15 @@ class Button(SimpleButton):
         for buttons in self._button_xul.itervalues():
             for button in buttons.itervalues():
                 strings.extend(locale_match.findall(button))
-        for key, modifies in self._button_keys.itervalues():
-            strings.extend(locale_match.findall(key))
-            strings.extend(locale_match.findall(modifies))
+        for button in self._button_keys.keys():
+            strings.extend(["%s.key" % button, "%s.modifier" % button])
+        strings = list(set(strings))
+        strings.sort()
+        return strings
+    
+    def get_extra_locale_strings(self):
+        locale_match = re.compile("&([a-zA-Z0-9.-]*);")
+        strings = []
         for file_name in self._extra_files.itervalues():
             with open(file_name, 'r') as xul:
                 strings.extend(locale_match.findall(xul.read()))
@@ -391,17 +417,22 @@ class Button(SimpleButton):
         settings = []
         if self._settings.get("translate_description"):
             settings.append(("extensions.%s.description" % self._settings.get("extension_id"), 
-                         """'chrome://%s/locale/button.properties'""" % self._settings.get("chrome_name")))
+                         """'chrome://%s/locale/%sbutton.properties'""" % (self._settings.get("chrome_name"), self._settings.get("locale_file_prefix"))))
         if self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar"):
             settings.append(("%s%s" % (self._settings.get("pref_root"), self._settings.get("current_version_pref")), "''"))
+        if self._settings.get("create_menu"):
+            if self._settings.get("as_submenu"):
+                menu_id, menu_label = self._settings.get("menu_meta")
+                settings.append(("%sshowamenu.%s" % (self._settings.get("pref_root"), menu_id), self._settings.get("default_show_menu_pref")))
+            else:
+                for button in self._buttons:
+                    settings.append(("%sshowamenu.%s-menu-item" % (self._settings.get("pref_root"), button), self._settings.get("default_show_menu_pref")))
         for name, value in self._preferences.iteritems():
             settings.append(("%s%s" % (self._settings.get("pref_root"), name), value))
         if format_dict:
-            result = ["%s: %s," % setting for setting in settings]
-            return "\n\t".join(result)
+            return "\n\t".join("%s: %s," % setting for setting in settings)
         else:
-            result = ["pref('%s', %s);" % setting for setting in settings]
-            return "\n".join(result)
+            return "\n".join("pref('%s', %s);" % setting for setting in settings)
     
     def get_icon_size(self):
         small, large = self._settings.get("icon_size")
@@ -573,7 +604,6 @@ class Button(SimpleButton):
 
         multi_line_replace = re.compile("\n{2,}")
         js_files = defaultdict(str)
-        js_files_end = {}
         js_includes = set()
         js_options_include = set()
         js_imports = set()
@@ -585,9 +615,10 @@ class Button(SimpleButton):
         if self._settings.get("create_menu"):
             js_imports.add("sortMenu")
             js_imports.add("handelMenuLoaders")
+            js_imports.add("setUpMenuShower")
         
         for file_name, js in self._button_js.iteritems():
-            js_file = "\n".join(js)
+            js_file = "\n".join(js.values())
             js_includes.update(include_match.findall(js_file))
             js_file = include_match_replace.sub("", js_file)
             js_functions = function_match.findall(js_file)
@@ -596,8 +627,12 @@ class Button(SimpleButton):
                 js_functions.sort(key=lambda x: x.lower())
                 js_files[file_name] = "\t" + "\n\t".join(
                         ",\n".join(js_functions).split("\n"))
-            js_files_end[file_name] = multi_line_replace.sub("\n",
-                                        function_match.sub("", js_file).strip())
+            for button_id, value in js.items():
+                value = multi_line_replace.sub("\n", function_match.sub("", value).strip())
+                if value:
+                    self._button_js_setup[file_name][button_id] = value
+            if self._settings.get("create_menu"):
+                self._button_js_setup[file_name]["_menu_hider"] = "toolbar_buttons.setUpMenuShower();"
         shared = []
         lib_folder = os.path.join(self._settings.get("project_root"), "files", "lib")
         for file_name in os.listdir(lib_folder):
@@ -624,13 +659,17 @@ class Button(SimpleButton):
             js_files["button"] += ",\n\t" + js_extra_file
         elif js_extra_file:
             js_files["button"] += js_extra_file
-        for file_name in js_files_end:
+        for file_name, data in self._button_js_setup.items():
+            if not self._settings.get("restartless"):
+                end = """window.addEventListener("load", function toolbarButtonsOnLoad() {\n\twindow.removeEventListener("load", toolbarButtonsOnLoad, false);\n\t%s\n}, false);""" % "\n\t".join(data.values())
+            else:
+                end = ""
             if js_files.get(file_name):
                 js_files[file_name] = (
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n%s"
-                     % (js_files[file_name].strip(), js_files_end[file_name]))
-            else:
-                js_files[file_name] = js_files_end[file_name]
+                     % (js_files[file_name].strip(), end))
+            elif end:
+                js_files[file_name] = end
         if self._button_options_js:
             extra_javascript = []
             for button, value in self._button_options_js.iteritems():
@@ -648,7 +687,7 @@ class Button(SimpleButton):
             js_files["option"] = (
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
-        if self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar"):
+        if (self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar")) and not self._settings.get('restartless'):
             with open(os.path.join(self._settings.get("project_root"), "files", "update.js"), "r") as update_js:
                 show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.get("extension_id"))
@@ -656,6 +695,8 @@ class Button(SimpleButton):
                                     self._settings.get("homepage"))
                            .replace("{{version}}",
                                     self._settings.get("version"))
+                           .replace("{{chrome_name}}",
+                                    self._settings.get("chrome_name"))
                            .replace("{{current_version_pref}}",
                                     self._settings.get("current_version_pref"))
                            )
@@ -689,13 +730,13 @@ class Button(SimpleButton):
                                      % (",\n\t".join(lines).replace("{{pref-root}}", self._settings.get("pref_root")), js_files[js_file]))
             js_files[js_file] = js_files[js_file].replace("{{chrome_name}}",
                     self._settings.get("chrome_name")).replace("{{pref_root}}",
-                    self._settings.get("pref_root"))
+                    self._settings.get("pref_root")).replace("{{locale_file_prefix}}",
+                    self._settings.get("locale_file_prefix"))
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
-            modules = "\n" + "\n".join("Cu.import('%s');" % mod for mod in self._modules if mod)
             self._has_javascript = True
             with open(os.path.join(self._settings.get("project_root"), "files", "loader.js"), "r") as loader:
-                js_files["loader"] = loader.read() + modules
+                js_files["loader"] = loader.read()
         return js_files
 
     def get_properties_strings(self):
@@ -712,14 +753,28 @@ class Button(SimpleButton):
         for button, (key, modifier) in self._button_keys.iteritems():
             attr = 'key' if len(key) == 1 else "keycode"
             if application in self._button_applications[button]:
-                if self._settings.get("create_menu"):
-                    keys.append("""<key %s="%s" modifiers="%s" id="%s-key" command="%s-menu-item" />""" % (attr, key, modifier, button, button))
+                mod = "" if not modifier else 'modifiers="&%s.modifier;" ' % button
+                if self._button_commands.get(button):
+                    keys.append("""<key %s="&%s.key;" %sid="%s-key" oncommand="%s" />""" % (attr, button, mod, button, self._button_commands.get(button)))
                 else:
-                    keys.append("""<key %s="%s" modifiers="%s" id="%s-key" command="%s" />""" % (attr, key, modifier, button, button))
+                    if self._settings.get("create_menu"):
+                        keys.append("""<key %s="&%s.key;" %sid="%s-key" command="%s-menu-item" />""" % (attr, button, mod, button, button))
+                    else:
+                        keys.append("""<key %s="&%s.key;" %sid="%s-key" command="%s" />""" % (attr, button, mod, button, button))
         if keys:
             return """\n <keyset id="mainKeyset">\n\t%s\n </keyset>""" % "\n\t".join(keys)
         else:
             return ""
+        
+    def jsm_keyboard_shortcuts(self, application):
+        keys = self.get_keyboard_shortcuts(application)
+        if keys:
+            statements, count = self._create_dom(ET.fromstring(re.sub(r'&([^;]+);', r'\1', keys)), doc="document")
+            statements.pop(-1)
+            statements.insert(0, "var keyset_0 = document.getElementById('mainKeyset');\n\tif(!keyset_0) {")
+            statements.insert(3, 'document.documentElement.appendChild(keyset_0);\n\t}')
+            return "\n\t".join(statements)
+        return ''
         
     def _list_has_str(self, lst, text):
         for item in lst:
@@ -732,6 +787,7 @@ class Button(SimpleButton):
             return ""
         data = []
         menu_name, insert_after = self._settings.get("file_to_menu").get(file_name)
+        as_submenu = self._settings.get("as_submenu")
         simple_button_re = re.compile(r"^<toolbarbutton(.*)/>$", re.DOTALL)
         menu_button_re = re.compile(r"^<toolbarbutton(.*?)>(.*)</toolbarbutton>", re.DOTALL)
         attr_match = re.compile(r'''\b([\w\-]+)=("[^"]*")''', re.DOTALL)
@@ -742,71 +798,325 @@ class Button(SimpleButton):
                 attr_data = attr_data_match[0]
             else:
                 attr_data, menu = menu_button_re.findall(xul)[0]
-            attrs = [
-                 ("%s=%s" % (name, value.replace("toolbarbutton-1", "menu-iconic menuitem-iconic").strip()))
-                        if name == "class" else ("%s=%s" % (name, value))
-                 for name, value in attr_match.findall(attr_data)
-                 if name not in ("id", "tooltiptext", "class")
-                    or (name == "class" and value != "toolbarbutton-1")]
-            if self._list_has_str(attrs, 'toolbar_buttons.showAMenu'):
+            attribs = dict(attr_match.findall(attr_data))
+            attrs = [("%s=%s" % (name, value))
+                 for name, value in attribs.items()
+                 if name not in ("id", "tooltiptext", "class")]
+            attrs.append('class="menu-iconic menuitem-iconic %s"' % attribs.get("class", '').strip('"'))
+            if self._list_has_str(attrs, 'toolbar_buttons.showAMenu') and not menu:
+                attrs.append('showamenu="true"')
                 menu = "<menupopup />"
             attrs.append('id="%s-menu-item"' % button_id)
             if self._settings.get("use_keyboard_shortcuts") and button_id in self._button_keys:
                 attrs.append('key="%s-key"' % button_id)
+            if not as_submenu:
+                attrs.append('insertafter="%s"' % insert_after)
             if menu:
-                data.append("<menu %s>%s</menu>" % ("\n\t\t".join(attrs), menu))
+                if attribs.get('type') == '"menu-button"':
+                    copy_attr = list(attrs)
+                    if not as_submenu:
+                        copy_attr.pop(-1)
+                    menuitem = "\n\t\t".join(copy_attr)
+                    menu = re.sub(r'(<menupopup[^>]*[^/]>)', r"\1<menuitem %s/><menuseparator />" % menuitem, menu)
+                    menu = re.sub(r'(<menupopup[^>]*)/>', r"\1><menuitem %s/><menuseparator /></menupopup>" % menuitem, menu)
+                    data.append("<menu %s>%s</menu>" % ("\n\t\t".join(attrs), menu))
+                else:
+                    data.append("<menu %s>%s</menu>" % ("\n\t\t".join(attrs), menu))
             else:
                 data.append("<menuitem %s/>" % "\n\t\t".join(attrs))
         if not data:
             return ""
-        return """\n<menu id="%s"><menu insertafter="%s" id="toolbar-buttons-menu" label="&tb-toolbar-buttons.menu;">\n\t<menupopup onpopupshowing="toolbar_buttons.sortMenu(event, this); toolbar_buttons.handelMenuLoaders(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, "\n\t".join(data))
+        if as_submenu:
+            menu_id, menu_label = self._settings.get("menu_meta")
+            return """\n<menu id="%s"><menu insertafter="%s" id="%s" label="&%s;">\n\t<menupopup sortable="true" onpopupshowing="toolbar_buttons.sortMenu(event, this); toolbar_buttons.handelMenuLoaders(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, menu_id, menu_label, "\n\t".join(data))
+        return """\n<menu id="%s">\n\t%s\n</menu>\n""" % (menu_name, "\n\t".join(data))
+
+    def _jsm_create_menu(self, file_name, buttons):
+        menu = self._create_menu(file_name, buttons)
+        if menu:
+            menu_id, menu_label = self._settings.get("menu_meta")
+            statements, count = self._create_dom(ET.fromstring(re.sub(r'&([^;]+);', r'\1', menu)), doc="document")
+            menu_name, insert_after = self._settings.get("file_to_menu").get(file_name)
+            if self._settings.get("as_submenu"):
+                statements[0] = """var menu_0 = document.getElementById('%s');
+    var menu_1 = document.getElementById('%s');
+    if(menu_1) {
+        var menupopup_2 = document.getElementById('%s-popup');
+    } else {""" % (menu_name, menu_id, menu_id)
+                statements.insert(9, """menu_1.appendChild(menupopup_2);
+    menu_0.insertBefore(menu_1, document.getElementById('%s').nextSibling);
+    }""" % insert_after)
+                statements.pop(-1)
+                statements.pop(-1)
+            else:
+                statements[0] = """var menu_0 = document.getElementById('%s');""" % menu_name
+            statements.pop(1)
+            statements.pop(-1)
+            return "\n\t".join(statements)
+        return ''
+
+    def _create_dom(self, root, top=None, count=0, doc='doc'):
+        num = count
+        statements = [
+            "var %s_%s = %s.createElement('%s');" % (root.tag, num, doc, root.tag),
+        ]
+        for key, value in sorted(root.attrib.items(), key=self._attr_key):
+            if key == 'id':
+                statements.append("%s_%s.id = '%s';" % ((root.tag, num, value)))
+            elif key in ('label', 'tooltiptext') or (root.tag == 'key' and key in ('key', 'keycode', 'modifiers')):
+                if " " in value:
+                    name, sep, other = value.partition(' ')
+                    other = " + '%s%s'" % (sep, other) if sep else ""
+                    value = "buttonStrings.get('%s')%s" % (name, other)
+                else:
+                    value = "buttonStrings.get('%s')" % value
+                statements.append("%s_%s.setAttribute('%s', %s);" % ((root.tag, num, key, value)))
+            elif key[0:2] == 'on' and not root.tag == 'key':
+                this = 'var aThis = event.target;\n\t\t\t\t' if 'this' in value else ''
+                statements.append("%s_%s.addEventListener('%s', function(event) {\n\t\t\t\t%s%s\n\t\t\t}, false);" % (root.tag, num, key[2:], this, value.replace('this', 'aThis')))
+            elif key == "insertafter":
+                pass
+            elif key == "showamenu":
+                statements.append("%s_%s.addEventListener('DOMMenuItemActive', toolbar_buttons.menuLoaderEvent, false);"  % (root.tag, num))
+                statements.append("%s_%s._handelMenuLoaders = true;"  % (root.tag, num))
+                statements.append("%s_%s.setAttribute('%s', '%s');" % ((root.tag, num, key, value)))
+            elif key == "toolbarname":
+                # this is just for our custom toolbars which are named "Toolbar Buttons 1" and the like
+                name, sep, other = value.partition(' ')
+                other = " + '%s%s'" % (sep, other) if sep else ""
+                value = "buttonStrings.get('%s')%s" % (name, other)
+                statements.append("%s_%s.setAttribute('%s', %s);" % ((root.tag, num, key, value)))
+            else:
+                statements.append('%s_%s.setAttribute("%s", "%s");' % ((root.tag, num, key, value)))
+        for node in root:
+            sub_nodes, count = self._create_dom(node, '%s_%s' % (root.tag, num), count+1, doc=doc)
+            statements.extend(sub_nodes)
+        if not top:
+            statements.append('return %s_%s;' % (root.tag, num))
+        else:
+            if "insertafter" in root.attrib:
+                statements.append("%s.insertBefore(%s_%s, %s.getElementById('%s').nextSibling);" % (top, root.tag, num, doc, root.attrib.get("insertafter")))
+            else:
+                statements.append('%s.appendChild(%s_%s);' % (top, root.tag, num))
+        return statements, count
+    
+    def _attr_key(self, attr):
+        order = ('id', 'defaultarea', 'type', 'label', 'tooltiptext', 'command', 'onclick', 'oncommand')
+        if attr[0].lower() in order:
+            return order.index(attr[0].lower())
+        return 100
+        
+    def _create_dom_button(self, button_id, xul, file_name, count, toolbar_ids):
+        add_to_main_toolbar = self._settings.get("add_to_main_toolbar")
+        root = ET.fromstring(xul)
+        statements, _ = self._create_dom(root)
+        data = {
+            "type": "'custom'",
+            "onBuild": 'function (doc) {\n\t\t\t%s\n\t\t}' % "\n\t\t\t".join(statements)
+        }
+        toolbar_max_count = self._settings.get("buttons_per_toolbar")
+        if add_to_main_toolbar and button_id in add_to_main_toolbar:
+            data['defaultArea'] = "'%s'" % self._settings.get('file_to_main_toolbar').get(file_name)
+        elif self._settings.get("put_button_on_toolbar"):
+            toolbar_index = count / toolbar_max_count
+            if len(toolbar_ids) > toolbar_index:
+                data['defaultArea'] = "'%s'" % toolbar_ids[toolbar_index]
+        for key, value in root.attrib.items():
+            if key in ('label', 'tooltiptext'):
+                if " " in value:
+                    name, sep, other = value.partition(' ')
+                    other = " + '%s%s'" % (sep, other) if sep else ""
+                    data[key] = "buttonStrings.get('%s')%s" % (name, other)
+                else:
+                    data[key] = "buttonStrings.get('%s')" % value
+            elif key == "id":
+                data[key] = "'%s'" % value
+            elif key == 'oncommand':
+                self._button_commands[button_id] = value
+        if self._button_js_setup.get(file_name, {}).get(button_id):
+            data["onCreated"] = "function(aNode){\n\t\t\t%s\n\t\t}" % self._button_js_setup[file_name][button_id]
+        items = sorted(data.items(), key=self._attr_key)
+        return "\tCustomizableUI.createWidget({\n\t\t%s\n\t});" % ",\n\t\t".join("%s: %s" % (key, value) for key, value in items)
+
+
+    def _create_jsm_button(self, file_name, toolbar_ids, count, button_id, attr):
+        toolbar_max_count = self._settings.get("buttons_per_toolbar")
+        add_to_main_toolbar = self._settings.get("add_to_main_toolbar")
+        data = {}
+        if add_to_main_toolbar and button_id in add_to_main_toolbar:
+            data['defaultArea'] = "'%s'" % self._settings.get('file_to_main_toolbar').get(file_name)
+        elif self._settings.get("put_button_on_toolbar"):
+            toolbar_index = count / toolbar_max_count
+            if len(toolbar_ids) > toolbar_index:
+                data['defaultArea'] = "'%s'" % toolbar_ids[toolbar_index]
+        for key, value in attr.items():
+            if key in ('label', 'tooltiptext'):
+                data[key] = "buttonStrings.get('%s')" % value[1:-1]
+            elif key == "id":
+                data[key] = "'%s'" % value
+            elif key in ('onclick', 'oncommand'):
+                if key == 'oncommand':
+                    self._button_commands[button_id] = value
+                key = 'onCommand' if key == 'oncommand' else 'onClick'
+                this = 'var aThis = event.target;\n\t\t\t' if 'this' in value else ''
+                data[key] = "function(event) {\n\t\t\t%s%s\n\t\t}" % (this, value.replace('this', 'aThis'))
+        
+        if self._button_js_setup.get(file_name, {}).get(button_id):
+            data["onCreated"] = "function(aNode) {\n\t\t\t%s\n\t\t}" % self._button_js_setup[file_name][button_id]
+        items = sorted(data.items(), key=self._attr_key)
+        result = "\tCustomizableUI.createWidget({\n\t\t%s\n\t});" % ",\n\t\t".join("%s: %s" % (key, value) for (key, value) in items)
+        return result
+
+    def get_jsm_files(self):
+        with open(os.path.join(self._settings.get("project_root"), 'files', 'button.jsm')) as template_file:
+            template = template_file.read()
+        result = {}
+        simple_button_re = re.compile(r"^<toolbarbutton(.*)/>$", re.DOTALL)
+        attr_match = re.compile(r'''\b([\w\-]+)="([^"]*)"''', re.DOTALL)
+        simple_attrs = set(['label', 'tooltiptext', 'id', 'oncommand', 'onclick', 'key'])
+        group_files = self._settings.get("file_map_keys")
+        button_hash, toolbar_template = self._get_toolbar_info()
+        
+        for file_name, values in self._button_xul.iteritems():
+            jsm_file = []
+            js_includes = []
+            js_files = []
+            for group_file in group_files:
+                if self._has_javascript and group_file in self._button_js and file_name in self._settings.get("file_map")[group_file] and group_file != "loader":
+                    js_includes.append("""loader.loadSubScript("chrome://%s/content/%s.js", scope);""" % (self._settings.get("chrome_name"), group_file))
+                    js_files.append(group_file)
+            if  self._has_javascript and file_name in self._button_js and file_name not in js_files:
+                js_includes.append("""loader.loadSubScript("chrome://%s/content/%s.js", scope);""" % (self._settings.get("chrome_name"), file_name))
+            toolbars, toolbar_ids = self._create_jsm_toolbar(button_hash, toolbar_template, file_name, values)
+            count = 0
+            modules = set()
+            for button_id, xul in values.items():
+                modules.update(self._modules[button_id])
+                attr_data_match = simple_button_re.findall(xul)
+                if attr_data_match:
+                    attr_data = attr_data_match[0]
+                else:
+                    attr_data = ''
+                attr = dict(attr_match.findall(attr_data))
+                if attr_data and not set(attr.keys()).difference(simple_attrs):
+                    jsm_file.append(self._create_jsm_button(file_name, toolbar_ids, count, button_id, attr))
+                else:
+                    jsm_file.append(self._create_dom_button(button_id, re.sub(r'&([^;]+);', r'\1', xul), file_name, count, toolbar_ids))
+                count += 1
+            modules_import = "\n" + "\n".join("Cu.import('%s');" % mod for mod in modules if mod)
+            menu_id, menu_label = self._settings.get("menu_meta")
+            result[file_name] = (template.replace('{{chrome-name}}', self._settings.get("chrome_name"))
+                        .replace('{{locale-file-prefix}}', self._settings.get("locale_file_prefix"))
+                        .replace('{{pref-root}}', self._settings.get("pref_root"))
+                        .replace('{{modules}}', modules_import)
+                        .replace('{{scripts}}', "\n\t".join(js_includes))
+                        .replace('{{button_ids}}', str(values.keys())) # we use this not self._buttons, because of the possible generated toolbar toggle buttons
+                        .replace('{{toolbar_ids}}', str(toolbar_ids))
+                        .replace('{{toolbars}}', toolbars)
+                        .replace('{{menu_id}}', menu_id)
+                        .replace('{{menu}}', self._jsm_create_menu(file_name, values))
+                        .replace('{{keys}}', self.jsm_keyboard_shortcuts(file_name))
+                        .replace('{{end}}', "\n\t".join(self._button_js_setup.get(file_name, {}).values()))
+                        .replace('{{buttons}}', "\n\n".join(jsm_file)))
+        return result
+    
+    def _create_jsm_toolbar(self, button_hash, toolbar_template, file_name, values):
+        tool_bars, bottom_box, toolbar_ids = self._create_toolbar(button_hash, toolbar_template, file_name, values)
+        if not tool_bars and not bottom_box:
+            return '', []
+        result = []
+        count = 0
+        for toolbars, box_setting in ((tool_bars, "file_to_toolbar_box"), (bottom_box, "file_to_bottom_box")):
+            num = count
+            if not toolbars: 
+                continue
+            toolbar_node, toolbar_box = self._settings.get(box_setting).get(file_name, ('', ''))
+            toolbox = '\n<%s id="%s">\n%s\n</%s>' % (toolbar_node, toolbar_box, '\n'.join(toolbars), toolbar_node)
+            statements, count = self._create_dom(ET.fromstring(re.sub(r'&([^;]+);', r'\1', toolbox)), count=num, doc="document")
+            count += 1
+            statements.pop(-1)
+            statements.pop(1)
+            statements[0] = "var %s_%s = document.getElementById('%s');" % (toolbar_node, num, toolbar_box)
+            result.extend(statements)
+        return "\n\t".join(result), toolbar_ids
+
+    def _create_toolbar(self, button_hash, toolbar_template, file_name, values):
+        toolbar_ids = []
+        tool_bars = []
+        bottom_bars = []
+        count = 0
+        for box_setting, include_setting, toolbars in [("file_to_toolbar_box", "include_toolbars", tool_bars),
+                                                       ("file_to_bottom_box", "include_satusbars", bottom_bars)]:
+            toolbar_node, toolbar_box = self._settings.get(box_setting).get(file_name, ('', ''))
+            if self._settings.get(include_setting) and toolbar_box:
+                number = self._settings.get(include_setting)
+                max_count = self._settings.get("buttons_per_toolbar")
+                if number == -1:
+                    number = int(math.ceil(float(len(values)) / max_count))
+                buttons = values.keys()
+                defaultset = ""
+                for i in range(number):
+                    if self._settings.get("put_button_on_toolbar"):
+                        defaultset = 'defaultset="%s"' % ",".join(buttons[i * max_count:(i + 1) * max_count])
+                    button_hash.update(str(i))
+                    hash = button_hash.hexdigest()[:6]
+                    label_number = "" if (number + count) == 1 else " %s" % (i + count + 1)
+                    toolbar_ids.append("tb-toolbar-%s" % hash)
+                    toolbar_box_id = "" if include_setting == "include_toolbars" else 'toolboxid="%s" ' % self._settings.get("file_to_toolbar_box").get(file_name)[1]
+                    toolbars.append('''<toolbar %spersist="collapsed,hidden" context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;%s"/>''' % (toolbar_box_id, hash, defaultset, label_number))
+                    values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash).replace("{{ number }}", label_number)
+                count += number
+        return tool_bars, bottom_bars, toolbar_ids
+    
+    def _wrap_create_toolbar(self, button_hash, toolbar_template, file_name, values):
+        tool_bars, bottom_box, toolbar_ids = self._create_toolbar(button_hash, toolbar_template, file_name, values)
+        if not tool_bars and not bottom_box:
+            return '', []
+        result = []
+        for toolbars, box_setting in ((tool_bars, "file_to_toolbar_box"), (bottom_box, "file_to_bottom_box")):
+            if not toolbars: 
+                continue
+            toolbar_node, toolbar_box = self._settings.get(box_setting).get(file_name, ('', ''))
+            result.append('\n<%s id="%s">\n%s\n</%s>' % (toolbar_node, toolbar_box, '\n'.join(toolbars), toolbar_node))
+        return "\n\t".join(result), toolbar_ids
+        
+
+    def _get_toolbar_info(self):
+        button_hash = None
+        toolbar_template = None
+        if self._settings.get("include_toolbars") or self._settings.get("include_satusbars"):
+            with open(os.path.join(self._settings.get("project_root"), 'files', 'toolbar-toggle.xul')) as template_file:
+                toolbar_template = template_file.read()
+            button_hash = hashlib.md5(self._settings.get('extension_id'))
+        return button_hash, toolbar_template
 
     def get_xul_files(self):
         """
 
         Precondition: get_js_files() has been called
         """
-        button_hash = None
-        toolbar_template = None
-        if self._settings.get("include_toolbars"):
-            with open(os.path.join(self._settings.get("project_root"), 'files', 'toolbar-toggle.xul')) as template_file:
-                toolbar_template = template_file.read()
-            button_hash = hashlib.md5(self._settings.get('extension_id'))
+        button_hash, toolbar_template = self._get_toolbar_info()
         with open(os.path.join(self._settings.get("project_root"), 'files', 'button.xul')) as template_file:
             template = template_file.read()
         group_files = self._settings.get("file_map_keys")
         result = {}
         for file_name, values in self._button_xul.iteritems():
             js_includes = []
-            toolbars = []
+            js_files = []
             for group_file in group_files:
                 if self._has_javascript and group_file in self._button_js and file_name in self._settings.get("file_map")[group_file]:
                     js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), group_file))
-            if  self._has_javascript and file_name in self._button_js:
+                    js_files.append(group_file)
+            if  self._has_javascript and file_name in self._button_js and file_name not in js_files:
                 js_includes.append("""<script type="application/x-javascript" src="chrome://%s/content/%s.js"/>""" % (self._settings.get("chrome_name"), file_name))
-            toolbar_box = self._settings.get("file_to_toolbar_box").get(file_name)
-            if self._settings.get("include_toolbars") and toolbar_box:
-                number = self._settings.get("include_toolbars")
-                max_count = self._settings.get("buttons_per_toolbar")
-                if number == -1:
-                    number = int(math.ceil(float(len(values))/max_count))
-                buttons = values.keys()
-                defaultset = ""
-                for i in range(number):
-                    if self._settings.get("put_button_on_toolbar"):
-                        defaultset = 'defaultset="%s"' % ",".join(buttons[i*max_count:(i+1)*max_count])
-                    button_hash.update(str(i))
-                    hash = button_hash.hexdigest()[:6]
-                    label_number = "" if number == 1 else " %s" % (i + 1)
-                    toolbars.append('''<toolbar persist="collapsed,hidden" context="toolbar-context-menu" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;%s"/>''' % (hash, defaultset, label_number))
-                    values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash).replace("{{ number }}", label_number)
+            toolbars, toolbar_ids = self._wrap_create_toolbar(button_hash, toolbar_template, file_name, values)
             menu = self._create_menu(file_name, values) if self._settings.get("create_menu") else ""
             xul_file = (template.replace("{{buttons}}", "\n  ".join(values.values()))
                                 .replace("{{script}}", "\n ".join(js_includes))
                                 .replace("{{keyboard_shortcut}}", self.get_keyboard_shortcuts(file_name))
                                 .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                                 .replace("{{locale_file_prefix}}", self._settings.get("locale_file_prefix"))
-                                .replace("{{toolbars}}", "" if not toolbars else '\n<toolbox id="%s">\n%s\n</toolbox>' % (toolbar_box, '\n'.join(toolbars)))
+                                .replace("{{toolbars}}", toolbars)
                                 .replace("{{palette}}", self._settings.get("file_to_palette").get(file_name, ""))
                                 .replace("{{menu}}", menu)
                         )

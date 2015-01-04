@@ -34,7 +34,7 @@ function stringManager() {
 		
 		this.tree.view.setCellText = function(aRow, aCol, aValue) {
 			var id = gStringManager.tree.view.getCellText(aRow, gStringManager.tree.columns.getNamedColumn('rowid'))
-	    	let editrow = gStringManager.db_connection.createStatement("UPDATE " + gStringManager.db_table + " SET " + aCol.id + " = :value WHERE rowid=" + id);
+	    	let editrow = gStringManager.db_connection.createAsyncStatement("UPDATE " + gStringManager.db_table + " SET " + aCol.id + " = :value WHERE rowid=" + id);
 	    	editrow.params.value = aValue;
 			editrow.executeAsync({
 				handleResult: function(aResultSet) { },	
@@ -69,7 +69,7 @@ function stringManager() {
 		var name = document.getElementById('string-name').value;
 		var value = document.getElementById('string-value').value;
 		if(name && value) {
-			let stmt = this.db_connection.createStatement("UPDATE " + this.db_table + " SET name = :name, value = :value WHERE rowid = :rowid");
+			let stmt = this.db_connection.createAsyncStatement("UPDATE " + this.db_table + " SET name = :name, value = :value WHERE rowid = :rowid");
 			stmt.params.value = value;
 			stmt.params.name = name;
 			stmt.params.rowid = this.edit_id;
@@ -113,7 +113,7 @@ function stringManager() {
 		var name = nameNode.value;
 		var value = valueNode.value;
 		if(name && value) {
-			let stmt = this.db_connection.createStatement("INSERT INTO " + this.db_table + " (name, value) VALUES(:name, :value)");
+			let stmt = this.db_connection.createAsyncStatement("INSERT INTO " + this.db_table + " (name, value) VALUES(:name, :value)");
 			stmt.params.value = value;
 			stmt.params.name = name;
 			

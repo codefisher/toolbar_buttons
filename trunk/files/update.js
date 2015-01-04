@@ -33,10 +33,8 @@ if(!this.load_toolbar_button) {
 		},
 		file_get_contents: function(file) {
 			var data = '';
-			var fstream = Components.classes['@mozilla.org/network/file-input-stream;1']
-			  .createInstance(Components.interfaces.nsIFileInputStream);
-			var sstream = Components.classes['@mozilla.org/scriptableinputstream;1']
-			  .createInstance(Components.interfaces.nsIScriptableInputStream);
+			var fstream = Cc['@mozilla.org/network/file-input-stream;1'].createInstance(Ci.nsIFileInputStream);
+			var sstream = Cc['@mozilla.org/scriptableinputstream;1'].createInstance(Ci.nsIScriptableInputStream);
 			fstream.init(file, -1, 0, 0);
 			sstream.init(fstream); 		
 			var str = sstream.read(4096);
@@ -54,7 +52,7 @@ if(!this.load_toolbar_button) {
 				url = "{{homepage_url}}installed/{{version}}/";
 			}
 			try {
-				getBrowser().addTab(url);
+				window.getBrowser().addTab(url);
 			} catch (e) {
 				var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
 				toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
@@ -84,8 +82,8 @@ if(!this.load_toolbar_button) {
 		var prefs = toolbar_buttons.interfaces.PrefBranch;
 		if(prefs.getIntPref('browser.startup.page') == 3 || prefs.getBoolPref('browser.sessionstore.resume_session_once')) {
 			//this observer never seems to run for some reason??
-			//var observerService = Components.classes["@mozilla.org/observer-service;1"]
-		    //              .getService(Components.interfaces.nsIObserverService);
+			//var observerService = Cc["@mozilla.org/observer-service;1"]
+		    //              .getService(Ci.nsIObserverService);
 		    //observerService.addObserver(load_toolbar_button, 'sessionstore-state-finalized', false);
 		    document.addEventListener("SSTabRestoring", load_toolbar_button.restore, false);
 		} else {
