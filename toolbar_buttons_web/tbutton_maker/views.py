@@ -170,8 +170,8 @@ def create_buttons(request, query, log_creation=True):
     extension_settings["create_menu"] = query.get("create-menu") == "true"
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
-    if not applications:
-        applications = "all"
+    if not applications or "all" in applications:
+        applications = extension_settings["applications_data"].keys()
     extension_settings["applications"] = applications
     update_query = query.copy()
     #update_query["application"] = ",".join(applications)
