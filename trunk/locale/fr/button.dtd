@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Atteindre l&apos;onglet suivant">
 <!ENTITY open-current-frame.label "Cadre courant">
 <!ENTITY open-current-frame.tooltip "N&apos;afficher que le cadre (frame) sélectionné">
-<!ENTITY open.label "Ouvrir">
-<!ENTITY open.tooltip "Ouvrir un fichier">
+<!ENTITY tb-open.label "Ouvrir">
+<!ENTITY tb-open.tooltip "Ouvrir un fichier">
 <!ENTITY page-source.label "Source">
 <!ENTITY page-source.tooltip "Afficher le code source de la page">
 <!ENTITY pageinfo.label "Infos page">

@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Μετάβαση στην επόμενη καρτέλα">
 <!ENTITY open-current-frame.label "Προβολή τρέχοντος πλαισίου">
 <!ENTITY open-current-frame.tooltip "Προβολή μόνο του τρέχοντος επιλεγμένου πλαισίου">
-<!ENTITY open.label "Άνοιγμα">
-<!ENTITY open.tooltip "Άνοιγμα αρχείου">
+<!ENTITY tb-open.label "Άνοιγμα">
+<!ENTITY tb-open.tooltip "Άνοιγμα αρχείου">
 <!ENTITY page-source.label "Πηγαίος κώδικας">
 <!ENTITY page-source.tooltip "Προβολή πηγαίου κώδικα">
 <!ENTITY pageinfo.label "Πληροφορίες σελίδας">

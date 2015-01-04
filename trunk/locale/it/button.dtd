@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Vai alla scheda successiva">
 <!ENTITY open-current-frame.label "Visualizza riquadro attuale">
 <!ENTITY open-current-frame.tooltip "Visualizza solo il riquadro attualmente selezionato">
-<!ENTITY open.label "Apri file…">
-<!ENTITY open.tooltip "Apri un file">
+<!ENTITY tb-open.label "Apri file…">
+<!ENTITY tb-open.tooltip "Apri un file">
 <!ENTITY page-source.label "Sorgente">
 <!ENTITY page-source.tooltip "Visualizza il sorgente del documento">
 <!ENTITY pageinfo.label "Informazioni sulla pagina">

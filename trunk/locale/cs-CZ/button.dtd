@@ -98,8 +98,8 @@
 <!ENTITY msg-pane.label "Panel zpráv">
 <!ENTITY msg-pane.tooltip "Zobrazí/skryje panel zpráv">
 <!ENTITY new-message.label "Nová zpráva">
-<!ENTITY open.label "Otevřít">
-<!ENTITY open.tooltip "Otevření souboru">
+<!ENTITY tb-open.label "Otevřít">
+<!ENTITY tb-open.tooltip "Otevření souboru">
 <!ENTITY page-source.label "Zdroj">
 <!ENTITY page-source.tooltip "Zobrazí zdrojový kód">
 <!ENTITY pageinfo.label "Informace">

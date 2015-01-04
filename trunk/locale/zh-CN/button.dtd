@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "跳到下个标签">
 <!ENTITY open-current-frame.label "显示当前帧">
 <!ENTITY open-current-frame.tooltip "只显示当前选中的帧">
-<!ENTITY open.label "打开">
-<!ENTITY open.tooltip "打开文件">
+<!ENTITY tb-open.label "打开">
+<!ENTITY tb-open.tooltip "打开文件">
 <!ENTITY page-source.label "源文件">
 <!ENTITY page-source.tooltip "查看页面源文件">
 <!ENTITY pageinfo.label "页面信息">

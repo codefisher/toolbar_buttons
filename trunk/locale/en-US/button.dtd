@@ -163,8 +163,8 @@
 <!ENTITY next-tab.tooltip "Go to the Next Tab">
 <!ENTITY open-current-frame.label "Current Frame">
 <!ENTITY open-current-frame.tooltip "Show only the currently selected frame">
-<!ENTITY open.label "Open">
-<!ENTITY open.tooltip "Open a File">
+<!ENTITY tb-open.label "Open">
+<!ENTITY tb-open.tooltip "Open a File">
 <!ENTITY page-source.label "Source">
 <!ENTITY page-source.tooltip "View Page Source">
 <!ENTITY pageinfo.label "Page Info">
@@ -303,6 +303,7 @@
 <!ENTITY tb-delete-cookies.label "Delete Cookies">
 <!ENTITY tb-delete-cookies.tooltip "Delete all browser cookies.">
 <!ENTITY tb-delete-session-cookies.label "Delete Session Cookies">
+<!ENTITY tb-delete-session-cookies.tooltip "Delete Session Cookies">
 <!ENTITY tb-download-sync.label "Download/Sync Now…">
 <!ENTITY tb-download-sync.tooltip "Run download and sync before going offline">
 <!ENTITY tb-edit-menu.label "Edit Menu">

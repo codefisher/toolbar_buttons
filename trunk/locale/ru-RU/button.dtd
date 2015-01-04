@@ -152,8 +152,8 @@
 <!ENTITY next-tab.tooltip "Перейти к следующей вкладке">
 <!ENTITY open-current-frame.label "Показать этот фрейм">
 <!ENTITY open-current-frame.tooltip "Показать только выбранный фрейм">
-<!ENTITY open.label "Открыть">
-<!ENTITY open.tooltip "Открыть файл">
+<!ENTITY tb-open.label "Открыть">
+<!ENTITY tb-open.tooltip "Открыть файл">
 <!ENTITY page-source.label "Исходный код">
 <!ENTITY page-source.tooltip "Просмотреть исходный код страницы">
 <!ENTITY pageinfo.label "Информация о странице">

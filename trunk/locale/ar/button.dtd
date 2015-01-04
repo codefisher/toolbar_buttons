@@ -101,8 +101,8 @@
 <!ENTITY new-message.tooltip "كتابة رسالة بريد إلكتروني جديدة">
 <!ENTITY next-tab.label "التبويبة التالية">
 <!ENTITY next-tab.tooltip "الذهاب للتبويبة التالية">
-<!ENTITY open.label "فتح">
-<!ENTITY open.tooltip "فتح ملف">
+<!ENTITY tb-open.label "فتح">
+<!ENTITY tb-open.tooltip "فتح ملف">
 <!ENTITY page-source.tooltip "اعرض مصدر هذه الصفحة">
 <!ENTITY pageinfo.label "معلومات الصفحة">
 <!ENTITY pageinfo.tooltip "فتح نافذة معلومات الصفحة">

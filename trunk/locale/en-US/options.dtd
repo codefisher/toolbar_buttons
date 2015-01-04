@@ -63,3 +63,5 @@
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">
+<!ENTITY tb-show-a-menu.option.label "Show this in the Tools menu.">
+<!ENTITY tb-show-a-menu.option.title "Menus">

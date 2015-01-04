@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Naar het volgende tabblad gaan">
 <!ENTITY open-current-frame.label "Huidig frame weergeven">
 <!ENTITY open-current-frame.tooltip "Alleen het momenteel geselecteerde frame wordt weergegeven.">
-<!ENTITY open.label "Openen">
-<!ENTITY open.tooltip "Bestand openen">
+<!ENTITY tb-open.label "Openen">
+<!ENTITY tb-open.tooltip "Bestand openen">
 <!ENTITY page-source.label "Bron">
 <!ENTITY page-source.tooltip "Paginabron bekijken">
 <!ENTITY pageinfo.label "Pagina-info">
