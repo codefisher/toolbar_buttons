@@ -1,9 +1,8 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-eyedropper"
 	label="&tb-eyedropper.label;"
 	tooltiptext="&tb-eyedropper.tooltip;"
 	observes="devtoolsMenuBroadcaster_Eyedropper"
 	type="checkbox"
 	autocheck="false"
-	oncommand="openEyedropper();"/>
+	oncommand="window.openEyedropper();"/>

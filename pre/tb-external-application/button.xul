@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-external-application"
 	type="menu"
 	label="&tb-external-application.label;"

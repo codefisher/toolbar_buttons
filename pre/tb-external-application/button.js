@@ -7,14 +7,14 @@ openExternalApplicationMenu: function(event, aMenu) {
 		aMenu.removeChild(aMenu.firstChild);
 	}
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var empty = stringBundle.GetStringFromName("empty");
   	var menuItem = document.createElement("menuitem");
   	menuItem.setAttribute("label", empty);
   	menuItem.setAttribute("disabled", true);	  	
   	aMenu.insertBefore(menuItem, aMenu.firstChild);
 	
-	let stmt = toolbar_buttons.database_connection.createStatement("SELECT rowid, name, value FROM external_application_strings ORDER BY name DESC");
+	let stmt = toolbar_buttons.database_connection.createAsyncStatement("SELECT rowid, name, value FROM external_application_strings ORDER BY name DESC");
 
 	stmt.executeAsync({
 	  handleResult: function(aResultSet) {
@@ -53,7 +53,7 @@ runExternalApplication: function(event) {
 
 openExternalApplicationSettings: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-external-application.label");
 	var arguments = {
 		title: title,

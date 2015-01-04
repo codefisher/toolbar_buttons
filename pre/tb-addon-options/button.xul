@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	type="menu"
 	id="tb-addon-options"
 	label="&tb-addon-options.label;"

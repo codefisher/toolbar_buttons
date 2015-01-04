@@ -1,7 +1,6 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-jsdebugger"
 	label="&tb-jsdebugger.label;"
 	tooltiptext="&tb-jsdebugger.tooltip;"
 	key="key_jsdebugger"
-	oncommand="gDevToolsBrowser.selectToolCommand(gBrowser, 'jsdebugger');"/>
+	oncommand="window.gDevToolsBrowser.selectToolCommand(window.gBrowser, 'jsdebugger');"/>

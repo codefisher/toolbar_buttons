@@ -1,7 +1,6 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-web-console"
 	label="&tb-web-console.label;"
 	tooltiptext="&tb-web-console.tooltip;"
 	key="key_webconsole"
-	oncommand="gDevToolsBrowser.selectToolCommand(gBrowser, 'webconsole');"/>
+	oncommand="window.gDevToolsBrowser.selectToolCommand(window.gBrowser, 'webconsole');"/>
