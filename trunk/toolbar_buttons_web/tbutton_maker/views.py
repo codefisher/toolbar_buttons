@@ -168,10 +168,14 @@ def create_buttons(request, query, log_creation=True):
 
         
     extension_settings["create_menu"] = query.get("create-menu") == "true"
+
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
+    default_apps = extension_settings["applications_data"].keys()
     if not applications or "all" in applications:
-        applications = extension_settings["applications_data"].keys()
+        applications = default_apps
+    if not set(default_apps).intersection(applications):
+        applications = default_apps
     extension_settings["applications"] = applications
     update_query = query.copy()
     #update_query["application"] = ",".join(applications)
@@ -306,12 +310,17 @@ def update(request):
             applications = applications.split(",")
         else:
             applications = applications.split("-")
-    if applications == ["all"]:
+    default_apps = config["applications_data"].keys()
+    if not set(default_apps).intersection(applications):
+        applications = default_apps
+    args = request.GET.copy()
+    args.setlist("button-application", applications)
+    if "all" in applications:
         app_data = flat(config.get("applications_data").values())
     else:
         app_data = flat([config.get("applications_data").get(app) for app in applications])
     update_url = "https://%s%s?%s" % (Site.objects.get_current().domain,
-            reverse("tbutton-make-button"), request.GET.urlencode())
+            reverse("tbutton-make-button"), args.urlencode())
     
     data = {
         "applications": app_data,
