@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Siirry seuraavaan välilehteen">
 <!ENTITY open-current-frame.label "Näytä nykyinen kehys">
 <!ENTITY open-current-frame.tooltip "Näytä ainoastaan valittuna oleva kehys">
-<!ENTITY open.label "Avaa">
-<!ENTITY open.tooltip "Avaa tiedosto">
+<!ENTITY tb-open.label "Avaa">
+<!ENTITY tb-open.tooltip "Avaa tiedosto">
 <!ENTITY page-source.label "Lähdekoodi">
 <!ENTITY page-source.tooltip "Näytä sivun lähdekoodi">
 <!ENTITY pageinfo.label "Tietoja sivusta">

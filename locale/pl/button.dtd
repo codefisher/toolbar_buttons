@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "Przejdź do następnej karty">
 <!ENTITY open-current-frame.label "Pokaż wybraną ramkę">
 <!ENTITY open-current-frame.tooltip "Pokaż tylko aktualnie wybraną ramkę">
-<!ENTITY open.label "Otwórz">
-<!ENTITY open.tooltip "Otwórz plik...">
+<!ENTITY tb-open.label "Otwórz">
+<!ENTITY tb-open.tooltip "Otwórz plik...">
 <!ENTITY page-source.label "Źródło">
 <!ENTITY page-source.tooltip "Podgląd źródła strony">
 <!ENTITY pageinfo.label "Informacje o stronie">

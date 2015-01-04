@@ -42,8 +42,8 @@
 <!ENTITY msg-filter.label "מסננים">
 <!ENTITY msg-pane.label "חלונית הודעה">
 <!ENTITY new-message.label "הודעה חדשה">
-<!ENTITY open.label "פתח">
-<!ENTITY open.tooltip "Open a File">
+<!ENTITY tb-open.label "פתח">
+<!ENTITY tb-open.tooltip "Open a File">
 <!ENTITY page-source.tooltip "הצגת מקור הדף">
 <!ENTITY pageinfo.label "מידע על הדף">
 <!ENTITY pagesetup.label "הגדרת עמוד">

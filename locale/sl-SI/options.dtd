@@ -1,0 +1,38 @@
+<!ENTITY options.window.title "Možnosti Toolbar Buttons">
+<!ENTITY favorite-page.description "Uporablja se za gumb 'Priljubljena stran'.  Neke vrste druga domača stran">
+<!ENTITY toggle.prox.label "Posrednik">
+<!ENTITY translate.service.description "Izberite, katero storitev prevajanja želite uporabiti.">
+<!ENTITY toggle.proxy.description "Gumb za preklop posrednika lahko preklopi med sistemskim posrednikom in eno od spodnjih možnosti.">
+<!ENTITY delete.cookies.checkbox "Pozovi pred izbrisom piškotkov.">
+<!ENTITY restart.checkbox "Ne pozovi pred ponovnim zagonom.">
+<!ENTITY tb-delete-cookies.label "Izbris piškotkov">
+<!ENTITY previous-next.label "Prejšnje in Naslednje">
+<!ENTITY translate.loading "Nalaganje ...">
+<!ENTITY toggle.checkbox "Ponovno naloži stran po preklopu nastavitve.">
+<!ENTITY restart.label "Ponovni zagon">
+<!ENTITY read.select.button "Izberi">
+<!ENTITY readnews.path.desc "Pot do vašega odjemalca novic; uporabite jo, če gumb ne deluje.">
+<!ENTITY open-new-tab.new "Odpri v novem zavihku.">
+<!ENTITY open-new-tab.label "Način odpiranja gumbov za povezave">
+<!ENTITY toggle.proxy.auto.configuration "Samodejna nastavitev posrednika (PAC)">
+<!ENTITY readmail.path.desc "Pot do vašega programa za pošto; uporabite jo, če gumb ne deluje.">
+<!ENTITY confirm.caption "Potrdi">
+<!ENTITY favorite-page.label "Priljubljena stran">
+<!ENTITY toggle.proxy.direct "Neposredna povezava, brez posrednika">
+<!ENTITY translate.label "Prevedi">
+<!ENTITY open-new-tab.current "Odpri v trenutnem zavihku.">
+<!ENTITY tb-clear-cache.label "Počiščenje predpomnilnika">
+<!ENTITY translate.description "Izberite jezik gumba za prevajanje.">
+<!ENTITY translate.service.google "Google Translate">
+<!ENTITY previous-next.checkbox "Spremeni smer gumbov Prejšnje in Naslednje.">
+<!ENTITY readmail.path.caption "Pot do pošte">
+<!ENTITY toggle.label "Preklop gumbov">
+<!ENTITY links.caption "Povezave">
+<!ENTITY translate.service.bing "Bing Translator">
+<!ENTITY translate.service.promt "PROMT Online Translator">
+<!ENTITY toggle.proxy.system "Uporabi sistemske nastavitve za posrednika">
+<!ENTITY readnews.path.caption "Pot do novic">
+<!ENTITY clear.cache.checkbox "Pozovi pred počiščenjem predpomnilnika.">
+<!ENTITY toggle.proxy.auto.detect "Samodejno zaznaj nastavitve posrednika">
+<!ENTITY settings.label "Nastavitve">
+<!ENTITY toggle.proxy.manual "Ročna nastavitev posrednika">

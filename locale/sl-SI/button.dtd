@@ -1,0 +1,387 @@
+<!ENTITY about-application.label "O dodatku">
+<!ENTITY about-application.tooltip "O &brandShortName;">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY about-cache.tooltip "Odpri about:cache za ogled vsebine predpomnilnika">
+<!ENTITY about-config.label "about:config">
+<!ENTITY about-config.tooltip "Odpri about:config za spremembo nastavitev">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY about-disk-cache.tooltip "Odpri about:cache za ogled vsebine predpomnilnika shranjene na vaš trdi disk">
+<!ENTITY about-mem-cache.label "about:cache Pomnilnik">
+<!ENTITY about-mem-cache.tooltip "Odpri about:cache za ogled vsebine predpomnilnika v pomnilniku">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY about-plugins.tooltip "Odpri about:plugins za ogled nameščenih vtičnikov">
+<!ENTITY accountmanager.label "Nastavitve računa">
+<!ENTITY accountmanager.tooltip "Odpri nastavitve računa">
+<!ENTITY accountwizard.label "Nastavitev računa">
+<!ENTITY accountwizard.tooltip "Zaženi čarovnika za nastavitev novega računa">
+<!ENTITY add-address.label "Dodaj e-pošto">
+<!ENTITY add-address.tooltip "Kopiraj e-poštni naslov v imenik">
+<!ENTITY addons.label "Dodatki">
+<!ENTITY addons.tooltip "Odpri upravitelja dodatkov">
+<!ENTITY all-threads.label "Vse niti">
+<!ENTITY all-threads.tooltip "Pokaži vse niti">
+<!ENTITY attachments-delete.label "Izbriši priponke">
+<!ENTITY attachments-delete.tooltip "Izbriši vse priponke iz sporočila">
+<!ENTITY attachments-detach.label "Odpni priponke">
+<!ENTITY attachments-detach.tooltip "Odpni vse priponke iz sporočila">
+<!ENTITY attachments-save.label "Shrani priponke">
+<!ENTITY attachments-save.tooltip "Shrani vse priponke iz sporočila">
+<!ENTITY bookmark-manager.label "Upravitelj zaznamkov">
+<!ENTITY bookmark-manager.tooltip "Odpri upravitelja zaznamkov">
+<!ENTITY bookmark-nopop.label "Hitri zaznamek">
+<!ENTITY bookmark-nopop.tooltip "Dodaj zaznamek brez poziva">
+<!ENTITY bookmark-tabs.label "Dodaj vse med zaznamke">
+<!ENTITY bookmark-tabs.tooltip "Dodaj vse odprte zavihke med zaznamke">
+<!ENTITY bookmark-toolbar.label "Orodna vrstica zaznamkov">
+<!ENTITY bookmark-toolbar.tooltip "Preklopi orodno vrstico zaznamkov">
+<!ENTITY bookmark.label "Dodaj stran med zaznamke">
+<!ENTITY bookmark.tooltip "Dodaj trenutno stran med zaznmake">
+<!ENTITY bookmarks-menu-button.label "Meni zaznamkov">
+<!ENTITY bookmarks-menu-button.tooltip "Prikaži meni zaznamkov">
+<!ENTITY bottom-page.label "Na dno">
+<!ENTITY bottom-page.tooltip "Pojdi na dno strani">
+<!ENTITY change-text-direction.label "Spremeni smer besedila">
+<!ENTITY change-text-direction.tooltip "Spremeni smer besedila iz leve proti desni ali iz desne proti levi">
+<!ENTITY clear-data.label "Počisti podatke">
+<!ENTITY clear-data.tooltip "Odpri pogovorno okno 'Počisti zasebne podatke'">
+<!ENTITY clear-url.label "Skrij URL">
+<!ENTITY clear-url.tooltip "Skrij besedilo vrstice URL">
+<!ENTITY clipboard.label "Povezava iz odložišča">
+<!ENTITY clipboard.menuitem "Odpri povezavo iz odložišča">
+<!ENTITY clipboard.newtab "v novem zavihku">
+<!ENTITY clipboard.newwindow "v novem oknu">
+<!ENTITY clipboard.tooltip "Dobi povezavo iz odložišča in jo odpri">
+<!ENTITY close-all-tabs.label "Zapri vse">
+<!ENTITY close-all-tabs.tooltip "Zapri vse zavihke">
+<!ENTITY close-other-tabs.label "Zapri ostale zavihke">
+<!ENTITY close-other-tabs.tooltip "Zapri vse zavihke razen trenutnega">
+<!ENTITY close-tab.label "Zapri zavihek">
+<!ENTITY close-tab.tooltip "Zapri odprt zavihek ali okno">
+<!ENTITY compact.label "Strni">
+<!ENTITY compact.tooltip "Strni mapo">
+<!ENTITY copy-address.label "Kopiraj e-pošto">
+<!ENTITY copy-address.tooltip "Kopiraj e-poštni naslov na odložišče">
+<!ENTITY create-filter.label "Ustvari filter">
+<!ENTITY create-filter.tooltip "Ustvari filter iz poročila">
+<!ENTITY customize-toolbar.label "Prilagodi orodno vrstico">
+<!ENTITY customize-toolbar.tooltip "Prilagodi orodno vrstico, dodaj ali odstrani gumbe, itd.">
+<!ENTITY delete-event.label "Izbriši dogodke">
+<!ENTITY delete-event.tooltip "izbriši izbrane dogodke">
+<!ENTITY delete-junk.label "Izbriši neželeno pošto">
+<!ENTITY delete-junk.tooltip "Izbriši neželena sporočila">
+<!ENTITY delete-tasks.label "Izbriši opravila">
+<!ENTITY delete-tasks.tooltip "Izbriši izbrana opravila">
+<!ENTITY delete.label "Izbriši">
+<!ENTITY delete.tooltip "Izbriši izbrano besedilo">
+<!ENTITY dictionary-list.label "Spremeni slovar">
+<!ENTITY dictionary-list.tooltip "Hitro spremeni trenutni slovar">
+<!ENTITY ebay.label "eBay">
+<!ENTITY ebay.tooltip "Odpri eBay">
+<!ENTITY edit-as-new.label "Uredi kot novo">
+<!ENTITY edit-as-new.tooltip "Uredi kot novo sporočilo">
+<!ENTITY edit-draft.label "Uredi osnutek">
+<!ENTITY edit-draft.tooltip "Uredi shranjen osnutek ali sporočilo">
+<!ENTITY empty-trash.label "Izprazni Koš">
+<!ENTITY empty-trash.tooltip "Izprazni mapo Koš">
+<!ENTITY enlarge.label "Približaj">
+<!ENTITY enlarge.tooltip "Povečaj velikost pisave">
+<!ENTITY exit.label "Izhod">
+<!ENTITY exit.tooltip "Izhod iz programa">
+<!ENTITY extensions.label "Razširitve">
+<!ENTITY extensions.tooltip "Odpri upravitelja razširitev">
+<!ENTITY favorite-page.label "Priljubljena stran">
+<!ENTITY favorite-page.tooltip "Odpri priljubljeno stran">
+<!ENTITY find-again.label "Najdi znova">
+<!ENTITY find-again.tooltip "Najdi naslednje ujemanje">
+<!ENTITY find-prev.label "Najdi prejšnje">
+<!ENTITY find-prev.tooltip "Najdi prejšnje ujemanje">
+<!ENTITY find.label "Najdi">
+<!ENTITY find.tooltip "Najdi besedilo">
+<!ENTITY firefox-extension.label "Razširitve">
+<!ENTITY firefox-extension.tooltip "Dobi več razširitev za Firefox">
+<!ENTITY firefox-theme.label "Teme">
+<!ENTITY firefox-theme.tooltip "Dobi več tem za Firefox">
+<!ENTITY forward-as-attachment.label "Posreduj kot priponko">
+<!ENTITY forward-as-attachment.tooltip "Posreduj sporočilo kot priponko">
+<!ENTITY forward-as-inline.label "Posreduj v besedilu">
+<!ENTITY forward-as-inline.tooltip "Posreduj sporočilo kot del e-pošte">
+<!ENTITY full-screen.label "Cel zaslon">
+<!ENTITY full-screen.tooltip "Preklopi na celozaslonski način">
+<!ENTITY get-inbox.label "Dobi Prejeto">
+<!ENTITY get-inbox.tooltip "Osredotoči se na mapo Prejeto">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY gmail.tooltip "Odpri pošto Google">
+<!ENTITY google.label "Google">
+<!ENTITY google.tooltip "Naloži Googlovo domačo stran">
+<!ENTITY help.label "Pomoč">
+<!ENTITY help.tooltip "Odpri dokumentacijo za pomoč">
+<!ENTITY hide-images.label "Skrij slike">
+<!ENTITY hide-images.tooltip "Skrij vse slike in ozadja trenutnega dokumenta">
+<!ENTITY home-page-change.add-current "Dodaj trenutno stran">
+<!ENTITY home-page-change.current "Nastavi kot trenutno stran">
+<!ENTITY home-page-change.label "Spremni domače strani">
+<!ENTITY home-page-change.multiple "Nastavi kot več povezav">
+<!ENTITY home-page-change.tooltip "Spremeni domačo stran">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY hotmail-button.tooltip "Odpri Hotmail">
+<!ENTITY html-mode.label "Način HTML">
+<!ENTITY html-mode.tooltip "Nastavi prikaz sporočila kot HTML ali golo besedilo">
+<!ENTITY ignored-threads.label "Prezrte niti">
+<!ENTITY ignored-threads.tooltip "Pokaži prezrte niti">
+<!ENTITY image-toggle.label "Preklopi slike">
+<!ENTITY image-toggle.tooltip "Preklopi nalaganje ali odlaganje slik">
+<!ENTITY import.label "Uvozi">
+<!ENTITY import.tooltip "Uvozi nastavitve ali podatke">
+<!ENTITY inspecter.label "Pregledovalnik">
+<!ENTITY inspecter.tooltip "Pregledovalnik modela objektov dokumenta">
+<!ENTITY installaddons.label "Namesti">
+<!ENTITY installaddons.tooltip "Namesti razširitev ali temo">
+<!ENTITY java-toggle.label "Preklopi Javo">
+<!ENTITY java-toggle.tooltip "Vklopi/Izklopi Javo">
+<!ENTITY javaScriptConsole.label "Konzola za napake">
+<!ENTITY javaScriptConsole.tooltip "Odpri Konzolo za napake">
+<!ENTITY javascript-toggle.label "Preklopi JavaScript">
+<!ENTITY javascript-toggle.tooltip "Vklopi/Izklopi Javascript">
+<!ENTITY label-all-blank.label "Odstrani oznake">
+<!ENTITY label-all-blank.tooltip "Odstrani oznake vseh zavihkov">
+<!ENTITY label-blank.label "Odstrani oznako">
+<!ENTITY label-blank.tooltip "Odstrani oznako trenutnega zavihka">
+<!ENTITY link-open.label "Nastavitev povezav">
+<!ENTITY link-open.tooltip "Nastavi način odpiranja povezav">
+<!ENTITY min-font-size.label "Najmanjša velikost pisave">
+<!ENTITY min-font-size.tooltip "Preklopi najmanjšo velikost pisave">
+<!ENTITY minimize-window.label "Skrči">
+<!ENTITY minimize-window.tooltip "Skrči trenutno okno">
+<!ENTITY msg-filter.label "Filtri">
+<!ENTITY msg-filter.tooltip "Nastavi filtre sporočil">
+<!ENTITY msg-pane.label "Podokno sporočil">
+<!ENTITY msg-pane.tooltip "Preklopi podokno sporočil">
+<!ENTITY new-message.label "Novo sporočilo">
+<!ENTITY new-message.tooltip "Sestavi novo e-poštno sporočilo">
+<!ENTITY next-tab.label "Naslednji zavihek">
+<!ENTITY next-tab.tooltip "Pojdi na naslednje sporočilo">
+<!ENTITY open-current-frame.label "Trenutni okvir">
+<!ENTITY open-current-frame.tooltip "Prikaži samo trenutno izbrani okvir">
+<!ENTITY tb-open.label "Odpri">
+<!ENTITY tb-open.tooltip "Odpri datoteko">
+<!ENTITY page-source.label "Izvorna koda">
+<!ENTITY page-source.tooltip "Pokaži izvorno kodo strani">
+<!ENTITY pageinfo.label "Podatki o strani">
+<!ENTITY pageinfo.tooltip "Odpri okno s podatki o strani">
+<!ENTITY pagesetup.label "Priprava strani">
+<!ENTITY pagesetup.tooltip "Nastavi način tiskanja strani">
+<!ENTITY paypal.label "PayPal">
+<!ENTITY paypal.tooltip "Odpri Paypal">
+<!ENTITY personal-bookmarks-menu-button.label "Meni orodne vrstice zaznamkov">
+<!ENTITY personal-bookmarks-menu-button.tooltip "Prikaži meni orodne vrstice zaznamkov">
+<!ENTITY plainpaste.label "Prilepi kot golo besedilo">
+<!ENTITY plainpaste.tooltip "Prilepi brez oblikovanja besedila">
+<!ENTITY preferences.label "Možnosti">
+<!ENTITY preferences.tooltip "Odpri možnosti">
+<!ENTITY previous-tab.label "Prejšnji zavihek">
+<!ENTITY previous-tab.tooltip "Pojdi na prejšnji zavihek">
+<!ENTITY print-preview.label "Predogled tiskanja">
+<!ENTITY print-preview.tooltip "Odpri predogled tiskanja">
+<!ENTITY profile-folder.label "Profil">
+<!ENTITY profile-folder.tooltip "Pokaži svojo mapo profila">
+<!ENTITY purge.label "Počisti">
+<!ENTITY purge.tooltip "Strni mape in počisti Koš">
+<!ENTITY read-mail.label "Preberi pošto">
+<!ENTITY read-mail.tooltip "Odpri program za prebiranje pošte">
+<!ENTITY read-message.label "Preberi">
+<!ENTITY read-message.tooltip "Preberi sporočilo">
+<!ENTITY read-news.label "Preberi novice">
+<!ENTITY read-news.tooltip "Odpri program za prebiranje novic">
+<!ENTITY realNextMessage.label "Naslednje sporočilo">
+<!ENTITY realNextMessage.tooltip "Dobi resnično naslednje sporočilo">
+<!ENTITY realPreviousMessage.label "Prejšnje sporočilo">
+<!ENTITY realPreviousMessage.tooltip "Dobi resnično prejšnje sporočilo">
+<!ENTITY redo.label "Uveljavi">
+<!ENTITY redo.tooltip "Uveljavi zadnjo spremebo">
+<!ENTITY reduce.label "Oddalji">
+<!ENTITY reduce.tooltip "Zmanjšaj velikost besedila">
+<!ENTITY reload-all-tabs.label "Ponovno naloži zavihke">
+<!ENTITY reload-all-tabs.tooltip "Ponovno naloži vse odprte zavihke">
+<!ENTITY reload-proxy.label "Ponovno naloži posrednika">
+<!ENTITY reload-proxy.tooltip "Ponovno naloži posrednika">
+<!ENTITY reload-skip-cache.label "Ponovno naloži predpomnilnik preskakovanja">
+<!ENTITY reload-skip-cache.tooltip "Ponovno naloži stran brez uporabe vsebine iz predpomnilnika">
+<!ENTITY rename-tab.label "Preimenuj zavihek">
+<!ENTITY rename-tab.tooltip "Preimenuj trenutno izbrani zavihek">
+<!ENTITY reply-sender.label "Odgovori samo pošiljatelju">
+<!ENTITY reply-sender.tooltip "Odgovori samo pošiljatelju e-pošte">
+<!ENTITY reset.label "Ponastavi povečavo">
+<!ENTITY reset.tooltip "Ponastavi velikost besedila">
+<!ENTITY restart-app.label "Ponovno zaženi">
+<!ENTITY restart-app.tooltip "Ponovno zaženi program">
+<!ENTITY return-receipt.label "Povratnica">
+<!ENTITY return-receipt.tooltip "Vklopi/Izklopi povratnico">
+<!ENTITY save-frame.label "Shrani okvir">
+<!ENTITY save-frame.tooltip "Shrani okvir dokumenta">
+<!ENTITY saveas.label "Shrani">
+<!ENTITY saveas.tooltip "Shrani dokument kot">
+<!ENTITY search-addresses.label "Išči naslove">
+<!ENTITY search-addresses.tooltip "Odpri iskanje naslovov">
+<!ENTITY search-messages.label "Išči sporočila">
+<!ENTITY search-messages.tooltip "Odpri iskanje sporočil">
+<!ENTITY select-all.label "Izberi vse">
+<!ENTITY select-all.tooltip "Izberi vse besedilo">
+<!ENTITY send-link.label "Pošlji povezavo">
+<!ENTITY send-link.tooltip "Pošlji povezavo na to stran">
+<!ENTITY send-receive.label "Pošlji in Prejmi">
+<!ENTITY send-receive.tooltip "Pošlji in prejmi sporočila">
+<!ENTITY send-with-no-save.label "Pošlji brez shranjevanja">
+<!ENTITY send-with-no-save.tooltip "Pošlji sporočilo brez shranjevanja kopije">
+<!ENTITY shift-delete.label "Preskoči Koš">
+<!ENTITY shift-delete.tooltip "Izbriši sporočilo brez premikanja v Koš">
+<!ENTITY show-frame.label "Prikaži okvir">
+<!ENTITY show-frame.tooltip "Prikaži samo trenutni okvir">
+<!ENTITY snap-back.label "Preskoči nazaj">
+<!ENTITY snap-back.tooltip "Pojdi nazaj na stran, ki je bila v tem zavihku odprta kot prva">
+<!ENTITY statusbar-toggle.label "Vrstica stanja">
+<!ENTITY statusbar-toggle.tooltip "Preklopi vrstico stanja">
+<!ENTITY stop-all.label "Ustavi vse">
+<!ENTITY stop-all.tooltip "Ustavi nalaganje vseh zavihkov">
+<!ENTITY stop-animation.label "Animacija">
+<!ENTITY stop-animation.tooltip "Ustavi animacijo oznak GIF, Blink in Marquee">
+<!ENTITY stop-cookies.allow "Omogoči vse piškotke">
+<!ENTITY stop-cookies.block "Blokiraj piškotke">
+<!ENTITY stop-cookies.label "Preklopi piškotke">
+<!ENTITY stop-cookies.privacy "Omogoči glede na nastavitve zasebnosti">
+<!ENTITY stop-cookies.thirdparty "Dovoli za izvirno stran">
+<!ENTITY stop-cookies.tooltip "Ustavi nastavitev piškotkov.">
+<!ENTITY stop-dinamic-content.label "Preklopi vstavljeno">
+<!ENTITY stop-dinamic-content.tooltip "Ustavi nalaganje vse vstavljene vsebine.">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY stop-flash.tooltip "Ustavi nadležnost vtičnika Flash">
+<!ENTITY stop-iframe.label "Okvirji v besedilu">
+<!ENTITY stop-iframe.tooltip "Ustavi nalaganje okvirjev v besedilu in vsebujočih oglasov">
+<!ENTITY stop-movies.label "Video posnetki">
+<!ENTITY stop-movies.tooltip "Ustavi nalaganje video posnetkov">
+<!ENTITY tab-list.label "Seznam zavihkov">
+<!ENTITY tab-list.tooltip "Prikaži seznam zavihkov">
+<!ENTITY tasks-in-view.label "Prikazana opravila">
+<!ENTITY tasks-in-view.tooltip "Preklopi prikazana opravila">
+<!ENTITY tasks-toggle.label "Preklopi opravila">
+<!ENTITY tasks-toggle.tooltip "Preklopi vrstico opravil">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "Navedi in odpri vse strani about">
+<!ENTITY tb-about-blank.label "Počisti zavihek">
+<!ENTITY tb-about-blank.tooltip "Odpri/Naloži prazen zavihek">
+<!ENTITY tb-addons-exceptions.label "Strani, ki lahko nalagajo dodatke">
+<!ENTITY tb-all-menus.label "Mani">
+<!ENTITY tb-all-menus.tooltip "Vsi meniji">
+<!ENTITY tb-clear-cache.label "Počisti predpomnilnik">
+<!ENTITY tb-clear-cache.tooltip "Počisti predpomnilnik brskalnika">
+<!ENTITY tb-clear-search.label "Počisti iskanje">
+<!ENTITY tb-clear-search.tooltip "Počisti in osredotoči se na iskalno vrstico">
+<!ENTITY tb-clear-url.label "Počisti URL">
+<!ENTITY tb-clear-url.tooltip "Počisti in osredotoči se na vrstico URL">
+<!ENTITY tb-clone-tab.label "Kopiraj zavihek">
+<!ENTITY tb-clone-tab.tooltip "Naredi kopijo trenutnega zavihka">
+<!ENTITY tb-cookie-exceptions.label "Izjeme piškotkov">
+<!ENTITY tb-cookie-manager.label "Upravitelj piškotkov">
+<!ENTITY tb-cookie-manager.tooltip "Odpre upravitelja piškotkov za trenutno spletno stran.">
+<!ENTITY tb-delete-cookies.label "Izbriši piškotke">
+<!ENTITY tb-delete-session-cookies.label "Izbriši piškotke seje">
+<!ENTITY tb-download-sync.label "Prenesi/Uskladi zdaj …">
+<!ENTITY tb-download-sync.tooltip "Zaženi prenos in uskladi pred prekinitvijo povezave">
+<!ENTITY tb-edit-menu.label "Meni Uredi">
+<!ENTITY tb-edit-menu.tooltip "Prikaži meni Uredi">
+<!ENTITY tb-file-menu.label "Meni Datoteka">
+<!ENTITY tb-file-menu.tooltip "Prikaži meni Datoteka">
+<!ENTITY tb-history-menu.label "Zgodovina">
+<!ENTITY tb-history-menu.tooltip "Odpri meni Zgodovina">
+<!ENTITY tb-new-event.label "Nov dogodek">
+<!ENTITY tb-new-event.tooltip "Dodaj nov dogodek v koledar.">
+<!ENTITY tb-new-tab.label "Nov zavihek">
+<!ENTITY tb-new-tab.tooltip "Odpri nov brskalnikov zavihek">
+<!ENTITY tb-new-task.label "Novo opravilo">
+<!ENTITY tb-new-task.tooltip "Dodaj novo opravilo v koledar.">
+<!ENTITY tb-open-in-conversation.label "Odpri kot pogovor">
+<!ENTITY tb-open-in-conversation.tooltip "Odpri trenutno sporočilo kot pogovor">
+<!ENTITY tb-page-info-media.label "Predstavnost strani">
+<!ENTITY tb-page-info-media.tooltip "Odpri podatke o strani na zavihku večpredstavnosti">
+<!ENTITY tb-page-reload.label "Ponovno naloži">
+<!ENTITY tb-page-reload.tooltip "Ponovno naloži trenutno stran">
+<!ENTITY tb-page-stop.label "Ustavi">
+<!ENTITY tb-page-stop.tooltip "Ustavi nalaganje strani">
+<!ENTITY tb-print-page.label "Natisni">
+<!ENTITY tb-print-page.tooltip "Natisni to stran">
+<!ENTITY tb-saved-passwords.label "Gesla">
+<!ENTITY tb-saved-passwords.tooltip "Odpri upravitelja gesel">
+<!ENTITY tb-search-go-button.label "Išči">
+<!ENTITY tb-search-go-button.tooltip "Išči po spletu">
+<!ENTITY tb-search-minus.label "Zmanjšaj velikost iskalne vrstice">
+<!ENTITY tb-search-minus.tooltip "Zmanjša širino iskalne vrstice za 10 slikovnih točk">
+<!ENTITY tb-search-plus.label "Povečaj velikost iskalne vrstice">
+<!ENTITY tb-search-plus.tooltip "Poveča širino iskalne vrstice za 10 slikovnih točk">
+<!ENTITY tb-search-resize.label "Spremeni velikost iskalne vrstice">
+<!ENTITY tb-search-resize.tooltip "Spremeni širino iskalne vrstice">
+<!ENTITY tb-show-all-history.label "Prikaži vso zgodovino">
+<!ENTITY tb-show-all-history.tooltip "Odpri okno 'Prikaži vso zgodovino'">
+<!ENTITY tb-toggle-headers.label "Glave e-pošte">
+<!ENTITY tb-toggle-headers.tooltip "Preklopi vsebino glav e-pošte">
+<!ENTITY tb-toggle-menu-bar.label "Prekopi vrstico z menijem">
+<!ENTITY tb-toggle-menu-bar.tooltip "Prekopi vrstico z menijem">
+<!ENTITY tb-toggle-popup-blocker.label "Blokirnik pojavnih oken">
+<!ENTITY tb-toggle-popup-blocker.tooltip "Preklopi blokirnika pojavnih oken">
+<!ENTITY tb-tools-menu.label "Meni Orodja">
+<!ENTITY tb-tools-menu.tooltip "Prikaži meni orodja">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY tb-twitter-button.tooltip "Odpri domačo stran Twitter">
+<!ENTITY tb-url-go-button.label "Pojdi">
+<!ENTITY tb-url-go-button.tooltip "Pojdi na trenutni naslov">
+<!ENTITY tb-view-menu.label "Meni Pogled">
+<!ENTITY tb-view-menu.tooltip "Prikaži meni Pogled">
+<!ENTITY themes.label "Teme">
+<!ENTITY themes.tooltip "Odpri upravitelja tem">
+<!ENTITY thunderbird-extension.label "Razširitve">
+<!ENTITY thunderbird-extension.tooltip "Dobi več razširitev za Thunderbird">
+<!ENTITY thunderbird-theme.label "Teme">
+<!ENTITY thunderbird-theme.tooltip "Dobi več tem za Thunderbird">
+<!ENTITY toggle-proxy.label "Preklopi posrednika">
+<!ENTITY toggle-proxy.tooltip "Vklopi/Izklopi posrednika">
+<!ENTITY toggle-read.label "Preklopi prebrano">
+<!ENTITY toggle-read.tooltip "Preklopi stanje prebranosti sporočil">
+<!ENTITY toggle-starred.label "Preklopi oznako z zvezdico">
+<!ENTITY toggle-starred.tooltip "Preklopi stanje oznake z zvezdico">
+<!ENTITY toggle-styles.label "Preklopi sloge">
+<!ENTITY toggle-styles.tooltip "Dodaj/Odstrani sloge, ki jih določijo spletne strani">
+<!ENTITY toggle-toolbar.label "Preklopi orodno vrstico">
+<!ENTITY toggle-toolbar.tooltip "Preklopi glavno orodno vrstico">
+<!ENTITY toggle.proxy.auto.configuration "Samodejna nastavitev posrednika (PAC)">
+<!ENTITY toggle.proxy.auto.detect "Samodejno zaznaj nastavitve posrednika">
+<!ENTITY toggle.proxy.direct "Neposredna povezava, brez posrednika">
+<!ENTITY toggle.proxy.manual "Ročna nastavitev posrednika">
+<!ENTITY toggle.proxy.system "Uporabi sistemske nastavitve posrednika">
+<!ENTITY toolbar-menu.label "Orodne vrstice">
+<!ENTITY toolbar-menu.tooltip "Skrij/Prikaži orodne vrstice">
+<!ENTITY top-page.label "Na vrh">
+<!ENTITY top-page.tooltip "Pojdi na vrh strani">
+<!ENTITY translate.label "Prevedi">
+<!ENTITY translate.tooltip "Prevedi trenutno stran v priljubljeni jezik">
+<!ENTITY undo-close-tab.label "Razveljavi zapiranje zavihka">
+<!ENTITY undo-close-tab.tooltip "Ponovno odpri nazadnje zaprti zavihek">
+<!ENTITY undo.label "Razveljavi">
+<!ENTITY undo.tooltip "Razveljavi zadnjo spremembo">
+<!ENTITY unread-threads.label "Neprebrane niti">
+<!ENTITY unread-threads.tooltip "Pokaži neprebrane niti">
+<!ENTITY up-directory.label "Nadrejena mapa">
+<!ENTITY up-directory.tooltip "Pojdi na nadrejeno mapo">
+<!ENTITY use-document-colors.label "Barve strani">
+<!ENTITY use-document-colors.tooltip "Preklopi med privzetimi barvami in barvami strani">
+<!ENTITY use-document-fonts.label "Pisave strani">
+<!ENTITY use-document-fonts.tooltip "Preklopi med privzetimi pisavami in pisavami strani">
+<!ENTITY watched-with-unread-threads.label "Spremljane niti z neprebranimi">
+<!ENTITY watched-with-unread-threads.tooltip "Pokaži spremljane niti z neprebranimi">
+<!ENTITY websearch.label "Spletno iskanje">
+<!ENTITY websearch.tooltip "Išči po spletu s priljubljenim spletnim islanikom">
+<!ENTITY wikipedia.label "Wikipedija">
+<!ENTITY wikipedia.tooltip "Naloži Wikipedijino domačo stran">
+<!ENTITY with-unread-threads.label "Niti z neprebranimi">
+<!ENTITY with-unread-threads.tooltip "Pokaži niti z neprebranimi">
+<!ENTITY workoffline.label "Brez povezave">
+<!ENTITY workoffline.tooltip "Preklopi način povezave">
+<!ENTITY yahoo-button.label "Pošta Yahoo">
+<!ENTITY yahoo-button.tooltip "Odpri pošto Yahoo">

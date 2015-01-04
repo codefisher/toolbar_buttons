@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "다음 탭으로 가기">
 <!ENTITY open-current-frame.label "현재 페이지 표시">
 <!ENTITY open-current-frame.tooltip "현재 선택된 프레임만 표시">
-<!ENTITY open.label "열기">
-<!ENTITY open.tooltip "파일 열기">
+<!ENTITY tb-open.label "열기">
+<!ENTITY tb-open.tooltip "파일 열기">
 <!ENTITY page-source.label "소스">
 <!ENTITY page-source.tooltip "페이지 소스 보기">
 <!ENTITY pageinfo.label "페이지 정보">

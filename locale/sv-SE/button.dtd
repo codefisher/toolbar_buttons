@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Gå till nästa flik">
 <!ENTITY open-current-frame.label "Aktuell ram">
 <!ENTITY open-current-frame.tooltip "Visa endast den aktuella, markerade ramen">
-<!ENTITY open.label "Öppna">
-<!ENTITY open.tooltip "Öppna en fil">
+<!ENTITY tb-open.label "Öppna">
+<!ENTITY tb-open.tooltip "Öppna en fil">
 <!ENTITY page-source.label "Källkod">
 <!ENTITY page-source.tooltip "Visa sidans källkod">
 <!ENTITY pageinfo.label "Sidinformation">

@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Activează fila următoare">
 <!ENTITY open-current-frame.label "Afișează cadrul curent">
 <!ENTITY open-current-frame.tooltip "Afișează doar cadrul selectat">
-<!ENTITY open.label "Deschide">
-<!ENTITY open.tooltip "Deschide un fișier">
+<!ENTITY tb-open.label "Deschide">
+<!ENTITY tb-open.tooltip "Deschide un fișier">
 <!ENTITY page-source.label "Sursă pagină">
 <!ENTITY page-source.tooltip "Afișează sursa paginii">
 <!ENTITY pageinfo.label "Informații pagină">

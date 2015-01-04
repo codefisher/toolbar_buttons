@@ -106,8 +106,8 @@
 <!ENTITY new-message.tooltip "Yeni Email mesajı yaz">
 <!ENTITY next-tab.label "Sonraki Sekme">
 <!ENTITY next-tab.tooltip "Sonraki Sekmeye Git">
-<!ENTITY open.label "Aç">
-<!ENTITY open.tooltip "Bir dosya aç">
+<!ENTITY tb-open.label "Aç">
+<!ENTITY tb-open.tooltip "Bir dosya aç">
 <!ENTITY page-source.tooltip "Sayfa kaynağını göster">
 <!ENTITY pageinfo.label "Sayfa Bilgisi">
 <!ENTITY pageinfo.tooltip "Sayfa Bilgisi Penceresini Aç">

@@ -155,8 +155,8 @@
 <!ENTITY next-tab.tooltip "次のタブへ移動します">
 <!ENTITY open-current-frame.label "現在のフレームの表示">
 <!ENTITY open-current-frame.tooltip "現在選択されているフレームのみを表示します">
-<!ENTITY open.label "開く">
-<!ENTITY open.tooltip "ファイルを開きます">
+<!ENTITY tb-open.label "開く">
+<!ENTITY tb-open.tooltip "ファイルを開きます">
 <!ENTITY page-source.label "ソース">
 <!ENTITY page-source.tooltip "ページ ソースを表示します">
 <!ENTITY pageinfo.label "ページ情報">

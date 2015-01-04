@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "Prejsť na nasledujúcu kartu">
 <!ENTITY open-current-frame.label "Zobraziť aktuálny rámec">
 <!ENTITY open-current-frame.tooltip "Zobraziť iba aktuálne označený rámec">
-<!ENTITY open.label "Otvoriť">
-<!ENTITY open.tooltip "Otvoriť súbor">
+<!ENTITY tb-open.label "Otvoriť">
+<!ENTITY tb-open.tooltip "Otvoriť súbor">
 <!ENTITY page-source.label "Zdrojový kód">
 <!ENTITY page-source.tooltip "Zobraziť zdrojový kód stránky">
 <!ENTITY pageinfo.label "Informácie o stránke">

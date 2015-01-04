@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "到下一個分頁">
 <!ENTITY open-current-frame.label "目前欄框">
 <!ENTITY open-current-frame.tooltip "只顯示目前所選的欄框">
-<!ENTITY open.label "開啟">
-<!ENTITY open.tooltip "開啟檔案">
+<!ENTITY tb-open.label "開啟">
+<!ENTITY tb-open.tooltip "開啟檔案">
 <!ENTITY page-source.label "原始碼">
 <!ENTITY page-source.tooltip "檢視頁面原始碼">
 <!ENTITY pageinfo.label "頁面資訊">

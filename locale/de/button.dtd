@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Zum nächsten Tab gehen">
 <!ENTITY open-current-frame.label "Frame anzeigen">
 <!ENTITY open-current-frame.tooltip "Nur aktuellen Frame anzeigen">
-<!ENTITY open.label "Öffnen">
-<!ENTITY open.tooltip "Datei öffnen...">
+<!ENTITY tb-open.label "Öffnen">
+<!ENTITY tb-open.tooltip "Datei öffnen...">
 <!ENTITY page-source.label "Quelltext">
 <!ENTITY page-source.tooltip "Quelltext anzeigen">
 <!ENTITY pageinfo.label "Seiteninformationen">
