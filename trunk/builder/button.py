@@ -33,7 +33,7 @@ class SimpleButton():
             Image
         except NameError:
             self._settings["merge_images"] = False
-        if applications:
+        if applications and "all" not in applications:
             self._applications = applications
         else:
             self._applications = self._settings["applications_data"].keys()
@@ -157,7 +157,7 @@ class SimpleButton():
         return self._strings.get(name, "")
 
     def get_icons(self, button):
-        return self._icons[button]
+        return self._icons.get(button)
     
     def locale_string(self, button_locale, locale_name):
         def locale_str(str_type, button_id):
@@ -470,7 +470,7 @@ class Button(SimpleButton):
             image_map_x = {}
             for size in icon_size_set:
                 if size is not None:
-                    y, x = int(math.ceil(image_count*int(size) / 1000.0)), (1000 / int(size))                    
+                    y, x = int(math.ceil(image_count*int(size) / 1000.0)), (1000 / int(size))
                     image_map_x[size] = x
                     image_map_size[size] = Image.new("RGBA", (x * int(size), y * int(size)), (0, 0, 0, 0))
         count = 0
