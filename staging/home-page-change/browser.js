@@ -1,6 +1,6 @@
 homePageStrings: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-	.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+	.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	return {
 		'title': stringBundle.GetStringFromName("home-page.title"),
 		'message': stringBundle.GetStringFromName("home-page.message"),
@@ -27,7 +27,6 @@ homePageChangeMultiple: function() {
 	var str = value.split("|");
 	var links = "";
 	
-	Components.utils.import("resource://gre/modules/SharedPromptUtils.jsm");
 	//var bunService = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
 	//var bundle = bunService.createBundle("chrome://global/locale/commonDialogs.properties");
 	
@@ -40,7 +39,7 @@ homePageChangeMultiple: function() {
 		//button1Label: bundle.GetStringFromName("Cancel"),
 		button1Label: strings["done"],
 	};
-	var i = 0;
+	var i = 0, button = null;
 	do {		
 		if (str[i] != null) {
 			args["value"] = str[i];
@@ -50,11 +49,7 @@ homePageChangeMultiple: function() {
 		var propBag = PromptUtils.objectToPropBag(args);
 		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", propBag);
 		var value = propBag.getPropertyAsAString('value');
-		var button = propBag.getPropertyAsInt32('buttonNumClicked');
-		alert(button);
-		//if (button == 1) {
-		//	return;
-		//}
+		button = propBag.getPropertyAsInt32('buttonNumClicked');
 		if (value != "http://" && value != "") {
 			if (links) {
 				links += "|" + value;
@@ -63,7 +58,7 @@ homePageChangeMultiple: function() {
 			}
 		}
 		i++;
-	} while(button == 0);
+	} while(button === 0);
 	prefs.setCharPref("browser.startup.homepage", links);
 }
 
@@ -81,20 +76,21 @@ homePageAddCurrent: function() {
 }
 
 homeList: function(item) {
-	var command = document.getElementById("homePageSeperator");
-	while (item.lastChild != command) {
+	while (item.lastChild.id != "homePageSeperator") {
 		item.removeChild(item.lastChild);
 	}
-	var prefs = toolbar_buttons.interfaces.PrefBranch;
-	var links = prefs.getCharPref("browser.startup.homepage");
-	var str = links.split("|");
-	for (var i = 0; str[i] != null; i++) {
-		var menuitem = document.createElement("menuitem");
-		menuitem.setAttribute("label", str[i]);
-		var url = str[i];
-		menuitem.addEventListener("click", function(event) {
-			toolbar_buttons.LoadURL(url, event);
-		}, false);
-		item.appendChild(menuitem);
+	var homepage = toolbar_buttons.interfaces.PrefBranch.getComplexValue("browser.startup.homepage", Ci.nsIPrefLocalizedString).data;
+	var urls = homepage.split("|");
+	for (var i in urls) {
+		toolbar_buttons.createHomePageMenuItem(item, urls[i]);
 	}
+}
+
+createHomePageMenuItem: function(item, url) {
+	var menuitem = document.createElement("menuitem");
+	menuitem.setAttribute("label", url);
+	menuitem.addEventListener("click", function(event) {
+		toolbar_buttons.LoadURL(url, event);
+	}, false);
+	item.appendChild(menuitem);
 }

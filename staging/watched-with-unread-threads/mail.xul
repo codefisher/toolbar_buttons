@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="watched-with-unread-threads"
 	label="&watched-with-unread-threads.label;"
 	tooltiptext="&watched-with-unread-threads.tooltip;"

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-about-about"
 	type="menu"
 	label="&tb-about-about.label;"

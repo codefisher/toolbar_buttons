@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="toggle-starred"
 	label="&toggle-starred.label;"
 	tooltiptext="&toggle-starred.tooltip;"
-	oncommand="goDoCommand('cmd_markAsFlagged');" />
+	oncommand="window.goDoCommand('cmd_markAsFlagged');" />

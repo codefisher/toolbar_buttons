@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="ignored-threads"
 	label="&ignored-threads.label;"
 	tooltiptext="&ignored-threads.tooltip;"
-	oncommand="goDoCommand('cmd_viewIgnoredThreads');" />
+	oncommand="window.goDoCommand('cmd_viewIgnoredThreads');" />

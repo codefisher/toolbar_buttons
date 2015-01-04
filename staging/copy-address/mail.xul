@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="copy-address"
 	label="&copy-address.label;"
 	tooltiptext="&copy-address.tooltip;"

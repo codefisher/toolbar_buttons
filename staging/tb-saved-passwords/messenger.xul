@@ -1,5 +1,4 @@
 <toolbarbutton 
-    class="toolbarbutton-1"
     id="tb-saved-passwords"
     label="&tb-saved-passwords.label;"
     tooltiptext="&tb-saved-passwords.tooltip;"

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="unread-threads"
 	label="&unread-threads.label;"
 	tooltiptext="&unread-threads.tooltip;"

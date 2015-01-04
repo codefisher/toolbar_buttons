@@ -1,5 +1,4 @@
 <toolbarbutton 
-	class="toolbarbutton-1"
 	id="tb-print-page"
 	label="&tb-print-page.label;"
 	tooltiptext="&tb-print-page.tooltip;"

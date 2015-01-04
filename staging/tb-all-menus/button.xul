@@ -1,5 +1,4 @@
 <toolbarbutton 
-    class="toolbarbutton-1"
     id="tb-all-menus"
 	type="menu"
     label="&tb-all-menus.label;"

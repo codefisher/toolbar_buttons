@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="get-inbox"
 	label="&get-inbox.label;"
 	tooltiptext="&get-inbox.tooltip;"
