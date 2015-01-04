@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="attachments-delete"
 	label="&attachments-delete.label;"
 	tooltiptext="&attachments-delete.tooltip;"
-	oncommand="HandleAllAttachments('delete');" />
+	oncommand="window.HandleAllAttachments('delete');" />

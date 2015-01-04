@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="help"
 	label="&help.label;"
 	tooltiptext="&help.tooltip;"
-	oncommand="openHelpLink('firefox-help');"/>
+	oncommand="window.openHelpLink('firefox-help');"/>

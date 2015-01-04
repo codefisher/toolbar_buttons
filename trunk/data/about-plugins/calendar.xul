@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="about-plugins"
 	label="&about-plugins.label;"
 	tooltiptext="&about-plugins.tooltip;"

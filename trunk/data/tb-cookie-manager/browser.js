@@ -1,7 +1,6 @@
 openCookieTab: function(event) {
 	if(event.button == 1) {
-		var newPage = getBrowser().addTab("chrome://browser/content/preferences/cookies.xul");
-		getBrowser().selectedTab = newPage;
+		window.getBrowser().selectedTab = window.getBrowser().addTab("chrome://browser/content/preferences/cookies.xul");;
 	}
 }
 

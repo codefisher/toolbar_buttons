@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-clone-tab"
 	label="&tb-clone-tab.label;"
 	tooltiptext="&tb-clone-tab.tooltip;"

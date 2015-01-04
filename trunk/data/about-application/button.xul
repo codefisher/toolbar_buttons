@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="about-application"
 	label="&about-application.label;"
 	tooltiptext="&about-application.tooltip;"
-	oncommand="openAboutDialog();" />
+	oncommand="window.openAboutDialog();" />

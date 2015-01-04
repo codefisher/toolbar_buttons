@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="stop-animation"
 	label="&stop-animation.label;"
 	tooltiptext="&stop-animation.tooltip;"

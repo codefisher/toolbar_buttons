@@ -1,5 +1,5 @@
 renameTabBlank: function() {
-	var thisTab = getBrowser().selectedTab;
+	var thisTab = window.getBrowser().selectedTab;
 	thisTab.label = "";
 	thisTab.removeAttribute("image");
 }

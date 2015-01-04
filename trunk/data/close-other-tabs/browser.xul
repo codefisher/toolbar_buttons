@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="close-other-tabs"
 	label="&close-other-tabs.label;"
 	tooltiptext="&close-other-tabs.tooltip;"

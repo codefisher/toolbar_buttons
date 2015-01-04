@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1 msgHeaderView-button"
 	id="forward-as-inline"
 	label="&forward-as-inline.label;"
 	tooltiptext="&forward-as-inline.tooltip;"
-	onclick="MsgForwardAsInline(event);" />
+	onclick="window.MsgForwardAsInline(event);" />

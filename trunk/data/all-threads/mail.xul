@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="all-threads"
 	label="&all-threads.label;"
 	tooltiptext="&all-threads.tooltip;"
-	oncommand="goDoCommand('cmd_viewAllMsgs');" />
+	oncommand="window.goDoCommand('cmd_viewAllMsgs');" />

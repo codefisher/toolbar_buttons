@@ -1,0 +1,5 @@
+<toolbarbutton
+	id="tb-open"
+	label="&open.label;"
+	tooltiptext="&open.tooltip;"
+	oncommand="window.MsgOpenFromFile();"/>

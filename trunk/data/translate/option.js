@@ -34,7 +34,6 @@ loadTranslateOnload: function(XMLhttp) {
 	var promt_setting = ['ar', 'ag', 'ae', 'af', 'as', 'ai', 'ap'];
 		
 	var data = XMLhttp.target.responseText.match(/<select[^>]*name=tl[^>]*>.*?<\/select>/);
-	var languages = {};
 	var items = data.toString().match(/<option.*?value="?[^>"]+"?>.*?<\/option>/g);
 	var menu = document.getElementById('translate-languages-popup');
 	var promt = document.getElementById('translate-promt-popup');

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-cookie-manager"
 	label="&tb-cookie-manager.label;"
 	tooltiptext="&tb-cookie-manager.tooltip;"

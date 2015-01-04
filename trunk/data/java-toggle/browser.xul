@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="java-toggle"
 	label="&java-toggle.label;"
 	tooltiptext="&java-toggle.tooltip;"

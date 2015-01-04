@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="print-preview"
 	label="&print-preview.label;"
 	tooltiptext="&print-preview.tooltip;"
-	oncommand="goDoCommand('cmd_printpreview');"/>
+	oncommand="window.goDoCommand('cmd_printpreview');"/>

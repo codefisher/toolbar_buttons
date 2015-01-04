@@ -8,7 +8,7 @@ toggleMsgHeaders: function() {
 		mode = modeType.NormalHeaders;
 	}
 	prefs.setIntPref("mail.show_headers", mode);
-	AdjustHeaderView(mode);
-	ReloadMessage();
+	window.AdjustHeaderView(mode);
+	window.ReloadMessage();
 }
 

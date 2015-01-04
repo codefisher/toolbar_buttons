@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="statusbar-toggle"
 	label="&statusbar-toggle.label;"
 	tooltiptext="&statusbar-toggle.tooltip;"

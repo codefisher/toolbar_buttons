@@ -1,11 +1,11 @@
 saveFrame: function() {
 	try {
-		saveFrameDocument();
+		window.saveFrameDocument();
 	} catch(e) {
 		// Firefox 4
 		var focusedWindow = document.commandDispatcher.focusedWindow;
-		if (isContentFrame(focusedWindow)) {
-			saveDocument(focusedWindow.document);
+		if (window.isContentFrame(focusedWindow)) {
+			window.saveDocument(focusedWindow.document);
 		}
 	}
 }

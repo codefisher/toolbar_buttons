@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tasks-in-view"
 	label="&tasks-in-view.label;"
 	tooltiptext="&tasks-in-view.tooltip;"

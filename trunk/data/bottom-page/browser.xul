@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="bottom-page"
 	label="&bottom-page.label;"
 	tooltiptext="&bottom-page.tooltip;"

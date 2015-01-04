@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="reply-sender"
 	label="&reply-sender.label;"
 	tooltiptext="&reply-sender.tooltip;"
-	oncommand="goDoCommand('cmd_replySender');" />
+	oncommand="window.goDoCommand('cmd_replySender');" />

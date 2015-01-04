@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-twitter-button"
 	label="&tb-twitter-button.label;"
 	tooltiptext="&tb-twitter-button.tooltip;"

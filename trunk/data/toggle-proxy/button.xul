@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="toggle-proxy"
 	type="menu-button"
 	label="&toggle-proxy.label;"

@@ -1,3 +1,3 @@
 BrowserCloseAllTabs: function() {
-	gBrowser.removeAllTabsBut(gBrowser.addTab("about:blank"));
+	window.gBrowser.removeAllTabsBut(window.gBrowser.addTab("about:blank"));
 }

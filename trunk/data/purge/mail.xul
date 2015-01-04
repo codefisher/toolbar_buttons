@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="purge"
 	label="&purge.label;"
 	tooltiptext="&purge.tooltip;"
-	oncommand="goDoCommand('cmd_deleteJunk'); /* what about trash? */ goDoCommand('cmd_compactFolder');"/>
+	oncommand="window.goDoCommand('cmd_deleteJunk'); /* what about trash? */ window.goDoCommand('cmd_compactFolder');"/>

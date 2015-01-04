@@ -1,4 +1,3 @@
-cloneTab: function(event) {
-	var gBrowser=getBrowser();
-     gBrowser.duplicateTab(gBrowser.selectedTab);
+cloneTab: function() {
+	window.gBrowser.duplicateTab(window.gBrowser.selectedTab);
 }

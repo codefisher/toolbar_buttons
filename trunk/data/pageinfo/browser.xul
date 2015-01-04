@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="pageinfo"
 	label="&pageinfo.label;"
 	tooltiptext="&pageinfo.tooltip;"

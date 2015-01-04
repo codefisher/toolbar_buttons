@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="stop-all"
 	label="&stop-all.label;"
 	tooltiptext="&stop-all.tooltip;"

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-toggle-headers"
 	label="&tb-toggle-headers.label;"
 	tooltiptext="&tb-toggle-headers.tooltip;"

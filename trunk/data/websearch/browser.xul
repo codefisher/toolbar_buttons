@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1 firefoxButton"
 	id="websearch"
 	label="&websearch.label;"
 	tooltiptext="&websearch.tooltip;"

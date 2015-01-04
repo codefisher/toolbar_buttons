@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="wikipedia"
 	label="&wikipedia.label;"
 	tooltiptext="&wikipedia.tooltip;"

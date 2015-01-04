@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="shift-delete"
 	label="&shift-delete.label;"
 	tooltiptext="&shift-delete.tooltip;"
-	oncommand="goDoCommand('cmd_shiftDelete');" />
+	oncommand="window.goDoCommand('cmd_shiftDelete');" />

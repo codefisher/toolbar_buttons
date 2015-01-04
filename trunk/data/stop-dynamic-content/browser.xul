@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="stop-dynamic-content"
 	label="&stop-dinamic-content.label;"
 	tooltiptext="&stop-dinamic-content.tooltip;"

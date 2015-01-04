@@ -1,28 +1,30 @@
 upOneFolder: function() {
 	var location = window.content.document.location,
 		pathname = location.pathname;
-	if(pathname == "/" && location.hash == "")
+	if(pathname == "/" && location.hash == "") {
 		return;
+	}
 	pathname = toolbar_buttons.trimFolderPath(pathname);
 	window.content.document.location = location.protocol + "//" + location.host + pathname;
 }
 
 trimFolderPath: function(pathname) {
 	if (pathname.indexOf("index") != -1) {
-		pathname = href.substring(0, pathname.indexOf("index"));
+		pathname = pathname.substring(0, pathname.indexOf("index"));
 	}
 	return pathname.substring(0, pathname.substring(0, pathname.length - 1).lastIndexOf("/") + 1);
 }
 
-loadHigherFolders: function(popup, event) {
-	while(popup.firstChild)
-		popup.removeChild(popup.firstChild);
+loadHigherFolders: function(popup) {
+	while (popup.lastChild && popup.lastChild.nodeName != 'menuseparator') {
+		popup.removeChild(popup.lastChild);
+	}
 	var item = null, location = window.content.document.location,
 		pathname = location.pathname;
 	if(!pathname) {
 		item = document.createElement("menuitem");
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var empty = stringBundle.GetStringFromName("empty");
 		item.setAttribute("label", empty);
 		item.setAttribute("disabled", true);
@@ -42,7 +44,8 @@ loadHigherFolders: function(popup, event) {
 			popup.appendChild(item);
 			pathname = toolbar_buttons.trimFolderPath(pathname);
 		} while (pathname);
-		if(location.pathname == "/" && location.hash == "")
+		if(location.pathname == "/" && location.hash == "") {
 			item.setAttribute("disabled", true);
+		}
 	}
 }

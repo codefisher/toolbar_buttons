@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="about-cache"
 	label="&about-cache.label;"
 	tooltiptext="&about-cache.tooltip;"

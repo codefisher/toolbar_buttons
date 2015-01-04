@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="extensions"
 	label="&extensions.label;"
 	tooltiptext="&extensions.tooltip;"

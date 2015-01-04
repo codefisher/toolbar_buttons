@@ -3,7 +3,7 @@ TranslatePage: function() {
 	var translator = toolbar_buttons.interfaces.ExtensionPrefBranch.getCharPref("translate.service");
 	
 	if(translator == "bing") {
-		var doc = getBrowser().contentDocument;
+		var doc = window.getBrowser().contentDocument;
 		var script = doc.createElement('script');
 		script.type = 'text/javascript';
 		script.src = 'http://labs.microsofttranslator.com/bookmarklet/default.aspx?f=js&to=' + to; 
@@ -11,18 +11,18 @@ TranslatePage: function() {
 	} else if(translator == "promt") {
 			var pto = toolbar_buttons.interfaces.ExtensionPrefBranch.getCharPref("translate.promt");
 		// this will not work yet, because we need the correct value for 'to'
-		var targetURI = getWebNavigation().currentURI.spec;
-		var service = 'http://www.online-translator.com/siteTranslation/autolink/?direction=' + pto + '&template=General&sourceURL=' + encodeURIComponent(targetURI)
-		loadURI(service);
+		var targetURI = window.getWebNavigation().currentURI.spec;
+		var service = 'http://www.online-translator.com/siteTranslation/autolink/?direction=' + pto + '&template=General&sourceURL=' + encodeURIComponent(targetURI);
+		window.loadURI(service);
 	} else {
 		var service = "http://translate.google.com/translate?u=";
-		var targetURI = getWebNavigation().currentURI.spec;
+		var targetURI = window.getWebNavigation().currentURI.spec;
 		var langs = "&tl=" + to;
 		if (targetURI.indexOf("translate.google.com") > 0 ||
 				targetURI.indexOf("64.233.179") > 0) {
-			BrowserReload();
+			window.BrowserReload();
 		} else {
-			loadURI(service + encodeURIComponent(targetURI) + langs);
+			window.loadURI(service + encodeURIComponent(targetURI) + langs);
 		}
 	}
 }

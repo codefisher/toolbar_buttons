@@ -2,12 +2,12 @@ toJavaScriptConsole: function() {
 	var extPrefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	if(prefs.getBoolPref('devtools.errorconsole.enabled')) {
-		toJavaScriptConsole();
+		window.toJavaScriptConsole();
 	} else {
 		if(extPrefs.getIntPref("javascript.console.open") == 1) {
-			HUDService.toggleBrowserConsole();
+			window.HUDService.toggleBrowserConsole();
 		} else {
-			gDevToolsBrowser.selectToolCommand(gBrowser, "webconsole");
+			window.gDevToolsBrowser.selectToolCommand(window.gBrowser, "webconsole");
 		}
 	}	
 }

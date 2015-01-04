@@ -1,5 +1,5 @@
 reloadPAC: function() {
-	Components.classes['@mozilla.org/network/protocol-proxy-service;1'].getService().reloadPAC();
+	Cc['@mozilla.org/network/protocol-proxy-service;1'].getService().reloadPAC();
 }
 
 setProxyButtonState: function(state) {
@@ -15,12 +15,5 @@ setProxyButtonState: function(state) {
 	}
 }
 
-window.addEventListener("load", function(e) {
-	var prefWatch = new toolbar_buttons.PreferenceWatcher();
-	prefWatch.startup("network.proxy.type", null, toolbar_buttons.setProxyButtonState);
-	window.addEventListener("unload", function(e) {
-		prefWatch.shutdown();
-	}, false);
-}, false);
-
+toolbar_buttons.loadPrefWatcher("network.proxy.type", null, toolbar_buttons.setProxyButtonState);
 toolbar_buttons.loadPrefWatcher("network.proxy.autoconfig_url", null, toolbar_buttons.setProxyButtonState);

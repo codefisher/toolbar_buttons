@@ -1,7 +1,7 @@
 tasksInView: function() {
 	try {
-		changeDisplayToDoInViewCheckbox();
+		window.changeDisplayToDoInViewCheckbox();
 	} catch(e) {
-		toggleTasksInView();
+		window.toggleTasksInView();
 	}
 }

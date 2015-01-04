@@ -1,9 +1,9 @@
-toggleMinimumFontSize: function(item) {
+toggleMinimumFontSize: function() {
 	var extPrefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var promptService = toolbar_buttons.interfaces.PromptService;
 	var strBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	try {
 		prefs.getIntPref("font.minimum-size.x-western");
 	} catch (e) {
@@ -31,4 +31,4 @@ toggleMinimumFontSize: function(item) {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("font.minimum-size.x-western", "min-font-size");
+toolbar_buttons.loadPrefWatcher("font.minimum-size", "min-font-size");

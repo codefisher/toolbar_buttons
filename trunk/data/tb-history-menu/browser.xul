@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-history-menu"
 	label="&tb-history-menu.label;"
 	tooltiptext="&tb-history-menu.tooltip;"

@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="statusbar-toggle"
 	label="&statusbar-toggle.label;"
 	tooltiptext="&statusbar-toggle.tooltip;"
-	oncommand="goToggleToolbar('status-bar', 'menu_showTaskbar');"/>
+	oncommand="window.goToggleToolbar('status-bar', 'menu_showTaskbar');"/>

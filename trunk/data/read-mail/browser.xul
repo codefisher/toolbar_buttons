@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="read-mail"
 	label="&read-mail.label;"
 	tooltiptext="&read-mail.tooltip;"

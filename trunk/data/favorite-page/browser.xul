@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="favorite-page"
 	label="&favorite-page.label;"
 	tooltiptext="&favorite-page.tooltip;"

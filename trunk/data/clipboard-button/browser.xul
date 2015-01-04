@@ -1,5 +1,4 @@
-<toolbarbutton class="toolbarbutton-1"
-	type="menu-button"
+<toolbarbutton type="menu-button"
 	id="clipboard-button"
 	label="&clipboard.label;"
 	tooltiptext="&clipboard.tooltip;"

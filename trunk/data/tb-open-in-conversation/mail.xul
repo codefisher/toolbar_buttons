@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-open-in-conversation"
 	label="&tb-open-in-conversation.label;"
 	tooltiptext="&tb-open-in-conversation.tooltip;"

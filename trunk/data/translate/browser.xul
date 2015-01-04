@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="translate"
 	label="&translate.label;"
 	tooltiptext="&translate.tooltip;"

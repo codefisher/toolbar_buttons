@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="delete-tasks"
 	tooltiptext="&delete-tasks.tooltip;"
 	label="&delete-tasks.label;"

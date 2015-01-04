@@ -1,9 +1,8 @@
 <toolbarbutton
 	id="toolbar-menu"
-	class="toolbarbutton-1"
 	label="&toolbar-menu.label;"
 	tooltiptext="&toolbar-menu.tooltip;"
 	type="menu"
-	onpopupshowing="onViewToolbarsPopupShowing(event, 'mail-toolbox');">
+	onpopupshowing="window.onViewToolbarsPopupShowing(event, 'mail-toolbox');">
 	<menupopup id="toolbar-popup" oncommand="event.stopPropagation();" />
 </toolbarbutton>

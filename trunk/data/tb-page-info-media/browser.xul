@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-page-info-media"
 	label="&tb-page-info-media.label;"
 	tooltiptext="&tb-page-info-media.tooltip;"
-	oncommand="BrowserPageInfo(null, 'mediaTab');" />
+	oncommand="window.BrowserPageInfo(null, 'mediaTab');" />

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="thunderbird-extension"
 	label="&thunderbird-extension.label;"
 	tooltiptext="&thunderbird-extension.tooltip;"
