@@ -34,6 +34,18 @@
       </div>
      </div>
     </div>
+    {% if tbutton != tbutton.group.latest %}
+    <div class="front-page-row">
+     <div class="front-page-cell">
+      <div class="front-page-cell-content">
+        <h2><img src="/static/images/pastel-svg/32/error.png" width="32" height="32" alt="" /> Update Recomended</h2>
+        <p>
+            It appears that you have not got the latest version of the extension installed.  It is recommended you go to the <a href="/toolbar_button/">home page</a> and get the latest release.
+        </p>
+      </div>
+     </div>
+    </div>
+    {% endif %}
     </div>
     
     {% include "tbutton_maker/snipits/help-new.html" %}

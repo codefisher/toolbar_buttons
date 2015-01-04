@@ -120,3 +120,8 @@
 button img {
 	vertical-align:middle;
 }
+
+button#create-submit {
+	line-height:32px;
+}
+
