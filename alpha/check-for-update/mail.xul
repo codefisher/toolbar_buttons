@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="check-for-update"
 	label="&check-for-update.label;"
 	tooltiptext="&check-for-update.tooltip;"

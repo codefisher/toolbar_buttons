@@ -1,6 +1,6 @@
 deleteAllCookies: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var question = stringBundle.GetStringFromName("stop-cookies-delete.question");
 	var title = stringBundle.GetStringFromName("stop-cookies-delete.title");
 	var prompt = toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("delete.cookies.check");
@@ -17,7 +17,7 @@ deleteSessionCookie: function() {
 	while(cookieEnumeration.hasMoreElements()) {
 		var cookieObject = cookieEnumeration.getNext().QueryInterface(Components.interfaces.nsICookie2);
 		if(cookieObject.isSession) {
-			cookieManager.remove(cookie.host, cookie.name, cookie.path, false);
+			cookieManager.remove(cookieObject.host, cookieObject.name, cookieObject.path, false);
 		}
 	}
 }

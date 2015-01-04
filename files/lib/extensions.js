@@ -10,19 +10,23 @@ extensionOptionsOpen: function(addon) {
 openExtensionMenu: function(aMenu, aType) {
 	Cu.import("resource://gre/modules/AddonManager.jsm");
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
-	while(aMenu.firstChild.nodeName != 'menuseparator') {
-		aMenu.removeChild(aMenu.firstChild);
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
+	var sep = aMenu.lastChild;
+	while(sep.nodeName != 'menuseparator') {
+		sep = sep.previousSibling;
+	}
+	while(sep.previousSibling && sep.previousSibling.nodeName != 'menuseparator') {
+		aMenu.removeChild(sep.previousSibling);
 	}
 	AddonManager.getAddonsByTypes([aType], function(addons){
-		addons.sort(function(a, b) { return a.name < b.name; });
+		addons.sort(function(a, b) { return a.name > b.name; });
 		for(var i in addons) {
 			var addon = addons[i];
 			if(addon.appDisabled) {
 			  	var menuItem = document.createElement("menuitem");
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
 			  	menuItem.setAttribute("disabled", true);
-				aMenu.insertBefore(menuItem, aMenu.firstChild);
+				aMenu.insertBefore(menuItem, sep);
 			} else {
 			  	var menuItem = document.createElement("menu");
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
@@ -31,7 +35,7 @@ openExtensionMenu: function(aMenu, aType) {
 			  	var menupopup = document.createElement("menupopup");
 			  	menupopup.addEventListener("popupshowing", toolbar_buttons.openAddonControlMenu(menupopup, addon, stringBundle), false);
 			  	menuItem.appendChild(menupopup);
-				aMenu.insertBefore(menuItem, aMenu.firstChild);
+				aMenu.insertBefore(menuItem, sep);
 			}
 		}
 	});
@@ -121,7 +125,7 @@ extensionHomepageOpen: function(addon) {
 	return function() {
 		var url = addon.homepageURL;
 		try {
-			var browser = getBrowser();
+			var browser = window.getBrowser();
 			browser.selectedTab = browser.addTab(url);
 		} catch(e) {
 			var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
@@ -136,15 +140,15 @@ openAddonDisableMenu: function(menupopup, addon, stringBundle, disabled) {
 			menupopup.removeChild(menupopup.firstChild);
 		}
 		var undo = document.createElement("menuitem");
-	  	undo.setAttribute("label", stringBundle.GetStringFromName("extensions-undo"));
+		undo.setAttribute("label", stringBundle.GetStringFromName("extensions-undo"));
 		undo.addEventListener("command", toolbar_buttons.setExtensionDisabled(addon, !disabled), false);
-	  	menupopup.appendChild(undo);
+		menupopup.appendChild(undo);
 		var restart = document.createElement("menuitem");
-	  	restart.setAttribute("label", stringBundle.GetStringFromName("extensions-restart"));
+		restart.setAttribute("label", stringBundle.GetStringFromName("extensions-restart"));
 		restart.addEventListener("command", function(event) { toolbar_buttons.restartMozilla(); }, false);
-	  	menupopup.appendChild(restart);
-	  	
-	  	event.stopPropagation();
+		menupopup.appendChild(restart);
+		
+		event.stopPropagation();
 	};
 }
 
@@ -154,15 +158,15 @@ openAddonRemoveMenu: function(menupopup, addon, stringBundle) {
 			menupopup.removeChild(menupopup.firstChild);
 		}
 		var undo = document.createElement("menuitem");
-	  	undo.setAttribute("label", stringBundle.GetStringFromName("extensions-undo"));
+		undo.setAttribute("label", stringBundle.GetStringFromName("extensions-undo"));
 		undo.addEventListener("command", function(event) { addon.cancelUninstall(); }, false);
-	  	menupopup.appendChild(undo);
+		menupopup.appendChild(undo);
 		var restart = document.createElement("menuitem");
-	  	restart.setAttribute("label", stringBundle.GetStringFromName("extensions-restart"));
+		restart.setAttribute("label", stringBundle.GetStringFromName("extensions-restart"));
 		restart.addEventListener("command", function(event) { toolbar_buttons.restartMozilla(); }, false);
-	  	menupopup.appendChild(restart);
-	  	
-	  	event.stopPropagation();
+		menupopup.appendChild(restart);
+		
+		event.stopPropagation();
 	};
 }
 
@@ -174,12 +178,11 @@ setExtensionDisabled: function(aAddon, disabled) {
 
 openExtensionAbout: function(aAddon) {
 	return function(event) {
-    	var aboutURL = aAddon.aboutURL;
-	    if (aboutURL) {
-	      window.openDialog(aboutURL, "", "chrome,centerscreen,modal", aAddon);
-	    } else {
-	      window.openDialog("chrome://mozapps/content/extensions/about.xul",
-	                 "", "chrome,centerscreen,modal", aAddon);
-	    }
-    };
+		var aboutURL = aAddon.aboutURL;
+		if (aboutURL) {
+			window.openDialog(aboutURL, "", "chrome,centerscreen,modal", aAddon);
+		} else {
+			window.openDialog("chrome://mozapps/content/extensions/about.xul", "", "chrome,centerscreen,modal", aAddon);
+		}
+	};
 }

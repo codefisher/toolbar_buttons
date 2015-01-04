@@ -1,5 +1,4 @@
-<toolbarbutton class="toolbarbutton-1"
-	id="tiny-url"
+<toolbarbutton id="tiny-url"
 	type="menu-button"
 	label="&tiny-url.label;"
 	tooltiptext="&tiny-url.tooltip;"

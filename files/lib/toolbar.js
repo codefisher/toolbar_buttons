@@ -1,11 +1,12 @@
 toggleToolbar: function(aEvent, toolbar_id, force) {
-	if(toolbar_id != aEvent.originalTarget.parentNode.id) {
+	if(!aEvent || !aEvent.originalTarget || toolbar_id != aEvent.originalTarget.parentNode.id) {
 		var toolbar = document.getElementById(toolbar_id);
 		try {
 			// Firefox 4, mainly the bookmark toolbar button
-			setToolbarVisibility(toolbar, toolbar.collapsed);
-			if(force)
+			window.setToolbarVisibility(toolbar, toolbar.collapsed);
+			if(force) {
 				toolbar.collapsed = !toolbar.collapsed;
+			}
 		} catch(e) {
 			toolbar.collapsed = !toolbar.collapsed;
 			document.persist(toolbar_id, "collapsed");
@@ -33,29 +34,24 @@ setToggleToolbar: function(toolbar_id, button_id) {
 }
 
 loadToggleToolbar: function(button_id, toolbar_id){
-	window.addEventListener(
-			"load",
-			function(aEvent) {
-				var toolbar = document.getElementById(toolbar_id);
-				if(toolbar) {
-					toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
-					var mutationObserver = new MutationObserver(function(mutations) {
-								var attribute = false;
-								for(var mut in mutations) {
-									attribute = attribute || (mut.type == "attributes");
-								}
-								if(!mut) return;
-								var attributeName = false;
-								for(var attr in mutations) {
-									attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
-								}
-								if(!attributeName) return;
-								var button = document.getElementById(button_id);
-								if(button == null) return;
-								toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
-							});
-					mutationObserver.observe(toolbar, { attributes: true, subtree: false });
-				}
-			},
-	true);
+	var toolbar = document.getElementById(toolbar_id);
+	if(toolbar) {
+		toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
+		var mutationObserver = new window.MutationObserver(function(mutations) {
+			var attribute = false;
+			for(var mut in mutations) {
+				attribute = attribute || (mut.type == "attributes");
+			}
+			if(!mut) return;
+			var attributeName = false;
+			for(var attr in mutations) {
+				attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
+			}
+			if(!attributeName) return;
+			var button = document.getElementById(button_id);
+			if(button == null) return;
+			toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
+		});
+		mutationObserver.observe(toolbar, { attributes: true, subtree: false });
+	}
 }

@@ -22,16 +22,16 @@ PreferenceWatcher: function() {
 
 	this.startup = function(pref, button, func) {
 		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
-		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch);
+		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
 		if(button)
 			this.button = document.getElementById(button);
-		this.button_id = button
+		this.button_id = button;
 		this.func = func;
 		this.pref = pref;
-		//try {
+		try {
 			this.setStatus();
-		//} catch(e) {} // pref might not exist
+		} catch(e) {} // pref might not exist
 	};
 
 	this.shutdown = function() {
@@ -85,11 +85,9 @@ prefToggleNumber: function(button, pref, next) {
 }
 
 loadPrefWatcher: function(pref, button_id, func) {
-	window.addEventListener("load", function(e) {
-		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(pref, button_id, func);
-		window.addEventListener("unload", function(e) {
-			prefWatch.shutdown();
-		}, false);
+	var prefWatch = new toolbar_buttons.PreferenceWatcher();
+	prefWatch.startup(pref, button_id, func);
+	window.addEventListener("unload", function(e) {
+		prefWatch.shutdown();
 	}, false);
 }

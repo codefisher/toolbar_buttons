@@ -1,7 +1,7 @@
 setUpStringDatabase: function(tableName, defaultDataFunc) {
 	let file = FileUtils.getFile("ProfD", ["toolbar_buttons.sqlite"]);
 	let dbConn = Services.storage.openDatabase(file);
-	var statement = dbConn.createStatement("CREATE TABLE " + tableName + " (name CHAR(50) NOT NULL, value TEXT NOT NULL)");
+	var statement = dbConn.createAsyncStatement("CREATE TABLE " + tableName + " (name CHAR(50) NOT NULL, value TEXT NOT NULL)");
 	statement.executeAsync({
 		handleResult: function(aResultSet) {
 		},		

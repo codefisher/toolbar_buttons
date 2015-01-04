@@ -9,9 +9,8 @@
 		<em:creator>{{creator}}</em:creator>
 		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
 		<em:homepageURL>{{homepageURL}}</em:homepageURL>
-		<!--<em:bootstrap>true</em:bootstrap>-->
 		
-{{optionsURL}}{{updateUrl}}{{applications}}
+{{optionsURL}}{{updateUrl}}{{applications}}{{bootstrap}}
 
 		<em:translator>Thanks to the Babelzilla team!</em:translator>
 		<em:translator>Dryopteris, Fux, Team erweiterungen.de - German [de]</em:translator>
@@ -32,6 +31,7 @@
 		<em:translator>smyrna - Turkish [tr]</em:translator>
 		<em:translator>aiseeker, fiag - Chinese (Simplified) [zh-CN]</em:translator>
 		<em:translator>J. J. Wang (ez2ask) - Chinese (Traditional) [zh-TW]</em:translator>
+		<em:translator>Peter Klofutar - Slovenian [sl-SI]</em:translator>
 
 		<em:contributor>az who has contributed code, ideas and testing</em:contributor>
 		<em:contributor>Dennis Kadioglu (denk) for the popup blocker button</em:contributor>

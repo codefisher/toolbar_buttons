@@ -5,7 +5,7 @@ config_default = {
     "name": "Toolbar Buttons",
     "creator": "Michael Buckley",
     "description": "Adds toolbar buttons to the customize toolbar window in several programs including Firefox, Thunderbird and SeaMonkey.  Some of the buttons make commonly preformed actions quicker, others add new functionality.",
-    "version": "1.0.3",
+    "version": "1.0.4a1",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "https://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
@@ -49,6 +49,7 @@ config_default = {
     # if include_toolbars, is positive that many toolbars will be added.
     # if it is -1, a number will be chosen by looking at buttons_per_toolbar
     "include_toolbars": 0,
+    "include_satusbars": 0,
     "buttons_per_toolbar": 32,
     # if the buttons should be added to the new toolbars.
     # if all buttons can't fix given buttons_per_toolbar they will be left out
@@ -57,6 +58,10 @@ config_default = {
     "add_to_main_toolbar": None,
     # if a menu should be added with all the buttons that can be changed into menu items
     "create_menu": False,
+    "menu_meta": ("toolbar-buttons-menu", "tb-toolbar-buttons.menu"),
+    "default_show_menu_pref": "true",
+    # where the menu should be placed
+    "as_submenu": True,
     # if set, the disciption will be change to list the buttons in the extension
     # and if there is only one button, also the title and icon will be change
     "fix_meta": False,
@@ -66,7 +71,8 @@ config_default = {
     "extra_options":False,
     # use the more extended versions of some buttons
     "extended_buttons": False,
-
+    # make the extension use the bootstrap.js and be restartless
+    "restartless": False,
 
     # controls for the locales
     "default_locale": "en-US",
@@ -148,12 +154,20 @@ config_default = {
          "suite_browser": "BrowserToolbarPalette",
     },
     "file_to_toolbar_box": {
-        "browser": "navigator-toolbox",
-        "mail": "mail-toolbox",
-        "compose": "compose-toolbox",
-        "read": "mail-toolbox",
-        "calendar": "calendar-toolbox",
-        "suite_browser": "navigator-toolbox",
+        "browser": ("toolbox", "navigator-toolbox"),
+        "mail": ("toolbox", "mail-toolbox"),
+        "compose": ("toolbox", "compose-toolbox"),
+        "read": ("toolbox", "mail-toolbox"),
+        "calendar": ("toolbox", "calendar-toolbox"),
+        "suite_browser": ("toolbox", "navigator-toolbox"),
+    },
+    "file_to_bottom_box": {
+        "browser": ("vbox", "browser-bottombox"),
+        "mail": ("window", "messengerWindow"), # there is nothing wrapping the statusbar,
+        "compose": ("window", "msgcomposeWindow"),
+        "read": ("window", "messengerWindow"),
+        #"calendar": "",
+        "suite_browser": ("window", "main-window"), 
     },
     "file_to_main_toolbar": {
         "browser": "nav-bar",
@@ -164,9 +178,9 @@ config_default = {
     },
     "file_to_menu": {
         "browser": ("menu_ToolsPopup", "devToolsSeparator"),
-        "mail": ("taskPopup", "devToolsSeparator"),
+        "mail": ("taskPopup", "tasksMenuAfterDeleteSeparator"),
         "compose": ("taskPopup", "tasksMenuMail"),
-        "read": ("taskPopup", "devToolsSeparator"),
+        "read": ("taskPopup", "tasksMenuAfterDeleteSeparator"),
         "suite_browser": ("menu_ToolsPopup", "devToolsSeparator"),
     },
     "file_exclude": {

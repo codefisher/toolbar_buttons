@@ -16,5 +16,5 @@ if(!this.toolbar_buttons) {
 				parent[object_name] = child[object_name];
 			}
 		}
-	}
+	};
 }

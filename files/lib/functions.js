@@ -52,7 +52,7 @@ getUrlContents: function(aURL){
 wrongVersion: function(event) {
 	var XulAppInfo = toolbar_buttons.interfaces.XULAppInfo();
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("wrong-version-title");
 	var error = stringBundle.formatStringFromName("wrong-version",
 					[event.target.label, XulAppInfo.name,
@@ -71,9 +71,15 @@ showAMenu: function(aEvent) {
 	if (!aMenu) {
 		toolbar_buttons.wrongVersion();
 	}
-	var popup = aMenu.firstChild.cloneNode(true);
+	var popup = aMenu.firstChild.cloneNode(false);
 	while(aEvent.target.firstChild) {
 		aEvent.target.removeChild(aEvent.target.firstChild);
+	}
+	var kids = aMenu.firstChild.childNodes;
+	for(var i = 0; i < kids.length; i++) {
+		if(kids[i] != aEvent.target.parentNode.parentNode) {
+			popup.appendChild(kids[i].cloneNode(true));
+		}
 	}
 	aEvent.target.appendChild(popup);
 	if(aEvent.target.nodeName == 'menuitem' || aEvent.target.nodeName == 'menu') {
@@ -135,10 +141,10 @@ initApp: function(Application) {
 		} catch(e) {}
 	}
 	try {
-		toMessengerWindow(); // if this is SeaMonkey, this might be a good fall back?
+		window.toMessengerWindow(); // if this is SeaMonkey, this might be a good fall back?
 	} catch(e) {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var title = stringBundle.GetStringFromName("no-path-title");
 		var error = stringBundle.GetStringFromName("no-path-message-version");
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
@@ -147,7 +153,7 @@ initApp: function(Application) {
 
 getFile: function(name) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var fp = toolbar_buttons.interfaces.FilePicker();
 	fp.init(window, stringBundle.GetStringFromName("filepath"), Ci.nsIFilePicker.modeOpen);
 	if (fp.show() == Ci.nsIFilePicker.returnOK) {
@@ -160,7 +166,7 @@ getFile: function(name) {
 
 checkBrowserReload: function() {
 	if (toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("do.reload")) {
-		BrowserReload();
+		window.BrowserReload();
 	}
 }
 
@@ -189,7 +195,7 @@ PluginHelper: {
 			aName = aRegEx.toString().replace(/[^a-z ]/gi, "");
 		var filenames = {};
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var title = stringBundle.GetStringFromName("plugin-error");
 		var plugins = this.GetPluginTags();
 		if (!plugins)
@@ -203,7 +209,7 @@ PluginHelper: {
 				if (filename in filenames) {
 					var message = stringBundle.formatStringFromName(
 							"mutiple-plugin-installed", [ aName ], 1);
-					toolbar_buttons.interfaces.PromptService.alert(lastWindow,
+					toolbar_buttons.interfaces.PromptService.alert(window,
 							title, message);
 				}
 				filenames[filename] = true;
@@ -257,25 +263,21 @@ loadUserContentSheet: function(sheet, pref, button_id) {
 }
 
 stopContent: function(button, pref) {
-	//if(toolbar_buttons.extensionPrefToggleStatus(button, pref))
-	//	BrowserReload();
 	toolbar_buttons.extensionPrefToggleStatus(button, pref);
 }
 
 loadContectBlocker: function(fullPref, prefName, button_id, sheet, func) {
-	window.addEventListener("load", function(e) {
-		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(fullPref, button_id, func ? func : function(state) {
-			var button = document.getElementById(button_id);
-			if(button) {
-				toolbar_buttons.cssFileToUserContent(sheet, state, false, button_id);
-				toolbar_buttons.setButtonStatus(button, state);
-			}
-		});
-		toolbar_buttons.loadUserContentSheet(sheet, prefName, button_id);
-		window.addEventListener("unload", function(e) {
-			prefWatch.shutdown();
-		}, false);
+	var prefWatch = new toolbar_buttons.PreferenceWatcher();
+	prefWatch.startup(fullPref, button_id, func ? func : function(state) {
+		var button = document.getElementById(button_id);
+		if(button) {
+			toolbar_buttons.cssFileToUserContent(sheet, state, false, button_id);
+			toolbar_buttons.setButtonStatus(button, state);
+		}
+	});
+	toolbar_buttons.loadUserContentSheet(sheet, prefName, button_id);
+	window.addEventListener("unload", function(e) {
+		prefWatch.shutdown();
 	}, false);
 }
 
@@ -291,7 +293,7 @@ clearBar: function(bar) {
 		item.focus();
 	} else {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-				.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var title = stringBundle.GetStringFromName("bar-missing-title"), name = "";
 		// lousy because the code for matching strings is not smart enough
 		if(bar == "search") {
@@ -306,20 +308,20 @@ clearBar: function(bar) {
 
 showOnlyThisFrame: function() {
 	var focusedWindow = document.commandDispatcher.focusedWindow;
-	if (isContentFrame(focusedWindow)) {
+	if (window.isContentFrame(focusedWindow)) {
 		var doc = focusedWindow.document;
 		var frameURL = doc.location.href;
 
-		urlSecurityCheck(frameURL, gBrowser.contentPrincipal,
+		window.urlSecurityCheck(frameURL, window.gBrowser.contentPrincipal,
 						 Ci.nsIScriptSecurityManager.DISALLOW_SCRIPT);
 		var referrer = doc.referrer;
-		gBrowser.loadURI(frameURL, referrer ? makeURI(referrer) : null);
+		window.gBrowser.loadURI(frameURL, referrer ? window.makeURI(referrer) : null);
 	}
 }
 
 searchBarSize: function(opp) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var item = document.getElementById("search-container"), toolbar = item, size;
 	if(item) {
 		do {
@@ -367,18 +369,18 @@ realNavigate: function(event, dirPrev) {
 	var dir;
 	if (dirPrev) {
 		if (event && event.shiftKey) {
-			dir = nsMsgNavigationType.previousUnreadMessage;
+			dir = window.nsMsgNavigationType.previousUnreadMessage;
 		} else {
-			dir = nsMsgNavigationType.previousMessage;
+			dir = window.nsMsgNavigationType.previousMessage;
 		}
 	} else {
 		if (event && event.shiftKey) {
-			dir = nsMsgNavigationType.nextUnreadMessage;
+			dir = window.nsMsgNavigationType.nextUnreadMessage;
 		} else {
-			dir = nsMsgNavigationType.nextMessage;
+			dir = window.nsMsgNavigationType.nextMessage;
 		}
 	}
-	return GoNextMessage(dir, false);
+	return window.GoNextMessage(dir, false);
 }
 
 getETDL: function() {
@@ -424,12 +426,12 @@ openDialog: function(parentWindow, url, windowName, features) {
 }
 
 sortMenu: function(event, aMenu) {
-	if(aMenu.sorted){
+	if(aMenu.sorted || !aMenu.getAttribute('sortable')){
 		return;
 	}
 	var menuitems = [];
 	while(aMenu.firstChild) {
-		menuitems.push(aMenu.firstChild.cloneNode(true));
+		menuitems.push(aMenu.firstChild);
 		aMenu.removeChild(aMenu.firstChild);
 	}
 	menuitems.sort(function(a, b) { return a.getAttribute('label').toLowerCase() > b.getAttribute('label').toLowerCase(); });
@@ -439,23 +441,24 @@ sortMenu: function(event, aMenu) {
 	aMenu.sorted = true;
 }
 
+menuLoaderEvent: function(event) {
+	var menuitem = event.originalTarget;
+	if(menuitem.getAttribute('showamenu')) {
+		// so this is one of those menu items that as a fake submenu, show it
+		var cEvent = new Event('command', {
+		    'view': window,
+		    'bubbles': false,
+		    'cancelable': true,
+		    'target': menuitem,
+		});
+		menuitem.dispatchEvent(cEvent);
+	}
+}
+
 handelMenuLoaders: function(event, item) {
 	if(item._handelMenuLoaders)
 		return;
-	item.addEventListener('DOMMenuItemActive', function(event) {
-		var menuitem = event.originalTarget;
-		var command = menuitem.getAttribute('oncommand');
-		if(command.indexOf('toolbar_buttons.showAMenu') > -1) {
-			// so this is one of those menu items that as a fake submenu, show it
-			var cEvent = new Event('command', {
-			    'view': window,
-			    'bubbles': false,
-			    'cancelable': true,
-			    'target': menuitem,
-			});
-			menuitem.dispatchEvent(cEvent);
-		}
-	}, false);
+	item.addEventListener('DOMMenuItemActive', toolbar_buttons.menuLoaderEvent, false);
 	item._handelMenuLoaders = true;
 }
 

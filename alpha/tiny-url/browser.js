@@ -41,7 +41,7 @@ tinyUrl: {
 			return
 		var domain = self.branch.getCharPref("domain");
 		var link = "http://" + domain + "/" + self.XMLhttp.responseText;
-		MailIntegration.sendMessage(link, "");
+		window.MailIntegration.sendMessage(link, "");
 	},
 	changeOption: function(item) {
 		var self = toolbar_buttons.tinyUrl;
@@ -63,10 +63,10 @@ tinyUrl: {
 	},
 	mail: function() {
 		var self = toolbar_buttons.tinyUrl;
-		MailIntegration.sendMessage(self.gURL, "");
+		window.MailIntegration.sendMessage(self.gURL, "");
 	},
 	visit: function() {
-		loadURI("http://xrl.in/");
+		window.loadURI("http://xrl.in/");
 	},
 	copyToClipBoard: function(copytext) {
 		var str = toolbar_buttons.interfaces.SupportsString();
