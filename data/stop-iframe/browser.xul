@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="stop-iframe"
 	label="&stop-iframe.label;"
 	tooltiptext="&stop-iframe.tooltip;"

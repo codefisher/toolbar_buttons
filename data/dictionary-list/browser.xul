@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="dictionary-list"
 	type="menu"
 	label="&dictionary-list.label;"

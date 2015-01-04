@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="snap-back"
 	label="&snap-back.label;"
 	tooltiptext="&snap-back.tooltip;"
-	oncommand="getWebNavigation().gotoIndex(0);" />
+	oncommand="window.getWebNavigation().gotoIndex(0);" />

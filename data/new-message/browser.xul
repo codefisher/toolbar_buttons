@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="new-message"
 	label="&new-message.label;"
 	tooltiptext="&new-message.tooltip;"
-	oncommand="MailIntegration.sendMessage('', '');"/>
+	oncommand="window.MailIntegration.sendMessage('', '');"/>

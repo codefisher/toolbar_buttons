@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="toggle-bookmark-toolbar"
 	label="&bookmark-toolbar.label;"
 	tooltiptext="&bookmark-toolbar.tooltip;"

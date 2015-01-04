@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="about-mem-cache"
 	label="&about-mem-cache.label;"
 	tooltiptext="&about-mem-cache.tooltip;"

@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="attachments-save"
 	label="&attachments-save.label;"
 	tooltiptext="&attachments-save.tooltip;"
-	oncommand="HandleAllAttachments('save');" />
+	oncommand="window.HandleAllAttachments('save');" />

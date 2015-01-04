@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="plainpaste"
 	label="&plainpaste.label;"
 	tooltiptext="&plainpaste.tooltip;"

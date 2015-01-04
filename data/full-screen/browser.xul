@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="full-screen"
 	label="&full-screen.label;"
 	tooltiptext="&full-screen.tooltip;"

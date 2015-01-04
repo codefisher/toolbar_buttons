@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="stop-cookies"
 	type="menu-button"
 	label="&stop-cookies.label;"
@@ -7,7 +6,7 @@
 	onclick="toolbar_buttons.viewCookieExceptions(event);"
 	oncommand="toolbar_buttons.toggleCookies(this);" >
 	<menupopup onclick="event.stopPropagation();"
-		onpopupshowing="toolbar_buttons.setCookieMenuItem(event, this);"
+		onpopupshowing="toolbar_buttons.setCookieMenuItem(this);"
 		oncommand="toolbar_buttons.setCookieValue(event); event.stopPropagation();" >
 		<menuitem type="radio" name="toggle-cookie-settings" value="0" label="&stop-cookies.allow;"/>
 		<menuitem type="radio" name="toggle-cookie-settings" value="1" label="&stop-cookies.thirdparty;"/>

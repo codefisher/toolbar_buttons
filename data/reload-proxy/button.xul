@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="reload-proxy"
 	label="&reload-proxy.label;"
 	tooltiptext="&reload-proxy.tooltip;"

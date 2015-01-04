@@ -1,8 +1,11 @@
 openDomInspector: function(event, aDocument) {
 	try {
-		inspectDOMDocument(aDocument);
+		window.inspectDOMDocument(aDocument);
 	} catch(e) {
-		//TODO: give a more useful prompt.
-		toolbar_buttons.wrongVersion(event);
+		try {
+			window.BrowserToolboxProcess.init();
+		} catch(e) {
+			toolbar_buttons.wrongVersion(event);
+		}
 	}
 }

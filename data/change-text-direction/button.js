@@ -1,6 +1,6 @@
 changeTextDirection: function() {
 	try {
-		var browser = gBrowser.mCurrentBrowser;
+		var browser = window.gBrowser.mCurrentBrowser;
 	} catch (e) {
 		var browser = document.getElementById("messagepane");
 	}

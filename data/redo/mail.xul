@@ -1,7 +1,6 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="redo"
 	label="&redo.label;"
 	tooltiptext="&redo.tooltip;"
 	key="key_redo"
-	oncommand="CommandUpdate_UndoRedo(); goDoCommand('cmd_redo');" />
+	oncommand="window.CommandUpdate_UndoRedo(); window.goDoCommand('cmd_redo');" />

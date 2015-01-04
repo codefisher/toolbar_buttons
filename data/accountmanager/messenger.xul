@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="accountmanager"
 	label="&accountmanager.label;"
 	tooltiptext="&accountmanager.tooltip;"
-	oncommand="MsgAccountManager(null);" />
+	oncommand="window.MsgAccountManager(null);" />

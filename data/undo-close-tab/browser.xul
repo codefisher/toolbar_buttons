@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="undo-close-tab"
 	label="&undo-close-tab.label;"
 	tooltiptext="&undo-close-tab.tooltip;"

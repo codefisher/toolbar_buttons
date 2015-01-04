@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="forward-as-attachment"
 	label="&forward-as-attachment.label;"
 	tooltiptext="&forward-as-attachment.tooltip;"
-	onclick="MsgForwardAsAttachment(event);" />
+	onclick="window.MsgForwardAsAttachment(event);" />

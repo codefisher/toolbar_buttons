@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="reset"
 	label="&reset.label;"
 	tooltiptext="&reset.tooltip;"

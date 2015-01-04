@@ -1,8 +1,8 @@
 readNews: function() {
 	try {
-		var shell = getShellService();
+		var shell = window.getShellService();
 		if (shell) {
-			shell.openApplication(Components.interfaces.nsIShellService.APPLICATION_NEWS);
+			shell.openApplication(Ci.nsIShellService.APPLICATION_NEWS);
 		}
 	} catch (e) {
 		toolbar_buttons.initApp("News");

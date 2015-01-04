@@ -1,8 +1,7 @@
 togglePopUp: function() {
-	var blockPopUp = toolbar_buttons.interfaces.PrefBranch
-		.getBoolPref("dom.disable_open_during_load");
+	var blockPopUp = toolbar_buttons.interfaces.PrefBranch.getBoolPref("dom.disable_open_during_load");
 	var button = document.getElementById("tb-toggle-popup-blocker");
-	if (blockPopUp == true) {
+	if (blockPopUp === true) {
 		//toolbar_buttons.interfaces.PrefBranch.setCharPref("dom.disable_open_during_load","change click dblclick mouseup reset submit");
 		toolbar_buttons.interfaces.PrefBranch.setIntPref("privacy.popups.disable_from_plugins", 0);
 	}

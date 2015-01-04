@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="hotmail-button"
 	label="&hotmail-button.label;"
 	tooltiptext="&hotmail-button.tooltip;"

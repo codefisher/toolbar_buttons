@@ -1,6 +1,6 @@
 goClearBrowserCache: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
-		.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var question = stringBundle.GetStringFromName("tb-clear-cache.question");
 	var title = stringBundle.GetStringFromName("tb-clear-cache.label");
 	var prompt = toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("clear.cache.check");

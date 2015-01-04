@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="next-tab"
 	label="&next-tab.label;"
 	tooltiptext="&next-tab.tooltip;"
-	oncommand="gBrowser.mTabContainer.advanceSelectedTab(1, true);"/>
+	oncommand="window.gBrowser.mTabContainer.advanceSelectedTab(1, true);"/>

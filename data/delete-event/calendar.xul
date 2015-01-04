@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="delete-event"
 	tooltiptext="&delete-event.tooltip;"
 	label="&delete-event.label;"

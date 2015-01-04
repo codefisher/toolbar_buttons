@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="rename-tab"
 	label="&rename-tab.label;"
 	tooltiptext="&rename-tab.tooltip;"

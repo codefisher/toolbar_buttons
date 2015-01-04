@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="profile-folder"
 	label="&profile-folder.label;"
 	tooltiptext="&profile-folder.tooltip;"

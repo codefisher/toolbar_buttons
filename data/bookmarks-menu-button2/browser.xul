@@ -1,19 +1,18 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="bookmarks-menu-button2"
 	label="&bookmarks-menu-button.label;"
 	tooltiptext="&bookmarks-menu-button.tooltip;"
 	type="menu"
-	ondragenter="PlacesMenuDNDHandler.onDragEnter(event);" 
-	ondragover="PlacesMenuDNDHandler.onDragOver(event);"
-	ondrop="PlacesMenuDNDHandler.onDrop(event);">
+	ondragenter="window.PlacesMenuDNDHandler.onDragEnter(event);" 
+	ondragover="window.PlacesMenuDNDHandler.onDragOver(event);"
+	ondrop="window.PlacesMenuDNDHandler.onDrop(event);">
 	<menupopup id="bookmarksMenuPopupCustom"
 		type="places"
 		place="place:folder=BOOKMARKS_MENU"
 		context="placesContext"
 		openInTabs="children"
 		placespopup="true" popupsinherittooltip="true"
-		oncommand="BookmarksEventHandler.onCommand(event, this.parentNode._placesView);" 
-		onclick="BookmarksEventHandler.onClick(event, this.parentNode._placesView);" 
-		onpopupshowing="BookmarkingUI.onMainMenuPopupShowing(event); if (!this.parentNode._placesView) new PlacesMenu(event, 'place:folder=BOOKMARKS_MENU');" />
+		oncommand="window.BookmarksEventHandler.onCommand(event, this.parentNode._placesView);" 
+		onclick="window.BookmarksEventHandler.onClick(event, this.parentNode._placesView);" 
+		onpopupshowing="window.BookmarkingUI.onMainMenuPopupShowing(event); if (!this.parentNode._placesView) new window.PlacesMenu(event, 'place:folder=BOOKMARKS_MENU');" />
 </toolbarbutton>

@@ -1,8 +1,8 @@
 readMail: function() {
 	try {
-		var shell = getShellService();
+		var shell = window.getShellService();
 		if (shell) {
-			shell.openApplication(Components.interfaces.nsIShellService.APPLICATION_MAIL);
+			shell.openApplication(Ci.nsIShellService.APPLICATION_MAIL);
 		}
 	} catch (e) {
 		toolbar_buttons.initApp("Mail");

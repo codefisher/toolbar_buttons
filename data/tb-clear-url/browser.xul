@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-clear-url"
 	label="&tb-clear-url.label;"
 	tooltiptext="&tb-clear-url.tooltip;"

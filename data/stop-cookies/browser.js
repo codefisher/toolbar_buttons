@@ -9,7 +9,7 @@ viewCookieExceptions: function(event) {
 	}
 }
 
-setCookieMenuItem: function(event, item) {
+setCookieMenuItem: function(item) {
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var cookieState = prefs.getIntPref("network.cookie.cookieBehavior");
 	for(var menuitem in item.childNodes) {

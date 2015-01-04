@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	type="checkbox"
 	id="clear-url"
 	label="&clear-url.label;"

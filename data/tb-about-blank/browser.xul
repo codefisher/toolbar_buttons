@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-about-blank"
 	label="&tb-about-blank.label;"
 	tooltiptext="&tb-about-blank.tooltip;"

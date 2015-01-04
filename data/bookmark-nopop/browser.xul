@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="bookmark-nopop"
 	label="&bookmark-nopop.label;"
 	tooltiptext="&bookmark-nopop.tooltip;"

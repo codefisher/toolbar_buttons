@@ -1,7 +1,6 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="page-source"
 	label="&page-source.label;"
 	tooltiptext="&page-source.tooltip;"
 	onclick="toolbar_buttons.ViewPageSourceNow(event);"
-	oncommand="BrowserViewSourceOfDocument(content.document);" />
+	oncommand="window.BrowserViewSourceOfDocument(window.content.document);" />

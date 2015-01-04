@@ -9,7 +9,7 @@ toogleAddonsBar: function(event) {
 loadAddonsBar: function(show) {
 	if(!document.getElementById("tb-addon-bar") && (document.getElementById('statusbar-toggle') || document.getElementById('statusbar-toggle-menu-item'))) {		
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
-			.createBundle("chrome://{{chrome_name}}/locale/button.properties");
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 		
 		var addonbar = document.createElement('toolbar');
@@ -31,15 +31,14 @@ loadAddonsBar: function(show) {
 				
 		document.getElementById('browser-bottombox').appendChild(addonbar);
 		addonbar._delegatingToolbar = "tb-addon-bar";
-		var backstage = Cu.import("resource:///modules/CustomizableUI.jsm");
-		backstage.CustomizableUIInternal.registerArea("tb-addon-bar", {
+		CustomizableUI.registerArea("tb-addon-bar", {
 			legacy: false,
 			type: CustomizableUI.TYPE_TOOLBAR,
 			defaultPlacements: [],
 			defaultCollapsed: false
 		}, true);
 		addonbar.setAttribute("hidden", "false");
-		var mutationObserver = new MutationObserver(function(mutations) {
+		var mutationObserver = new window.MutationObserver(function(mutations) {
 			if(prefs.getBoolPref('statusbar-toggle.collapsed') != addonbar.collapsed) {
 				prefs.setBoolPref('statusbar-toggle.collapsed', addonbar.collapsed);
 				toolbar_buttons.setButtonStatus(document.getElementById('statusbar-toggle'), addonbar.collapsed || addonbar.hidden);
@@ -61,6 +60,4 @@ loadAddonsBar: function(show) {
 	toolbar_buttons.loadToggleToolbar("statusbar-toggle", "tb-addon-bar");
 }
 
-window.addEventListener("load", function(e) {
-	toolbar_buttons.loadAddonsBar(false);
-}, false);
+toolbar_buttons.loadAddonsBar(false);

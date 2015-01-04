@@ -1,8 +1,8 @@
 deleteTasks: function() {
 	try {
-		deleteToDoCommand();
+		window.deleteToDoCommand();
 	} catch(e){
-		goDoCommand('calendar_delete_todo_command');
-		goDoCommand('delete_todo_command');
+		window.goDoCommand('calendar_delete_todo_command');
+		window.goDoCommand('delete_todo_command');
 	}
 }

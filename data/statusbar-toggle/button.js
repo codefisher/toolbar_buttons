@@ -2,7 +2,7 @@ toggleStatusBar: function(event) {
 	if(document.getElementById("addon-bar")) {
 		toolbar_buttons.toggleToolbar(event, 'addon-bar');
 	} else {
-		goToggleToolbar('status-bar','toggle_taskbar');
+		window.goToggleToolbar('status-bar','toggle_taskbar');
 	}
 }
 

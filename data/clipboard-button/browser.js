@@ -7,12 +7,12 @@ clipboardLink: {
 		var str = {}, strLength = {};
 		trans.getTransferData("text/unicode", str, strLength);
 		if (str) {
-			var str = str.value.QueryInterface(Ci.nsISupportsString);
+			var pastetext = str.value.QueryInterface(Ci.nsISupportsString);
+			if (pastetext) {
+				return pastetext.data.substring(0, strLength.value / 2);
+			}
 		}
-		if (str) {
-			var pastetext = str.data.substring(0, strLength.value / 2);
-		}
-		return pastetext;
+		return '';
 	},
 	open: function(event) {
 		if (event.button == 1) {
@@ -32,20 +32,18 @@ clipboardLink: {
 	},
 	OpenNewTab: function() {
 		try {
-			var newPage = getBrowser().addTab(this.getText());
-			getBrowser().selectedTab = newPage;
+			window.getBrowser().selectedTab = window.getBrowser().addTab(this.getText());
 		} catch (e) {} // no clipboard data
 	},
 	OpenLink: function() {
 		try {
-			loadURI(this.getText());
+			window.loadURI(this.getText());
 		} catch (e) {} // no clipboard data
 
 	},
 	OpenWindow: function() {
 		try {
-			openNewWindowWith(this.getText(), window.content.document,
-					null, false);
+			window.openNewWindowWith(this.getText(), window.content.document, null, false);
 		} catch (e) {} // no clipboard data
 	}
 }

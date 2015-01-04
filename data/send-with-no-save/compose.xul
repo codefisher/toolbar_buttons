@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="send-with-no-save"
 	label="&send-with-no-save.label;"
 	tooltiptext="&send-with-no-save.tooltip;"

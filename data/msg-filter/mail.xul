@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="msg-filter"
 	label="&msg-filter.label;"
 	tooltiptext="&msg-filter.tooltip;"
-	oncommand="MsgFilters(null, null);"/>
+	oncommand="window.MsgFilters(null, null);"/>

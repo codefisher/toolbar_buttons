@@ -1,8 +1,8 @@
 deleteEvent: function() {
 	try{
-		deleteEventCommand();
+		window.deleteEventCommand();
 	} catch(e) {
-		goDoCommand('calendar_delete_event_command');
-		goDoCommand('delete_command');
+		window.goDoCommand('calendar_delete_event_command');
+		window.goDoCommand('delete_command');
 	}
 }

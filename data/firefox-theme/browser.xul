@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="firefox-theme"
 	label="&firefox-theme.label;"
 	tooltiptext="&firefox-theme.tooltip;"

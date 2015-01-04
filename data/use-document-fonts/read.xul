@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1 firefoxButton"
 	id="use-document-fonts"
 	label="&use-document-fonts.label;"
 	tooltiptext="&use-document-fonts.tooltip;"
-	oncommand="toolbar_buttons.toggleDocumentFonts(this)" />
+	oncommand="toolbar_buttons.toggleDocumentFonts(this);" />

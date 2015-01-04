@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="enlarge"
 	label="&enlarge.label;"
 	tooltiptext="&enlarge.tooltip;"
-	oncommand="goDoCommand('cmd_fullZoomEnlarge');" />
+	oncommand="window.goDoCommand('cmd_fullZoomEnlarge');" />

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="restart-app"
 	label="&restart-app.label;"
 	tooltiptext="&restart-app.tooltip;"

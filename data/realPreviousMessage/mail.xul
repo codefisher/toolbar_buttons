@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="realPreviousMessage"
 	label="&realPreviousMessage.label;"
 	tooltiptext="&realPreviousMessage.tooltip;"

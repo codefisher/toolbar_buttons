@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="addons"
 	type="menu-button"
 	key="key_openAddons"
@@ -14,6 +13,6 @@
 		<menuseparator />
 		<menuitem id="tb-addons-allowed-sites" label="&tb-addons-exceptions.label;" oncommand="toolbar_buttons.openAddonsExceptions();" />
 		<menuseparator />
-		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons()" />
+		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons();" />
 	</menupopup>
 </toolbarbutton>

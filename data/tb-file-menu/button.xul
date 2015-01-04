@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-file-menu"
 	label="&tb-file-menu.label;"
 	tooltiptext="&tb-file-menu.tooltip;"

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="tb-search-resize"
 	label="&tb-search-resize.label;"
 	tooltiptext="&tb-search-resize.tooltip;"

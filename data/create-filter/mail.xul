@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="create-filter"
 	label="&create-filter.label;"
 	tooltiptext="&create-filter.tooltip;"
-	oncommand="goDoCommand('cmd_createFilterFromMenu');" />
+	oncommand="window.goDoCommand('cmd_createFilterFromMenu');" />

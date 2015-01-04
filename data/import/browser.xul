@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="import"
 	label="&import.label;"
 	tooltiptext="&import.tooltip;"

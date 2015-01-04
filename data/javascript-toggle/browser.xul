@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="javascript-toggle"
 	label="&javascript-toggle.label;"
 	tooltiptext="&javascript-toggle.tooltip;"

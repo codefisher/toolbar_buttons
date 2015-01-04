@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="edit-as-new"
 	label="&edit-as-new.label;"
 	tooltiptext="&edit-as-new.tooltip;"

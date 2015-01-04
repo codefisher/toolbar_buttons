@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="toggle-read"
 	label="&toggle-read.label;"
 	tooltiptext="&toggle-read.tooltip;"
-	oncommand="goDoCommand('cmd_toggleRead');" />
+	oncommand="window.goDoCommand('cmd_toggleRead');" />

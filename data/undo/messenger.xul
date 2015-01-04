@@ -1,7 +1,6 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="undo"
 	label="&undo.label;"
 	tooltiptext="&undo.tooltip;"
 	key="key_undo"
-	oncommand="try { CommandUpdate_UndoRedo(); } catch(e) {} goDoCommand('cmd_undo');"/>
+	oncommand="try { window.CommandUpdate_UndoRedo(); } catch(e) {} window.goDoCommand('cmd_undo');"/>

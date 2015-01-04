@@ -1,5 +1,5 @@
 stopAll: function() {
-	for (var i = 0; i < gBrowser.mTabContainer.childNodes.length; i++) {
-		gBrowser.browsers[i].stop();
+	for (var i = 0; i < window.gBrowser.mTabContainer.childNodes.length; i++) {
+		window.gBrowser.browsers[i].stop();
 	}
 }

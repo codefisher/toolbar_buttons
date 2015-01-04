@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="hide-images"
 	label="&hide-images.label;"
 	tooltiptext="&hide-images.tooltip;"

@@ -1,5 +1,4 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="exit"
 	label="&exit.label;"
 	tooltiptext="&exit.tooltip;"

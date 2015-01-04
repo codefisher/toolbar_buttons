@@ -1,3 +1,3 @@
 closeOtherTabs: function() {
-	gBrowser.removeAllTabsBut(gBrowser.mCurrentTab);
+	window.gBrowser.removeAllTabsBut(window.gBrowser.mCurrentTab);
 }

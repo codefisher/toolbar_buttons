@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1"
 	id="find"
 	label="&find.label;"
 	tooltiptext="&find.tooltip;"
-	oncommand="goDoCommand('cmd_find');"/>
+	oncommand="window.goDoCommand('cmd_find');"/>

@@ -7,4 +7,4 @@ SearchResizeLoad: function() {
 	searchBar.style.maxWidth = searchBar.width + 'px';
 }
 
-window.addEventListener("load", toolbar_buttons.SearchResizeLoad, false);
+toolbar_buttons.SearchResizeLoad();

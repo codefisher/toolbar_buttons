@@ -1,9 +1,9 @@
 addContact: function() {
 	var detailsNodes = document.getElementById('expandedfromBox').emailAddresses.firstChild;
 	if (detailsNodes.cardDetails.card) {
-		EditContact(detailsNodes)
+		window.EditContact(detailsNodes)
 	} else {
-		AddContact(detailsNodes);
+		window.AddContact(detailsNodes);
 	}
 }
 
