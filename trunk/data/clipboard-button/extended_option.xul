@@ -2,10 +2,10 @@ settings.label:cog.png
 <groupbox>
 	<caption label="&clipboard.label;" />
 	<preferences>
-		<preference id="{{pref-root}}clipboard.open.mode" name="{{pref-root}}clipboard.open.mode"
+		<preference id="{{pref_root}}clipboard.open.mode" name="{{pref_root}}clipboard.open.mode"
 			type="int"/>
 	</preferences>
-	<radiogroup preference="{{pref-root}}clipboard.open.mode">
+	<radiogroup preference="{{pref_root}}clipboard.open.mode">
 		<radio value="0" label="&clipboard.currenttab;"/>
 		<radio value="1" label="&clipboard.newtab;"/>
 		<radio value="2" label="&clipboard.newwindow;"/>

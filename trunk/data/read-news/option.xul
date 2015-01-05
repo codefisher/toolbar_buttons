@@ -2,13 +2,13 @@ readmail.path.caption:email.png
 <groupbox>
 	<caption label="&readnews.path.caption;" />
 	<preferences>
-		<preference id="{{pref-root}}readnews.path" name="{{pref-root}}readnews.path" type="unichar"/>
+		<preference id="{{pref_root}}readnews.path" name="{{pref_root}}readnews.path" type="unichar"/>
 	</preferences>
 	<box>
 		<label value="&readnews.path.desc;"/>
 	</box>
 	<box>
-		<textbox id="readnewspath" preference="{{pref-root}}readnews.path" flex="1"/>
+		<textbox id="readnewspath" preference="{{pref_root}}readnews.path" flex="1"/>
 		<button label="&read.select.button;" style="float:right" oncommand="toolbar_buttons.getFile('readnewspath');"/>
 	</box>
 </groupbox>

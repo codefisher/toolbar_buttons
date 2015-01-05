@@ -2,8 +2,8 @@ links.caption:link.png
 <groupbox>
 	<caption label="&thunderbird-theme.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.thunderbird-theme" name="{{pref-root}}url.thunderbird-theme"
+		<preference id="{{pref_root}}url.thunderbird-theme" name="{{pref_root}}url.thunderbird-theme"
 			type="unichar"/>
 	</preferences>
-	<textbox preference="{{pref-root}}url.thunderbird-theme"/>
+	<textbox preference="{{pref_root}}url.thunderbird-theme"/>
 </groupbox>

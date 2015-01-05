@@ -2,8 +2,8 @@ settings.label:cog.png
 <groupbox>
 	<caption label="&bookmark-manager.label;" />
 	<preferences>
-		<preference id="{{pref-root}}bookmark.manager.tab" name="{{pref-root}}bookmark.manager.tab"
+		<preference id="{{pref_root}}bookmark.manager.tab" name="{{pref_root}}bookmark.manager.tab"
 			type="bool"/>
 	</preferences>
-	<checkbox preference="{{pref-root}}bookmark.manager.tab" label="&bookmark-manager.tab.checkbox;"/>
+	<checkbox preference="{{pref_root}}bookmark.manager.tab" label="&bookmark-manager.tab.checkbox;"/>
 </groupbox>

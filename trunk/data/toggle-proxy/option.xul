@@ -2,11 +2,11 @@ toggle.prox.label:world-network.png
 <groupbox>
 	<caption label="&toggle.prox.label;" />
 	<preferences>
-		<preference id="{{pref-root}}toggle.proxy" name="{{pref-root}}toggle.proxy"
+		<preference id="{{pref_root}}toggle.proxy" name="{{pref_root}}toggle.proxy"
 			type="int"/>
 	</preferences>
 	<description>&toggle.proxy.description;</description>
-	<radiogroup preference="{{pref-root}}toggle.proxy">
+	<radiogroup preference="{{pref_root}}toggle.proxy">
 		<radio value="0" label="&toggle.proxy.direct;"/>
 		<radio value="1" label="&toggle.proxy.manual;"/>
 		<radio value="2" label="&toggle.proxy.auto.configuration;"/>

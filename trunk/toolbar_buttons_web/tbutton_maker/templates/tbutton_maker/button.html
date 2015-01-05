@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_tags %}
+        <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/tbutton.css">
+        <script type="text/javascript" src="{% get_static_prefix %}js/tbutton.js"></script>
+{% endblock %}
+
+{% block page_title %}{{ label }} Button{% endblock %}
+
+{% block content %}
+        <div class="content-box">
+        <h1>        <img src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
+{{ label }}</h1>
+        {{ description|linebreaks }}
+        
+        <p class="compatibility">
+        Compatibility:
+        {% for app in apps %}
+            <img src="{% get_static_prefix %}images/icons/{{ app }}.png" alt="">
+            {% for key, app_names in application_names.items %}{% if key == app %} {{ app_names|join:", " }}{% endif %} {% endfor %}
+        {% endfor %}
+        </p>
+                
+        <form method="get" class="clear" action="{% url 'tbutton-create' %}">
+            <input type="hidden" value="{{ button }}" name="button">
+            <input type="hidden" value="{{ application }}" name="application">
+            <input type="hidden" value="true" name="add-to-toolbar">
+            <button type="submit">
+                <img src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
+                Install {{ label }}</button>
+        </form>
+        </div>
+        <div class="content-box">
+            <h2 onclick="$('#custombutton').show(500);"><img src="{% get_static_prefix %}images/icons/cbicon.png" width="24" height="24" alt="">Create Custom Button</h2>
+        <form  method="get" id="custombutton" style="display:none;" class="clear" action="{% url 'tbutton-createcustom' %}">
+            <input type="hidden" value="{{ button }}" name="button">
+            <ul class="messages"><li class="warning">
+                This only works if you have the <a href="https://addons.mozilla.org/en-us/firefox/addon/custom-buttons/">Custom Buttons</a> extension installed.  If you do not, please use the button above to create a standard extension.
+            </li></ul>
+            <div>
+                <label for="button-locale">Locale<br />
+                    <select name="button-locale" id="button-locale" class="form-input">
+                        {% for value, name, native_name, country in local_data %}
+                            <option{% if value == locale %} selected{% endif %}
+                                value="{{ value }}" style="background: url('{% get_static_prefix %}images/flags/{{ country|lower }}.png') no-repeat left center; padding-left:20px;">{{ native_name}} ({{ value }})</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="application-window">Application and Window<br />
+                    <select name="application-window" id="application-window" class="form-input">
+                        {% for value, name in file_to_name %}
+                            <option{% if value == 'browser' %} selected{% endif %}
+                                value="{{ value }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+            </div>
+            <button type="submit">
+                <img src="{% get_static_prefix %}images/icons/cbicon.png" width="24" height="24" alt="">
+                Create {{ label }} for Custom Button</button>
+        </form>
+        </div>
+{% endblock %}

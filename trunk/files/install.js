@@ -1,4 +1,4 @@
-	var prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref-root}}");
+	var prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref_root}}");
 	var version = "{{version}}";
 	var currentVersion = prefs.getCharPref("{{current_version_pref}}");
 	var url = "{{homepage_url}}updated/{{version}}/";

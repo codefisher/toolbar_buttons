@@ -80,6 +80,7 @@ def build_extension(settings, output=None, project_root=None):
     if settings.get('restartless'):
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False, format="%s=%s")
         for locale, data in dtd_data.iteritems():
+            data = data.replace("&amp;", "&").replace("&apos;", "'")
             xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton_labels.properties" % locale_prefix), data)
     else:
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
@@ -189,7 +190,7 @@ def create_bootstrap(settings, buttons, has_resources):
         install = (open(os.path.join(settings.get("project_root"), "files", "install.js") ,"r").read()
                             .replace("{{homepage_url}}", settings.get("homepage"))
                             .replace("{{version}}", settings.get("version"))
-                            .replace("{{pref-root}}", settings.get("pref_root"))
+                            .replace("{{pref_root}}", settings.get("pref_root"))
                             .replace("{{current_version_pref}}", settings.get("current_version_pref")))
     return (template.replace("{{chrome-name}}", settings.get("chrome_name"))
                     .replace("{{resource}}", resource)

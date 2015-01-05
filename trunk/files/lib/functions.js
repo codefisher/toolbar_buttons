@@ -54,9 +54,8 @@ wrongVersion: function(event) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("wrong-version-title");
-	var error = stringBundle.formatStringFromName("wrong-version",
-					[event.target.label, XulAppInfo.name,
-					 	XulAppInfo.version], 3);
+	var error = stringBundle.formatStringFromName("wrong-version", 
+			[event.target.label, XulAppInfo.name, XulAppInfo.version], 3);
 	toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 }
 
@@ -207,10 +206,8 @@ PluginHelper: {
 				var filename = plugins[i].filename;
 				// https://www.mozdev.org/bugs/show_bug.cgi?id=22582
 				if (filename in filenames) {
-					var message = stringBundle.formatStringFromName(
-							"mutiple-plugin-installed", [ aName ], 1);
-					toolbar_buttons.interfaces.PromptService.alert(window,
-							title, message);
+					var message = stringBundle.formatStringFromName("mutiple-plugin-installed", [ aName ], 1);
+					toolbar_buttons.interfaces.PromptService.alert(window, title, message);
 				}
 				filenames[filename] = true;
 				found = true;
@@ -220,10 +217,8 @@ PluginHelper: {
 		if (!found) {
 			var lastWindow = toolbar_buttons.interfaces.WindowMediator
 					.getMostRecentWindow(null);
-			var message = stringBundle.formatStringFromName("plugin-not-found",
-					[ aName ], 1);
-			toolbar_buttons.interfaces.PromptService.alert(lastWindow, title,
-					message);
+			var message = stringBundle.formatStringFromName("plugin-not-found", [ aName ], 1);
+			toolbar_buttons.interfaces.PromptService.alert(lastWindow, title, message);
 		}
 	},
 }

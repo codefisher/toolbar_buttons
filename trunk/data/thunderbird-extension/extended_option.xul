@@ -2,8 +2,8 @@ links.caption:link.png
 <groupbox>
 	<caption label="&thunderbird-extension.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.thunderbird-ext" name="{{pref-root}}url.thunderbird-ext"
+		<preference id="{{pref_root}}url.thunderbird-ext" name="{{pref_root}}url.thunderbird-ext"
 			type="unichar"/>
 	</preferences>
-	<textbox preference="{{pref-root}}url.thunderbird-ext"/>
+	<textbox preference="{{pref_root}}url.thunderbird-ext"/>
 </groupbox>

@@ -10,9 +10,8 @@ import json
 
 from django.contrib.sites.models import Site
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse
 from django.conf import settings
-from django.http import HttpResponseNotFound, HttpResponse, Http404, QueryDict
+from django.http import HttpResponseNotFound, HttpResponse, Http404, QueryDict, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_protect
 from django.core.urlresolvers import reverse
 from django.db.models import Count
@@ -23,7 +22,7 @@ from django.db.models import F
 
 
 from toolbar_buttons.config.settings import config
-from toolbar_buttons.builder import button, locales, util, build
+from toolbar_buttons.builder import button, locales, util, build, custombutton
 
 from toolbar_buttons.toolbar_buttons_web.tbutton_maker.models import Application, Button, DownloadSession
 
@@ -85,6 +84,19 @@ def get_buttons_obj(extension_settings, applications, buttons_ids="all"):
 def list_buttons(request, locale_name=None, applications=None, template_name='tbutton_maker/list.html'):
     return index(request, locale_name, applications, template_name)
 
+def button_key(item):
+    return item[2].lower() if item[2] else None
+
+def get_local_data(extension_settings):
+    locale_folders, locales_names = util.get_locale_folders(extension_settings.get("locale"), extension_settings)
+    locale_meta = locales.Locale(extension_settings, locale_folders, locales_names, only_meta=True)
+    local_data = []
+    for locales_name in locales_names:
+        local_data.append((locales_name, locale_meta.get_dtd_value(locales_name, 'name'), locale_meta.get_dtd_value(locales_name, 'native_name'), locale_meta.get_dtd_value(locales_name, 'country')))
+    
+    local_data.sort(key=button_key)
+    return local_data
+
 def index(request, locale_name=None, applications=None, template_name='tbutton_maker/index.html'):
     extension_settings = dict(config)
     extension_settings["project_root"] = settings.TBUTTON_DATA
@@ -98,27 +110,13 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         else:
             applications = applications.split("-")
     buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, applications)
-
     button_data = []
     for button_id, apps in buttons_obj.button_applications().items():
         button_data.append((button_id, sorted(list(apps)), locale_str("label", button_id),
                 locale_str("tooltip", button_id), buttons_obj.get_icons(button_id),
                 buttons_obj.description(button_id), buttons_obj.get_source_folder(button_id)))
-    def button_key(item):
-        return item[2].lower() if item[2] else None
-    locale_folders, locales_names = util.get_locale_folders(extension_settings.get("locale"), extension_settings)
-    locale_meta = locales.Locale(extension_settings, locale_folders,
-                locales_names, only_meta=True)
-    local_data = []
-    for locales_name in locales_names:
-        local_data.append((
-            locales_name,
-            locale_meta.get_dtd_value(locales_name, 'name'),
-            locale_meta.get_dtd_value(locales_name, 'native_name'),
-            locale_meta.get_dtd_value(locales_name, 'country'),
-        ))
+    local_data = get_local_data(extension_settings)
     button_data.sort(key=button_key)
-    local_data.sort(key=button_key)
     application_data = extension_settings.get("applications_data")
     application_names = dict((key, [item[0] for item in value]) for key, value in application_data.iteritems())
     data = {
@@ -135,11 +133,48 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         "offer_download": request.GET.get('offer-download'),
         "create_toolbars": request.GET.get('create-toolbars'),
         "create_menu": request.GET.get('create-menu'),
+        "custom_button": 'custom_button' in request.GET,
         "icon_size": request.GET.get('icon-size', 'standard'),
     }
     if template_name is None:
         return data
     return render(request, template_name, data)
+
+def buttons_page(request, button_id, locale_name="en-US"):
+    extension_settings = dict(config)
+    extension_settings["project_root"] = settings.TBUTTON_DATA
+    extension_settings["buttons"] = [button_id]
+    try:
+        buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, "all")
+        local_data = get_local_data(extension_settings)
+        file_to_name = extension_settings.get("file_to_name").items()
+        file_to_name.sort(key=lambda item: item[1].lower() if item[1] else None)
+        
+        data = {
+            "button": button_id,
+            "apps": sorted(list(buttons_obj.button_applications()[button_id])),
+            "label": locale_str("label", button_id),
+            "tooltip": locale_str("tooltip", button_id),
+            "icon": buttons_obj.get_icons(button_id),
+            "description": buttons_obj.description(button_id),
+            "local_data": local_data,
+            "locale": locale_name,
+            "file_to_name": file_to_name,
+        }
+    except:
+        raise Http404
+    return render(request, "tbutton_maker/button.html", data)
+
+def create_custombutton(request):
+    button = request.GET.get("button")
+    button_locale = request.GET.get("button-locale")
+    window = request.GET.get("application-window")
+    application = config.get("file_to_application").get(window)[0]
+    url = custombutton.custombutton(config, application, window, button_locale, button)
+    result = buttons_page(request, button, button_locale)
+    response = HttpResponse(result.content, status=302)
+    response['Location'] = url
+    return response
 
 def create_buttons(request, query, log_creation=True):
     buttons = query.getlist("button")
