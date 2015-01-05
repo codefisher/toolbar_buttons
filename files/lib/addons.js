@@ -4,12 +4,9 @@ installAddons: function() {
 	var title = stringBundle.GetStringFromName("installaddons");
 	var fp = toolbar_buttons.interfaces.FilePicker();
 	fp.init(window, title, fp.modeOpenMultiple);
-	fp.appendFilter(stringBundle
-			.GetStringFromName("installaddons-addons"), "*.xpi; *.jar");
-	fp.appendFilter(stringBundle
-			.GetStringFromName("installaddons-extensions"), "*.xpi");
-	fp.appendFilter(stringBundle
-			.GetStringFromName("installaddons-themes"), "*.jar");
+	fp.appendFilter(stringBundle.GetStringFromName("installaddons-addons"), "*.xpi; *.jar");
+	fp.appendFilter(stringBundle.GetStringFromName("installaddons-extensions"), "*.xpi");
+	fp.appendFilter(stringBundle.GetStringFromName("installaddons-themes"), "*.jar");
 	fp.appendFilters(fp.filterAll);
 
 	// taken from /mozilla/toolkit/mozapps/extensions/content/extensions.js

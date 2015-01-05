@@ -2,7 +2,7 @@ confirm.caption:application-error.png
 <groupbox>
 	<caption label="&tb-clear-cache.label;" />
 	<preferences>
-		<preference id="{{pref-root}}clear.cache.check" name="{{pref-root}}clear.cache.check" type="bool"/>
+		<preference id="{{pref_root}}clear.cache.check" name="{{pref_root}}clear.cache.check" type="bool"/>
 	</preferences>
-	<checkbox preference="{{pref-root}}clear.cache.check" label="&clear.cache.checkbox;"/>
+	<checkbox preference="{{pref_root}}clear.cache.check" label="&clear.cache.checkbox;"/>
 </groupbox>

@@ -16,6 +16,7 @@ config.update({
     "restartless": True,
     "create_menu": True,
     "as_submenu": False,
+    "translate_description": True,
 })
 
 buttons = ["addons", "bookmark-manager", "preferences", "bookmark", "snap-back", "restart-app", "about-config", "print-preview"]

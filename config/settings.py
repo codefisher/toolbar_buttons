@@ -136,6 +136,18 @@ config_default = {
          "mail-address-book": ("messenger", ),
          "suite_browser": ("suite", )
     },
+    "file_to_name": {
+         "browser": "Firefox",
+         "messenger": "Thunderbird All Windows",
+         "mail": "Thunderbird Main Window",
+         "compose": "Thunderbird Compose Window",
+         "read": "Thunderbird Read Window",
+         "calendar": "Sunbird",
+         "lightning": "Lightning",
+         "mail-header": "Mail Header",
+         "mail-address-book": "Address Book",
+         "suite_browser": "SeaMonkey",
+    },
     "file_map": {
         "loader": ("browser","mail","compose","read","calendar","suite_browser"),
         "button": ("browser","mail","compose","read","calendar","suite_browser"),

@@ -2,14 +2,14 @@ settings.label:cog.png
 <groupbox>
 	<caption label="&javaScriptConsole.label;" />
 	<preferences>
-		<preference id="{{pref-root}}javascript.console.open" name="{{pref-root}}javascript.console.open"
+		<preference id="{{pref_root}}javascript.console.open" name="{{pref_root}}javascript.console.open"
 			type="int"/>
 		<preference id="devtools.errorconsole.enabled" name="devtools.errorconsole.enabled"
 			type="bool"/>
 	</preferences>
 	<checkbox preference="devtools.errorconsole.enabled" label="&javaScriptConsole.errorconsole;"/>
 	<description>&javaScriptConsole.setting.description;</description>
-	<radiogroup preference="{{pref-root}}javascript.console.open">
+	<radiogroup preference="{{pref_root}}javascript.console.open">
 		<radio value="0" label="&javaScriptConsole.web;"/>
 		<radio value="1" label="&javaScriptConsole.browser;"/>
 	</radiogroup>

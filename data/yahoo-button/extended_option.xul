@@ -2,8 +2,8 @@ links.caption:link.png
 <groupbox>
 	<caption label="&yahoo-button.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.yahoo" name="{{pref-root}}url.yahoo"
+		<preference id="{{pref_root}}url.yahoo" name="{{pref_root}}url.yahoo"
 			type="unichar"/>
 	</preferences>
-	<textbox preference="{{pref-root}}url.yahoo"/>
+	<textbox preference="{{pref_root}}url.yahoo"/>
 </groupbox>

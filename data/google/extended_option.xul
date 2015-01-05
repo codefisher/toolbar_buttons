@@ -2,8 +2,8 @@ links.caption:link.png
 <groupbox>
 	<caption label="&google.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.google" name="{{pref-root}}url.google"
+		<preference id="{{pref_root}}url.google" name="{{pref_root}}url.google"
 			type="unichar"/>
 	</preferences>
-	<textbox preference="{{pref-root}}url.google"/>
+	<textbox preference="{{pref_root}}url.google"/>
 </groupbox>

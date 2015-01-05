@@ -2,8 +2,8 @@ settings.label:cog.png
 <groupbox>
 	<caption label="&toggle.label;" />
 	<preferences>
-		<preference id="{{pref-root}}do.reload" name="{{pref-root}}do.reload"
+		<preference id="{{pref_root}}do.reload" name="{{pref_root}}do.reload"
 			type="bool"/>
 	</preferences>
-	<checkbox preference="{{pref-root}}do.reload" label="&toggle.checkbox;"/>
+	<checkbox preference="{{pref_root}}do.reload" label="&toggle.checkbox;"/>
 </groupbox>

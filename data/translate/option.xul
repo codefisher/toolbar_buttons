@@ -1,26 +1,26 @@
 translate.label:pencil.png
 <groupbox>
 	<preferences>
-		<preference id="{{pref-root}}translate.lang" name="{{pref-root}}translate.lang"
+		<preference id="{{pref_root}}translate.lang" name="{{pref_root}}translate.lang"
 			type="unichar"/>
-		<preference id="{{pref-root}}translate.popup" name="{{pref-root}}translate.popup"
+		<preference id="{{pref_root}}translate.popup" name="{{pref_root}}translate.popup"
 			type="unichar"/>
-		<preference id="{{pref-root}}translate.service" name="{{pref-root}}translate.service"
+		<preference id="{{pref_root}}translate.service" name="{{pref_root}}translate.service"
 			type="unichar"/>
 	</preferences>
 	<description>&translate.description;</description>
-	<menulist id="translate-languages-menu" disabled="true" preference="{{pref-root}}translate.lang">
+	<menulist id="translate-languages-menu" disabled="true" preference="{{pref_root}}translate.lang">
 		<menupopup id="translate-languages-popup">
 			<menuitem label="&translate.loading;" id="translate-loading" />
 		</menupopup>
 	</menulist>
-	<menulist id="translate-languages-promt" disabled="true" hidden="true" preference="{{pref-root}}translate.promt">
+	<menulist id="translate-languages-promt" disabled="true" hidden="true" preference="{{pref_root}}translate.promt">
 		<menupopup id="translate-promt-popup">
 			<menuitem label="&translate.loading;" id="translate-promt-loading" />
 		</menupopup>
 	</menulist>
 	<description>&translate.service.description;</description>
-	<radiogroup preference="{{pref-root}}translate.service">
+	<radiogroup preference="{{pref_root}}translate.service">
 		<radio value="google" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.google;"/>
 		<radio value="promt" onclick="toolbar_buttons.showPromtTranslate();" label="&translate.service.promt;"/>
 		<radio value="bing" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>

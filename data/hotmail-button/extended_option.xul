@@ -2,8 +2,8 @@ links.caption:link.png
 <groupbox>
 	<caption label="&hotmail-button.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.hotmail" name="{{pref-root}}url.hotmail"
+		<preference id="{{pref_root}}url.hotmail" name="{{pref_root}}url.hotmail"
 			type="unichar"/>
 	</preferences>
-	<textbox preference="{{pref-root}}url.hotmail"/>
+	<textbox preference="{{pref_root}}url.hotmail"/>
 </groupbox>

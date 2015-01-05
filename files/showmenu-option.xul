@@ -1,8 +1,8 @@
 <groupbox>
 	<caption label="&{{menu_label}};" />
 	<preferences>
-		<preference id="{{pref-root}}showamenu.{{menu_id}}" name="{{pref-root}}showamenu.{{menu_id}}"
+		<preference id="{{pref_root}}showamenu.{{menu_id}}" name="{{pref_root}}showamenu.{{menu_id}}"
 			type="bool"/>
 	</preferences>
-	<checkbox preference="{{pref-root}}showamenu.{{menu_id}}" label="&tb-show-a-menu.option.label;"/>
+	<checkbox preference="{{pref_root}}showamenu.{{menu_id}}" label="&tb-show-a-menu.option.label;"/>
 </groupbox>

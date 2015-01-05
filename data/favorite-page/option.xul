@@ -2,9 +2,9 @@ links.caption:link.png
 <groupbox>
 	<caption label="&favorite-page.label;" />
 	<preferences>
-		<preference id="{{pref-root}}url.favorite" name="{{pref-root}}url.favorite"
+		<preference id="{{pref_root}}url.favorite" name="{{pref_root}}url.favorite"
 			type="unichar"/>
 	</preferences>
 	<description>&favorite-page.description;</description>
-	<textbox preference="{{pref-root}}url.favorite"/>
+	<textbox preference="{{pref_root}}url.favorite"/>
 </groupbox>
