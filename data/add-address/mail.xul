@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="add-address"
 	label="&add-address.label;"
 	tooltiptext="&add-address.tooltip;"

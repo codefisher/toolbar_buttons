@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="hotmail-button"
 	label="&hotmail-button.label;"
 	tooltiptext="&hotmail-button.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="javascript-toggle"
 	label="&javascript-toggle.label;"
 	tooltiptext="&javascript-toggle.tooltip;"

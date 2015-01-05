@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-browser-console"
 	label="&tb-browser-console.label;"
 	tooltiptext="&tb-browser-console.tooltip;"

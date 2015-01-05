@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="hide-images"
 	label="&hide-images.label;"
 	tooltiptext="&hide-images.tooltip;"

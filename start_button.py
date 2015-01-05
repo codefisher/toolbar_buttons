@@ -22,7 +22,8 @@ def main():
     strings.write("%s.label=\n%s.tooltip=" % (button_id, button_id))
     strings.close()
     xul = open(os.path.join("pre", button_id, "%s.xul" % files[app]), 'w+')
-    xul.write("""<toolbarbutton 
+    xul.write("""<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="%s"
 	label="&%s.label;"
 	tooltiptext="&%s.tooltip;"

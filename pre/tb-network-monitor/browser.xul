@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-network-monitor"
 	label="&tb-network-monitor.label;"
 	tooltiptext="&tb-network-monitor.tooltip;"

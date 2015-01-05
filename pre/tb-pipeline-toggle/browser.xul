@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
     id="tb-pipeline-toggle"
     label="&tb-pipeline-toggle.label;"
     tooltiptext="&tb-pipeline-toggle.tooltip;"

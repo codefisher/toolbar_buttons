@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="stop-dynamic-content"
 	label="&stop-dinamic-content.label;"
 	tooltiptext="&stop-dinamic-content.tooltip;"

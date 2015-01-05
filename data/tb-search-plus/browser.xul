@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-search-plus"
 	label="&tb-search-plus.label;"
 	tooltiptext="&tb-search-plus.tooltip;"

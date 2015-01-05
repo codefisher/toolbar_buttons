@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="up-directory"
 	label="&up-directory.label;"
 	tooltiptext="&up-directory.tooltip;"

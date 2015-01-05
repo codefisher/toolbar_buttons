@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="extensions"
 	type="menu-button"
 	label="&extensions.label;"

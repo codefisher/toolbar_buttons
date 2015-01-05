@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="yahoo-button"
 	label="&yahoo-button.label;"
 	tooltiptext="&yahoo-button.tooltip;"

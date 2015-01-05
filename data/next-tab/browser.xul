@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="next-tab"
 	label="&next-tab.label;"
 	tooltiptext="&next-tab.tooltip;"

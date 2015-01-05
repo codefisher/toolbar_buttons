@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="check-for-update"
 	label="&check-for-update.label;"
 	tooltiptext="&check-for-update.tooltip;"

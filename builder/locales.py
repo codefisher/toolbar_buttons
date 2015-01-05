@@ -139,8 +139,6 @@ class Locale(object):
                                         .get(string, button.get_string(string, locale) if button else ""))
                     if value:
                         dtd_file.append(format % (string, value))
-                    else:
-                        print string, value, locale
                 elif self._missing_strings == "empty":
                     dtd_file.append(format
                              % (string, self._dtd[locale].get(string, 

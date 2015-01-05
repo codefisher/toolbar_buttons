@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="min-font-size"
 	label="&min-font-size.label;"
 	tooltiptext="&min-font-size.tooltip;"

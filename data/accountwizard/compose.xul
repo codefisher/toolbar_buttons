@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="accountwizard"
 	label="&accountwizard.label;"
 	tooltiptext="&accountwizard.tooltip;"

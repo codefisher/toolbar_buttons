@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-twitter-button"
 	label="&tb-twitter-button.label;"
 	tooltiptext="&tb-twitter-button.tooltip;"

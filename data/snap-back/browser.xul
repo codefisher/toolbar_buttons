@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="snap-back"
 	label="&snap-back.label;"
 	tooltiptext="&snap-back.tooltip;"

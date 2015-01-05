@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="forward-as-inline"
 	label="&forward-as-inline.label;"
 	tooltiptext="&forward-as-inline.tooltip;"

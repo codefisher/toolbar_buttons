@@ -1,4 +1,5 @@
-<toolbarbutton type="menu-button"
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" type="menu-button"
 	id="clipboard-button"
 	label="&clipboard.label;"
 	tooltiptext="&clipboard.tooltip;"

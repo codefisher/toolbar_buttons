@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-clear-cache"
 	label="&tb-clear-cache.label;"
 	tooltiptext="&tb-clear-cache.tooltip;"

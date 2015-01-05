@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="return-receipt"
 	label="&return-receipt.label;"
 	tooltiptext="&return-receipt.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="with-unread-threads"
 	label="&with-unread-threads.label;"
 	tooltiptext="&with-unread-threads.tooltip;"

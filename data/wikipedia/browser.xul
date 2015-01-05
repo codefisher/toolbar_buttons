@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="wikipedia"
 	label="&wikipedia.label;"
 	tooltiptext="&wikipedia.tooltip;"

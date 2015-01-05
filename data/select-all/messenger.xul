@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="select-all"
 	label="&select-all.label;"
 	tooltiptext="&select-all.tooltip;"

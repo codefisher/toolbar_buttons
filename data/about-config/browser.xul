@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="about-config"
 	label="&about-config.label;"
 	tooltiptext="&about-config.tooltip;"

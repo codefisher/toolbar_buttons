@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="reload-all-tabs"
 	label="&reload-all-tabs.label;"
 	tooltiptext="&reload-all-tabs.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	type="checkbox"
 	id="clear-url"
 	label="&clear-url.label;"

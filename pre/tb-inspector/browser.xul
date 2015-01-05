@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-inspector"
 	label="&tb-inspector.label;"
 	tooltiptext="&tb-inspector.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="read-news"
 	label="&read-news.label;"
 	tooltiptext="&read-news.tooltip;"

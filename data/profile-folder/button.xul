@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="profile-folder"
 	label="&profile-folder.label;"
 	tooltiptext="&profile-folder.tooltip;"

@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-jsprofiler"
 	label="&tb-jsprofiler.label;"
 	tooltiptext="&tb-jsprofiler.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-paste-as-quote"
 	label="&tb-paste-as-quote.label;"
 	tooltiptext="&tb-paste-as-quote.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="html-mode"  persist="html"
 	label="&html-mode.label;"
 	tooltiptext="&html-mode.tooltip;"

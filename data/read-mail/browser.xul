@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="read-mail"
 	label="&read-mail.label;"
 	tooltiptext="&read-mail.tooltip;"

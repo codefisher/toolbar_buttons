@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-base64"
 	label="&tb-base64.label;"
 	tooltiptext="&tb-base64.tooltip;"

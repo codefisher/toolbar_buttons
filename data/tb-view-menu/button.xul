@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-view-menu"
 	label="&tb-view-menu.label;"
 	tooltiptext="&tb-view-menu.tooltip;"

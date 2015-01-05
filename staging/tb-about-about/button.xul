@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-about-about"
 	type="menu"
 	label="&tb-about-about.label;"

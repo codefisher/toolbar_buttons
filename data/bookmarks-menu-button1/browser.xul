@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="bookmarks-menu-button1"
 	label="&bookmarks-menu-button.label;"
 	tooltiptext="&bookmarks-menu-button.tooltip;"

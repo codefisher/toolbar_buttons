@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="search-messages"
 	label="&search-messages.label;"
 	tooltiptext="&search-messages.tooltip;"

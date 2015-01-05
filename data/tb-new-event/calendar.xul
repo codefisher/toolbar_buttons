@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-new-event"
 	label="&tb-new-event.label;"
 	tooltiptext="&tb-new-event.tooltip;"

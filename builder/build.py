@@ -28,10 +28,13 @@ def apply_max_version(settings):
 
 
 def get_buttons(settings, cls=Button):
-    if settings.get("applications", "all") == "all":
+    if "all" in settings.get("applications", "all"):
         applications = settings.get("applications_data").keys()
     elif isinstance(settings.get("applications"), basestring):
-        applications = settings.get("applications").split(',')
+        if "," in settings.get("applications"):
+            applications = settings.get("applications").split(',')
+        else:
+            applications = settings.get("applications").split('-')
     else:
         applications = settings.get("applications")
     button_list = settings.get("buttons")
