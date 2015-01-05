@@ -1,4 +1,5 @@
-<toolbarbutton id="tiny-url"
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" id="tiny-url"
 	type="menu-button"
 	label="&tiny-url.label;"
 	tooltiptext="&tiny-url.tooltip;"

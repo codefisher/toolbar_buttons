@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="minimize-window"
 	label="&minimize-window.label;"
 	tooltiptext="&minimize-window.tooltip;"

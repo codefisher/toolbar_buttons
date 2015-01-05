@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="inspecter"
 	key="key_inspectPage"
 	label="&inspecter.label;"

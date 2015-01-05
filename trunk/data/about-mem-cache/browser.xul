@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="about-mem-cache"
 	label="&about-mem-cache.label;"
 	tooltiptext="&about-mem-cache.tooltip;"

@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-download-sync"
 	label="&tb-download-sync.label;"
 	tooltiptext="&tb-download-sync.tooltip;"

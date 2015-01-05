@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="close-tab"
 	label="&close-tab.label;"
 	tooltiptext="&close-tab.tooltip;"

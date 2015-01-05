@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="print-preview"
 	label="&print-preview.label;"
 	tooltiptext="&print-preview.tooltip;"

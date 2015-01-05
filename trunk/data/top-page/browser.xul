@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="top-page"
 	label="&top-page.label;"
 	tooltiptext="&top-page.tooltip;"

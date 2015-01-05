@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="edit-as-new"
 	label="&edit-as-new.label;"
 	tooltiptext="&edit-as-new.tooltip;"

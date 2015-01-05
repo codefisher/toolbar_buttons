@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="undo"
 	label="&undo.label;"
 	key="key_undo"

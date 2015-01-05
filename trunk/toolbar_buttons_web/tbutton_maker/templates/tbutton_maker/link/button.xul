@@ -4,7 +4,8 @@
 	<script type="application/x-javascript" src="chrome://lbutton/content/button.js"/>
 	<toolbarpalette id="BrowserToolbarPalette">
 		<toolbarbutton
-					id="{{ button_id }}"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			id="{{ button_id }}"
 			label="{{ button_label|escape }}"
 			tooltiptext="{{ button_tooltip|escape }}"
 			onclick="LoadCustomLinkButtonLink(event, this);" />

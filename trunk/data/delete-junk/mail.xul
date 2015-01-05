@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="delete-junk"
 	label="&delete-junk.label;"
 	tooltiptext="&delete-junk.tooltip;"

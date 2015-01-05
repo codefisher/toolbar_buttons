@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-open"
 	label="&open.label;"
 	tooltiptext="&open.tooltip;"

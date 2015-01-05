@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
     id="tb-remote-content"
     label="&tb-remote-content.label;"
     tooltiptext="&tb-remote-content.tooltip;"

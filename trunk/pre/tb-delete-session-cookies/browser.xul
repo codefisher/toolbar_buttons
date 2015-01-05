@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-delete-session-cookies"
 	label="&tb-delete-session-cookies.label;"
 	tooltiptext="&tb-delete-session-cookies.tooltip;"

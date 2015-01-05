@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="watched-with-unread-threads"
 	label="&watched-with-unread-threads.label;"
 	tooltiptext="&watched-with-unread-threads.tooltip;"

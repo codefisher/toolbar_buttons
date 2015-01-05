@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="stop-iframe"
 	label="&stop-iframe.label;"
 	tooltiptext="&stop-iframe.tooltip;"

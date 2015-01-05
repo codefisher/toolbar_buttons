@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="realNextMessage"
 	label="&realNextMessage.label;"
 	tooltiptext="&realNextMessage.tooltip;"

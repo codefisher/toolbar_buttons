@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-text-zoom-only"
 	label="&tb-text-zoom-only.label;"
 	tooltiptext="&tb-text-zoom-only.tooltip;"

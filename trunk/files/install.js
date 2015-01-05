@@ -8,9 +8,9 @@
 	if(currentVersion != version) {
 		prefs.setCharPref("{{current_version_pref}}", version);
 		let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
-		let windows = wm.getEnumerator("navigator:browser");
-		if(windows.hasMoreElements()) {
-			let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
+		let win = wm.getMostRecentWindow("navigator:browser");
+		if(win) {
+			let domWindow = win.QueryInterface(Ci.nsIDOMWindow);
 			domWindow.getBrowser().addTab(url);
 		} else {
 			var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);

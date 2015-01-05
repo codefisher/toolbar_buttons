@@ -90,6 +90,9 @@ config_default = {
 
     # parts of the extension are copied here, if set
     "profile_folder": None,
+    
+    # set when trying to create buttons for the custombuttons extension
+    "custom_button_mode": False,
 
     # the below sets application support
     "applications_data": {

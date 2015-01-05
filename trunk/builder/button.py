@@ -871,6 +871,9 @@ class Button(SimpleButton):
                 else:
                     value = "buttonStrings.get('%s')" % value
                 statements.append("%s_%s.setAttribute('%s', %s);" % ((root.tag, num, key, value)))
+            elif key == "class":
+                for val in value.split():
+                    statements.append('%s_%s.classList.add("%s");' % ((root.tag, num, val)))
             elif key[0:2] == 'on' and not root.tag == 'key':
                 this = 'var aThis = event.target;\n\t\t\t\t' if 'this' in value else ''
                 statements.append("%s_%s.addEventListener('%s', function(event) {\n\t\t\t\t%s%s\n\t\t\t}, false);" % (root.tag, num, key[2:], this, value.replace('this', 'aThis')))
@@ -960,7 +963,6 @@ class Button(SimpleButton):
                 key = 'onCommand' if key == 'oncommand' else 'onClick'
                 this = 'var aThis = event.target;\n\t\t\t' if 'this' in value else ''
                 data[key] = "function(event) {\n\t\t\t%s%s\n\t\t}" % (this, value.replace('this', 'aThis'))
-        
         if self._button_js_setup.get(file_name, {}).get(button_id):
             data["onCreated"] = "function(aNode) {\n\t\t\t%s\n\t\t}" % self._button_js_setup[file_name][button_id]
         items = sorted(data.items(), key=self._attr_key)

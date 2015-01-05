@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tab-list"
 	type="menu"
 	label="&tab-list.label;"

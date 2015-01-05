@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="import"
 	label="&import.label;"
 	tooltiptext="&import.tooltip;"

@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-eyedropper"
 	label="&tb-eyedropper.label;"
 	tooltiptext="&tb-eyedropper.tooltip;"

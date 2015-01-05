@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="shift-delete"
 	label="&shift-delete.label;"
 	tooltiptext="&shift-delete.tooltip;"

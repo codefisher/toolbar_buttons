@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="open-current-frame"
 	label="&open-current-frame.label;"
 	tooltiptext="&open-current-frame.tooltip;"

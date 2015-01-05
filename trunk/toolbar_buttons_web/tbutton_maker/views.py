@@ -166,8 +166,10 @@ def create_buttons(request, query, log_creation=True):
     else:
         extension_settings["include_toolbars"] = 0
 
-        
-    extension_settings["create_menu"] = query.get("create-menu") == "true"
+    if query.get("create-menu") == "true":
+        extension_settings["create_menu"] = True
+        if len(buttons) == 1:
+            extension_settings["as_submenu"] = False
 
     extension_settings["locale"] = "all" # always include everything
     applications = query.getlist("button-application")
@@ -246,20 +248,23 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
     total = 0
     found = set()
     for item in stats:
-        found.add(item["name"])
-        count = item["downloads"]
-        total += count
-        apps = list(applications.get(item["name"], ()))
-        apps.sort()
-        item.update({
-            "applications": apps,
-            "icon": buttons_obj.get_icons(item["name"]),
-            "label": locale_str('label', item["name"]),
-            "average": (float(count) / days),
-            "percent": (float(count) / sum * 100),
-            "total": (float(total) / sum * 100),
-            "folder": buttons_obj.get_source_folder(item["name"]),
-        })
+        try:
+            found.add(item["name"])
+            count = item["downloads"]
+            total += count
+            apps = list(applications.get(item["name"], ()))
+            apps.sort()
+            item.update({
+                "applications": apps,
+                "icon": buttons_obj.get_icons(item["name"]),
+                "label": locale_str('label', item["name"]),
+                "average": (float(count) / days),
+                "percent": (float(count) / sum * 100),
+                "total": (float(total) / sum * 100),
+                "folder": buttons_obj.get_source_folder(item["name"]),
+            })
+        except:
+            pass # if we change an id, this will happen, but we don't care
     for name in set(buttons_obj.buttons()).difference(found):
         apps = list(applications.get(name, ()))
         apps.sort()

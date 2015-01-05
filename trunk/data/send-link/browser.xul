@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="send-link"
 	label="&send-link.label;"
 	tooltiptext="&send-link.tooltip;"

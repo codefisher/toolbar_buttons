@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="gmail"
 	label="&gmail.label;"
 	tooltiptext="&gmail.tooltip;"

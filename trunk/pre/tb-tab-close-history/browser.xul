@@ -1,4 +1,5 @@
-<toolbarbutton 
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-tab-close-history"
 	type="menu"
 	label="&tb-tab-close-history.label;"

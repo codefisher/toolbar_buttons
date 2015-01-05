@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="preferences"
 	label="&preferences.label;"
 	tooltiptext="&preferences.tooltip;"

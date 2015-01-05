@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="restart-app"
 	label="&restart-app.label;"
 	tooltiptext="&restart-app.tooltip;"

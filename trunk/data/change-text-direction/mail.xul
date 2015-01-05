@@ -1,4 +1,5 @@
 <toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="change-text-direction"
 	label="&change-text-direction.label;"
 	tooltiptext="&change-text-direction.tooltip;"
