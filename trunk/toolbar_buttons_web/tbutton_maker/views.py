@@ -425,8 +425,7 @@ def list_app_buttons(request, app_name, days=30, template_name='tbutton_maker/ap
     def button_key(item):
         return 0 - stats.get(item[0], 0)
     data = index(request, applications=app_name, template_name=None)
-    data["button_data"].sort(key=button_key)
-    data["entries"] = page_it(request, data["button_data"])
+    data["entries"] = page_it(request, sorted(data["button_data"](), key=button_key))
     data["application"] = app_name
     return render(request, template_name, data)
 
