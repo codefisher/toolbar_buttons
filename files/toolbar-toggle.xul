@@ -1,6 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1 chromeclass-toolbar-additional"
-	class="toolbar-buttons-toolbar-toggle"
+	class="toolbar-buttons-toolbar-toggle toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-toolbar-buttons-toggle-toolbar-{{hash}}"
 	label="&tb-toolbar-buttons-toggle-toolbar.label;{{ number }}"
 	tooltiptext="&tb-toolbar-buttons-toggle-toolbar.tooltip;"
