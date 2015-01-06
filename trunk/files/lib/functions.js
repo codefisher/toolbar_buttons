@@ -458,7 +458,5 @@ handelMenuLoaders: function(event, item) {
 }
 
 logMessage: function(string) {
-	var consoleService = Components.classes["@mozilla.org/consoleservice;1"]
-                     .getService(Components.interfaces.nsIConsoleService);
-    consoleService.logStringMessage(string);
+	Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService).logStringMessage(string);
 }
