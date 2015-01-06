@@ -99,7 +99,7 @@ class CButton(Button):
         modules_import = "\n".join("Cu.import('%s');" % mod for mod in self._modules[self._the_button] if mod)
         end = "\n\t".join(self._button_js_setup.get(window, {}).values())
         end = end.replace("'%s'" % self._the_button, 'this.id').replace('"%s"' % self._the_button, 'this.id')
-        script = """var Cc = Components.classes;\nvar Ci = Components.interfaces;\nvar Cu = Components.utils;\n%s\n%s\n%s\n\n%s\n%s""" % (modules_import, prefs, functions, "\n".join(statements).replace('toolbarbutton_0', 'this'), end)
+        script = u"""var Cc = Components.classes;\nvar Ci = Components.interfaces;\nvar Cu = Components.utils;\n%s\n%s\n%s\n\n%s\n%s""" % (modules_import, prefs, functions, "\n".join(statements).replace('toolbarbutton_0', 'this'), end)
         def string_fix(matchobj):
             if matchobj.group(1) == "GetStringFromName":
                 return self._prop_string_lookup(matchobj.group(2));

@@ -3,6 +3,7 @@
 import os
 import re
 from collections import defaultdict
+import codecs
 
 entity_re = re.compile(r"<!ENTITY\s+([\w\-\.]+?)\s+[\"'](.*?)[\"']\s*>")
 
@@ -40,7 +41,7 @@ class Locale(object):
                     elif not load_properites and file_name.endswith(".properties"):
                         continue
                 if file_name.endswith(".dtd"):
-                    with open(file_name) as data:
+                    with codecs.open(file_name, encoding='utf-8') as data:
                         if file_name.endswith("meta.dtd"):
                             self._meta[locale] = (file_name, data.read())
                         data.seek(0)
@@ -50,7 +51,7 @@ class Locale(object):
                                 name, value = match.group(1), match.group(2)
                                 self._dtd[locale][name] = value
                 elif file_name.endswith(".properties"):
-                    with open(file_name) as data:
+                    with codecs.open(file_name, encoding='utf-8') as data:
                         for line in data:
                             if not line.strip():
                                 continue
@@ -89,7 +90,7 @@ class Locale(object):
         return None
     
     def find_entities(self, string, path):
-        with open(path) as data:
+        with codecs.open(path, encoding='utf-8') as data:
             for line in data:
                 match = entity_re.match(line.strip())
                 if match:
@@ -99,7 +100,7 @@ class Locale(object):
         return None
                         
     def find_properties(self, string, path):
-        with open(path) as data:
+        with codecs.open(path, encoding='utf-8') as data:
             for line in data:
                 if not line.strip() or not '=' in line:
                     continue

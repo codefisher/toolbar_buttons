@@ -8,11 +8,11 @@ from locales import Locale
 from button import Button, get_image
 from util import get_button_folders, get_locale_folders, get_folders
 from app_versions import get_app_versions
-
+import codecs
 
 def bytes_string(string):
     if type(string) == unicode:
-        return str(string.decode("utf-8"))
+        return str(string.encode("utf-8"))
     return string
 
 def apply_max_version(settings):
@@ -81,11 +81,11 @@ def build_extension(settings, output=None, project_root=None):
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False, format="%s=%s")
         for locale, data in dtd_data.iteritems():
             data = data.replace("&amp;", "&").replace("&apos;", "'")
-            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton_labels.properties" % locale_prefix), data)
+            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton_labels.properties" % locale_prefix), bytes_string(data))
     else:
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
         for locale, data in dtd_data.iteritems():
-            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), data)
+            xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), bytes_string(data))
     locales_inuse = set(dtd_data.keys())
     extra_strings = button_locales.get_dtd_data(buttons.get_extra_locale_strings(), buttons)
     if extra_strings[settings.get("default_locale")]:
@@ -99,7 +99,7 @@ def build_extension(settings, output=None, project_root=None):
     if properties_data[settings.get("default_locale")]:
         for locale, data in properties_data.iteritems():
             if locale in locales_inuse:
-                xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.properties" % locale_prefix), data)
+                xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.properties" % locale_prefix), bytes_string(data))
     for name, path in buttons.get_extra_files().iteritems():
         with open(path) as fp:
             xpi.writestr(os.path.join("chrome", "content", "files", name), 
@@ -138,7 +138,7 @@ def build_extension(settings, output=None, project_root=None):
     
     if settings.get("fix_meta"):
         locale_str = buttons.locale_string(button_locale=button_locales, locale_name=locales[0] if len(locales) == 1 else None)
-        labels = sorted([locale_str("label", button) for button in buttons.buttons()], key=str.lower)
+        labels = sorted([locale_str("label", button) for button in buttons.buttons()], key=unicode.lower)
         settings["description"] = "A customized version of Toolbar Buttons including the buttons: %s" % ", ".join(labels)
 
     if settings.get("fix_meta") and len(buttons) == 1:
@@ -267,8 +267,8 @@ def create_install(settings, applications, options=[]):
                 \t\t\t\t<em:maxVersion>%s</em:maxVersion>
             \t\t\t</Description>
         \t\t</em:targetApplication>""".replace(" ","") % tuple(values))
-    template = open(os.path.join(settings.get("project_root"), "files", "install.rdf") ,"r").read()
-    return (template.replace("{{uuid}}", settings.get("extension_id"))
+    template = codecs.open(os.path.join(settings.get("project_root"), "files", "install.rdf"),"r", encoding='utf-8').read()
+    return bytes_string(template.replace("{{uuid}}", settings.get("extension_id"))
                     .replace("{{name}}", settings.get("name"))
                     .replace("{{version}}", settings.get("version"))
                     .replace("{{description}}", settings.get("description"))
