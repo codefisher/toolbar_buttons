@@ -144,25 +144,24 @@ def buttons_page(request, button_id, locale_name="en-US"):
     extension_settings = dict(config)
     extension_settings["project_root"] = settings.TBUTTON_DATA
     extension_settings["buttons"] = [button_id]
-    try:
-        buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, "all")
-        local_data = get_local_data(extension_settings)
-        file_to_name = extension_settings.get("file_to_name").items()
-        file_to_name.sort(key=lambda item: item[1].lower() if item[1] else None)
-        
-        data = {
-            "button": button_id,
-            "apps": sorted(list(buttons_obj.button_applications()[button_id])),
-            "label": locale_str("label", button_id),
-            "tooltip": locale_str("tooltip", button_id),
-            "icon": buttons_obj.get_icons(button_id),
-            "description": buttons_obj.description(button_id),
-            "local_data": local_data,
-            "locale": locale_name,
-            "file_to_name": file_to_name,
-        }
-    except:
-        raise Http404
+    #try:
+    buttons_obj, locale_str, locale_name, applications = get_extenion_data(extension_settings, locale_name, "all")
+    local_data = get_local_data(extension_settings)
+    file_to_name = [(file_name, name) for file_name, name in extension_settings.get("file_to_name").items() if file_name in buttons_obj._button_windows[button_id]]
+    file_to_name.sort(key=lambda item: item[1].lower() if item[1] else None)
+    data = {
+        "button": button_id,
+        "apps": sorted(list(buttons_obj.button_applications()[button_id])),
+        "label": locale_str("label", button_id),
+        "tooltip": locale_str("tooltip", button_id),
+        "icon": buttons_obj.get_icons(button_id),
+        "description": buttons_obj.description(button_id),
+        "local_data": local_data,
+        "locale": locale_name,
+        "file_to_name": file_to_name,
+    }
+    #except:
+    #    raise Http404
     return render(request, "tbutton_maker/button.html", data)
 
 def create_custombutton(request):

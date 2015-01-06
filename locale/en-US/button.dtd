@@ -442,3 +442,5 @@
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">
+<!ENTITY tb-check-for-update.label "Update">
+<!ENTITY tb-check-for-update.tooltip "Check For Updates">
