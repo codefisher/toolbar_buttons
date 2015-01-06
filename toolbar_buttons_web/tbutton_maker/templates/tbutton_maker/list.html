@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cache %}
+
 
 {% block head_tags %}
         <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/tbutton.css">
@@ -22,6 +24,7 @@
 {% endif %}
 
 <ul id="button_list">
+    {% cache 600 tbutton_list applications locale %}
 	{% for button, apps, label, tooltip, icon, description in button_data %}
 		<li class="button-item">
 			<span class="button-name">
@@ -47,6 +50,7 @@
 			</div>
 		</li>
 	{% endfor %}
+	{% endcache %}
 </ul>
 
 <form method="post" action="{% url 'tbutton-list' %}" class="form-field">

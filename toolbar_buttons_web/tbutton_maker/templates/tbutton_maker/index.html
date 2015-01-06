@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cache %}
 
 {% block head_tags %}
         <link type="text/css" rel="stylesheet" href="{% get_static_prefix %}css/tbutton.css">
@@ -55,6 +56,7 @@
 		<legend>Buttons</legend>
 		<div class="content-box center" style="margin:1em"><label for="filter-list">Filter <input class="search" type="text" id="filter-list" placeholder="Filter" /></label></div>
 		<ul id="button-list" class="list">
+		{% cache 600 tbutton_create applications locale buttons %}
 		{% for button, apps, label, tooltip, icon, description, folder in button_data %}
 			<li class="button-item" id="{{ button }}-list-item">
 				<label for="{{ button }}-checkbox">
@@ -70,6 +72,7 @@
 				</div>
 			</li>
 		{% endfor %}
+		{% endcache %}
 		</ul>
 		<p>
 		    * These buttons are not in the official release, but will be added if they are popular here.
