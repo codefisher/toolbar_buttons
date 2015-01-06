@@ -9,6 +9,11 @@
 {% block page_title %}{{ label }} Button{% endblock %}
 
 {% block content %}
+        <div class="content-box bookmarklets">
+            <a href="/toolbar_button/">Toolbar Buttons</a> &raquo;
+            <a href="/toolbar_button/button_list/">Button List</a> &raquo;
+            {{ label }}
+        </div>
         <div class="content-box">
         <h1>        <img src="{% get_static_prefix %}images/pastel-svg/32/{{ icon }}" title="{{ tooltip|safe }}" alt="{{ tooltip|safe }}">
 {{ label }}</h1>
@@ -63,4 +68,14 @@
                 Create {{ label }} for Custom Button</button>
         </form>
         </div>
+        {% if related %}
+        <div class="content-box">
+            <h2>Often used with:</h2>
+            <ul>
+            {% for button in related %}
+                <li style="list-style-image:url({% get_static_prefix %}images/pastel-svg/16/{{ button.icon }});"><a href="{% url 'tbutton-button' button_id=button.name %}">{{ button.label|safe }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
 {% endblock %}

@@ -177,8 +177,8 @@ class SimpleButton():
                 if value is None:
                     value = button_locale.get_dtd_value(default_locale, match.group(1), self)
             if value is None:
-                return '' #print button_id
-            return value.replace("&brandShortName;", "").replace("&apos;", "'")
+                return u'' #print button_id
+            return unicode(value.replace("&brandShortName;", "").replace("&apos;", "'"))
         return locale_str
 
 class Button(SimpleButton):
@@ -991,7 +991,8 @@ class Button(SimpleButton):
             jsm_file = []
             js_includes = []
             for js_file in self._get_js_file_list(file_name):
-                js_includes.append("""loader.loadSubScript("chrome://%s/content/%s.js", scope);""" % (self._settings.get("chrome_name"), js_file))
+                if js_file != "loader":
+                    js_includes.append("""loader.loadSubScript("chrome://%s/content/%s.js", scope);""" % (self._settings.get("chrome_name"), js_file))
             toolbars, toolbar_ids = self._create_jsm_toolbar(button_hash, toolbar_template, file_name, values)
             count = 0
             modules = set()

@@ -1,5 +1,5 @@
 <toolbarbutton
-	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	class="toolbarbutton-1 msgHeaderView-button"
 	id="toggle-starred"
 	label="&toggle-starred.label;"
 	tooltiptext="&toggle-starred.tooltip;"

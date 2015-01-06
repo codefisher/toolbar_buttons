@@ -149,6 +149,18 @@ def buttons_page(request, button_id, locale_name="en-US"):
     local_data = get_local_data(extension_settings)
     file_to_name = [(file_name, name) for file_name, name in extension_settings.get("file_to_name").items() if file_name in buttons_obj._button_windows[button_id]]
     file_to_name.sort(key=lambda item: item[1].lower() if item[1] else None)
+
+    days = 30
+    time = datetime.datetime.now() - datetime.timedelta(days)
+    inner_qs = Button.objects.filter(name__in=[button_id], session__time__gt=time).values('session')
+    results = Button.objects.filter(session__in=inner_qs).exclude(name__in=[button_id])
+    stats = list(results.values('name').annotate(downloads=Count('name')).order_by("-downloads"))[0:5]
+    for stat in stats:
+        stat.update({
+            "label": locale_str("label", stat["name"]),
+            "tooltip": locale_str("tooltip", stat["name"]),
+            "icon": buttons_obj.get_icons(stat["name"]),
+        })
     data = {
         "button": button_id,
         "apps": sorted(list(buttons_obj.button_applications()[button_id])),
@@ -159,6 +171,7 @@ def buttons_page(request, button_id, locale_name="en-US"):
         "local_data": local_data,
         "locale": locale_name,
         "file_to_name": file_to_name,
+        "related": stats,
     }
     #except:
     #    raise Http404
@@ -169,7 +182,12 @@ def create_custombutton(request):
     button_locale = request.GET.get("button-locale")
     window = request.GET.get("application-window")
     application = config.get("file_to_application").get(window)[0]
-    url = custombutton.custombutton(config, application, window, button_locale, button)
+    extension_settings = dict(config)
+    extension_settings.update({
+        "project_root": settings.TBUTTON_DATA,
+        "icon": os.path.join(settings.TBUTTON_DATA, extension_settings.get("icon")),
+    })
+    url = custombutton.custombutton(extension_settings, application, window, button_locale, button)
     result = buttons_page(request, button, button_locale)
     response = HttpResponse(result.content, status=302)
     response['Location'] = url

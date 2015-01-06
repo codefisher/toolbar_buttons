@@ -1,6 +1,7 @@
 from builder.build import build_extension
 from config import settings
 import getopt
+import sys
 
 config = dict(settings.config_default)
 
