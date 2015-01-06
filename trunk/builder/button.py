@@ -662,17 +662,16 @@ class Button(SimpleButton):
         elif js_extra_file:
             js_files["button"] += js_extra_file
         if not self._settings.get("custom_button_mode"):
-            for file_name, data in self._button_js_setup.items():
-                if not self._settings.get("restartless"):
-                    end = """window.addEventListener("load", function toolbarButtonsOnLoad() {\n\twindow.removeEventListener("load", toolbarButtonsOnLoad, false);\n\t%s\n}, false);""" % "\n\t".join(data.values())
-                else:
-                    end = ""
-                if js_files.get(file_name):
-                    js_files[file_name] = (
-                        "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n%s"
-                         % (js_files[file_name].strip(), end))
-                elif end:
-                    js_files[file_name] = end
+            for file_name, data in js_files.items():
+                if data:
+                    js_files[file_name] = "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});\n" % data
+            if not self._settings.get("restartless"):
+                for file_name, data in self._button_js_setup.items():
+                    end = """\nwindow.addEventListener("load", function toolbarButtonsOnLoad() {\n\twindow.removeEventListener("load", toolbarButtonsOnLoad, false);\n\t%s\n}, false);""" % "\n\t".join(data.values())
+                    if file_name in js_files:
+                        js_files[file_name] += end
+                    else:
+                        js_files[file_name] = end
         if self._button_options_js:
             extra_javascript = []
             for button, value in self._button_options_js.iteritems():
