@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 msgHeaderView-button"
+	id="reset"
+	label="&reset.label;"
+	tooltiptext="&reset.tooltip;"
+	oncommand="window.goDoCommand('cmd_fullZoomReset');" />
