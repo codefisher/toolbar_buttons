@@ -807,8 +807,9 @@ class Button(SimpleButton):
             attribs = dict(attr_match.findall(attr_data))
             attrs = [("%s=%s" % (name, value))
                  for name, value in attribs.items()
-                 if name not in ("id", "tooltiptext", "class")]
-            attrs.append('class="menu-iconic menuitem-iconic %s"' % attribs.get("class", '').strip('"'))
+                 if name not in ("id", "tooltiptext", "class", "type")]
+            class_names = attribs.get("class", '').strip('"').replace('toolbarbutton-1 chromeclass-toolbar-additional', '')
+            attrs.append('class="menu-iconic menuitem-iconic %s"' % class_names)
             if self._list_has_str(attrs, 'toolbar_buttons.showAMenu') and not menu:
                 attrs.append('showamenu="true"')
                 menu = "<menupopup />"
@@ -834,8 +835,8 @@ class Button(SimpleButton):
             return ""
         if as_submenu:
             menu_id, menu_label = self._settings.get("menu_meta")
-            return """\n<menu id="%s"><menu insertafter="%s" id="%s" label="&%s;">\n\t<menupopup sortable="true" onpopupshowing="toolbar_buttons.sortMenu(event, this); toolbar_buttons.handelMenuLoaders(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menu>\n""" % (menu_name, insert_after, menu_id, menu_label, "\n\t".join(data))
-        return """\n<menu id="%s">\n\t%s\n</menu>\n""" % (menu_name, "\n\t".join(data))
+            return """\n<menupopup id="%s"><menu insertafter="%s" id="%s" label="&%s;">\n\t<menupopup sortable="true" onpopupshowing="toolbar_buttons.sortMenu(event, this); toolbar_buttons.handelMenuLoaders(event, this);" id="toolbar-buttons-popup">\n\t\t%s\n\t</menupopup>\n\t</menu></menupopup>\n""" % (menu_name, insert_after, menu_id, menu_label, "\n\t".join(data))
+        return """\n<menupopup id="%s">\n\t%s\n</menupopup>\n""" % (menu_name, "\n\t".join(data))
 
     def _jsm_create_menu(self, file_name, buttons):
         menu = self._create_menu(file_name, buttons)

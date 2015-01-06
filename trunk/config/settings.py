@@ -193,7 +193,7 @@ config_default = {
     },
     "file_to_menu": {
         "browser": ("menu_ToolsPopup", "devToolsSeparator"),
-        "mail": ("taskPopup", "tasksMenuAfterDeleteSeparator"),
+        "mail": ("taskPopup", "addonsManager"),
         "compose": ("taskPopup", "tasksMenuMail"),
         "read": ("taskPopup", "tasksMenuAfterDeleteSeparator"),
         "suite_browser": ("menu_ToolsPopup", "devToolsSeparator"),
