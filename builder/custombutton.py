@@ -146,10 +146,11 @@ def create_custombutton(settings, window):
     return buttons.create_custombuttons(window)
     
 def custombutton(config, application, window, locale, button):
-    config["applications"] = [application]
-    config["locale"] = [locale]
-    config["buttons"] = [button]
-    return create_custombutton(config, window)
+    settings = dict(config)
+    settings["applications"] = [application]
+    settings["locale"] = [locale]
+    settings["buttons"] = [button]
+    return create_custombutton(settings, window)
     
 if __name__ == "__main__":
     from os import sys, path
