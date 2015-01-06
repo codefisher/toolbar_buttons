@@ -705,7 +705,8 @@ class Button(SimpleButton):
             if self._settings.get("show_updated_prompt"):
                 show_update += "load_toolbar_button.callbacks.push(load_toolbar_button.load_url);\n"
             if self._settings.get("add_to_main_toolbar"):
-                show_update += "load_toolbar_button.callbacks.push(function(previousVersion, currentVersion) { if(previousVersion == '') load_toolbar_button.add_buttons(%s) });\n" % self._settings.get("add_to_main_toolbar")
+                buttons = ", ".join("'%s'" % item for item in self._settings.get("add_to_main_toolbar"))
+                show_update += "load_toolbar_button.callbacks.push(function(previousVersion, currentVersion) { if(previousVersion == '') { load_toolbar_button.add_buttons([%s]);} });\n" % buttons 
             js_files["button"] = show_update + "\n" + js_files["button"]
         interfaces_data = open(os.path.join(self._settings.get("project_root"), "files", "interfaces"), "r")
         interfaces = {}
