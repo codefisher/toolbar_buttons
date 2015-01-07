@@ -169,7 +169,7 @@ class SimpleButton():
                 if str_type == "tooltip":
                     regexp = r'tooltiptext="&(.*\.tooltip);"'
                 else:
-                    regexp = r'label="&(.*\.label);"'                
+                    regexp = r'label="&(.*\.label);"'
                 with open(self._xul_files[button_id][0]) as fp:
                     data = fp.read()
                     match = re.search(regexp, data)
@@ -205,7 +205,7 @@ class Button(SimpleButton):
         self._option_icons = set()
         self._modules = defaultdict(set)
         self._button_js_setup = defaultdict(dict)
-        self._button_commands = dict()
+        self._button_commands = dict() #TODO: this should be window specific
 
         # we always want these file
         self._button_js["loader"]["_"] = ""

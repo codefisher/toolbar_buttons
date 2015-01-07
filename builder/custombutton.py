@@ -1,4 +1,4 @@
-from build import get_buttons, get_locale_folders, Locale, Button, get_image
+from build import get_buttons, get_locale_folders, Locale, Button, get_image, bytes_string
 import os
 import re
 import base64
@@ -64,9 +64,9 @@ class CButton(Button):
         return "%s %s" % (key, " ".join(mapper.get(mod, "") for mod in mods))
     
     def _dom_string_lookup(self, value):
-        result = self._local.get_string(value, self._local.get_locales()[0])
+        result = self._local.get_string(value, self._local.get_locales()[0], button=self)
         if not result:
-            result = self._local.get_string(value, self._settings.get("default_locale"))
+            result = self._local.get_string(value, self._settings.get("default_locale"), button=self)
         if "&brandShortName;" in result:
             return "'%s'.replace('&brandShortName;', Cc['@mozilla.org/xre/app-info;1'].createInstance(Ci.nsIXULAppInfo).name)" % result
         return '"%s"' % result.replace("&amp;", "&").replace("&apos;", "'")
@@ -129,7 +129,7 @@ class CButton(Button):
             "key": self.get_modifier(),
             "about": self.description(),
         }
-        xml = CUSTOM_XUL % data
+        xml = bytes_string(CUSTOM_XUL % data)
         return "custombutton://%s" % urllib.quote(xml)
 
 def create_custombutton(settings, window):
@@ -139,9 +139,11 @@ def create_custombutton(settings, window):
         "custom_button_mode": True,
         "show_updated_prompt": False,
         "add_to_main_toolbar": False,
+        "use_staging": True,
+        "use_pre": True,
     })
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
-    button_locales = Locale(settings, locale_folders, locales)
+    button_locales = Locale(settings, locale_folders, locales, all_files=True)
     buttons = get_buttons(settings, CButton)
     buttons.set_local(button_locales)
     return buttons.create_custombuttons(window)

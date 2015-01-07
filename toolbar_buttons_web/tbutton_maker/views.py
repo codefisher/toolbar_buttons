@@ -188,6 +188,8 @@ def create_custombutton(request):
     button = request.GET.get("button")
     button_locale = request.GET.get("button-locale")
     window = request.GET.get("application-window")
+    if not window in BUTTONS._button_windows[button]:
+        return redirect(reverse("tbutton-button", kwargs={"button_id": button, "locale_name": button_locale}))
     application = SETTINGS.get("file_to_application").get(window)[0]
     extension_settings = dict(SETTINGS)
     extension_settings.update({
