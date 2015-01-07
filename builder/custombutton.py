@@ -66,7 +66,7 @@ class CButton(Button):
     def _dom_string_lookup(self, value):
         result = self._local.get_string(value, self._local.get_locales()[0])
         if not result:
-            result = self._local.get_string(value, self._settings.get("default_locale")
+            result = self._local.get_string(value, self._settings.get("default_locale"))
         if "&brandShortName;" in result:
             return "'%s'.replace('&brandShortName;', Cc['@mozilla.org/xre/app-info;1'].createInstance(Ci.nsIXULAppInfo).name)" % result
         return '"%s"' % result.replace("&amp;", "&").replace("&apos;", "'")
