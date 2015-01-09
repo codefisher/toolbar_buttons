@@ -564,9 +564,8 @@ class Button(SimpleButton):
                         if size is not None:
                             values["size"] = size
                             values["selectors"] = ", ".join(selectors[size])   
-                            lines.append("""%(selectors)s {\n\tlist-style-image:"""
-                                 """url("chrome://%(chrome_name)s/skin/%(size)s/"""
-                                 """%(image)s") !important;\n}""" % values)
+                            lines.append("""%(selectors)s {\n\tlist-style-image:url("chrome://%(chrome_name)s/skin/%(size)s/"%(image)s") !important;"""
+                                     """\n\t-moz-image-region: rect(0px %(size)spx %(size)spx 0px);\n}""" % values)
         if self._settings.get("merge_images"):
             for size in icon_size_set:
                 if size is not None:

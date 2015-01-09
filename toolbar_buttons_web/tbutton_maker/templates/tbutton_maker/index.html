@@ -93,6 +93,10 @@
         var buttonList = new List('button-list-field', options);
         </script>
 	</fieldset>
+    <fieldset>
+        <legend>Submit</legend>
+        <button style="font-size:1.5em" type="submit" id="create-submit-first" name="create-submit"><img alt="" src="/static/images/pastel-svg/32/drive-down.png" height="32" width="32"> Download</button>
+    </fieldset>
 	<fieldset>
 		<legend>Settings</legend>
         <div class="form-field">
@@ -170,6 +174,29 @@
             <label>
                 <input type="radio" name="icon-size" value="jumbo"{% if icon_size == 'jumbo' %} checked="checked"{% endif %}>
                     Jumbo: Use 32x32 icons as the small size and 48x48 as the larger.
+            </label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Update Streem</legend>
+        <div class="form-field">
+            <div>
+            <label>
+                <input type="radio" name="channel" value="stable"{% if channel == 'stable' %} checked="checked"{% endif %}>
+                    Stable: You will only be offered an update when there is a new major point release.
+            </label>
+            </div>
+            <div>
+            <label>
+                <input type="radio" name="channel" value="beta_alpha"{% if channel == 'beta_alpha' %} checked="checked"{% endif %}>
+                    Latest: You will be offered an update on every version update.
+            </label>
+            </div>
+            <div>
+            <label>
+                <input type="radio" name="channel" value="nightly"{% if channel == 'nightly' %} checked="checked"{% endif %}>
+                    Nightly: You will be offered an update when ever there are changes available.
             </label>
             </div>
         </div>

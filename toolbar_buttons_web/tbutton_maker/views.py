@@ -41,7 +41,7 @@ class WebButton(button.SimpleButton):
                 with open(os.path.join(folder, "description"), "r") as description:
                     self._description[button_id] = description.read()
                     if not self._description[button_id].strip():
-                        print button_id
+                        print "Button %s lacks description" % button_id
               
     def get_source_folder(self, button):
         return self._source_folder[button] 
@@ -141,6 +141,7 @@ def index(request, locale_name=None, applications=None, template_name='tbutton_m
         "add_to_toolbar": request.GET.get('add-to-toolbar'),
         "offer_download": request.GET.get('offer-download'),
         "create_toolbars": request.GET.get('create-toolbars'),
+        "channel": request.GET.get('channel', 'stable'),
         "create_menu": request.GET.get('create-menu'),
         "custom_button": 'custom_button' in request.GET,
         "icon_size": request.GET.get('icon-size', 'standard'),
@@ -237,7 +238,7 @@ def create_buttons(request, query, log_creation=True):
     #update_query["application"] = ",".join(applications)
     update_query.setlist('button-application', applications)
     update_query["locale"] = locale
-    allowed_options = set(("button-application", "locale", "button", "create-menu", "create-toolbars", "icon-size"))
+    allowed_options = set(("button-application", "locale", "button", "create-menu", "create-toolbars", "icon-size", "channel"))
     for key in update_query.keys():
         if key not in allowed_options:
             del update_query[key]
@@ -359,20 +360,27 @@ def old_update(request):
 def update(request):
     def flat(l):
         return [item for sublist in l for item in sublist]
+    version = SETTINGS.get("version")
     buttons = request.GET.getlist("button")
     applications = get_applications(request)
     args = request.GET.copy()
     args.setlist("button-application", applications)
-    if "all" in applications:
-        app_data = flat(SETTINGS.get("applications_data").values())
+    channel = request.GET.get("channel", "stable")
+    if re.search(r'[a-z]+', version) and channel == "stable":
+        app_data = None
     else:
-        app_data = flat([SETTINGS.get("applications_data").get(app) for app in applications])
+        if "all" in applications:
+            app_data = flat(SETTINGS.get("applications_data").values())
+        else:
+            app_data = flat([SETTINGS.get("applications_data").get(app) for app in applications])
+    if channel == "nightly":
+        version = "%s.r%s" %(version, util.get_reveision(SETTINGS))
     update_url = "https://%s%s?%s" % (Site.objects.get_current().domain,
             reverse("tbutton-make-button"), args.urlencode())
     
     data = {
         "applications": app_data,
-        "version": SETTINGS.get("version"),
+        "version": version,
         "update_url": update_url,
         "extension_id": "%s@button.codefisher.org" % hashlib.md5("_".join(sorted(buttons))).hexdigest(),
     }

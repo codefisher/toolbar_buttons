@@ -165,7 +165,7 @@ def build_extension(settings, output=None, project_root=None):
             data = xpi_fp.read()
             for folder in settings.get("profile_folder"):
                 try:
-                    with open(os.path.join(folder, "extensions",
+                    with open(os.path.join(folder, settings.get("output_folder"),
                         settings.get("extension_id") + ".xpi"), "w") as fp:
                         fp.write(data)
                 except IOError:
