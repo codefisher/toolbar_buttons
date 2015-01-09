@@ -1,5 +1,14 @@
 import os
 
+try:
+    import svn.local
+except ImportError:
+    pass
+
+def get_reveision(settings):
+    r = svn.local.LocalClient(settings.get("project_root"))
+    return r.info().get("commit#revision")
+
 def get_button_folders(limit, settings, data_folder="data"):
     return get_folders(limit, settings, data_folder)
 

@@ -3,6 +3,7 @@
 	xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<rdf:Description
 		rdf:about="urn:mozilla:extension:{{ extension_id }}">
+		{% if applications %}
 		<em:updates>
 			<rdf:Seq>
 				<rdf:li>
@@ -23,5 +24,6 @@
 				</rdf:li>
 			</rdf:Seq>
 		</em:updates>
+		{% endif %}
 	</rdf:Description>
 </rdf:RDF>

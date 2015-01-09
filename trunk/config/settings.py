@@ -204,9 +204,13 @@ config_default = {
 }
 
 config = dict(config_default)
+configs = {}
 
 try:
-    from local_settings import config as local_config
-    config.update(local_config)
+    from local_settings import configs as local_config
+    config.update(local_config.get('default'))
+    for name, a_config in local_config.items():
+        configs[name] = dict(config_default)
+        configs[name].update(a_config)
 except ImportError:
     pass

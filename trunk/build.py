@@ -14,7 +14,7 @@ except ImportError:
     sys.exit(1)
 
 def main():
-    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:s:m:", ["help", "screen-shot", "icons-per-row=", "screen-shot-font="])
+    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:s:m:", ["config=", "help", "screen-shot", "icons-per-row=", "screen-shot-font="])
     opts_table = dict(opts)
     if "--help" in opts_table:
         print textwrap.dedent("""
@@ -25,16 +25,20 @@ def main():
             -l    - a locale to include
             -o    - the folder to put the created extension in
             -f    - the file name for the created extension
-            -s    - the sizes to use for the icons, but be two numbers separated
+            -s    - the sizes to use for the icons, must be two numbers separated
                         by a hyphen.
             -m    - merge all images into single large image, either y or n
 
+            --config              - a name of a config to use when building the extension
             --screen-shot create  - a fake screen shot of all the buttons in the extension
             --icons-per-row       - the number of icons to put on each row of the screen shot
             --screen-shot-font    - the file to the font to use for the window title
         """).strip()
         return
-    config = dict(settings.config)
+    if "--config" in opts_table:
+        config = dict(settings.configs.get(opts_table["--config"]))
+    else:
+        config = dict(settings.config)
     for name, setting in (("-b", "buttons"), ("-l", "locale"), ("-a", "applications")):
         if name in opts_table:
             config[setting] = [value for arg, value in opts if arg == name]

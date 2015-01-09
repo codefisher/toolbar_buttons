@@ -34,8 +34,7 @@ class CButton(Button):
                 with open(os.path.join(folder, "description"), "r") as description:
                     self._description[button_id] = description.read()
                     if not self._description[button_id].strip():
-                        print button_id
-                        
+                        print "Button %s lacks description" % button_id
     def set_local(self, local):
         self._local = local
 
