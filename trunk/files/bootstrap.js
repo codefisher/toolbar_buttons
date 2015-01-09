@@ -4,15 +4,9 @@ const Cu = Components.utils;
 
 Cu.import("resource://gre/modules/Services.jsm");
 var styleSheets = ["chrome://{{chrome-name}}/skin/button.css"];
-
-function logMessage(string) {
-	//var Application = Cc["@mozilla.org/steel/application;1"].getService(Ci.steelIApplication);
-	//Application.console.log(string);
-	Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService).logStringMessage(string);
-}
+// better loading of stylesheet https://github.com/jvillalobos/Australis-View-Demo/blob/master/src/bootstrap.js
 
 function loadIntoWindow(window) {
-	logMessage("Running loadIntoWindow for Toolbar Buttons");
 	// kind of dumb using the document uri, but it makes coping from the chrome.manifest easier
 	let uri = window.document.documentURI;
 	let module = null;
@@ -21,13 +15,9 @@ function loadIntoWindow(window) {
 	} catch(e) {
 		window.console.log(e);
 	}
-	logMessage(module);
 	if(module) {
-		logMessage("Running loadButtons");
 		module.loadButtons(window);
 	}
-	logMessage("Finished loadIntoWindow for Toolbar Buttons");
-	logMessage(module);
 }
 
 function unloadFromWindow(window) {

@@ -59,7 +59,7 @@ if(!this.load_toolbar_button) {
 			}
 		},
 		add_buttons: function(buttons) {
-			Cu.import("resource:///modules/CustomizableUI.jsm");
+			Cu.import("resource://modules/CustomizableUI.jsm");
 			var toolbars = ['nav-bar', 'mail-bar3', 'composeToolbar2'];
 			for(var i in toolbars) {
 				if(document.getElementById(toolbars[i])) {
