@@ -98,9 +98,9 @@
 <!ENTITY find-prev.tooltip "Find Previous Match">
 <!ENTITY find.label "Find">
 <!ENTITY find.tooltip "Find Text">
-<!ENTITY firefox-extension.label "Extensions">
+<!ENTITY firefox-extension.label "Get Extensions">
 <!ENTITY firefox-extension.tooltip "Get more Firefox extensions">
-<!ENTITY firefox-theme.label "Themes">
+<!ENTITY firefox-theme.label "Get Themes">
 <!ENTITY firefox-theme.tooltip "Get more Firefox themes">
 <!ENTITY forward-as-attachment.label "Forward As Attachment">
 <!ENTITY forward-as-attachment.tooltip "Forward message as an attachment">
@@ -389,9 +389,9 @@
 <!ENTITY tb-view-menu.tooltip "Show the view menu">
 <!ENTITY themes.label "Themes">
 <!ENTITY themes.tooltip "Open Themes Manager">
-<!ENTITY thunderbird-extension.label "Extensions">
+<!ENTITY thunderbird-extension.label "Get Extensions">
 <!ENTITY thunderbird-extension.tooltip "Get more Thunderbird extensions">
-<!ENTITY thunderbird-theme.label "Themes">
+<!ENTITY thunderbird-theme.label "Get Themes">
 <!ENTITY thunderbird-theme.tooltip "Get more Thunderbird themes">
 <!ENTITY toggle-proxy.label "Toggle Proxy">
 <!ENTITY toggle-proxy.tooltip "Toggle The Proxy On &amp; Off">

@@ -1,2 +1,2 @@
-resource:///modules/iteratorUtils.jsm
-resource:///modules/MailUtils.js
+resource://modules/iteratorUtils.jsm
+resource://modules/MailUtils.js
