@@ -5,4 +5,5 @@ openExtensionTab: function(event) {
 					'chrome://mozapps/content/extensions/extensions.xul'});
 		return true;
 	}
+	return false;
 }

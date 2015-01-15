@@ -38,7 +38,7 @@
         </div>
         <div class="content-box">
             <h2 onclick="$('#custombutton').show(500);"><img src="{% get_static_prefix %}images/icons/cbicon.png" width="24" height="24" alt="">Create Custom Button</h2>
-        <form  method="get" id="custombutton" style="display:none;" class="clear" action="{% url 'tbutton-createcustom' %}">
+        <form  method="post" id="custombutton" style="display:none;" class="clear" action="{% url 'tbutton-createcustom' %}">
             <input type="hidden" value="{{ button }}" name="button">
             <ul class="messages"><li class="warning">
                 This only works if you have the <a href="https://addons.mozilla.org/en-us/firefox/addon/custom-buttons/">Custom Buttons</a> extension installed.  If you do not, please use the button above to create a standard extension.

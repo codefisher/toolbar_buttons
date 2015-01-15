@@ -3,4 +3,5 @@ openExtensionTab: function(event) {
 		toolbar_buttons.LoadURL('chrome://mozapps/content/extensions/extensions.xul', event);
 		return true;
 	}
+	return false;
 }

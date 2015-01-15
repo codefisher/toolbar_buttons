@@ -358,6 +358,7 @@ searchBarSize: function(opp) {
 		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
 		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
 	}
+	return true;
 }
 
 realNavigate: function(event, dirPrev) {

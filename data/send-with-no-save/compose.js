@@ -8,16 +8,20 @@ SendWithNoSave: function() {
 		var send = prefs.getBoolPref(prefstring);
 	}
 	if (send === false) {
-		window.goDoCommand("cmd_sendButton");
+		toolbar_buttons.goSendMessage();
 	} else {
 		prefs.setBoolPref(prefstring, false);
-		try {
-			if (toolbar_buttons.interfaces.IOService.offline) {
-				window.SendMessageLater();
-			} else {
-				window.SendMessage();
-			}
-		} catch (e) {}
+		toolbar_buttons.goSendMessage();
 		prefs.setBoolPref(prefstring, send);
 	}
+}
+
+goSendMessage: function() {
+	try {
+		if (toolbar_buttons.interfaces.IOService.offline) {
+			window.SendMessageLater();
+		} else {
+			window.SendMessage();
+		}
+	} catch (e) {}
 }

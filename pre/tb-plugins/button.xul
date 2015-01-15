@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-plugins"
+	label="&tb-plugins.label;"
+	tooltiptext="&tb-plugins.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('plugins', 'addons://list/plugin');"/>

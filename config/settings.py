@@ -168,12 +168,16 @@ config_default = {
          "mail-address-book": "AddressBookToolbarPalette",
          "suite_browser": "BrowserToolbarPalette",
     },
+    # this repeats toolbox, because it has to match the following setting.
     "file_to_toolbar_box": {
         "browser": ("toolbox", "navigator-toolbox"),
         "mail": ("toolbox", "mail-toolbox"),
         "compose": ("toolbox", "compose-toolbox"),
         "read": ("toolbox", "mail-toolbox"),
         "calendar": ("toolbox", "calendar-toolbox"),
+        "lightning": ("toolbox", "mail-toolbox"),
+        "mail-header": ("toolbox", "header-view-toolbox"),
+        "mail-address-book": ("toolbox", "ab-toolbox"),
         "suite_browser": ("toolbox", "navigator-toolbox"),
     },
     "file_to_bottom_box": {

@@ -55,13 +55,13 @@ openExternalApplicationSettings: function() {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-external-application.label");
-	var arguments = {
+	var args = {
 		title: title,
 		type: "file",
 		db_table: "external_application_strings",
 	};
 	window.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
-			"ExternalApplication:Permissions", "chrome,centerscreen,dialog=no,resizable", arguments);
+			"ExternalApplication:Permissions", "chrome,centerscreen,dialog=no,resizable", args);
 }
 
 toolbar_buttons.setUpStringDatabase("external_application_strings", null);
