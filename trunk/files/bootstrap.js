@@ -53,14 +53,11 @@ function createResource(resourceName, uriPath) {
 }
 
 function startup(data, reason) {
-	logMessage("Start startup for Toolbar Buttons");
 	// set our default prefs
 	Services.scriptloader.loadSubScript("chrome://{{chrome-name}}/content/defaultprefs.js", {pref: setDefaultPref});
 	
-	logMessage("Start resource for Toolbar Buttons");
 	{{resource}}
 
-	logMessage("Start stylesheets for Toolbar Buttons");
 	// Load stylesheets
 	let styleSheetService= Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService);
 	for (let i=0,len=styleSheets.length;i<len;i++) {
@@ -68,20 +65,17 @@ function startup(data, reason) {
 		styleSheetService.loadAndRegisterSheet(styleSheetURI, styleSheetService.AUTHOR_SHEET);
 	}
 
-	logMessage("Start windows for Toolbar Buttons");
 	let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
 
 	// Load into any existing windows
 	let windows = wm.getEnumerator(null);
 	while (windows.hasMoreElements()) {
 		let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
-		logMessage("domWindow for Toolbar Buttons");
 		loadIntoWindow(domWindow);
 	}
 
 	// Load into any new windows
 	wm.addListener(windowListener);
-	logMessage("Finished startup for Toolbar Buttons");
 }
 
 function shutdown(data, reason) {

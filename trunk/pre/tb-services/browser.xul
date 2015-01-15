@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-services"
+	label="&tb-services.label;"
+	tooltiptext="&tb-services.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('services', 'addons://list/service');"/>

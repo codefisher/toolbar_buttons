@@ -186,9 +186,14 @@ def buttons_page(request, button_id, locale_name=None):
     return render(request, "tbutton_maker/button.html", data)
 
 def create_custombutton(request):
-    button = request.GET.get("button")
-    button_locale = request.GET.get("button-locale")
-    window = request.GET.get("application-window")
+    if request.method == 'post':
+        button = request.POST.get("button")
+        button_locale = request.POST.get("button-locale")
+        window = request.POST.get("application-window")
+    else:
+        button = request.GET.get("button")
+        button_locale = request.GET.get("button-locale")
+        window = request.GET.get("application-window")
     if not window in BUTTONS._button_windows[button]:
         return redirect(reverse("tbutton-button", kwargs={"button_id": button, "locale_name": button_locale}))
     application = SETTINGS.get("file_to_application").get(window)[0]

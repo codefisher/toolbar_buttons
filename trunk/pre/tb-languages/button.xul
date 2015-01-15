@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-languages"
+	label="&tb-languages.label;"
+	tooltiptext="&tb-languages.tooltip;"
+	oncommand="toolbar_buttons.OpenAddonsMgr('locales', 'addons://list/locale');"/>

@@ -100,12 +100,12 @@ loadToolbarDisplayMenu: function(event, popup) {
 			let iconTextMode = document.createElement("menuitem");
 			iconTextMode.setAttribute('type', 'radio');
 			iconTextMode.setAttribute('name', 'mode');
-			if(toolbar.getAttribute('mode') == 'icons-text') {
+			if(toolbar.getAttribute('mode') == 'full') {
 				iconTextMode.setAttribute('checked', true);
 			}
 			iconTextMode.setAttribute('label', stringBundle.GetStringFromName("tb-toolbar-display.icons-text"));
 			iconTextMode.addEventListener('command', function(event) {
-				document.getElementById(toolbarId).setAttribute('mode', 'icons-text');
+				document.getElementById(toolbarId).setAttribute('mode', 'full');
 				document.persist(toolbarId, 'mode');
 			}, false);
 			submenu.appendChild(iconTextMode);

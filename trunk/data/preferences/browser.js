@@ -3,4 +3,5 @@ openOptionsTab: function(event) {
 		toolbar_buttons.LoadURL('chrome://browser/content/preferences/preferences.xul', event);
 		return true;
 	}
+	return false;
 }

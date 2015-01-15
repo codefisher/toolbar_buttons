@@ -5,4 +5,5 @@ openOptionsTab: function(event) {
 					'chrome://messenger/content/preferences/preferences.xul'});
 		return true;
 	}
+	return false;
 }

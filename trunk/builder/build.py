@@ -59,7 +59,7 @@ def build_extension(settings, output=None, project_root=None):
     options_locales = button_locales #Locale(settings, locale_folders, locales, all_files=True)
     buttons = get_buttons(settings)
 
-    xpi_file_name = os.path.join(settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
+    xpi_file_name = os.path.join(settings.get("project_root"), settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
     if output:
         xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     else:
@@ -147,18 +147,20 @@ def build_extension(settings, output=None, project_root=None):
         settings["description"] = buttons.get_description(button)
         xpi.write(get_image(settings, "32", buttons.get_icons(button)), "icon.png")
     else:
-        xpi.write(settings.get("icon"), "icon.png")
+        xpi.write(os.path.join(settings.get("project_root"), settings.get("icon")), "icon.png")
     xpi.writestr("chrome.manifest", create_manifest(settings, locales, buttons, has_resources, option_applicaions))
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
     if settings.get('restartless'):
         xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons, has_resources))
-    xpi.write(settings.get("licence"), "LICENCE")
+        xpi.write(os.path.join(settings.get("project_root"), "files", "customizable.jsm"), 
+                  os.path.join("chrome", "content", "customizable.jsm"))
+    xpi.write(os.path.join(settings.get("project_root"), settings.get("licence")), "LICENCE")
     defaults =  buttons.get_defaults()
     if defaults:
         if settings.get('restartless'):
             xpi.writestr(os.path.join("chrome", "content", "defaultprefs.js"), defaults)   
         else:
-            xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)        
+            xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)
     xpi.close()
     if not output and settings.get("profile_folder"):
         with open(xpi_file_name, "r") as xpi_fp:
