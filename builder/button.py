@@ -1058,6 +1058,8 @@ class Button(SimpleButton):
         toolbar_ids = []
         tool_bars = []
         bottom_bars = []
+        if file_name in self._settings.get("extra_toolbars_disabled"):
+            return tool_bars, bottom_bars, toolbar_ids
         count = 0
         for box_setting, include_setting, toolbars in [("file_to_toolbar_box", "include_toolbars", tool_bars),
                                                        ("file_to_bottom_box", "include_satusbars", bottom_bars)]:
@@ -1077,7 +1079,7 @@ class Button(SimpleButton):
                     label_number = "" if (number + count) == 1 else " %s" % (i + count + 1)
                     toolbar_ids.append("tb-toolbar-%s" % hash)
                     toolbar_box_id = "" if include_setting == "include_toolbars" else 'toolboxid="%s" ' % self._settings.get(box_setting).get(file_name)[1]
-                    toolbars.append('''<toolbar %spersist="collapsed,hidden" context="toolbar-context-menu" class="inline-toolbar" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;%s"/>''' % (toolbar_box_id, hash, defaultset, label_number))
+                    toolbars.append('''<toolbar %spersist="collapsed,hidden" context="toolbar-context-menu" class="toolbar-buttons-toolbar" id="tb-toolbar-%s" mode="icons" iconsize="small" customizable="true" %s toolbarname="&tb-toolbar-buttons-toggle-toolbar.name;%s"/>''' % (toolbar_box_id, hash, defaultset, label_number))
                     values["tb-toolbar-buttons-toggle-toolbar-%s" % hash] = toolbar_template.replace("{{hash}}", hash).replace("{{ number }}", label_number)
                 count += number
         return tool_bars, bottom_bars, toolbar_ids

@@ -9,6 +9,7 @@ from button import Button, get_image
 from util import get_button_folders, get_locale_folders, get_folders
 from app_versions import get_app_versions
 import codecs
+from collections import defaultdict
 
 def bytes_string(string):
     if type(string) == unicode:
@@ -175,18 +176,20 @@ def build_extension(settings, output=None, project_root=None):
     return buttons, button_locales
 
 def create_bootstrap(settings, buttons, has_resources):
-    values = {"chrome": settings.get("chrome_name")}
+    chrome_name = settings.get("chrome_name")
     loaders = []
     resource = ""
     if has_resources:
-        resource = "createResource('%(chrome)s', 'chrome://%(chrome)s/content/resources/');" % values
+        resource = "createResource('%s', 'chrome://%s/content/resources/');" % (chrome_name, chrome_name)
     install = ""
+    window_modules = defaultdict(list)
     for file_name in buttons.get_file_names():
-        values["file"] = file_name
-        for overlay in settings.get("files_to_overlay").get(file_name, ()):
-            values["overlay"] = overlay
-            loaders.append("(uri == '%(overlay)s') {\n\t\t\t"
-                         "module = Cu.import('chrome://%(chrome)s/content/%(file)s.jsm');\n\t\t}" % values)            
+        for overlay in settings.get("files_to_window").get(file_name, ()):
+            window_modules[overlay].append(file_name)
+            
+    for overlay, modules in window_modules.items():
+            mods = "\n\t\t".join(["modules.push('chrome://%s/content/%s.jsm');" % (chrome_name, file_name) for file_name in modules])
+            loaders.append("(uri == '%s') {\n\t\t%s\n\t}" % (overlay, mods))
     template = open(os.path.join(settings.get("project_root"), "files", "bootstrap.js") ,"r").read()
     if settings.get("show_updated_prompt"):
         install = (open(os.path.join(settings.get("project_root"), "files", "install.js") ,"r").read()

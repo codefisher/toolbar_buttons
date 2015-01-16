@@ -124,6 +124,17 @@ config_default = {
         "mail-header": ("chrome://messenger/content/msgHdrViewOverlay.xul",),
         "mail-address-book": ("chrome://messenger/content/addressbook/addressbook.xul", )
     },
+    "files_to_window": {
+        "browser": ("chrome://browser/content/browser.xul", ),
+        "suite_browser": ("chrome://navigator/content/navigator.xul", ),
+        "mail": ("chrome://messenger/content/messenger.xul", ),
+        "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
+        "read": ("chrome://messenger/content/messageWindow.xul", ),
+        "calendar": ("chrome://calendar/content/calendar.xul", "chrome://sunbird/content/calendar.xul"),
+        "lightning": ("chrome://messenger/content/messenger.xul", ),
+        "mail-header": ("chrome://messenger/content/messenger.xul",),
+        "mail-address-book": ("chrome://messenger/content/addressbook/addressbook.xul", )
+    },
     "file_to_application": {
          "browser": ("browser", "suite"),
          "messenger": ("messenger", "suite"),
@@ -149,8 +160,8 @@ config_default = {
          "suite_browser": "SeaMonkey",
     },
     "file_map": {
-        "loader": ("browser","mail","compose","read","calendar","suite_browser"),
-        "button": ("browser","mail","compose","read","calendar","suite_browser"),
+        "loader": ("browser","mail","compose","read","calendar","lightning","suite_browser"),
+        "button": ("browser","mail","compose","read","calendar","lightning","suite_browser"),
         "messenger": ("mail", "compose", "read"),
         "calendar": ("lightning", "calendar"),
         "browser": ("browser", "suite_browser"),
@@ -175,11 +186,12 @@ config_default = {
         "compose": ("toolbox", "compose-toolbox"),
         "read": ("toolbox", "mail-toolbox"),
         "calendar": ("toolbox", "calendar-toolbox"),
-        "lightning": ("toolbox", "mail-toolbox"),
+        "lightning": ("toolbox", "calendar-toolbox"),
         "mail-header": ("toolbox", "header-view-toolbox"),
         "mail-address-book": ("toolbox", "ab-toolbox"),
         "suite_browser": ("toolbox", "navigator-toolbox"),
     },
+    "extra_toolbars_disabled": ['mail-header'],
     "file_to_bottom_box": {
         "browser": ("vbox", "browser-bottombox"),
         "mail": ("window", "messengerWindow"), # there is nothing wrapping the statusbar,

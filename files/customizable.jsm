@@ -14,6 +14,7 @@ function customizableUI(toolbox) {
 }
 
 customizableUI.prototype.createWidget = function(aProperties) {
+	try {
 	let document = this.toolbox.ownerDocument;
 	if(aProperties.onBuild) {
 		var button = aProperties.onBuild(document);
@@ -37,6 +38,9 @@ customizableUI.prototype.createWidget = function(aProperties) {
 		button.classList.add("chromeclass-toolbar-additional");
 		this.toolbox.palette.appendChild(button);
 	}
+	if(aProperties.onCreated) {
+		aProperties.onCreated(button);
+	}
 	if(!restoreToToolbar(this.toolbox, aProperties.id)) {
 		if(aProperties.defaultArea) {
 			var buttonSet = this.toolbox.getAttribute('_addeddefaultset');
@@ -54,6 +58,7 @@ customizableUI.prototype.createWidget = function(aProperties) {
 			}
 		}
 	}
+	} catch(e) {}
 }
 
 function restoreToToolbar(toolbox, aWidgetId) {
@@ -75,7 +80,6 @@ function restoreToToolbar(toolbox, aWidgetId) {
 			var spacers = 0;
 			var beforeNode = document.getElementById(buttons[index]);
 			while(beforeNode == null && index < buttons.length) {
-				index++;
 				var nodeId = buttons[index];
 				if(nodeId == 'spacer' || nodeId == 'separator' || nodeId == 'spring') {
 					// in the DOM these will have some random ID, and we will not be able to find them
@@ -84,16 +88,15 @@ function restoreToToolbar(toolbox, aWidgetId) {
 				} else {
 					beforeNode = document.getElementById(nodeId);
 				}
+				index++;
 			}
-			if(beforeNode == null && spacers) {
-				// TODO: not quite working always yet!
-				beforeNode = toolbar.childNodes[spacers-1];
+			if(!beforeNode && spacers) {
+				// we find so many spacers, but no node to insert before, so we go back as many nodes
+				// as there are spacers
+				beforeNode = toolbar.childNodes[toolbar.childNodes.length-spacers];
 			} else {
 				for(var j = 0; j < spacers; j++) {
 					// counting back before the spacers
-					if(beforeNode == null) {
-						break;
-					}
 					beforeNode = beforeNode.previousSibling;
 				}
 			}
@@ -143,14 +146,7 @@ customizableUI.prototype.registerArea = function(aName, aProperties) {
 	for(var i in buttons) {
 		toolbar.insertItem(buttons[i], null, null, false);
 	}
-	toolbar.setAttribute('currentset', buttonSet); // we do this to make sure we have not changed or messed up by called insertItem
+	// we do this to make sure we have not changed or messed up anything by calling insertItem
+	toolbar.setAttribute('currentset', buttonSet);
 	document.persist(aName, 'currentset');
-}
-
-/*
- * out own new function, needed because we need reference toolbox.
- * Thunderbird has two in the main window
- */
-customizableUI.prototype.selectToolbox = function(doc, toolbox) {
-	this.toolbox = toolbox;
 }

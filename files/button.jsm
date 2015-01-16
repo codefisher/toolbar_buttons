@@ -34,11 +34,15 @@ var loader = Cc["@mozilla.org/moz/jssubscript-loader;1"].getService(Ci.mozIJSSub
 var gScope = this;
 
 function loadButtons(window) {
+	var toolbox = window.document.getElementById('{{toolbox}}');
+	if(!toolbox) {
+		return;
+	}
 	var scope = gScope;
 	scope.window = window;
 	scope.document = window.document;
 	if(!usingCustomizableUI) { //this is out own hacked up version
-		CustomizableUI = new customizableUI(window.document.getElementById('{{toolbox}}'));
+		CustomizableUI = new customizableUI(toolbox);
 		CustomizableUIs[window] = CustomizableUI;
 	}
 	let buttonStrings = new StringBundle("chrome://{{chrome-name}}/locale/{{locale-file-prefix}}button_labels.properties");

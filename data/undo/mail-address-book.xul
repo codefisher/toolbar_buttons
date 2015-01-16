@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="undo"
+	label="&undo.label;"
+	tooltiptext="&undo.tooltip;"
+	key="key_undo"
+	command="cmd_undo"/>
