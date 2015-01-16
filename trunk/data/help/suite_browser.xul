@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="help"
+	label="&help.label;"
+	tooltiptext="&help.tooltip;"
+	oncommand="window.openHelp('welcome', 'chrome://communicator/locale/help/suitehelp.rdf');"/>

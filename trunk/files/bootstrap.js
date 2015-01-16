@@ -3,33 +3,59 @@ const Ci = Components.interfaces;
 const Cu = Components.utils;
 
 Cu.import("resource://gre/modules/Services.jsm");
-var styleSheets = ["chrome://{{chrome-name}}/skin/button.css"];
-// better loading of stylesheet https://github.com/jvillalobos/Australis-View-Demo/blob/master/src/bootstrap.js
+var styleSheets = [Services.io.newURI("chrome://{{chrome-name}}/skin/button.css", null, null)];
+
+function getModules(uri) {
+	var modules = [];	
+	{{loaders}}
+	return modules;
+}
 
 function loadIntoWindow(window) {
 	// kind of dumb using the document uri, but it makes coping from the chrome.manifest easier
 	let uri = window.document.documentURI;
-	let module = null;
-	try {
-		{{loaders}}
-	} catch(e) {
-		window.console.log(e);
+	let modules = getModules(uri);
+	if(modules) {
+		for (var i = 0, len = styleSheets.length; i < len; i++) {
+			window.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindowUtils).loadSheet(styleSheets[i], 1);
+		}
+		try {
+			for(var i = 0; i < modules.length; i++) {
+				var mod = Cu.import(modules[i]);
+				mod.loadButtons(window);
+			}
+		} catch(e) {
+			window.console.log(e);
+		}
 	}
-	if(module) {
-		module.loadButtons(window);
+	if(uri == 'chrome://global/content/customizeToolbar.xul') {
+		for (var j = 0, len = styleSheets.length; j < len; j++) {
+			window.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindowUtils).loadSheet(styleSheets[j], 1);
+		}
 	}
 }
 
 function unloadFromWindow(window) {
 	let uri = window.document.documentURI;
-	let module = null;
-	try {
-		{{loaders}}
-	} catch(e) {
-		window.console.log(e);
+	let modules = getModules(uri);
+	if(modules) {
+		for (let i = 0, len = styleSheets.length; i < len; i++) {
+			window.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindowUtils).removeSheet(styleSheets[i], 1);
+		}
+		try {
+			for(var i = 0; i < modules.length; i++) {
+				var mod = Cu.import(modules[i]);
+				mod.unloadButtons(window);
+				Cu.unload(modules[i]); // makes next call to import get a new object
+			}
+		} catch(e) {
+			window.console.log(e);
+		}
 	}
-	if(module) {
-		module.unloadButtons(window);
+	if(uri == 'chrome://global/content/customizeToolbar.xul') {
+		for (var i = 0, len = styleSheets.length; i < len; i++) {
+			window.QueryInterface(Ci.nsIInterfaceRequestor).getInterface(Ci.nsIDOMWindowUtils).removeSheet(styleSheets[i], 1);
+		}
 	}
 }
 
@@ -58,13 +84,6 @@ function startup(data, reason) {
 	
 	{{resource}}
 
-	// Load stylesheets
-	let styleSheetService= Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService);
-	for (let i=0,len=styleSheets.length;i<len;i++) {
-		let styleSheetURI = Services.io.newURI(styleSheets[i], null, null);
-		styleSheetService.loadAndRegisterSheet(styleSheetURI, styleSheetService.AUTHOR_SHEET);
-	}
-
 	let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
 
 	// Load into any existing windows
@@ -79,18 +98,10 @@ function startup(data, reason) {
 }
 
 function shutdown(data, reason) {
-	if (reason == APP_SHUTDOWN)
+	if (reason == APP_SHUTDOWN) {
 		return;
-
-	// Unload stylesheets
-	let styleSheetService = Cc["@mozilla.org/content/style-sheet-service;1"].getService(Ci.nsIStyleSheetService);
-	for (let i=0,len=styleSheets.length;i<len;i++) {
-		let styleSheetURI = Services.io.newURI(styleSheets[i], null, null);
-		if (styleSheetService.sheetRegistered(styleSheetURI, styleSheetService.AUTHOR_SHEET)) {
-			styleSheetService.unregisterSheet(styleSheetURI, styleSheetService.AUTHOR_SHEET);
-		}  
 	}
-	
+
 	let resource = Services.io.getProtocolHandler("resource").QueryInterface(Ci.nsIResProtocolHandler);
 	resource.setSubstitution("{{chrome-name}}", null);
 

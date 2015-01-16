@@ -4,4 +4,4 @@
 	label="&redo.label;"
 	tooltiptext="&redo.tooltip;"
 	key="key_redo"
-	oncommand="try { window.CommandUpdate_UndoRedo(); } catch(e) {} window.goDoCommand('cmd_redo');" />
+	command="cmd_redo" />
