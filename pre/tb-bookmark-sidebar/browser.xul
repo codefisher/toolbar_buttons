@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-bookmark-sidebar"
+	label="&tb-bookmark-sidebar.label;"
+	tooltiptext="&tb-bookmark-sidebar.tooltip;"
+	key="viewBookmarksSidebarKb"
+	observes="viewBookmarksSidebar"/>

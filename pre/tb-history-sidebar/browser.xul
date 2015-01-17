@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-history-sidebar"
+	label="&tb-history-sidebar.label;"
+	tooltiptext="&tb-history-sidebar.tooltip;"
+	key="key_gotoHistory"
+	observes="viewHistorySidebar"/>
