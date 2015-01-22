@@ -17,10 +17,11 @@ config.update({
     "restartless": True,
     "create_menu": True,
     "as_submenu": False,
+    "use_keyboard_shortcuts": True,
     "translate_description": True,
 })
 
-buttons = ["addons", "bookmark-manager", "preferences", "bookmark", "snap-back", "restart-app", "about-config", "print-preview"]
+buttons = ["addons", "bookmark-manager", "preferences", "bookmark", "snap-back", "restart-app", "about-config", "print-preview", ]
 
 mini_sets = [
     {

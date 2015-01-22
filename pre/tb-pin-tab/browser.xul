@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-pin-tab"
+	label="&tb-pin-tab.label;"
+	tooltiptext="&tb-pin-tab.tooltip;"
+	oncommand="toolbar_buttons.togglePinTab();"/>

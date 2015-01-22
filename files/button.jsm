@@ -47,13 +47,7 @@ function loadButtons(window) {
 	}
 	let buttonStrings = new StringBundle("chrome://{{chrome-name}}/locale/{{locale-file-prefix}}button_labels.properties");
 	{{scripts}}
-	
-	if(window.toolbar_buttons) {
-		toolbar_buttons.toolbar_button_loader(window.toolbar_buttons, toolbar_buttons);
-	} else {
-		window.toolbar_buttons = toolbar_buttons;
-	}
-	
+		
 	{{toolbars}}
 	registerToolbars(window, document, {{toolbar_ids}});
 	

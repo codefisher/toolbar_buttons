@@ -138,6 +138,7 @@ class Locale(object):
 
         get_dtd_data(list<str>) -> dict<str: str>
         """
+        default = self._settings.get("default_locale")
         if not format:
             format = """<!ENTITY %s "%s">"""
         result = {}
@@ -158,7 +159,7 @@ class Locale(object):
                 value = self.get_string(string, locale, self._dtd, button)
                 if value is not None:
                     dtd_file.append(format % (string, value))
-            if count or untranslated:
+            if count or untranslated or locale == default:
                 result[locale] = "\n".join(dtd_file)
         return result
 
