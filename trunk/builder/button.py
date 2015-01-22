@@ -122,7 +122,7 @@ class SimpleButton():
 
             if "key" in files and self._settings.get("use_keyboard_shortcuts"):
                 with open(os.path.join(folder, "key"), "r") as keys:
-                    key_shortcut = list(keys.read().partition(":"))
+                    key_shortcut = list(keys.read().strip().partition(":"))
                     key_shortcut.pop(1)
                     self._button_keys[button] = key_shortcut
                     
@@ -205,7 +205,7 @@ class Button(SimpleButton):
         self._option_icons = set()
         self._modules = defaultdict(set)
         self._button_js_setup = defaultdict(dict)
-        self._button_commands = dict() #TODO: this should be window specific
+        self._button_commands = defaultdict(dict)
 
         # we always want these file
         self._button_js["loader"]["_"] = ""
@@ -751,32 +751,33 @@ class Button(SimpleButton):
         """
         return self._properties_strings
 
-    def get_keyboard_shortcuts(self, application):
-        if not self._settings.get("use_keyboard_shortcuts"):
+    def get_keyboard_shortcuts(self, file_name):
+        if not self._settings.get("use_keyboard_shortcuts") or not self._settings.get("file_to_keyset").get(file_name):
             return ""
         keys = []
         for button, (key, modifier) in self._button_keys.iteritems():
             attr = 'key' if len(key) == 1 else "keycode"
-            if application in self._button_applications[button]:
+            if file_name in self._button_xul:
                 mod = "" if not modifier else 'modifiers="&%s.modifier;" ' % button
-                if self._button_commands.get(button):
-                    keys.append("""<key %s="&%s.key;" %sid="%s-key" oncommand="%s" />""" % (attr, button, mod, button, self._button_commands.get(button)))
+                command = self._button_commands.get(file_name, {}).get(button)
+                if command:
+                    keys.append("""<key %s="&%s.key;" %sid="%s-key" oncommand="%s" />""" % (attr, button, mod, button, command))
                 else:
                     if self._settings.get("create_menu"):
                         keys.append("""<key %s="&%s.key;" %sid="%s-key" command="%s-menu-item" />""" % (attr, button, mod, button, button))
                     else:
                         keys.append("""<key %s="&%s.key;" %sid="%s-key" command="%s" />""" % (attr, button, mod, button, button))
         if keys:
-            return """\n <keyset id="mainKeyset">\n\t%s\n </keyset>""" % "\n\t".join(keys)
+            return """\n <keyset id="%s">\n\t%s\n </keyset>""" % (self._settings.get("file_to_keyset").get(file_name), "\n\t".join(keys))
         else:
             return ""
         
-    def jsm_keyboard_shortcuts(self, application):
-        keys = self.get_keyboard_shortcuts(application)
+    def jsm_keyboard_shortcuts(self, file_name):
+        keys = self.get_keyboard_shortcuts(file_name)
         if keys:
             statements, count = self._create_dom(ET.fromstring(re.sub(r'&([^;]+);', r'\1', keys)), doc="document")
             statements.pop(-1)
-            statements.insert(0, "var keyset_0 = document.getElementById('mainKeyset');\n\tif(!keyset_0) {")
+            statements.insert(0, "var keyset_0 = document.getElementById('%s');\n\tif(!keyset_0) {" % self._settings.get("file_to_keyset").get(file_name))
             statements.insert(3, 'document.documentElement.appendChild(keyset_0);\n\t}')
             return "\n\t".join(statements)
         return ''
@@ -880,13 +881,18 @@ class Button(SimpleButton):
         for key, value in sorted(root.attrib.items(), key=self._attr_key):
             if key == 'id':
                 if not self._settings.get("custom_button_mode"):
-                    statements.append("%s_%s.id = '%s';" % ((root.tag, num, value)))
+                    statements.append("%s_%s.id = '%s';" % (root.tag, num, value))
             elif key in ('label', 'tooltiptext') or (root.tag == 'key' and key in ('key', 'keycode', 'modifiers')):
                 statements.append("%s_%s.setAttribute('%s', %s);" % ((root.tag, num, key, self._dom_string_lookup(value))))
             elif key == "class":
                 for val in value.split():
-                    statements.append('%s_%s.classList.add("%s");' % ((root.tag, num, val)))
-            elif key[0:2] == 'on' and not root.tag == 'key':
+                    statements.append('%s_%s.classList.add("%s");' % (root.tag, num, val))
+            elif key[0:2] == 'on':
+                if key == 'oncommand' and root.tag == 'key':
+                    # we do this because key elements without a oncommand are optimized away
+                    # but we can't call our function, because that might not exist 
+                    # in the window scope, so the event listener has to be used
+                    statements.append("%s_%s.setAttribute('oncommand', 'void(0);');" % (root.tag, num))
                 if key == 'oncommand' and self._settings.get("custom_button_mode") and top == None:
                     self._command = value;
                 else:
@@ -945,7 +951,7 @@ class Button(SimpleButton):
             elif key == "id":
                 data[key] = "'%s'" % value
             elif key == 'oncommand':
-                self._button_commands[button_id] = value
+                self._button_commands[file_name][button_id] = value
         for js_file in self._get_js_file_list(file_name):
             if self._button_js_setup.get(js_file, {}).get(button_id):
                 data["onCreated"] = "function(aNode){\n\t\t\t%s\n\t\t}" % self._button_js_setup[js_file][button_id]
@@ -970,7 +976,7 @@ class Button(SimpleButton):
                 data[key] = "'%s'" % value
             elif key in ('onclick', 'oncommand'):
                 if key == 'oncommand':
-                    self._button_commands[button_id] = value
+                    self._button_commands[file_name][button_id] = value
                 key = 'onCommand' if key == 'oncommand' else 'onClick'
                 this = 'var aThis = event.target;\n\t\t\t' if 'this' in value else ''
                 data[key] = "function(event) {\n\t\t\t%s%s\n\t\t}" % (this, value.replace('this', 'aThis'))
@@ -1015,9 +1021,12 @@ class Button(SimpleButton):
             modules_import = "\n" + "\n".join("try { Cu.import('%s'); } catch(e) {}" % mod for mod in modules if mod)
             menu_id, menu_label = self._settings.get("menu_meta")
             end = []
-            for js_file in self._get_js_file_list(file_name):
+            menu = self._jsm_create_menu(file_name, values)
+            for js_file in set(self._get_js_file_list(file_name) + [file_name]):
                 if self._button_js_setup.get(js_file, {}).get(button_id):
                     end.append(self._button_js_setup[js_file][button_id])
+            if self._settings.get("create_menu") and menu:
+                end.append("toolbar_buttons.setUpMenuShower();")
             result[file_name] = (template.replace('{{locale-file-prefix}}', self._settings.get("locale_file_prefix"))
                         .replace('{{modules}}', modules_import)
                         .replace('{{scripts}}', "\n\t".join(js_includes))
@@ -1026,7 +1035,7 @@ class Button(SimpleButton):
                         .replace('{{toolbars}}', toolbars)
                         .replace('{{menu_id}}', menu_id)
                         .replace('{{toolbox}}', self._settings.get("file_to_toolbar_box").get(file_name, ('', ''))[1])
-                        .replace('{{menu}}', self._jsm_create_menu(file_name, values))
+                        .replace('{{menu}}', menu)
                         .replace('{{keys}}', self.jsm_keyboard_shortcuts(file_name))
                         .replace('{{end}}', "\n\t".join(end))
                         .replace('{{buttons}}', "\n\n".join(jsm_file))

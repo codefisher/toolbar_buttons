@@ -207,6 +207,13 @@ config_default = {
         "read": "mail-bar3",
         "suite_browser": "nav-bar",
     },
+    "file_to_keyset": {
+        "browser": "mainKeyset",
+        "mail": "mailKeys",
+        "suite_browser": "mainKeyset",
+        "read": "mailKeys",
+        "compose": "editorKeys",
+    },
     "file_to_menu": {
         "browser": ("menu_ToolsPopup", "devToolsSeparator"),
         "mail": ("taskPopup", "addonsManager"),
