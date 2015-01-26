@@ -186,7 +186,7 @@ def buttons_page(request, button_id, locale_name=None):
     return render(request, "tbutton_maker/button.html", data)
 
 def create_custombutton(request):
-    if request.method == 'post':
+    if request.method == 'POST':
         button = request.POST.get("button")
         button_locale = request.POST.get("button-locale")
         window = request.POST.get("application-window")

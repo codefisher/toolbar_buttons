@@ -15,7 +15,7 @@
 
 <form action="{% url 'lbutton-create' %}" id="link-button-form"
 	enctype="multipart/form-data" method="post"  class="field-form">
-
+	{% csrf_token %}
 <fieldset>
  <legend>URL</legend>
 

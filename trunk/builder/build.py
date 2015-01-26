@@ -85,7 +85,6 @@ def build_extension(settings, output=None, project_root=None):
             xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton_labels.properties" % locale_prefix), bytes_string(data))
     else:
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
-        print dtd_data
         for locale, data in dtd_data.iteritems():
             xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), bytes_string(data))
     locales_inuse = set(dtd_data.keys())
