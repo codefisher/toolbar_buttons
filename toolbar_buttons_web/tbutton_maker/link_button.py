@@ -32,7 +32,6 @@ def index(request, template_name="tbutton_maker/link-button.html"):
     }
     return render_to_response(template_name, data, context_instance=RequestContext(request))
 
-@csrf_exempt
 def create(request):
     if request.method == 'POST':
         url = request.POST.get("url")

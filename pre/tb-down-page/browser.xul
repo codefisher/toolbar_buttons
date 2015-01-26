@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-down-page"
+	label="&tb-down-page.label;"
+	tooltiptext="&tb-down-page.tooltip;"
+	oncommand="toolbar_buttons.pageDown();"/>
