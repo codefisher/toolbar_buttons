@@ -197,8 +197,10 @@ def create_custombutton(request):
     if not window in BUTTONS._button_windows[button]:
         if button_locale:
             return redirect(reverse("tbutton-button", kwargs={"button_id": button, "locale_name": button_locale}))
-        else:
+        elif button:
             return redirect(reverse("tbutton-button", kwargs={"button_id": button}))
+        else:
+            raise Http404
     application = SETTINGS.get("file_to_application").get(window)[0]
     extension_settings = dict(SETTINGS)
     extension_settings.update({
@@ -464,4 +466,4 @@ def homepage(request):
     compatibility = [(settings.MOZ_APP_NAMES.get(compat.app_id), compat.min_version, compat.max_version)
                               for compat in tbutton.compatibility.all() if compat.app_id in settings.MOZ_APP_NAMES]
     compatibility.sort()
-    return render(request, "tbutton_maker/homepage.html", {"tbutton": tbutton, "compatibility": compatibility})
+    return render(request, "tbutton_maker/homepage.html", {"tbutton": tbutton, "compatibility": compatibility, "title": "Toolbar Buttons %s" % tbutton.version})

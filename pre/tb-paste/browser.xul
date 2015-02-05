@@ -4,4 +4,5 @@
 	label="&tb-paste.label;"
 	tooltiptext="&tb-paste.tooltip;"
 	key="key_paste"
+	oncommand="window.goDoCommand('cmd_paste');"
 	command="cmd_paste"/>

@@ -201,8 +201,10 @@ def update(request):
         _version = request.GET.get("version").split(".")
         _version[-1] = str(int(_version[-1]) + 1)
         version = ".".join(_version)
-    else:
+    elif request.GET.get("version"):
         version = request.GET.get("version")
+    else:
+        version = '1.0'
     domain = Site.objects.get_current().domain
     data = {
         "version": version,

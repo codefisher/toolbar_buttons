@@ -4,4 +4,5 @@
 	label="&tb-cut.label;"
 	tooltiptext="&tb-cut.tooltip;"
 	key="key_cut"
+	oncommand="window.goDoCommand('cmd_cut');"
 	command="cmd_cut"/>
