@@ -1,10 +1,11 @@
-{% extends "simple.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block page_title %}Toolbar Button Statistics{% endblock %}
 
-{% block content %}
-    
+{% block wrapper %}
+    <div id="wrapper" class="no-sidebar">
+        <div id="content">
 	<h2>Toolbar Button Statistics</h2>
 	<table>
 		<thead>
@@ -54,4 +55,6 @@
 		{% endfor %}
 		</tbody>
 	</table>
+        </div>
+    </div>
 {% endblock %}

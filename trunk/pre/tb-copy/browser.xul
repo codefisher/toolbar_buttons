@@ -4,4 +4,5 @@
 	label="&tb-copy.label;"
 	tooltiptext="&tb-copy.tooltip;"
 	key="key_copy"
+	oncommand="window.goDoCommand('cmd_copy');"
 	command="cmd_copy"/>
