@@ -59,6 +59,15 @@ customizableUI.prototype.createWidget = function(aProperties) {
 		}
 	}
 	} catch(e) {}
+};
+
+function getButton(aButtonId, toolbar) {
+	var node = toolbar.ownerDocument.getElementById(aButtonId);
+	// most likely to happen in SeaMonkey, that keeps the toolbarpalette in the DOM
+	if(node != null && node.parentNode != toolbar) {
+		return null;
+	}
+	return node;
 }
 
 function restoreToToolbar(toolbox, aWidgetId) {
@@ -72,13 +81,14 @@ function restoreToToolbar(toolbox, aWidgetId) {
 		}
 	}
 	for(var i in potentialToolbars) {
-		var toolbar = potentialToolbars[i]
+		var toolbar = potentialToolbars[i];
 		var buttonSet = toolbar.getAttribute('currentset');
 		var buttons = buttonSet.split(",");
 		var index = buttons.indexOf(aWidgetId);
 		if(index != -1) {
 			var spacers = 0;
-			var beforeNode = document.getElementById(buttons[index]);
+			try {
+			var beforeNode = getButton(buttons[index], toolbar);
 			while(beforeNode == null && index < buttons.length) {
 				var nodeId = buttons[index];
 				if(nodeId == 'spacer' || nodeId == 'separator' || nodeId == 'spring') {
@@ -86,7 +96,7 @@ function restoreToToolbar(toolbox, aWidgetId) {
 					// so we keep looking for the next node, and then count back.
 					spacers++;
 				} else {
-					beforeNode = document.getElementById(nodeId);
+					beforeNode = getButton(nodeId, toolbar);
 				}
 				index++;
 			}
@@ -104,6 +114,9 @@ function restoreToToolbar(toolbox, aWidgetId) {
 			toolbar.setAttribute('currentset', buttonSet);
 			document.persist(toolbar.id, 'currentset');
 			return true;
+			} catch(e) {
+			document.defaultView.alert(e);
+			}
 		}
 	}
 	return false;
@@ -120,7 +133,7 @@ customizableUI.prototype.destroyWidget = function(aWidgetId) {
 			this.toolbox.palette.removeChild(buttons[i]);
 		}
 	}
-}
+};
 
 customizableUI.prototype.addWidgetToArea = function(aWidgetId, aArea, aPosition) {
 	// we are not yet handeling aPosition
@@ -128,11 +141,11 @@ customizableUI.prototype.addWidgetToArea = function(aWidgetId, aArea, aPosition)
 	var toolbar = document.getElementById(aArea);
 	toolbar.insertItem(aWidgetId, null, null, false);
 	document.persist(aArea, 'currentset');
-}
+};
 
 customizableUI.prototype.unregisterArea = function(aName, aDestroyPlacements) {
 	// is there any needed clean up we care about?
-}
+};
 
 customizableUI.prototype.registerArea = function(aName, aProperties) {
 	let document = this.toolbox.ownerDocument;
@@ -149,4 +162,4 @@ customizableUI.prototype.registerArea = function(aName, aProperties) {
 	// we do this to make sure we have not changed or messed up anything by calling insertItem
 	toolbar.setAttribute('currentset', buttonSet);
 	document.persist(aName, 'currentset');
-}
+};

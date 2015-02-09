@@ -4,6 +4,7 @@ import os
 import re
 from collections import defaultdict
 import codecs
+from lxml import etree
 
 entity_re = re.compile(r"<!ENTITY\s+([\w\-\.]+?)\s+[\"'](.*?)[\"']\s*>")
 
@@ -41,25 +42,16 @@ class Locale(object):
                     elif not load_properites and file_name.endswith(".properties"):
                         continue
                 if file_name.endswith(".dtd"):
-                    with codecs.open(file_name, encoding='utf-8') as data:
-                        if file_name.endswith("meta.dtd"):
-                            self._meta[locale] = (file_name, data.read())
-                        data.seek(0)
-                        for line in data:
-                            match = entity_re.match(line.strip())
-                            if match:
-                                name, value = match.group(1), match.group(2)
-                                self._dtd[locale][name] = value
+                    if file_name.endswith("meta.dtd"):
+                        self._meta[locale] = file_name
+                    dtd = etree.DTD(file_name)
+                    self._dtd[locale].update({entity.name: entity.content for entity in dtd.iterentities()})
                 elif file_name.endswith(".properties"):
                     with codecs.open(file_name, encoding='utf-8') as data:
-                        for line in data:
-                            if not line.strip():
-                                continue
-                            name, value = line.strip().split('=', 1)
-                            if name:
-                                self._properties[locale][name] = value.strip()
+                         self._properties[locale].update({name: value for (name, value) in 
+                                    (line.strip().split('=', 1) for line in data if line.strip()) if name})
     def get_meta(self):
-        return self._meta
+        return self._meta.items()
 
     def get_locales(self):
         return self._locales
@@ -133,6 +125,13 @@ class Locale(object):
                     return value
         return None
 
+
+    def _dtd_inter(self, strings, button, format, locale, string):
+        for string in strings:
+            value = self.get_string(string, locale, self._dtd, button)
+            if value is not None:
+                yield format % (string, value)
+
     def get_dtd_data(self, strings, button=None, untranslated=True, format=None):
         """Gets a set of files with all the strings wanted
 
@@ -151,16 +150,13 @@ class Locale(object):
         if self._settings.get("create_menu"):
             strings.append("tb-toolbar-buttons.menu")
         for locale in self._locales:
-            dtd_file = []
-            count = 0
             for string in strings:
                 if self._dtd[locale].get(string):
-                    count += 1
-                value = self.get_string(string, locale, self._dtd, button)
-                if value is not None:
-                    dtd_file.append(format % (string, value))
-            if count or untranslated or locale == default:
-                result[locale] = "\n".join(dtd_file)
+                    break
+            else:
+                if not untranslated and locale != default:
+                    continue
+            result[locale] = "\n".join(self._dtd_inter(strings, button, format, locale, string))
         return result
 
     def get_properties_data(self, strings, button=None):

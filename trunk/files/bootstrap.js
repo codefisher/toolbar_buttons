@@ -116,6 +116,7 @@ function shutdown(data, reason) {
 		let domWindow = windows.getNext().QueryInterface(Ci.nsIDOMWindow);
 		unloadFromWindow(domWindow);
 	}
+	Cu.unload("chrome://{{chrome-name}}/content/customizable.jsm");
 }
 
 function install(data, reason) {
