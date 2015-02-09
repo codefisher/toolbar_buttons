@@ -1,6 +1,6 @@
 
 import io
-import Image, ImageEnhance
+from PIL import Image, ImageEnhance
     
 def image_to_graysacle(file_name, drop_opacity=0.9):
     output = io.BytesIO()
