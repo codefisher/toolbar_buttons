@@ -126,7 +126,7 @@ class Locale(object):
         return None
 
 
-    def _dtd_inter(self, strings, button, format, locale, string):
+    def _dtd_inter(self, strings, button, format, locale):
         for string in strings:
             value = self.get_string(string, locale, self._dtd, button)
             if value is not None:
@@ -156,7 +156,7 @@ class Locale(object):
             else:
                 if not untranslated and locale != default:
                     continue
-            result[locale] = "\n".join(self._dtd_inter(strings, button, format, locale, string))
+            result[locale] = "\n".join(self._dtd_inter(strings, button, format, locale))
         return result
 
     def get_properties_data(self, strings, button=None):
