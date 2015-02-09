@@ -57,26 +57,26 @@ def build_extension(settings, output=None, project_root=None):
         apply_max_version(settings)
     locale_folders, locales = get_locale_folders(settings.get("locale"), settings)
     button_locales = Locale(settings, locale_folders, locales, all_files=True)
-    options_locales = button_locales #Locale(settings, locale_folders, locales, all_files=True)
+    #options_locales = button_locales #Locale(settings, locale_folders, locales, all_files=True)
     buttons = get_buttons(settings)
-
+    
     xpi_file_name = os.path.join(settings.get("project_root"), settings.get("output_folder"), settings.get("output_file", "toolbar_buttons.xpi") % settings)
     if output:
         xpi = zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED)
     else:
         xpi = zipfile.ZipFile(xpi_file_name, "w", zipfile.ZIP_DEFLATED)
-        
+    
     for file, data in buttons.get_js_files().iteritems():
         xpi.writestr(os.path.join("chrome", "content", file + ".js"),
                 data.replace("{{uuid}}", settings.get("extension_id")))
-
+    
     if settings.get('restartless'):
         for file, data in buttons.get_jsm_files().iteritems():
             xpi.writestr(os.path.join("chrome", "content", file + ".jsm"), bytes_string(data))
     else:
         for file, data in buttons.get_xul_files().iteritems():
             xpi.writestr(os.path.join("chrome", "content", file + ".xul"), bytes_string(data)) 
-
+    
     locale_prefix = settings.get("locale_file_prefix")    
     if settings.get('restartless'):
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False, format="%s=%s")
@@ -87,6 +87,7 @@ def build_extension(settings, output=None, project_root=None):
         dtd_data = button_locales.get_dtd_data(buttons.get_locale_strings(), buttons, untranslated=False)
         for locale, data in dtd_data.iteritems():
             xpi.writestr(os.path.join("chrome", "locale", locale, "%sbutton.dtd" % locale_prefix), bytes_string(data))
+    
     locales_inuse = set(dtd_data.keys())
     extra_strings = button_locales.get_dtd_data(buttons.get_extra_locale_strings(), buttons)
     if extra_strings[settings.get("default_locale")]:
@@ -94,8 +95,8 @@ def build_extension(settings, output=None, project_root=None):
             if locale in locales_inuse:
                 xpi.writestr(os.path.join("chrome", "locale", locale, "%sfiles.dtd" % locale_prefix), bytes_string(data))
     if settings.get("include_local_meta"):
-        for locale, (path, data) in button_locales.get_meta().iteritems():
-            xpi.writestr(os.path.join("chrome", "locale", locale, "meta.dtd"), data)
+        for locale, path in button_locales.get_meta():
+            xpi.write(path, os.path.join("chrome", "locale", locale, "meta.dtd"))
     properties_data = button_locales.get_properties_data(buttons.get_properties_strings(), buttons)
     if properties_data[settings.get("default_locale")]:
         for locale, data in properties_data.iteritems():
@@ -110,7 +111,7 @@ def build_extension(settings, output=None, project_root=None):
     has_resources = bool(resources)
     for name, path in resources.iteritems():
         xpi.write(path, os.path.join("chrome", "content", "resources", name))
-
+    
     options = buttons.get_options()
     for file, data in options.iteritems():
         xpi.writestr(os.path.join("chrome", "content", "%s.xul" % file), data)
@@ -118,7 +119,7 @@ def build_extension(settings, output=None, project_root=None):
         xpi.write(get_image(settings, "32", image), os.path.join("chrome", "skin", "option", image))
     if options:
         options_strings = buttons.get_options_strings()
-        for locale, data in options_locales.get_dtd_data(options_strings, buttons).iteritems():
+        for locale, data in button_locales.get_dtd_data(options_strings, buttons).iteritems():
             if locale in locales_inuse:
                 xpi.writestr(os.path.join("chrome", "locale", locale, "%soptions.dtd" % locale_prefix), bytes_string(data))
     option_applicaions = buttons.get_options_applications()
@@ -162,6 +163,7 @@ def build_extension(settings, output=None, project_root=None):
             xpi.writestr(os.path.join("chrome", "content", "defaultprefs.js"), defaults)   
         else:
             xpi.writestr(os.path.join("defaults", "preferences", "toolbar_buttons.js"), defaults)
+    
     xpi.close()
     if not output and settings.get("profile_folder"):
         with open(xpi_file_name, "r") as xpi_fp:

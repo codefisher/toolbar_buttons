@@ -198,13 +198,11 @@ def update(request):
     update_query = QueryDict("").copy()
     update_query.update(request.GET)
     if compare_versions(request.GET.get("item_maxapversion"), request.GET.get("app_version")):
-        _version = request.GET.get("version").split(".")
+        _version = request.GET.get("version", request.GET.get("item_version", "1.0")).split(".")
         _version[-1] = str(int(_version[-1]) + 1)
         version = ".".join(_version)
-    elif request.GET.get("version"):
-        version = request.GET.get("version")
     else:
-        version = '1.0'
+        version = request.GET.get("version", request.GET.get("item_version", "1.0"))
     domain = Site.objects.get_current().domain
     data = {
         "version": version,

@@ -150,13 +150,16 @@ class SimpleButton():
 
     def buttons(self):
         return list(self._button_names)
-
-    def get_string(self, name, locale=None):
+        
+    def get_key(self, name, locale=None):
         if name[-4:] == ".key":
             return self._button_keys.get(name[:-4])[0]
         elif name[-9:] == ".modifier":
             return self._button_keys.get(name[:-9])[1]
-        return self._strings.get(name, "")
+        return ""
+
+    def get_string(self, name, locale=None):
+        return self._strings.get(name, self.get_key(name, locale))
 
     def get_icons(self, button):
         return self._icons.get(button)
@@ -268,7 +271,7 @@ class Button(SimpleButton):
                     self._button_style[button] = style.read()
             if "modules" in files:
                 with open(os.path.join(folder, "modules"), "r") as modules:
-                    self._modules[button].update(line.strip() for line in modules.readlines())
+                    self._modules[button].update(line.strip() for line in modules)
                     
     def get_button_xul(self):
         return self._button_xul
@@ -495,7 +498,7 @@ class Button(SimpleButton):
                         for size in icon_size_set:
                             if size is not None:
                                 data[size] = grayscale.image_to_graysacle(get_image(self._settings, size, image[1:]), opacity)
-                    except IOError:
+                    except ValueError:
                         print "image %s does not exist" % image
                         continue
                     if self._settings.get("merge_images"):

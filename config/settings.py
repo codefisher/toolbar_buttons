@@ -91,6 +91,10 @@ config_default = {
     # parts of the extension are copied here, if set
     "profile_folder": None,
     
+    # the latest max version for support applications can be lookup
+    # and changed to what ever values are found.
+    "lookup_max_versions": False,
+    
     # set when trying to create buttons for the custombuttons extension
     "custom_button_mode": False,
 
@@ -110,9 +114,6 @@ config_default = {
                       ("SeaMonkey", "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}", "2.29", "2.35"),
                       ),
     },
-    # the latest max version for support applications can be lookup
-    # and changed to what ever values are found.
-    "lookup_max_versions": False,
     "files_to_overlay": {
         "browser": ("chrome://browser/content/browser.xul", ),
         "suite_browser": ("chrome://navigator/content/navigator.xul", ),
@@ -120,7 +121,7 @@ config_default = {
         "compose": ("chrome://messenger/content/messengercompose/messengercompose.xul", ),
         "read": ("chrome://messenger/content/messageWindow.xul", ),
         "calendar": ("chrome://calendar/content/calendar.xul", "chrome://sunbird/content/calendar.xul"),
-        "lightning": ("chrome://lightning/content/messenger-overlay-toolbar.xul", ),
+        "lightning": ("chrome://lightning/content/lightning-toolbar.xul", ),
         "mail-header": ("chrome://messenger/content/msgHdrViewOverlay.xul",),
         "mail-address-book": ("chrome://messenger/content/addressbook/addressbook.xul", )
     },
@@ -205,6 +206,7 @@ config_default = {
         "mail": "mail-bar3",
         "compose": "composeToolbar2",
         "read": "mail-bar3",
+        "lightning": "calendar-toolbar2",
         "suite_browser": "nav-bar",
     },
     "file_to_keyset": {
@@ -219,7 +221,7 @@ config_default = {
         "mail": ("taskPopup", "addonsManager"),
         "compose": ("taskPopup", "tasksMenuMail"),
         "read": ("taskPopup", "tasksMenuAfterDeleteSeparator"),
-        "suite_browser": ("menu_ToolsPopup", "devToolsSeparator"),
+        "suite_browser": ("taskPopup", "navBeginGlobalItems"),
     },
     "file_exclude": {
         "lightning": ("mail", "messenger")

@@ -14,7 +14,7 @@ except ImportError:
     sys.exit(1)
 
 def main():
-    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:s:m:", ["config=", "help", "screen-shot", "icons-per-row=", "screen-shot-font="])
+    opts, args = getopt.getopt(sys.argv[1:], "b:l:a:o:f:s:m:", ["config=", "help", "debug", "screen-shot", "icons-per-row=", "screen-shot-font="])
     opts_table = dict(opts)
     if "--help" in opts_table:
         print textwrap.dedent("""
@@ -58,14 +58,14 @@ def main():
             config["screen_shot_font"] = opts_table["--screen-shot-font"]
         create_screenshot(config)
         return
-    elif config.get("debug", False):
+    elif config.get("debug", False) or "--debug" in opts_table:
         import cProfile
         import pstats
         cProfile.runctx("build_extension(settings)",
                     {"build_extension": build_extension, "settings": settings.config}, {},
                     "./stats")
         prof = pstats.Stats("./stats")
-        prof.sort_stats('time') # time, cumulative
+        prof.sort_stats('cumulative') # time, cumulative
         prof.print_stats()
     else:
         build_extension(config)
