@@ -108,9 +108,12 @@ class Locale(object):
         if table is None:
             table = self._dtd
         if self._missing_strings == "replace":
-            return table[locale].get(string,
-                                table[default_locale]
-                                .get(string, button.get_string(string, locale) if button else None))
+            def fallback():
+                if string in table[default_locale]:
+                    return table[default_locale][string]
+                else:
+                    return button.get_string(string, locale) if button else None
+            return table[locale].get(string) or fallback()
         elif self._missing_strings == "empty":
             return table[locale].get(string, 
                             button.get_string(string, locale) if button and locale == default_locale else "")

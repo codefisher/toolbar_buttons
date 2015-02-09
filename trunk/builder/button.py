@@ -159,7 +159,7 @@ class SimpleButton():
         return ""
 
     def get_string(self, name, locale=None):
-        return self._strings.get(name, self.get_key(name, locale))
+        return self._strings.get(name) or self.get_key(name, locale)
 
     def get_icons(self, button):
         return self._icons.get(button)
