@@ -178,7 +178,7 @@ def build(request, data):
             file_name = name
         xpi.writestr("%s.png" % file_name, base64.b64decode(data[name]))
     xpi.writestr(os.path.join("defaults", "preferences", "link.js"), 
-                 render_to_string(os.path.join("tbutton_maker", "link", "preferences"), data).encode("utf-8"))
+                 render_to_string(os.path.join("tbutton_maker", "link", "preferences.js"), data).encode("utf-8"))
     xpi.close()
     if data.get('offer-download'):
         responce = HttpResponse(output.getvalue(), content_type="application/octet-stream")
