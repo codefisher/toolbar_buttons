@@ -1,11 +1,12 @@
 #!/usr/bin/python
+import getopt
+import imp
+import sys
+import textwrap
+import time
+
 from builder.build import build_extension
 from builder.screenshot import create_screenshot
-import time
-import sys
-import imp
-import getopt
-import textwrap
 
 try:
     from config import settings

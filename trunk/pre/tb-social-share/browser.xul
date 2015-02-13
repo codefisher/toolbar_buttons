@@ -1,0 +1,14 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-social-share"
+	type="menu"
+	label="&tb-social-share.label;"
+	tooltiptext="&tb-social-share.tooltip;">
+	<menupopup>
+		<menuitem label="&tb-social-share.twitter;" oncommand="toolbar_buttons.socialMediaShare('twitter');" />
+		<menuitem label="&tb-social-share.facebook;" oncommand="toolbar_buttons.socialMediaShare('facebook');" />
+		<menuitem label="&tb-social-share.googleplus;" oncommand="toolbar_buttons.socialMediaShare('googleplus');" />
+		<menuitem label="&tb-social-share.linkedin;" oncommand="toolbar_buttons.socialMediaShare('linkedin');" />
+		<menuitem label="&tb-social-share.reddit;" oncommand="toolbar_buttons.socialMediaShare('reddit');" />
+	</menupopup>
+</toolbarbutton>

@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
-import sys, os
+import os
+import sys
+
 
 def main():
     button_id, app = sys.argv[1:]
