@@ -1,7 +1,8 @@
-from builder.build import build_extension
-from config import settings
 import getopt
 import sys
+
+from builder.build import build_extension, apply_max_version
+from config import settings
 
 config = dict(settings.config_default)
 
@@ -19,7 +20,11 @@ config.update({
     "as_submenu": False,
     "use_keyboard_shortcuts": True,
     "translate_description": True,
+    "applications": ["browser", "messenger", "suite"],
+    "version": "1.0.4",
 })
+
+apply_max_version(config)
 
 buttons = ["addons", "bookmark-manager", "preferences", "bookmark", "snap-back", "restart-app", "about-config", "print-preview", ]
 

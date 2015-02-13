@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-open-download-folder"
+	label="&tb-open-download-folder.label;"
+	tooltiptext="&tb-open-download-folder.tooltip;"
+	oncommand="toolbar_buttons.openDefaultDownloadFolder();"/>
