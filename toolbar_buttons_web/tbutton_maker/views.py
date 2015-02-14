@@ -322,8 +322,8 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
                 "icon": BUTTONS.get_icons(item["name"]),
                 "label": locale_str('label', item["name"]),
                 "average": (float(count) / days),
-                "percent": (float(count) / sum * 100),
-                "total": (float(total) / sum * 100),
+                "percent": (float(count) / sum * 100) if sum else 0,
+                "total": (float(total) / sum * 100) if sum else 0,
                 "folder": BUTTONS.get_source_folder(item["name"]),
             })
         except:
@@ -339,7 +339,7 @@ def statistics(request, days=30, template_name='tbutton_maker/statistics.html'):
                "label": locale_str('label', name),
                "average": 0,
                "percent": 0,
-               "total": (float(total) / sum * 100),
+               "total": (float(total) / sum * 100) if sum else 0,
                "folder": BUTTONS.get_source_folder(name),   
         })
     data = {
