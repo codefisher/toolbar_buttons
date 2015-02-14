@@ -9,7 +9,7 @@ config_default = {
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "https://codefisher.org/toolbar_button/",
     "icon": os.path.join("files", "button.png"),
-    "licence": os.path.join("files", "LICENCE"),
+    "license": "LICENSE",
     "update_url": None,
 
     # makes the build system run with debuging enabled
@@ -43,6 +43,7 @@ config_default = {
     "image_path": None,
     "include_icons_for_custom_window": False,
     "project_root": "",
+    "button_sdk_root": os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)),
     #buttons can be left out if their icon is not in the given set.
     #the default action it to use a place holder image
     "skip_buttons_without_icons": False,

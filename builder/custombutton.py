@@ -94,7 +94,7 @@ class CButton(Button):
         functions = "var toolbar_buttons = {\n\t%s\n}\nthis.toolbar_buttons = toolbar_buttons;\n" % ",\n\t".join(js_data)
         prefs = self.get_defaults()
         if prefs:
-            with open(os.path.join(self._settings.get("project_root"), "files", "pref.js"), "r") as prefs_js:
+            with open(os.path.join(settings.get('button_sdk_root'), "templates", "pref.js"), "r") as prefs_js:
                 prefs = prefs_js.read() + prefs
         #TODO: add something to update image state if needed
         modules_import = "\n".join("Cu.import('%s');" % mod for mod in self._modules[self._the_button] if mod)

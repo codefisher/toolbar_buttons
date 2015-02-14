@@ -308,13 +308,13 @@ class Button(SimpleButton):
                              self._settings.get("chrome_name")))
         else:
             javascript = ""
-        with open(os.path.join(self._settings.get("project_root"), "files", "option.xul"), "r") as overlay_window_file:
+        with open(os.path.join(self._settings.get('button_sdk_root'), "templates", "option.xul"), "r") as overlay_window_file:
             overlay_window = (overlay_window_file.read()
                        .replace("{{chrome-name}}", self._settings.get("chrome_name"))
                        .replace("{{locale_file_prefix}}", self._settings.get("locale_file_prefix"))
                        .replace("{{javascript}}", javascript))
         if self._settings.get("create_menu"):
-            with open(os.path.join(self._settings.get("project_root"), "files", "showmenu-option.xul"), "r") as menu_option_file:
+            with open(os.path.join(self._settings.get('button_sdk_root'), "templates", "showmenu-option.xul"), "r") as menu_option_file:
                 menu_option_tempate = menu_option_file.read() 
             if self._settings.get("as_submenu"):
                 menu_id, menu_label = self._settings.get("menu_meta")
@@ -692,7 +692,10 @@ class Button(SimpleButton):
                     "toolbar_buttons.toolbar_button_loader(toolbar_buttons, {\n\t%s\n});%s"
                     % ("\n\t".join(",\n".join(val for val in self._button_options_js.values() if val).split("\n")), "\n".join(extra_javascript)))
         if (self._settings.get("show_updated_prompt") or self._settings.get("add_to_main_toolbar")) and not self._settings.get('restartless'):
-            with open(os.path.join(self._settings.get("project_root"), "files", "update.js"), "r") as update_js:
+            update_file = os.path.join(self._settings.get("project_root"), "files", "update.js")
+            if not os.path.isfile(update_file):
+                update_file = os.path.join(self._settings.get('button_sdk_root'), "templates", "update.js")
+            with open(update_file, "r") as update_js:
                 show_update = (update_js.read()
                            .replace("{{uuid}}", self._settings.get("extension_id"))
                            .replace("{{homepage_url}}",
@@ -710,12 +713,14 @@ class Button(SimpleButton):
                 buttons = ", ".join("'%s'" % item for item in self._settings.get("add_to_main_toolbar"))
                 show_update += "load_toolbar_button.callbacks.push(function(previousVersion, currentVersion) { if(previousVersion == '') { load_toolbar_button.add_buttons([%s]);} });\n" % buttons 
             js_files["button"] = show_update + "\n" + js_files["button"]
-        interfaces_data = open(os.path.join(self._settings.get("project_root"), "files", "interfaces"), "r")
+        inerface_file = os.path.join(self._settings.get('project_root'), 'files', 'interfaces')
+        if not os.path.isfile(inerface_file):
+            inerface_file = os.path.join(self._settings.get('button_sdk_root'), 'templates', 'interfaces')
         interfaces = {}
-        for line in interfaces_data:
-            name, _ = line.split(":")
-            interfaces[name] = line.strip()
-        interfaces_data.close()
+        with open(inerface_file, "r") as interfaces_data:
+            for line in interfaces_data:
+                name, _ = line.split(":")
+                interfaces[name] = line.strip()
         js_global_interfaces = set(interface_match.findall(js_files["button"]))
         for js_file, js_data in js_files.iteritems():
             self._properties_strings.update(string_match.findall(js_data))
@@ -743,7 +748,7 @@ class Button(SimpleButton):
         js_files = dict((key, value) for key, value in js_files.iteritems() if value)
         if js_files:
             self._has_javascript = True
-            with open(os.path.join(self._settings.get("project_root"), "files", "loader.js"), "r") as loader:
+            with open(os.path.join(self._settings.get('button_sdk_root'), "templates", "loader.js"), "r") as loader:
                 js_files["loader"] = loader.read()
         return js_files
 
@@ -991,7 +996,7 @@ class Button(SimpleButton):
         return result
 
     def get_jsm_files(self):
-        with open(os.path.join(self._settings.get("project_root"), 'files', 'button.jsm')) as template_file:
+        with open(os.path.join(self._settings.get('button_sdk_root'), 'templates', 'button.jsm')) as template_file:
             template = template_file.read()
         result = {}
         simple_button_re = re.compile(r"^<toolbarbutton(.*)/>$", re.DOTALL)
@@ -1113,7 +1118,7 @@ class Button(SimpleButton):
         button_hash = None
         toolbar_template = None
         if self._settings.get("include_toolbars") or self._settings.get("include_satusbars"):
-            with open(os.path.join(self._settings.get("project_root"), 'files', 'toolbar-toggle.xul')) as template_file:
+            with open(os.path.join(self._settings.get('button_sdk_root'), 'templates', 'toolbar-toggle.xul')) as template_file:
                 toolbar_template = template_file.read()
             button_hash = hashlib.md5(self._settings.get('extension_id'))
         return button_hash, toolbar_template

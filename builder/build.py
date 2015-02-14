@@ -154,9 +154,13 @@ def build_extension(settings, output=None, project_root=None):
     xpi.writestr("install.rdf", create_install(settings, buttons.get_suported_applications(), option_applicaions))
     if settings.get('restartless'):
         xpi.writestr("bootstrap.js", create_bootstrap(settings, buttons, has_resources))
-        xpi.write(os.path.join(settings.get("project_root"), "files", "customizable.jsm"), 
+        xpi.write(os.path.join(settings.get('button_sdk_root'), "templates", "customizable.jsm"), 
                   os.path.join("chrome", "content", "customizable.jsm"))
-    xpi.write(os.path.join(settings.get("project_root"), settings.get("licence")), "LICENCE")
+    licence_file = os.path.join(settings.get("project_root"), "files", settings.get("license", "LICENSE"))
+    if os.path.isfile(licence_file):
+        xpi.write(licence_file, "LICENSE")
+    else:
+        xpi.write(os.path.join(settings.get('button_sdk_root'), "templates", "LICENSE"), "LICENSE")
     defaults =  buttons.get_defaults()
     if defaults:
         if settings.get('restartless'):
@@ -192,13 +196,14 @@ def create_bootstrap(settings, buttons, has_resources):
     for overlay, modules in window_modules.items():
             mods = "\n\t\t".join(["modules.push('chrome://%s/content/%s.jsm');" % (chrome_name, file_name) for file_name in modules])
             loaders.append("(uri == '%s') {\n\t\t%s\n\t}" % (overlay, mods))
-    template = open(os.path.join(settings.get("project_root"), "files", "bootstrap.js") ,"r").read()
+    with open(os.path.join(settings.get('button_sdk_root'), "templates", "bootstrap.js") ,"r") as f:
+        template = f.read()
     if settings.get("show_updated_prompt"):
-        install = (open(os.path.join(settings.get("project_root"), "files", "install.js") ,"r").read()
-                            .replace("{{homepage_url}}", settings.get("homepage"))
-                            .replace("{{version}}", settings.get("version"))
-                            .replace("{{pref_root}}", settings.get("pref_root"))
-                            .replace("{{current_version_pref}}", settings.get("current_version_pref")))
+        with open(os.path.join(settings.get('button_sdk_root'), "templates", "install.js") ,"r") as f:
+            install = (f.read().replace("{{homepage_url}}", settings.get("homepage"))
+                               .replace("{{version}}", settings.get("version"))
+                               .replace("{{pref_root}}", settings.get("pref_root"))
+                               .replace("{{current_version_pref}}", settings.get("current_version_pref")))
     return (template.replace("{{chrome-name}}", settings.get("chrome_name"))
                     .replace("{{resource}}", resource)
                     .replace("{{install}}", install)
@@ -274,7 +279,11 @@ def create_install(settings, applications, options=[]):
                 \t\t\t\t<em:maxVersion>%s</em:maxVersion>
             \t\t\t</Description>
         \t\t</em:targetApplication>""".replace(" ","") % tuple(values))
-    template = codecs.open(os.path.join(settings.get("project_root"), "files", "install.rdf"),"r", encoding='utf-8').read()
+    install_file = os.path.join(settings.get("project_root"), "files", "install.rdf")
+    if not os.path.isfile(install_file):
+        install_file = os.path.join(settings.get('button_sdk_root'), "templates", "install.rdf")
+    with codecs.open(install_file,"r", encoding='utf-8') as f:
+        template = f.read()
     return bytes_string(template.replace("{{uuid}}", settings.get("extension_id"))
                     .replace("{{name}}", settings.get("name"))
                     .replace("{{version}}", settings.get("version"))

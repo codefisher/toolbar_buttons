@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>{{uuid}}</em:id>
+		<em:name>{{name}}</em:name>
+		<em:version>{{version}}</em:version>
+		<em:description>{{description}}</em:description>
+		<em:creator>{{creator}}</em:creator>
+		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
+		<em:homepageURL>{{homepageURL}}</em:homepageURL>
+		
+{{optionsURL}}{{updateUrl}}{{applications}}{{bootstrap}}
+
+	</Description>
+</RDF>
