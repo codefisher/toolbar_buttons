@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-move-to-window"
+	label="&tb-move-to-window.label;"
+	tooltiptext="&tb-move-to-window.tooltip;"
+	oncommand="window.gBrowser.replaceTabWithWindow(window.gBrowser.selectedTab);"/>
