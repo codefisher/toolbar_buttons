@@ -1,0 +1,6 @@
+tb-text-case-change.label=Change Case
+tb-text-case-change.tooltip=Change the case of the currently selected text
+tb-text-case-change.lower=Lower Case
+tb-text-case-change.upper=Upper Case
+tb-text-case-change.title=Title Case
+tb-text-case-change.invert=Invert Case
