@@ -8,10 +8,9 @@ config = dict(settings.config_default)
 
 config.update({
     "image_path": "/home/michael/Pictures/PastelSVG/png",
+    "projects": ("data", "staging", "pre"),
     "extra_options": True,
     "include_icons_for_custom_window": True,
-    "use_staging": True,
-    "use_pre": True,
     "fix_meta": True,
     "show_updated_prompt": False,
     "output_folder": "extensions/single",
