@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-new-window"
+	label="&tb-new-window.label;"
+	tooltiptext="&tb-new-window.tooltip;"
+	command="cmd_newNavigator"/>
