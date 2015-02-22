@@ -1,0 +1,8 @@
+{
+    "show_updated_prompt": true,
+    "merge_images": true,
+    "projects": ["data"],
+    "locale": "all,-ar,-tr,-zh,-cs-CZ,-he-IL",
+    "translate_description": true,
+    "applications": ["browser", "messenger", "suite"],
+}

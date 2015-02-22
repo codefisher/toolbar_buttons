@@ -1,0 +1,16 @@
+{
+    "name": "Toolbar Buttons Nightly",
+    "locale": "all",
+    "projects": ["data", "staging", "pre"],
+    "create_menu": true,
+    "skip_buttons_without_icons": true,
+    "include_icons_for_custom_window": true,
+    "use_keyboard_shortcuts": true,
+    "extra_options": true,
+    "extended_buttons": true,
+    "show_updated_prompt": false,
+    "missing_strings": "replace",
+    "output_file": "toolbar-buttons-nightly.xpi",
+    "update_url": "https://codefisher.org/toolbar_button/nightly/update.rdf",
+    "update_file": "https://codefisher.org/toolbar_button/nightly/toolbar-buttons-nightly.xpi"
+}

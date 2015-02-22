@@ -1,0 +1,10 @@
+{
+    "merge_images": true,
+    "missing_strings": "search",
+    "lookup_max_versions": true,
+    "projects": ["data", "staging"],
+    "include_local_meta": true,
+    "translate_description": true,
+    "include_icons_for_custom_window": true,
+    "output_file": "translate-%(chrome_name)s-%(version)s.xpi"
+}

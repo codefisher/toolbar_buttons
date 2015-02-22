@@ -1,0 +1,7 @@
+{
+        "show_updated_prompt": false,
+        "projects": ["data", "staging", "pre"],
+        "include_icons_for_custom_window": true,
+        "extra_options": true,
+        "extended_buttons": true
+}

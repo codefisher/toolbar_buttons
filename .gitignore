@@ -5,3 +5,4 @@ app_locale
 screen-shot.sh
 extensions
 config/local_settings.py
+local.json
