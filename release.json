@@ -4,5 +4,5 @@
     "projects": ["data"],
     "locale": "all,-ar,-tr,-zh,-cs-CZ,-he-IL",
     "translate_description": true,
-    "applications": ["browser", "messenger", "suite"],
+    "applications": ["browser", "messenger", "suite"]
 }
