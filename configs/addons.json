@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "addons"
+    ],
+    "extension_id": "addons-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "addons"
+    ],
+    "current_version_pref": "current.version.addons",
+    "chrome_name": "addons-toolbar-button",
+    "locale_file_prefix": "addons_"
+}

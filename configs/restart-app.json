@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "restart-app"
+    ],
+    "extension_id": "restart-app-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "restart-app"
+    ],
+    "current_version_pref": "current.version.restart-app",
+    "chrome_name": "restart-app-toolbar-button",
+    "locale_file_prefix": "restart-app_"
+}
