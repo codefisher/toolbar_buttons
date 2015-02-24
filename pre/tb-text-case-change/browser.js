@@ -30,7 +30,9 @@ putSelectedTextBoxText: function(text) {
 	var endPos = box.selectionEnd;
 	var startText = box.value.substring(0, startPos);
 	var endText = box.value.substring(endPos);
+	var scrollTop = box.scrollTop;
 	box.value = startText + text + endText;
+	box.scrollTop = scrollTop;
 	box.selectionStart = startPos;
 	box.selectionEnd = endPos;
 }
