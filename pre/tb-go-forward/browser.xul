@@ -1,0 +1,15 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-go-forward"
+	label="&tb-go-forward.label;"
+	type="menu-button"
+	tooltip="forward-button-tooltip"
+	onclick="window.checkForMiddleClick(this, event);"
+	context="backForwardMenu"
+	command="Browser:ForwardOrForwardDuplicate">
+	<menupopup 
+		onpopupshowing="return window.FillHistoryMenu(event.target);"
+		oncommand="window.gotoHistoryIndex(event); event.stopPropagation();"
+		onclick="window.checkForMiddleClick(this, event);"
+		context=""/>
+</toolbarbutton>

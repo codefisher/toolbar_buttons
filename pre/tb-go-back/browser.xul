@@ -1,0 +1,15 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-go-back"
+	label="&tb-go-back.label;"
+	type="menu-button"
+	tooltip="back-button-tooltip"
+	onclick="window.checkForMiddleClick(this, event);"
+	context="backForwardMenu"
+	command="Browser:BackOrBackDuplicate">
+	<menupopup 
+		onpopupshowing="return window.FillHistoryMenu(event.target);" 
+		oncommand="window.gotoHistoryIndex(event); event.stopPropagation();" 
+		onclick="window.checkForMiddleClick(this, event);" 
+		context="" />
+</toolbarbutton>
