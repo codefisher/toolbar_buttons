@@ -1,1 +1,1 @@
-../mozbutton_sdk/build.py -v toolbar_button.json local.json release.json
+python ../mozbutton_sdk/build.py -v toolbar_button.json local.json release.json
