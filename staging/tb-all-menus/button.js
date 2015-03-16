@@ -4,7 +4,7 @@ loadAllMenusMenu: function(item) {
 	}
 	var menubar = document.getElementById('main-menubar');
 	if(!menubar) {
-		menubar = document.getElementById('mail-toolbar-menubar2'); // Thunderbird
+		menubar = document.getElementById('mail-menubar'); // Thunderbird
 	}
 	if(!menubar) {
 		return;
