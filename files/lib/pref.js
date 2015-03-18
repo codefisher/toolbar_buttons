@@ -44,7 +44,6 @@ PreferenceWatcher: function() {
 		// remove the checked state of any old buttons
 		this.button.removeAttribute("checked");
 		var prefs = toolbar_buttons.interfaces.PrefBranch, state = null;
-		window.alert([this.button.id, this.pref]);
 		switch(prefs.getPrefType(this.pref)) {
 			case prefs.PREF_BOOL:
 				state = prefs.getBoolPref(this.pref);
