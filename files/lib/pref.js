@@ -88,7 +88,8 @@ loadPrefWatcher: function(pref, button_id, func) {
 	window.setTimeout(function() {
 		var prefWatch = new toolbar_buttons.PreferenceWatcher();
 		prefWatch.startup(pref, button_id, func);
-		window.addEventListener("unload", function(e) {
+		window.addEventListener("unload", function loadPrefUnload(e) {
+			window.removeEventListener("unload", loadPrefUnload, false);
 			prefWatch.shutdown();
 		}, false);
 	}, 0);
