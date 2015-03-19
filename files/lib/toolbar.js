@@ -48,7 +48,7 @@ loadToggleToolbar: function(button_id, toolbar_id){
 				attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
 			}
 			if(!attributeName) return;
-			var button = document.getElementById(button_id);
+			var button = window.document.getElementById(button_id);
 			if(button == null) return;
 			toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
 		});
