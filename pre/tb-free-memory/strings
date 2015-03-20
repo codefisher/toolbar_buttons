@@ -1,0 +1,5 @@
+tb-free-memory.label=Free Memory
+tb-free-memory.tooltip=Free Unused Memory
+tb-free-memory.about=about:memory
+tb-free-memory.garbage=Garbage Collection
+tb-free-memory.cycle=Cycle Collection
