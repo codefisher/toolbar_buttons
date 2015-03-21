@@ -5,7 +5,6 @@
     "version": "1.0.4b1",
     "extension_id": "{03B08592-E5B4-45ff-A0BE-C1D975458688}",
     "homepage": "https://codefisher.org/toolbar_button/",
-    "icon": "files/button.png",
     "license": "LICENSE",
     "version_url": "https://codefisher.org/toolbar_button/version/",
     "pref_root": "extension.tbutton.",
