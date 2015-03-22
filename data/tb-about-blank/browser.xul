@@ -3,4 +3,5 @@
 	id="tb-about-blank"
 	label="&tb-about-blank.label;"
 	tooltiptext="&tb-about-blank.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:blank', event);" />
+	onclick="toolbar_buttons.openPageTab('about:blank', event);"
+	oncommand="window.loadURI('about:blank');" />
