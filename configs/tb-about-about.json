@@ -1,0 +1,17 @@
+{
+    "name": "About:about Button",
+    "description": "A button that lists all the about pages that exist.  Some of these pages are also provided as seperate buttons.",
+    "icon": "cog.png",
+    "buttons": [
+        "tb-about-about", "about-config", "tb-about-permissions", "about-plugins", "tb-about-blank", "about-mem-cache", "about-disk-cache", "about-application"
+    ],
+    "extension_id": "about-about@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-about-about"
+    ],
+    "current_version_pref": "current.version.about-about",
+    "chrome_name": "about-about-toolbar-button",
+    "locale_file_prefix": "about-about_",
+    "merge_images": true,
+    "fix_meta": false
+}

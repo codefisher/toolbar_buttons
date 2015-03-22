@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "tb-addon-options"
+    ],
+    "extension_id": "tb-addon-options-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-addon-options"
+    ],
+    "current_version_pref": "current.version.tb-addon-options",
+    "chrome_name": "tb-addon-options-toolbar-button",
+    "locale_file_prefix": "tb-addon-options_"
+}
