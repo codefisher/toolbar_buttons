@@ -1,0 +1,13 @@
+{
+    "buttons": [
+        "tb-all-menus"
+    ],
+    "extension_id": "tb-all-menus-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-all-menus"
+    ],
+    "current_version_pref": "current.version.tb-all-menus",
+    "chrome_name": "tb-all-menus-toolbar-button",
+    "locale_file_prefix": "tb-all-menus_",
+    "create_menu": false
+}
