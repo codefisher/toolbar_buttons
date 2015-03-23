@@ -1,0 +1,7 @@
+tb-all-menus.tooltip:menu-edit.png
+
+<groupbox>
+	<caption label="&tb-all-menus.tooltip;" />
+	<description>&tb-all-menus.option.description;</description>
+
+</groupbox>

@@ -1,2 +1,3 @@
 tb-all-menus.label=Menu
 tb-all-menus.tooltip=All menus
+tb-all-menus.option.description=The follow settings will be applied if the &quot;All menus&quot; button is placed on the toolbar, without it, they maybe ignored.
