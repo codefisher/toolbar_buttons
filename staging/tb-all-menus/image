@@ -1,1 +1,17 @@
 menu.png
+page.png [show_icons=true] #file-menu
+page.png [show_icons=true] #menu_File
+pencil.png [show_icons=true] #edit-menu
+pencil.png [show_icons=true] #menu_Edit
+time.png [show_icons=true] #history-menu
+wrench.png [show_icons=true] #tools-menu
+wrench.png [show_icons=true] #tasksMenu
+magnifier.png [show_icons=true] #view-menu
+magnifier.png [show_icons=true] #menu_View
+bookmark.png [show_icons=true] #bookmarksMenu
+help.png [show_icons=true] #helpMenu
+help.png [show_icons=true] #menu_Help
+application.png [show_icons=true] #windowMenu
+lock.png [show_icons=true] #menu_Enigmail
+arrow-forward.png [show_icons=true] #goMenu
+email.png [show_icons=true] #messageMenu

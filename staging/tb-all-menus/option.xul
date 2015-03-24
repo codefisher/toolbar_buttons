@@ -3,5 +3,13 @@ tb-all-menus.tooltip:menu-edit.png
 <groupbox>
 	<caption label="&tb-all-menus.tooltip;" />
 	<description>&tb-all-menus.option.description;</description>
-
+	<preferences>
+		<preference id="{{pref_root}}all-menus.icons" name="{{pref_root}}all-menus.icons"
+			type="bool"/>
+		<preference id="{{pref_root}}all-menus.settings" name="{{pref_root}}all-menus.settings"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}all-menus.icons" label="&tb-all-menus.icons;"/>
+	<checkbox preference="{{pref_root}}all-menus.settings" label="&tb-all-menus.settings;"/>
+	
 </groupbox>
