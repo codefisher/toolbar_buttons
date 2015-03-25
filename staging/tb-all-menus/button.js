@@ -38,8 +38,15 @@ loadAllMenusMenu: function(item, event) {
 			try {
 				CustomizableUI.setToolbarVisibility(toolbar.id, !visibility);
 			} catch(e) {
-				toolbar.setAttribute("autohide", visibility);
-				document.persist(toolbar.id, "autohide");
+				if(toolbar.hasAttribute('hidden')) {
+					toolbar.setAttribute("hidden", visibility);
+					toolbar.removeAttribute("autohide");
+					document.persist(toolbar.id, "hidden");
+					document.persist(toolbar.id, "autohide");
+				} else {
+					toolbar.setAttribute("autohide", visibility);
+					document.persist(toolbar.id, "hidden");
+				}
 			}
 		}, true);
 		item.appendChild(menubarCheck);
