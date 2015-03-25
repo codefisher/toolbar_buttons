@@ -5,7 +5,7 @@ loadAllMenusMenu: function(item, event) {
 	while(item.firstChild) {
 		item.removeChild(item.firstChild);
 	}
-	var fileName = document.location.href.match(/([a-z]+).xul$/)[1];
+	var fileName = document.location.href.match(/([a-zA-Z]+).xul$/)[1];
 	var menubar = document.getElementById('main-menubar') || document.getElementById('mail-menubar');
 	if(!menubar) {
 		return;
@@ -38,7 +38,7 @@ loadAllMenusMenu: function(item, event) {
 			try {
 				CustomizableUI.setToolbarVisibility(toolbar.id, !visibility);
 			} catch(e) {
-				toolbar.setAttribute("autohide", !visibility);
+				toolbar.setAttribute("autohide", visibility);
 				document.persist(toolbar.id, "autohide");
 			}
 		}, true);
@@ -67,7 +67,7 @@ allMenusAddItem: function(menu, item, showIcons) {
 
 allMenusStartUp: function() {	
 	var menubar = document.getElementById('main-menubar') || document.getElementById('mail-menubar');
-	var fileName = document.location.href.match(/([a-z]+).xul$/)[1];
+	var fileName = document.location.href.match(/([a-zA-Z]+).xul$/)[1];
 	if(!menubar) {
 		return;
 	}
@@ -82,6 +82,9 @@ allMenusStartUp: function() {
 	for (var i = 0; i < menubar.childNodes.length; i++) {
 		var label = menubar.childNodes[i].getAttribute('label');
 		var menuId = menubar.childNodes[i].id;
+		if(!label || !menuId) {
+			continue;
+		}
 		prefs.setCharPref('all-menus.'+ fileName + '.' + menubar.id +'.label.' + menuId, label);
 		var collapsedPref = 'all-menus.'+ fileName + '.' + menubar.id +'.collapsed.' + menuId;
 		if(prefs.getPrefType(collapsedPref)) {

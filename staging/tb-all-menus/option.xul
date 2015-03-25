@@ -9,7 +9,10 @@ tb-all-menus.tooltip:menu-edit.png
 		<preference id="{{pref_root}}all-menus.settings" name="{{pref_root}}all-menus.settings"
 			type="bool"/>
 	</preferences>
-	<checkbox preference="{{pref_root}}all-menus.icons" label="&tb-all-menus.icons;"/>
-	<checkbox preference="{{pref_root}}all-menus.settings" label="&tb-all-menus.settings;"/>
-	
+	<checkbox preference="{{pref_root}}all-menus.icons" label="&tb-all-menus.option.icons;"/>
+	<checkbox preference="{{pref_root}}all-menus.settings" label="&tb-all-menus.option.settings;"/>
+	<tabbox>
+		<tabs id="all-menus-tabs" />
+		<tabpanels id="all-menus-panels" />
+	</tabbox>
 </groupbox>
