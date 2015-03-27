@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "tb-free-memory"
+    ],
+    "extension_id": "tb-free-memory-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-free-memory"
+    ],
+    "current_version_pref": "current.version.tb-free-memory",
+    "chrome_name": "tb-free-memory-toolbar-button",
+    "locale_file_prefix": "tb-free-memory_"
+}
