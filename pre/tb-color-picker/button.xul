@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-color-picker"
+	label="&tb-color-picker.label;"
+	tooltiptext="&tb-color-picker.tooltip;"
+	onclick="toolbar_buttons.openColorPickerTab(event);"
+	oncommand="toolbar_buttons.openColorPicker();" />

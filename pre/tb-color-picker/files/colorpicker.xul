@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="resource://gre-resources/html.css" type="text/css"?>
+<?xml-stylesheet href="colorpicker.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://{{chrome-name}}/locale/{{locale_file_prefix}}files.dtd" >
+<xul:dialog
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    onload="StartUp()" 
+    width="715" height="500"
+    title="&tb-color-picker.dialog.title;"
+    ondialogaccept="return onAccept();"
+    ondialogcancel="return onCancelColor();"> 
+        <div id="m">
+            <div id="a">
+                <div id="cb">
+                    <canvas id="c" width="120" height="120"></canvas>
+                </div>
+                <div><label id="y">Hex<input id="x" type="text" size="7" /></label></div>
+                <div id="i">
+                    <div> 
+                        <input type="radio" name="n" id="Y" checked="checked" />
+                        <label>Hue
+                            <input type="number" min="0" size="3" max="360" id="H" />
+                        </label>
+                    </div>
+                    <div> 
+                        <input type="radio" name="n" id="J" />
+                        <label>Saturation
+                            <input type="number" min="0" size="3" max="100" id="S" />
+                        </label>
+                    </div>
+                    <div> 
+                        <input type="radio" name="n" id="K" />
+                        <label>Value
+                            <input type="number" min="0" size="3" max="100" id="V" />
+                        </label>
+                    </div>
+                    <div> 
+                        <input type="radio" name="n" id="O" />
+                        <label>Red
+                            <input type="number" min="0" size="3" max="255" id="R" />
+                        </label>
+                    </div>
+                    <div> 
+                        <input type="radio" name="n" id="Q" />
+                        <label>Green
+                            <input type="number" min="0" size="3" max="255" id="G" />
+                        </label>
+                    </div>
+                    <div> 
+                        <input type="radio" name="n" id="F" />
+                        <label>Blue
+                            <input type="number" min="0" size="3" max="255" id="B" />
+                        </label>
+                    </div>
+                    <div>
+                        <div id="ncd"></div>
+                        <label>Color Select:
+                            <select id="nc" onchange="selectChange(event);">
+                            <option id="nce" value=""> -- </option>
+                            <option value="aliceblue">Alice Blue</option>
+                            <option value="antiquewhite">Antique White</option>
+                            <option value="aqua">Aqua</option>
+                            <option value="aquamarine">Aquamarine</option>
+                            <option value="azure">Azure</option>
+                            <option value="beige">Beige</option>
+                            <option value="bisque">Bisque</option>
+                            <option value="black">Black</option>
+                            <option value="blanchedalmond">Blanched Almond</option>
+                            <option value="blue">Blue</option>
+                            <option value="blueviolet">Blue Violet</option>
+                            <option value="brown">Brown</option>
+                            <option value="burlywood">Burly Wood</option>
+                            <option value="cadetblue">Cadet Blue</option>
+                            <option value="chartreuse">Chartreuse</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="coral">Coral</option>
+                            <option value="cornflowerblue">Cornflower Blue</option>
+                            <option value="cornsilk">Cornsilk</option>
+                            <option value="crimson">Crimson</option>
+                            <option value="cyan">Cyan</option>
+                            <option value="darkblue">Dark Blue</option>
+                            <option value="darkcyan">Dark Cyan</option>
+                            <option value="darkgoldenrod">Dark Golden Rod</option>
+                            <option value="darkgray">Dark Gray</option>
+                            <option value="darkgreen">Dark Green</option>
+                            <option value="darkkhaki">Dark Khaki</option>
+                            <option value="darkmagenta">Dark Magenta</option>
+                            <option value="darkolivegreen">Dark Olive Green</option>
+                            <option value="darkorange">Dark Orange</option>
+                            <option value="darkorchid">Dark Orchid</option>
+                            <option value="darkred">Dark Red</option>
+                            <option value="darksalmon">Dark Salmon</option>
+                            <option value="darkseagreen">Dark Sea Green</option>
+                            <option value="darkslateblue">Dark Slate Blue</option>
+                            <option value="darkslategray">Dark Slate Gray</option>
+                            <option value="darkturquoise">Dark Turquoise</option>
+                            <option value="darkviolet">Dark Violet</option>
+                            <option value="deeppink">Deep Pink</option>
+                            <option value="deepskyblue">Deep Sky Blue</option>
+                            <option value="dimgray">Dim Gray</option>
+                            <option value="dodgerblue">Dodger Blue</option>
+                            <option value="firebrick">Fire Brick</option>
+                            <option value="floralwhite">Floral White</option>
+                            <option value="forestgreen">Forest Green</option>
+                            <option value="fuchsia">Fuchsia</option>
+
+                            <option value="gainsboro">Gainsboro</option>
+                            <option value="ghostwhite">Ghost White</option>
+                            <option value="gold">Gold</option>
+                            <option value="goldenrod">Golden Rod</option>
+                            <option value="gray">Gray</option>
+                            <option value="green">Green</option>
+                            <option value="greenyellow">Green Yellow</option>
+                            <option value="honeydew">Honey Dew</option>
+                            <option value="hotpink">Hot Pink</option>
+                            <option value="indianred">Indian Red</option>
+                            <option value="indigo">Indigo</option>
+                            <option value="ivory">Ivory</option>
+                            <option value="khaki">Khaki</option>
+                            <option value="lavender">Lavender</option>
+                            <option value="lavenderblush">Lavender Blush</option>
+                            <option value="lawngreen">Lawn Green</option>
+                            <option value="lemonchiffon">Lemon Chiffon</option>
+                            <option value="lightblue">Light Blue</option>
+                            <option value="lightcoral">Light Coral</option>
+                            <option value="lightcyan">Light Cyan</option>
+                            <option value="lightgoldenrodyellow">Light Golden Rod Yellow</option>
+                            <option value="lightgreen">Light Green</option>
+                            <option value="lightgrey">Light Grey</option>
+                            <option value="lightpink">Light Pink</option>
+                            <option value="lightsalmon">Light Salmon</option>
+                            <option value="lightseagreen">Light Sea Green</option>
+                            <option value="lightskyblue">Light Sky Blue</option>
+                            <option value="lightslategray">Light Slate Gray</option>
+                            <option value="lightsteelblue">Light Steel Blue</option>
+                            <option value="lightyellow">Light Yellow</option>
+                            <option value="lime">Lime</option>
+                            <option value="limegreen">Lime Green</option>
+                            <option value="linen">Linen</option>
+                            <option value="magenta">Magenta</option>
+                            <option value="maroon">Maroon</option>
+                            <option value="mediumaquamarine">Mediuma Quamarine</option>
+                            <option value="mediumblue">Medium Blue</option>
+                            <option value="mediumorchid">Medium Orchid</option>
+                            <option value="mediumpurple">Medium Purple</option>
+                            <option value="mediumseagreen">Medium Sea Green</option>
+                            <option value="mediumslateblue">Medium Slate Blue</option>
+                            <option value="mediumspringgreen">Medium Spring Green</option>
+                            <option value="mediumturquoise">Medium Turquoise</option>
+                            <option value="mediumvioletred">Medium Violet Red</option>
+                            <option value="midnightblue">Midnight Blue</option>
+                            <option value="mintcream">Mint Cream</option>
+                            <option value="mistyrose">Misty Rose</option>
+                            <option value="moccasin">Moccasin</option>
+                            <option value="navajowhite">Navajo White</option>
+                            <option value="navy">Navy</option>
+                            <option value="oldlace">Old Lace</option>
+                            <option value="olive">Olive</option>
+                            <option value="olivedrab">Olive Drab</option>
+                            <option value="orange">Orange</option>
+                            <option value="orangered">Orangered</option>
+                            <option value="orchid">Orchid</option>
+                            <option value="palegoldenrod">Pale Golden Rod</option>
+                            <option value="palegreen">Pale Green</option>
+                            <option value="paleturquoise">Pale Turquoise</option>
+                            <option value="palevioletred">Pale Violet Red</option>
+                            <option value="papayawhip">Papayawhip</option>
+                            <option value="peachpuff">Peach Puff</option>
+                            <option value="peru">Peru</option>
+                            <option value="pink">Pink</option>
+                            <option value="plum">Plum</option>
+                            <option value="powderblue">Powder Blue</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                            <option value="rosybrown">Rosy Brown</option>
+                            <option value="royalblue">Royal Blue</option>
+                            <option value="saddlebrown">Saddle Brown</option>
+                            <option value="salmon">Salmon</option>
+                            <option value="sandybrown">Sandy Brown</option>
+                            <option value="seagreen">Sea Green</option>
+                            <option value="seashell">Sea Shell</option>
+                            <option value="sienna">Sienna</option>
+                            <option value="silver">Silver</option>
+                            <option value="skyblue">Sky Blue</option>
+                            <option value="slateblue">Slate Blue</option>
+                            <option value="slategray">Slate Gray</option>
+                            <option value="snow">Snow</option>
+                            <option value="springgreen">Spring Green</option>
+                            <option value="steelblue">Steel Blue</option>
+                            <option value="tan">Tan</option>
+                            <option value="teal">Teal</option>
+                            <option value="thistle">Thistle</option>
+                            <option value="tomato">Tomato</option>
+                            <option value="turquoise">Turquoise</option>
+                            <option value="violet">Violet</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="white">White</option>
+                            <option value="whitesmoke">White Smoke</option>
+                            <option value="yellow">Yellow</option>
+                            <option value="yellowgreen">Yellow Green</option>
+                        </select>
+                    </label>
+                    </div>
+                </div>
+            </div>
+            <div id="z">
+                <div id="o">
+                    <h3>Wheel</h3>
+                    <canvas id="w" width="196" height="196"></canvas>
+                </div>
+                <div id="l">
+                    <h3>Panel</h3>
+                    <canvas id="j" width="196" height="196"></canvas>
+                    <canvas id="k" width="16" height="196"></canvas>
+                </div>
+                <h3>&#8220;Browser Safe&#8221; Colors</h3>
+                <div id="tp">
+                    <table id="p"></table>
+                    <div id="sp"></div>
+                </div>
+                <div id="fc">
+                    <table id="sc"></table><button id="v">Save</button>
+                </div>
+                
+            </div>
+            <div class="c"></div>
+            <script type="text/javascript" src="colorpicker.js"></script>
+            <script type="text/javascript" src="pickerwindow.js"></script>
+        </div>
+</xul:dialog>

@@ -1,0 +1,2 @@
+resource://gre/modules/Services.jsm
+resource://gre/modules/FileUtils.jsm
