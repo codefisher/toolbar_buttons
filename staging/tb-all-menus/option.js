@@ -89,8 +89,4 @@ loadMenuSettings: function() {
 	}
 }
 
-logMessage: function(string) {
-	Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService).logStringMessage(string);
-}
-
 toolbar_buttons.loadMenuSettings();

@@ -30,26 +30,28 @@ loadAllMenusMenu: function(item, event) {
 	if(prefs.getBoolPref('all-menus.settings')) {
 		var menuseparator = document.createElement('menuseparator');
 		item.appendChild(menuseparator);
-		var menubarCheck = document.createElement('menuitem');
-		menubarCheck.setAttribute("label", stringBundle.GetStringFromName("tb-all-menus.menubar"));
-		var visibility = !(toolbar.getAttribute('autohide') == 'true' || toolbar.getAttribute('hidden') == 'true');
-		menubarCheck.setAttribute("checked", visibility);
-		menubarCheck.addEventListener("command", function(event) {
-			try {
-				CustomizableUI.setToolbarVisibility(toolbar.id, !visibility);
-			} catch(e) {
-				if(toolbar.hasAttribute('hidden')) {
-					toolbar.setAttribute("hidden", visibility);
-					toolbar.removeAttribute("autohide");
-					document.persist(toolbar.id, "hidden");
-					document.persist(toolbar.id, "autohide");
-				} else {
-					toolbar.setAttribute("autohide", visibility);
-					document.persist(toolbar.id, "hidden");
+		if(item.parentNode.parentNode != toolbar) {
+			var menubarCheck = document.createElement('menuitem');
+			menubarCheck.setAttribute("label", stringBundle.GetStringFromName("tb-all-menus.menubar"));
+			var visibility = !(toolbar.getAttribute('autohide') == 'true' || toolbar.getAttribute('hidden') == 'true');
+			menubarCheck.setAttribute("checked", visibility);
+			menubarCheck.addEventListener("command", function(event) {
+				try {
+					CustomizableUI.setToolbarVisibility(toolbar.id, !visibility);
+				} catch(e) {
+					if(toolbar.hasAttribute('hidden')) {
+						toolbar.setAttribute("hidden", visibility);
+						toolbar.removeAttribute("autohide");
+						document.persist(toolbar.id, "hidden");
+						document.persist(toolbar.id, "autohide");
+					} else {
+						toolbar.setAttribute("autohide", visibility);
+						document.persist(toolbar.id, "hidden");
+					}
 				}
-			}
-		}, true);
-		item.appendChild(menubarCheck);
+			}, true);
+			item.appendChild(menubarCheck);
+		}
 		var menubarSettings = document.createElement('menuitem');
 		menubarSettings.setAttribute("label", stringBundle.GetStringFromName("tb-all-menus.settings"));
 		menubarSettings.addEventListener("command", function(event) {
@@ -83,9 +85,9 @@ allMenusStartUp: function() {
 	var prefsBranch = toolbar_buttons.interfaces.PrefBranch;
 	prefs.setBoolPref('all-menus._menus.'+ fileName + '.' + menubar.id, menubar.collapsed);
 
-	if(!toolbar.getAttribute('toolbarname') && toolbar.getAttribute('grippytooltiptext')) {
+	/* if(!toolbar.getAttribute('toolbarname') && toolbar.getAttribute('grippytooltiptext')) {
 		toolbar.setAttribute('toolbarname', toolbar.getAttribute('grippytooltiptext'));
-	}
+	} */
 	for (var i = 0; i < menubar.childNodes.length; i++) {
 		var label = menubar.childNodes[i].getAttribute('label');
 		var menuId = menubar.childNodes[i].id;
