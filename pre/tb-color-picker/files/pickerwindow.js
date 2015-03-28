@@ -7,6 +7,9 @@ var dbFile = FileUtils.getFile("ProfD", ["toolbar_buttons.sqlite"]);
 var dbConn = Services.storage.openDatabase(dbFile);
 
 function StartUp() {
+	if(window.arguments[0]) {
+		currentColor = getRGB(window.arguments[0]);
+	}
 	setupInputs();
 	setupPalette();
 	setupNamedColors();
@@ -40,11 +43,14 @@ function openEyedropper() {
 function onAccept() {
 	var hex = doApply(getHex, currentColor);
 	saveValueToDatabse(hex);
+	dbConn.asyncClose();
 }
 
 function onCancelColor() {
-	
+	dbConn.asyncClose();
 }
+
+gTds = [];
 
 function setUpSavedFromDatabase() {
 	var tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
@@ -54,6 +60,7 @@ function setUpSavedFromDatabase() {
 			if(this.value) doApply(updateColor, getRGB(this.value)); 
 		}, false);
 		tmp.appendChild(cell);
+		gTds.push(cell);
 	}
 	document.getElementById("sc").appendChild(tmp);
 
@@ -66,21 +73,16 @@ function setUpSavedFromDatabase() {
 }
 
 function loadDatabaseSaved() {
-	var stmt = dbConn.createAsyncStatement("SELECT name FROM picked_color ORDER BY time DESC LIMIT " + SAVED_LENGTH.toString());
-	stmt.executeAsync({
-		handleResult: function(aResultSet) {
-			var tds = document.getElementById('sc').getElementsByTagName('td');
-			var count = 0;
-			for (var row = aResultSet.getNextRow(); row; row = aResultSet.getNextRow()) {
-				var name = "#" + row.getResultByName("name");
-				tds[count].style.backgroundColor = name;
-				tds[count].value = name;
-				count++;
-			}
-		},	
-		handleError: function(aError) { },
-		handleCompletion: function(aReason) {}
-	});
+	try {
+		var stmt = dbConn.createStatement("SELECT name FROM picked_color ORDER BY time DESC LIMIT 0, 17");
+		var count = 0;
+		while (stmt.executeStep()) {
+			var name = "#" + stmt.row.name;
+			gTds[count].style.backgroundColor = name;
+			gTds[count].value = name;
+			count++;
+		}
+	} catch(e) {}
 }
 
 function saveValueToDatabse(hexColor) {

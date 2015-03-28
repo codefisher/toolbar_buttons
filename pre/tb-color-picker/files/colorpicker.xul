@@ -16,47 +16,47 @@
                 <div id="cb">
                     <canvas id="c" width="120" height="120"></canvas>
                 </div>
-                <div><label id="y">Hex<input id="x" type="text" size="7" /></label></div>
+                <div><label id="y">&tb-color-picker.hex;<input id="x" type="text" size="7" /></label></div>
                 <div id="i">
                     <div> 
                         <input type="radio" name="n" id="Y" checked="checked" />
-                        <label>Hue
+                        <label>&tb-color-picker.hue;
                             <input type="number" min="0" size="3" max="360" id="H" />
                         </label>
                     </div>
                     <div> 
                         <input type="radio" name="n" id="J" />
-                        <label>Saturation
+                        <label>&tb-color-picker.saturation;
                             <input type="number" min="0" size="3" max="100" id="S" />
                         </label>
                     </div>
                     <div> 
                         <input type="radio" name="n" id="K" />
-                        <label>Value
+                        <label>&tb-color-picker.value;
                             <input type="number" min="0" size="3" max="100" id="V" />
                         </label>
                     </div>
                     <div> 
                         <input type="radio" name="n" id="O" />
-                        <label>Red
+                        <label>&tb-color-picker.red;
                             <input type="number" min="0" size="3" max="255" id="R" />
                         </label>
                     </div>
                     <div> 
                         <input type="radio" name="n" id="Q" />
-                        <label>Green
+                        <label>&tb-color-picker.green;
                             <input type="number" min="0" size="3" max="255" id="G" />
                         </label>
                     </div>
                     <div> 
                         <input type="radio" name="n" id="F" />
-                        <label>Blue
+                        <label>&tb-color-picker.blue;
                             <input type="number" min="0" size="3" max="255" id="B" />
                         </label>
                     </div>
                     <div>
                         <div id="ncd"></div>
-                        <label>Color Select:
+                        <label>&tb-color-picker.color-select;:
                             <select id="nc" onchange="selectChange(event);">
                             <option id="nce" value=""> -- </option>
                             <option value="aliceblue">Alice Blue</option>
@@ -207,24 +207,24 @@
             </div>
             <div id="z">
                 <div id="o">
-                    <h3>Wheel</h3>
+                    <h3>&tb-color-picker.wheel;</h3>
                     <canvas id="w" width="196" height="196"></canvas>
                 </div>
                 <div id="l">
-                    <h3>Panel</h3>
+                    <h3>&tb-color-picker.panel;</h3>
                     <canvas id="j" width="196" height="196"></canvas>
                     <canvas id="k" width="16" height="196"></canvas>
                 </div>
-                <h3>&#8220;Browser Safe&#8221; Colors</h3>
+                <h3>&tb-color-picker.browser-safe;</h3>
                 <div id="tp">
                     <table id="p"></table>
                     <div id="sp"></div>
                 </div>
                 <div id="fc">
-                    <table id="sc"></table><button id="v">Save</button>
+                    <table id="sc"></table><button id="v">&tb-color-picker.save;</button>
                 </div>
                 <div style="clear:both;">
-                    <button onclick="openEyedropper();">Open Eyedropper</button>
+                    <button onclick="openEyedropper();">&tb-color-picker.eyedropper;</button>
                 </div>
             </div>
             <div class="c"></div>

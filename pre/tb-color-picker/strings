@@ -1,3 +1,16 @@
 tb-color-picker.label=Color Picker
 tb-color-picker.tooltip=Open the Color Picker Dialog
-tb-color-picker.dialog.title=Color Picker
+tb-color-picker.dialog.title=Sharp Color Picker
+tb-color-picker.hex=Hex
+tb-color-picker.hue=Hue
+tb-color-picker.saturation=Saturation
+tb-color-picker.value=Value
+tb-color-picker.red=Red
+tb-color-picker.green=Green
+tb-color-picker.blue=Blue
+tb-color-picker.color-select=Color Select
+tb-color-picker.wheel=Wheel
+tb-color-picker.panel=Panel
+tb-color-picker.browser-safe=&#8220;Browser Safe&#8221; Colors
+tb-color-picker.save=Save
+tb-color-picker.eyedropper=Open Eyedropper
