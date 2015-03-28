@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "tb-color-picker"
+    ],
+    "extension_id": "tb-color-picker-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-color-picker"
+    ],
+    "current_version_pref": "current.version.tb-color-picker",
+    "chrome_name": "tb-color-picker-toolbar-button",
+    "locale_file_prefix": "tb-color-picker_"
+}

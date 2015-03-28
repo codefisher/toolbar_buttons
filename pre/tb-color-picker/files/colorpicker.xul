@@ -223,7 +223,9 @@
                 <div id="fc">
                     <table id="sc"></table><button id="v">Save</button>
                 </div>
-                
+                <div style="clear:both;">
+                    <button onclick="openEyedropper();">Open Eyedropper</button>
+                </div>
             </div>
             <div class="c"></div>
             <script type="text/javascript" src="colorpicker.js"></script>
