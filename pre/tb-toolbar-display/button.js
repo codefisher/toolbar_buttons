@@ -69,7 +69,7 @@ loadToolbarDisplayMenu: function(event, popup) {
 			}, false);
 			submenu.appendChild(largeIcons);
 			
-			submenu.appendChild(document.createElement("menuseparatornuitem"));
+			submenu.appendChild(document.createElement("menuseparator"));
 			
 			let iconMode = document.createElement("menuitem");
 			iconMode.setAttribute('type', 'radio');
