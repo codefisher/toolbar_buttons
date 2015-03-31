@@ -8,5 +8,6 @@
     ],
     "current_version_pref": "current.version.restart-app",
     "chrome_name": "restart-app-toolbar-button",
+    "menu_placement": "file",
     "locale_file_prefix": "restart-app_"
 }

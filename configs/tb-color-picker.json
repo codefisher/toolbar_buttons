@@ -1,4 +1,6 @@
 {
+    "name": "Sharp Color Picker",
+    "description": "A full featured color selector tool, to work with colors, and easily find the colors you want.",
     "buttons": [
         "tb-color-picker"
     ],
@@ -8,5 +10,6 @@
     ],
     "current_version_pref": "current.version.tb-color-picker",
     "chrome_name": "tb-color-picker-toolbar-button",
-    "locale_file_prefix": "tb-color-picker_"
+    "locale_file_prefix": "tb-color-picker_",
+    "fix_meta": false
 }

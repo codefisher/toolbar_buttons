@@ -13,5 +13,8 @@
     "chrome_name": "about-about-toolbar-button",
     "locale_file_prefix": "about-about_",
     "merge_images": true,
-    "fix_meta": false
+    "fix_meta": false,
+    "create_menu": [
+        "tb-about-about"
+    ]
 }

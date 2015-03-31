@@ -1,0 +1,13 @@
+{
+    "buttons": [
+        "tb-toolbar-display"
+    ],
+    "extension_id": "tb-toolbar-display-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-toolbar-display"
+    ],
+    "current_version_pref": "current.version.tb-toolbar-display",
+    "chrome_name": "tb-toolbar-display-toolbar-button",
+    "menu_placement": "toolbar",
+    "locale_file_prefix": "tb-toolbar-display_"
+}

@@ -2,7 +2,7 @@
     "include_toolbars": -1,
     "projects": ["data", "staging", "pre"],
     "put_button_on_toolbar": true,
-    "create_menu": true,
+    "create_menu": "all",
     "skip_buttons_without_icons": true,
     "include_icons_for_custom_window": true,
     "use_keyboard_shortcuts": true,
