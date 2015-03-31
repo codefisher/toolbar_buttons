@@ -2,7 +2,7 @@
     "name": "Toolbar Buttons Nightly",
     "locale": "all",
     "projects": ["data", "staging", "pre"],
-    "create_menu": "all",
+    "menuitems": "all",
     "skip_buttons_without_icons": true,
     "include_icons_for_custom_window": true,
     "use_keyboard_shortcuts": true,

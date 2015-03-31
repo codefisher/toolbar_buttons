@@ -6,7 +6,7 @@
 	"show_updated_prompt": false,
 	"output_folder": "extensions/single",
 	"restartless": true,
-	"create_menu": "all",
+	"menuitems": "all",
 	"menu_placement": "tools",
 	"use_keyboard_shortcuts": true,
 	"translate_description": true,

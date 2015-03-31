@@ -9,6 +9,6 @@
     "version_url": "https://codefisher.org/toolbar_button/version/",
     "pref_root": "extension.tbutton.",
     "chrome_name": "toolbar-buttons",
-    "menu_meta": ["toolbar-buttons-menu", "tb-toolbar-buttons.menu"],
+    "menu_meta": ["toolbar-buttons-menu", "tb-toolbar-buttons.menu", "tools"],
     "new_button_prefix": "tb-"
 }

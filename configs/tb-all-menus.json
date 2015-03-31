@@ -9,7 +9,5 @@
     "current_version_pref": "current.version.tb-all-menus",
     "chrome_name": "tb-all-menus-toolbar-button",
     "locale_file_prefix": "tb-all-menus_",
-    "create_menu": [
-        "tb-all-menus"
-    ]
+    "menuitems": null
 }

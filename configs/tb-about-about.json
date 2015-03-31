@@ -14,7 +14,7 @@
     "locale_file_prefix": "about-about_",
     "merge_images": true,
     "fix_meta": false,
-    "create_menu": [
+    "menuitems": [
         "tb-about-about"
     ]
 }
