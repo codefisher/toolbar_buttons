@@ -1,8 +1,15 @@
 .project
 .pydevproject
+.idea
 *.pyc
 app_locale
 screen-shot.sh
 extensions
 config/local_settings.py
 local.json
+stats/
+tango/
+junk/
+todo.txt
+icon_import.py
+release_notes.html
