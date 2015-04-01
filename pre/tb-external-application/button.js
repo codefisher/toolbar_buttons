@@ -9,34 +9,33 @@ openExternalApplicationMenu: function(event, aMenu) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var empty = stringBundle.GetStringFromName("empty");
-  	var menuItem = document.createElement("menuitem");
-  	menuItem.setAttribute("label", empty);
-  	menuItem.setAttribute("disabled", true);	  	
-  	aMenu.insertBefore(menuItem, aMenu.firstChild);
-	
+	var menuItem = document.createElement("menuitem");
+	menuItem.setAttribute("label", empty);
+	menuItem.setAttribute("disabled", true);
+	aMenu.insertBefore(menuItem, aMenu.firstChild);
+
+	while(aMenu.firstChild.nodeName != 'menuseparator') {
+		aMenu.removeChild(aMenu.firstChild);
+	}
+
 	let stmt = toolbar_buttons.database_connection.createAsyncStatement("SELECT rowid, name, value FROM external_application_strings ORDER BY name DESC");
 
 	stmt.executeAsync({
-	  handleResult: function(aResultSet) {
-	  	var count = 0;
-	    for (let row = aResultSet.getNextRow();
-	         row;
-	         row = aResultSet.getNextRow()) {	
-			while(aMenu.firstChild.nodeName != 'menuseparator') {
-				aMenu.removeChild(aMenu.firstChild);
+		handleResult: function(aResultSet) {
+			var count = 0;
+			for (let row = aResultSet.getNextRow(); row; row = aResultSet.getNextRow()) {
+				let name = row.getResultByName("name");
+				let value = row.getResultByName("value");
+				var menuItem = document.createElement("menuitem");
+				menuItem.setAttribute("label", name);
+				menuItem.application = value;
+				menuItem.addEventListener("command", toolbar_buttons.runExternalApplication, false);
+				aMenu.insertBefore(menuItem, aMenu.firstChild);
+				count++;
 			}
-			let name = row.getResultByName("name");
-			let value = row.getResultByName("value");
-		  	var menuItem = document.createElement("menuitem");
-		  	menuItem.setAttribute("label", name);
-		  	menuItem.application = value;
-			menuItem.addEventListener("command", toolbar_buttons.runExternalApplication, false);
-			aMenu.insertBefore(menuItem, aMenu.firstChild);
-			count++;
-	    }
-	  },	
-	  handleError: function(aError) {},	
-	  handleCompletion: function(aReason) {}
+		},	
+		handleError: function(aError) {},
+		handleCompletion: function(aReason) {}
 	});
 	stmt.finalize();
 }

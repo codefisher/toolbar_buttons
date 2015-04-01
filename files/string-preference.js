@@ -91,15 +91,15 @@ function stringManager() {
 	
 	this.browse = function() {
 		var filePicker = Cc["@mozilla.org/filepicker;1"].createInstance(Ci.nsIFilePicker);
-        filePicker.init(window, null, Ci.nsIFilePicker.modeOpen);
-        filePicker.appendFilters(Ci.nsIFilePicker.filterAll | Ci.nsIFilePicker.filterApps);
-        filePicker.open({
-        	done:  function(aResult) {
-        		if(aResult != Ci.nsIFilePicker.returnCancel) {
-        			document.getElementById('string-value').setAttribute('value', filePicker.file.path);
-        		}
-        	}
-        });        
+		filePicker.init(window, null, Ci.nsIFilePicker.modeOpen);
+		filePicker.appendFilters(Ci.nsIFilePicker.filterAll | Ci.nsIFilePicker.filterApps);
+		filePicker.open({
+			done:  function(aResult) {
+				if(aResult != Ci.nsIFilePicker.returnCancel) {
+					document.getElementById('string-value').value = filePicker.file.path;
+				}
+			}
+		});
 	};
 	
 	
