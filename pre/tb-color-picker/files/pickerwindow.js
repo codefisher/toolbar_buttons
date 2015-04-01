@@ -8,7 +8,9 @@ var dbConn = Services.storage.openDatabase(dbFile);
 
 function StartUp() {
 	if(window.arguments[0]) {
-		currentColor = getRGB(window.arguments[0]);
+		try {
+			currentColor = getRGB(window.arguments[0]);
+		} catch(e) {}
 	}
 	setupInputs();
 	setupPalette();
@@ -16,28 +18,36 @@ function StartUp() {
 	setupHexInput();
 	setUpSavedFromDatabase();
 	setWheelAndPanelEvents();
+	setEyedropper();
 	doApply(updateColor, currentColor);
 }
 
-function openEyedropper() {
-	var devtools = Components.utils.import("resource://gre/modules/devtools/Loader.jsm", {}).devtools;
-	var Eyedropper =  devtools.require("devtools/eyedropper/eyedropper").Eyedropper;
-	Eyedropper.prototype.copyColor = function(callback) {
-		clearTimeout(this._copyTimeout);	
-		var color = this._colorValue.value;
-		saveValueToDatabse(color);
-		doApply(updateColor, getRGB(color));		
-		this._copyTimeout = setTimeout(() => {
-			this._colorValue.value = color;	
-			if (callback) {
-				callback();
-			}
-		}, 0);
-		window.focus();
-	};
-	var eyedropper = new Eyedropper(window.opener);
-	eyedropper.open();
-	window.opener.focus();
+function setEyedropper() {
+	var button = document.getElementById('eyedropper');
+	try {
+		var devtools = Components.utils.import("resource://gre/modules/devtools/Loader.jsm", {}).devtools;
+		var Eyedropper = devtools.require("devtools/eyedropper/eyedropper").Eyedropper;
+		Eyedropper.prototype.copyColor = function (callback) {
+			clearTimeout(this._copyTimeout);
+			var color = this._colorValue.value;
+			saveValueToDatabse(color);
+			doApply(updateColor, getRGB(color));
+			this._copyTimeout = setTimeout(() => {
+				this._colorValue.value = color;
+				if (callback) {
+					callback();
+				}
+			}, 0);
+			window.focus();
+		};
+		button.addEventListener('click', function () {
+			var eyedropper = new Eyedropper(window.opener);
+			eyedropper.open();
+			window.opener.focus();
+		}, false);
+	} catch(e) {
+		button.setAttribute('hidden', true);
+	}
 }
 
 function onAccept() {
@@ -50,11 +60,11 @@ function onCancelColor() {
 	dbConn.asyncClose();
 }
 
-gTds = [];
+var gTds = [];
 
 function setUpSavedFromDatabase() {
 	var tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
-	for(i = 0; i < SAVED_LENGTH; i++) {
+	for(var i = 0; i < SAVED_LENGTH; i++) {
 		var cell = document.createElementNS('http://www.w3.org/1999/xhtml', 'td');
 		cell.addEventListener('click', function(event) {
 			if(this.value) doApply(updateColor, getRGB(this.value)); 

@@ -14,7 +14,7 @@
         <div id="m">
             <div id="a">
                 <div id="cb">
-                    <canvas id="c" width="120" height="120"></canvas>
+                    <canvas id="c" width="120" height="120" />
                 </div>
                 <div><label id="y">&tb-color-picker.hex;<input id="x" type="text" size="7" /></label></div>
                 <div id="i">
@@ -55,7 +55,7 @@
                         </label>
                     </div>
                     <div>
-                        <div id="ncd"></div>
+                        <div id="ncd" />
                         <label>&tb-color-picker.color-select;:
                             <select id="nc" onchange="selectChange(event);">
                             <option id="nce" value=""> -- </option>
@@ -208,27 +208,27 @@
             <div id="z">
                 <div id="o">
                     <h3>&tb-color-picker.wheel;</h3>
-                    <canvas id="w" width="196" height="196"></canvas>
+                    <canvas id="w" width="196" height="196" />
                 </div>
                 <div id="l">
                     <h3>&tb-color-picker.panel;</h3>
-                    <canvas id="j" width="196" height="196"></canvas>
-                    <canvas id="k" width="16" height="196"></canvas>
+                    <canvas id="j" width="196" height="196" />
+                    <canvas id="k" width="16" height="196" />
                 </div>
                 <h3>&tb-color-picker.browser-safe;</h3>
                 <div id="tp">
-                    <table id="p"></table>
-                    <div id="sp"></div>
+                    <table id="p" />
+                    <div id="sp" />
                 </div>
                 <div id="fc">
-                    <table id="sc"></table><button id="v">&tb-color-picker.save;</button>
+                    <table id="sc" /><button id="v">&tb-color-picker.save;</button>
                 </div>
                 <div style="clear:both;">
-                    <button onclick="openEyedropper();">&tb-color-picker.eyedropper;</button>
+                    <button id="eyedropper">&tb-color-picker.eyedropper;</button>
                 </div>
             </div>
-            <div class="c"></div>
-            <script type="text/javascript" src="colorpicker.js"></script>
-            <script type="text/javascript" src="pickerwindow.js"></script>
+            <div class="c" />
+            <script type="text/javascript" src="colorpicker.js" />
+            <script type="text/javascript" src="pickerwindow.js" />
         </div>
 </xul:dialog>
