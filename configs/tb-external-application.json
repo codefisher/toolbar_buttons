@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        "tb-external-application"
+    ],
+    "extension_id": "tb-external-application-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-external-application"
+    ],
+    "current_version_pref": "current.version.tb-external-application",
+    "chrome_name": "tb-external-application-toolbar-button",
+    "locale_file_prefix": "tb-external-application_"
+}
