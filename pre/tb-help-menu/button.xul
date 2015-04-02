@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-help-menu"
+	label="&tb-help-menu.label;"
+	tooltiptext="&tb-help-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'helpMenu', 'menu_Help');"/>
