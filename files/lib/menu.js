@@ -1,18 +1,26 @@
 setUpMenuShower: function() {
-	var prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref_root}}showamenu.");
-	prefs.addObserver("", {
+	var observer = {
 		observe: function(aSubject, aTopic, aData) {
 			var menu = document.getElementById(aData);
 			if(menu) {
-				menu.setAttribute('hidden', !prefs.getBoolPref(aData));
+				menu.setAttribute('hidden', !this.prefs.getBoolPref(aData));
+			}
+		},
+		unregister: function() {
+			this.prefs.removeObserver("", this);
+		},
+		register: function() {toolbar_buttons.registerCleanUpFunction(this.unregister);
+			this.prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref_root}}showamenu.");
+			this.prefs.addObserver("", this, false);
+			toolbar_buttons.registerCleanUpFunction(this.unregister);
+			var attrList = this.prefs.getChildList('', {});
+			for(var i in attrList) {
+				var menu = document.getElementById(attrList[i]);
+				if(menu) {
+					menu.setAttribute('hidden', !this.prefs.getBoolPref(attrList[i]));
+				}
 			}
 		}
-	}, false);
-	var attrList = prefs.getChildList('', {});
-	for(var i in attrList) {
-		var menu = document.getElementById(attrList[i]);
-		if(menu) {
-			menu.setAttribute('hidden', !prefs.getBoolPref(attrList[i]));
-		}
-	}
+	};
+	observer.register();
 }
