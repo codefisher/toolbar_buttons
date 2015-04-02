@@ -70,17 +70,18 @@ showAMenu: function(aEvent) {
 	if (!aMenu) {
 		toolbar_buttons.wrongVersion();
 	}
-	var popup = aMenu.firstChild.cloneNode(false);
-	while(aEvent.target.firstChild) {
-		aEvent.target.removeChild(aEvent.target.firstChild);
-	}
-	var kids = aMenu.firstChild.childNodes;
-	for(var i = 0; i < kids.length; i++) {
-		if(kids[i] != aEvent.target.parentNode.parentNode) {
-			popup.appendChild(kids[i].cloneNode(true));
+	var popup = aMenu.firstChild;
+	/* what we do is move the popup to our self, and then when finished move it
+	 * back again, this is better then cloning because we get all event Listeners too
+	 */
+	aEvent.target.addEventListener('popuphidden', function showAMenuPopupHidding(event) {
+		if(event.originalTarget == popup) {
+			aEvent.target.removeEventListener('popuphidden', showAMenuPopupHidding, false);
+			aMenu.appendChild(popup);
 		}
-	}
+	}, false);
 	aEvent.target.appendChild(popup);
+	aMenu.style.visibility = 'visible';
 	if(aEvent.target.nodeName == 'menuitem' || aEvent.target.nodeName == 'menu') {
 		aEvent.target.firstChild.openPopup(aEvent.target, "end_before");
 	} else {
