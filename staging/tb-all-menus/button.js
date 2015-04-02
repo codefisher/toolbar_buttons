@@ -78,9 +78,9 @@ allMenusAddItem: function(menu, item, showIcons) {
 	}
 	item.appendChild(node);
 	node.cloneTarget = menu;
-	//while(menu.firstChild) {
+	if(menu.firstChild) {
 		node.appendChild(menu.firstChild);
-	//}
+	}
 	menu.style.visibility = 'visible';
 }
 
@@ -90,9 +90,9 @@ allMenusReturnPopups: function(item, event) {
 	}
 	var nodes = item.childNodes;
 	for(var i = 0; i < nodes.length; i++) {
-		//while(nodes[i].cloneTarget && nodes[i].firstChild) {
+		if(nodes[i].cloneTarget && nodes[i].firstChild) {
 			nodes[i].cloneTarget.appendChild(nodes[i].firstChild);
-		//}
+		}
 	}
 }
 
