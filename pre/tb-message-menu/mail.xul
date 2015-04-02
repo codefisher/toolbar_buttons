@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-message-menu"
+	label="&tb-message-menu.label;"
+	tooltiptext="&tb-message-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'messageMenu');"/>
