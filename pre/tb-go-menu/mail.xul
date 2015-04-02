@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-go-menu"
+	label="&tb-go-menu.label;"
+	tooltiptext="&tb-go-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'goMenu', 'menu_Go');"/>
