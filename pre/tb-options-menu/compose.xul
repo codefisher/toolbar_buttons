@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-options-menu"
+	label="&tb-options-menu.label;"
+	tooltiptext="&tb-options-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'optionsMenu');"/>
