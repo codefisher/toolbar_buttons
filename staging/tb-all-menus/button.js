@@ -67,11 +67,33 @@ loadAllMenusMenu: function(item, event) {
 }
 
 allMenusAddItem: function(menu, item, showIcons) {
-	var node = menu.cloneNode(true);
+	if(!menu.firstChild) {
+		return;
+	}
+	var node = menu.cloneNode(false);
 	node.setAttribute('hidden', false);
-	node.classList.add('menu-iconic');
-	node.classList.add('menuitem-iconic');
+	if(showIcons) {
+		node.classList.add('menu-iconic');
+		node.classList.add('menuitem-iconic');
+	}
 	item.appendChild(node);
+	node.cloneTarget = menu;
+	//while(menu.firstChild) {
+		node.appendChild(menu.firstChild);
+	//}
+	menu.style.visibility = 'visible';
+}
+
+allMenusReturnPopups: function(item, event) {
+	if(event.originalTarget != item) {
+		return;
+	}
+	var nodes = item.childNodes;
+	for(var i = 0; i < nodes.length; i++) {
+		//while(nodes[i].cloneTarget && nodes[i].firstChild) {
+			nodes[i].cloneTarget.appendChild(nodes[i].firstChild);
+		//}
+	}
 }
 
 allMenusStartUp: function() {	

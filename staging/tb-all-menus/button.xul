@@ -4,5 +4,8 @@
 	type="menu"
     label="&tb-all-menus.label;"
     tooltiptext="&tb-all-menus.tooltip;">
-		<menupopup id="tb-all-menus-popup" onpopupshowing="toolbar_buttons.loadAllMenusMenu(this, event);" oncommand="event.stopPropagation();" />
+		<menupopup id="tb-all-menus-popup"
+                   onpopupshowing="toolbar_buttons.loadAllMenusMenu(this, event);"
+                   onpopuphidden="toolbar_buttons.allMenusReturnPopups(this, event);"
+                   oncommand="event.stopPropagation();" />
 </toolbarbutton>
