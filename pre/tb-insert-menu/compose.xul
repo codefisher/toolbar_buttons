@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-insert-menu"
+	label="&tb-insert-menu.label;"
+	tooltiptext="&tb-insert-menu.tooltip;"
+	oncommand="toolbar_buttons.showAMenu(event, 'insertMenu');"/>
