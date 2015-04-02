@@ -1,6 +1,8 @@
 {
+    "name": "All Menus Button",
+    "discription": "Show all the menus in a single menu button that can be placed anywhere.  Also contains replacements button for the default menus.",
     "buttons": [
-        "tb-all-menus"
+        "tb-all-menus", "tb-file-menu", "tb-edit-menu", "tb-history-menu", "tb-tools-menu", "tb-view-menu", "bookmarks-menu-button1"
     ],
     "extension_id": "tb-all-menus-single@codefisher.org",
     "add_to_main_toolbar": [
@@ -9,5 +11,6 @@
     "current_version_pref": "current.version.tb-all-menus",
     "chrome_name": "tb-all-menus-toolbar-button",
     "locale_file_prefix": "tb-all-menus_",
+    "icon": "menu.png",
     "menuitems": null
 }

@@ -11,5 +11,6 @@
     "current_version_pref": "current.version.tb-color-picker",
     "chrome_name": "tb-color-picker-toolbar-button",
     "locale_file_prefix": "tb-color-picker_",
+    "icon": "color-wheel.png",
     "fix_meta": false
 }
