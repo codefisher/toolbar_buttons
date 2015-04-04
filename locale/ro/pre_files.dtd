@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Adaugă">
+<!ENTITY tb-string-preference.browse "Răsfoiește">
+<!ENTITY tb-string-preference.close "Închide">
+<!ENTITY tb-string-preference.delete "Șterge">
+<!ENTITY tb-string-preference.edit "Editare">
+<!ENTITY tb-string-preference.name "Nume">
+<!ENTITY tb-string-preference.save "Salvează">
+<!ENTITY tb-string-preference.value "Valoare">

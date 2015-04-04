@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Lägg till">
+<!ENTITY tb-string-preference.browse "Bläddra">
+<!ENTITY tb-string-preference.close "Stäng">
+<!ENTITY tb-string-preference.delete "Ta bort">
+<!ENTITY tb-string-preference.edit "Redigera">
+<!ENTITY tb-string-preference.name "Namn">
+<!ENTITY tb-string-preference.save "Spara">
+<!ENTITY tb-string-preference.value "Värde">

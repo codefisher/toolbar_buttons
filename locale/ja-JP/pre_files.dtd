@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "16 進数">
+<!ENTITY tb-string-preference.add "追加">
+<!ENTITY tb-string-preference.browse "参照">
+<!ENTITY tb-string-preference.close "閉じる">
+<!ENTITY tb-string-preference.delete "削除">
+<!ENTITY tb-string-preference.edit "編集">
+<!ENTITY tb-string-preference.name "名前">
+<!ENTITY tb-string-preference.save "保存">
+<!ENTITY tb-string-preference.value "値">

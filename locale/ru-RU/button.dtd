@@ -152,8 +152,8 @@
 <!ENTITY next-tab.tooltip "Перейти к следующей вкладке">
 <!ENTITY open-current-frame.label "Показать этот фрейм">
 <!ENTITY open-current-frame.tooltip "Показать только выбранный фрейм">
-<!ENTITY tb-open.label "Открыть">
-<!ENTITY tb-open.tooltip "Открыть файл">
+<!ENTITY open.label "Открыть">
+<!ENTITY open.tooltip "Открыть файл">
 <!ENTITY page-source.label "Исходный код">
 <!ENTITY page-source.tooltip "Просмотреть исходный код страницы">
 <!ENTITY pageinfo.label "Информация о странице">
@@ -248,6 +248,7 @@
 <!ENTITY tab-list.tooltip "Отобразить список вкладок">
 <!ENTITY tasks-toggle.label "Переключить задания">
 <!ENTITY tasks-toggle.tooltip "Переключить панель заданий">
+<!ENTITY tb-download-sync.label "Загрузить/синхронизировать сейчас…">
 <!ENTITY tb-history-menu.label "Журнал">
 <!ENTITY tb-new-tab.label "Новая вкладка">
 <!ENTITY tb-open-in-conversation.label "Открыть в разговоре">

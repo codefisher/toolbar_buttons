@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "到下一個分頁">
 <!ENTITY open-current-frame.label "目前欄框">
 <!ENTITY open-current-frame.tooltip "只顯示目前所選的欄框">
-<!ENTITY tb-open.label "開啟">
-<!ENTITY tb-open.tooltip "開啟檔案">
+<!ENTITY open.label "開啟">
+<!ENTITY open.tooltip "開啟檔案">
 <!ENTITY page-source.label "原始碼">
 <!ENTITY page-source.tooltip "檢視頁面原始碼">
 <!ENTITY pageinfo.label "頁面資訊">
@@ -264,6 +264,7 @@
 <!ENTITY tb-clear-search.tooltip "清除並注意搜尋列">
 <!ENTITY tb-clear-url.label "清除網址">
 <!ENTITY tb-clear-url.tooltip "清除並注意網址列">
+<!ENTITY tb-download-sync.label "立刻下載／同步…">
 <!ENTITY tb-edit-menu.label "編輯選單">
 <!ENTITY tb-edit-menu.tooltip "顯示編輯選單">
 <!ENTITY tb-file-menu.label "檔案選單">

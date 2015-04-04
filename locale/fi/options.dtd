@@ -1,26 +1,38 @@
 <!ENTITY options.window.title "Toolbar Buttons - Asetukset">
 <!ENTITY favorite-page.description "Käytetään painikkeessa ”Suosikkisivu”; tietyllä tavalla toinen kotisivu.">
 <!ENTITY toggle.prox.label "Välityspalvelin">
+<!ENTITY translate.service.description "Valitse mitä käännöspalvelua haluat käyttää.">
 <!ENTITY toggle.proxy.description "Painikkeella ”Välityspalvelin” voidaan siirtyä tilasta, jossa ei käytetä välityspalvelinta, yhteen alla esitetyistä tiloista.">
+<!ENTITY delete.cookies.checkbox "Kysy ennen evästeiden poistamista.">
 <!ENTITY restart.checkbox "Älä kysy vahvistusta uudelleenkäynnistyksen yhteydessä.">
+<!ENTITY tb-delete-cookies.label "Poista evästeet">
 <!ENTITY previous-next.label "Edellinen &amp; Seuraava">
+<!ENTITY translate.loading "Lsdataan…">
 <!ENTITY toggle.checkbox "Lataa sivu uudelleen, kun tilaa vaihdetaan.">
 <!ENTITY restart.label "Uudelleenkäynnistys">
 <!ENTITY read.select.button "Valitse">
 <!ENTITY readnews.path.desc "Keskusteluryhmien lukuohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
+<!ENTITY open-new-tab.new "Avaa uudessa välilehdessä.">
+<!ENTITY open-new-tab.label "Kuinka linkkinapit avautuvat">
 <!ENTITY toggle.proxy.auto.configuration "Automaattinen välityspalvelimen asetusten määritys (PAC)">
 <!ENTITY readmail.path.desc "Sähköpostiohjelmasi polku; käytetään vain silloin, jos painike ei toimi.">
 <!ENTITY confirm.caption "Vahvista">
 <!ENTITY favorite-page.label "Suosikkisivu">
+<!ENTITY toggle.proxy.direct "Suora yhteys, ei välipalvelinta">
 <!ENTITY translate.label "Käännä">
+<!ENTITY open-new-tab.current "Avaa tässä välilehdessä.">
 <!ENTITY tb-clear-cache.label "Tyhjennä välimuisti">
 <!ENTITY translate.description "Valitse mitä kieltä haluat ”Käännä”-painikkeen käyttävän.">
+<!ENTITY translate.service.google "Google-kääntäjä">
 <!ENTITY previous-next.checkbox "Vaihda painikkeiden ”Edellinen” ja ”Seuraava” suuntaa.">
 <!ENTITY readmail.path.caption "Sähköpostiohjelman polku">
 <!ENTITY toggle.label "Näytä/piilota painikkeet">
 <!ENTITY links.caption "Linkit">
+<!ENTITY translate.service.bing "Bing-kääntäjä">
+<!ENTITY translate.service.promt "PROMT-onlinekääntäjä">
 <!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY readnews.path.caption "Keskusteluryhmien lukuohjelman polku">
+<!ENTITY clear.cache.checkbox "Kysy ennen välimuistin tyhjentämistä.">
 <!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
 <!ENTITY settings.label "Asetukset">
 <!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">

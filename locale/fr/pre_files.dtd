@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "hexadécimal">
+<!ENTITY tb-string-preference.add "Ajouter">
+<!ENTITY tb-string-preference.browse "Parcourir">
+<!ENTITY tb-string-preference.close "Fermer">
+<!ENTITY tb-string-preference.delete "Supprimer">
+<!ENTITY tb-string-preference.edit "Édition">
+<!ENTITY tb-string-preference.name "Nom">
+<!ENTITY tb-string-preference.save "Enregistrer">
+<!ENTITY tb-string-preference.value "Valeur">

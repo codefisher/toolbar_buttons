@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Προσθήκη">
+<!ENTITY tb-string-preference.browse "Εξερεύνηση">
+<!ENTITY tb-string-preference.close "Κλείσιμο">
+<!ENTITY tb-string-preference.delete "Διαγραφή">
+<!ENTITY tb-string-preference.edit "Επεξεργασία">
+<!ENTITY tb-string-preference.name "Όνομα">
+<!ENTITY tb-string-preference.save "Αποθήκευση">
+<!ENTITY tb-string-preference.value "Τιμή">

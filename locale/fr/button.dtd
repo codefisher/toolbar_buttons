@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Atteindre l&apos;onglet suivant">
 <!ENTITY open-current-frame.label "Cadre courant">
 <!ENTITY open-current-frame.tooltip "N&apos;afficher que le cadre (frame) sélectionné">
-<!ENTITY tb-open.label "Ouvrir">
-<!ENTITY tb-open.tooltip "Ouvrir un fichier">
+<!ENTITY open.label "Ouvrir">
+<!ENTITY open.tooltip "Ouvrir un fichier">
 <!ENTITY page-source.label "Source">
 <!ENTITY page-source.tooltip "Afficher le code source de la page">
 <!ENTITY pageinfo.label "Infos page">
@@ -244,7 +244,11 @@
 <!ENTITY stop-all.tooltip "Stopper le chargement de tous les onglets">
 <!ENTITY stop-animation.label "Animation">
 <!ENTITY stop-animation.tooltip "Stoppe les GIF animés, les balises blink et marquee">
+<!ENTITY stop-cookies.allow "Accepter tous les cookies">
+<!ENTITY stop-cookies.block "Bloquer les cookies">
 <!ENTITY stop-cookies.label "Cookies">
+<!ENTITY stop-cookies.privacy "Accepter selon les paramètres de vie privée">
+<!ENTITY stop-cookies.thirdparty "Accepter pour le site source">
 <!ENTITY stop-cookies.tooltip "Ne pas accepter les cookies">
 <!ENTITY stop-dinamic-content.label "Contenu embarqué">
 <!ENTITY stop-dinamic-content.tooltip "Ne pas charger tous les objets embarqués">
@@ -260,8 +264,13 @@
 <!ENTITY tasks-in-view.tooltip "Afficher / masquer les tâches à réaliser">
 <!ENTITY tasks-toggle.label "Tâches">
 <!ENTITY tasks-toggle.tooltip "Afficher/masquer la barre des tâches">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "Liste et ouvre les pages about">
 <!ENTITY tb-about-blank.label "Onglet vide">
 <!ENTITY tb-about-blank.tooltip "Ouvre / charge un onglet vide">
+<!ENTITY tb-addons-exceptions.label "Sites acceptés par les extensions">
+<!ENTITY tb-all-menus.label "Menu">
+<!ENTITY tb-all-menus.tooltip "Tous les menus">
 <!ENTITY tb-clear-cache.label "Effacer le cache">
 <!ENTITY tb-clear-cache.tooltip "Effacer le cache du navigateur">
 <!ENTITY tb-clear-search.label "Effacer la recherche">
@@ -270,8 +279,11 @@
 <!ENTITY tb-clear-url.tooltip "Effacer l&apos;URL et laisser le curseur dans la barre d&apos;adresse">
 <!ENTITY tb-clone-tab.label "Copier l'onglet">
 <!ENTITY tb-clone-tab.tooltip "Fait une copie de l'onglet courant">
+<!ENTITY tb-cookie-exceptions.label "Exceptions pour cookie">
 <!ENTITY tb-cookie-manager.label "Gestionnaire de cookies">
 <!ENTITY tb-cookie-manager.tooltip "Ouvre le gestionnaire de cookies pour la page courante">
+<!ENTITY tb-delete-cookies.label "Supprimer les cookies">
+<!ENTITY tb-delete-session-cookies.label "Supprimer les cookies de session">
 <!ENTITY tb-download-sync.label "Télécharger / synchro. maintenant">
 <!ENTITY tb-download-sync.tooltip "Télécharge et synchronise avant de passer hors connexion">
 <!ENTITY tb-edit-menu.label "Menu « Édition »">
@@ -282,7 +294,8 @@
 <!ENTITY tb-history-menu.tooltip "Ouvre le menu de l'historique">
 <!ENTITY tb-new-event.label "Nouvel évènement">
 <!ENTITY tb-new-event.tooltip "Ajouter un nouvel évènement dans le calendrier.">
-<!ENTITY tb-new-tab.label "&#xad;Nouvel onglet">
+<!ENTITY tb-new-tab.label "­Nouvel onglet">
+<!ENTITY tb-new-tab.tooltip "Ouvrir un nouvel onglet">
 <!ENTITY tb-new-task.label "Nouvelle Tâche">
 <!ENTITY tb-new-task.tooltip "Ajouter une nouvelle tâche au calendrier.">
 <!ENTITY tb-open-in-conversation.label "Ouvrir dans la discussion">
@@ -290,10 +303,13 @@
 <!ENTITY tb-page-info-media.label "Médias de la page">
 <!ENTITY tb-page-info-media.tooltip "Ouvre les infos de la page à l'onglet médias">
 <!ENTITY tb-page-reload.label "Actualiser">
+<!ENTITY tb-page-reload.tooltip "Recharger la page courante">
 <!ENTITY tb-page-stop.label "Arrêter">
+<!ENTITY tb-page-stop.tooltip "Interrompre le chargement de la page">
 <!ENTITY tb-print-page.label "Imprimer">
 <!ENTITY tb-print-page.tooltip "Imprimer cette page">
 <!ENTITY tb-saved-passwords.label "Mots de passe">
+<!ENTITY tb-saved-passwords.tooltip "Ouvrir le gestionnaire de mots de passe">
 <!ENTITY tb-search-go-button.label "Recherche">
 <!ENTITY tb-search-go-button.tooltip "Fait une recherche Web">
 <!ENTITY tb-search-minus.label "Réduire la taille de la barre de recherche">
@@ -336,6 +352,7 @@
 <!ENTITY toggle-toolbar.tooltip "Afficher/masquer la barre d'outils principale">
 <!ENTITY toggle.proxy.auto.configuration "Configuration automatique du proxy (PAC)">
 <!ENTITY toggle.proxy.auto.detect "Détection automatique des paramètres du proxy">
+<!ENTITY toggle.proxy.direct "Connexion directe, pas de proxy">
 <!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
 <!ENTITY toggle.proxy.system "Utiliser les paramètres de proxy du système">
 <!ENTITY toolbar-menu.label "Barres d&apos;outils">

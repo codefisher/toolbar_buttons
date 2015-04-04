@@ -1,3 +1,8 @@
+<!ENTITY options.window.title "Toolbar Buttons opties">
+<!ENTITY open-new-tab.new "In een nieuw tabblad openen.">
+<!ENTITY open-new-tab.label "Hoe koppelingsknoppen openen">
 <!ENTITY confirm.caption "Bevestigen">
 <!ENTITY settings.label "Instellingen">
-<!ENTITY options.window.title "Toolbar Buttons opties">
+<!ENTITY delete.cookies.checkbox "Vragen voor verwijderen cookies.">
+<!ENTITY tb-delete-cookies.label "Cookies verwijderen">
+<!ENTITY open-new-tab.current "In huidig tabblad openen.">

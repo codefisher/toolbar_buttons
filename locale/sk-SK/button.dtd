@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "Prejsť na nasledujúcu kartu">
 <!ENTITY open-current-frame.label "Zobraziť aktuálny rámec">
 <!ENTITY open-current-frame.tooltip "Zobraziť iba aktuálne označený rámec">
-<!ENTITY tb-open.label "Otvoriť">
-<!ENTITY tb-open.tooltip "Otvoriť súbor">
+<!ENTITY open.label "Otvoriť">
+<!ENTITY open.tooltip "Otvoriť súbor">
 <!ENTITY page-source.label "Zdrojový kód">
 <!ENTITY page-source.tooltip "Zobraziť zdrojový kód stránky">
 <!ENTITY pageinfo.label "Informácie o stránke">
@@ -257,6 +257,7 @@
 <!ENTITY tasks-toggle.tooltip "Zapnúť panel nástrojov Úlohy">
 <!ENTITY tb-clear-url.label "Vymazať URL">
 <!ENTITY tb-clear-url.tooltip "Vymazať URL a prejsť do adresného riadku">
+<!ENTITY tb-download-sync.label "Prijať/Synchronizovať…">
 <!ENTITY tb-edit-menu.label "Ponuka Upraviť">
 <!ENTITY tb-edit-menu.tooltip "Zobrazí ponuku Upraviť">
 <!ENTITY tb-file-menu.label "Ponuka Súbor">

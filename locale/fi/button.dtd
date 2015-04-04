@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Siirry seuraavaan välilehteen">
 <!ENTITY open-current-frame.label "Näytä nykyinen kehys">
 <!ENTITY open-current-frame.tooltip "Näytä ainoastaan valittuna oleva kehys">
-<!ENTITY tb-open.label "Avaa">
-<!ENTITY tb-open.tooltip "Avaa tiedosto">
+<!ENTITY open.label "Avaa">
+<!ENTITY open.tooltip "Avaa tiedosto">
 <!ENTITY page-source.label "Lähdekoodi">
 <!ENTITY page-source.tooltip "Näytä sivun lähdekoodi">
 <!ENTITY pageinfo.label "Tietoja sivusta">
@@ -244,7 +244,11 @@
 <!ENTITY stop-all.tooltip "Pysäytä kaikkien välilehtien lataaminen">
 <!ENTITY stop-animation.label "Animaatiot">
 <!ENTITY stop-animation.tooltip "Pysäytä animoidut GIF-tiedostot sekä välkkyvät ja rullaavat tunnisteet">
+<!ENTITY stop-cookies.allow "Salli kaikki evästeet">
+<!ENTITY stop-cookies.block "Estä evästeet">
 <!ENTITY stop-cookies.label "Evästeet">
+<!ENTITY stop-cookies.privacy "Salli perustuen yksityisyysasetuksiin">
+<!ENTITY stop-cookies.thirdparty "Salli vain tämän sivuston osalta">
 <!ENTITY stop-cookies.tooltip "Estä evästeiden asettaminen">
 <!ENTITY stop-dinamic-content.label "Upotettu sisältö">
 <!ENTITY stop-dinamic-content.tooltip "Estä upotetun sisällön lataaminen">
@@ -260,8 +264,13 @@
 <!ENTITY tasks-in-view.tooltip "Näytä/piilota tehtävät kalenterissa">
 <!ENTITY tasks-toggle.label "Tehtäväpalkki">
 <!ENTITY tasks-toggle.tooltip "Näytä/piilota tehtäväpalkki">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "Luetteloi ja avaa tietoja-sivuja">
 <!ENTITY tb-about-blank.label "Tyhjennä välilehti">
 <!ENTITY tb-about-blank.tooltip "Avaa/lataa tyhjä välilehti">
+<!ENTITY tb-addons-exceptions.label "Laajennusten sallitut sivustot">
+<!ENTITY tb-all-menus.label "Valikko">
+<!ENTITY tb-all-menus.tooltip "Kaikki valikot">
 <!ENTITY tb-clear-cache.label "Tyhjennä välimuisti">
 <!ENTITY tb-clear-cache.tooltip "Tyhjentää selaimen välimuistin">
 <!ENTITY tb-clear-search.label "Tyhjennä haku">
@@ -270,8 +279,11 @@
 <!ENTITY tb-clear-url.tooltip "Tyhjennä URL-palkki ja siirry siihen">
 <!ENTITY tb-clone-tab.label "Kopioi välilehti">
 <!ENTITY tb-clone-tab.tooltip "Tekee tämän välilehden kopion">
+<!ENTITY tb-cookie-exceptions.label "Evästepoikkeukset">
 <!ENTITY tb-cookie-manager.label "Evästeiden hallinta">
 <!ENTITY tb-cookie-manager.tooltip "Avaa tämän sivun evästeiden hallinnan">
+<!ENTITY tb-delete-cookies.label "Poista evästeet">
+<!ENTITY tb-delete-session-cookies.label "Poista isuntoevästeet">
 <!ENTITY tb-download-sync.label "Lataa/synkronoi nyt">
 <!ENTITY tb-download-sync.tooltip "Suorita lataus ja synkronointi ennen offline-tilaan menoa">
 <!ENTITY tb-edit-menu.label "Muokkaa-valikko">
@@ -283,6 +295,7 @@
 <!ENTITY tb-new-event.label "Uusi tapahtuma">
 <!ENTITY tb-new-event.tooltip "Lisää uuden tapahtuman kalenteriin.">
 <!ENTITY tb-new-tab.label "Uusi välilehti">
+<!ENTITY tb-new-tab.tooltip "Avaa uusi selainvälilehti">
 <!ENTITY tb-new-task.label "Uusi tehtävä">
 <!ENTITY tb-new-task.tooltip "Lisää uuden tehtävän kalenteriin.">
 <!ENTITY tb-open-in-conversation.label "Avaa keskusteluna">
@@ -290,10 +303,13 @@
 <!ENTITY tb-page-info-media.label "Mediainfosivu">
 <!ENTITY tb-page-info-media.tooltip "Avaa mediainfosivun">
 <!ENTITY tb-page-reload.label "Päivitä">
+<!ENTITY tb-page-reload.tooltip "Lataa tämä sivu uudelleen">
 <!ENTITY tb-page-stop.label "Pysäytä">
+<!ENTITY tb-page-stop.tooltip "Pysäytä sivun lataaminen">
 <!ENTITY tb-print-page.label "Tulosta">
 <!ENTITY tb-print-page.tooltip "Tulosta sivu">
 <!ENTITY tb-saved-passwords.label "Salasanat">
+<!ENTITY tb-saved-passwords.tooltip "Avaa salasananhallinta">
 <!ENTITY tb-search-go-button.label "Suorita haku">
 <!ENTITY tb-search-go-button.tooltip "Käynnistää verkkohaun">
 <!ENTITY tb-search-minus.label "Pienennä hakupalkin kokoa">
@@ -336,6 +352,7 @@
 <!ENTITY toggle-toolbar.tooltip "Avaa/sulkee päätyökalupalkin">
 <!ENTITY toggle.proxy.auto.configuration "Automaattinen välityspalvelimen asetusten määritys (PAC)">
 <!ENTITY toggle.proxy.auto.detect "Havaitse automaattisesti välityspalvelimen asetukset">
+<!ENTITY toggle.proxy.direct "Suora yhteys, ei välityspalvelinta">
 <!ENTITY toggle.proxy.manual "Manuaalinen välityspalvelimen asetusten määritys">
 <!ENTITY toggle.proxy.system "Käytä järjestelmän välityspalvelinasetuksia">
 <!ENTITY toolbar-menu.label "Työkalupalkit">

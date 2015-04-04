@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "跳到下个标签">
 <!ENTITY open-current-frame.label "显示当前帧">
 <!ENTITY open-current-frame.tooltip "只显示当前选中的帧">
-<!ENTITY tb-open.label "打开">
-<!ENTITY tb-open.tooltip "打开文件">
+<!ENTITY open.label "打开">
+<!ENTITY open.tooltip "打开文件">
 <!ENTITY page-source.label "源文件">
 <!ENTITY page-source.tooltip "查看页面源文件">
 <!ENTITY pageinfo.label "页面信息">
@@ -257,6 +257,7 @@
 <!ENTITY tasks-toggle.tooltip "切换任务工具栏">
 <!ENTITY tb-clear-url.label "清除URL">
 <!ENTITY tb-clear-url.tooltip "清空并将焦点置于URL栏">
+<!ENTITY tb-download-sync.label "立即下载/同步…">
 <!ENTITY tb-edit-menu.label "编辑菜单">
 <!ENTITY tb-edit-menu.tooltip "显示编辑菜单">
 <!ENTITY tb-file-menu.label "文件菜单">

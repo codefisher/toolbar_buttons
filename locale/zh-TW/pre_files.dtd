@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "新增">
+<!ENTITY tb-string-preference.browse "瀏覽">
+<!ENTITY tb-string-preference.close "關閉">
+<!ENTITY tb-string-preference.delete "刪除">
+<!ENTITY tb-string-preference.edit "編輯">
+<!ENTITY tb-string-preference.name "名稱">
+<!ENTITY tb-string-preference.save "儲存">
+<!ENTITY tb-string-preference.value "值">

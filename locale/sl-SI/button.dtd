@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Pojdi na naslednje sporočilo">
 <!ENTITY open-current-frame.label "Trenutni okvir">
 <!ENTITY open-current-frame.tooltip "Prikaži samo trenutno izbrani okvir">
-<!ENTITY tb-open.label "Odpri">
-<!ENTITY tb-open.tooltip "Odpri datoteko">
+<!ENTITY open.label "Odpri">
+<!ENTITY open.tooltip "Odpri datoteko">
 <!ENTITY page-source.label "Izvorna koda">
 <!ENTITY page-source.tooltip "Pokaži izvorno kodo strani">
 <!ENTITY pageinfo.label "Podatki o strani">

@@ -101,8 +101,8 @@
 <!ENTITY new-message.tooltip "كتابة رسالة بريد إلكتروني جديدة">
 <!ENTITY next-tab.label "التبويبة التالية">
 <!ENTITY next-tab.tooltip "الذهاب للتبويبة التالية">
-<!ENTITY tb-open.label "فتح">
-<!ENTITY tb-open.tooltip "فتح ملف">
+<!ENTITY open.label "فتح">
+<!ENTITY open.tooltip "فتح ملف">
 <!ENTITY page-source.tooltip "اعرض مصدر هذه الصفحة">
 <!ENTITY pageinfo.label "معلومات الصفحة">
 <!ENTITY pageinfo.tooltip "فتح نافذة معلومات الصفحة">
@@ -146,6 +146,7 @@
 <!ENTITY tab-list.tooltip "عرض قائمة التبويبات">
 <!ENTITY tasks-toggle.label "نقل الواجبات">
 <!ENTITY tasks-toggle.tooltip "نقل شريط الواجبات">
+<!ENTITY tb-download-sync.label "نزّل/زامِن الآن…">
 <!ENTITY tb-history-menu.label "تأريخ">
 <!ENTITY tb-new-tab.label "لسان جديد">
 <!ENTITY tb-open-in-conversation.label "افتح في محادثة">

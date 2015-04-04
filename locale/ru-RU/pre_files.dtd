@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "16-ричные числа">
+<!ENTITY tb-string-preference.add "Добавить">
+<!ENTITY tb-string-preference.browse "Обзор">
+<!ENTITY tb-string-preference.close "Закрыть">
+<!ENTITY tb-string-preference.delete "Удалить">
+<!ENTITY tb-string-preference.edit "Правка">
+<!ENTITY tb-string-preference.name "Имя">
+<!ENTITY tb-string-preference.save "Сохранить">
+<!ENTITY tb-string-preference.value "Значение">

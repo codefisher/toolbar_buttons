@@ -1,26 +1,38 @@
 <!ENTITY options.window.title "Toolbar Buttons - Einstellungen">
 <!ENTITY favorite-page.description "URL, die über die Schaltfläche &quot;Lieblingsseite&quot; aufgerufen wird.">
 <!ENTITY toggle.prox.label "Proxy">
+<!ENTITY translate.service.description "Wählen, welcher Übersetzungsdienst verwendet werden soll.">
 <!ENTITY toggle.proxy.description "Über die Proxy-Schaltfläche wird zwischen der Benutzung keines Proxys und der unten ausgewählten Einstellung umgeschaltet:">
+<!ENTITY delete.cookies.checkbox "Eingabeaufforderung vor dem Löschen von Cookies.">
 <!ENTITY restart.checkbox "Vor Neustart nicht nachfragen.">
+<!ENTITY tb-delete-cookies.label "Cookies löschen">
 <!ENTITY previous-next.label "Vorherige Nachricht &amp; Nächste Nachricht">
+<!ENTITY translate.loading "Wird geladen…">
 <!ENTITY toggle.checkbox "Seite nach dem Umschalten neu laden.">
 <!ENTITY restart.label "Neustart">
 <!ENTITY read.select.button "Durchsuchen…">
 <!ENTITY readnews.path.desc "Der Pfad zu Ihrer bevorzugten Anwendung für das Lesen von Newsgruppen. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen der Anwendung nicht funktionieren.">
+<!ENTITY open-new-tab.new "In einem neuem Tab öffnen.">
+<!ENTITY open-new-tab.label "Wie Links geöffnet werden">
 <!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
 <!ENTITY readmail.path.desc "Der Pfad zu Ihrem bevorzugten E-Mail-Programm. Er muss nur angegeben werden, falls die Schaltflächen zum Aufrufen des Programms nicht funktionieren.">
 <!ENTITY confirm.caption "Bestätigen">
 <!ENTITY favorite-page.label "Lieblingsseite">
+<!ENTITY toggle.proxy.direct "Direktverbindung, keinen Proxy verwenden">
 <!ENTITY translate.label "Übersetzen">
+<!ENTITY open-new-tab.current "Im aktuellen Tab öffnen.">
 <!ENTITY tb-clear-cache.label "Cache leeren">
 <!ENTITY translate.description "Auswählen, in welche Sprache mit der &quot;Übersetzen&quot;-Schaltfläche übersetzt werden soll.">
+<!ENTITY translate.service.google "Google Übersetzer">
 <!ENTITY previous-next.checkbox "Richtung umkehren, in der die Schaltflächen &quot;Vorherige Nachricht&quot; und &quot;Nächste Nachricht&quot; wirken.">
 <!ENTITY readmail.path.caption "E-Mail-Programm">
 <!ENTITY toggle.label "Schaltflächen umschalten">
 <!ENTITY links.caption "Links">
+<!ENTITY translate.service.bing "Bing Übersetzer">
+<!ENTITY translate.service.promt "PROMT Online-Übersetzer">
 <!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY readnews.path.caption "Anwendung für das Lesen von Newsgruppen">
+<!ENTITY clear.cache.checkbox "Eingabeaufforderung vor dem Leeren des Cache.">
 <!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
 <!ENTITY settings.label "Einstellungen">
 <!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">

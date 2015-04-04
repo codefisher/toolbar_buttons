@@ -1,0 +1,8 @@
+<!ENTITY options.window.title "Možnosti Toolbar Buttons">
+<!ENTITY open-new-tab.new "Odpri v novem zavihku.">
+<!ENTITY open-new-tab.label "Način odpiranja gumbov za povezave">
+<!ENTITY confirm.caption "Potrdi">
+<!ENTITY settings.label "Nastavitve">
+<!ENTITY delete.cookies.checkbox "Pozovi pred izbrisom piškotkov.">
+<!ENTITY tb-delete-cookies.label "Izbriši piškotke">
+<!ENTITY open-new-tab.current "Odpri v trenutnem zavihku.">

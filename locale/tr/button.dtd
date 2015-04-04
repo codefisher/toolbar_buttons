@@ -106,8 +106,8 @@
 <!ENTITY new-message.tooltip "Yeni Email mesajı yaz">
 <!ENTITY next-tab.label "Sonraki Sekme">
 <!ENTITY next-tab.tooltip "Sonraki Sekmeye Git">
-<!ENTITY tb-open.label "Aç">
-<!ENTITY tb-open.tooltip "Bir dosya aç">
+<!ENTITY open.label "Aç">
+<!ENTITY open.tooltip "Bir dosya aç">
 <!ENTITY page-source.tooltip "Sayfa kaynağını göster">
 <!ENTITY pageinfo.label "Sayfa Bilgisi">
 <!ENTITY pageinfo.tooltip "Sayfa Bilgisi Penceresini Aç">
@@ -172,6 +172,7 @@
 <!ENTITY tab-list.tooltip "Sekme Listesini Göster">
 <!ENTITY tasks-toggle.label "Görevleri Tersle">
 <!ENTITY tasks-toggle.tooltip "Görev Çubuğunu Tersle">
+<!ENTITY tb-download-sync.label "Şimdi indir/eşitle…">
 <!ENTITY tb-history-menu.label "Geçmiş">
 <!ENTITY tb-new-tab.label "Yeni sekme">
 <!ENTITY tb-open-in-conversation.label "Dizi görünümünde aç">

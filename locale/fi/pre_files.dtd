@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Lisää">
+<!ENTITY tb-string-preference.browse "Selaa">
+<!ENTITY tb-string-preference.close "Sulje">
+<!ENTITY tb-string-preference.delete "Poista">
+<!ENTITY tb-string-preference.edit "Muokkaa">
+<!ENTITY tb-string-preference.name "Nimi">
+<!ENTITY tb-string-preference.save "Save">
+<!ENTITY tb-string-preference.value "Arvo">

@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Toevoegen">
+<!ENTITY tb-string-preference.browse "Bladeren">
+<!ENTITY tb-string-preference.close "Sluiten">
+<!ENTITY tb-string-preference.delete "Verwijderen">
+<!ENTITY tb-string-preference.edit "Bewerken">
+<!ENTITY tb-string-preference.name "Naam">
+<!ENTITY tb-string-preference.save "Opslaan">
+<!ENTITY tb-string-preference.value "Waarde">

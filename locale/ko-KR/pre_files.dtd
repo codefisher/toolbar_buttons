@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "추가">
+<!ENTITY tb-string-preference.browse "찾아보기">
+<!ENTITY tb-string-preference.close "닫기">
+<!ENTITY tb-string-preference.delete "삭제">
+<!ENTITY tb-string-preference.edit "편집">
+<!ENTITY tb-string-preference.name "이름">
+<!ENTITY tb-string-preference.save "저장">
+<!ENTITY tb-string-preference.value "값">

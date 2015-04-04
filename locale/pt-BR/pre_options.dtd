@@ -1,3 +1,8 @@
+<!ENTITY options.window.title "Opção Toolbar Buttons">
+<!ENTITY open-new-tab.new "Abrir uma nova aba.">
+<!ENTITY open-new-tab.label "Abrir botões How Link">
 <!ENTITY confirm.caption "Confirmar">
 <!ENTITY settings.label "Configurações">
-<!ENTITY options.window.title "Opção Toolbar Buttons">
+<!ENTITY delete.cookies.checkbox "Prompt antes de apagar cookies.">
+<!ENTITY tb-delete-cookies.label "Apagar Cookies">
+<!ENTITY open-new-tab.current "Abrir na aba corrente.">

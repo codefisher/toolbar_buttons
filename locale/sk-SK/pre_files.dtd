@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Pridať">
+<!ENTITY tb-string-preference.browse "Prehľadávať">
+<!ENTITY tb-string-preference.close "Zavrieť">
+<!ENTITY tb-string-preference.delete "Odstrániť">
+<!ENTITY tb-string-preference.edit "Upraviť">
+<!ENTITY tb-string-preference.name "Názov">
+<!ENTITY tb-string-preference.save "Uložiť">
+<!ENTITY tb-string-preference.value "Hodnota">

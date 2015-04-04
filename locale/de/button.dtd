@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Zum nächsten Tab gehen">
 <!ENTITY open-current-frame.label "Frame anzeigen">
 <!ENTITY open-current-frame.tooltip "Nur aktuellen Frame anzeigen">
-<!ENTITY tb-open.label "Öffnen">
-<!ENTITY tb-open.tooltip "Datei öffnen...">
+<!ENTITY open.label "Öffnen">
+<!ENTITY open.tooltip "Datei öffnen...">
 <!ENTITY page-source.label "Quelltext">
 <!ENTITY page-source.tooltip "Quelltext anzeigen">
 <!ENTITY pageinfo.label "Seiteninformationen">
@@ -244,7 +244,11 @@
 <!ENTITY stop-all.tooltip "Das Laden aller Tabs stoppen">
 <!ENTITY stop-animation.label "Animation">
 <!ENTITY stop-animation.tooltip "Die Darstellung von animierten GIFs sowie Blink- und Lauftext ein-/ausschalten">
+<!ENTITY stop-cookies.allow "Alle Cookies zulassen">
+<!ENTITY stop-cookies.block "Cookies sperren">
 <!ENTITY stop-cookies.label "Cookies">
+<!ENTITY stop-cookies.privacy "Erlauben, entsprechend Ihrer Privatsphären-Einstellungen">
+<!ENTITY stop-cookies.thirdparty "Nur von direkt aufgerufener Website erlauben">
 <!ENTITY stop-cookies.tooltip "Die Benutzung von Cookies ein-/ausschalten">
 <!ENTITY stop-dinamic-content.label "Eingebettete Objekte">
 <!ENTITY stop-dinamic-content.tooltip "Das Laden von eingebetteten Objekten ein-/ausschalten">
@@ -260,7 +264,13 @@
 <!ENTITY tasks-in-view.tooltip "Aufgaben im Kalender anzeigen/nicht anzeigen">
 <!ENTITY tasks-toggle.label "Aufgaben">
 <!ENTITY tasks-toggle.tooltip "Aufgabenbereich ein-/ausblenden">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "Auflisten und Öffnen einer der about:-Seiten">
+<!ENTITY tb-about-blank.label "Tab leeren">
 <!ENTITY tb-about-blank.tooltip "Einen leeren Tab öffnen oder laden">
+<!ENTITY tb-addons-exceptions.label "Berechtigte Add-ons-Websites">
+<!ENTITY tb-all-menus.label "Menü">
+<!ENTITY tb-all-menus.tooltip "Alle Menüs">
 <!ENTITY tb-clear-cache.label "Cache leeren">
 <!ENTITY tb-clear-cache.tooltip "Leert den Cache des Browsers">
 <!ENTITY tb-clear-search.label "Suchleiste leeren">
@@ -269,9 +279,13 @@
 <!ENTITY tb-clear-url.tooltip "Adressleiste leeren und und die Schreibmarke hineinsetzen">
 <!ENTITY tb-clone-tab.label "Tab kopieren">
 <!ENTITY tb-clone-tab.tooltip "Den aktuellen Tab duplizieren">
+<!ENTITY tb-cookie-exceptions.label "Cookie-Ausnahmen">
 <!ENTITY tb-cookie-manager.label "Cookie-Verwaltung">
 <!ENTITY tb-cookie-manager.tooltip "Die Cookie-Verwaltung für die aktuelle Webseite öffnen.">
+<!ENTITY tb-delete-cookies.label "Cookies löschen">
+<!ENTITY tb-delete-session-cookies.label "Sitzungscookies löschen">
 <!ENTITY tb-download-sync.label "Jetzt Herunterladen oder Synchronisieren">
+<!ENTITY tb-download-sync.tooltip "Herunterladen und Synchronisation ausführen, bevor der Offline-Modus ausgeführt wird">
 <!ENTITY tb-edit-menu.label "Menü &quot;Bearbeiten&quot;">
 <!ENTITY tb-edit-menu.tooltip "Menü &quot;Bearbeiten&quot; anzeigen">
 <!ENTITY tb-file-menu.label "Menü &quot;Datei&quot;">
@@ -281,16 +295,23 @@
 <!ENTITY tb-new-event.label "Neues Ereignis">
 <!ENTITY tb-new-event.tooltip "Fügt ein neues Ereignis dem Kalender hinzu.">
 <!ENTITY tb-new-tab.label "Neuer Tab">
+<!ENTITY tb-new-tab.tooltip "Neuen Tab öffnen">
 <!ENTITY tb-new-task.label "Neue Aufgabe">
 <!ENTITY tb-new-task.tooltip "Fügt eine neue Aufgabe dem Kalender hinzu.">
 <!ENTITY tb-open-in-conversation.label "In Themenbaum anzeigen">
 <!ENTITY tb-open-in-conversation.tooltip "Aktuelle Nachricht in Themenbaum anzeigen">
+<!ENTITY tb-page-info-media.label "Seite der Medieninhalte">
+<!ENTITY tb-page-info-media.tooltip "Seiteninformationen im Medien-Tab öffnen">
 <!ENTITY tb-page-reload.label "Neu laden">
+<!ENTITY tb-page-reload.tooltip "Aktuelle Seite neu laden">
 <!ENTITY tb-page-stop.label "Stopp">
+<!ENTITY tb-page-stop.tooltip "Laden der aktuellen Seite anhalten">
 <!ENTITY tb-print-page.label "Drucken">
 <!ENTITY tb-print-page.tooltip "Diese Seite drucken">
 <!ENTITY tb-saved-passwords.label "Passwörter">
+<!ENTITY tb-saved-passwords.tooltip "Passwort-Manager öffnen">
 <!ENTITY tb-search-go-button.label "Suche beginnen">
+<!ENTITY tb-search-go-button.tooltip "Web-Suche aufrufen">
 <!ENTITY tb-search-minus.label "Suchleistenbreite verkleinern">
 <!ENTITY tb-search-minus.tooltip "Verringert die Breite der Suchleiste bei jedem Klick um 10 Pixel">
 <!ENTITY tb-search-plus.label "Suchleistenbreite vergrößern">
@@ -298,7 +319,9 @@
 <!ENTITY tb-search-resize.label "Größe der Suchleiste ändern">
 <!ENTITY tb-search-resize.tooltip "Die Breite der Suchleiste festlegen">
 <!ENTITY tb-show-all-history.label "Gesamte Chronik anzeigen">
+<!ENTITY tb-show-all-history.tooltip "Bibliothek der gesamten Chronik anzeigen">
 <!ENTITY tb-toggle-headers.label "E-Mail-Header">
+<!ENTITY tb-toggle-headers.tooltip "Umschalten, welche E-Mail-Kopfzeilen angezeigt werden sollen">
 <!ENTITY tb-toggle-menu-bar.label "Menüleiste">
 <!ENTITY tb-toggle-menu-bar.tooltip "Menüleiste ein-/ausblenden">
 <!ENTITY tb-toggle-popup-blocker.label "Pop-up-Blocker">
@@ -307,6 +330,8 @@
 <!ENTITY tb-tools-menu.tooltip "Menü &quot;Extras&quot; anzeigen">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Twitter-Homepage öffnen">
+<!ENTITY tb-url-go-button.label "Adresse laden">
+<!ENTITY tb-url-go-button.tooltip "Zur aktuellen Adresse">
 <!ENTITY tb-view-menu.label "Menü &quot;Ansicht&quot;">
 <!ENTITY tb-view-menu.tooltip "Menü &quot;Ansicht&quot; anzeigen">
 <!ENTITY themes.label "Themes">
@@ -327,6 +352,7 @@
 <!ENTITY toggle-toolbar.tooltip "Navigations-Symbolleiste ein-/ausblenden">
 <!ENTITY toggle.proxy.auto.configuration "Automatische Proxy-Konfigurations-URL">
 <!ENTITY toggle.proxy.auto.detect "Proxy-Einstellungen automatisch erkennen">
+<!ENTITY toggle.proxy.direct "Direkte Verbindung, keinen Proxy verwenden">
 <!ENTITY toggle.proxy.manual "Manuelle Proxy-Konfiguration">
 <!ENTITY toggle.proxy.system "Proxy-Einstellungen des Systems verwenden">
 <!ENTITY toolbar-menu.label "Symbolleisten">
@@ -348,6 +374,7 @@
 <!ENTITY use-document-fonts.label "Webseiten-Schriftarten">
 <!ENTITY use-document-fonts.tooltip "Webseiten eigene Schriftarten erlauben/nicht erlauben">
 <!ENTITY watched-with-unread-threads.label "Beobachtete Themen mit Ungelesenen">
+<!ENTITY watched-with-unread-threads.tooltip "Beobachtete Threads mit ungelesenen Beiträgen ansehen">
 <!ENTITY websearch.label "Web-Suche">
 <!ENTITY websearch.tooltip "Das Internet mit bevorzugter Suchmaschine durchsuchen">
 <!ENTITY wikipedia.label "Wikipedia">

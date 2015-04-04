@@ -1,0 +1,9 @@
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-string-preference.add "Adicionar">
+<!ENTITY tb-string-preference.browse "Procurar…">
+<!ENTITY tb-string-preference.close "Fechar">
+<!ENTITY tb-string-preference.delete "Excluir">
+<!ENTITY tb-string-preference.edit "Editar">
+<!ENTITY tb-string-preference.name "Nome">
+<!ENTITY tb-string-preference.save "Salvar">
+<!ENTITY tb-string-preference.value "Valor">

@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Naar het volgende tabblad gaan">
 <!ENTITY open-current-frame.label "Huidig frame weergeven">
 <!ENTITY open-current-frame.tooltip "Alleen het momenteel geselecteerde frame wordt weergegeven.">
-<!ENTITY tb-open.label "Openen">
-<!ENTITY tb-open.tooltip "Bestand openen">
+<!ENTITY open.label "Openen">
+<!ENTITY open.tooltip "Bestand openen">
 <!ENTITY page-source.label "Bron">
 <!ENTITY page-source.tooltip "Paginabron bekijken">
 <!ENTITY pageinfo.label "Pagina-info">
@@ -244,7 +244,11 @@
 <!ENTITY stop-all.tooltip "Laden van alle tabbladen stoppen">
 <!ENTITY stop-animation.label "Animatie wisselen">
 <!ENTITY stop-animation.tooltip "Animated gifs, blink- en marqueelabels stoppen">
+<!ENTITY stop-cookies.allow "Alle cookies toestaan">
+<!ENTITY stop-cookies.block "Cookies blokkeren">
 <!ENTITY stop-cookies.label "Cookies wisselen">
+<!ENTITY stop-cookies.privacy "Toestaan op basis van privacyinstellingen">
+<!ENTITY stop-cookies.thirdparty "Toestaan voor bronwebsite">
 <!ENTITY stop-cookies.tooltip "Cookies worden niet meer ingesteld">
 <!ENTITY stop-dinamic-content.label "Ingebedde inhoud wisselen">
 <!ENTITY stop-dinamic-content.tooltip "Laden van alle ingebedde inhoud stoppen">
@@ -260,8 +264,13 @@
 <!ENTITY tasks-in-view.tooltip "Taken in beeld wisselen">
 <!ENTITY tasks-toggle.label "Taken wisselen">
 <!ENTITY tasks-toggle.tooltip "Taakbalk wisselen">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY tb-about-about.tooltip "Elke pagina ‘Over’ vermelden en openen">
 <!ENTITY tb-about-blank.label "Tabblad wissen">
 <!ENTITY tb-about-blank.tooltip "Een leeg tabblad openen/laden">
+<!ENTITY tb-addons-exceptions.label "Toegestane websites voor add-ons">
+<!ENTITY tb-all-menus.label "Menu">
+<!ENTITY tb-all-menus.tooltip "Alle menu’s">
 <!ENTITY tb-clear-cache.label "Buffer opschonen">
 <!ENTITY tb-clear-cache.tooltip "Browserbuffer opschonen">
 <!ENTITY tb-clear-search.label "Zoekveld wissen">
@@ -270,8 +279,11 @@
 <!ENTITY tb-clear-url.tooltip "Wissen en op locatiebalk focussen">
 <!ENTITY tb-clone-tab.label "Tabbald kopiëren">
 <!ENTITY tb-clone-tab.tooltip "Maakt een kopie van het huidige tabblad">
+<!ENTITY tb-cookie-exceptions.label "Cookie-uitzonderingen">
 <!ENTITY tb-cookie-manager.label "Cookiebeheerder">
 <!ENTITY tb-cookie-manager.tooltip "Opent de cookiebeheerder voor de huidige webpagina.">
+<!ENTITY tb-delete-cookies.label "Cookies verwijderen">
+<!ENTITY tb-delete-session-cookies.label "Sessiecookies verwijderen">
 <!ENTITY tb-download-sync.label "Nu downloaden/synchroniseren">
 <!ENTITY tb-download-sync.tooltip "Download en synchronisatie uitvoeren alvorens offline te gaan">
 <!ENTITY tb-edit-menu.label "Menu Bewerken">
@@ -282,7 +294,8 @@
 <!ENTITY tb-history-menu.tooltip "Menu Geschiedenis openen">
 <!ENTITY tb-new-event.label "Nieuwe gebeurtenis">
 <!ENTITY tb-new-event.tooltip "Een nieuwe gebeurtenis aan de kalender toevoegen.">
-<!ENTITY tb-new-tab.label "&#xad;Nieuw tabblad">
+<!ENTITY tb-new-tab.label "­Nieuw tabblad">
+<!ENTITY tb-new-tab.tooltip "Een nieuw browsertabblad openen">
 <!ENTITY tb-new-task.label "Nieuwe taak">
 <!ENTITY tb-new-task.tooltip "Een nieuwe taak toevoegen aan de kalender.">
 <!ENTITY tb-open-in-conversation.label "Openen in discussie">
@@ -290,10 +303,13 @@
 <!ENTITY tb-page-info-media.label "Pagina-media">
 <!ENTITY tb-page-info-media.tooltip "Pagina-informatie openen op mediatabblad">
 <!ENTITY tb-page-reload.label "Vernieuwen">
+<!ENTITY tb-page-reload.tooltip "De huidige pagina opnieuw laden">
 <!ENTITY tb-page-stop.label "Stoppen">
+<!ENTITY tb-page-stop.tooltip "Pagina laden stoppen">
 <!ENTITY tb-print-page.label "Afdrukken">
 <!ENTITY tb-print-page.tooltip "Deze pagina afdrukken">
 <!ENTITY tb-saved-passwords.label "Wachtwoorden">
+<!ENTITY tb-saved-passwords.tooltip "Wachtwoordbeheerder openen">
 <!ENTITY tb-search-go-button.label "Zoekopdracht uitvoeren">
 <!ENTITY tb-search-go-button.tooltip "Op het web zoeken">
 <!ENTITY tb-search-minus.label "Zoekbalk verkleinen">
@@ -336,6 +352,7 @@
 <!ENTITY toggle-toolbar.tooltip "De hoofdwerkbalk wisselen">
 <!ENTITY toggle.proxy.auto.configuration "Automatische proxyconfiguratie (PAC)">
 <!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
+<!ENTITY toggle.proxy.direct "Rechtstreekse verbinding, geen proxy">
 <!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">
 <!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY toolbar-menu.label "Werkbalken openen">

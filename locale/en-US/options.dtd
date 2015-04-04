@@ -1,67 +1,309 @@
-<!ENTITY gmail.label "Gmail">
-<!ENTITY options.window.title "Toolbar Buttons Options">
+<!ENTITY get-inbox.label "Get Inbox">
+<!ENTITY html-mode.label "HTML Mode">
+<!ENTITY tb-about-permissions.label "about:permissions">
 <!ENTITY google.label "Google">
-<!ENTITY toggle.prox.label "Proxy">
-<!ENTITY firefox-theme.label "Themes">
-<!ENTITY translate.service.description "Select which translation service you want to use.">
-<!ENTITY thunderbird-theme.label "Themes">
-<!ENTITY toggle.proxy.description "The proxy toggle button can toggle between system proxy and one of the below options.">
-<!ENTITY clipboard.newwindow "In New Window">
-<!ENTITY thunderbird-extension.label "Extensions">
-<!ENTITY delete.cookies.checkbox "Prompt before deleting cookies.">
-<!ENTITY restart.checkbox "Do not prompt before restart.">
-<!ENTITY tb-delete-cookies.label "Delete Cookies">
-<!ENTITY previous-next.label "Previous &amp; Next">
-<!ENTITY translate.loading "Loading...">
-<!ENTITY toggle.checkbox "Reload page after toggling setting.">
-<!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
-<!ENTITY restart.label "Restart">
-<!ENTITY clipboard.label "Clipboard Link">
-<!ENTITY read.select.button "Select">
-<!ENTITY open-new-tab.label "How Link Buttons Open">
-<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
-<!ENTITY bookmark-manager.label "Bookmark Manager">
+<!ENTITY up-directory.label "Up Directory">
+<!ENTITY tb-new-window.label "New Window">
+<!ENTITY tb-options-menu.label "Options Menu">
+<!ENTITY tb-send-referrer.label "Send Referrer">
+<!ENTITY delete-tasks.label "Delete Tasks">
 <!ENTITY paypal.label "PayPal">
-<!ENTITY open-new-tab.new "Open in a new tab.">
-<!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
-<!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
-<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
-<!ENTITY confirm.caption "Confirm">
-<!ENTITY favorite-page.label "Favourite Page">
-<!ENTITY toggle.proxy.system "Use system proxy settings">
-<!ENTITY translate.label "Translate">
-<!ENTITY open-new-tab.current "Open in current tab.">
+<!ENTITY watched-with-unread-threads.label "Watched Threads with Unread">
+<!ENTITY clear-url.label "Hide Url">
+<!ENTITY tb-codefisher.label "Codefisher">
+<!ENTITY tb-pin-tab.label "Pin Tab">
+<!ENTITY about-mem-cache.label "about:cache Memory">
+<!ENTITY delete-event.label "Delete Events">
+<!ENTITY restart.checkbox "Do not prompt before restart.">
+<!ENTITY favorite-page.description "Used For the &apos;Favorite Page&apos; button.  Kind of like a second home page">
+<!ENTITY stop-cookies.label "Toggle Cookies">
+<!ENTITY delete-junk.label "Delete Junk">
+<!ENTITY accountwizard.label "Account Setup">
+<!ENTITY tb-cookie-manager.label "Cookie Manager">
+<!ENTITY clipboard.label "Clipboard Link">
+<!ENTITY tb-color-picker.label "Color Picker">
+<!ENTITY tb-cut.label "Cut">
+<!ENTITY tb-search-resize.label "Resize Search Size">
+<!ENTITY readnews.path.desc "The path to your news client, use if the button does not work.">
+<!ENTITY tb-addon-options.label "Add-on Preferences">
+<!ENTITY open-new-tab.label "How Link Buttons Open">
+<!ENTITY link-open.label "Link Setting">
+<!ENTITY tb-hide-other-toolbars.label "Hide Toolbars">
+<!ENTITY send-link.label "Email Link">
 <!ENTITY toggle.proxy.manual "Manual proxy configuration">
-<!ENTITY clipboard.currenttab "In Current Tab">
-<!ENTITY tb-twitter-button.label "Twitter">
-<!ENTITY translate.description "Select what language you want the translate button to use.">
-<!ENTITY translate.service.google "Google Translate">
-<!ENTITY hotmail-button.label "Hotmail">
-<!ENTITY bookmark-manager.tab.checkbox "Open Bookmark Manger in a new tab.">
-<!ENTITY previous-next.checkbox "Change Previous and Next button direction.">
-<!ENTITY firefox-extension.label "Extensions">
-<!ENTITY readmail.path.caption "Mail Path">
+<!ENTITY tb-new-task.label "New Task">
+<!ENTITY close-other-tabs.label "Close Other Tabs">
 <!ENTITY javaScriptConsole.browser "Browser Console">
-<!ENTITY toggle.label "Toggle Buttons">
+<!ENTITY tb-page-reload.label "Reload">
+<!ENTITY translate.label "Translate">
+<!ENTITY tb-external-application.label "Run Application">
+<!ENTITY forward-as-attachment.label "Forward As Attachment">
+<!ENTITY tb-twitter-button.label "Twitter">
+<!ENTITY attachments-delete.label "Delete Attachments">
+<!ENTITY tb-developer-toolbar.label "Developer Toolbar">
+<!ENTITY translate.service.google "Google Translate">
+<!ENTITY tb-file-menu.label "File Menu">
+<!ENTITY clipboard-button.label "">
+<!ENTITY firefox-extension.label "Get Extensions">
+<!ENTITY tb-page-go.label "Go">
+<!ENTITY tb-network-monitor.label "Network">
+<!ENTITY about-disk-cache.label "about:cache Disk">
+<!ENTITY tb-saved-passwords.label "Passwords">
+<!ENTITY print-preview.label "Print Preview">
+<!ENTITY page-source.label "Source">
 <!ENTITY javaScriptConsole.web "Web Console">
-<!ENTITY links.caption "Links">
-<!ENTITY translate.service.bing "Bing Translator">
-<!ENTITY javaScriptConsole.label "Console">
+<!ENTITY tb-useragent-switch.label "User Agent">
+<!ENTITY themes.label "Themes">
+<!ENTITY tb-clone-tab.label "Copy Tab">
+<!ENTITY javaScriptConsole.label "Error Console">
 <!ENTITY javaScriptConsole.errorconsole "Enable Error Console">
-<!ENTITY translate.service.promt "PROMT Online Translator">
-<!ENTITY javaScriptConsole.setting.description "If the Error Console is disabled open:">
-<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY tb-link-buttons.label "Link Buttons">
+<!ENTITY minimize-window.label "Minimize">
+<!ENTITY statusbar-toggle.label "Status Bar">
+<!ENTITY preferences.label "Options">
+<!ENTITY tb-clear-search.label "Clear Search">
+<!ENTITY tb-toggle-popup-blocker.label "PopUp Blocker">
+<!ENTITY websearch.label "Web Search">
+<!ENTITY undo.label "Undo">
+<!ENTITY toolbar-menu.label "Toolbars">
+<!ENTITY tb-delete-cookies.label "Delete Cookies">
+<!ENTITY settings.label "Settings">
+<!ENTITY tb-style-editor.label "Style Editor">
+<!ENTITY tb-web-developer-menu.label "Web Developer">
+<!ENTITY tb-about-blank.label "Clear Tab">
+<!ENTITY extensions.label "Extensions">
+<!ENTITY installaddons.label "Install">
+<!ENTITY delete.cookies.checkbox "Prompt before deleting cookies.">
+<!ENTITY tb-new-event.label "New Event">
+<!ENTITY import.label "Import">
+<!ENTITY tb-up-page.label "Page Up">
+<!ENTITY tb-toggle-headers.label "Email Headers">
+<!ENTITY delete-button.label "">
+<!ENTITY stop-all.label "Stop All">
+<!ENTITY snap-back.label "Snap Back">
+<!ENTITY stop-animation.label "Animation">
+<!ENTITY thunderbird-extension.label "Get Extensions">
+<!ENTITY unread-threads.label "Unread Threads">
+<!ENTITY tb-free-memory.label "Free Memory">
+<!ENTITY tb-show-a-menu.option.label "Show in menu.">
+<!ENTITY compact.label "Compact">
+<!ENTITY toggle.checkbox "Reload page after toggling setting.">
+<!ENTITY all-threads.label "All Threads">
+<!ENTITY copy-address.label "Copy Email">
+<!ENTITY read.select.button "Select">
+<!ENTITY add-address.label "Add Email">
+<!ENTITY tasks-toggle.label "Toggle Tasks">
+<!ENTITY reload-skip-cache.label "Reload Skip Cache">
+<!ENTITY bookmark-manager.label "Bookmark Manager">
+<!ENTITY tb-search-go-button.label "Search Go">
+<!ENTITY tb-copy.label "Copy">
+<!ENTITY confirm.caption "Confirm">
+<!ENTITY java-toggle.label "Toggle Java">
+<!ENTITY tb-scratch-pad.label "Scratchpad">
 <!ENTITY toggle.proxy.direct "Direct connection, no proxy">
+<!ENTITY ebay.label "eBay">
+<!ENTITY tb-tab-close-history.label "Recently Closed Tabs">
+<!ENTITY tb-archive-thread.label "Archive Thread">
+<!ENTITY tb-pipeline-toggle.label "Toggle Pipelining">
+<!ENTITY restart.label "Restart">
+<!ENTITY toggle-toolbar.label "Toggle Toolbar">
+<!ENTITY tb-message-menu.label "Message">
+<!ENTITY full-screen.label "Full Screen">
+<!ENTITY realPreviousMessage.label "Previous Message">
+<!ENTITY search-messages.label "Search Messages">
+<!ENTITY hotmail-button.label "Hotmail">
+<!ENTITY bookmarks-menu-button2.label "">
+<!ENTITY previous-next.checkbox "Change Previous and Next button direction.">
+<!ENTITY show-frame.label "Show Frame">
+<!ENTITY msg-filter.label "Filters">
+<!ENTITY previous-tab.label "Previous Tab">
+<!ENTITY tb-all-menus.option.icons "Show icons in the menu.">
+<!ENTITY tb-create-screenshot.label "">
+<!ENTITY with-unread-threads.label "Threads with Unread">
+<!ENTITY links.caption "Links">
+<!ENTITY forward-as-inline.label "Forward Inline">
+<!ENTITY tb-sql-console.label "SQL Console">
+<!ENTITY toggle-read.label "Toggle Read">
+<!ENTITY tb-services.label "Services">
+<!ENTITY next-tab.label "Next Tab">
+<!ENTITY tb-check-for-update.label "Update">
+<!ENTITY accountmanager.label "Account Settings">
+<!ENTITY tb-go-back.label "Back">
 <!ENTITY yahoo-button.label "Yahoo Mail">
 <!ENTITY clear.cache.checkbox "Prompt before clearing the cache.">
-<!ENTITY ebay.label "eBay">
-<!ENTITY settings.label "Settings">
-<!ENTITY readnews.path.caption "News Path">
-<!ENTITY tb-clear-cache.label "Clear Cache">
+<!ENTITY return-receipt.label "Return Receipt">
+<!ENTITY tb-download-sync.label "Download/Sync Now…">
+<!ENTITY purge.label "Purge">
+<!ENTITY realNextMessage.label "Next Message">
+<!ENTITY home-page-change.label "Change Home">
+<!ENTITY reply-sender.label "Reply to Sender Only">
+<!ENTITY shift-delete.label "Skip Trash">
+<!ENTITY dictionary-list.label "Change Dictionary">
+<!ENTITY find-prev.label "Find Previous">
+<!ENTITY restart-app.label "Restart">
+<!ENTITY tb-toggle-tools.label "Toggle Tools">
+<!ENTITY tb-text-case-change.label "Change Case">
+<!ENTITY tb-addons-exceptions.label "Add-ons Allowed Sites">
+<!ENTITY options.window.title "Toolbar Buttons Options">
+<!ENTITY tb-window-menu.label "Window">
+<!ENTITY toggle.prox.label "Proxy">
 <!ENTITY clipboard.newtab "In New Tab">
+<!ENTITY reload-proxy.label "Reload Proxy">
+<!ENTITY stop-dynamic-content.label "">
+<!ENTITY translate.service.description "Select which translation service you want to use.">
+<!ENTITY edit-draft.label "Edit Draft">
+<!ENTITY about-config.label "about:config">
+<!ENTITY tb-sidebar.label "Sidebar">
+<!ENTITY tb-format-menu.label "Format">
+<!ENTITY use-document-fonts.label "Page Fonts">
+<!ENTITY tb-history-sidebar.label "History Sidebar">
+<!ENTITY tb-reload-all-tabs.label "Reload All Tabs">
+<!ENTITY previous-next.label "Previous &amp; Next">
+<!ENTITY bookmark.label "Bookmark Page">
+<!ENTITY tb-search-plus.label "Increase Searchbar Size">
+<!ENTITY tb-toggle-menu-bar.label "Toggle menu bar">
+<!ENTITY tb-about-about.label "about:about">
+<!ENTITY image-toggle.label "Toggle Images">
+<!ENTITY tb-cookie-exceptions.label "Cookie Exceptions">
+<!ENTITY min-font-size.label "Minimum Font Size">
+<!ENTITY tb-webide.label "WebIDE">
+<!ENTITY use-document-colors.label "Page Colours">
+<!ENTITY rename-tab.label "Rename Tab">
+<!ENTITY tb-view-menu.label "View Menu">
+<!ENTITY open-new-tab.new "Open in a new tab.">
+<!ENTITY tb-first-last-tab.label "Go First/Last Tab">
+<!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
+<!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
+<!ENTITY tb-url-go-button.label "Address Go">
+<!ENTITY tb-page-stop.label "Stop">
+<!ENTITY pageinfo.label "Page Info">
+<!ENTITY tb-page-info-media.label "Page Media">
+<!ENTITY stop-flash.label "Flash">
+<!ENTITY addons.label "Add-ons">
+<!ENTITY favorite-page.label "Favourite Page">
+<!ENTITY toggle.proxy.system "Use system proxy settings">
+<!ENTITY toggle-styles.label "Toggle Styles">
+<!ENTITY ignored-threads.label "Ignored Threads">
+<!ENTITY tb-show-a-menu.option.title "Menus">
+<!ENTITY msg-pane.label "Message Pane">
+<!ENTITY tb-all-menus.option.description "The follow settings will be applied if the &quot;All menus&quot; button is placed on the toolbar, without it, they maybe ignored.">
+<!ENTITY bottom-page.label "Bottom">
+<!ENTITY toggle-starred.label "Toggle Starred">
+<!ENTITY bookmark-nopop.label "Quick Bookmark">
+<!ENTITY clear-data.label "Clear Data">
+<!ENTITY tb-history-menu.label "History">
+<!ENTITY tasks-in-view.label "Tasks In View">
+<!ENTITY reset.label "Reset Zoom">
+<!ENTITY stop-movies.label "Movies">
+<!ENTITY new-message.label "New Message">
+<!ENTITY change-text-direction.label "Change Text Direction">
+<!ENTITY read-message.label "Read">
+<!ENTITY tb-new-tab.label "New Tab">
+<!ENTITY enlarge.label "Zoom In">
+<!ENTITY toggle.label "Toggle Buttons">
+<!ENTITY clipboard.currenttab "In Current Tab">
+<!ENTITY translate.service.bing "Bing Translator">
+<!ENTITY about-application.label "About">
+<!ENTITY workoffline.label "Work Offline">
+<!ENTITY bookmarks-menu-button1.label "">
+<!ENTITY find.label "Find">
+<!ENTITY label-all-blank.label "Remove Labels">
+<!ENTITY readnews.path.caption "News Path">
+<!ENTITY tb-responsive-ui.label "Responsive Design">
+<!ENTITY toggle-bookmark-toolbar.label "">
+<!ENTITY saveas.label "Save">
+<!ENTITY tb-move-to-window.label "Move to Window">
+<!ENTITY tb-text-zoom-only.label "Zoom Text Only">
+<!ENTITY send-receive.label "Send &amp; Receive">
+<!ENTITY open-new-tab.current "Open in current tab.">
+<!ENTITY reload-all-tabs.label "Reload Tabs">
+<!ENTITY close-tab.label "Close Tab">
+<!ENTITY tb-tools-menu.label "Tools Menu">
+<!ENTITY open-current-frame.label "Current Frame">
+<!ENTITY label-blank.label "Remove Label">
+<!ENTITY tb-edit-menu.label "Edit Menu">
+<!ENTITY gmail.label "Gmail">
+<!ENTITY send-with-no-save.label "Send Without Save">
+<!ENTITY tb-go-menu.label "Go">
+<!ENTITY stop-iframe.label "iframes">
+<!ENTITY personal-bookmarks-menu-button.label "Bookmark Toolbar Menu">
+<!ENTITY tb-paste.label "Paste">
+<!ENTITY tb-preference-button.label "">
+<!ENTITY toggle.proxy.auto.detect "Auto-detect proxy settings">
+<!ENTITY tb-show-all-history.label "Show All History">
+<!ENTITY hide-images.label "Hide Images">
+<!ENTITY search-addresses.label "Search Addresses">
+<!ENTITY attachments-detach.label "Detach Attachments">
+<!ENTITY customize-toolbar.label "Customize Toolbar">
+<!ENTITY tb-all-menus.option.settings "Show settings items in the menu.">
+<!ENTITY toggle.proxy.description "The proxy toggle button can toggle between system proxy and one of the below options.">
+<!ENTITY translate.description "Select what language you want the translate button to use.">
+<!ENTITY tb-down-page.label "Page Down">
+<!ENTITY tb-eyedropper.label "Eyedropper">
+<!ENTITY tb-languages.label "Languages">
+<!ENTITY about-plugins.label "about:plugins">
+<!ENTITY tb-jsdebugger.label "Debugger">
+<!ENTITY tb-go-forward.label "Forward">
+<!ENTITY tb-clear-url.label "Clear Url">
+<!ENTITY read-news.label "Read News">
+<!ENTITY close-all-tabs.label "Close All">
+<!ENTITY tb-all-menus.tooltip "All menus">
+<!ENTITY tb-toolbar-display.label "Toolbar Display">
+<!ENTITY empty-trash.label "Empty Trash">
+<!ENTITY firefox-theme.label "Get Themes">
+<!ENTITY redo.label "Redo">
+<!ENTITY translate.loading "Loading...">
+<!ENTITY plainpaste.label "Plain Text Paste">
+<!ENTITY bookmark-tabs.label "Bookmark All">
+<!ENTITY tb-insert-menu.label "Insert">
+<!ENTITY reduce.label "Zoom Out">
+<!ENTITY about-cache.label "about:cache">
+<!ENTITY tb-all-menus.label "Menu">
+<!ENTITY inspecter.label "DOM Inspector">
+<!ENTITY thunderbird-theme.label "Get Themes">
+<!ENTITY tb-paste-as-quote.label "Paste As Quotation">
+<!ENTITY select-all.label "Select All">
+<!ENTITY clipboard.newwindow "In New Window">
+<!ENTITY tb-switch-profile.label "Switch Profile...">
+<!ENTITY tb-browser-console.label "Browser Console">
+<!ENTITY tb-open-download-folder.label "Download Folder">
+<!ENTITY javascript-toggle.label "Toggle JavaScript">
+<!ENTITY tab-list.label "Tab List">
+<!ENTITY edit-as-new.label "Edit as New">
+<!ENTITY bookmark-manager.tab.checkbox "Open Bookmark Manger in a new tab.">
+<!ENTITY tb-delete-session-cookies.label "Delete Session Cookies">
+<!ENTITY tb-clear-cache.label "Clear Cache">
+<!ENTITY tb-bookmark-sidebar.label "Bookmark Sidebar">
+<!ENTITY help.label "Help">
+<!ENTITY find-again.label "Find Again">
+<!ENTITY tb-jsprofiler.label "Performance">
+<!ENTITY undo-close-tab.label "Undo Close Tab">
+<!ENTITY top-page.label "Top">
+<!ENTITY tb-plugins.label "Plugins">
+<!ENTITY tb-print-page.label "Print">
+<!ENTITY profile-folder.label "Profile">
+<!ENTITY tb-base64.label "Data URI Generator">
+<!ENTITY translate.service.promt "PROMT Online Translator">
+<!ENTITY save-frame.label "Save Frame">
+<!ENTITY tb-create-profile.label "">
+<!ENTITY wikipedia.label "Wikipedia">
+<!ENTITY readmail.path.caption "Mail Path">
+<!ENTITY exit.label "Exit">
+<!ENTITY pagesetup.label "Page Setup">
+<!ENTITY tb-help-menu.label "Help">
+<!ENTITY tb-open-in-conversation.label "Open in Conversation">
+<!ENTITY create-filter.label "Create Filter">
+<!ENTITY tb-remote-content.label "Remote Content">
+<!ENTITY tb-open.label "Open">
+<!ENTITY read-mail.label "Read Mail">
+<!ENTITY tb-social-share.label "Share">
+<!ENTITY tb-search-minus.label "Decrease Searchbar Size">
+<!ENTITY tb-inspector.label "Inspector">
+<!ENTITY toggle-proxy.label "Toggle Proxy">
+<!ENTITY javaScriptConsole.setting.description "If the Error Console is disabled open:">
+<!ENTITY attachments-save.label "Save Attachments">
+<!ENTITY tb-web-console.label "Web Console">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">
-<!ENTITY tb-show-a-menu.option.label "Show in menu.">
-<!ENTITY tb-show-a-menu.option.title "Menus">

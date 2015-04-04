@@ -1,3 +1,8 @@
+<!ENTITY options.window.title "Toolbar Buttons - Asetukset">
+<!ENTITY open-new-tab.new "Avaa uudessa välilehdessä.">
+<!ENTITY open-new-tab.label "Kuinka linkkinapit avautuvat">
 <!ENTITY confirm.caption "Vahvista">
 <!ENTITY settings.label "Asetukset">
-<!ENTITY options.window.title "Toolbar Buttons - Asetukset">
+<!ENTITY delete.cookies.checkbox "Kysy ennen evästeiden poistamista.">
+<!ENTITY tb-delete-cookies.label "Poista evästeet">
+<!ENTITY open-new-tab.current "Avaa tässä välilehdessä.">

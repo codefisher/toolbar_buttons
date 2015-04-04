@@ -1,0 +1,26 @@
+<!ENTITY tb-color-picker.blue "Blue">
+<!ENTITY tb-color-picker.browser-safe "&#8220;Browser Safe&#8221; Colors">
+<!ENTITY tb-color-picker.color-select "Color Select">
+<!ENTITY tb-color-picker.dialog.title "Sharp Color Picker">
+<!ENTITY tb-color-picker.eyedropper "Open Eyedropper">
+<!ENTITY tb-color-picker.green "Green">
+<!ENTITY tb-color-picker.hex "Hex">
+<!ENTITY tb-color-picker.hue "Hue">
+<!ENTITY tb-color-picker.panel "Panel">
+<!ENTITY tb-color-picker.red "Red">
+<!ENTITY tb-color-picker.saturation "Saturation">
+<!ENTITY tb-color-picker.save "Save">
+<!ENTITY tb-color-picker.value "Value">
+<!ENTITY tb-color-picker.wheel "Wheel">
+<!ENTITY tb-string-preference.add "Add">
+<!ENTITY tb-string-preference.browse "Browse">
+<!ENTITY tb-string-preference.close "Close">
+<!ENTITY tb-string-preference.delete "Delete">
+<!ENTITY tb-string-preference.edit "Edit">
+<!ENTITY tb-string-preference.name "Name">
+<!ENTITY tb-string-preference.save "Save">
+<!ENTITY tb-string-preference.value "Value">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.label "Toggle Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
+<!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
+<!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">

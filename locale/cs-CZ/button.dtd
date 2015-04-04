@@ -98,8 +98,8 @@
 <!ENTITY msg-pane.label "Panel zpráv">
 <!ENTITY msg-pane.tooltip "Zobrazí/skryje panel zpráv">
 <!ENTITY new-message.label "Nová zpráva">
-<!ENTITY tb-open.label "Otevřít">
-<!ENTITY tb-open.tooltip "Otevření souboru">
+<!ENTITY open.label "Otevřít">
+<!ENTITY open.tooltip "Otevření souboru">
 <!ENTITY page-source.label "Zdroj">
 <!ENTITY page-source.tooltip "Zobrazí zdrojový kód">
 <!ENTITY pageinfo.label "Informace">
@@ -160,6 +160,7 @@
 <!ENTITY stop-flash.label "Flash">
 <!ENTITY tasks-toggle.label "Úkoly">
 <!ENTITY tasks-toggle.tooltip "Přepíná lištu úkolů">
+<!ENTITY tb-download-sync.label "Stáhnout/Synchronizovat…">
 <!ENTITY tb-history-menu.label "Historie">
 <!ENTITY tb-new-tab.label "Nový panel">
 <!ENTITY tb-open-in-conversation.label "Otevřít v konverzaci">

@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "다음 탭으로 가기">
 <!ENTITY open-current-frame.label "현재 페이지 표시">
 <!ENTITY open-current-frame.tooltip "현재 선택된 프레임만 표시">
-<!ENTITY tb-open.label "열기">
-<!ENTITY tb-open.tooltip "파일 열기">
+<!ENTITY open.label "열기">
+<!ENTITY open.tooltip "파일 열기">
 <!ENTITY page-source.label "소스">
 <!ENTITY page-source.tooltip "페이지 소스 보기">
 <!ENTITY pageinfo.label "페이지 정보">
@@ -264,6 +264,7 @@
 <!ENTITY tb-clear-search.tooltip "검색창을 지우고 지정">
 <!ENTITY tb-clear-url.label "Url 지우기">
 <!ENTITY tb-clear-url.tooltip "주소막대의 내용을 지우고 커서를 맞춥니다.">
+<!ENTITY tb-download-sync.label "지금 다운로드/동기화…">
 <!ENTITY tb-edit-menu.label "편집 메뉴">
 <!ENTITY tb-edit-menu.tooltip "편집 메뉴를 표시합니다">
 <!ENTITY tb-file-menu.label "파일 메뉴">

@@ -1,26 +1,38 @@
 <!ENTITY options.window.title "Toolbar Buttons opties">
 <!ENTITY favorite-page.description "Gebruikt voor de knop ‘Favoriete pagina’. Zoiets als een secundaire startpagina.">
 <!ENTITY toggle.prox.label "Proxy wisselen">
+<!ENTITY translate.service.description "Selecteer de gewenste vertaaldienst.">
 <!ENTITY toggle.proxy.description "De knop ‘Proxy wisselen’ kan wisselen tussen Proxy uit en één van onderstaande opties.">
+<!ENTITY delete.cookies.checkbox "Vragen voor verwijderen cookies.">
 <!ENTITY restart.checkbox "Niet vragen voor herstarten.">
+<!ENTITY tb-delete-cookies.label "Cookies verwijderen">
 <!ENTITY previous-next.label "Vorige &amp; Volgende">
+<!ENTITY translate.loading "Laden…">
 <!ENTITY toggle.checkbox "Herlaad de pagina na instellen van wisselen.">
 <!ENTITY restart.label "Herstarten">
 <!ENTITY read.select.button "Selecteren">
 <!ENTITY readnews.path.desc "Het pad naar uw nieuwsprogramma, gebruik dit als de knop niet werkt.">
+<!ENTITY open-new-tab.new "In een nieuw tabblad openen.">
+<!ENTITY open-new-tab.label "Hoe koppelingsknoppen openen">
 <!ENTITY toggle.proxy.auto.configuration "Automatische proxyconfiguratie (PAC)">
 <!ENTITY readmail.path.desc "Het pad naar uw mailprogramma, gebruik dit als de knop niet werkt.">
 <!ENTITY confirm.caption "Bevestigen">
 <!ENTITY favorite-page.label "Favoriete pagina">
+<!ENTITY toggle.proxy.direct "Rechtstreekse verbinding, geen proxy">
 <!ENTITY translate.label "Vertalen">
+<!ENTITY open-new-tab.current "In huidig tabblad openen.">
 <!ENTITY tb-clear-cache.label "Buffer opschonen">
 <!ENTITY translate.description "Selecteer welke taal u aan de Vertalen-knop wilt toewijzen.">
+<!ENTITY translate.service.google "Google Vertalen">
 <!ENTITY previous-next.checkbox "Vorige en Volgende knop wijzigen">
 <!ENTITY readmail.path.caption "Pad naar mailprogramma">
 <!ENTITY toggle.label "Knoppen wisselen">
 <!ENTITY links.caption "Koppelingen">
+<!ENTITY translate.service.bing "Bing Vertaler">
+<!ENTITY translate.service.promt "PROMT Online-vertaler">
 <!ENTITY toggle.proxy.system "Proxy-instellingen systeem gebruiken">
 <!ENTITY readnews.path.caption "Pad naar nieuwsprogramma">
+<!ENTITY clear.cache.checkbox "Vragen voor opschonen buffer.">
 <!ENTITY toggle.proxy.auto.detect "Proxy-instellingen automatisch detecteren">
 <!ENTITY settings.label "Instellingen">
 <!ENTITY toggle.proxy.manual "Handmatige proxyconfiguratie">

@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Gå till nästa flik">
 <!ENTITY open-current-frame.label "Aktuell ram">
 <!ENTITY open-current-frame.tooltip "Visa endast den aktuella, markerade ramen">
-<!ENTITY tb-open.label "Öppna">
-<!ENTITY tb-open.tooltip "Öppna en fil">
+<!ENTITY open.label "Öppna">
+<!ENTITY open.tooltip "Öppna en fil">
 <!ENTITY page-source.label "Källkod">
 <!ENTITY page-source.tooltip "Visa sidans källkod">
 <!ENTITY pageinfo.label "Sidinformation">
@@ -264,6 +264,7 @@
 <!ENTITY tb-clear-search.tooltip "Rensa och fokusera på sökfältet">
 <!ENTITY tb-clear-url.label "Rensa URL">
 <!ENTITY tb-clear-url.tooltip "Rensa och fokusera på adressfältet">
+<!ENTITY tb-download-sync.label "Hämta/Synka nu…">
 <!ENTITY tb-edit-menu.label "Redigera-menyn">
 <!ENTITY tb-edit-menu.tooltip "Visa Redigera-menyn">
 <!ENTITY tb-file-menu.label "Filmeny">

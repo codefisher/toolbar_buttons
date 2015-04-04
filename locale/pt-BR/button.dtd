@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Ir para Próxima Aba">
 <!ENTITY open-current-frame.label "Mostrar frame atual">
 <!ENTITY open-current-frame.tooltip "Mostrar somente o frame selecionado atualmente">
-<!ENTITY tb-open.label "Abrir">
-<!ENTITY tb-open.tooltip "Abrir um arquivo">
+<!ENTITY open.label "Abrir">
+<!ENTITY open.tooltip "Abrir um arquivo">
 <!ENTITY page-source.label "Código-fonte">
 <!ENTITY page-source.tooltip "Visualizar Código Fonte da página">
 <!ENTITY pageinfo.label "Informação da Página">
@@ -244,7 +244,11 @@
 <!ENTITY stop-all.tooltip "Parar o carregamento de todas as abas">
 <!ENTITY stop-animation.label "Alternar Animação">
 <!ENTITY stop-animation.tooltip "Bloquear Gif's animados, blinks e marquee.">
+<!ENTITY stop-cookies.allow "Permitir todos os Cookies">
+<!ENTITY stop-cookies.block "Bloquear Cookies">
 <!ENTITY stop-cookies.label "Alterar Cookies">
+<!ENTITY stop-cookies.privacy "Permitir baseado nas configurações de privacidade">
+<!ENTITY stop-cookies.thirdparty "Permitir se originado pelo site">
 <!ENTITY stop-cookies.tooltip "Bloquear cookies de serem setados.">
 <!ENTITY stop-dinamic-content.label "Alternar conteúdo embutido">
 <!ENTITY stop-dinamic-content.tooltip "Bloquear todo carregamento de conteúdo embutido">
@@ -260,8 +264,13 @@
 <!ENTITY tasks-in-view.tooltip "Alterar para tarefas em vista">
 <!ENTITY tasks-toggle.label "Alternas Tarefas">
 <!ENTITY tasks-toggle.tooltip "Alternar na barra de tarefas">
+<!ENTITY tb-about-about.label "sobre:sobre">
+<!ENTITY tb-about-about.tooltip "Listar e abrir páginas sobre">
 <!ENTITY tb-about-blank.label "Limpar Aba">
 <!ENTITY tb-about-blank.tooltip "Abrir/Carregar uma aba vazia">
+<!ENTITY tb-addons-exceptions.label "Permitir sites com Complementos">
+<!ENTITY tb-all-menus.label "Menu">
+<!ENTITY tb-all-menus.tooltip "Todos os menus">
 <!ENTITY tb-clear-cache.label "Limpar Cache">
 <!ENTITY tb-clear-cache.tooltip "Limpar o cache do navegador">
 <!ENTITY tb-clear-search.label "Limpar pesquisa">
@@ -270,8 +279,11 @@
 <!ENTITY tb-clear-url.tooltip "Limpar e focar na barra da URL">
 <!ENTITY tb-clone-tab.label "Copiar Aba">
 <!ENTITY tb-clone-tab.tooltip "Fazer uma cópia da aba corrente">
+<!ENTITY tb-cookie-exceptions.label "Exceção de Cookie">
 <!ENTITY tb-cookie-manager.label "Gerenciador de Cookie">
 <!ENTITY tb-cookie-manager.tooltip "Abrir o gerenciador de cookie na página atual.">
+<!ENTITY tb-delete-cookies.label "Apagar Cookies">
+<!ENTITY tb-delete-session-cookies.label "Apagar Cookies de Sessão">
 <!ENTITY tb-download-sync.label "Download/Sync agora">
 <!ENTITY tb-download-sync.tooltip "Executar download e sincronismo antes de ficar offline">
 <!ENTITY tb-edit-menu.label "Editar Menu">
@@ -283,6 +295,7 @@
 <!ENTITY tb-new-event.label "Novo Evento">
 <!ENTITY tb-new-event.tooltip "Adicionar novo evento ao calendário.">
 <!ENTITY tb-new-tab.label "Nova aba">
+<!ENTITY tb-new-tab.tooltip "Abrir uma nova aba do navegador">
 <!ENTITY tb-new-task.label "Nova tarefa">
 <!ENTITY tb-new-task.tooltip "Adicionar nova tarefa ao calendário.">
 <!ENTITY tb-open-in-conversation.label "Abrir uma Conversação">
@@ -290,10 +303,13 @@
 <!ENTITY tb-page-info-media.label "Página de Mídia">
 <!ENTITY tb-page-info-media.tooltip "Abrir informação da página na aba de mídia">
 <!ENTITY tb-page-reload.label "Recarregar">
+<!ENTITY tb-page-reload.tooltip "Recarregar página corrente">
 <!ENTITY tb-page-stop.label "Parar">
+<!ENTITY tb-page-stop.tooltip "Parar o carregamento da página">
 <!ENTITY tb-print-page.label "Imprimir">
 <!ENTITY tb-print-page.tooltip "Imprimir a página">
 <!ENTITY tb-saved-passwords.label "Senhas">
+<!ENTITY tb-saved-passwords.tooltip "Abrir Gerenciador de Senha">
 <!ENTITY tb-search-go-button.label "Pesquisar">
 <!ENTITY tb-search-go-button.tooltip "Ir para pesquisa Web">
 <!ENTITY tb-search-minus.label "Diminuir tamanho da barra de pesquisa">
@@ -336,6 +352,7 @@
 <!ENTITY toggle-toolbar.tooltip "Alternar a Barra Principal">
 <!ENTITY toggle.proxy.auto.configuration "Auto Configuração de Proxy (PAC)">
 <!ENTITY toggle.proxy.auto.detect "Auto detecção de configurações de proxy">
+<!ENTITY toggle.proxy.direct "Conexão direta, sem proxy">
 <!ENTITY toggle.proxy.manual "Configuração Manual de Proxy">
 <!ENTITY toggle.proxy.system "Usar configurações de proxy do sistema">
 <!ENTITY toolbar-menu.label "Barra de ferramentas">

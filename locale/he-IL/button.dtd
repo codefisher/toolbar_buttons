@@ -42,8 +42,8 @@
 <!ENTITY msg-filter.label "מסננים">
 <!ENTITY msg-pane.label "חלונית הודעה">
 <!ENTITY new-message.label "הודעה חדשה">
-<!ENTITY tb-open.label "פתח">
-<!ENTITY tb-open.tooltip "Open a File">
+<!ENTITY open.label "פתח">
+<!ENTITY open.tooltip "Open a File">
 <!ENTITY page-source.tooltip "הצגת מקור הדף">
 <!ENTITY pageinfo.label "מידע על הדף">
 <!ENTITY pagesetup.label "הגדרת עמוד">
@@ -64,6 +64,7 @@
 <!ENTITY statusbar-toggle.label "שורת מצב">
 <!ENTITY stop-animation.label "Animation">
 <!ENTITY stop-flash.label "Flash">
+<!ENTITY tb-download-sync.label "הורד/סנכרן כעת...">
 <!ENTITY tb-history-menu.label "היסטוריה">
 <!ENTITY tb-new-tab.label "לשונית חדשה">
 <!ENTITY tb-open-in-conversation.label "פתח בדיון">

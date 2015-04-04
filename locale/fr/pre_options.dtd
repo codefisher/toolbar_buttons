@@ -1,3 +1,8 @@
+<!ENTITY options.window.title "Options de Toolbar Buttons">
+<!ENTITY open-new-tab.new "Ouvrir dans n nouvel onglet.">
+<!ENTITY open-new-tab.label "Comment les bouton liens s'ouvrent">
 <!ENTITY confirm.caption "Confirmer">
 <!ENTITY settings.label "Paramètres">
-<!ENTITY options.window.title "Options de Toolbar Buttons">
+<!ENTITY delete.cookies.checkbox "Me demander avant de supprimer des cookies.">
+<!ENTITY tb-delete-cookies.label "Supprimer les cookies">
+<!ENTITY open-new-tab.current "Ouvrir dans l'onglet courant.">

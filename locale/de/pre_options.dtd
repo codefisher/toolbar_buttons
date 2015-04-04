@@ -1,3 +1,8 @@
+<!ENTITY options.window.title "Toolbar Buttons - Einstellungen">
+<!ENTITY open-new-tab.new "In einem neuem Tab öffnen.">
+<!ENTITY open-new-tab.label "Wie Links geöffnet werden">
 <!ENTITY confirm.caption "Bestätigen">
 <!ENTITY settings.label "Einstellungen">
-<!ENTITY options.window.title "Toolbar Buttons - Einstellungen">
+<!ENTITY delete.cookies.checkbox "Eingabeaufforderung vor dem Löschen von Cookies.">
+<!ENTITY tb-delete-cookies.label "Cookies löschen">
+<!ENTITY open-new-tab.current "Im aktuellen Tab öffnen.">

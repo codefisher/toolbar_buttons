@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Pasar a la siguiente pestaña">
 <!ENTITY open-current-frame.label "Marco actual">
 <!ENTITY open-current-frame.tooltip "Mostrar solamente el marco actualmente seleccionado">
-<!ENTITY tb-open.label "Abrir">
-<!ENTITY tb-open.tooltip "Abrir un archivo">
+<!ENTITY open.label "Abrir">
+<!ENTITY open.tooltip "Abrir un archivo">
 <!ENTITY page-source.label "Código fuente">
 <!ENTITY page-source.tooltip "Ver el código fuente de la página">
 <!ENTITY pageinfo.label "Información de página">
@@ -264,6 +264,7 @@
 <!ENTITY tb-clear-search.tooltip "Limpiar y colocar el cursor en la barra de búsquedas">
 <!ENTITY tb-clear-url.label "Limpiar URL">
 <!ENTITY tb-clear-url.tooltip "Limpiar y colocar el cursor en la barra de direcciones">
+<!ENTITY tb-download-sync.label "Sincronizar/Descargar ahora…">
 <!ENTITY tb-edit-menu.label "Menú Editar">
 <!ENTITY tb-edit-menu.tooltip "Mostrar el menú Editar">
 <!ENTITY tb-file-menu.label "Menú Archivo">

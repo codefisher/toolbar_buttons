@@ -162,8 +162,8 @@
 <!ENTITY next-tab.tooltip "Μετάβαση στην επόμενη καρτέλα">
 <!ENTITY open-current-frame.label "Προβολή τρέχοντος πλαισίου">
 <!ENTITY open-current-frame.tooltip "Προβολή μόνο του τρέχοντος επιλεγμένου πλαισίου">
-<!ENTITY tb-open.label "Άνοιγμα">
-<!ENTITY tb-open.tooltip "Άνοιγμα αρχείου">
+<!ENTITY open.label "Άνοιγμα">
+<!ENTITY open.tooltip "Άνοιγμα αρχείου">
 <!ENTITY page-source.label "Πηγαίος κώδικας">
 <!ENTITY page-source.tooltip "Προβολή πηγαίου κώδικα">
 <!ENTITY pageinfo.label "Πληροφορίες σελίδας">
@@ -264,6 +264,7 @@
 <!ENTITY tb-clear-search.tooltip "Εκκαθάριση περιεχομένου και εστίαση στην εργαλειοθήκη αναζήτησης">
 <!ENTITY tb-clear-url.label "Εκκαθάριση Url">
 <!ENTITY tb-clear-url.tooltip "Εκκαθάριση της εργαλειοθήκης διευθύνσεων και μεταφορά εστίασης εκεί">
+<!ENTITY tb-download-sync.label "Λήψη/Συγχρονισμός τώρα...">
 <!ENTITY tb-edit-menu.label "Μενού επεξεργασίας">
 <!ENTITY tb-edit-menu.tooltip "Προβολή του μενού επεξεργασίας">
 <!ENTITY tb-file-menu.label "Μενού αρχείου">

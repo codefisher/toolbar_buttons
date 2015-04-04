@@ -157,8 +157,8 @@
 <!ENTITY next-tab.tooltip "Przejdź do następnej karty">
 <!ENTITY open-current-frame.label "Pokaż wybraną ramkę">
 <!ENTITY open-current-frame.tooltip "Pokaż tylko aktualnie wybraną ramkę">
-<!ENTITY tb-open.label "Otwórz">
-<!ENTITY tb-open.tooltip "Otwórz plik...">
+<!ENTITY open.label "Otwórz">
+<!ENTITY open.tooltip "Otwórz plik...">
 <!ENTITY page-source.label "Źródło">
 <!ENTITY page-source.tooltip "Podgląd źródła strony">
 <!ENTITY pageinfo.label "Informacje o stronie">
@@ -257,6 +257,7 @@
 <!ENTITY tasks-toggle.tooltip "Przełącz pasek zdarzeń">
 <!ENTITY tb-clear-url.label "Wyczyść pasek adresu">
 <!ENTITY tb-clear-url.tooltip "Wyczyść i ustaw się na pasku adresu">
+<!ENTITY tb-download-sync.label "Pobierz/synchronizuj…">
 <!ENTITY tb-edit-menu.label "Menu Edytuj">
 <!ENTITY tb-edit-menu.tooltip "Pokaż menu Edytuj">
 <!ENTITY tb-file-menu.label "Menu Plik">

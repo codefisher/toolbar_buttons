@@ -1,26 +1,38 @@
 <!ENTITY options.window.title "Options de Toolbar Buttons">
 <!ENTITY favorite-page.description "Utilisée par le bouton « Page préférée ». Sorte de deuxième page d&apos;accueil.">
 <!ENTITY toggle.prox.label "Proxy">
+<!ENTITY translate.service.description "Choisissez le service de traduction que vous souhaitez utiliser.">
 <!ENTITY toggle.proxy.description "Le bouton proxy peut désactiver le proxy ou activer une des options ci-dessous.">
+<!ENTITY delete.cookies.checkbox "Me demander avant de supprimer des cookies.">
 <!ENTITY restart.checkbox "Pas de notification avant redémarrage.">
+<!ENTITY tb-delete-cookies.label "Supprimer les cookies">
 <!ENTITY previous-next.label "Précédent &amp; Suivant">
+<!ENTITY translate.loading "Chargement…">
 <!ENTITY toggle.checkbox "Recharger la page lorsque le basculement d&apos;un état à un autre a été réalisé.">
 <!ENTITY restart.label "Redémarrer">
 <!ENTITY read.select.button "Choisir…">
 <!ENTITY readnews.path.desc "Le chemin vers votre client gérant les nouvelles, utilisé si le bouton ne fonctionne pas.">
+<!ENTITY open-new-tab.new "Ouvrir dans n nouvel onglet.">
+<!ENTITY open-new-tab.label "Comment les bouton liens s'ouvrent">
 <!ENTITY toggle.proxy.auto.configuration "Configuration automatique du proxy (PAC)">
 <!ENTITY readmail.path.desc "Le chemin vers votre client de messagerie, utilisé si le bouton ne fonctionne pas.">
 <!ENTITY confirm.caption "Confirmer">
 <!ENTITY favorite-page.label "Page préférée">
+<!ENTITY toggle.proxy.direct "Connexion directe, pas de proxy">
 <!ENTITY translate.label "Traduire">
+<!ENTITY open-new-tab.current "Ouvrir dans l'onglet courant.">
 <!ENTITY tb-clear-cache.label "Effacer le cache">
 <!ENTITY translate.description "Veuillez choisir la langue de traduction à utiliser lors du clic sur le bouton.">
+<!ENTITY translate.service.google "Google Translate">
 <!ENTITY previous-next.checkbox "Modifier la direction des boutons « Précédent » et « Suivant »">
 <!ENTITY readmail.path.caption "Chemin du client de messagerie">
 <!ENTITY toggle.label "Afficher/masquer les boutons">
 <!ENTITY links.caption "Liens">
+<!ENTITY translate.service.bing "Bing Translator">
+<!ENTITY translate.service.promt "PROMT Online Translator">
 <!ENTITY toggle.proxy.system "Utiliser les paramètres de proxy du système">
 <!ENTITY readnews.path.caption "Chemin du client de nouvelles">
+<!ENTITY clear.cache.checkbox "Me demander avant de vider le cache.">
 <!ENTITY toggle.proxy.auto.detect "Détection automatique des paramètres du proxy">
 <!ENTITY settings.label "Paramètres">
 <!ENTITY toggle.proxy.manual "Configuration manuelle du proxy">
