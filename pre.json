@@ -1,0 +1,5 @@
+{
+    "locale_file_prefix": "pre_",
+    "missing_strings": "search",
+    "projects": ["pre"]
+}

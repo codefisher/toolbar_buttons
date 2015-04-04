@@ -1,6 +1,8 @@
 {
     "show_updated_prompt": true,
     "merge_images": true,
+    "missing_strings": "search",
+    "restartless": true,
     "projects": ["data"],
     "locale": "all,-ar,-tr,-zh,-cs-CZ,-he-IL",
     "translate_description": true,
