@@ -96,7 +96,7 @@ allMenusReturnPopups: function(item, event) {
 	}
 }
 
-allMenusStartUp: function() {	
+allMenusStartUp: function() {
 	var menubar = document.getElementById('main-menubar') || document.getElementById('mail-menubar');
 	var fileName = document.location.href.match(/([a-zA-Z]+).xul$/)[1];
 	if(!menubar) {
