@@ -2,6 +2,7 @@
     "merge_images": true,
     "missing_strings": "search",
     "lookup_max_versions": true,
+    "restartless": true,
     "projects": ["data", "staging"],
     "include_local_meta": true,
     "translate_description": true,

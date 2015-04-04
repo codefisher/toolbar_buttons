@@ -1,7 +1,7 @@
 {
     "show_updated_prompt": true,
     "merge_images": true,
-    "missing_strings": "search",
+    "missing_strings": "replace",
     "restartless": true,
     "projects": ["data"],
     "locale": "all,-ar,-tr,-zh,-cs-CZ,-he-IL",
