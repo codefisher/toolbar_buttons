@@ -4,21 +4,16 @@ if(!this.load_toolbar_button) {
 		
 		start: function() {
 			var version = "{{version}}";
+			var prefService = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 			var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 			var currentVersion = prefs.getCharPref("{{current_version_pref}}");
 			
-			var extensionFlagFile = toolbar_buttons.interfaces.Properties.get("ProfD", Ci.nsIFile);
-			extensionFlagFile.append("tb-{{chrome_name}}-installed");
-			var extensionVersion = null;
-			if(extensionFlagFile.exists()) {
-				var extensionVersion = load_toolbar_button.file_get_contents(extensionFlagFile);
-			}
-				
-			if(extensionVersion != version && currentVersion != version){
+			if(currentVersion != version){
 				prefs.setCharPref("{{current_version_pref}}", version);
-				load_toolbar_button.file_put_contents(extensionFlagFile, version);
+				prefService.savePrefFile(null);
 				//load_toolbar_button.load_url(currentVersion, version);
-				for(var i in load_toolbar_button.callbacks) {
+				var callbacks = load_toolbar_button.callbacks;
+				for(var i = 0; i < callbacks.length; i++) {
 					load_toolbar_button.callbacks[i](currentVersion, version);
 				}
 			}
@@ -52,7 +47,7 @@ if(!this.load_toolbar_button) {
 				url = "{{homepage_url}}installed/{{version}}/";
 			}
 			try {
-				window.getBrowser().addTab(url);
+				window.getBrowser().selectedTab = window.getBrowser().addTab(url);
 			} catch (e) {
 				var uri = toolbar_buttons.interfaces.IOService.newURI(url, null, null);
 				toolbar_buttons.interfaces.ExternalProtocolService.loadUrl(uri);
@@ -71,10 +66,10 @@ if(!this.load_toolbar_button) {
 			}
 		},
 		observe: function(aSubject, aTopic, aData) {
-			setTimeout(function() { load_toolbar_button.start(); }, 100);
+			window.setTimeout(function() { load_toolbar_button.start(); }, 100);
 		},
 		restore: function() {
-			setTimeout(function() { load_toolbar_button.start(); }, 100);
+			window.setTimeout(function() { load_toolbar_button.start(); }, 100);
 			document.removeEventListener("SSTabRestoring", load_toolbar_button.restore, false);
 		}
 	};
