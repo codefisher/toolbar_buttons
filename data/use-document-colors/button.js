@@ -5,7 +5,7 @@ toggleDocumentColors: function(button) {
 	if(obj.value == 0) {
 		toolbar_buttons.prefToggleStatus(button, "browser.display.use_document_colors");
 	} else {
-		toolbar_buttons.prefToggleNumber(button, "browser.display.document_color_use",  [2, 2, 0]);
+		toolbar_buttons.prefToggleNumber(button, "browser.display.document_color_use",  [2, 2, 1]);
 	}
 }
 
