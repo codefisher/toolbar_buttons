@@ -23,6 +23,6 @@ translate.label:pencil.png
 	<radiogroup preference="{{pref_root}}translate.service">
 		<radio value="google" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.google;"/>
 		<radio value="promt" onclick="toolbar_buttons.showPromtTranslate();" label="&translate.service.promt;"/>
-		<radio value="bing" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>
+		<!--<radio value="bing" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>-->
 	</radiogroup>
 </groupbox>
