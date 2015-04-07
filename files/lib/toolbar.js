@@ -33,23 +33,26 @@ setToggleToolbar: function(toolbar_id, button_id) {
 	}
 }
 
-loadToggleToolbar: function(button_id, toolbar_id){
+loadToggleToolbar: function(button_id, toolbar_id) {
 	var toolbar = document.getElementById(toolbar_id);
 	if(toolbar) {
 		toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
 		var mutationObserver = new window.MutationObserver(function(mutations) {
 			var attribute = false;
-			for(var mut in mutations) {
-				attribute = attribute || (mut.type == "attributes");
-			}
-			if(!mut) return;
 			var attributeName = false;
-			for(var attr in mutations) {
+			var document = null;
+			for(var mut in mutations) {
+				attribute = attribute || (mut.type && mut.type == "attributes");
 				attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
+				document = mut.target.ownerDocument;
 			}
-			if(!attributeName) return;
-			var button = window.document.getElementById(button_id);
-			if(button == null) return;
+			if(!attribute || !attributeName) {
+				return;
+			}
+			var button = document.getElementById(button_id);
+			if(button == null){
+				return;
+			}
 			toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
 		});
 		mutationObserver.observe(toolbar, { attributes: true, subtree: false });
