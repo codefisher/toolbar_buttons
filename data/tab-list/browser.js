@@ -20,11 +20,11 @@ tabListDropDown: function(item) {
 		}
 		var URI = curTab.linkedBrowser.currentURI.spec;
 		menuItem.setAttribute("statustext", URI);
-		try {
+		/*try {
 			curTab.mCorrespondingMenuitem = menuItem;
 			curTab.addEventListener("DOMAttrModified", item, false);
 		} catch (e) {
-		}
+		}*/
 		menuItem.tab = curTab;
 		menuItem.addEventListener("command",
 			function() {
