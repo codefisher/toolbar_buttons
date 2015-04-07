@@ -9,6 +9,7 @@
 		<em:creator>{{creator}}</em:creator>
 		<em:iconURL>chrome://{{chrome-name}}/skin/icon.png</em:iconURL>
 		<em:homepageURL>{{homepageURL}}</em:homepageURL>
+		<em:type>2</em:type>
 		
 {{optionsURL}}{{updateUrl}}{{applications}}{{bootstrap}}
 
