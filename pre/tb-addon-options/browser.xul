@@ -2,7 +2,7 @@
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	type="menu"
 	viewid="tb-addon-options-view"
-	onviewshowing="toolbar_buttons.extensionOptionsMenu(document.getElementById('tb-addon-options-view'));"
+	onviewshowing="let doc = event.target.ownerDocument; toolbar_buttons.extensionOptionsMenu(doc.getElementById('tb-addon-options-view'));"
 	id="tb-addon-options"
 	label="&tb-addon-options.label;"
 	tooltiptext="&tb-addon-options.tooltip;">
