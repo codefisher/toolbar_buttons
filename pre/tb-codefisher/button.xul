@@ -5,20 +5,20 @@
     label="&tb-codefisher.label;"
     tooltiptext="&tb-codefisher.tooltip;"
     onclick="toolbar_buttons.openPageTab('https://codefisher.org/', event);"
-    oncommand="toolbar_buttons.openPage('https://codefisher.org/');" >
+    oncommand="toolbar_buttons.openPage('https://codefisher.org/', event);" >
 	<menupopup onclick="event.stopPropagation();"
 		oncommand="event.stopPropagation();" >
 		<menuitem label="&tb-codefisher.toolbar-buttons;"
 			onclick="toolbar_buttons.openPageTab('https://codefisher.org/toolbar_button/', event);"
-    		oncommand="toolbar_buttons.openPage('https://codefisher.org/toolbar_button/');"/>
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/toolbar_button/', event);"/>
 		<menuitem label="&tb-codefisher.pastel-svg;"
 			onclick="toolbar_buttons.openPageTab('https://codefisher.org/pastel-svg/', event);"
-    		oncommand="toolbar_buttons.openPage('https://codefisher.org/pastel-svg/');"/>
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/pastel-svg/', event);"/>
 		<menuitem label="&tb-codefisher.forum;"
 			onclick="toolbar_buttons.openPageTab('https://codefisher.org/forum/', event);"
-    		oncommand="toolbar_buttons.openPage('https://codefisher.org/forum/');"/>
+    		oncommand="toolbar_buttons.openPage('https://codefisher.org/forum/', event);"/>
 		<menuitem label="&tb-codefisher.twitter;"
 			onclick="toolbar_buttons.openPageTab('https://twitter.com/codefisher/', event);"
-    		oncommand="toolbar_buttons.openPage('https://twitter.com/codefisher/');"/>
+    		oncommand="toolbar_buttons.openPage('https://twitter.com/codefisher/', event);"/>
 	</menupopup>
 </toolbarbutton>
