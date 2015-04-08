@@ -7,6 +7,6 @@
 	oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');">
 		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'extension');" oncommand="event.stopPropagation();">
 			<menuseparator />
-			<menuitem id="tb-extensions-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons();" />
+			<menuitem id="tb-extensions-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />
 		</menupopup>
 </toolbarbutton>

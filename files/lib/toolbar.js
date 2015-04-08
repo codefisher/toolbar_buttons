@@ -1,23 +1,26 @@
 toggleToolbar: function(aEvent, toolbar_id, force) {
+	var doc = aEvent.target.ownerDocument;
+	var win = doc.defaultView;
 	if(!aEvent || !aEvent.originalTarget || toolbar_id != aEvent.originalTarget.parentNode.id) {
-		var toolbar = document.getElementById(toolbar_id);
+		var toolbar = doc.getElementById(toolbar_id);
 		try {
 			// Firefox 4, mainly the bookmark toolbar button
-			window.setToolbarVisibility(toolbar, toolbar.collapsed);
+			win.setToolbarVisibility(toolbar, toolbar.collapsed);
 			if(force) {
 				toolbar.collapsed = !toolbar.collapsed;
 			}
 		} catch(e) {
 			toolbar.collapsed = !toolbar.collapsed;
-			document.persist(toolbar_id, "collapsed");
+			doc.persist(toolbar_id, "collapsed");
 		}
 	}
 }
 
 toggleToolbarButtonUpdate: function(aEvent, button_id, toolbar_id) {
+	var doc = aEvent.target.ownerDocument;
 	// normal toolbars use collapsed, the statusbar uses hidden
 	if(aEvent.attrName == "collapsed" || aEvent.attrName == "hidden") {
-		var button = document.getElementById(button_id);
+		var button = doc.getElementById(button_id);
 		if(button && aEvent.originalTarget.id == toolbar_id) {
 			var toolbar = aEvent.originalTarget;
 			toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
@@ -25,19 +28,20 @@ toggleToolbarButtonUpdate: function(aEvent, button_id, toolbar_id) {
 	}
 }
 
-setToggleToolbar: function(toolbar_id, button_id) {
-	var button = document.getElementById(button_id);
+setToggleToolbar: function(doc, toolbar_id, button_id) {
+	var button = doc.getElementById(button_id);
 	if(button) {
-		var toolbar = document.getElementById(toolbar_id);
+		var toolbar = doc.getElementById(toolbar_id);
 		toolbar_buttons.setButtonStatus(button, toolbar.collapsed || toolbar.hidden);
 	}
 }
 
-loadToggleToolbar: function(button_id, toolbar_id) {
-	var toolbar = document.getElementById(toolbar_id);
+loadToggleToolbar: function(doc, button_id, toolbar_id) {
+	var toolbar = doc.getElementById(toolbar_id);
+	var win = doc.defaultView;
 	if(toolbar) {
-		toolbar_buttons.setToggleToolbar(toolbar_id, button_id);
-		var mutationObserver = new window.MutationObserver(function(mutations) {
+		toolbar_buttons.setToggleToolbar(doc, toolbar_id, button_id);
+		var mutationObserver = new win.MutationObserver(function(mutations) {
 			var attribute = false;
 			var attributeName = false;
 			var document = null;

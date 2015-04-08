@@ -1,9 +1,11 @@
-installAddons: function() {
+installAddons: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("installaddons");
 	var fp = toolbar_buttons.interfaces.FilePicker();
-	fp.init(window, title, fp.modeOpenMultiple);
+	fp.init(win, title, fp.modeOpenMultiple);
 	fp.appendFilter(stringBundle.GetStringFromName("installaddons-addons"), "*.xpi; *.jar");
 	fp.appendFilter(stringBundle.GetStringFromName("installaddons-extensions"), "*.xpi");
 	fp.appendFilter(stringBundle.GetStringFromName("installaddons-themes"), "*.jar");
@@ -19,7 +21,7 @@ installAddons: function() {
 	var installs = [];
 
 	function getBrowserElement() {
-		return window.QueryInterface(Ci.nsIInterfaceRequestor)
+		return win.QueryInterface(Ci.nsIInterfaceRequestor)
 					.getInterface(Ci.nsIDocShell)
 					.chromeEventHandler;
 	}
@@ -44,12 +46,12 @@ installAddons: function() {
 
 viewAddonsExceptions: function(event) {
 	if(event.button == 1) {
-		toolbar_buttons.openPermissions("install",
+		toolbar_buttons.openPermissions(event, "install",
 				"addons_permissions_title", "addonspermissionstext");
 	}
 }
 
-openAddonsExceptions: function() {
-		toolbar_buttons.openPermissions("install",
+openAddonsExceptions: function(event) {
+		toolbar_buttons.openPermissions(event, "install",
 				"addons_permissions_title", "addonspermissionstext");
 }

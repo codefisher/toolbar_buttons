@@ -12,6 +12,6 @@
 		<menuitem id="tb-addons-extensions" label="&extensions.label;" oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');"/>
 		<menuitem id="tb-addons-themes" label="&themes.label;" oncommand="toolbar_buttons.OpenAddonsMgr('themes', 'addons://list/theme');" />
 		<menuseparator />
-		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons();" />
+		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />
 	</menupopup>
 </toolbarbutton>

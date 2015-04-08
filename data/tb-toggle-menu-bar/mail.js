@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar("tb-toggle-menu-bar", "mail-toolbar-menubar2");
+toolbar_buttons.loadToggleToolbar(document, "tb-toggle-menu-bar", "mail-toolbar-menubar2");

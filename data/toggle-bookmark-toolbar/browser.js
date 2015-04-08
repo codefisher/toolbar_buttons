@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar("toggle-bookmark-toolbar", "PersonalToolbar");
+toolbar_buttons.loadToggleToolbar(document, "toggle-bookmark-toolbar", "PersonalToolbar");

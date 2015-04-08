@@ -1,8 +1,9 @@
 /* functions that are used by more then one button */
 
 setButtonStatus: function(button, status) {
+	var doc = button.ownerDocument;
 	button.setAttribute("activated", status);
-	var menu_item = document.getElementById(button.id + '-menu-item');
+	var menu_item = doc.getElementById(button.id + '-menu-item');
 	if(menu_item) {
 		menu_item.setAttribute("activated", status);
 	}
@@ -50,13 +51,14 @@ getUrlContents: function(aURL){
 }
 
 wrongVersion: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var XulAppInfo = toolbar_buttons.interfaces.XULAppInfo();
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("wrong-version-title");
 	var error = stringBundle.formatStringFromName("wrong-version", 
 			[event.target.label, XulAppInfo.name, XulAppInfo.version], 3);
-	toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+	toolbar_buttons.interfaces.PromptService.alert(win, title, error);
 }
 
 showAMenu: function(aEvent) {
@@ -394,7 +396,9 @@ getETDL: function() {
 	return eTLD;
 }
 
-openPermissions: function(type, title, text) {
+openPermissions: function(event, type, title, text) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	var bundlePreferences = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://browser/locale/preferences/preferences.properties");
 	var params = { blockVisible   : true,
@@ -404,7 +408,7 @@ openPermissions: function(type, title, text) {
 				   permissionType : type,
 				   windowTitle	: bundlePreferences.GetStringFromName(title),
 				   introText	  : bundlePreferences.GetStringFromName(text) };
-	window.openDialog("chrome://browser/content/preferences/permissions.xul",
+	win.openDialog("chrome://browser/content/preferences/permissions.xul",
 			"Browser:Permissions", "", params);
 }
 

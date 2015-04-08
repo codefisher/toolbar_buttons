@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar("toggle-toolbar", "nav-bar");
+toolbar_buttons.loadToggleToolbar(document, "toggle-toolbar", "nav-bar");

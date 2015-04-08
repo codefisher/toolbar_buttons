@@ -1,18 +1,20 @@
 toogleAddonsBar: function(event) {
-	if(document.getElementById("tb-addon-bar")) {
+	var doc = event.target.ownerDocument;
+	if(doc.getElementById("tb-addon-bar")) {
 		toolbar_buttons.toggleToolbar(event, 'tb-addon-bar');
 	} else {
-		toolbar_buttons.loadAddonsBar(true);
+		toolbar_buttons.loadAddonsBar(doc, true);
 	}
 }
 
-loadAddonsBar: function(show) {
-	if(!document.getElementById("tb-addon-bar") && (document.getElementById('statusbar-toggle') || document.getElementById('statusbar-toggle-menu-item'))) {		
+loadAddonsBar: function(doc, show) {
+	var win = doc.defaultView;
+	if(!doc.getElementById("tb-addon-bar") && (doc.getElementById('statusbar-toggle') || doc.getElementById('statusbar-toggle-menu-item'))) {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 		
-		var addonbar = document.createElement('toolbar');
+		var addonbar = doc.createElement('toolbar');
 		addonbar.id = "tb-addon-bar";
 		addonbar.setAttribute("class", "toolbar-primary chromeclass-toolbar");
 		addonbar.setAttribute("toolbarname", stringBundle.GetStringFromName("statusbar-toggle-toolbar-name"));
@@ -29,7 +31,7 @@ loadAddonsBar: function(show) {
 			addonbar.setAttribute("collapsed", prefs.getBoolPref('statusbar-toggle.collapsed'));
 		}
 				
-		document.getElementById('browser-bottombox').appendChild(addonbar);
+		doc.getElementById('browser-bottombox').appendChild(addonbar);
 		addonbar._delegatingToolbar = "tb-addon-bar";
 		CustomizableUI.registerArea("tb-addon-bar", {
 			legacy: false,
@@ -38,10 +40,10 @@ loadAddonsBar: function(show) {
 			defaultCollapsed: false
 		}, true);
 		addonbar.setAttribute("hidden", "false");
-		var mutationObserver = new window.MutationObserver(function(mutations) {
+		var mutationObserver = new win.MutationObserver(function(mutations) {
 			if(prefs.getBoolPref('statusbar-toggle.collapsed') != addonbar.collapsed) {
 				prefs.setBoolPref('statusbar-toggle.collapsed', addonbar.collapsed);
-				toolbar_buttons.setButtonStatus(document.getElementById('statusbar-toggle'), addonbar.collapsed || addonbar.hidden);
+				toolbar_buttons.setButtonStatus(doc.getElementById('statusbar-toggle'), addonbar.collapsed || addonbar.hidden);
 			}
 		});
 		mutationObserver.observe(addonbar, { attributes: true, subtree: false });
@@ -57,7 +59,7 @@ loadAddonsBar: function(show) {
 			}
 		}, false);
 	}
-	toolbar_buttons.loadToggleToolbar("statusbar-toggle", "tb-addon-bar");
+	toolbar_buttons.loadToggleToolbar(doc, "statusbar-toggle", "tb-addon-bar");
 }
 
-toolbar_buttons.loadAddonsBar(false);
+toolbar_buttons.loadAddonsBar(document, false);

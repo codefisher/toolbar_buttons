@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar("toggle-toolbar", "calendar-bar");
+toolbar_buttons.loadToggleToolbar(document, "toggle-toolbar", "calendar-bar");

@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar("toggle-toolbar", "mail-bar3");
+toolbar_buttons.loadToggleToolbar(document, "toggle-toolbar", "mail-bar3");
