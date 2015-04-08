@@ -3,4 +3,4 @@
 	id="tb-hide-other-toolbars"
 	label="&tb-hide-other-toolbars.label;"
 	tooltiptext="&tb-hide-other-toolbars.tooltip;"
-	oncommand="toolbar_buttons.hideOtherToolbars();"/>
+	oncommand="toolbar_buttons.hideOtherToolbars(event);"/>

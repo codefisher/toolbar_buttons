@@ -1,9 +1,11 @@
-hideOtherToolbars: function() {
-	var toolbars = toolbar_buttons.getHideableToolbars();
-	if(window.gNavToolbox) {
-		var toolbarBox = window.gNavToolbox;
+hideOtherToolbars: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
+	var toolbars = toolbar_buttons.getHideableToolbars(event);
+	if(win.gNavToolbox) {
+		var toolbarBox = win.gNavToolbox;
 	} else {
-		var toolbarBox = document.getElementById('mail-toolbox');
+		var toolbarBox = doc.getElementById('mail-toolbox');
 	}
 	var anyVisible = false;
 	var bars = [];
@@ -16,14 +18,14 @@ hideOtherToolbars: function() {
 	}
 	if(bars.length) {
 		toolbarBox.setAttribute('_collapsed_bars', bars.join());
-		document.persist(toolbarBox.id, '_collapsed_bars');
+		doc.persist(toolbarBox.id, '_collapsed_bars');
 	}
 	if(!anyVisible) {
 		var showToolbars = toolbarBox.getAttribute('_collapsed_bars');
 		if(showToolbars.length) {
 			var showToolbarsIds = showToolbars.split(",");
 			for(var i = 0; i < showToolbarsIds.length; i++) {
-				document.getElementById(showToolbarsIds[i]).setAttribute('collapsed', 'false');
+				doc.getElementById(showToolbarsIds[i]).setAttribute('collapsed', 'false');
 			}
 		} else {
 			for(var i = 0; i < toolbars.length; i++) {
@@ -33,17 +35,19 @@ hideOtherToolbars: function() {
 	}
 }
 
-getHideableToolbars: function() {
+getHideableToolbars: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	// this is based on code from Firefox.
-	if(window.gNavToolbox) {
-		var toolbarBox = window.gNavToolbox;
+	if(win.gNavToolbox) {
+		var toolbarBox = win.gNavToolbox;
 	} else {
-		var toolbarBox = document.getElementById('mail-toolbox');
+		var toolbarBox = doc.getElementById('mail-toolbox');
 	}
 	let toolbarNodes = Array.slice(toolbarBox.childNodes);
 	toolbarNodes = toolbarNodes.concat(toolbarBox.externalToolbars);
 	toolbarNodes = toolbarNodes.filter(node => node.getAttribute("toolbarname")  && node.getAttribute("type") != "menubar");
-	if (document.documentElement.getAttribute("shellshowingmenubar") == "true") {
+	if (doc.documentElement.getAttribute("shellshowingmenubar") == "true") {
 		toolbarNodes = toolbarNodes.filter(node => node.id != "toolbar-menubar");
 	}
 	return toolbarNodes;
