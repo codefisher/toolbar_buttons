@@ -285,7 +285,7 @@ loadContectBlocker: function(doc, fullPref, prefName, button_id, sheet, func) {
 }
 
 clearBar: function(event, bar) {
-	var doc = event.target.documentElement;
+	var doc = event.target.ownerDocument;
 	var item = doc.getElementById(bar + "bar"), toolbar = item;
 	if(item) {
 		do {

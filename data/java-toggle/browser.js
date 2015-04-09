@@ -13,7 +13,7 @@ JavaToggle: {
 	prefbarRegExJava: /(^| )(java|icedtea).*(platform|plug-?in)/i,
 
 	toggle: function(event) {
-		var doc = event.target.ownerDocument.defaultView;
+		var doc = event.target.ownerDocument;
 		var state = this.status(),
 			button = doc.getElementById("java-toggle"),
 			prefs = toolbar_buttons.interfaces.PrefBranch;

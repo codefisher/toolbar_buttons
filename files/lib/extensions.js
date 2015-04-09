@@ -148,7 +148,7 @@ openAddonControlMenu: function(menupopup, addon, stringBundle) {
 					menupopup.appendChild(disable);
 				} else if(addon.permissions & AddonManager.PERM_CAN_DISABLE) {
 					var disable = doc.createElement("menuitem");
-					disable.setAttribute("label", doc.GetStringFromName("extensions-disable"));
+					disable.setAttribute("label", stringBundle.GetStringFromName("extensions-disable"));
 					disable.addEventListener("command", toolbar_buttons.setExtensionDisabled(addon, true), false);
 					menupopup.appendChild(disable);
 				}

@@ -125,11 +125,11 @@ function flashblockIsWhitelisted(node, type) {
 }
 
 function flashblockSetImage(placeholder, type) {
-	var inactiveurl = "#ffffff url(resource://{{chrome-name}}/block.png) no-repeat center";
-	var playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
+	var inactiveurl = "#ffffff url(resource://{{chrome_name}}/block.png) no-repeat center";
+	var playimage = "#ffffff url(resource://{{chrome_name}}/play.png)";
 	/*switch (type) {
 		case "silverlight":
-			playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
+			playimage = "#ffffff url(resource://{{chrome_name}}/play.png)";
 			break;
 		default:
 			break;
@@ -471,11 +471,11 @@ function flashblockIsWhitelisted(node, type) {
 }
 
 function flashblockSetImage(placeholder, type) {
-	var inactiveurl = "#ffffff url(resource://{{chrome-name}}/block.png) no-repeat center";
-	var playimage = "#ffffff url(resource://{{chrome-name}}/play.png)";
+	var inactiveurl = "#ffffff url(resource://{{chrome_name}}/block.png) no-repeat center";
+	var playimage = "#ffffff url(resource://{{chrome_name}}/play.png)";
 	/* switch (type) {
 		case "silverlight":
-			playimage = "url(resource://{{chrome-name}}/play.png)";
+			playimage = "url(resource://{{chrome_name}}/play.png)";
 			break;
 		default:
 			break;

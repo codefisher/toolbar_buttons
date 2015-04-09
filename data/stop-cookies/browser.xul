@@ -15,9 +15,9 @@
 		<menuitem type="radio" name="toggle-cookie-settings" value="3" label="&stop-cookies.privacy;"/>
 		<menuseparator />
 		<menuitem label="&tb-cookie-manager.label;"
-			oncommand="toolbar_buttons.viewCookies();"/>
+			oncommand="toolbar_buttons.viewCookies(event);"/>
 		<menuitem label="&tb-cookie-exceptions.label;"
-			oncommand="toolbar_buttons.openCookieExceptions();" />
+			oncommand="toolbar_buttons.openCookieExceptions(event);" />
 		<menuitem label="&tb-delete-cookies.label;"
 			oncommand="toolbar_buttons.deleteAllCookies();" />
 		<menuitem label="&tb-delete-session-cookies.label;"

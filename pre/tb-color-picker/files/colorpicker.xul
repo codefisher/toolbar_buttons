@@ -2,7 +2,7 @@
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <?xml-stylesheet href="resource://gre-resources/html.css" type="text/css"?>
 <?xml-stylesheet href="colorpicker.css" type="text/css"?>
-<!DOCTYPE dialog SYSTEM "chrome://{{chrome-name}}/locale/{{locale_file_prefix}}files.dtd" >
+<!DOCTYPE dialog SYSTEM "chrome://{{chrome_name}}/locale/{{locale_file_prefix}}files.dtd" >
 <xul:dialog
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"

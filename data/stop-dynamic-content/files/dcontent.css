@@ -7,6 +7,6 @@ object,
 embed,
 svg,
 canvas {
- -moz-binding: url("chrome://{{chrome-name}}/content/files/block.xml#flash") !important;
+ -moz-binding: url("chrome://{{chrome_name}}/content/files/block.xml#flash") !important;
  min-height:50px;
 }

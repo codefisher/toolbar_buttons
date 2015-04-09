@@ -1,3 +1,3 @@
 openCookieExceptions: function(event) {
-	toolbar_buttons.openPermissions("cookie", "cookiepermissionstitle", "cookiepermissionstext");
+	toolbar_buttons.openPermissions(event, "cookie", "cookiepermissionstitle", "cookiepermissionstext");
 }

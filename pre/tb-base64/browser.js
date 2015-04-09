@@ -1,4 +1,4 @@
-base64: function() {
+base64: function(event) {
 	/*
 		citing sources:
 			http://custombuttons2.com/forum/buttons/buttons-database/datauri-generator2.html

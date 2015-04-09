@@ -5,7 +5,7 @@ toggleImages: function(button) {
 
 viewImageExceptions: function(event) {
 	if(event.button == 1) {
-		toolbar_buttons.openPermissions("image",
+		toolbar_buttons.openPermissions(event, "image",
 				"imagepermissionstitle", "imagepermissionstext");
 	}
 }

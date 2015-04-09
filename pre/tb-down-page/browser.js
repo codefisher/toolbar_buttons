@@ -1,4 +1,4 @@
-pageDown: function() {
+pageDown: function(event) {
 	var win = event.target.ownerDocument.defaultView;
 	var down = new win.KeyboardEvent("keypress", {
 		code: "PageDown",

@@ -4,7 +4,7 @@ toggleCookies: function(button) {
 
 viewCookieExceptions: function(event) {
 	if(event.button == 1) {
-		toolbar_buttons.openPermissions("cookie",
+		toolbar_buttons.openPermissions(event, "cookie",
 				"cookiepermissionstitle", "cookiepermissionstext");
 	}
 }

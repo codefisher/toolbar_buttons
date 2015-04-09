@@ -40,12 +40,14 @@ loadAddonsBar: function(doc, show) {
 			defaultCollapsed: false
 		}, true);
 		addonbar.setAttribute("hidden", "false");
-		var mutationObserver = new win.MutationObserver(function(mutations) {
+		var tb = toolbar_buttons;
+		var observer = function(mutations) {
 			if(prefs.getBoolPref('statusbar-toggle.collapsed') != addonbar.collapsed) {
 				prefs.setBoolPref('statusbar-toggle.collapsed', addonbar.collapsed);
-				toolbar_buttons.setButtonStatus(doc.getElementById('statusbar-toggle'), addonbar.collapsed || addonbar.hidden);
+				tb.setButtonStatus(doc.getElementById('statusbar-toggle'), addonbar.collapsed || addonbar.hidden);
 			}
-		});
+		};
+		var mutationObserver = new win.MutationObserver(observer);
 		mutationObserver.observe(addonbar, { attributes: true, subtree: false });
 		prefs.addObserver("statusbar-toggle.collapsed", {
 			observe: function(subject, topic, data) {
