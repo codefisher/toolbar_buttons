@@ -4,4 +4,4 @@
 	label="&tb-color-picker.label;"
 	tooltiptext="&tb-color-picker.tooltip;"
 	onclick="toolbar_buttons.openColorPickerTab(event);"
-	oncommand="toolbar_buttons.openColorPicker();" />
+	oncommand="toolbar_buttons.openColorPicker(event);" />

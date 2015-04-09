@@ -1,6 +1,7 @@
-focusInbox: function() {
-	var aServer = window.GetSelectedMsgFolders()[0].server;
+focusInbox: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	var aServer = win.GetSelectedMsgFolders()[0].server;
 	try {
-		window.OpenInboxForServer(aServer);
+		win.OpenInboxForServer(aServer);
 	} catch (ex) {}
 }

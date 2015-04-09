@@ -1,1 +1,1 @@
-toolbar_buttons.loadPrefWatcher("browser.zoom.full", "tb-text-zoom-only");
+toolbar_buttons.loadPrefWatcher(document, "browser.zoom.full", "tb-text-zoom-only");

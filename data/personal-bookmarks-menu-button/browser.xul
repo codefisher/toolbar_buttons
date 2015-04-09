@@ -15,5 +15,5 @@
 		placespopup="true" popupsinherittooltip="true"
 		oncommand="window.BookmarksEventHandler.onCommand(event, this.parentNode._placesView);" 
 		onclick="window.BookmarksEventHandler.onClick(event, this.parentNode._placesView);" 
-		onpopupshowing="if (!this.parentNode._placesView) new window.PlacesMenu(event, 'place:folder=TOOLBAR');" />
+		onpopupshowing="toolbar_buttons.personalBookmakrsMenuButon(this, event);" />
 </toolbarbutton>

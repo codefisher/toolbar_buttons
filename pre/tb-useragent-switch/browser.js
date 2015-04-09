@@ -1,4 +1,5 @@
 openUserAgentMenu: function(event, aMenu) {
+	var doc = event.target.ownerDocument;
 	if(!toolbar_buttons.database_connection) {
 		let file = FileUtils.getFile("ProfD", ["toolbar_buttons.sqlite"]);
 		toolbar_buttons['database_connection'] = Services.storage.openDatabase(file);
@@ -32,7 +33,7 @@ openUserAgentMenu: function(event, aMenu) {
 		
 				let name = row.getResultByName("name");
 				let value = row.getResultByName("value");
-				var menuItem = document.createElement("menuitem");
+				var menuItem = doc.createElement("menuitem");
 				menuItem.setAttribute("label", name);
 				menuItem.setAttribute("type", "checkbox");
 				if(currentValue == value) {
@@ -62,7 +63,8 @@ resetUserAgentString: function() {
 	toolbar_buttons.interfaces.PrefBranch.clearUserPref('general.useragent.override');
 }
 
-openUserAgentSettings: function() {
+openUserAgentSettings: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-useragent-switch.label");
@@ -71,7 +73,7 @@ openUserAgentSettings: function() {
 		type: "string",
 		db_table: "user_agent_strings",
 	};
-	window.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
+	win.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
 			"UserAgent:Permissions", "chrome,centerscreen,dialog=no,resizable", arguments);
 }
 

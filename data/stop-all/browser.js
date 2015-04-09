@@ -1,5 +1,6 @@
 stopAll: function() {
-	for (var i = 0; i < window.gBrowser.mTabContainer.childNodes.length; i++) {
-		window.gBrowser.browsers[i].stop();
+	var win = event.target.ownerDocument.defaultView;
+	for (var i = 0; i < win.gBrowser.mTabContainer.childNodes.length; i++) {
+		win.gBrowser.browsers[i].stop();
 	}
 }

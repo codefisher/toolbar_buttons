@@ -3,4 +3,4 @@
 	id="stop-all"
 	label="&stop-all.label;"
 	tooltiptext="&stop-all.tooltip;"
-	oncommand="toolbar_buttons.stopAll();" />
+	oncommand="toolbar_buttons.stopAll(event);" />

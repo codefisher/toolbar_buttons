@@ -1,7 +1,8 @@
-socialMediaShare: function(service) {
-	var title = window.encodeURIComponent(window.gBrowser.selectedBrowser.contentTitle);
-	var href = window.gBrowser.selectedBrowser.contentDocument.location.href;
-	var uri = window.encodeURIComponent(href);
+socialMediaShare: function(event, service) {
+	var win = event.target.ownerDocument.defaultView;
+	var title = win.encodeURIComponent(win.gBrowser.selectedBrowser.contentTitle);
+	var href = win.gBrowser.selectedBrowser.contentDocument.location.href;
+	var uri = win.encodeURIComponent(href);
 	switch(service) {
 		case "twitter":
 			url = "https://twitter.com/intent/tweet?text=" + title + "&url=" + uri;
@@ -21,6 +22,6 @@ socialMediaShare: function(service) {
 		default:
 			return;
 	}
-	var tab = window.gBrowser.addTab(url, {owner: window.gBrowser.selectedTab, relatedToCurrent: true});
-	window.gBrowser.selectedTab = tab;
+	var tab = win.gBrowser.addTab(url, {owner: win.gBrowser.selectedTab, relatedToCurrent: true});
+	win.gBrowser.selectedTab = tab;
 }

@@ -4,11 +4,11 @@
 	type="menu-button"
 	label="&tb-free-memory.label;"
 	tooltiptext="&tb-free-memory.tooltip;"
-	oncommand="toolbar_buttons.freeMemory();">
+	oncommand="toolbar_buttons.freeMemory(event);">
 	<menupopup onpopupshowing="toolbar_buttons.freeMemorySetMenu(event, this);" oncommand="event.stopPropagation();" >
-		<menuitem oncommand="toolbar_buttons.freeMemory();" label="&tb-free-memory.label;" />
-		<menuitem oncommand="toolbar_buttons.freeMemoryGarbageCollection();" label="&tb-free-memory.garbage;" />
-		<menuitem oncommand="toolbar_buttons.freeMemoryCycleCollection();" label="&tb-free-memory.cycle;" />
+		<menuitem oncommand="toolbar_buttons.freeMemory(event);" label="&tb-free-memory.label;" />
+		<menuitem oncommand="toolbar_buttons.freeMemoryGarbageCollection(event);" label="&tb-free-memory.garbage;" />
+		<menuitem oncommand="toolbar_buttons.freeMemoryCycleCollection(event);" label="&tb-free-memory.cycle;" />
 		<menuseparator/>
 		<menuitem onclick="toolbar_buttons.LoadURL('about:memory', event);" label="&tb-free-memory.about;" />
 		<menuseparator/>

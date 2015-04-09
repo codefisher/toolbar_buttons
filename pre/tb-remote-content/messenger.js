@@ -1,4 +1,5 @@
-openRemoteContent: function() {
+openRemoteContent: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var bundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://messenger/locale/preferences/preferences.properties");
 	var params = {  
@@ -10,5 +11,5 @@ openRemoteContent: function() {
 		windowTitle    : bundle.GetStringFromName("imagepermissionstitle"),
 		introText      : bundle.GetStringFromName("imagepermissionstext")
 	};
-	window.openDialog("chrome://messenger/content/preferences/permissions.xul", "mailnews:permissions", "", params);
+	win.openDialog("chrome://messenger/content/preferences/permissions.xul", "mailnews:permissions", "", params);
 }

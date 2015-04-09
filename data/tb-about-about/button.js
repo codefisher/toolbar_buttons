@@ -1,4 +1,5 @@
 aboutAboutMenu: function(item) {
+	var doc = item.ownerDocument;
 	if (item.firstChild) {
 		return;
 	}
@@ -24,7 +25,7 @@ aboutAboutMenu: function(item) {
 	}
 	gProtocols.sort().forEach(function(aProtocol) {
 		var uri = "about:" + aProtocol;
-		var menuItem = document.createElement("menuitem");
+		var menuItem = doc.createElement("menuitem");
 		menuItem.setAttribute("label", uri);
 		menuItem.addEventListener("click", function(event) {
 				toolbar_buttons.openAboutPage(uri, event);

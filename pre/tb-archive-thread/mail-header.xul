@@ -3,4 +3,4 @@
 	id="tb-archive-thread"
 	label="&tb-archive-thread.label;"
 	tooltiptext="&tb-archive-thread.tooltip;"
-	oncommand="toolbar_buttons.archiveSelectedThread(); window.RestoreFocusAfterHdrButton();"/>
+	oncommand="toolbar_buttons.archiveSelectedThread(event); window.RestoreFocusAfterHdrButton();"/>

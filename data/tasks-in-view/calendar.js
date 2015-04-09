@@ -1,7 +1,8 @@
-tasksInView: function() {
+tasksInView: function(event {
+	var win = event.target.ownerDocument.defaultView;
 	try {
-		window.changeDisplayToDoInViewCheckbox();
+		win.changeDisplayToDoInViewCheckbox();
 	} catch(e) {
-		window.toggleTasksInView();
+		win.toggleTasksInView();
 	}
 }

@@ -1,16 +1,18 @@
-openBookmarkManager: function() {
+openBookmarkManager: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	if (prefs.getBoolPref("bookmark.manager.tab")) {
-		var browser = window.getBrowser();
+		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab("chrome://browser/content/places/places.xul");
 	} else {
-		window.PlacesCommandHook.showPlacesOrganizer('AllBookmarks');
+		win.PlacesCommandHook.showPlacesOrganizer('AllBookmarks');
 	}	
 }
 
 clickBookmarkManager: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	if(event.button == 1) {
-		var browser = window.getBrowser();
+		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab("chrome://browser/content/places/places.xul");
 	}
 }

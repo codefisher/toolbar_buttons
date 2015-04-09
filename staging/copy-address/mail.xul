@@ -3,4 +3,4 @@
 	id="copy-address"
 	label="&copy-address.label;"
 	tooltiptext="&copy-address.tooltip;"
-	oncommand="toolbar_buttons.copyAddress()"/>
+	oncommand="toolbar_buttons.copyAddress(event)"/>

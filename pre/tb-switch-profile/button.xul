@@ -3,4 +3,4 @@
 	id="tb-switch-profile"
 	label="&tb-switch-profile.label;"
 	tooltiptext="&tb-switch-profile.tooltip;"
-	oncommand="toolbar_buttons.toProfileManager();"/>
+	oncommand="toolbar_buttons.toProfileManager(event);"/>

@@ -1,10 +1,11 @@
 
-MsgSearchAddresses: function() {
+MsgSearchAddresses: function(event) {
 	var args = {directory: null};
-	toolbar_buttons.OpenOrFocusWindow(args, "mailnews:absearch", "chrome://messenger/content/ABSearchDialog.xul");
+	toolbar_buttons.OpenOrFocusWindow(event, args, "mailnews:absearch", "chrome://messenger/content/ABSearchDialog.xul");
 }
 
-OpenOrFocusWindow: function(args, windowType, chromeURL) {
+OpenOrFocusWindow: function(event, args, windowType, chromeURL) {
+	var win = event.target.ownerDocument.defaultView;
 	var desiredWindow = toolbar_buttons.GetWindowByWindowType(windowType);
 	if (desiredWindow) {
 		desiredWindow.focus();
@@ -12,7 +13,7 @@ OpenOrFocusWindow: function(args, windowType, chromeURL) {
 			desiredWindow.refresh();
 		}
 	} else {
-		window.openDialog(chromeURL, "", "chrome,resizable,status,centerscreen,dialog=no", args);
+		win.openDialog(chromeURL, "", "chrome,resizable,status,centerscreen,dialog=no", args);
 	}
 }
 

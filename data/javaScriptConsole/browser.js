@@ -1,13 +1,14 @@
-toJavaScriptConsole: function() {
+toJavaScriptConsole: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var extPrefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	if(prefs.getBoolPref('devtools.errorconsole.enabled')) {
-		window.toJavaScriptConsole();
+		win.toJavaScriptConsole();
 	} else {
 		if(extPrefs.getIntPref("javascript.console.open") == 1) {
-			window.HUDService.toggleBrowserConsole();
+			win.HUDService.toggleBrowserConsole();
 		} else {
-			window.gDevToolsBrowser.selectToolCommand(window.gBrowser, "webconsole");
+			win.gDevToolsBrowser.selectToolCommand(win.gBrowser, "webconsole");
 		}
 	}	
 }

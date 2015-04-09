@@ -1,6 +1,6 @@
 toggleJavaScript: function(button) {
 	toolbar_buttons.prefToggleStatus(button, "javascript.enabled");
-	toolbar_buttons.checkBrowserReload();
+	toolbar_buttons.checkBrowserReload(button.ownerDocument.defaultView);
 }
 
-toolbar_buttons.loadPrefWatcher("javascript.enabled", "javascript-toggle")
+toolbar_buttons.loadPrefWatcher(document, "javascript.enabled", "javascript-toggle")

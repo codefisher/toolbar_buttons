@@ -1,4 +1,5 @@
 addDictionaryList: function(item) {
+	var doc = item.ownerDocument;
 	while (item.firstChild && item.firstChild.nodeName != 'menuseparator') {
 		item.removeChild(item.firstChild);
 	}
@@ -26,12 +27,9 @@ addDictionaryList: function(item) {
 			.createBundle("chrome://global/locale/languageNames.properties");
 		var regionBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://global/locale/regionNames.properties");
-			
-		
-						
-		var i = 0;
-		for (i = 0; i < count; i++) {
-			var menuitem = document.createElement("menuitem");
+
+		for (var i = 0; i < count; i++) {
+			var menuitem = doc.createElement("menuitem");
 			var language = dictList[i];
 			if (language == current) {
 				menuitem.style.fontWeight = "900";
@@ -48,7 +46,7 @@ addDictionaryList: function(item) {
 			item.insertBefore(menuitem, sep);
 		}
 	} catch(e) {
-		var menuitem = document.createElement("menuitem");
+		var menuitem = doc.createElement("menuitem");
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var empty = stringBundle.GetStringFromName("empty");
@@ -90,12 +88,13 @@ getDictionaryName: function(langId, languageBundle, regionBundle) {
 }
 
 // copied off the context menu 
-addDictionaries: function() {
-	var uri = window.formatURL("browser.dictionaries.download.url", true);
+addDictionaries: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	var uri = win.formatURL("browser.dictionaries.download.url", true);
 
 	var locale = "-";
 	try {
-	  locale = window.gPrefService.getComplexValue("intl.accept_languages", Ci.nsIPrefLocalizedString).data;
+	  locale = win.gPrefService.getComplexValue("intl.accept_languages", Ci.nsIPrefLocalizedString).data;
 	}
 	catch (e) { }
 
@@ -105,10 +104,10 @@ addDictionaries: function() {
 	}
 	catch (e) { }
 
-	uri = uri.replace(/%LOCALE%/, window.escape(locale)).replace(/%VERSION%/, version);
+	uri = uri.replace(/%LOCALE%/, win.escape(locale)).replace(/%VERSION%/, version);
 
-	var newWindowPref = window.gPrefService.getIntPref("browser.link.open_newwindow");
+	var newWindowPref = win.gPrefService.getIntPref("browser.link.open_newwindow");
 	var where = newWindowPref == 3 ? "tab" : "window";
 
-	window.openUILinkIn(uri, where);
+	win.openUILinkIn(uri, where);
 }

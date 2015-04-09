@@ -3,4 +3,4 @@
 	id="tb-search-minus"
 	label="&tb-search-minus.label;"
 	tooltiptext="&tb-search-minus.tooltip;"
-	oncommand="toolbar_buttons.searchBarSize(-1);" />
+	oncommand="toolbar_buttons.searchBarSize(event, -1);" />

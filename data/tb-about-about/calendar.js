@@ -1,3 +1,4 @@
 openAboutPage: function(uri, event) {
-	window.openDialog(uri);
+	var win = event.target.ownerDocument.defaultView;
+	win.openDialog(uri);
 }

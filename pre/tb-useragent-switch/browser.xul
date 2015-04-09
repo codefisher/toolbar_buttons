@@ -11,6 +11,6 @@
 		<menuseparator id="tb-useragent-switch-default-sep" />
 		
 		<menuseparator id="tb-useragent-switch-config-sep"/>
-		<menuitem oncommand="toolbar_buttons.openUserAgentSettings();" label="&tb-useragent-switch.config;" />
+		<menuitem oncommand="toolbar_buttons.openUserAgentSettings(event);" label="&tb-useragent-switch.config;" />
 	</menupopup>
 </toolbarbutton>

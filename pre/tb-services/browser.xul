@@ -3,4 +3,4 @@
 	id="tb-services"
 	label="&tb-services.label;"
 	tooltiptext="&tb-services.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('services', 'addons://list/service');"/>
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'services', 'addons://list/service');"/>

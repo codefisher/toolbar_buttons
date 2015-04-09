@@ -1,6 +1,7 @@
 openExtensionTab: function(event) {
+	var doc = event.target.ownerDocument;
 	if(event.button == 1) { 
-		document.getElementById('tabmail').openTab('contentTab', 
+		doc.getElementById('tabmail').openTab('contentTab',
 				{contentPage: 
 					'chrome://mozapps/content/extensions/extensions.xul'});
 		return true;

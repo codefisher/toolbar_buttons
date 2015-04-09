@@ -1,13 +1,14 @@
-disableStyle: function() {
-	var viewStyle = window.getMarkupDocumentViewer().authorStyleDisabled;
+disableStyle: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	var viewStyle = win.getMarkupDocumentViewer().authorStyleDisabled;
 	try {
 		if(viewStyle) {
-			window.gPageStyleMenu.switchStyleSheet('');		
+			win.gPageStyleMenu.switchStyleSheet('');
 		} else {
-			window.gPageStyleMenu.disableStyle();
+			win.gPageStyleMenu.disableStyle();
 		}
 	} catch(e) {
 		// this works in SeaMonkey and older versions of Firefox
-		window.setStyleDisabled(!viewStyle);
+		win.setStyleDisabled(!viewStyle);
 	}
 }

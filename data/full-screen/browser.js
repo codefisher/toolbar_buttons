@@ -1,4 +1,5 @@
-fullScreenMode: function() {
+fullScreenMode: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var alertNone = toolbar_buttons.interfaces.ExtensionPrefBranch
 		.getBoolPref("full.screen");
 	if (alertNone === false) {
@@ -9,9 +10,9 @@ fullScreenMode: function() {
 		var checkbox = stringBundle.GetStringFromName("full-screen.checkbox");
 		var check = {value: false};
 		toolbar_buttons.interfaces.PromptService
-			.alertCheck(window, title, message, checkbox, check);
+			.alertCheck(win, title, message, checkbox, check);
 		toolbar_buttons.interfaces.ExtensionPrefBranch
 			.setBoolPref("full.screen", check.value);
 	}
-	window.BrowserFullScreen();
+	win.BrowserFullScreen();
 }

@@ -1,22 +1,24 @@
 openColorPickerTab: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var url = "chrome://{{chrome_name}}/content/files/colorpicker.xul";
 	if(event.button == 1) {
-		var browser = window.getBrowser();
+		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab(url);
 	}
 }
 
-openColorPicker: function() {
+openColorPicker: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var url = "chrome://{{chrome_name}}/content/files/colorpicker.xul";
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	if(prefs.getBoolPref("colorpicker.intab")) {
-		var browser = window.getBrowser();
+		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab(url);
 	} else {
 		var arguments = {
 			color: "#ff0000"
 		};
-		window.openDialog(url, "ColorPicker", "chrome,centerscreen,dialog=no,resizable", arguments);
+		win.openDialog(url, "ColorPicker", "chrome,centerscreen,dialog=no,resizable", arguments);
 	}
 }
 

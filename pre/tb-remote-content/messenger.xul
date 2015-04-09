@@ -3,4 +3,4 @@
     id="tb-remote-content"
     label="&tb-remote-content.label;"
     tooltiptext="&tb-remote-content.tooltip;"
-    oncommand="toolbar_buttons.openRemoteContent();"/>
+    oncommand="toolbar_buttons.openRemoteContent(event);"/>

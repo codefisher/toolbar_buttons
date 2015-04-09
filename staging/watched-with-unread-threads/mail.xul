@@ -3,4 +3,4 @@
 	id="watched-with-unread-threads"
 	label="&watched-with-unread-threads.label;"
 	tooltiptext="&watched-with-unread-threads.tooltip;"
-	oncommand="toolbar_buttons.watchedThreadsWithUnread();" />
+	oncommand="toolbar_buttons.watchedThreadsWithUnread(event);" />

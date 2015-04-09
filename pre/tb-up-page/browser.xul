@@ -3,4 +3,4 @@
 	id="tb-up-page"
 	label="&tb-up-page.label;"
 	tooltiptext="&tb-up-page.tooltip;"
-	oncommand="toolbar_buttons.pageUp();"/>
+	oncommand="toolbar_buttons.pageUp(event);"/>

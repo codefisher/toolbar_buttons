@@ -1,9 +1,11 @@
-addContact: function() {
-	var detailsNodes = document.getElementById('expandedfromBox').emailAddresses.firstChild;
+addContact: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
+	var detailsNodes = doc.getElementById('expandedfromBox').emailAddresses.firstChild;
 	if (detailsNodes.cardDetails.card) {
-		window.EditContact(detailsNodes)
+		win.EditContact(detailsNodes)
 	} else {
-		window.AddContact(detailsNodes);
+		win.AddContact(detailsNodes);
 	}
 }
 

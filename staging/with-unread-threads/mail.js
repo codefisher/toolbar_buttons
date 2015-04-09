@@ -1,7 +1,8 @@
 threadsWithUnread: function() {
-	if(window.gFolderDisplay.view.specialViewThreadsWithUnread) {
-		window.goDoCommand('cmd_viewAllMsgs');
+	var win = event.target.ownerDocument.defaultView;
+	if(win.gFolderDisplay.view.specialViewThreadsWithUnread) {
+		win.goDoCommand('cmd_viewAllMsgs');
 	} else {
-		window.goDoCommand('cmd_viewThreadsWithUnread');
+		win.goDoCommand('cmd_viewThreadsWithUnread');
 	}
 }

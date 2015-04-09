@@ -1,9 +1,10 @@
 pageDown: function() {
-	var down = new window.KeyboardEvent("keypress", {
+	var win = event.target.ownerDocument.defaultView;
+	var down = new win.KeyboardEvent("keypress", {
 		code: "PageDown",
 		keyCode: 0x22,
 		bubbles : true,
 		cancelable : true,
 	});
-	window.gBrowser.contentDocument.dispatchEvent(down);
+	win.gBrowser.contentDocument.dispatchEvent(down);
 }

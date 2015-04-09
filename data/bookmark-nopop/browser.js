@@ -1,9 +1,10 @@
-bookmarkNoPopup: function() {
+bookmarkNoPopup: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var uri = toolbar_buttons.interfaces.IOService.newURI(
-		window.content.document.location.href, null, null);
-	var title = window.content.document.title;
+		win.content.document.location.href, null, null);
+	var title = win.content.document.title;
 	if (title === "") {
-		title = window.content.document.location.href;
+		title = win.content.document.location.href;
 	}
 	toolbar_buttons.interfaces.NavBookmarksService.insertBookmark(
 		toolbar_buttons.interfaces.NavBookmarksService.bookmarksMenuFolder,

@@ -4,10 +4,11 @@ base64: function() {
 			http://custombuttons2.com/forum/buttons/buttons-database/datauri-generator2.html
 			resource://greasemonkey/GM_notification.js
 	*/
+	var win = event.target.ownerDocument.defaultView;
 	var nsIFilePicker = Ci.nsIFilePicker;
 	var fp = Cc['@mozilla.org/filepicker;1'].
 		createInstance(nsIFilePicker);
-	fp.init(window, window.gNavigatorBundle.getString("openFile"),
+	fp.init(win, win.gNavigatorBundle.getString("openFile"),
 		nsIFilePicker.modeOpen);
 	fp.appendFilters(nsIFilePicker.filterAll |
 		nsIFilePicker.filterText |
@@ -31,14 +32,14 @@ base64: function() {
 	try {
 		contentType = Cc["@mozilla.org/mime;1"].getService(Ci.nsIMIMEService).getTypeFromFile(localFile);
 	} catch(e){
-		toolbar_buttons.interfaces.PromptService.alert(window, title, stringBundle.GetStringFromName("tb-base64-alert-content-type"));
+		toolbar_buttons.interfaces.PromptService.alert(win, title, stringBundle.GetStringFromName("tb-base64-alert-content-type"));
 		return;
 	}
 	var inputStream = Cc["@mozilla.org/network/file-input-stream;1"].createInstance(Ci.nsIFileInputStream);
 	inputStream.init(localFile, 0x01, 0600, 0);
 	var stream = Cc["@mozilla.org/binaryinputstream;1"].createInstance(Ci.nsIBinaryInputStream);
 	stream.setInputStream(inputStream);
-	var encoded = window.btoa(stream.readBytes(stream.available()));
+	var encoded = win.btoa(stream.readBytes(stream.available()));
 	Cc["@mozilla.org/widget/clipboardhelper;1"].getService(Ci.nsIClipboardHelper).copyString("data:" + contentType + ";base64," + encoded);
-	toolbar_buttons.interfaces.PromptService.alert(window, title, stringBundle.GetStringFromName("tb-base64-alert-copied"));
+	toolbar_buttons.interfaces.PromptService.alert(win, title, stringBundle.GetStringFromName("tb-base64-alert-copied"));
 }

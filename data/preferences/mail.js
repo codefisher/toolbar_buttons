@@ -1,6 +1,7 @@
 openOptionsTab: function(event) {
+	var doc = event.target.ownerDocument.defaultView;
 	if(event.button == 1) { 
-		document.getElementById('tabmail').openTab('contentTab', 
+		doc.getElementById('tabmail').openTab('contentTab',
 				{contentPage: 
 					'chrome://messenger/content/preferences/preferences.xul'});
 		return true;

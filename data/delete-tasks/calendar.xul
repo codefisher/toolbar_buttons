@@ -4,4 +4,4 @@
 	tooltiptext="&delete-tasks.tooltip;"
 	label="&delete-tasks.label;"
 	observes="calendar_delete_todo_command"
-	oncommand="toolbar_buttons.deleteTasks();" />
+	oncommand="toolbar_buttons.deleteTasks(event);" />

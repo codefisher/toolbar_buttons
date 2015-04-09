@@ -3,4 +3,4 @@
 	id="get-inbox"
 	label="&get-inbox.label;"
 	tooltiptext="&get-inbox.tooltip;"
-	oncommand="toolbar_buttons.focusInbox();"/>
+	oncommand="toolbar_buttons.focusInbox(event);"/>

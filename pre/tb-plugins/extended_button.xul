@@ -4,7 +4,7 @@
 	type="menu-button"
 	label="&tb-plugins.label;"
 	tooltiptext="&tb-plugins.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('plugins', 'addons://list/plugin');">
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'plugins', 'addons://list/plugin');">
 		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'plugin');" oncommand="event.stopPropagation();">
 			<menuseparator />
 			<menuitem id="tb-plugins-about-plugins" label="&about-plugins.label;" oncommand="toolbar_buttons.LoadURL('about:plugins', event);" />

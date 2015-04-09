@@ -25,7 +25,10 @@ hideOtherToolbars: function(event) {
 		if(showToolbars.length) {
 			var showToolbarsIds = showToolbars.split(",");
 			for(var i = 0; i < showToolbarsIds.length; i++) {
-				doc.getElementById(showToolbarsIds[i]).setAttribute('collapsed', 'false');
+				var toolbar = doc.getElementById(showToolbarsIds[i]);
+				if(toolbar) {
+					toolbar.setAttribute('collapsed', 'false');
+				}
 			}
 		} else {
 			for(var i = 0; i < toolbars.length; i++) {

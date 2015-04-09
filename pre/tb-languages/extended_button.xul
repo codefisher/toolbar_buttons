@@ -4,7 +4,7 @@
 	type="menu-button"
 	label="&tb-languages.label;"
 	tooltiptext="&tb-languages.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('locales', 'addons://list/locale');">
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'locales', 'addons://list/locale');">
 		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'locale');" oncommand="event.stopPropagation();">
 			<menuseparator />
 			<menuitem id="tb-extensions-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />

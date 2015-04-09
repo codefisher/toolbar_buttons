@@ -1,4 +1,5 @@
-toProfileManager: function() {
+toProfileManager: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	// This is mostly from working out what SeaMonkey does, and making it work for Firefox/Thunderbird
 	var promgrWin = Services.wm.getMostRecentWindow("mozilla:profileSelection");
 	if (promgrWin) {
@@ -10,7 +11,7 @@ toProfileManager: function() {
 
 			
 		var ww = Cc["@mozilla.org/embedcomp/window-watcher;1"].getService(Ci.nsIWindowWatcher);
-		var win = ww.openWindow(window, "chrome://mozapps/content/profile/profileSelection.xul",
+		ww.openWindow(win, "chrome://mozapps/content/profile/profileSelection.xul",
 						"", "centerscreen,chrome,titlebar,dialog,modal", params);
 		
 		if(params.GetString(0) && params.GetInt(0)) {

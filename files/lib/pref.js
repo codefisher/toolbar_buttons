@@ -20,12 +20,13 @@ PreferenceWatcher: function() {
 	this.pref = null;
 	this.func = null;
 
-	this.startup = function(pref, button, func) {
+	this.startup = function(doc, pref, button, func) {
 		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
 		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
+		this.doc = doc;
 		if(button)
-			this.button = document.getElementById(button);
+			this.button = doc.getElementById(button);
 		this.button_id = button;
 		this.func = func;
 		this.pref = pref;
@@ -58,7 +59,7 @@ PreferenceWatcher: function() {
 				return;
 		}
 		if(this.func) {
-			this.func(state);
+			this.func(this.doc, state);
 		} else {
 			toolbar_buttons.setButtonStatus(this.button, state);
 		}
@@ -70,7 +71,7 @@ PreferenceWatcher: function() {
 		}
 		try {
 			if(!this.button)
-				this.button = document.getElementById(this.button_id);
+				this.button = this.doc.getElementById(this.button_id);
 			this.setStatus();
 		} catch(e) {} // button might not exist
 	};
@@ -84,12 +85,13 @@ prefToggleNumber: function(button, pref, next) {
 	return next[setting];
 }
 
-loadPrefWatcher: function(pref, button_id, func) {
-	window.setTimeout(function() {
+loadPrefWatcher: function(doc, pref, button_id, func) {
+	var win = doc.defaultView;
+	win.setTimeout(function() {
 		var prefWatch = new toolbar_buttons.PreferenceWatcher();
-		prefWatch.startup(pref, button_id, func);
-		window.addEventListener("unload", function loadPrefUnload(e) {
-			window.removeEventListener("unload", loadPrefUnload, false);
+		prefWatch.startup(doc, pref, button_id, func);
+		win.addEventListener("unload", function loadPrefUnload(e) {
+			win.removeEventListener("unload", loadPrefUnload, false);
 			prefWatch.shutdown();
 		}, false);
 	}, 0);

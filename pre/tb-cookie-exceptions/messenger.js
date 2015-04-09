@@ -1,4 +1,5 @@
-showCookieExceptions: function() {
+showCookieExceptions: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var bundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://messenger/locale/preferences/preferences.properties");
 	var params = { 
@@ -10,5 +11,5 @@ showCookieExceptions: function() {
 		windowTitle    : bundle.getString("cookiepermissionstitle"),
 		introText      : bundle.getString("cookiepermissionstext")
 	};
-	document.documentElement.openWindow("mailnews:permissions", "chrome://messenger/content/preferences/permissions.xul", "", params);
+	win.openWindow("mailnews:permissions", "chrome://messenger/content/preferences/permissions.xul", "", params);
 }

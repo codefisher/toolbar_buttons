@@ -3,4 +3,4 @@
 	id="tasks-in-view"
 	label="&tasks-in-view.label;"
 	tooltiptext="&tasks-in-view.tooltip;"
-	onclick="toolbar_buttons.tasksInView();" />
+	onclick="toolbar_buttons.tasksInView(event);" />

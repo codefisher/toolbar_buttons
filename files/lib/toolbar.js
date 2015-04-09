@@ -44,16 +44,16 @@ loadToggleToolbar: function(doc, button_id, toolbar_id) {
 		var mutationObserver = new win.MutationObserver(function(mutations) {
 			var attribute = false;
 			var attributeName = false;
-			var document = null;
+			var aDoc = null;
 			for(var mut in mutations) {
 				attribute = attribute || (mut.type && mut.type == "attributes");
 				attributeName = attributeName || (attr.attributeName != "collapsed" && attr.attributeName != "hidden");
-				document = mut.target.ownerDocument;
+				aDoc = mut.target.ownerDocument;
 			}
 			if(!attribute || !attributeName) {
 				return;
 			}
-			var button = document.getElementById(button_id);
+			var button = aDoc.getElementById(button_id);
 			if(button == null){
 				return;
 			}

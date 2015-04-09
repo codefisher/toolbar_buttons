@@ -1,7 +1,8 @@
-togglePinTab: function() {
-	if(window.gBrowser.selectedTab.getAttribute("pinned") == "true") {
-		window.gBrowser.unpinTab(window.gBrowser.selectedTab);
+togglePinTab: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	if(win.gBrowser.selectedTab.getAttribute("pinned") == "true") {
+		win.gBrowser.unpinTab(win.gBrowser.selectedTab);
 	} else {
-		window.gBrowser.pinTab(window.gBrowser.selectedTab);
+		win.gBrowser.pinTab(win.gBrowser.selectedTab);
 	}
 }

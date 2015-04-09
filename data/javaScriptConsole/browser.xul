@@ -3,4 +3,4 @@
 	id="javaScriptConsole"
 	label="&javaScriptConsole.label;"
 	tooltiptext="&javaScriptConsole.tooltip;"
-	oncommand="toolbar_buttons.toJavaScriptConsole();"/>
+	oncommand="toolbar_buttons.toJavaScriptConsole(event);"/>

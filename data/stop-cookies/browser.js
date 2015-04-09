@@ -27,4 +27,4 @@ setCookieValue: function(event) {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("network.cookie.cookieBehavior", "stop-cookies");
+toolbar_buttons.loadPrefWatcher(document, "network.cookie.cookieBehavior", "stop-cookies");

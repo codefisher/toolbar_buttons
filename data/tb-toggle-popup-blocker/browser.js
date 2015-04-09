@@ -1,6 +1,7 @@
-togglePopUp: function() {
+togglePopUp: function(event) {
+	var doc = event.target.ownerDocument.defaultView;
 	var blockPopUp = toolbar_buttons.interfaces.PrefBranch.getBoolPref("dom.disable_open_during_load");
-	var button = document.getElementById("tb-toggle-popup-blocker");
+	var button = doc.getElementById("tb-toggle-popup-blocker");
 	if (blockPopUp === true) {
 		//toolbar_buttons.interfaces.PrefBranch.setCharPref("dom.disable_open_during_load","change click dblclick mouseup reset submit");
 		toolbar_buttons.interfaces.PrefBranch.setIntPref("privacy.popups.disable_from_plugins", 0);
@@ -20,4 +21,4 @@ viewPopupExceptions: function(event) {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("dom.disable_open_during_load", "tb-toggle-popup-blocker");
+toolbar_buttons.loadPrefWatcher(document, "dom.disable_open_during_load", "tb-toggle-popup-blocker");

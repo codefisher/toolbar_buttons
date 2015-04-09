@@ -31,4 +31,4 @@ toggleMinimumFontSize: function() {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("font.minimum-size", "min-font-size");
+toolbar_buttons.loadPrefWatcher(document, "font.minimum-size", "min-font-size");

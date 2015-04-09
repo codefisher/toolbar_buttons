@@ -3,4 +3,4 @@
 	id="tb-down-page"
 	label="&tb-down-page.label;"
 	tooltiptext="&tb-down-page.tooltip;"
-	oncommand="toolbar_buttons.pageDown();"/>
+	oncommand="toolbar_buttons.pageDown(event);"/>

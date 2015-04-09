@@ -3,4 +3,4 @@
 	id="java-toggle"
 	label="&java-toggle.label;"
 	tooltiptext="&java-toggle.tooltip;"
-	oncommand="toolbar_buttons.JavaToggle.toggle();" />
+	oncommand="toolbar_buttons.JavaToggle.toggle(event);" />

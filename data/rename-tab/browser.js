@@ -1,14 +1,16 @@
-renameTab: function() {
+renameTab: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	if(toolbar_buttons.renameTabObj)
 		return;
-	var thisTab = window.getBrowser().selectedTab;
-	thisTab.labelNode = document.getAnonymousElementByAttribute(thisTab, "class", "tab-text");
+	var thisTab = win.getBrowser().selectedTab;
+	thisTab.labelNode = doc.getAnonymousElementByAttribute(thisTab, "class", "tab-text");
 	if(thisTab.labelNode == null) {
-		thisTab.labelNode = document.getAnonymousElementByAttribute(thisTab, "class", "tab-text tab-label");
+		thisTab.labelNode = doc.getAnonymousElementByAttribute(thisTab, "class", "tab-text tab-label");
 	}
 	var thisTitle = thisTab.label;
 	thisTab.labelNode.style.display = "none";
-	var textBox = document.createElement("textbox");
+	var textBox = doc.createElement("textbox");
 	thisTab.textBox = thisTab.labelNode.parentNode.appendChild(textBox);
 	thisTab.textBox.focus();
 	thisTab.textBox.value = thisTitle;
@@ -17,7 +19,7 @@ renameTab: function() {
 	toolbar_buttons.renameTabObj = thisTab;
 }
 
-doRenameTab: function() {
+doRenameTab: function(event) {
 	var thisTab = toolbar_buttons.renameTabObj;
 	thisTab.labelNode.style.display = "block";
 	var label = thisTab.textBox.value;

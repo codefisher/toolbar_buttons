@@ -3,4 +3,4 @@
 	id="close-all-tabs"
 	label="&close-all-tabs.label;"
 	tooltiptext="&close-all-tabs.tooltip;"
-	oncommand="toolbar_buttons.BrowserCloseAllTabs();"/>
+	oncommand="toolbar_buttons.BrowserCloseAllTabs(event);"/>

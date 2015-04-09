@@ -5,9 +5,9 @@
 	label="&tb-text-case-change.label;"
 	tooltiptext="&tb-text-case-change.tooltip;">
 	<menupopup>
-		<menuitem label="&tb-text-case-change.lower;" oncommand="toolbar_buttons.textChangeCaseLower();" />
-		<menuitem label="&tb-text-case-change.upper;" oncommand="toolbar_buttons.textChangeCaseUpper();" />
-		<menuitem label="&tb-text-case-change.title;" oncommand="toolbar_buttons.textChangeCaseTitle();" />
-		<menuitem label="&tb-text-case-change.invert;" oncommand="toolbar_buttons.textChangeCaseInvert();" />
+		<menuitem label="&tb-text-case-change.lower;" oncommand="toolbar_buttons.textChangeCaseLower(event);" />
+		<menuitem label="&tb-text-case-change.upper;" oncommand="toolbar_buttons.textChangeCaseUpper(event);" />
+		<menuitem label="&tb-text-case-change.title;" oncommand="toolbar_buttons.textChangeCaseTitle(event);" />
+		<menuitem label="&tb-text-case-change.invert;" oncommand="toolbar_buttons.textChangeCaseInvert(event);" />
 	</menupopup>
 </toolbarbutton>

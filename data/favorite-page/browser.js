@@ -1,4 +1,5 @@
 OpenLinkPref: function(pref, event) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var changed = prefs.prefHasUserValue(pref);
 	if (changed != true) {
@@ -11,7 +12,7 @@ OpenLinkPref: function(pref, event) {
 		var url = prefs.getCharPref(pref).split(' | ');
 		toolbar_buttons.LoadURL(url[0], event);
 		if(url.length > 1) {
-			var browser = window.getBrowser();
+			var browser = win.getBrowser();
 			for(var i=1, max=url.length; i<max; i++){
 				browser.addTab(url[i]);
 			}

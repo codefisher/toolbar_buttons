@@ -8,6 +8,6 @@
 		onpopupshowing="toolbar_buttons.openExternalApplicationMenu(event, this);"
 		oncommand="event.stopPropagation();" >
 		<menuseparator/>
-		<menuitem oncommand="toolbar_buttons.openExternalApplicationSettings();" label="&tb-external-application.config;" />
+		<menuitem oncommand="toolbar_buttons.openExternalApplicationSettings(event);" label="&tb-external-application.config;" />
 	</menupopup>
 </toolbarbutton>

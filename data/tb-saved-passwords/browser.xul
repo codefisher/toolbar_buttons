@@ -3,5 +3,5 @@
     id="tb-saved-passwords"
     label="&tb-saved-passwords.label;"
     tooltiptext="&tb-saved-passwords.tooltip;"
-	oncommand="toolbar_buttons.viewPasswords();"
+	oncommand="toolbar_buttons.viewPasswords(event);"
 	onclick="toolbar_buttons.openPasswordsTab(event);" />

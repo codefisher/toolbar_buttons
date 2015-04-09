@@ -4,4 +4,4 @@
 	label="&toggle-styles.label;"
 	tooltiptext="&toggle-styles.tooltip;"
 	observes="isImage"
-	onclick="toolbar_buttons.disableStyle();" />
+	oncommand="toolbar_buttons.disableStyle(event);" />

@@ -3,4 +3,4 @@
 	id="tb-clear-search"
 	label="&tb-clear-search.label;"
 	tooltiptext="&tb-clear-search.tooltip;"
-	oncommand="toolbar_buttons.clearBar('search');" />
+	oncommand="toolbar_buttons.clearBar(event, 'search');" />

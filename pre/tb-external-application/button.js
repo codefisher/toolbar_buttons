@@ -1,4 +1,5 @@
 openExternalApplicationMenu: function(event, aMenu) {
+	var doc = event.target.ownerDocument;
 	if(!toolbar_buttons.database_connection) {
 		let file = FileUtils.getFile("ProfD", ["toolbar_buttons.sqlite"]);
 		toolbar_buttons['database_connection'] = Services.storage.openDatabase(file);
@@ -9,7 +10,7 @@ openExternalApplicationMenu: function(event, aMenu) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var empty = stringBundle.GetStringFromName("empty");
-	var menuItem = document.createElement("menuitem");
+	var menuItem = doc.createElement("menuitem");
 	menuItem.setAttribute("label", empty);
 	menuItem.setAttribute("disabled", true);
 	aMenu.insertBefore(menuItem, aMenu.firstChild);
@@ -26,7 +27,7 @@ openExternalApplicationMenu: function(event, aMenu) {
 			for (let row = aResultSet.getNextRow(); row; row = aResultSet.getNextRow()) {
 				let name = row.getResultByName("name");
 				let value = row.getResultByName("value");
-				var menuItem = document.createElement("menuitem");
+				var menuItem = doc.createElement("menuitem");
 				menuItem.setAttribute("label", name);
 				menuItem.application = value;
 				menuItem.addEventListener("command", toolbar_buttons.runExternalApplication, false);
@@ -50,7 +51,8 @@ runExternalApplication: function(event) {
 }
 
 
-openExternalApplicationSettings: function() {
+openExternalApplicationSettings: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-external-application.label");
@@ -59,7 +61,7 @@ openExternalApplicationSettings: function() {
 		type: "file",
 		db_table: "external_application_strings",
 	};
-	window.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
+	win.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
 			"ExternalApplication:Permissions", "chrome,centerscreen,dialog=no,resizable", args);
 }
 

@@ -20,7 +20,8 @@ homePageChange: function() {
 		prefs.setCharPref("browser.startup.homepage", input.value);
 }
 
-homePageChangeMultiple: function() {
+homePageChangeMultiple: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var strings = toolbar_buttons.homePageStrings();
 	var value = prefs.getCharPref("browser.startup.homepage");
@@ -47,7 +48,7 @@ homePageChangeMultiple: function() {
 			args["value"] = "http://";
 		}
 		var propBag = PromptUtils.objectToPropBag(args);
-		window.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", propBag);
+		win.openDialog("chrome://global/content/commonDialog.xul", "", "chrome, dialog, modal, centerscreen", propBag);
 		var value = propBag.getPropertyAsAString('value');
 		button = propBag.getPropertyAsInt32('buttonNumClicked');
 		if (value != "http://" && value != "") {
@@ -62,16 +63,18 @@ homePageChangeMultiple: function() {
 	prefs.setCharPref("browser.startup.homepage", links);
 }
 
-homePageSetCurrent: function() {
-	toolbar_buttons.interfaces.PrefBranch.setCharPref("browser.startup.homepage", window.content.document.location.href);
+homePageSetCurrent: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	toolbar_buttons.interfaces.PrefBranch.setCharPref("browser.startup.homepage", win.content.document.location.href);
 }
 
-homePageAddCurrent: function() {
+homePageAddCurrent: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var homePage = prefs.getCharPref("browser.startup.homepage");
 	if(homePage)
 		homePage += "|";
-	homePage += window.content.document.location.href;
+	homePage += win.content.document.location.href;
 	prefs.setCharPref("browser.startup.homepage", homePage);
 }
 
@@ -79,7 +82,8 @@ homeList: function(item) {
 	while (item.lastChild.id != "homePageSeperator") {
 		item.removeChild(item.lastChild);
 	}
-	var homepage = toolbar_buttons.interfaces.PrefBranch.getComplexValue("browser.startup.homepage", Ci.nsIPrefLocalizedString).data;
+	var homepage = toolbar_buttons.interfaces.PrefBranch.getComplexValue("browser.startup.homepage",
+						Ci.nsIPrefLocalizedString).data;
 	var urls = homepage.split("|");
 	for (var i in urls) {
 		toolbar_buttons.createHomePageMenuItem(item, urls[i]);
@@ -87,7 +91,8 @@ homeList: function(item) {
 }
 
 createHomePageMenuItem: function(item, url) {
-	var menuitem = document.createElement("menuitem");
+	var doc = item.ownerDocument;
+	var menuitem = doc.createElement("menuitem");
 	menuitem.setAttribute("label", url);
 	menuitem.addEventListener("click", function(event) {
 		toolbar_buttons.LoadURL(url, event);

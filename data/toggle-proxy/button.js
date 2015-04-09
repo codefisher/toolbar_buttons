@@ -31,4 +31,4 @@ setProxyValue: function(event) {
 	prefs.setIntPref("network.proxy.type", event.originalTarget.getAttribute('value'));
 }
 
-toolbar_buttons.loadPrefWatcher("network.proxy.type", "toggle-proxy");
+toolbar_buttons.loadPrefWatcher(document, "network.proxy.type", "toggle-proxy");

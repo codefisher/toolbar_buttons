@@ -3,4 +3,4 @@
 	id="tb-search-plus"
 	label="&tb-search-plus.label;"
 	tooltiptext="&tb-search-plus.tooltip;"
-	oncommand="toolbar_buttons.searchBarSize(1);" />
+	oncommand="toolbar_buttons.searchBarSize(event, 1);" />

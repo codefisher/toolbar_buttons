@@ -1,18 +1,19 @@
-freeMemory: function() {
+freeMemory: function(event) {
 	Services.obs.notifyObservers(null, "child-mmu-request", null);
 	let gMgr = Cc["@mozilla.org/memory-reporter-manager;1"]
 			.getService(Ci.nsIMemoryReporterManager);
 	gMgr.minimizeMemoryUsage(null);
 }
 
-freeMemoryGarbageCollection: function() {
+freeMemoryGarbageCollection: function(event) {
 	Services.obs.notifyObservers(null, "child-gc-request", null);
 	Cu.forceGC();
 }
 
-freeMemoryCycleCollection: function() {
+freeMemoryCycleCollection: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	Services.obs.notifyObservers(null, "child-cc-request", null);
-	window.QueryInterface(Ci.nsIInterfaceRequestor)
+	win.QueryInterface(Ci.nsIInterfaceRequestor)
 		.getInterface(Ci.nsIDOMWindowUtils)
 		.cycleCollect();
 }
@@ -34,40 +35,40 @@ formatBytes: function(aBytes) {
 }
 
 hasNegativeSign: function(aN) {
-  if (aN === 0) {                   // this succeeds for 0 and -0
-    return 1 / aN === -Infinity;    // this succeeds for -0
-  }
-  return aN < 0;
+	if (aN === 0) {                   // this succeeds for 0 and -0
+		return 1 / aN === -Infinity;    // this succeeds for -0
+	}
+	return aN < 0;
 }
 
 formatInt: function(aN, aExtra) {
-  let neg = false;
-  if (toolbar_buttons.hasNegativeSign(aN)) {
-    neg = true;
-    aN = -aN;
-  }
-  let s = [];
-  while (true) {
-    let k = aN % 1000;
-    aN = Math.floor(aN / 1000);
-    if (aN > 0) {
-      if (k < 10) {
-        s.unshift(",00", k);
-      } else if (k < 100) {
-        s.unshift(",0", k);
-      } else {
-        s.unshift(",", k);
-      }
-    } else {
-      s.unshift(k);
-      break;
-    }
-  }
-  if (neg) {
-    s.unshift("-");
-  }
-  if (aExtra) {
-    s.push(aExtra);
-  }
-  return s.join("");
+	let neg = false;
+	if (toolbar_buttons.hasNegativeSign(aN)) {
+		neg = true;
+		aN = -aN;
+	}
+	let s = [];
+	while (true) {
+		let k = aN % 1000;
+		aN = Math.floor(aN / 1000);
+		if (aN > 0) {
+			if (k < 10) {
+				s.unshift(",00", k);
+			} else if (k < 100) {
+				s.unshift(",0", k);
+			} else {
+				s.unshift(",", k);
+			}
+		} else {
+			s.unshift(k);
+			break;
+		}
+	}
+	if (neg) {
+		s.unshift("-");
+	}
+	if (aExtra) {
+		s.push(aExtra);
+	}
+	return s.join("");
 }

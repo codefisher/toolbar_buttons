@@ -1,7 +1,8 @@
 populateUndoSubmenu: function(undoPopup) {
+	var win = undoPopup.ownerDocument.defaultView;
 	while (undoPopup.hasChildNodes()) {
 		undoPopup.removeChild(undoPopup.firstChild);
 	}
-	let tabsFragment = window.RecentlyClosedTabsAndWindowsMenuUtils.getTabsFragment(window, "menuitem");
+	let tabsFragment = win.RecentlyClosedTabsAndWindowsMenuUtils.getTabsFragment(win, "menuitem");
 	undoPopup.appendChild(tabsFragment);
 }

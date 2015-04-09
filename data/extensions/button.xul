@@ -3,4 +3,4 @@
 	id="extensions"
 	label="&extensions.label;"
 	tooltiptext="&extensions.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');"/>
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'extensions', 'addons://list/extension');"/>

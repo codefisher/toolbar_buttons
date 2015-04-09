@@ -3,4 +3,4 @@
 	id="bookmark-nopop"
 	label="&bookmark-nopop.label;"
 	tooltiptext="&bookmark-nopop.tooltip;"
-	oncommand="toolbar_buttons.bookmarkNoPopup();"/>
+	oncommand="toolbar_buttons.bookmarkNoPopup(event);"/>

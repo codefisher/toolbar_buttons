@@ -1,8 +1,9 @@
-deleteEvent: function() {
+deleteEvent: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	try{
-		window.deleteEventCommand();
+		win.deleteEventCommand();
 	} catch(e) {
-		window.goDoCommand('calendar_delete_event_command');
-		window.goDoCommand('delete_command');
+		win.goDoCommand('calendar_delete_event_command');
+		win.goDoCommand('delete_command');
 	}
 }

@@ -7,4 +7,4 @@ setHowLinksOpen: function() {
 	prefs.setIntPref("browser.link.open_external", next[setting]);
 }
 
-toolbar_buttons.loadPrefWatcher("browser.link.open_newwindow", "link-open");
+toolbar_buttons.loadPrefWatcher(document, "browser.link.open_newwindow", "link-open");

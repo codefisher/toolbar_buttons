@@ -3,4 +3,4 @@
 	id="save-frame"
 	label="&save-frame.label;"
 	tooltiptext="&save-frame.tooltip;"
-	oncommand="toolbar_buttons.saveFrame();"/>
+	oncommand="toolbar_buttons.saveFrame(event);"/>

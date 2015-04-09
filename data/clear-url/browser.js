@@ -1,6 +1,7 @@
 hideURLText: function(item) {
-	var urlbar = document.getElementById("urlbar");
-	var comStyle = document.defaultView.getComputedStyle(urlbar, "").getPropertyValue("background-color");
+	var doc = item.ownerDocument;
+	var urlbar = doc.getElementById("urlbar");
+	var comStyle = doc.defaultView.getComputedStyle(urlbar, "").getPropertyValue("background-color");
 	if (urlbar.style.color == comStyle) {
 		item.checked = false;
 		urlbar.style.color = "";

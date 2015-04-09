@@ -1,3 +1,4 @@
-cloneTab: function() {
-	window.gBrowser.duplicateTab(window.gBrowser.selectedTab);
+cloneTab: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	win.gBrowser.duplicateTab(win.gBrowser.selectedTab);
 }

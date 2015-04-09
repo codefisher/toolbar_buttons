@@ -3,4 +3,4 @@
 	id="tb-clone-tab"
 	label="&tb-clone-tab.label;"
 	tooltiptext="&tb-clone-tab.tooltip;"
-	onclick="toolbar_buttons.cloneTab();" />
+	oncommand="toolbar_buttons.cloneTab(event);" />

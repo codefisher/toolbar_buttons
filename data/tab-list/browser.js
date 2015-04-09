@@ -1,12 +1,13 @@
 tabListDropDown: function(item) {
+	var doc = item.ownerDocument;
 	while (item.firstChild) {
 		item.removeChild(item.firstChild);
 	}
-	var tabcontainer = document.getElementById("content").mTabContainer;
+	var tabcontainer = doc.getElementById("content").mTabContainer;
 	var tabs = tabcontainer.childNodes;
 	//tabcontainer._stopAnimation();
 	for ( var i = 0; i < tabs.length; i++) {
-		var menuItem = document.createElement("menuitem");
+		var menuItem = doc.createElement("menuitem");
 		var curTab = tabs[i];
 		if (curTab.selected) {
 			menuItem.setAttribute("selected", "true");
@@ -28,7 +29,7 @@ tabListDropDown: function(item) {
 		menuItem.tab = curTab;
 		menuItem.addEventListener("command",
 			function() {
-				var tabcontainer = document.getElementById("content").mTabContainer;
+				var tabcontainer = doc.getElementById("content").mTabContainer;
 				tabcontainer.selectedItem = this.tab;
 				tabcontainer.mTabstrip.scrollBoxObject.ensureElementIsVisible(this.tab);
 			}, false);

@@ -7,6 +7,6 @@
 	<menupopup onpopupshowing="toolbar_buttons.addDictionaryList(this);"
 		oncommand="event.stopPropagation();">
 		<menuseparator />
-		<menuitem label="&dictionary-list.add;" oncommand="toolbar_buttons.addDictionaries();"/>
+		<menuitem label="&dictionary-list.add;" oncommand="toolbar_buttons.addDictionaries(event);"/>
 	</menupopup>
 </toolbarbutton>

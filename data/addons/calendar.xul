@@ -8,8 +8,8 @@
 	command="Tools:Addons" >
 	<menupopup onclick="event.stopPropagation();"
 		oncommand="event.stopPropagation();" >
-		<menuitem id="tb-addons-extensions" label="&extensions.label;" oncommand="toolbar_buttons.OpenAddonsMgr('extensions', 'addons://list/extension');"/>
-		<menuitem id="tb-addons-themes" label="&themes.label;" oncommand="toolbar_buttons.OpenAddonsMgr('themes', 'addons://list/theme');" />
+		<menuitem id="tb-addons-extensions" label="&extensions.label;" oncommand="toolbar_buttons.OpenAddonsMgr(event, 'extensions', 'addons://list/extension');"/>
+		<menuitem id="tb-addons-themes" label="&themes.label;" oncommand="toolbar_buttons.OpenAddonsMgr(event, 'themes', 'addons://list/theme');" />
 		<menuseparator />
 		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />
 	</menupopup>

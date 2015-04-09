@@ -1,7 +1,8 @@
-toggleHtmlMode: function() {
+toggleHtmlMode: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var value = prefs.getIntPref("mailnews.display.html_as");
-	[window.MsgBodyAsPlaintext, window.MsgBodySanitized, window.MsgBodySanitized, window.MsgBodyAllowHTML][value]();
+	[win.MsgBodyAsPlaintext, win.MsgBodySanitized, win.MsgBodySanitized, win.MsgBodyAllowHTML][value]();
 }
 
-toolbar_buttons.loadPrefWatcher("mailnews.display.html_as", "html-mode");
+toolbar_buttons.loadPrefWatcher(document, "mailnews.display.html_as", "html-mode");

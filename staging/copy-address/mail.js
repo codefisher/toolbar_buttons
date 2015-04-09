@@ -1,5 +1,7 @@
-copyAddress: function() {
-	var detailsNodes = document.getElementById('expandedfromBox').emailAddresses.firstChild;
-	window.CopyEmailNewsAddress(detailsNodes);
+copyAddress: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
+	var detailsNodes = doc.getElementById('expandedfromBox').emailAddresses.firstChild;
+	win.CopyEmailNewsAddress(detailsNodes);
 }
 

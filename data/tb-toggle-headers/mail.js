@@ -1,4 +1,5 @@
-toggleMsgHeaders: function() {
+toggleMsgHeaders: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var modeType = Ci.nsMimeHeaderDisplayTypes, mode,
 		prefs =  toolbar_buttons.interfaces.PrefBranch,
 		setting = prefs.getIntPref("mail.show_headers");
@@ -8,7 +9,7 @@ toggleMsgHeaders: function() {
 		mode = modeType.NormalHeaders;
 	}
 	prefs.setIntPref("mail.show_headers", mode);
-	window.AdjustHeaderView(mode);
-	window.ReloadMessage();
+	win.AdjustHeaderView(mode);
+	win.ReloadMessage();
 }
 

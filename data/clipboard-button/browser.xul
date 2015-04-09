@@ -3,14 +3,14 @@
 	id="clipboard-button"
 	label="&clipboard.label;"
 	tooltiptext="&clipboard.tooltip;"
-	oncommand="toolbar_buttons.clipboardLink.openCommand();"
+	oncommand="toolbar_buttons.clipboardLink.openCommand(event);"
 	onclick="toolbar_buttons.clipboardLink.open(event);">
 	<menupopup id="clipboard-button-menu" oncommand="event.stopPropagation();">
 		<menuitem id="clipboard-button-load" label="&clipboard.menuitem;"
-			oncommand="toolbar_buttons.clipboardLink.OpenLink();"/>
+			oncommand="toolbar_buttons.clipboardLink.OpenLink(event);"/>
 		<menuitem id="clipboard-button-tab" label="&clipboard.newtab;"
-			oncommand="toolbar_buttons.clipboardLink.OpenNewTab();"/>
+			oncommand="toolbar_buttons.clipboardLink.OpenNewTab(event);"/>
 		<menuitem id="clipboard-button-window" label="&clipboard.newwindow;"
-			oncommand="toolbar_buttons.clipboardLink.OpenWindow();"/>
+			oncommand="toolbar_buttons.clipboardLink.OpenWindow(event);"/>
 	</menupopup>
 </toolbarbutton>

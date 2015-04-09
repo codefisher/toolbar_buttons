@@ -12,14 +12,15 @@ JavaToggle: {
 	//Java Deployment Toolkit 6.0.160.1 <-- Don't match for this!
 	prefbarRegExJava: /(^| )(java|icedtea).*(platform|plug-?in)/i,
 
-	toggle: function() {
+	toggle: function(event) {
+		var doc = event.target.ownerDocument.defaultView;
 		var state = this.status(),
-			button = document.getElementById("java-toggle"),
+			button = doc.getElementById("java-toggle"),
 			prefs = toolbar_buttons.interfaces.PrefBranch;
 		prefs.setBoolPref("security.enable_java", !state);
 		toolbar_buttons.PluginHelper.SetPluginEnabled(this.prefbarRegExJava, !state, "Java");
 		toolbar_buttons.setButtonStatus(button, !state);
-		toolbar_buttons.checkBrowserReload();
+		toolbar_buttons.checkBrowserReload(button.ownerDocument.defaultView);
 	},
 
 	status: function() {
@@ -31,4 +32,4 @@ JavaToggle: {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("security.enable_java", "java-toggle");
+toolbar_buttons.loadPrefWatcher(document, "security.enable_java", "java-toggle");

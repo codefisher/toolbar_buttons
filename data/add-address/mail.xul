@@ -3,4 +3,4 @@
 	id="add-address"
 	label="&add-address.label;"
 	tooltiptext="&add-address.tooltip;"
-	oncommand="toolbar_buttons.addContact();"/>
+	oncommand="toolbar_buttons.addContact(event);"/>

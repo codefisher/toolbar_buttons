@@ -1,5 +1,6 @@
 renameAllTabsBlank: function() {
-	var tabs = window.gBrowser.mTabContainer.childNodes;
+	var win = event.target.ownerDocument.defaultView;
+	var tabs = win.gBrowser.mTabContainer.childNodes;
 	for (var i = 0; i < tabs.length; i++) {
 		var tab = tabs[i];
 		tab.label = "";

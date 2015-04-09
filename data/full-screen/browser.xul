@@ -3,4 +3,4 @@
 	id="full-screen"
 	label="&full-screen.label;"
 	tooltiptext="&full-screen.tooltip;"
-	oncommand="toolbar_buttons.fullScreenMode();"/>
+	oncommand="toolbar_buttons.fullScreenMode(event);"/>

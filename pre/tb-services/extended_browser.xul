@@ -4,7 +4,7 @@
 	type="menu-button"
 	label="&tb-services.label;"
 	tooltiptext="&tb-services.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('services', 'addons://list/service');">
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'services', 'addons://list/service');">
 		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'service');" oncommand="event.stopPropagation();">
 			<menuseparator />
 			<menuitem id="tb-extensions-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />

@@ -15,7 +15,8 @@ setButtonStatus: function(button, status) {
 	}
 }
 
-OpenAddonsMgr: function(type, typeUrl) {
+OpenAddonsMgr: function(event, type, typeUrl) {
+	var win = event.target.ownerDocument.defaultView;
 	var extensionManager = toolbar_buttons.interfaces.WindowMediator
 					.getMostRecentWindow("Extension:Manager");
 	if (extensionManager) {
@@ -31,9 +32,9 @@ OpenAddonsMgr: function(type, typeUrl) {
 			var contents = toolbar_buttons.getUrlContents("chrome://mozapps/content/extensions/extensions.xul");
 			var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
                    .getService(Components.interfaces.nsIWindowWatcher);
-			var win = ww.openWindow(window, "chrome://mozapps/content/extensions/extensions.xul",
+			var extWin = ww.openWindow(win, "chrome://mozapps/content/extensions/extensions.xul",
 			                        "Addons:Manager", "chrome,centerscreen", null);
-			win.addEventListener("load", function() { win.gViewController.loadView(typeUrl); }, false);
+			extWin.addEventListener("load", function() { extWin.gViewController.loadView(typeUrl); }, false);
 		}
 	}
 }
@@ -62,9 +63,10 @@ wrongVersion: function(event) {
 }
 
 showAMenu: function(aEvent) {
+	var doc = aEvent.target.ownerDocument;
 	var aMenu = null;
 	for (var i = 0; i < arguments.length; i++) {
-		aMenu = document.getElementById(arguments[i]);
+		aMenu = doc.getElementById(arguments[i]);
 		if (aMenu) {
 			break;
 		}
@@ -92,14 +94,16 @@ showAMenu: function(aEvent) {
 }
 
 openMessengerWindowOrTab: function(url, event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	if(event.button == 0) {
-		toolbar_buttons.openDialog(window, url, "", "chrome,centerscreen");
+		toolbar_buttons.openDialog(win, url, "", "chrome,centerscreen");
 	} else if(event.button == 1) {
-		var tabmail = document.getElementById('tabmail');
+		var tabmail = doc.getElementById('tabmail');
 		if(tabmail) {
 			tabmail.openTab('contentTab', {contentPage: url});
 		} else {
-			toolbar_buttons.openDialog(window, url, "", "chrome,centerscreen");
+			toolbar_buttons.openDialog(win, url, "", "chrome,centerscreen");
 		}
 	}
 }
@@ -123,7 +127,8 @@ getAppPath: function(Application) {
 	}
 }
 
-initApp: function(Application) {
+initApp: function(event, Application) {
+	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	if (Application == "News" && prefs.getCharPref("readnews.path") != "") {
 		var appPath = prefs.getCharPref("readnews.path");
@@ -143,13 +148,13 @@ initApp: function(Application) {
 		} catch(e) {}
 	}
 	try {
-		window.toMessengerWindow(); // if this is SeaMonkey, this might be a good fall back?
+		win.toMessengerWindow(); // if this is SeaMonkey, this might be a good fall back?
 	} catch(e) {
 		var stringBundle = toolbar_buttons.interfaces.StringBundleService
 			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 		var title = stringBundle.GetStringFromName("no-path-title");
 		var error = stringBundle.GetStringFromName("no-path-message-version");
-		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+		toolbar_buttons.interfaces.PromptService.alert(win, title, error);
 	}
 }
 
@@ -166,9 +171,9 @@ getFile: function(name) {
 	}
 }
 
-checkBrowserReload: function() {
+checkBrowserReload: function(win) {
 	if (toolbar_buttons.interfaces.ExtensionPrefBranch.getBoolPref("do.reload")) {
-		window.BrowserReload();
+		win.BrowserReload();
 	}
 }
 
@@ -210,7 +215,7 @@ PluginHelper: {
 				// https://www.mozdev.org/bugs/show_bug.cgi?id=22582
 				if (filename in filenames) {
 					var message = stringBundle.formatStringFromName("mutiple-plugin-installed", [ aName ], 1);
-					toolbar_buttons.interfaces.PromptService.alert(window, title, message);
+					toolbar_buttons.interfaces.PromptService.alert(null, title, message);
 				}
 				filenames[filename] = true;
 				found = true;
@@ -226,11 +231,11 @@ PluginHelper: {
 	},
 }
 
-cssFileToUserContent: function(aCssFile, remove, toggle, button_id) {
+cssFileToUserContent: function(doc, aCssFile, remove, toggle, button_id) {
 	var sss = toolbar_buttons.interfaces.StyleSheetService,
 		ios = toolbar_buttons.interfaces.IOService;
 	var url = ios.newURI(aCssFile, null, null),
-		button = document.getElementById(button_id);
+		button = doc.getElementById(button_id);
 	if (sss.sheetRegistered(url, sss.USER_SHEET)) {
 		if (!button || remove || toggle) {
 			sss.unregisterSheet(url, sss.USER_SHEET);
@@ -245,14 +250,14 @@ cssFileToUserContent: function(aCssFile, remove, toggle, button_id) {
 	return false;
 }
 
-loadUserContentSheet: function(sheet, pref, button_id) {
+loadUserContentSheet: function(doc, sheet, pref, button_id) {
 	var sss = toolbar_buttons.interfaces.StyleSheetService,
 		ios = toolbar_buttons.interfaces.IOService,
 		prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var url = ios.newURI(sheet, null, null);
 	try {
 		if (!prefs.getBoolPref(pref)
-				&& document.getElementById(button_id)
+				&& doc.getElementById(button_id)
 				&& !sss.sheetRegistered(url, sss.USER_SHEET)) {
 			sss.loadAndRegisterSheet(url, sss.USER_SHEET);
 		}
@@ -264,23 +269,24 @@ stopContent: function(button, pref) {
 	toolbar_buttons.extensionPrefToggleStatus(button, pref);
 }
 
-loadContectBlocker: function(fullPref, prefName, button_id, sheet, func) {
+loadContectBlocker: function(doc, fullPref, prefName, button_id, sheet, func) {
 	var prefWatch = new toolbar_buttons.PreferenceWatcher();
-	prefWatch.startup(fullPref, button_id, func ? func : function(state) {
-		var button = document.getElementById(button_id);
+	prefWatch.startup(doc, fullPref, button_id, func ? func : function(event, state) {
+		var button = doc.getElementById(button_id);
 		if(button) {
-			toolbar_buttons.cssFileToUserContent(sheet, state, false, button_id);
+			toolbar_buttons.cssFileToUserContent(doc, sheet, state, false, button_id);
 			toolbar_buttons.setButtonStatus(button, state);
 		}
 	});
-	toolbar_buttons.loadUserContentSheet(sheet, prefName, button_id);
-	window.addEventListener("unload", function(e) {
+	toolbar_buttons.loadUserContentSheet(doc, sheet, prefName, button_id);
+	doc.defaultView.addEventListener("unload", function(e) {
 		prefWatch.shutdown();
 	}, false);
 }
 
-clearBar: function(bar) {
-	var item = document.getElementById(bar + "bar"), toolbar = item;
+clearBar: function(event, bar) {
+	var doc = event.target.documentElement;
+	var item = doc.getElementById(bar + "bar"), toolbar = item;
 	if(item) {
 		do {
 			toolbar = toolbar.parentNode;
@@ -300,27 +306,30 @@ clearBar: function(bar) {
 			name = stringBundle.GetStringFromName("bar-missing-url");
 		}
 		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
-		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+		toolbar_buttons.interfaces.PromptService.alert(doc.defaultView, title, error);
 	}
 }
 
-showOnlyThisFrame: function() {
-	var focusedWindow = document.commandDispatcher.focusedWindow;
-	if (window.isContentFrame(focusedWindow)) {
+showOnlyThisFrame: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
+	var focusedWindow = doc.commandDispatcher.focusedWindow;
+	if (win.isContentFrame(focusedWindow)) {
 		var doc = focusedWindow.document;
 		var frameURL = doc.location.href;
-
-		window.urlSecurityCheck(frameURL, window.gBrowser.contentPrincipal,
+		win.urlSecurityCheck(frameURL, win.gBrowser.contentPrincipal,
 						 Ci.nsIScriptSecurityManager.DISALLOW_SCRIPT);
 		var referrer = doc.referrer;
-		window.gBrowser.loadURI(frameURL, referrer ? window.makeURI(referrer) : null);
+		win.gBrowser.loadURI(frameURL, referrer ? win.makeURI(referrer) : null);
 	}
 }
 
-searchBarSize: function(opp) {
+searchBarSize: function(event, opp) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
-	var item = document.getElementById("search-container"), toolbar = item, size;
+	var item = doc.getElementById("search-container"), toolbar = item, size;
 	if(item) {
 		do {
 			toolbar = toolbar.parentNode;
@@ -335,7 +344,7 @@ searchBarSize: function(opp) {
 			if(result && size){
 				size = Math.round(Number(size));
 				if(isNaN(size)) {
-					toolbar_buttons.interfaces.PromptService.alert(window, stringBundle.GetStringFromName("error"),
+					toolbar_buttons.interfaces.PromptService.alert(win, stringBundle.GetStringFromName("error"),
 							stringBundle.GetStringFromName("search-bar-numbers"));
 					return false;
 				}
@@ -350,7 +359,7 @@ searchBarSize: function(opp) {
 			// incase the search bar is not on the same bar as the address bar
 			item.style.maxWidth = size + 'px';
 		} else {
-			toolbar_buttons.interfaces.PromptService.alert(window, stringBundle.GetStringFromName("error"),
+			toolbar_buttons.interfaces.PromptService.alert(win, stringBundle.GetStringFromName("error"),
 					stringBundle.formatStringFromName("search-bar-size", [size], 1));
 		}
 
@@ -359,34 +368,36 @@ searchBarSize: function(opp) {
 		// lousy because the code for matching strings is not smart enough
 		var name = stringBundle.GetStringFromName("bar-missing-search");
 		var error = stringBundle.formatStringFromName("bar-missing-error", [name], 1);
-		toolbar_buttons.interfaces.PromptService.alert(window, title, error);
+		toolbar_buttons.interfaces.PromptService.alert(win, title, error);
 	}
 	return true;
 }
 
 realNavigate: function(event, dirPrev) {
+	var win = event.target.ownerDocument.defaultView;
 	var dir;
 	if (dirPrev) {
 		if (event && event.shiftKey) {
-			dir = window.nsMsgNavigationType.previousUnreadMessage;
+			dir = win.nsMsgNavigationType.previousUnreadMessage;
 		} else {
-			dir = window.nsMsgNavigationType.previousMessage;
+			dir = win.nsMsgNavigationType.previousMessage;
 		}
 	} else {
 		if (event && event.shiftKey) {
-			dir = window.nsMsgNavigationType.nextUnreadMessage;
+			dir = win.nsMsgNavigationType.nextUnreadMessage;
 		} else {
-			dir = window.nsMsgNavigationType.nextMessage;
+			dir = win.nsMsgNavigationType.nextMessage;
 		}
 	}
-	return window.GoNextMessage(dir, false);
+	return win.GoNextMessage(dir, false);
 }
 
-getETDL: function() {
+getETDL: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var eTLDService = toolbar_buttons.interfaces.EffectiveTLDService;
 
 	var eTLD;
-	var uri = window.content.document.documentURIObject;
+	var uri = win.content.document.documentURIObject;
 	try {
 		eTLD = eTLDService.getBaseDomain(uri);
 	} catch (e) {
@@ -404,7 +415,7 @@ openPermissions: function(event, type, title, text) {
 	var params = { blockVisible   : true,
 				   sessionVisible : true,
 				   allowVisible   : true,
-				   prefilledHost  : toolbar_buttons.getETDL(),
+				   prefilledHost  : toolbar_buttons.getETDL(event),
 				   permissionType : type,
 				   windowTitle	: bundlePreferences.GetStringFromName(title),
 				   introText	  : bundlePreferences.GetStringFromName(text) };
@@ -443,11 +454,12 @@ sortMenu: function(event, aMenu) {
 }
 
 menuLoaderEvent: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var menuitem = event.originalTarget;
 	if(menuitem.getAttribute('showamenu')) {
 		// so this is one of those menu items that as a fake submenu, show it
 		var cEvent = new Event('command', {
-		    'view': window,
+		    'view': win,
 		    'bubbles': false,
 		    'cancelable': true,
 		    'target': menuitem,

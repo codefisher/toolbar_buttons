@@ -16,34 +16,38 @@ clipboardLink: {
 	},
 	open: function(event) {
 		if (event.button == 1) {
-			this.OpenNewTab();
+			this.OpenNewTab(event);
 		}
 	},
-	openCommand: function () {
+	openCommand: function (event) {
 		var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 		var mode = prefs.getIntPref("clipboard.open.mode");
 		if(mode == 2) {
-			this.OpenWindow();
+			this.OpenWindow(event);
 		} else if(mode == 1) {
-			this.OpenNewTab();
+			this.OpenNewTab(event);
 		} else {
-			this.OpenLink();
+			this.OpenLink(event);
 		}
 	},
-	OpenNewTab: function() {
+	OpenNewTab: function(event) {
+		var win = event.target.ownerDocument.defaultView;
 		try {
-			window.getBrowser().selectedTab = window.getBrowser().addTab(this.getText());
+			var browser = win.getBrowser();
+			browser.selectedTab = browser.addTab(this.getText());
 		} catch (e) {} // no clipboard data
 	},
-	OpenLink: function() {
+	OpenLink: function(event) {
+		var win = event.target.ownerDocument.defaultView;
 		try {
-			window.loadURI(this.getText());
+			win.loadURI(this.getText());
 		} catch (e) {} // no clipboard data
 
 	},
-	OpenWindow: function() {
+	OpenWindow: function(event) {
+		var win = event.target.ownerDocument.defaultView;
 		try {
-			window.openNewWindowWith(this.getText(), window.content.document, null, false);
+			win.openNewWindowWith(this.getText(), win.content.document, null, false);
 		} catch (e) {} // no clipboard data
 	}
 }

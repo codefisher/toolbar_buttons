@@ -3,4 +3,4 @@
 	id="tb-first-last-tab"
 	label="&tb-first-last-tab.label;"
 	tooltiptext="&tb-first-last-tab.tooltip;"
-	oncommand="toolbar_buttons.goFirstLastTab();"/>
+	oncommand="toolbar_buttons.goFirstLastTab(event);"/>

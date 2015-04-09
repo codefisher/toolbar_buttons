@@ -1,17 +1,19 @@
 openPasswordsTab: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	if(event.button == 1) {
-		window.getBrowser().selectedTab = window.getBrowser().addTab("chrome://passwordmgr/content/passwordManager.xul");
+		win.getBrowser().selectedTab = win.getBrowser().addTab("chrome://passwordmgr/content/passwordManager.xul");
 	}
 }
 
-viewPasswords: function() {
+viewPasswords: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	var wm = toolbar_buttons.interfaces.WindowMediator;
-	var win = wm.getMostRecentWindow("Toolkit:PasswordManager");
-	if (win) {
-		win.gCookiesWindow.setFilter(toolbar_buttons.getETDL());
-		win.focus();
+	var passwordWin = wm.getMostRecentWindow("Toolkit:PasswordManager");
+	if (passwordWin) {
+		passwordWin.gCookiesWindow.setFilter(toolbar_buttons.getETDL(event));
+		passwordWin.focus();
 	} else {
-		window.openDialog("chrome://passwordmgr/content/passwordManager.xul",
-				"Toolkit:PasswordManager", "", {filterString : toolbar_buttons.getETDL()});
+		win.openDialog("chrome://passwordmgr/content/passwordManager.xul",
+				"Toolkit:PasswordManager", "", {filterString : toolbar_buttons.getETDL(event)});
 	}
 }

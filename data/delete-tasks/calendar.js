@@ -1,8 +1,9 @@
-deleteTasks: function() {
+deleteTasks: function(event) {
+	var win = event.target.ownerDocument.defaultView;
 	try {
-		window.deleteToDoCommand();
+		win.deleteToDoCommand();
 	} catch(e){
-		window.goDoCommand('calendar_delete_todo_command');
-		window.goDoCommand('delete_todo_command');
+		win.goDoCommand('calendar_delete_todo_command');
+		win.goDoCommand('delete_todo_command');
 	}
 }

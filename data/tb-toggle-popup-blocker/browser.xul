@@ -4,4 +4,4 @@
 	label="&tb-toggle-popup-blocker.label;"
 	tooltiptext="&tb-toggle-popup-blocker.tooltip;"
 	onclick="toolbar_buttons.viewPopupExceptions(event);"
-	oncommand="toolbar_buttons.togglePopUp();"/>
+	oncommand="toolbar_buttons.togglePopUp(event);"/>

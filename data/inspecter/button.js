@@ -1,9 +1,10 @@
 openDomInspector: function(event, aDocument) {
+	var win = event.target.ownerDocument.defaultView;
 	try {
-		window.inspectDOMDocument(aDocument);
+		win.inspectDOMDocument(aDocument);
 	} catch(e) {
 		try {
-			window.BrowserToolboxProcess.init();
+			win.BrowserToolboxProcess.init();
 		} catch(e) {
 			toolbar_buttons.wrongVersion(event);
 		}

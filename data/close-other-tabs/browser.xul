@@ -3,4 +3,4 @@
 	id="close-other-tabs"
 	label="&close-other-tabs.label;"
 	tooltiptext="&close-other-tabs.tooltip;"
-	onclick="toolbar_buttons.closeOtherTabs();" />
+	onclick="toolbar_buttons.closeOtherTabs(event);" />

@@ -4,4 +4,4 @@
 	tooltiptext="&delete-event.tooltip;"
 	label="&delete-event.label;"
 	observes="calendar_delete_event_command"
-	oncommand="toolbar_buttons.deleteEvent();" />
+	oncommand="toolbar_buttons.deleteEvent(event);" />

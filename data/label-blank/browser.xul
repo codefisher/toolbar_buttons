@@ -3,4 +3,4 @@
 	id="label-blank"
 	label="&label-blank.label;"
 	tooltiptext="&label-blank.tooltip;"
-	oncommand="toolbar_buttons.renameTabBlank();"/>
+	oncommand="toolbar_buttons.renameTabBlank(event);"/>

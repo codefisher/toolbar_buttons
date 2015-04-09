@@ -1,5 +1,6 @@
-getSelectedTextBox: function() {
-	var box = document.commandDispatcher.focusedElement;
+getSelectedTextBox: function(event) {
+	var doc = event.target.ownerDocument;
+	var box = doc.commandDispatcher.focusedElement;
 	if(box.nodeName.toLowerCase() != 'input' &&  box.nodeName.toLowerCase() != 'textarea'
 		&& box.nodeName.toLowerCase() != 'textbox' 
 		&& box.readOnly == null && box.readOnly == true) {
@@ -8,8 +9,8 @@ getSelectedTextBox: function() {
 	return box;
 }
 
-getSelectedTextboxText: function() {
-	var box = toolbar_buttons.getSelectedTextBox();
+getSelectedTextboxText: function(event) {
+	var box = toolbar_buttons.getSelectedTextBox(event);
 	if(box == null) {
 		return null;
 	}
@@ -21,8 +22,8 @@ getSelectedTextboxText: function() {
 	return null;
 }
 
-putSelectedTextBoxText: function(text) {
-	var box = toolbar_buttons.getSelectedTextBox();
+putSelectedTextBoxText: function(event, text) {
+	var box = toolbar_buttons.getSelectedTextBox(event);
 	if(box == null) {
 		return null;
 	}
@@ -37,38 +38,38 @@ putSelectedTextBoxText: function(text) {
 	box.selectionEnd = endPos;
 }
 
-textChangeCaseLower: function() {
-	var text = toolbar_buttons.getSelectedTextboxText();
+textChangeCaseLower: function(event) {
+	var text = toolbar_buttons.getSelectedTextboxText(event);
 	if(text == null) {
 		return;
 	}
-	toolbar_buttons.putSelectedTextBoxText(text.toLowerCase());
+	toolbar_buttons.putSelectedTextBoxText(event, text.toLowerCase());
 }
 
-textChangeCaseUpper: function() {
-	var text = toolbar_buttons.getSelectedTextboxText();
+textChangeCaseUpper: function(event) {
+	var text = toolbar_buttons.getSelectedTextboxText(event);
 	if(text == null) {
 		return;
 	}
-	toolbar_buttons.putSelectedTextBoxText(text.toUpperCase());
+	toolbar_buttons.putSelectedTextBoxText(event, text.toUpperCase());
 }
 
-textChangeCaseTitle: function() {
-	var text = toolbar_buttons.getSelectedTextboxText();
+textChangeCaseTitle: function(event) {
+	var text = toolbar_buttons.getSelectedTextboxText(event);
 	if(text == null) {
 		return;
 	}
-	toolbar_buttons.putSelectedTextBoxText(text.replace(/\b[\w-\']+/g, function(s) { 
+	toolbar_buttons.putSelectedTextBoxText(event, text.replace(/\b[\w-\']+/g, function(s) {
 		return s.charAt(0).toUpperCase() + s.substr(1).toLowerCase();
 	}));
 }
 
 textChangeCaseInvert: function() {
-	var text = toolbar_buttons.getSelectedTextboxText();
+	var text = toolbar_buttons.getSelectedTextboxText(event);
 	if(text == null) {
 		return;
 	}
-	toolbar_buttons.putSelectedTextBoxText(text.split("").map(function(s) {
+	toolbar_buttons.putSelectedTextBoxText(event, text.split("").map(function(s) {
 			return s == s.toUpperCase() ? s.toLowerCase() : s.toUpperCase();
 	}).join(""));
 }

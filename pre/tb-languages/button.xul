@@ -3,4 +3,4 @@
 	id="tb-languages"
 	label="&tb-languages.label;"
 	tooltiptext="&tb-languages.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('locales', 'addons://list/locale');"/>
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'locales', 'addons://list/locale');"/>

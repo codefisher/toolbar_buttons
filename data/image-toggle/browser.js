@@ -1,6 +1,6 @@
 toggleImages: function(button) {
 	toolbar_buttons.prefToggleNumber(button, 'permissions.default.image', [1,2,3,1]);
-	toolbar_buttons.checkBrowserReload();
+	toolbar_buttons.checkBrowserReload(button.ownerDocument.defaultView);
 }
 
 viewImageExceptions: function(event) {
@@ -10,5 +10,5 @@ viewImageExceptions: function(event) {
 	}
 }
 
-toolbar_buttons.loadPrefWatcher("permissions.default.image", "image-toggle");
+toolbar_buttons.loadPrefWatcher(document, "permissions.default.image", "image-toggle");
 

@@ -3,4 +3,4 @@
 	id="tb-plugins"
 	label="&tb-plugins.label;"
 	tooltiptext="&tb-plugins.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('plugins', 'addons://list/plugin');"/>
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'plugins', 'addons://list/plugin');"/>

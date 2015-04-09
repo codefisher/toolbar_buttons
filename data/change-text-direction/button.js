@@ -1,8 +1,10 @@
-changeTextDirection: function() {
+changeTextDirection: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
 	try {
-		var browser = window.gBrowser.mCurrentBrowser;
+		var browser = win.gBrowser.mCurrentBrowser;
 	} catch (e) {
-		var browser = document.getElementById("messagepane");
+		var browser = doc.getElementById("messagepane");
 	}
 	toolbar_buttons.SwitchDocumentDirection(browser.contentWindow);
 }

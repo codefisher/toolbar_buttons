@@ -1,11 +1,12 @@
-archiveSelectedThread: function() {
-	let batchMover = new window.BatchMessageMover();
+archiveSelectedThread: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	let batchMover = new win.BatchMessageMover();
 	var messages = [];
 	var threads = [];
-	var selectedMessages = window.gFolderDisplay.selectedMessages;
+	var selectedMessages = win.gFolderDisplay.selectedMessages;
 	for(var i = 0; i < selectedMessages.length; i++) {
 		var message = selectedMessages[i];
-		var thread = window.gDBView.getThreadContainingMsgHdr(message);
+		var thread = win.gDBView.getThreadContainingMsgHdr(message);
 		if(threads.indexOf(thread.threadKey) != -1) {
 			continue;
 		}

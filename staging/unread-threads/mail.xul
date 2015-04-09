@@ -3,4 +3,4 @@
 	id="unread-threads"
 	label="&unread-threads.label;"
 	tooltiptext="&unread-threads.tooltip;"
-	oncommand="toolbar_buttons.threadsUnread();" />
+	oncommand="toolbar_buttons.threadsUnread(event);" />

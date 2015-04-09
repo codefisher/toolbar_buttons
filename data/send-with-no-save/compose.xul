@@ -3,4 +3,4 @@
 	id="send-with-no-save"
 	label="&send-with-no-save.label;"
 	tooltiptext="&send-with-no-save.tooltip;"
-	oncommand="toolbar_buttons.SendWithNoSave();"/>
+	oncommand="toolbar_buttons.SendWithNoSave(event);"/>

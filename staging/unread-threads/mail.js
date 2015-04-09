@@ -1,7 +1,8 @@
-threadsUnread: function() {
-	if(window.gFolderDisplay.view.showUnreadOnly) {
-		window.goDoCommand('cmd_viewAllMsgs');
+threadsUnread: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	if(win.gFolderDisplay.view.showUnreadOnly) {
+		win.goDoCommand('cmd_viewAllMsgs');
 	} else {
-		window.goDoCommand('cmd_viewUnreadMsgs');
+		win.goDoCommand('cmd_viewUnreadMsgs');
 	}
 }

@@ -4,4 +4,4 @@
 	label="&bookmark-manager.label;"
 	tooltiptext="&bookmark-manager.tooltip;"
 	onclick="toolbar_buttons.clickBookmarkManager(event);"
-	oncommand="toolbar_buttons.openBookmarkManager();"/>
+	oncommand="toolbar_buttons.openBookmarkManager(event);"/>

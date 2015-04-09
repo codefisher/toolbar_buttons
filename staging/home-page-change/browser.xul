@@ -9,13 +9,13 @@
 		oncommand="event.stopPropagation();" >
 		<menuitem label="&home-page-change.current;"
 			id="homePageSetCurrent"
-			oncommand="toolbar_buttons.homePageSetCurrent();"/>
+			oncommand="toolbar_buttons.homePageSetCurrent(event);"/>
 		<menuitem label="&home-page-change.add-current;"
 			id="homePageAddCurrent"
-			oncommand="toolbar_buttons.homePageAddCurrent();"/>
+			oncommand="toolbar_buttons.homePageAddCurrent(event);"/>
 		<menuitem label="&home-page-change.multiple;"
 			id="homePageChangeItem"
-			oncommand="toolbar_buttons.homePageChangeMultiple();"/>
+			oncommand="toolbar_buttons.homePageChangeMultiple(event);"/>
 		<menuseparator id="homePageSeperator"/>
 	</menupopup>
 </toolbarbutton>

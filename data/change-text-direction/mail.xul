@@ -3,4 +3,4 @@
 	id="change-text-direction"
 	label="&change-text-direction.label;"
 	tooltiptext="&change-text-direction.tooltip;"
-	oncommand="toolbar_buttons.changeTextDirection();" />
+	oncommand="toolbar_buttons.changeTextDirection(event);" />

@@ -3,4 +3,4 @@
 	id="themes"
 	label="&themes.label;"
 	tooltiptext="&themes.tooltip;"
-	oncommand="toolbar_buttons.OpenAddonsMgr('themes', 'addons://list/theme');"/>
+	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'themes', 'addons://list/theme');"/>

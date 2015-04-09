@@ -4,4 +4,4 @@
 	persist="html"
 	label="&html-mode.label;"
 	tooltiptext="&html-mode.tooltip;"
-	oncommand="toolbar_buttons.toggleHtmlMode();"/>
+	oncommand="toolbar_buttons.toggleHtmlMode(event);"/>

@@ -1,7 +1,7 @@
-setUpMenuShower: function() {
+setUpMenuShower: function(doc) {
 	var observer = {
 		observe: function(aSubject, aTopic, aData) {
-			var menu = document.getElementById(aData);
+			var menu = doc.getElementById(aData);
 			if(menu) {
 				menu.setAttribute('hidden', !this.prefs.getBoolPref(aData));
 			}
@@ -15,7 +15,7 @@ setUpMenuShower: function() {
 			toolbar_buttons.registerCleanUpFunction(this.unregister);
 			var attrList = this.prefs.getChildList('', {});
 			for(var i in attrList) {
-				var menu = document.getElementById(attrList[i]);
+				var menu = doc.getElementById(attrList[i]);
 				if(menu) {
 					menu.setAttribute('hidden', !this.prefs.getBoolPref(attrList[i]));
 				}
