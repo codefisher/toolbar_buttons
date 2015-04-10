@@ -49,7 +49,7 @@ getHideableToolbars: function(event) {
 	}
 	let toolbarNodes = Array.slice(toolbarBox.childNodes);
 	toolbarNodes = toolbarNodes.concat(toolbarBox.externalToolbars);
-	toolbarNodes = toolbarNodes.filter(node => node.getAttribute("toolbarname")  && node.getAttribute("type") != "menubar");
+	toolbarNodes = toolbarNodes.filter(node => node.getAttribute("toolbarname") && node != event.target.parentNode && node.getAttribute("type") != "menubar");
 	if (doc.documentElement.getAttribute("shellshowingmenubar") == "true") {
 		toolbarNodes = toolbarNodes.filter(node => node.id != "toolbar-menubar");
 	}
