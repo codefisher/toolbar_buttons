@@ -3,4 +3,4 @@
 	id="about-config"
 	label="&about-config.label;"
 	tooltiptext="&about-config.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:config', event);" />
+	command="toolbar_buttons.openPageInTab('about:config', event);" />
