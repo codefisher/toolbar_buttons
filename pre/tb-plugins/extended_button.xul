@@ -7,6 +7,6 @@
 	oncommand="toolbar_buttons.OpenAddonsMgr(event, 'plugins', 'addons://list/plugin');">
 		<menupopup onpopupshowing="toolbar_buttons.openExtensionMenu(this, 'plugin');" oncommand="event.stopPropagation();">
 			<menuseparator />
-			<menuitem id="tb-plugins-about-plugins" label="&about-plugins.label;" oncommand="toolbar_buttons.LoadURL('about:plugins', event);" />
+			<menuitem id="tb-plugins-about-plugins" label="&about-plugins.label;" oncommand="toolbar_buttons.openPageInTab('about:plugins', event);" />
 		</menupopup>
 </toolbarbutton>

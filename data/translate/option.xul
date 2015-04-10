@@ -21,8 +21,8 @@ translate.label:pencil.png
 	</menulist>
 	<description>&translate.service.description;</description>
 	<radiogroup preference="{{pref_root}}translate.service">
-		<radio value="google" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.google;"/>
-		<radio value="promt" onclick="toolbar_buttons.showPromtTranslate();" label="&translate.service.promt;"/>
-		<!--<radio value="bing" onclick="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>-->
+		<radio value="google" oncommand="toolbar_buttons.showOtherTranslate();" label="&translate.service.google;"/>
+		<radio value="promt" oncommand="toolbar_buttons.showPromtTranslate();" label="&translate.service.promt;"/>
+		<!--<radio value="bing" oncommand="toolbar_buttons.showOtherTranslate();" label="&translate.service.bing;"/>-->
 	</radiogroup>
 </groupbox>

@@ -3,4 +3,4 @@
 	id="empty-trash"
 	label="&empty-trash.label;"
 	tooltiptext="&empty-trash.tooltip;"
-	onclick="toolbar_buttons.emptyAllTrash(event);" />
+	oncommand="toolbar_buttons.emptyAllTrash(event);" />

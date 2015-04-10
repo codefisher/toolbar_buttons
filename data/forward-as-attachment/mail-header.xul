@@ -3,4 +3,4 @@
 	id="forward-as-attachment"
 	label="&forward-as-attachment.label;"
 	tooltiptext="&forward-as-attachment.tooltip;"
-	onclick="window.MsgForwardAsAttachment(event);" />
+	oncommand="window.MsgForwardAsAttachment(event);" />

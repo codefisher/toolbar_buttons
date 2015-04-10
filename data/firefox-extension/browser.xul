@@ -3,4 +3,5 @@
 	id="firefox-extension"
 	label="&firefox-extension.label;"
 	tooltiptext="&firefox-extension.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.firefox-ext',event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.firefox-ext',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.firefox-ext',event);" />

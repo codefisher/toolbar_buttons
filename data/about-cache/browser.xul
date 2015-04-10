@@ -3,4 +3,4 @@
 	id="about-cache"
 	label="&about-cache.label;"
 	tooltiptext="&about-cache.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:cache', event);" />
+	oncommand="toolbar_buttons.openPageInTab('about:cache', event);" />

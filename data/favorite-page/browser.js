@@ -9,8 +9,8 @@ OpenLinkPref: function(pref, event) {
 		var title = stringBundle.GetStringFromName("change-default-page.title");
 		toolbar_buttons.interfaces.PromptService.alert(null, title, message);
 	} else {
-		var url = prefs.getCharPref(pref).split(' | ');
-		toolbar_buttons.LoadURL(url[0], event);
+		var url = prefs.getCharPref(pref).split('|');
+		toolbar_buttons.openPage(url[0], event);
 		if(url.length > 1) {
 			var browser = win.getBrowser();
 			for(var i=1, max=url.length; i<max; i++){

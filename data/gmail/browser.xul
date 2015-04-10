@@ -3,4 +3,5 @@
 	id="gmail"
 	label="&gmail.label;"
 	tooltiptext="&gmail.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.gmail',event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.gmail',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.gmail',event);" />

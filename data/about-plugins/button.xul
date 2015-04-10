@@ -3,4 +3,4 @@
 	id="about-plugins"
 	label="&about-plugins.label;"
 	tooltiptext="&about-plugins.tooltip;"
-	onclick="toolbar_buttons.openPageInTab('about:plugins', event);" />
+	oncommand="toolbar_buttons.openPageInTab('about:plugins', event);" />

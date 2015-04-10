@@ -92,10 +92,14 @@ homeList: function(item) {
 
 createHomePageMenuItem: function(item, url) {
 	var doc = item.ownerDocument;
+	var win = doc.defaultView;
 	var menuitem = doc.createElement("menuitem");
 	menuitem.setAttribute("label", url);
+	menuitem.addEventListener("command", function() {
+		win.loadURI(url);
+	}, false);
 	menuitem.addEventListener("click", function(event) {
-		toolbar_buttons.LoadURL(url, event);
+		toolbar_buttons.openPageTab(url, event);
 	}, false);
 	item.appendChild(menuitem);
 }

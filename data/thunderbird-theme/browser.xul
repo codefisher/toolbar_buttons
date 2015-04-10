@@ -3,4 +3,5 @@
 	id="thunderbird-theme"
 	label="&thunderbird-theme.label;"
 	tooltiptext="&thunderbird-theme.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.thunderbird-theme', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.thunderbird-theme',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.thunderbird-theme',event);" />

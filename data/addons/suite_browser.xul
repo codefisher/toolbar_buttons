@@ -5,7 +5,6 @@
 	key="key_openAddons"
 	label="&addons.label;"
 	tooltiptext="&addons.tooltip;"
-	onclick="toolbar_buttons.openExtensionTab(event);"
 	oncommand="window.toEM();" >
 	<menupopup onclick="event.stopPropagation();"
 		oncommand="event.stopPropagation();" >

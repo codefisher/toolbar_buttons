@@ -3,4 +3,5 @@
 	id="firefox-theme"
 	label="&firefox-theme.label;"
 	tooltiptext="&firefox-theme.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.firefox-theme', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.firefox-theme',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.firefox-theme',event);" />

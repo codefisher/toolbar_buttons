@@ -38,11 +38,10 @@ loadHigherFolders: function(popup) {
 			item = doc.createElement("menuitem");
 			item.setAttribute("label", location.host + pathname);
 			item.addEventListener("command", function() {
-				win.content.document.location = location.protocol + "//" + location.host + pathname;
+				win.loadURI(location.protocol + "//" + location.host + pathname);
 			}, false);
 			item.addEventListener("click", function(event) {
-				if(event.button == 1)
-					toolbar_buttons.LoadURL(location.protocol + "//" + location.host + pathname, event);
+					toolbar_buttons.openPageTab(location.protocol + "//" + location.host + pathname, event);
 			}, false);
 			popup.appendChild(item);
 			pathname = toolbar_buttons.trimFolderPath(pathname);

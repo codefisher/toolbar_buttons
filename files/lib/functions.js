@@ -97,13 +97,13 @@ openMessengerWindowOrTab: function(url, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
 	if(event.button == 0) {
-		toolbar_buttons.openDialog(win, url, "", "chrome,centerscreen");
+		win.openDialog(url, '', 'chrome,centerscreen');
 	} else if(event.button == 1) {
 		var tabmail = doc.getElementById('tabmail');
 		if(tabmail) {
 			tabmail.openTab('contentTab', {contentPage: url});
 		} else {
-			toolbar_buttons.openDialog(win, url, "", "chrome,centerscreen");
+			win.openDialog(url, '', 'chrome,centerscreen');
 		}
 	}
 }
@@ -421,20 +421,6 @@ openPermissions: function(event, type, title, text) {
 				   introText	  : bundlePreferences.GetStringFromName(text) };
 	win.openDialog("chrome://browser/content/preferences/permissions.xul",
 			"Browser:Permissions", "", params);
-}
-
-openDialog: function(parentWindow, url, windowName, features) {
-    var array = Components.classes["@mozilla.org/array;1"]
-                          .createInstance(Components.interfaces.nsIMutableArray);
-    for (var i = 4; i < arguments.length; i++) {
-        var variant = Components.classes["@mozilla.org/variant;1"]
-                                .createInstance(Components.interfaces.nsIWritableVariant);
-        variant.setFromVariant(arguments[i]);
-        array.appendElement(variant, false);
-    }
-    var watcher = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
-                            .getService(Components.interfaces.nsIWindowWatcher);
-    return watcher.openWindow(parentWindow, url, windowName, features, array);
 }
 
 sortMenu: function(event, aMenu) {

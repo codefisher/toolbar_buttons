@@ -3,4 +3,5 @@
 	id="ebay"
 	label="&ebay.label;"
 	tooltiptext="&ebay.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.ebay',event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.ebay',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.ebay',event);" />

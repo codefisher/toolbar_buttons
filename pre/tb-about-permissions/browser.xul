@@ -3,4 +3,4 @@
 	id="tb-about-permissions"
 	label="&tb-about-permissions.label;"
 	tooltiptext="&tb-about-permissions.tooltip;"
-	oncommand="toolbar_buttons.LoadURL('about:permissions', event);"/>
+	oncommand="toolbar_buttons.openPageInTab('about:permissions', event);"/>

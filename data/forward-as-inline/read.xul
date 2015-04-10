@@ -3,4 +3,4 @@
 	id="forward-as-inline"
 	label="&forward-as-inline.label;"
 	tooltiptext="&forward-as-inline.tooltip;"
-	onclick="window.MsgForwardAsInline(event);" />
+	oncommand="window.MsgForwardAsInline(event);" />

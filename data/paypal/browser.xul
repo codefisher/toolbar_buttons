@@ -3,4 +3,5 @@
 	id="paypal"
 	label="&paypal.label;"
 	tooltiptext="&paypal.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.paypal', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.paypal',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.paypal',event);" />

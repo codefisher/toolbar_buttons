@@ -3,4 +3,5 @@
 	id="thunderbird-extension"
 	label="&thunderbird-extension.label;"
 	tooltiptext="&thunderbird-extension.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.thunderbird-ext', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.thunderbird-ext',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.thunderbird-ext',event);" />

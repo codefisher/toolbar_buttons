@@ -3,4 +3,4 @@
 	id="favorite-page"
 	label="&favorite-page.label;"
 	tooltiptext="&favorite-page.tooltip;"
-	onclick="toolbar_buttons.OpenLinkPref('url.favorite',event);" />
+	oncommand="toolbar_buttons.OpenLinkPref('url.favorite',event);" />

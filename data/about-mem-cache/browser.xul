@@ -3,4 +3,4 @@
 	id="about-mem-cache"
 	label="&about-mem-cache.label;"
 	tooltiptext="&about-mem-cache.tooltip;"
-	onclick="toolbar_buttons.LoadURL('about:cache?storage=memory', event);" />
+	oncommand="toolbar_buttons.openPageInTab('about:cache?storage=memory', event);" />

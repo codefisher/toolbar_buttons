@@ -41,7 +41,7 @@ aboutAboutMenu: function(item) {
 		menuItem.setAttribute("label", uri);
 		menuItem.classList.add(className);
 		menuItem.addEventListener("click", function(event) {
-				toolbar_buttons.openAboutPage(uri, event);
+				toolbar_buttons.openPageInTab(uri, event);
 			}, false);
 		item.appendChild(menuItem);
 	});

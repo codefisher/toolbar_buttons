@@ -3,4 +3,5 @@
 	id="google"
 	label="&google.label;"
 	tooltiptext="&google.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.google', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.google',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.google',event);" />

@@ -3,4 +3,5 @@
 	id="hotmail-button"
 	label="&hotmail-button.label;"
 	tooltiptext="&hotmail-button.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.hotmail',event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.hotmail',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.hotmail',event);" />

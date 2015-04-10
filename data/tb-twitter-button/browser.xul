@@ -3,4 +3,5 @@
 	id="tb-twitter-button"
 	label="&tb-twitter-button.label;"
 	tooltiptext="&tb-twitter-button.tooltip;"
-	onclick="toolbar_buttons.OpenLinkFromPref('url.twitter', event);" />
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.twitter',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.twitter',event);" />
