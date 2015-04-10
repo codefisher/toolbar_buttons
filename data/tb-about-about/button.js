@@ -3,6 +3,18 @@ aboutAboutMenu: function(item) {
 	if (item.firstChild) {
 		return;
 	}
+	if(item.tagName == 'panelview') {
+		// these lines take care working well with the Panel
+		var itemType = 'toolbarbutton';
+		item.classList.add('mozbutton-panelview')
+		var vbox = doc.createElement('vbox');
+		item.appendChild(vbox);
+		item = vbox;
+		var className = 'subviewbutton';
+	} else {
+		var itemType = 'menuitem';
+		var className = '';
+	}
 	var ios = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
 	var gProtocols = [];
 	for (var cid in Cc) {
@@ -25,8 +37,9 @@ aboutAboutMenu: function(item) {
 	}
 	gProtocols.sort().forEach(function(aProtocol) {
 		var uri = "about:" + aProtocol;
-		var menuItem = doc.createElement("menuitem");
+		var menuItem = doc.createElement(itemType);
 		menuItem.setAttribute("label", uri);
+		menuItem.classList.add(className);
 		menuItem.addEventListener("click", function(event) {
 				toolbar_buttons.openAboutPage(uri, event);
 			}, false);
