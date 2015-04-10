@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-create-profile"
+	label="&tb-create-profile.label;"
+	tooltiptext="&tb-create-profile.tooltip;"
+	oncommand="toolbar_buttons.CreateProfileWizard(event);"/>
