@@ -22,7 +22,9 @@ extensionOptionsMenu: function(aMenu) {
 			var addon = addons[i];
 			if(addon.optionsURL) {
 			  	var menuItem = doc.createElement(itemType);
-				menuItem.classList.add(className);
+				if(className) {
+					menuItem.classList.add(className);
+				}
 			  	menuItem.setAttribute("label", addon.name + " " + addon.version);
 			  	menuItem.setAttribute("image", addon.iconURL);
 				menuItem.addEventListener("command", toolbar_buttons.extensionOptionsOpen(addon), false);

@@ -39,7 +39,9 @@ aboutAboutMenu: function(item) {
 		var uri = "about:" + aProtocol;
 		var menuItem = doc.createElement(itemType);
 		menuItem.setAttribute("label", uri);
-		menuItem.classList.add(className);
+		if(className) {
+			menuItem.classList.add(className);
+		}
 		menuItem.addEventListener("click", function(event) {
 				toolbar_buttons.openPageInTab(uri, event);
 			}, false);
