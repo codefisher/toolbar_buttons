@@ -10,9 +10,13 @@ hideOtherToolbars: function(event) {
 	var anyVisible = false;
 	var bars = [];
 	for(var i = 0; i < toolbars.length; i++) {
-		if(!toolbars[i].collapsed) {
+		if(!toolbars[i].collapsed && !toolbars[i].hidden) {
 			anyVisible = true;
-			toolbars[i].setAttribute('collapsed', 'true');
+			if(toolbars[i].hasAttribute('hidden')) {
+				toolbars[i].setAttribute('hidden', 'true');
+			} else {
+				toolbars[i].setAttribute('collapsed', 'true');
+			}
 			bars.push(toolbars[i].id);
 		}
 	}
@@ -27,12 +31,22 @@ hideOtherToolbars: function(event) {
 			for(var i = 0; i < showToolbarsIds.length; i++) {
 				var toolbar = doc.getElementById(showToolbarsIds[i]);
 				if(toolbar) {
-					toolbar.setAttribute('collapsed', 'false');
+					if(toolbar.hasAttribute('hidden')) {
+						toolbar.setAttribute('hidden', 'false');
+						toolbar.setAttribute('collapsed', 'false');
+					} else {
+						toolbar.setAttribute('collapsed', 'false');
+					}
 				}
 			}
 		} else {
 			for(var i = 0; i < toolbars.length; i++) {
-				toolbars[i].setAttribute('collapsed', 'false');
+				if(toolbars[i].hasAttribute('hidden')) {
+					toolbars[i].setAttribute('hidden', 'false');
+					toolbars.setAttribute('collapsed', 'false');
+				} else {
+					toolbars[i].setAttribute('collapsed', 'false');
+				}
 			}
 		}
 	}
