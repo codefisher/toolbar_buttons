@@ -68,13 +68,13 @@ openUserAgentSettings: function(event) {
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 				.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
 	var title = stringBundle.GetStringFromName("tb-useragent-switch.label");
-	var arguments = {
+	var args = {
 		title: title,
 		type: "string",
 		db_table: "user_agent_strings",
 	};
 	win.openDialog("chrome://{{chrome_name}}/content/files/string-preference.xul",
-			"UserAgent:Permissions", "chrome,centerscreen,dialog=no,resizable", arguments);
+			"UserAgent:Permissions", "chrome,centerscreen,dialog=no,resizable", args);
 }
 
 setDefaultUserAgents: function() {

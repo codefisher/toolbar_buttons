@@ -15,10 +15,10 @@ openColorPicker: function(event) {
 		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab(url);
 	} else {
-		var arguments = {
+		var args = {
 			color: "#ff0000"
 		};
-		win.openDialog(url, "ColorPicker", "chrome,centerscreen,dialog=no,resizable", arguments);
+		win.openDialog(url, "ColorPicker", "chrome,centerscreen,dialog=no,resizable", args);
 	}
 }
 
