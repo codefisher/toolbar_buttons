@@ -1,0 +1,1 @@
+toolbar_buttons.loadToggleToolbar(doc, "statusbar-toggle", "status-bar");
