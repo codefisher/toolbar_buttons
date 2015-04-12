@@ -3,4 +3,4 @@
 	id="tb-toggle-headers"
 	label="&tb-toggle-headers.label;"
 	tooltiptext="&tb-toggle-headers.tooltip;"
-	onclick="toolbar_buttons.toggleMsgHeaders(event);" />
+	oncommand="toolbar_buttons.toggleMsgHeaders(event);" />

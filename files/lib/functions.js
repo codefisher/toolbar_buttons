@@ -96,7 +96,7 @@ showAMenu: function(aEvent) {
 openMessengerWindowOrTab: function(url, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
-	if(event.button == 0) {
+	if(!event.button || event.button == 0) {
 		win.openDialog(url, '', 'chrome,centerscreen');
 	} else if(event.button == 1) {
 		var tabmail = doc.getElementById('tabmail');

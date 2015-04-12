@@ -3,4 +3,4 @@
 	id="reload-proxy"
 	label="&reload-proxy.label;"
 	tooltiptext="&reload-proxy.tooltip;"
-	onclick="toolbar_buttons.reloadPAC();" />
+	oncommand="toolbar_buttons.reloadPAC();" />
