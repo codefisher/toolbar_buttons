@@ -1,1 +1,1 @@
-toolbar_buttons.loadToggleToolbar(doc, "statusbar-toggle", "status-bar");
+toolbar_buttons.loadToggleToolbar(document, "statusbar-toggle", "status-bar");
