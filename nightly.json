@@ -8,6 +8,7 @@
     "use_keyboard_shortcuts": true,
     "extra_options": true,
     "extended_buttons": true,
+    "restartless": true,
     "show_updated_prompt": false,
     "missing_strings": "replace",
     "output_file": "toolbar-buttons-nightly.xpi",
