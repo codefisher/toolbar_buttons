@@ -1,5 +1,5 @@
 <!ENTITY about-application.label "About">
-<!ENTITY about-application.tooltip "About &brandShortName;">
+<!ENTITY about-application.tooltip "About">
 <!ENTITY about-cache.label "about:cache">
 <!ENTITY about-cache.tooltip "Open about:cache to view cached contents">
 <!ENTITY about-config.label "about:config">
