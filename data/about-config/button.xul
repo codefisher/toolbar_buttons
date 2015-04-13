@@ -3,4 +3,4 @@
 	id="about-config"
 	label="&about-config.label;"
 	tooltiptext="&about-config.tooltip;"
-	command="toolbar_buttons.openPageInTab('about:config', event);" />
+	oncommand="toolbar_buttons.openPageInTab('about:config', event);" />
