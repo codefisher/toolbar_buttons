@@ -1,13 +1,6 @@
-emptyAllTrash: function(event) {
+emptyAllTrashClick: function(event) {
 	var win = event.target.ownerDocument.defaultView;
-	if(event.button == 0) {
-		try {
-			win.MsgEmptyTrash(); // stopped working in Thunderbird 3.1
-		} catch(e) {
-			// same as gFolderTreeController.emptyTrash(); in 3.1
-			win.goDoCommand("cmd_emptyTrash");
-		}
-	} else if(event.button == 1) {
+	if(event.button == 1) {
 		try {
 			if(!win.gFolderTreeController._checkConfirmationPrompt("emptyTrash")) {
 				return;
@@ -22,5 +15,15 @@ emptyAllTrash: function(event) {
 		for(var server in fixIterator(servers, Ci.nsIMsgIncomingServer)) {
 			server.rootMsgFolder.emptyTrash(win.msgWindow, null);
 		}
+	}
+}
+
+emptyAllTrash: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	try {
+		win.MsgEmptyTrash(); // stopped working in Thunderbird 3.1
+	} catch (e) {
+		// same as gFolderTreeController.emptyTrash(); in 3.1
+		win.goDoCommand("cmd_emptyTrash");
 	}
 }
