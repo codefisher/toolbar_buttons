@@ -1,132 +1,139 @@
 
 #m {
-    width:715px;
-    min-width:715px;
-    margin:10px auto;
-    border:1px solid #ddd;
-    background:#f1f1f1;
+    width: 715px;
+    min-width: 715px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
 }
 
 h2 {
-    margin:0; padding:5px 10px;
-    border-bottom:1px solid #ddd;
-    font-size:18px;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
 }
 
 #a, #z {
-    border-top:1px solid #fff;
-    float:left;
+    border-top: 1px solid #fff;
+    float: left;
 }
 
 #a {
-    width:195px;
-    padding:10px 2px;
-    border-right:1px solid #ddd;
+    width: 195px;
+    padding: 10px 2px;
+    border-right: 1px solid #ddd;
 }
 
 #w, #cj, #ck, #c {
-    display:block;
-    padding:5px;
-    background:#f9f9f9;
-    border:1px solid #ddd;
+    display: block;
+    padding: 5px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
 }
 
 #c {
-    margin:0 auto 5px;
+    margin: 0 auto 5px;
 }
 
 #a div:not(#i) {
-    padding:6px 10px;
+    padding: 6px 10px;
 }
 
 input[type='number'],
-input[type='text']  {
-    float:right;
-    width:40px;
+input[type='text'] {
+    float: right;
+    width: 40px;
 }
 
 #x {
-    width:80px;
+    width: 80px;
 }
 
 input[type='radio'] {
-    margin-right:5px;
+    margin-right: 5px;
 }
 
-#fc>* {
-    display:block;
-    float:left;
-    margin:10px 5px;
+#fc > * {
+    display: block;
+    float: left;
+    margin: 10px 5px;
 }
 
 #z {
-    min-width:468px;
-    padding:0 10px;
+    min-width: 468px;
+    padding: 0 10px;
 }
 
 h3 {
-    font-size:1em;
-    text-align:center;
-    text-shadow:#fff 1px 1px 0;
-    margin:10px;
-    clear:both;
+    font-size: 1em;
+    text-align: center;
+    text-shadow: #fff 1px 1px 0;
+    margin: 10px;
+    clear: both;
 }
+
 #u, #l, #cj, #ck {
-    float:left;
+    float: left;
 }
+
 #u {
-    width:226px;
+    width: 226px;
 }
 
 #l {
-    width:242px;
+    width: 242px;
 }
 
 #cj, #ck {
-    margin:0 0 10px;
+    margin: 0 0 10px;
 }
 
 #ck {
-    margin-left:0;
-    border-left-width:0;
+    margin-left: 0;
+    border-left-width: 0;
 }
 
 #tp {
-    clear:both;
-    padding-top:15px;
+    clear: both;
+    padding-top: 15px;
 }
 
 table {
-    border-collapse:collapse;
+    border-collapse: collapse;
 }
+
 td {
-    border:1px solid #fff;
-    width:10px; height:10px;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
 }
 
 tr {
-    height:13px;
+    height: 13px;
 }
 
 #sc td {
-    width:20px; height:20px;
+    width: 20px;
+    height: 20px;
 }
 
 .c {
-    clear:both;
+    clear: both;
 }
 
 #tp {
-    position:relative;
-    margin:10px 5px;
+    position: relative;
+    margin: 10px 5px;
 }
 
 #sp {
-    border:1px solid #000;
-    position:absolute;
+    border: 1px solid #000;
+    position: absolute;
 }
+
 #d, #d a {
-    text-align:center;
-    color:#999;
-    font-size:12px
+    text-align: center;
+    color: #999;
+    font-size: 12px
 }

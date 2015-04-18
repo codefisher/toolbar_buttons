@@ -4,61 +4,58 @@
 <?xml-stylesheet href="colorpicker.css" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://{{chrome_name}}/locale/{{locale_file_prefix}}files.dtd" >
 <xul:dialog
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-    onload="StartUp()" 
-    width="715" height="500"
-    title="&tb-color-picker.dialog.title;"
-    ondialogaccept="return onAccept();"
-    ondialogcancel="return onCancelColor();"> 
-        <div id="m">
-            <div id="a">
-                <div id="cb">
-                    <canvas id="c" width="120" height="120" />
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="StartUp()"
+        width="715" height="500"
+        title="&tb-color-picker.dialog.title;"
+        ondialogaccept="return onAccept();"
+        ondialogcancel="return onCancelColor();">
+    <div id="m">
+        <div id="a">
+            <div id="cb">
+                <canvas id="c" width="120" height="120"/>
+            </div>
+            <div>
+                <label>&tb-color-picker.hex;<input id="x" type="text" size="7"/>
+                </label>
+            </div>
+            <div id="i">
+                <div>
+                    <input type="radio" name="n" id="Y" checked="checked"/>
+                    <label for="Y">&tb-color-picker.hue;</label>
+                    <input type="number" min="0" size="3" max="360" id="H"/>
                 </div>
-                <div><label>&tb-color-picker.hex;<input id="x" type="text" size="7" /></label></div>
-                <div id="i">
-                    <div>
-                        <input type="radio" name="n" id="Y" checked="checked" />
-                        <label for="Y">&tb-color-picker.hue;
-                            <input type="number" min="0" size="3" max="360" id="H" />
-                        </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="n" id="J" />
-                        <label for="J">&tb-color-picker.saturation;
-                            <input type="number" min="0" size="3" max="100" id="S" />
-                        </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="n" id="K" />
-                        <label for="K">&tb-color-picker.value;
-                            <input type="number" min="0" size="3" max="100" id="V" />
-                        </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="n" id="O" />
-                        <label for="O">&tb-color-picker.red;
-                            <input type="number" min="0" size="3" max="255" id="R" />
-                        </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="n" id="Q" />
-                        <label for="Q">&tb-color-picker.green;
-                            <input type="number" min="0" size="3" max="255" id="G" />
-                        </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="n" id="F" />
-                        <label for="F">&tb-color-picker.blue;
-                            <input type="number" min="0" size="3" max="255" id="B" />
-                        </label>
-                    </div>
-                    <div>
-                        <div id="ncd" />
-                        <label>Color Select:
-                            <select id="nc" onchange="selectChange(event);">
-                            <option id="nce" value=""> -- </option>
+                <div>
+                    <input type="radio" name="n" id="J"/>
+                    <label for="J">&tb-color-picker.saturation;</label>
+                    <input type="number" min="0" size="3" max="100" id="S"/>
+                </div>
+                <div>
+                    <input type="radio" name="n" id="K"/>
+                    <label for="K">&tb-color-picker.value;</label>
+                    <input type="number" min="0" size="3" max="100" id="V"/>
+                </div>
+                <div>
+                    <input type="radio" name="n" id="O"/>
+                    <label for="O">&tb-color-picker.red;</label>
+                    <input type="number" min="0" size="3" max="255" id="R"/>
+                </div>
+                <div>
+                    <input type="radio" name="n" id="Q"/>
+                    <label for="Q">&tb-color-picker.green;</label>
+                    <input type="number" min="0" size="3" max="255" id="G"/>
+                </div>
+                <div>
+                    <input type="radio" name="n" id="F"/>
+                    <label for="F">&tb-color-picker.blue;</label>
+                    <input type="number" min="0" size="3" max="255" id="B"/>
+                </div>
+                <div>
+                    <div id="ncd"/>
+                    <label>Color Select:
+                        <select id="nc" onchange="selectChange(event);">
+                            <option id="nce" value="">--</option>
                             <option value="aliceblue">Alice Blue</option>
                             <option value="antiquewhite">Antique White</option>
                             <option value="aqua">Aqua</option>
@@ -105,7 +102,6 @@
                             <option value="floralwhite">Floral White</option>
                             <option value="forestgreen">Forest Green</option>
                             <option value="fuchsia">Fuchsia</option>
-
                             <option value="gainsboro">Gainsboro</option>
                             <option value="ghostwhite">Ghost White</option>
                             <option value="gold">Gold</option>
@@ -202,33 +198,34 @@
                             <option value="yellowgreen">Yellow Green</option>
                         </select>
                     </label>
-                    </div>
                 </div>
             </div>
-            <div id="z">
-                <div id="u">
-                    <h3>&tb-color-picker.wheel;</h3>
-                    <canvas id="w" width="196" height="196" />
-                </div>
-                <div id="l">
-                    <h3>&tb-color-picker.panel;</h3>
-                    <canvas id="cj" width="196" height="196" />
-                    <canvas id="ck" width="16" height="196" />
-                </div>
-                <h3>&tb-color-picker.browser-safe;</h3>
-                <div id="tp">
-                    <table id="p" />
-                    <div id="sp" />
-                </div>
-                <div id="fc">
-                    <table id="sc" /><button id="vs">&tb-color-picker.save;</button>
-                </div>
-                <div class="c">
-                    <button id="eyedropper">&tb-color-picker.eyedropper;</button>
-                </div>
-            </div>
-            <div class="c" />
-            <script type="text/javascript" src="colorpicker.js" />
-            <script type="text/javascript" src="pickerwindow.js" />
         </div>
+        <div id="z">
+            <div id="u">
+                <h3>&tb-color-picker.wheel;</h3>
+                <canvas id="w" width="196" height="196" />
+            </div>
+            <div id="l">
+                <h3>&tb-color-picker.panel;</h3>
+                <canvas id="cj" width="196" height="196" />
+                <canvas id="ck" width="16" height="196" />
+            </div>
+            <h3>&tb-color-picker.browser-safe;</h3>
+            <div id="tp">
+                <table id="p" />
+                <div id="sp"/>
+            </div>
+            <div id="fc">
+                <table id="sc"/>
+                <button id="vs">&tb-color-picker.save;</button>
+            </div>
+            <div class="c">
+                <button id="eyedropper">&tb-color-picker.eyedropper;</button>
+            </div>
+        </div>
+        <div class="c"/>
+        <script type="text/javascript" src="colorpicker.js"/>
+        <script type="text/javascript" src="pickerwindow.js"/>
+    </div>
 </xul:dialog>
