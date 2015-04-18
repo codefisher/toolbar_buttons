@@ -285,7 +285,6 @@
 <!ENTITY tb-base64.label "Data URI Generator">
 <!ENTITY translate.service.promt "PROMT Online Translator">
 <!ENTITY save-frame.label "Save Frame">
-<!ENTITY tb-create-profile.label "">
 <!ENTITY wikipedia.label "Wikipedia">
 <!ENTITY readmail.path.caption "Mail Path">
 <!ENTITY exit.label "Exit">
