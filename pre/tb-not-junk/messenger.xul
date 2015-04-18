@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-not-junk"
+	label="&tb-not-junk.label;"
+	tooltiptext="&tb-not-junk.tooltip;"
+	oncommand="window.JunkSelectedMessages(false);"/>
