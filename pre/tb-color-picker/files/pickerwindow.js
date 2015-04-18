@@ -74,7 +74,7 @@ function setUpSavedFromDatabase() {
 	}
 	document.getElementById("sc").appendChild(tmp);
 
-	document.getElementById("v").addEventListener('click', function(event) {
+	document.getElementById("vs").addEventListener('click', function(event) {
 		var hex = doApply(getHex, currentColor);
 		saveValueToDatabse(hex);
 		loadDatabaseSaved();
