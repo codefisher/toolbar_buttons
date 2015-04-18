@@ -2,9 +2,9 @@ var wheel = document.getElementById("w"),
     wheelCtx = getContext(wheel),
     currentBox = document.getElementById("c"),
     currentCtx = getContext(currentBox),
-    barCanvas = document.getElementById("k"),
+    barCanvas = document.getElementById("ck"),
     barCanvasCtx = getContext(barCanvas),
-    panelCanvas = document.getElementById("j"),
+    panelCanvas = document.getElementById("cj"),
     panelCanvasCtx = getContext(panelCanvas),
 
     hexNode = document.getElementById("x"),
@@ -34,8 +34,6 @@ var wheel = document.getElementById("w"),
     hex3match = /(.)(.)(.)/,
     hex3replace = "$1$1$2$2$3$3",
     hexChars = "0123456789ABCDEF",
-    tmp,
-    j,
     chars = "0369CF",
     inputs = [["Hue", hueMax], ["Saturation", HSVmax], ["Value", HSVmax],
               ["Red", RGBmax], ["Green", RGBmax], ["Blue", RGBmax]],
@@ -190,8 +188,8 @@ var namedColors = {
     "yellowgreen": "#9acd32"
 };
 
-for(var i = 0; i < 7; i++) {
-    primaryColorsArray.push(getHexColor(decode("N5N50S0S5N0"), i));
+for(var x = 0; x < 7; x++) {
+    primaryColorsArray.push(getHexColor(decode("N5N50S0S5N0"), x));
 }
 
 function colorNameToHex(color) {
@@ -210,15 +208,15 @@ function getHexColor(value, index) {
 }
 
 function decode(text) {
-    var i = 0, j = 0, hex = [], result = "", other;
-    for(i = 0; i < 6; i++) {
+    var hex = [], result = "", other;
+    for(var i = 0; i < 6; i++) {
         other = chars;
-        for (j = 0; j < 6;) {
+        for (var j = 0; j < 6;) {
             hex.push(chars[i]+chars[j++]);
         }
     }
-    for(i = 0; i < text.length; i++) {
-        result += hex[(text.charCodeAt(i)-48)];
+    for(var k = 0; k < text.length; k++) {
+        result += hex[(text.charCodeAt(k)-48)];
     }
     return result;
 }
@@ -239,7 +237,7 @@ function getRGB(hex) {
     hex = (hex.length == 3) ? hex.replace(hex3match, hex3replace) : hex;
     if(hex.length == 6) {
         var result = [];
-        for(i = 0; i < 3;) {
+        for(var i = 0; i < 3;) {
             result.push(hex2dec(hex[i*2]) * 16 + hex2dec(hex[i++*2+1]));
         }
         return result;
@@ -319,8 +317,8 @@ function startup() {
 function setupInputs() {
     function func(event) {
         doApply(updateColor, textBoxChange(this));
-    };
-    for(i in inputs) {
+    }
+    for(var i = 0; i < inputs.length; i++) {
         var input = document.getElementById(inputIds[i]);
         input.addEventListener('keydown', function(event) {
             var code = event.keyCode;
@@ -349,9 +347,9 @@ function setupInputs() {
 
 function setupPalette() {
     var palette = document.getElementById('p');
-    for(i = 0; i < 6*36; i++) {
+    for(var i = 0; i < 6*36; i++) {
         if(i % 36 == 0) {
-            tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
+            var tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
             palette.appendChild(tmp);
         }
         color = getHexColor(paletteColors, i);
@@ -371,8 +369,7 @@ function setupNamedColors() {
     colorSelect.addEventListener('mouseup', selectChange, false);
     colorSelect.addEventListener('keyup', selectChange, false);
     var colors = colorSelect.getElementsByTagName("option");
-    var colorSet = document.getElementById("ncd");
-    for(i = 0; i < colors.length; i++) {
+    for(var i = 0; i < colors.length; i++) {
         var colorName = colors[i].getAttribute('value');
         if(colorName) {
             namedColorItems[colorNameToHex(colorName)] = colors[i];
@@ -399,8 +396,8 @@ function setupHexInput() {
 }
 
 function setUpSaved() {
-    tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
-    for(i = 0; i < 17; i++) {
+    var tmp = document.createElementNS('http://www.w3.org/1999/xhtml', 'tr');
+    for(var i = 0; i < 17; i++) {
         var cell = document.createElementNS('http://www.w3.org/1999/xhtml', 'td');
         cell.addEventListener('click', function(event) {
             if(this.value) doApply(updateColor, getRGB(this.value)); 
@@ -409,7 +406,7 @@ function setUpSaved() {
     }
     document.getElementById("sc").appendChild(tmp);
 
-    document.getElementById("v").addEventListener('click', function(event) {
+    document.getElementById("vs").addEventListener('click', function(event) {
         var hex = doApply(getHex, currentColor);
         delete sessionStorage[hex];
         sessionStorage[hex] = sessionStorage.length ? getSessionVals()[0][0]+1 : 0;
@@ -446,11 +443,11 @@ function setWheelAndPanelEvents() {
             doSetCurrent(doApply(solveHSV, tmp));
             doApply(setWheel, tmp);
         } else if(barDown) {
-            var tmp = getBarColor(event);
+            tmp = getBarColor(event);
             doSetCurrent(tmp);
             doApply(drawPanel, tmp);
         } else if(panelDown) {
-            var tmp = getPanelColor(event);
+            tmp = getPanelColor(event);
             doSetCurrent(tmp);
             doApply(drawPanel, tmp);
         }
@@ -484,7 +481,7 @@ function setWheelAndPanelEvents() {
         if(40 < distance && distance < 60) {
             diff = diffColor[parseInt(((angle + 45/2)/45)%8)];
             tmp = doApply(solveRGB, currentColor);
-            for(i=0; i < 2;) {
+            for(var i = 0; i < 2;) {
                 tmp[i+1] = minMax(diff[i]+tmp[++i], 0, HSVmax);
             }
             doApply(updateColor, doApply(solveHSV, tmp));
@@ -514,8 +511,8 @@ function goodKey(code) {
 }
 
 function loadSaved() {
-    var values = getSessionVals(), key, tds = document.getElementById('sc').getElementsByTagName('td'), value;
-    for(i = 0; i < values.length; i++) {
+    var values = getSessionVals(), tds = document.getElementById('sc').getElementsByTagName('td'), value;
+    for(var i = 0; i < values.length; i++) {
         value = values[i][1];
         if(i < 17) {
             tds[i].style.backgroundColor = value;
@@ -528,8 +525,8 @@ function loadSaved() {
 
 function getSessionVals() {
     var values = [];
-    for(i = 0; i < sessionStorage.length; i++) {
-        key = sessionStorage.key(i);
+    for(var i = 0; i < sessionStorage.length; i++) {
+        var key = sessionStorage.key(i);
         values.push([parseInt(sessionStorage[key]), key]);
     }
     values.sort(function(x, y) { return y[0] - x[0]; });
@@ -538,7 +535,7 @@ function getSessionVals() {
 
 function createGradient(ctx, x1, y1, x2, y2, grad) {
     var gradient = ctx.createLinearGradient(x1, y1, x2, y2);
-    for(j in grad) {
+    for(var j = 0; j < grad.length; j++) {
         gradient.addColorStop(j/(grad.length-1), grad[j]);
     }
     return gradient;
@@ -567,12 +564,12 @@ function setWheelCurrent(angle) {
 
 function setWheelTriangle(angle, distance) {
     var rotate = doApply(solveRGB, currentColor)[0],
-        x = distance * Math.cos((angle-rotate)*Math.PI/180),
-        y = distance * Math.sin((angle-rotate)*Math.PI/180),
+        x = distance * Math.cos((angle-rotate-120)*Math.PI/180),
+        y = distance * Math.sin((angle-rotate-120)*Math.PI/180),
         sat_dist = inner-1-(inner*Math.cos(Math.PI*2/3)),
-        sat = (distance * Math.cos((angle-rotate-120)*Math.PI/180))-(inner*Math.cos(Math.PI*2/3)),
+        sat = x -(inner*Math.cos(Math.PI*2/3)),
         val_max = (sat_dist-sat)*Math.tan(Math.PI/6),
-        vlu = ((val_max*2)-(val_max+(distance * Math.sin((angle-rotate-120)*Math.PI/180))))/(val_max*2),
+        vlu = ((val_max*2)-(val_max+y))/(val_max*2),
         satu = (sat_dist-sat)/sat_dist;
     return [rotate, minMax(Math.round(HSVmax*vlu), 0, HSVmax), minMax(Math.round(HSVmax*satu), 0, HSVmax), 0 <= vlu && vlu <= 1 && 0 <= satu && satu <= 1];
 }
@@ -580,19 +577,18 @@ function setWheelTriangle(angle, distance) {
 function setWheel(h, s, v) {
     var topX = inner*Math.cos(Math.PI*2/3), topY = inner*Math.sin(Math.PI*2/3),
         bottomX = inner*Math.cos(Math.PI*4/3), bottomY = inner*Math.sin(Math.PI*4/3),
-        horizontal = inner-topX,
-        vertical = topY-bottomY, size = inner-bottomX, tsize = Math.sqrt(size*size+topY*topY);
+        size = inner-bottomX;
 
     wheelCtx.save();
     wheelCtx.lineWidth = width;
     wheelCtx.clearRect(0, 0, canvasSize, canvasSize);
     wheelCtx.translate(radius+width, radius+width);
-    for(i = 0;i < 6; i++) {
+    for(var i = 0; i < 6; i++) {
         wheelCtx.strokeStyle = createGradient(wheelCtx, radius, 0, radius*0.5, radius*Math.sin(-Math.PI / 3), 
                 [primaryColorsArray[i], primaryColorsArray[i+1]]);
 
         wheelCtx.beginPath();
-        wheelCtx.arc(0, 0, radius, 0.01, -Math.PI / 3, 1);
+        wheelCtx.arc(0, 0, radius, 0.01, -Math.PI / 3, true);
         wheelCtx.stroke();
         wheelCtx.rotate(-Math.PI / 3);
     }
@@ -635,20 +631,21 @@ function setCurrent(r1, g1, b1, r2, g2, b2) {
 
     currentCtx.clearRect(-60, -60, 120, 120);        
 
-    for(i in diffColor) { 
-        currentCtx.fillStyle = doApply(getHex, solveHSV(h, minMax(s+diffColor[i][0], 0, HSVmax), minMax(v+diffColor[i][1], 0, HSVmax)));
+    for(var i = 0; i < diffColor.length; i++) {
+        currentCtx.fillStyle = doApply(getHex, solveHSV(h, minMax(s+diffColor[i][0], 0, HSVmax),
+            minMax(v+diffColor[i][1], 0, HSVmax)));
         currentCtx.beginPath();
-        currentCtx.arc(10, 0, size+10, Math.PI / 8, -Math.PI / 8, 1);
+        currentCtx.arc(10, 0, size+10, Math.PI / 8, -Math.PI / 8, true);
         currentCtx.lineTo(10, 0);
         currentCtx.closePath();
         currentCtx.fill();
-        currentCtx.rotate(-Math.PI / 4, 60, 60);
+        currentCtx.rotate(-Math.PI / 4);
     }
 
     for(i = 0; i < 2; i++) {
         currentCtx.fillStyle = i ? getHex(r1, g1, b1) : getHex(r2, g2, b2);
         currentCtx.beginPath();
-        currentCtx.arc(0, 0, size, (i ? -1 : 1) * Math.PI / 2, (i ? 1 : -1) * Math.PI / 2, 1);
+        currentCtx.arc(0, 0, size, (i ? -1 : 1) * Math.PI / 2, (i ? 1 : -1) * Math.PI / 2, true);
         currentCtx.closePath();
         currentCtx.fill();
     }
@@ -662,15 +659,15 @@ function setPalette(hex) {
         item.style.height = "16px";
         item.style.width = "16px";
         item.style.display = "block";
-        item.style.top = (pos.offsetTop + pos.offsetHeight - 2).toString() + "px";
-        item.style.left = (pos.offsetLeft - 4).toString() + "px";
+        item.style.top = (pos.offsetTop + pos.offsetHeight - 1).toString() + "px";
+        item.style.left = (pos.offsetLeft - 3).toString() + "px";
     } else {
         item.style.display = "none";
     }
 }
 
 function getPanelView() {
-    for(i = 0; i < 6; i++) {
+    for(var i = 0; i < 6; i++) {
         if(document.getElementById(radioIds[i]).checked) {
             return i;
         }
@@ -727,7 +724,7 @@ function drawPanel(r, g, b) {
 
     if(view > 2) {
         doFill(panelCanvasCtx, canvasSize, 0, 0, canvasSize, canvasSize, grad2);
-        for(i = 0; i < canvasSize; i++) {
+        for(var i = 0; i < canvasSize; i++) {
             panelCanvasCtx.globalAlpha = i/canvasSize;
             doFill(panelCanvasCtx, canvasSize, 0, i, canvasSize, 1, grad4);
         }
@@ -782,16 +779,16 @@ function getPanelColor(event) {
 }
 
 function selectChange(event) {
-    var color = namedColors[event.target.value]
+    var color = namedColors[event.target.value];
     if(typeof color != 'undefined') {
         doApply(updateColor, getRGB(color));
     }
 }
 
 function updateColor(r, g, b, input) {
-    currentColor = [r, g, b], newColor = currentColor;
+    currentColor = [r, g, b];
+    newColor = currentColor;
     var currentHsv = solveRGB(r, g, b), 
-        nextHsv = doApply(solveRGB, newColor),
         boxValues = currentHsv.concat(currentColor),
         hex = getHex(r, g, b);
     setPalette(hex);
@@ -800,7 +797,7 @@ function updateColor(r, g, b, input) {
     if(input != "x") {
         hexNode.value = getHex(r, g, b);
     }
-    for(i in inputBoxes) {
+    for(var i = 0; i < inputBoxes.length; i++) {
         if(input != inputBoxes[i].id && inputBoxes !== document.activeElement) {
             inputBoxes[i].value = boxValues[i];
         }

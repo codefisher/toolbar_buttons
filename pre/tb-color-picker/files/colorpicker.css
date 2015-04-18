@@ -1,6 +1,7 @@
 
 #m {
-    width:688px;
+    width:700px;
+    min-width:700px;
     margin:10px auto;
     border:1px solid #ddd;
     background:#f1f1f1;
@@ -23,7 +24,7 @@ h2 {
     border-right:1px solid #ddd;
 }
 
-#w, #j, #k, #c {
+#w, #cj, #ck, #c {
     display:block;
     padding:5px;
     background:#f9f9f9;
@@ -59,7 +60,7 @@ input[type='radio'] {
 }
 
 #z {
-    width:468px;
+    min-width:468px;
     padding:0 10px;
 }
 
@@ -70,10 +71,10 @@ h3 {
     margin:10px;
     clear:both;
 }
-#o, #l, #j, #k {
+#u, #l, #cj, #ck {
     float:left;
 }
-#o {
+#u {
     width:226px;
 }
 
@@ -81,11 +82,11 @@ h3 {
     width:242px;
 }
 
-#j, #k {
+#cj, #ck {
     margin:0 0 10px;
 }
 
-#k {
+#ck {
     margin-left:0;
     border-left-width:0;
 }

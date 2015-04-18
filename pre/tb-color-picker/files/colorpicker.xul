@@ -16,47 +16,47 @@
                 <div id="cb">
                     <canvas id="c" width="120" height="120" />
                 </div>
-                <div><label id="y">&tb-color-picker.hex;<input id="x" type="text" size="7" /></label></div>
+                <div><label>&tb-color-picker.hex;<input id="x" type="text" size="7" /></label></div>
                 <div id="i">
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="Y" checked="checked" />
-                        <label>&tb-color-picker.hue;
+                        <label for="Y">&tb-color-picker.hue;
                             <input type="number" min="0" size="3" max="360" id="H" />
                         </label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="J" />
-                        <label>&tb-color-picker.saturation;
+                        <label for="J">&tb-color-picker.saturation;
                             <input type="number" min="0" size="3" max="100" id="S" />
                         </label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="K" />
-                        <label>&tb-color-picker.value;
+                        <label for="K">&tb-color-picker.value;
                             <input type="number" min="0" size="3" max="100" id="V" />
                         </label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="O" />
-                        <label>&tb-color-picker.red;
+                        <label for="O">&tb-color-picker.red;
                             <input type="number" min="0" size="3" max="255" id="R" />
                         </label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="Q" />
-                        <label>&tb-color-picker.green;
+                        <label for="Q">&tb-color-picker.green;
                             <input type="number" min="0" size="3" max="255" id="G" />
                         </label>
                     </div>
-                    <div> 
+                    <div>
                         <input type="radio" name="n" id="F" />
-                        <label>&tb-color-picker.blue;
+                        <label for="F">&tb-color-picker.blue;
                             <input type="number" min="0" size="3" max="255" id="B" />
                         </label>
                     </div>
                     <div>
                         <div id="ncd" />
-                        <label>&tb-color-picker.color-select;:
+                        <label>Color Select:
                             <select id="nc" onchange="selectChange(event);">
                             <option id="nce" value=""> -- </option>
                             <option value="aliceblue">Alice Blue</option>
@@ -206,14 +206,14 @@
                 </div>
             </div>
             <div id="z">
-                <div id="o">
+                <div id="u">
                     <h3>&tb-color-picker.wheel;</h3>
                     <canvas id="w" width="196" height="196" />
                 </div>
                 <div id="l">
                     <h3>&tb-color-picker.panel;</h3>
-                    <canvas id="j" width="196" height="196" />
-                    <canvas id="k" width="16" height="196" />
+                    <canvas id="cj" width="196" height="196" />
+                    <canvas id="ck" width="16" height="196" />
                 </div>
                 <h3>&tb-color-picker.browser-safe;</h3>
                 <div id="tp">
@@ -221,9 +221,9 @@
                     <div id="sp" />
                 </div>
                 <div id="fc">
-                    <table id="sc" /><button id="v">&tb-color-picker.save;</button>
+                    <table id="sc" /><button id="vs">&tb-color-picker.save;</button>
                 </div>
-                <div style="clear:both;">
+                <div class="c">
                     <button id="eyedropper">&tb-color-picker.eyedropper;</button>
                 </div>
             </div>
