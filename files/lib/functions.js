@@ -33,7 +33,7 @@ OpenAddonsMgr: function(event, type, typeUrl) {
 			var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
                    .getService(Components.interfaces.nsIWindowWatcher);
 			var extWin = ww.openWindow(win, "chrome://mozapps/content/extensions/extensions.xul",
-			                        "Addons:Manager", "chrome,centerscreen", null);
+			                        "Addons:Manager", "chrome,centerscreen,width=850,height=550", null);
 			extWin.addEventListener("load", function() { extWin.gViewController.loadView(typeUrl); }, false);
 		}
 	}
