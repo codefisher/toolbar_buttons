@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-restart-addons-disabled"
+	label="&tb-restart-addons-disabled.label;"
+	tooltiptext="&tb-restart-addons-disabled.tooltip;"
+	oncommand="window.safeModeRestart();"/>
