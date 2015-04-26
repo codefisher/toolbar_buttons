@@ -1,8 +1,7 @@
 extensionOptionsOpen: function(addon) {
 	return function(event) {
 		var win = event.target.ownerDocument.defaultView;
-		var ww = Cc["@mozilla.org/embedcomp/window-watcher;1"].getService(Ci.nsIWindowWatcher);
-		ww.openWindow(win, addon.optionsURL, "", "chrome,centerscreen,toolbar", null);
+		win.openDialog(addon.optionsURL, "", "chrome,titlebar,toolbar,centerscreen,dialog=yes", null);
 	};
 }
 
