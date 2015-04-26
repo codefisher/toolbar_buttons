@@ -12,7 +12,10 @@ setUpMenuShower: function(doc) {
 		register: function() {toolbar_buttons.registerCleanUpFunction(this.unregister);
 			this.prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch("{{pref_root}}showamenu.");
 			this.prefs.addObserver("", this, false);
-			toolbar_buttons.registerCleanUpFunction(this.unregister);
+			var self = this;
+			toolbar_buttons.registerCleanUpFunction(function() {
+				self.prefs.removeObserver("", self);
+			});
 			var attrList = this.prefs.getChildList('', {});
 			for(var i in attrList) {
 				var menu = doc.getElementById(attrList[i]);
