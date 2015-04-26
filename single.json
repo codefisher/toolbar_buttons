@@ -11,5 +11,5 @@
 	"use_keyboard_shortcuts": true,
 	"translate_description": true,
 	"applications": ["browser", "messenger", "suite"],
-	"version": "1.0.4"
+	"version": "1.0.6"
 }
