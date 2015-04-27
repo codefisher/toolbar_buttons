@@ -6,6 +6,9 @@ loadTranslate: function() {
 	var promtlist = document.getElementById('translate-languages-promt');
 		
 	var loading = document.getElementById('translate-loading');
+	if(!loading || !menulist || !promtlist) {
+		return;
+	}
 	loading.setAttribute('value', currentValue);
 	menulist.selectedItem = loading;
 	var promtLoading = document.getElementById('translate-promt-loading');
