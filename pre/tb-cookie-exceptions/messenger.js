@@ -8,8 +8,8 @@ showCookieExceptions: function(event) {
 		allowVisible   : true,
 		prefilledHost  : "",
 		permissionType : "cookie",
-		windowTitle    : bundle.getString("cookiepermissionstitle"),
-		introText      : bundle.getString("cookiepermissionstext")
+		windowTitle    : bundle.GetStringFromName("cookiepermissionstitle"),
+		introText      : bundle.GetStringFromName("cookiepermissionstext")
 	};
-	win.openWindow("mailnews:permissions", "chrome://messenger/content/preferences/permissions.xul", "", params);
+	win.openDialog("chrome://messenger/content/preferences/permissions.xul", "mailnews:permissions", "", params);
 }
