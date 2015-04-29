@@ -1,4 +1,4 @@
-threadsWithUnread: function() {
+threadsWithUnread: function(event) {
 	var win = event.target.ownerDocument.defaultView;
 	if(win.gFolderDisplay.view.specialViewThreadsWithUnread) {
 		win.goDoCommand('cmd_viewAllMsgs');
