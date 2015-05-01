@@ -1,6 +1,0 @@
-<toolbarbutton
-	class="toolbarbutton-1 chromeclass-toolbar-additional"
-	id="page-source"
-	label="&page-source.label;"
-	tooltiptext="&page-source.tooltip;"
-	oncommand="window.goDoCommand('cmd_viewPageSource')" />
