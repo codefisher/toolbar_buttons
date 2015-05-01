@@ -72,7 +72,7 @@ showAMenu: function(aEvent) {
 		}
 	}
 	if (!aMenu) {
-		toolbar_buttons.wrongVersion();
+		toolbar_buttons.wrongVersion(event);
 	}
 	var popup = aMenu.firstChild;
 	/* what we do is move the popup to our self, and then when finished move it
