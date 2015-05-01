@@ -3,4 +3,5 @@
 	id="find"
 	label="&find.label;"
 	tooltiptext="&find.tooltip;"
+    key="key_find"
 	command="cmd_find" />

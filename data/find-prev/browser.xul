@@ -3,4 +3,5 @@
 	id="find-prev"
 	label="&find-prev.label;"
 	tooltiptext="&find-prev.tooltip;"
+    key="key_findPrevious"
 	command="cmd_findPrevious" />
