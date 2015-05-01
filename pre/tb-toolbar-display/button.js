@@ -5,7 +5,7 @@ getTogglableToolbars: function(event) {
 	if(win.gNavToolbox) {
 		var toolbarBox = win.gNavToolbox;
 	} else {
-		var toolbarBox = doc.getElementById('mail-toolbox');
+		var toolbarBox = doc.getElementById('mail-toolbox') || doc.getElementById('compose-toolbox');
 	}
 	let toolbarNodes = Array.slice(toolbarBox.childNodes);
 	toolbarNodes = toolbarNodes.concat(toolbarBox.externalToolbars);
