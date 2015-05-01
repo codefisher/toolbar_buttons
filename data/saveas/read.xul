@@ -3,4 +3,4 @@
 	id="saveas"
 	label="&saveas.label;"
 	tooltiptext="&saveas.tooltip;"
-	command="cmd_saveAsFile" />
+	oncommand="window.goDoCommand('cmd_saveAsFile')" />
