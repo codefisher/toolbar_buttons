@@ -1,2 +1,3 @@
 url.firefox-ext:"https://addons.mozilla.org/firefox/extensions/"
+url.seamonkey-ext:"https://addons.mozilla.org/seamonkey/extensions/"
 always.new.tab:false

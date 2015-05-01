@@ -1,4 +1,4 @@
-settings.label:cog.png
+settings.label:cog.png:browser
 <groupbox>
 	<caption label="&javaScriptConsole.label;" />
 	<preferences>

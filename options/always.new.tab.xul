@@ -1,4 +1,4 @@
-settings.label:cog.png
+settings.label:cog.png:browser suite
 <groupbox>
 	<caption label="&open-new-tab.label;" />
 	<preferences>

@@ -1,4 +1,4 @@
-links.caption:link.png
+links.caption:link.png:browser
 <groupbox>
 	<caption label="&firefox-extension.label;" />
 	<preferences>
