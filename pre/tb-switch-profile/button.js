@@ -53,4 +53,5 @@ toProfileManager: function(event) {
 			}
 		}
 	}
+	return false;
 }

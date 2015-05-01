@@ -17,7 +17,7 @@ SendWithNoSave: function(event) {
 	}
 }
 
-goSendMessage: function() {
+goSendMessage: function(event) {
 	var win = event.target.ownerDocument.defaultView;
 	try {
 		if (toolbar_buttons.interfaces.IOService.offline) {
