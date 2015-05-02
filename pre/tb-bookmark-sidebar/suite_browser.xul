@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-bookmark-sidebar"
+	label="&tb-bookmark-sidebar.label;"
+	tooltiptext="&tb-bookmark-sidebar.tooltip;"
+	oncommand="window.SidebarSelectPanel(document.getElementById('urn:sidebar:panel:bookmarks'), true, true);"/>

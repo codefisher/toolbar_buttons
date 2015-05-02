@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="firefox-extension"
+	label="&firefox-extension.label;"
+	tooltiptext="&firefox-extension.tooltip;"
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.seamonkey-ext',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.seamonkey-ext',event);" />

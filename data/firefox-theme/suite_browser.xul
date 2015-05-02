@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="firefox-theme"
+	label="&firefox-theme.label;"
+	tooltiptext="&firefox-theme.tooltip;"
+	onclick="toolbar_buttons.openLinkFromPrefTab('url.seamonkey-theme',event);"
+	oncommand="toolbar_buttons.openLinkFromPref('url.seamonkey-theme',event);" />

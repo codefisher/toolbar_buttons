@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional" 
+	id="tb-history-sidebar"
+	label="&tb-history-sidebar.label;"
+	tooltiptext="&tb-history-sidebar.tooltip;"
+	oncommand="window.SidebarSelectPanel(document.getElementById('urn:sidebar:panel:history'), true, true);"/>

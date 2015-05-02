@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-about-permissions"
+	label="&tb-about-permissions.label;"
+	tooltiptext="&tb-about-permissions.tooltip;"
+	oncommand="toolbar_buttons.openPageInTab('about:data', event);"/>

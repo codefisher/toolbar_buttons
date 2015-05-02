@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="reduce"
+	label="&reduce.label;"
+	tooltiptext="&reduce.tooltip;"
+	key="key_zoomReduce"
+	command="cmd_zoomReduce"/>

@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="javaScriptConsole"
+	label="&javaScriptConsole.label;"
+	tooltiptext="&javaScriptConsole.tooltip;"
+    key="key_errorConsole"
+	command="Tasks:ErrorConsole"/>

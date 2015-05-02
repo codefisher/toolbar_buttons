@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="find-again"
+	label="&find-again.label;"
+	tooltiptext="&find-again.tooltip;"
+    key="key_findNext"
+	command="cmd_findNext"/>

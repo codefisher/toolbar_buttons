@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="reset"
+	label="&reset.label;"
+	tooltiptext="&reset.tooltip;"
+	key="key_zoomReset"
+	oncommand="window.FullZoom.zoom(1);" />

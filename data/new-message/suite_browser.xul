@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="new-message"
+	label="&new-message.label;"
+	tooltiptext="&new-message.tooltip;"
+	oncommand="window.openComposeWindow('', '', 0, null);"/>
