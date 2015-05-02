@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="bookmark-manager"
+	label="&bookmark-manager.label;"
+	tooltiptext="&bookmark-manager.tooltip;"
+    key="manBookmarkKb"
+	command="Browser:ManageBookmark"/>

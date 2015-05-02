@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="customize-toolbar"
+	label="&customize-toolbar.label;"
+	tooltiptext="&customize-toolbar.tooltip;"
+	oncommand="return window.goCustomizeToolbar(this.parentNode.toolbox);"/>

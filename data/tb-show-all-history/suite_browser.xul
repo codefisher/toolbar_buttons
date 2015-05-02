@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-show-all-history"
+	label="&tb-show-all-history.label;"
+	tooltiptext="&tb-show-all-history.tooltip;"
+    key="key_gotoHistory"
+	oncommand="window.toHistory();" />

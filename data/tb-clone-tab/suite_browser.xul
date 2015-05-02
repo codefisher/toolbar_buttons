@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-clone-tab"
+	label="&tb-clone-tab.label;"
+	tooltiptext="&tb-clone-tab.tooltip;"
+	oncommand="toolbar_buttons.cloneSeaTab(event);" />

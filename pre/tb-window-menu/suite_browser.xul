@@ -3,4 +3,4 @@
 	id="tb-window-menu"
 	label="&tb-window-menu.label;"
 	tooltiptext="&tb-window-menu.tooltip;"
-	oncommand="toolbar_buttons.showAMenu(event, 'windowMenu');"/>
+	oncommand="toolbar_buttons.showAMenu(event, 'windowMenu');" />

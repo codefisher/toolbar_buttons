@@ -3,4 +3,4 @@
 	id="tb-history-sidebar"
 	label="&tb-history-sidebar.label;"
 	tooltiptext="&tb-history-sidebar.tooltip;"
-	oncommand="window.SidebarSelectPanel(document.getElementById('urn:sidebar:panel:history'), true, true);"/>
+	oncommand="window.SidebarShowHide(); window.SidebarSelectPanel(document.getElementById('urn:sidebar:panel:history'), true, true);"/>

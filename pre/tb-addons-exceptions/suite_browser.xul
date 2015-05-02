@@ -3,4 +3,4 @@
 	id="tb-addons-exceptions"
 	label="&tb-addons-exceptions.label;"
 	tooltiptext="&tb-addons-exceptions.tooltip;"
-	oncommand="toolbar_buttons.openPageInTab('about:data', event);"/>
+	oncommand="window.toDataManager('|permissions');"/>
