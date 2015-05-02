@@ -2,5 +2,7 @@
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-page-go"
 	label="&tb-page-go.label;"
+	tooltiptext="&tb-page-go.tooltip;"
 	oncommand="window.gURLBar.handleCommand(event);"
-	tooltiptext="&tb-page-go.tooltip;"/>
+    ondragover="window.gURLBar.onDragOver(event);"
+    ondragdrop="window.gURLBar.onDrop(event);"/>

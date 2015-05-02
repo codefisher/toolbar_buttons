@@ -317,8 +317,8 @@ showOnlyThisFrame: function(event) {
 	if (win.isContentFrame(focusedWindow)) {
 		var doc = focusedWindow.document;
 		var frameURL = doc.location.href;
-		win.urlSecurityCheck(frameURL, win.gBrowser.contentPrincipal,
-						 Ci.nsIScriptSecurityManager.DISALLOW_SCRIPT);
+		//win.urlSecurityCheck(frameURL, win.gBrowser.contentPrincipal,
+		//				 Ci.nsIScriptSecurityManager.DISALLOW_INHERIT_PRINCIPAL);
 		var referrer = doc.referrer;
 		win.gBrowser.loadURI(frameURL, referrer ? win.makeURI(referrer) : null);
 	}

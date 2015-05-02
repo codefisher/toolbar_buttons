@@ -3,4 +3,4 @@
 	id="tb-check-for-update"
 	label="&tb-check-for-update.label;"
 	tooltiptext="&tb-check-for-update.tooltip;"
-	oncommand="checkForUpdates();"/>
+	oncommand="window.checkForUpdates();"/>

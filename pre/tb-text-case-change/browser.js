@@ -64,7 +64,7 @@ textChangeCaseTitle: function(event) {
 	}));
 }
 
-textChangeCaseInvert: function() {
+textChangeCaseInvert: function(event) {
 	var text = toolbar_buttons.getSelectedTextboxText(event);
 	if(text == null) {
 		return;

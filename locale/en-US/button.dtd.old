@@ -379,7 +379,7 @@
 <!ENTITY tb-tools-menu.tooltip "Show the tools menu">
 <!ENTITY tb-twitter-button.label "Twitter">
 <!ENTITY tb-twitter-button.tooltip "Open Twitter home page">
-<!ENTITY tb-url-go-button.label "Address Go">
+<!ENTITY tb-url-go-button.label "Go">
 <!ENTITY tb-url-go-button.tooltip "Go to current address">
 <!ENTITY tb-useragent-switch.config "Configure">
 <!ENTITY tb-useragent-switch.default "Default">

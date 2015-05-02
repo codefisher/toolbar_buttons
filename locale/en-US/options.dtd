@@ -174,7 +174,7 @@
 <!ENTITY tb-first-last-tab.label "Go First/Last Tab">
 <!ENTITY toggle.proxy.auto.configuration "Proxy auto-configuration (PAC)">
 <!ENTITY readmail.path.desc "The path to your mail client, use if the button does not work.">
-<!ENTITY tb-url-go-button.label "Address Go">
+<!ENTITY tb-url-go-button.label "Go">
 <!ENTITY tb-page-stop.label "Stop">
 <!ENTITY pageinfo.label "Page Info">
 <!ENTITY tb-page-info-media.label "Page Media">

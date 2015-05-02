@@ -3,4 +3,6 @@
 	id="tb-url-go-button"
 	label="&tb-url-go-button.label;"
 	tooltiptext="&tb-url-go-button.tooltip;"
-	oncommand="window.gURLBar.handleCommand(event);" />
+	oncommand="window.gURLBar.handleCommand(event);"
+    ondragover="window.gURLBar.onDragOver(event);"
+    ondragdrop="window.gURLBar.onDrop(event);"/>
