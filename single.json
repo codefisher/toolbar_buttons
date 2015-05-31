@@ -10,6 +10,5 @@
 	"menu_placement": "tools",
 	"use_keyboard_shortcuts": true,
 	"translate_description": true,
-	"applications": ["browser", "messenger", "suite"],
-	"version": "1.0.6"
+	"applications": ["browser", "messenger", "suite"]
 }
