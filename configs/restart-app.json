@@ -1,6 +1,10 @@
 {
+    "name": "Restart App Button",
+    "description": "Restart the current application, as you might need to do after installing a new extension or theme.",
+    "icon": "arrow-recycle.png",
+    "fix_meta": false,
     "buttons": [
-        "restart-app"
+        "restart-app", "tb-switch-profile", "tb-restart-addons-disabled"
     ],
     "extension_id": "restart-app-single@codefisher.org",
     "add_to_main_toolbar": [
@@ -8,6 +12,8 @@
     ],
     "current_version_pref": "current.version.restart-app",
     "chrome_name": "restart-app-toolbar-button",
-    "menu_placement": "file",
+    "menu_placement": {
+        "restart-app": "file"
+    },
     "locale_file_prefix": "restart-app_"
 }
