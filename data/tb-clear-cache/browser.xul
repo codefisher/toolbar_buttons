@@ -3,4 +3,46 @@
 	id="tb-clear-cache"
 	label="&tb-clear-cache.label;"
 	tooltiptext="&tb-clear-cache.tooltip;"
-	oncommand="toolbar_buttons.goClearBrowserCache();" />
+    type="menu-button"
+	oncommand="toolbar_buttons.goClearCache(event);">
+    <menupopup oncommand="event.stopPropagation();"
+            onpopupshowing="toolbar_buttons.setUpClearCacheMenu(event);">
+        <menuitem id="tb-clear-cache-history" label="&tb-clear-cache.history;"
+                  pref="clear-cache.history" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);"/>
+        <menuitem id="tb-clear-cache-download" label="&tb-clear-cache.download;"
+                  pref="clear-cache.downloads" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);"/>
+        <menuitem id="tb-clear-cache-form-history" label="&tb-clear-cache.form-history;"
+                  pref="clear-cache.formdata" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuitem id="tb-clear-cache-cookies" label="&tb-clear-cache.cookies;"
+                  pref="clear-cache.cookies" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuitem id="tb-clear-cache-cache" label="&tb-clear-cache.cache;"
+                  pref="clear-cache.cache" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuitem id="tb-clear-cache-logins" label="&tb-clear-cache.logins;"
+                  pref="clear-cache.sessions" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuitem id="tb-clear-cache-offline-data" label="&tb-clear-cache.offline-data;"
+                  pref="clear-cache.offlineApps" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuitem id="tb-clear-cache-site-preferences" label="&tb-clear-cache.site-preferences;"
+                  pref="clear-cache.siteSettings" name="storage"
+                  type="checkbox" oncommand="toolbar_buttons.toggleClearCacheSetting(event);" />
+        <menuseparator  />
+        <menuitem type="radio" name="timespan" id="tb-clear-cache-last-hour" value="1"
+                  label="&tb-clear-cache.last-hour;" oncommand="toolbar_buttons.setClearCacheTime(event);" />
+        <menuitem type="radio" name="timespan" id="tb-clear-cache-last-two-hours" value="2"
+                  label="&tb-clear-cache.last-two-hours;" oncommand="toolbar_buttons.setClearCacheTime(event);" />
+        <menuitem type="radio" name="timespan" id="tb-clear-cache-last-four-hours" value="3"
+                  label="&tb-clear-cache.last-four-hours;" oncommand="toolbar_buttons.setClearCacheTime(event);" />
+        <menuitem type="radio" name="timespan" id="tb-clear-cache-today" value="4"
+                  label="&tb-clear-cache.today;" oncommand="toolbar_buttons.setClearCacheTime(event);" />
+        <menuitem type="radio" name="timespan" id="tb-clear-cache-everything" value="0"
+                  label="&tb-clear-cache.everything;" oncommand="toolbar_buttons.setClearCacheTime(event);" />
+        <menuseparator />
+        <menuitem label="&tb-clear-cache.window;" command="Tools:Sanitize" />
+    </menupopup>
+</toolbarbutton>

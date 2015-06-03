@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="64" height="64" version="1.1">
+	<title>Backspace</title>
+	<desc>Backspace</desc>
+	<category>control</category>
+	<g id="icon" transform="scale(4) translate(8,8)">
+		<defs>
+			<linearGradient id="backing" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#d8d8d8" />
+				<stop offset="100%" stop-color="#999" />
+			</linearGradient>
+			<linearGradient id="centre" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#eee" />
+				<stop offset="100%" stop-color="#e2e2e2" />
+			</linearGradient>
+			<linearGradient id="button" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#6f6f6f" />
+				<stop offset="100%" stop-color="#6d6d6d" />
+			</linearGradient>
+			<linearGradient id="shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+				<stop offset="0%" stop-color="#848484" />
+				<stop offset="100%" stop-color="#808080" />
+			</linearGradient>
+			<filter id="Gaussian_Blur05">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="0.5" />
+			</filter>
+		</defs>
+		<path id="back" d="M1,-6 h5  a2,2 0 0,1 2,2 v8 a2,2 0 0,1 -2,2 h-7 l-6,-6 l6,-6" fill="url(#backing)" />
+		<path id="round" d="M1,-5 h5 a1,1 0 0,1 1,1 v8 a1,1 0 0,1 -1,1 h-6.5 l-5,-5 l5,-5" fill="#fff" />
+		<path id="round" d="M1,-4 h5 v8 h-6 l-4,-4 l4,-4" fill="url(#centre)" />
+
+		<path transform="translate(2,0) rotate(45)"
+			d="M1,-1 h3 v2 h-3 v3 h-2 v-3 h-3 v-2 h3 v-3 h2 Z"
+			fill="url(#button)" />
+	</g>
+</svg>

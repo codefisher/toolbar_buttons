@@ -1,1 +1,12 @@
-clear.cache.check:true
+clear-cache.timeSpan:0
+clear-cache.history:false
+clear-cache.formdata:false
+clear-cache.cookies:false
+clear-cache.cache:true
+clear-cache.sessions:false
+clear-cache.offlineApps:false
+clear-cache.siteSettings:false
+clear-cache.openWindows:false
+clear-cache.passwords:false
+clear-cache.downloads:false
+clear-cache.no-prompt:false
