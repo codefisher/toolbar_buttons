@@ -1,0 +1,18 @@
+{
+    "name": "Page Navigation Buttons",
+    "description": "Adds a few buttons to help with page navigation, including Page Top, Page Bottom, Page Down and Page Up.",
+    "icon": "layout.png",
+    "fix_meta": false,
+    "buttons": [
+        "top-page", "bottom-page", "tb-down-page", "tb-up-page"
+    ],
+    "extension_id": "page-navigation-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "top-page", "bottom-page"
+    ],
+    "menu_placement": null,
+    "menu_meta": ["page-navigation-menu", "tb-page-navigation.menu", "tools"],
+    "current_version_pref": "current.version.page-navigation",
+    "chrome_name": "page-navigation-toolbar-button",
+    "locale_file_prefix": "page-navigation-cache_"
+}

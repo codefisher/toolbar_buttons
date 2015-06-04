@@ -1,0 +1,16 @@
+{
+    "name": "Clear Cache and Data",
+    "description": "Clears the browser cache and other selected storage.",
+    "icon": "backspace.png",
+    "fix_meta": false,
+    "buttons": [
+        "tb-clear-cache"
+    ],
+    "extension_id": "tb-clear-cache-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-clear-cache"
+    ],
+    "current_version_pref": "current.version.tb-clear-cache",
+    "chrome_name": "tb-clear-cache-toolbar-button",
+    "locale_file_prefix": "tb-clear-cache_"
+}
