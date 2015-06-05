@@ -13,7 +13,7 @@
 		context="placesContext"
 		openInTabs="children"
 		placespopup="true" popupsinherittooltip="true"
-		oncommand="window.BookmarksEventHandler.onCommand(event, this.parentNode._placesView);" 
+		oncommand="window.BookmarksEventHandler.onCommand(event, this.parentNode._placesView);"
 		onclick="window.BookmarksEventHandler.onClick(event, this.parentNode._placesView);" 
 		onpopupshowing="toolbar_buttons.personalBookmakrsMenuButon(this, event);" />
 </toolbarbutton>

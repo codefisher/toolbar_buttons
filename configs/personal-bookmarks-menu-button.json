@@ -6,7 +6,6 @@
     "add_to_main_toolbar": [
         "personal-bookmarks-menu-button"
     ],
-	"applications": ["suite"],
 	"menuitems": [],
     "current_version_pref": "current.version.personal-bookmarks-menu-button",
     "chrome_name": "personal-bookmarks-menu-button-toolbar-button",
