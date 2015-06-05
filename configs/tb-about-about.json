@@ -1,6 +1,6 @@
 {
     "name": "About:about Button",
-    "description": "A button that lists all the about pages that exist.  Some of these pages are also provided as seperate buttons.",
+    "description": "A button that lists all the about pages that exist.  Some of these pages are also provided as separate buttons.",
     "icon": "cog.png",
     "buttons": [
         "tb-about-about", "about-config", "tb-about-permissions", "about-plugins", "tb-about-blank", "about-mem-cache", "about-disk-cache", "about-application"
