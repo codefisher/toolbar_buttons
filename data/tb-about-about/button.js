@@ -17,6 +17,7 @@ aboutAboutMenu: function(item) {
 	}
 	var ios = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOService);
 	var gProtocols = [];
+	var whiteList = ["blank"];
 	for (var cid in Cc) {
 		var result = cid.match(/@mozilla.org\/network\/protocol\/about;1\?what\=(.*)$/);
 		if (result) {
@@ -26,7 +27,7 @@ aboutAboutMenu: function(item) {
 				var am = Cc[contract].getService(Ci.nsIAboutModule);
 				var uri = ios.newURI("about:"+aboutType, null, null);
 				var flags = am.getURIFlags(uri);
-				if (!(flags & Ci.nsIAboutModule.HIDE_FROM_ABOUTABOUT)) {
+				if (!(flags & Ci.nsIAboutModule.HIDE_FROM_ABOUTABOUT) || whiteList.indexOf(aboutType) != -1) {
 					gProtocols.push(aboutType);
 				}
 			} catch (e) {

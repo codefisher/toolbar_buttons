@@ -12,7 +12,6 @@
     "current_version_pref": "current.version.about-about",
     "chrome_name": "about-about-toolbar-button",
     "locale_file_prefix": "about-about_",
-    "merge_images": true,
     "fix_meta": false,
     "menuitems": [
         "tb-about-about"
