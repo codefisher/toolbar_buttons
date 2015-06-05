@@ -3,7 +3,8 @@
 	id="personal-bookmarks-menu-button"
 	label="&personal-bookmarks-menu-button.label;"
 	tooltiptext="&personal-bookmarks-menu-button.tooltip;"
-	type="menu"
+	usepanelview="menu"
+	onclick="toolbar_buttons.personalBookmarksMenu(this, event);"
 	ondragenter="window.PlacesMenuDNDHandler.onDragEnter(event);" 
 	ondragover="window.PlacesMenuDNDHandler.onDragOver(event);"
 	ondrop="window.PlacesMenuDNDHandler.onDrop(event);">
@@ -15,5 +16,5 @@
 		placespopup="true" popupsinherittooltip="true"
 		oncommand="window.BookmarksEventHandler.onCommand(event, this.parentNode._placesView);"
 		onclick="window.BookmarksEventHandler.onClick(event, this.parentNode._placesView);" 
-		onpopupshowing="toolbar_buttons.personalBookmakrsMenuButon(this, event);" />
+		onpopupshowing="toolbar_buttons.personalBookmarksMenuButton(this, event);" />
 </toolbarbutton>

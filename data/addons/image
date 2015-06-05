@@ -4,3 +4,9 @@ plugin-key.png  #tb-addons-allowed-sites
 plugin.png  #tb-addons-extensions
 palette.png  #tb-addons-themes
 plugin-error.png  #tb-addons-restart-disabled
+plugin.png $#addons-panel-view #addons
+plugin-add.png $#addons-panel-view #tb-addons-install
+plugin-key.png $#addons-panel-view #tb-addons-allowed-sites
+plugin.png $#addons-panel-view #tb-addons-extensions
+palette.png $#addons-panel-view #tb-addons-themes
+plugin-error.png $#addons-panel-view #tb-addons-restart-disabled
