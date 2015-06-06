@@ -1,7 +1,25 @@
 extensionOptionsOpen: function(addon) {
 	return function(event) {
 		var win = event.target.ownerDocument.defaultView;
-		win.openDialog(addon.optionsURL, "", "chrome,titlebar,toolbar,centerscreen,dialog=yes", null);
+		var optionsURL = addon.optionsURL;
+		if (!addon.isActive || !optionsURL) {
+			return;
+		}
+		if (addon.optionsType == AddonManager.OPTIONS_TYPE_INLINE) {
+			win.BrowserOpenAddonsMgr('addons://detail/' + encodeURIComponent(addon.id) + '/preferences');
+		} else if (addon.optionsType == AddonManager.OPTIONS_TYPE_TAB && 'switchToTabHavingURI' in win) {
+			win.switchToTabHavingURI(optionsURL, true);
+		} else {
+			let windows = Services.wm.getEnumerator(null);
+			while (windows.hasMoreElements()) {
+				let win = windows.getNext();
+				if (win.document.documentURI == optionsURL) {
+					win.focus();
+					return true;
+				}
+			}
+			win.openDialog(optionsURL, '', 'chrome,titlebar,toolbar,centerscreen,dialog=no', null);
+		}
 	};
 }
 
