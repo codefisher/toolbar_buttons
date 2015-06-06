@@ -7,8 +7,15 @@
     "icon": "find.png",
     "extension_id": "find-single@codefisher.org",
     "add_to_main_toolbar": [
-        "find", "find-again", "find-prev"
+        "find"
     ],
+    "menuitems": ["find-again", "find-prev"],
+    "menu_placement": "edit",
+      "file_to_menu": {
+        "edit": {
+            "browser": ["menu_EditPopup", "menu_find"]
+        }
+    },
     "current_version_pref": "current.version.find",
     "chrome_name": "find-toolbar-button",
     "locale_file_prefix": "find_"
