@@ -1,10 +1,9 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
-	type="menu"
-	viewid="tb-addon-options-view"
-	onviewshowing="toolbar_buttons.extensionOptionsMenu(document.getElementById('tb-addon-options-view'));"
+	usepanelview="menu"
+	onclick="toolbar_buttons.openExtensionOptionsMenu(this, event);"
 	id="tb-addon-options"
 	label="&tb-addon-options.label;"
 	tooltiptext="&tb-addon-options.tooltip;">
-		<menupopup onpopupshowing="toolbar_buttons.extensionOptionsMenu(this);" id="tb-addon-options-view" oncommand="event.stopPropagation();" />
+		<menupopup onpopupshowing="toolbar_buttons.extensionOptionsMenu(this);" oncommand="event.stopPropagation();" />
 </toolbarbutton>
