@@ -1,0 +1,8 @@
+#addons[cui-areatype="menu-panel"] dropmarker {
+    display:none;
+}
+
+#addons[cui-areatype="menu-panel"] .toolbarbutton-icon {
+    width:16px;
+    height:16px;
+}
