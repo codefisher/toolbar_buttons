@@ -1,9 +1,8 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="tb-about-about"
-	type="menu"
-	viewid="tb-about-about-view"
-	onviewshowing="toolbar_buttons.aboutAboutMenu(document.getElementById('tb-about-about-view'));"
+	usepanelview="menu"
+    onclick="toolbar_buttons.openAboutAboutMenu(this, event);"
 	label="&tb-about-about.label;"
 	tooltiptext="&tb-about-about.tooltip;">
 		<menupopup id="tb-about-about-view" onpopupshowing="toolbar_buttons.aboutAboutMenu(this);" oncommand="event.stopPropagation();" />

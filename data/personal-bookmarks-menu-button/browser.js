@@ -11,7 +11,7 @@ personalBookmarksMenu: function(item, event) {
 		event.preventDefault();
 		event.stopPropagation();
 		win.PanelUI.showSubView('personal-bookmarks-menu-button-panel-view', item, CustomizableUI.AREA_PANEL);
-		var panel = item.ownerDocument.getElementById('personal-bookmarks-menu-button-panel-view')
+		var panel = item.ownerDocument.getElementById('personal-bookmarks-menu-button-panel-view');
 		var obj = {
 			target: panel,
 			originalTarget: panel,
