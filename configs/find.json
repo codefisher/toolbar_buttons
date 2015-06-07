@@ -2,9 +2,10 @@
     "buttons": [
         "find", "find-again", "find-prev"
     ],
-    "name": "Find Button",
+    "name": "Find Buttons",
     "description": "Adds buttons to open and manage the find bar.",
     "icon": "find.png",
+    "fix_meta": false,
     "extension_id": "find-single@codefisher.org",
     "add_to_main_toolbar": [
         "find"
