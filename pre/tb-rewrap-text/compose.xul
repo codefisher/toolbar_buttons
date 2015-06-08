@@ -1,0 +1,6 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="tb-rewrap-text"
+	label="&tb-rewrap-text.label;"
+	tooltiptext="&tb-rewrap-text.tooltip;"
+	command="cmd_rewrap"/>
