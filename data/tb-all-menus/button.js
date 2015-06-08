@@ -1,7 +1,7 @@
 loadAllMenusMenu: function(item, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
-	if(item.id != 'tb-all-menus-popup') {
+	if(event.target != event.currentTarget) {
 		return;
 	}
 	while(item.firstChild) {
@@ -12,6 +12,7 @@ loadAllMenusMenu: function(item, event) {
 	if(!menubar) {
 		return;
 	}
+	var isPanel = (item.nodeName == 'panelview');
 	var toolbar = doc.getElementById('toolbar-menubar') || doc.getElementById('mail-toolbar-menubar2') || doc.getElementById('compose-toolbar-menubar2');
 	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
 	var showIcons = prefs.getBoolPref('all-menus.icons');
@@ -21,10 +22,10 @@ loadAllMenusMenu: function(item, event) {
 		var inMenuPref = 'all-menus.' + fileName + '.' + menubar.id +'.in-menu.' + menuId;
 		if(prefs.getPrefType(inMenuPref)) {
 			if(prefs.getBoolPref(inMenuPref)) {
-				toolbar_buttons.allMenusAddItem(menubar.childNodes[i], item, showIcons);
+				toolbar_buttons.allMenusAddItem(menubar.childNodes[i], item, showIcons, isPanel);
 			}
 		} else {
-			toolbar_buttons.allMenusAddItem(menubar.childNodes[i], item, showIcons);
+			toolbar_buttons.allMenusAddItem(menubar.childNodes[i], item, showIcons, isPanel);
 		}
 	}
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
@@ -68,7 +69,18 @@ loadAllMenusMenu: function(item, event) {
 	}
 }
 
-allMenusAddItem: function(menu, item, showIcons) {
+allMenuOpen: function(item, event) {
+	if(item.getAttribute('cui-areatype') == 'menu-panel') {
+		var win = item.ownerDocument.defaultView;
+		event.preventDefault();
+		event.stopPropagation();
+		win.PanelUI.showSubView('tb-all-menus-panel-view', item, CustomizableUI.AREA_PANEL);
+		var panel = item.ownerDocument.getElementById('tb-all-menus-panel-view');
+		toolbar_buttons.loadAllMenusMenu(panel, event);
+	}
+}
+
+allMenusAddItem: function(menu, item, showIcons, isPanel) {
 	if(!menu.firstChild) {
 		return;
 	}
@@ -81,13 +93,17 @@ allMenusAddItem: function(menu, item, showIcons) {
 	item.appendChild(node);
 	node.cloneTarget = menu;
 	if(menu.firstChild) {
-		node.appendChild(menu.firstChild);
+		if(isPanel) {
+
+		} else {
+			node.appendChild(menu.firstChild);
+		}
 	}
 	menu.style.visibility = 'visible';
 }
 
 allMenusReturnPopups: function(item, event) {
-	if(event.originalTarget != item) {
+	if(event.target != event.currentTarget) {
 		return;
 	}
 	var nodes = item.childNodes;
