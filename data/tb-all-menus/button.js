@@ -1,7 +1,7 @@
 loadAllMenusMenu: function(item, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
-	if(event.target != event.currentTarget) {
+	if(event.target != event.currentTarget || item.parentNode.getAttribute('cui-areatype') == 'menu-panel') {
 		return;
 	}
 	while(item.firstChild) {
@@ -92,9 +92,12 @@ allMenusAddItem: function(menu, item, showIcons, isPanel) {
 	}
 	item.appendChild(node);
 	node.cloneTarget = menu;
+	node.id = node.id + '-panel';
 	if(menu.firstChild) {
 		if(isPanel) {
-
+			node.addEventListener('click', function(event) {
+				toolbar_buttons.showAMenu(event, menu.id);
+			}, false);
 		} else {
 			node.appendChild(menu.firstChild);
 		}
@@ -135,19 +138,19 @@ allMenusStartUp: function(doc) {
 			continue;
 		}
 		prefs.setCharPref('all-menus.'+ fileName + '.' + menubar.id +'.label.' + menuId, label);
-		var collapsedPref = 'all-menus.'+ fileName + '.' + menubar.id +'.collapsed.' + menuId;
-		if(prefs.getPrefType(collapsedPref)) {
-			menubar.childNodes[i].setAttribute('hidden', prefs.getBoolPref(collapsedPref));
+		var visiblePref = 'all-menus.'+ fileName + '.' + menubar.id +'.visible.' + menuId;
+		if(prefs.getPrefType(visiblePref)) {
+			menubar.childNodes[i].setAttribute('hidden', !prefs.getBoolPref(visiblePref));
 		} else {
-			prefs.setBoolPref(collapsedPref, false);
+			prefs.setBoolPref(visiblePref, true);
 		}
 		var inMenuPref = 'all-menus.' + fileName + '.' + menubar.id +'.in-menu.' + menuId;
 		if(!prefs.getPrefType(inMenuPref)) {
 			prefs.setBoolPref(inMenuPref, true);
 		}
 	}	
-	var hiddenWatcher = new toolbar_buttons.settingWatcher(prefs.root + 'all-menus.'+ fileName + '.' + menubar.id +'.collapsed.', function(subject, topic, data) {
-		doc.getElementById(data).setAttribute('hidden', prefsBranch.getBoolPref(subject.root + data));
+	var hiddenWatcher = new toolbar_buttons.settingWatcher(prefs.root + 'all-menus.'+ fileName + '.' + menubar.id +'.visible.', function(subject, topic, data) {
+		doc.getElementById(data).setAttribute('hidden', !prefsBranch.getBoolPref(subject.root + data));
 	});
 	hiddenWatcher.startup();
 }

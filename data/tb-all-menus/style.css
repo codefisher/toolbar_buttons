@@ -1,0 +1,3 @@
+#all-menus-panels treechildren::-moz-tree-checkbox(checked) {
+    list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}

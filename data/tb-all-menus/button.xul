@@ -2,6 +2,8 @@
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
     id="tb-all-menus"
 	type="menu"
+	usepanelview="menu"
+	onclick="toolbar_buttons.allMenuOpen(this, event);"
     label="&tb-all-menus.label;"
     tooltiptext="&tb-all-menus.tooltip;">
 	<menupopup id="tb-all-menus-popup"
