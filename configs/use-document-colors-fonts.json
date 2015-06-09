@@ -1,0 +1,27 @@
+{
+    "buttons": [
+        "use-document-colors", "use-document-fonts"
+    ],
+    "name": "Page Colors &amp; Fonts Buttons",
+    "description": "Adds buttons to toggle the using the default page colors and fonts, and the page defined colors and fonts.",
+    "icon": "page-white-color.png",
+    "fix_meta": false,
+    "extension_id": "use-document-colors-fonts-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "use-document-colors", "use-document-fonts"
+    ],
+    "menuitems": ["use-document-colors", "use-document-fonts", "min-font-size"],
+    "menu_placement": null,
+    "menu_meta": ["page-fonts-colors-menu", "tb-page-fonts-colors.menu", "view"],
+    "file_to_menu": {
+        "view": {
+            "browser": ["menu_viewPopup", "pageStyleMenu"],
+            "suite_browser": ["menu_View_Popup", "menu_UseStyleSheet"],
+            "mail": ["menu_View_Popup", "viewBodyMenu"],
+            "read": ["menu_View_Popup", "viewBodyMenu"]
+        }
+    },
+    "current_version_pref": "current.version.use-document-colors-fonts",
+    "chrome_name": "use-document-colors-fonts-toolbar-button",
+    "locale_file_prefix": "use-document-colors-fonts_"
+}

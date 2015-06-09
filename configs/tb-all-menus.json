@@ -1,6 +1,6 @@
 {
     "name": "All Menus Button",
-    "description": "Show all the menus in a single menu button that can be placed anywhere.  Also contains replacements button for the default menus.",
+    "description": "Show all the menus in a single menu button that can be placed anywhere.  Also contains replacement buttons for the default menus.",
     "buttons": [
         "tb-all-menus", "tb-file-menu", "tb-edit-menu", "tb-history-menu", "tb-tools-menu", "tb-view-menu",
         "bookmarks-menu-button1", "tb-go-menu", "tb-message-menu", "tb-options-menu", "tb-format-menu",
