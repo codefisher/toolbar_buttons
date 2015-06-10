@@ -12,7 +12,8 @@ homePageStrings: function() {
 homePageChange: function() {
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var strings = toolbar_buttons.homePageStrings();
-	var value = prefs.getCharPref("browser.startup.homepage");
+	var value = prefs.getComplexValue("browser.startup.homepage",
+						Ci.nsIPrefLocalizedString).data;
 	var str = value.split("|");
 	var input = {value: str[0]};
 	var result = toolbar_buttons.interfaces.PromptService.prompt(null, strings["title"], strings["message"], input, null, {check: false});
@@ -24,7 +25,8 @@ homePageChangeMultiple: function(event) {
 	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
 	var strings = toolbar_buttons.homePageStrings();
-	var value = prefs.getCharPref("browser.startup.homepage");
+	var value = prefs.getComplexValue("browser.startup.homepage",
+						Ci.nsIPrefLocalizedString).data;
 	var str = value.split("|");
 	var links = "";
 	
@@ -71,7 +73,8 @@ homePageSetCurrent: function(event) {
 homePageAddCurrent: function(event) {
 	var win = event.target.ownerDocument.defaultView;
 	var prefs = toolbar_buttons.interfaces.PrefBranch;
-	var homePage = prefs.getCharPref("browser.startup.homepage");
+	var homePage = prefs.getComplexValue("browser.startup.homepage",
+						Ci.nsIPrefLocalizedString).data;
 	if(homePage)
 		homePage += "|";
 	homePage += win.content.document.location.href;
