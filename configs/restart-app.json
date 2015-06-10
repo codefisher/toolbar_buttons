@@ -10,6 +10,7 @@
     "add_to_main_toolbar": [
         "restart-app"
     ],
+    "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.restart-app",
     "chrome_name": "restart-app-toolbar-button",
     "menu_placement": {
