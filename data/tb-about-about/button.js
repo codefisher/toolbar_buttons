@@ -1,4 +1,7 @@
 openAboutAboutMenu: function(item, event) {
+	if(event.target != event.currentTarget) {
+		return;
+	}
 	if(item.getAttribute('cui-areatype') == 'menu-panel') {
 		var win = item.ownerDocument.defaultView;
 		event.preventDefault();
