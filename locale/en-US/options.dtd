@@ -306,3 +306,6 @@
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.tooltip "Toggle the Toolbar Buttons toolbar">
 <!ENTITY tb-toolbar-buttons-toggle-toolbar.name "Toolbar Buttons">
 <!ENTITY tb-toolbar-buttons.menu "Toolbar Buttons">
+<!ENTITY tb-key-shortcut-disabled.option.label "Disable the keyboard shortcut.">
+<!ENTITY tb-key-shortcut.option.title "Keyboard Shortcuts">
+<!ENTITY tb-key-shortcut-code.label "Press the keys you want for the keyboard shortcut.">
