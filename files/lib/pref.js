@@ -33,6 +33,10 @@ PreferenceWatcher: function() {
 		try {
 			this.setStatus();
 		} catch(e) {} // pref might not exist
+		var self = this;
+		toolbar_buttons.registerCleanUpFunction(function() {
+			self.prefs.removeObserver("", self);
+		});
 	};
 
 	this.shutdown = function() {
@@ -106,6 +110,10 @@ settingWatcher: function(pref, func) {
 
 	this.startup = function() {
 		this.prefs.addObserver("", this, false);
+		var self = this;
+		toolbar_buttons.registerCleanUpFunction(function() {
+			self.prefs.removeObserver("", self);
+		});
 	};
 
 	this.shutdown = function() {
