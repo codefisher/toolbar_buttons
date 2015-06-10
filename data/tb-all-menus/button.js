@@ -105,6 +105,29 @@ allMenusAddItem: function(menu, item, showIcons, isPanel) {
 	menu.style.visibility = 'visible';
 }
 
+showAMenuAsPanel: function(aEvent, aMenu) {
+	var doc = aEvent.target.ownerDocument;
+	var win = doc.defaultView;
+	if(!aMenu.firstChild) {
+		return;
+	}
+	var popup = aMenu.firstChild;
+	/* what we do is move the popup to our self, and then when finished move it
+	 * back again, this is better then cloning because we get all event Listeners too
+	 */
+	popup.addEventListener('popuphidden', function showAMenuPopupHidding(event) {
+		if(event.originalTarget == popup) {
+			aEvent.target.removeEventListener('popuphidden', showAMenuPopupHidding, false);
+			popup.setAttribute('style', '');
+			aMenu.appendChild(popup);
+		}
+	}, false);
+	doc.getElementById('PanelUI-multiView').appendChild(popup);
+	aMenu.style.visibility = 'visible';
+	popup.setAttribute('style', '-moz-binding: url("chrome://browser/content/customizableui/panelUI.xml#panelview");');
+	win.PanelUI.showSubView(popup.id, aEvent.target, CustomizableUI.AREA_PANEL);
+}
+
 allMenusReturnPopups: function(item, event) {
 	if(event.target != event.currentTarget) {
 		return;
@@ -153,6 +176,12 @@ allMenusStartUp: function(doc) {
 		doc.getElementById(data).setAttribute('hidden', !prefsBranch.getBoolPref(subject.root + data));
 	});
 	hiddenWatcher.startup();
+	toolbar_buttons.registerCleanUpFunction(function() {
+		for (var i = 0; i < menubar.childNodes.length; i++) {
+			menubar.childNodes[i].setAttribute('hidden', false);
+		}
+		hiddenWatcher.shutdown();
+	});
 }
 
 toolbar_buttons.allMenusStartUp(document);
