@@ -57,10 +57,12 @@ OpenMailLink: function(name) {
 openPageInTab: function(url, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
-	try {
+	if('switchToTabHavingURI' in win) {
+		win.switchToTabHavingURI(url, true);
+	} else if('getBrowser' in win) {
 		var browser = win.getBrowser();
 		browser.selectedTab = browser.addTab(url);
-	} catch (e) {
+	} else {
 		var tabmail = doc.getElementById('tabmail');
 		if (tabmail) {
 			tabmail.openTab('contentTab', {contentPage: url});
@@ -68,4 +70,5 @@ openPageInTab: function(url, event) {
 			win.openDialog(url, '', 'chrome,centerscreen');
 		}
 	}
+
 }
