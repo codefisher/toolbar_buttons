@@ -22,7 +22,7 @@ PreferenceWatcher: function() {
 
 	this.startup = function(doc, pref, button, func) {
 		this.prefs = toolbar_buttons.interfaces.PrefService.getBranch(pref);
-		this.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
+		this.prefs.QueryInterface(Ci.nsIPrefBranch2);
 		this.prefs.addObserver("", this, false);
 		this.doc = doc;
 		if(button)
