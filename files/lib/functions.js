@@ -423,44 +423,6 @@ openPermissions: function(event, type, title, text) {
 			"Browser:Permissions", "", params);
 }
 
-sortMenu: function(event, aMenu) {
-	if(aMenu.sorted || !aMenu.getAttribute('sortable')){
-		return;
-	}
-	var menuitems = [];
-	while(aMenu.firstChild) {
-		menuitems.push(aMenu.firstChild);
-		aMenu.removeChild(aMenu.firstChild);
-	}
-	menuitems.sort(function(a, b) { return a.getAttribute('label').toLowerCase() > b.getAttribute('label').toLowerCase(); });
-	for(var i in menuitems) {
-		aMenu.appendChild(menuitems[i]);
-	}
-	aMenu.sorted = true;
-}
-
-menuLoaderEvent: function(event) {
-	var win = event.target.ownerDocument.defaultView;
-	var menuitem = event.originalTarget;
-	if(menuitem.getAttribute('showamenu')) {
-		// so this is one of those menu items that as a fake submenu, show it
-		var cEvent = new Event('command', {
-		    'view': win,
-		    'bubbles': false,
-		    'cancelable': true,
-		    'target': menuitem,
-		});
-		menuitem.dispatchEvent(cEvent);
-	}
-}
-
-handelMenuLoaders: function(event, item) {
-	if(item._handelMenuLoaders)
-		return;
-	item.addEventListener('DOMMenuItemActive', toolbar_buttons.menuLoaderEvent, false);
-	item._handelMenuLoaders = true;
-}
-
 logMessage: function(string) {
 	Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService).logStringMessage(string);
 }
