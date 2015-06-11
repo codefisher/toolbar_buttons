@@ -6,6 +6,7 @@
     "add_to_main_toolbar": [
         "tb-free-memory"
     ],
+    "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.tb-free-memory",
     "chrome_name": "tb-free-memory-toolbar-button",
     "locale_file_prefix": "tb-free-memory_"

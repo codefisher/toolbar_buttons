@@ -12,6 +12,7 @@
     ],
     "menuitems": ["use-document-colors", "use-document-fonts", "min-font-size"],
     "menu_placement": null,
+    "use_keyboard_shortcuts": true,
     "menu_meta": ["page-fonts-colors-menu", "tb-page-fonts-colors.menu", "view"],
     "file_to_menu": {
         "view": {

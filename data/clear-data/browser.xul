@@ -2,5 +2,6 @@
 	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="clear-data"
 	label="&clear-data.label;"
+	key="key_sanitize"
 	tooltiptext="&clear-data.tooltip;"
 	command="Tools:Sanitize"/>

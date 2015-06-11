@@ -10,6 +10,7 @@
     "add_to_main_toolbar": [
         "tb-clear-cache"
     ],
+    "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.tb-clear-cache",
     "chrome_name": "tb-clear-cache-toolbar-button",
     "locale_file_prefix": "tb-clear-cache_"

@@ -10,6 +10,7 @@
     "add_to_main_toolbar": [
         "top-page", "bottom-page"
     ],
+    "use_keyboard_shortcuts": true,
     "menu_placement": null,
     "menu_meta": ["page-navigation-menu", "tb-page-navigation.menu", "tools"],
     "current_version_pref": "current.version.page-navigation",

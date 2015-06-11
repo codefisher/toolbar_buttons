@@ -6,6 +6,7 @@
     "add_to_main_toolbar": [
         "preferences"
     ],
+    "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.preferences",
     "chrome_name": "preferences-toolbar-button",
     "locale_file_prefix": "preferences_"
