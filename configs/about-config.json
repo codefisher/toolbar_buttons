@@ -1,0 +1,13 @@
+{
+    "buttons": [
+        "about-config"
+    ],
+    "extension_id": "about-config-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "about-config"
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.about-config",
+    "chrome_name": "about-config-toolbar-button",
+    "locale_file_prefix": "about-config_"
+}
