@@ -2,16 +2,36 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 	<Description about="urn:mozilla:install-manifest">
-		<em:id>{{uuid}}</em:id>
+		<em:id>{{extension_id}}</em:id>
 		<em:name>{{name}}</em:name>
 		<em:version>{{version}}</em:version>
 		<em:description>{{description}}</em:description>
 		<em:creator>{{creator}}</em:creator>
 		<em:iconURL>chrome://{{chrome_name}}/skin/icon.png</em:iconURL>
-		<em:homepageURL>{{homepageURL}}</em:homepageURL>
+		{%- if homepage %}
+		<em:homepageURL>{{homepage}}</em:homepageURL>
+		{%- endif %}
 		<em:type>2</em:type>
-		
-{{optionsURL}}{{updateUrl}}{{applications}}{{bootstrap}}
+		{%- if update_url %}
+		<em:updateURL>{{update_url}}</em:updateURL>
+		{%- endif %}
+		{%- if ext_options %}
+		<em:optionsURL>chrome://{{chrome_name}}/content/options.xul</em:optionsURL>
+		{%- endif %}
+		{%- if restartless %}
+		<em:bootstrap>true</em:bootstrap>
+		{%- endif %}
+
+		{%- for app_name, app_id, min_version, max_version in ext_applications %}
+		<!-- {{ app_name }} -->
+		<em:targetApplication>
+			<Description>
+				<em:id>{{ app_id }}</em:id>
+				<em:minVersion>{{ min_version }}</em:minVersion>
+				<em:maxVersion>{{ max_version }}</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+		{%- endfor %}
 
 		<em:translator>Thanks to the Babelzilla team!</em:translator>
 		<em:translator>Dryopteris, Fux, Team erweiterungen.de - German [de]</em:translator>
