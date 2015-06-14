@@ -1,5 +1,5 @@
 openAboutAboutMenu: function(item, event) {
-	if(event.target != event.currentTarget) {
+	if(event.target != event.currentTarget || event.button != 0) {
 		return;
 	}
 	if(item.getAttribute('cui-areatype') == 'menu-panel') {
