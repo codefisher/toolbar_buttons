@@ -1,0 +1,8 @@
+settings.label:cog.png:browser suite
+<groupbox>
+	<caption label="&find.label;" />
+	<preferences>
+		<preference id="{{pref_root}}find-bar.toggle" name="{{pref_root}}find-bar.toggle" type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}find-bar.toggle" label="&find.checkbox;"/>
+</groupbox>
