@@ -309,3 +309,4 @@
 <!ENTITY tb-key-shortcut-disabled.option.label "Disable the keyboard shortcut.">
 <!ENTITY tb-key-shortcut.option.title "Keyboard Shortcuts">
 <!ENTITY tb-key-shortcut-code.label "Press the keys you want for the keyboard shortcut.">
+<!ENTITY find.checkbox "Enable toggling of the find bar.">
