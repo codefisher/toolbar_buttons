@@ -3,7 +3,7 @@
     "missing_strings": "search",
     "lookup_max_versions": true,
     "restartless": true,
-    "projects": ["data", "staging"],
+    "projects": ["data", "staging", "pre"],
     "include_local_files": ["meta.dtd", "singles.properties"],
     "translate_description": true,
     "include_icons_for_custom_window": true,
