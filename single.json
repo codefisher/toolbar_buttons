@@ -2,7 +2,7 @@
 	"projects": ["data", "staging", "pre"],
 	"extra_options": true,
 	"include_icons_for_custom_window": true,
-	"fix_meta": true,
+	"fix_meta": false,
 	"show_updated_prompt": false,
 	"output_folder": "extensions/single",
 	"restartless": true,
