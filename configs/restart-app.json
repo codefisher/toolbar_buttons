@@ -2,7 +2,9 @@
     "name": "Restart App Button",
     "description": "Restart the current application, as you might need to do after installing a new extension or theme.",
     "icon": "arrow-recycle.png",
-    "fix_meta": false,
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/restart-app-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/619440/addon-619440-latest.xpi",
+
     "buttons": [
         "restart-app", "tb-switch-profile", "tb-restart-addons-disabled"
     ],

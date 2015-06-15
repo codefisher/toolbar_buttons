@@ -1,11 +1,13 @@
 {
-    "buttons": [
-        "use-document-colors", "use-document-fonts"
-    ],
     "name": "Page Colors &amp; Fonts Buttons",
     "description": "Adds buttons to toggle the using the default page colors and fonts, and the page defined colors and fonts.",
     "icon": "page-white-color.png",
-    "fix_meta": false,
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/page-colors-fonts-buttons/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/621166/addon-621166-latest.xpi",
+
+    "buttons": [
+        "use-document-colors", "use-document-fonts"
+    ],
     "extension_id": "use-document-colors-fonts-single@codefisher.org",
     "add_to_main_toolbar": [
         "use-document-colors", "use-document-fonts"

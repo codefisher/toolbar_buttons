@@ -2,6 +2,9 @@
     "name": "About:about Button",
     "description": "A button that lists all the about pages that exist.  Some of these pages are also provided as separate buttons.",
     "icon": "cog.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/aboutabout-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620670/addon-620670-latest.xpi",
+
     "buttons": [
         "tb-about-about", "about-config", "tb-about-permissions", "about-plugins", "tb-about-blank", "about-mem-cache", "about-disk-cache", "about-application"
     ],
@@ -12,7 +15,6 @@
     "current_version_pref": "current.version.about-about",
     "chrome_name": "about-about-toolbar-button",
     "locale_file_prefix": "about-about_",
-    "fix_meta": false,
     "menuitems": [
         "tb-about-about"
     ]

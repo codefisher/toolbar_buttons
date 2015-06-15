@@ -1,4 +1,10 @@
 {
+    "name": "Add-ons Button",
+    "description": "Opens the Add-ons window to perform tasks on your installed Extensions, Themes, Plug-ins and Language packs.",
+    "icon": "plugin.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/add-ons-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/567540/addon-567540-latest.xpi",
+
     "buttons": [
         "addons"
     ],

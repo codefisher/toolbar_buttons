@@ -1,11 +1,13 @@
 {
-    "buttons": [
-        "find", "find-again", "find-prev"
-    ],
     "name": "Find Buttons",
     "description": "Adds buttons to open and manage the find bar.",
     "icon": "find.png",
-    "fix_meta": false,
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/find-buttons/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620962/addon-620962-latest.xpi",
+
+    "buttons": [
+        "find", "find-again", "find-prev"
+    ],
     "extension_id": "find-single@codefisher.org",
     "add_to_main_toolbar": [
         "find"

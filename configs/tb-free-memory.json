@@ -1,4 +1,10 @@
 {
+    "name": "Free Memory Button",
+    "description": "Free unused memory that Firefox is currently using.",
+    "icon": "memory.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/free-memory-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/618822/addon-618822-latest.xpi",
+
     "buttons": [
         "tb-free-memory"
     ],
@@ -9,5 +15,6 @@
     "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.tb-free-memory",
     "chrome_name": "tb-free-memory-toolbar-button",
-    "locale_file_prefix": "tb-free-memory_"
+    "locale_file_prefix": "tb-free-memory_",
+    "location_placement": "statusbar"
 }

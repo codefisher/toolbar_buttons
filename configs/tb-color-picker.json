@@ -1,6 +1,10 @@
 {
     "name": "Sharp Color Picker",
     "description": "A full featured color selector tool, to work with colors, and easily find the colors you want.",
+    "icon": "color-wheel.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/sharp-color-picker/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/601070/addon-601070-latest.xpi",
+
     "buttons": [
         "tb-color-picker"
     ],
@@ -11,8 +15,6 @@
     "current_version_pref": "current.version.tb-color-picker",
     "chrome_name": "tb-color-picker-toolbar-button",
     "locale_file_prefix": "tb-color-picker_",
-    "icon": "color-wheel.png",
     "locale": "en-US",
     "applications": ["browser", "suite"],
-    "fix_meta": false
 }

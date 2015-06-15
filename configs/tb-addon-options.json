@@ -1,4 +1,10 @@
 {
+    "name": "Add-on Preferences Button",
+    "description": "Displays a menu that allows you to open the option/preference window for any add-on that has one.",
+    "icon": "plugin-gear.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/add-on-preferences-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/619096/addon-619096-latest.xpi",
+
     "buttons": [
         "tb-addon-options"
     ],
