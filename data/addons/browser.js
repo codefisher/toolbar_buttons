@@ -4,7 +4,6 @@ goOpenAddons: function(item, event) {
 		event.preventDefault();
 		event.stopPropagation();
 		win.PanelUI.showSubView('addons-panel-view', item, CustomizableUI.AREA_PANEL);
-	} else {
-		win.BrowserOpenAddonsMgr();
+		event.preventDefault();
 	}
 }

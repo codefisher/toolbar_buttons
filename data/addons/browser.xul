@@ -6,6 +6,7 @@
 	label="&addons.label;"
 	tooltiptext="&addons.tooltip;"
 	usepanelview="button-menu"
+	oncommand="window.BrowserOpenAddonsMgr();"
 	onclick="toolbar_buttons.goOpenAddons(this, event);" >
 	<menupopup onclick="event.stopPropagation();"
 		oncommand="event.stopPropagation();" >
@@ -14,7 +15,7 @@
 		<menuseparator />
 		<menuitem id="tb-addons-allowed-sites" label="&tb-addons-exceptions.label;" oncommand="toolbar_buttons.openAddonsExceptions(event);" />
 		<menuitem id="tb-addons-restart-disabled" label="&tb-restart-addons-disabled.label;" oncommand="window.safeModeRestart();"/>
-        <menuseparator />
+		<menuseparator />
 		<menuitem id="tb-addons-install" label="&installaddons.label;" oncommand="toolbar_buttons.installAddons(event);" />
 	</menupopup>
 </toolbarbutton>
