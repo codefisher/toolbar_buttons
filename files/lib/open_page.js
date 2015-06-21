@@ -57,12 +57,14 @@ OpenMailLink: function(name) {
 openPageInTab: function(url, event) {
 	var doc = event.target.ownerDocument;
 	var win = doc.defaultView;
-	if('switchToTabHavingURI' in win) {
-		win.switchToTabHavingURI(url, true);
-	} else if('getBrowser' in win) {
-		var browser = win.getBrowser();
-		browser.selectedTab = browser.addTab(url);
-	} else {
+	try {
+		if ('switchToTabHavingURI' in win) {
+			win.switchToTabHavingURI(url, true);
+		} else {
+			var browser = win.getBrowser();
+			browser.selectedTab = browser.addTab(url);
+		}
+	} catch(e) {
 		var tabmail = doc.getElementById('tabmail');
 		if (tabmail) {
 			tabmail.openTab('contentTab', {contentPage: url});
@@ -70,5 +72,4 @@ openPageInTab: function(url, event) {
 			win.openDialog(url, '', 'chrome,centerscreen');
 		}
 	}
-
 }
