@@ -1,5 +1,5 @@
 {
-    "name": "about:config Buttons",
+    "name": "about:config Button",
     "description": "Open about:config to change hidden settings that cannot be edited from the Options window. All Mozilla based programs have settings that can not be changed in the options window.  These hidden settings are all reveled in the about:config where anything can be changed or reset.",
     "icon": "wrench.png",
 
