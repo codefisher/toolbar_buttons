@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; - Asetukset">
 <!ENTITY options.window.title "Toolbar Buttons - Asetukset">
 <!ENTITY favorite-page.description "Käytetään painikkeessa ”Suosikkisivu”; tietyllä tavalla toinen kotisivu.">
 <!ENTITY toggle.prox.label "Välityspalvelin">

@@ -1,3 +1,4 @@
+<!ENTITY options.title "Настройки &extension.name;">
 <!ENTITY options.window.title "Настройки Toolbar Buttons">
 <!ENTITY favorite-page.description "Используется для кнопки &quot;Любимая страница&quot;. Как вторая домашняя страница.">
 <!ENTITY toggle.prox.label "Переключить прокси">

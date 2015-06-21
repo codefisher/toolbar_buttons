@@ -1,3 +1,4 @@
+<!ENTITY options.title "Opção &extension.name;">
 <!ENTITY options.window.title "Opção Toolbar Buttons">
 <!ENTITY favorite-page.description "Usado para o botão &apos;Página Favorita&apos;. Como uma espécie de segunda home page">
 <!ENTITY toggle.prox.label "Alternar Proxy">

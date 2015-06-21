@@ -1,4 +1,5 @@
 <!ENTITY options.window.title "Nastavení Toolbar Buttons">
+<!ENTITY options.title "Nastavení &extension.name;">
 <!ENTITY favorite-page.description "Adresa stránky pro tlačítko &apos;Oblíbené&apos;">
 <!ENTITY restart.checkbox "Neptat se před restartem">
 <!ENTITY previous-next.label "Předchozí a Další">

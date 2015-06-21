@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; 선택사항">
 <!ENTITY options.window.title "Toolbar Buttons 선택사항">
 <!ENTITY favorite-page.description "제2의 홈페이지와 같은 '즐겨찾는 페이지'버튼을 위해 사용됩니다.">
 <!ENTITY toggle.prox.label "프록시 전환">

@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; opties">
 <!ENTITY options.window.title "Toolbar Buttons opties">
 <!ENTITY favorite-page.description "Gebruikt voor de knop ‘Favoriete pagina’. Zoiets als een secundaire startpagina.">
 <!ENTITY toggle.prox.label "Proxy wisselen">

@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; - opcje">
 <!ENTITY options.window.title "Toolbar Buttons - opcje">
 <!ENTITY favorite-page.description "Przycisk &quot;Ulubiona&quot; spełnia funkcję drugiej strony startowej.">
 <!ENTITY toggle.prox.label "Proxy">

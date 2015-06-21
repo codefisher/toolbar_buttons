@@ -1,3 +1,4 @@
+<!ENTITY options.title "Opzioni di &extension.name;">
 <!ENTITY options.window.title "Opzioni di Toolbar Buttons">
 <!ENTITY favorite-page.description "Inserire un indirizzo web, utilizzabile come una seconda pagina iniziale, per il pulsante &apos;Pagina preferita&apos;:">
 <!ENTITY toggle.prox.label "Attiva/disattiva proxy">

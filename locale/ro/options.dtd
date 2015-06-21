@@ -1,3 +1,4 @@
+<!ENTITY options.title "Opțiuni &extension.name;">
 <!ENTITY options.window.title "Opțiuni Toolbar Buttons">
 <!ENTITY favorite-page.description "Adresă pentru „Pagina favorită” (un fel de a doua pagină de pornire):">
 <!ENTITY toggle.prox.label "Proxy">

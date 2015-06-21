@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; のオプション">
 <!ENTITY options.window.title "Toolbar Buttons のオプション">
 <!ENTITY favorite-page.description "&apos;お気に入りページ&apos; ボタンに使用されます。 第二のホーム ページのような類です">
 <!ENTITY toggle.prox.label "プロキシの切り替え">

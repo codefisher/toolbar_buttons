@@ -1,3 +1,4 @@
+<!ENTITY options.title "Επιλογές &extension.name;">
 <!ENTITY options.window.title "Επιλογές Toolbar Buttons">
 <!ENTITY favorite-page.description "Χρησιμοποιείται στο κουμπί «Προτιμώμενη σελίδα» και λειτουργεί σαν μια δεύτερη αρχική σελίδα">
 <!ENTITY toggle.prox.label "Εναλλαγή διαμεσολαβητή">

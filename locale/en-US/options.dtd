@@ -144,6 +144,7 @@
 <!ENTITY tb-toggle-tools.label "Toggle Tools">
 <!ENTITY tb-text-case-change.label "Change Case">
 <!ENTITY tb-addons-exceptions.label "Add-ons Allowed Sites">
+<!ENTITY options.title "&extension.name; Options">
 <!ENTITY options.window.title "Toolbar Buttons Options">
 <!ENTITY tb-window-menu.label "Window">
 <!ENTITY toggle.prox.label "Proxy">

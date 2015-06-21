@@ -1,3 +1,4 @@
+<!ENTITY options.title "Možnosti &extension.name;">
 <!ENTITY options.window.title "Možnosti Toolbar Buttons">
 <!ENTITY favorite-page.description "Uporablja se za gumb 'Priljubljena stran'.  Neke vrste druga domača stran">
 <!ENTITY toggle.prox.label "Posrednik">

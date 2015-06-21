@@ -1,3 +1,4 @@
+<!ENTITY options.title "Inställningar för &extension.name;">
 <!ENTITY options.window.title "Inställningar för Toolbar Buttons">
 <!ENTITY favorite-page.description "Används för &quot;Favoritsida&quot;-knappen.  Ungefär som en andra startsida">
 <!ENTITY toggle.prox.label "Växla proxy">

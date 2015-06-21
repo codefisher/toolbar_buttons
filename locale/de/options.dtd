@@ -1,3 +1,4 @@
+<!ENTITY options.title "&extension.name; - Einstellungen">
 <!ENTITY options.window.title "Toolbar Buttons - Einstellungen">
 <!ENTITY favorite-page.description "URL, die über die Schaltfläche &quot;Lieblingsseite&quot; aufgerufen wird.">
 <!ENTITY toggle.prox.label "Proxy">

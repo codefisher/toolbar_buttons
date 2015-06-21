@@ -13,6 +13,7 @@
 <!ENTITY tb-color-picker.value "Value">
 <!ENTITY tb-color-picker.wheel "Wheel">
 <!ENTITY tb-string-preference.add "Add">
+<!ENTITY tb-string-preference.add.folder "Add Folder">
 <!ENTITY tb-string-preference.browse "Browse">
 <!ENTITY tb-string-preference.close "Close">
 <!ENTITY tb-string-preference.delete "Delete">
