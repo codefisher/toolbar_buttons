@@ -1,4 +1,8 @@
 {
+    "name": "Run Application",
+    "description": "A drop down menu button that can launch applications.",
+    "icon": "application-xp-terminal.png",
+
     "buttons": [
         "tb-external-application"
     ],

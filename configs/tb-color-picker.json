@@ -16,5 +16,5 @@
     "chrome_name": "tb-color-picker-toolbar-button",
     "locale_file_prefix": "tb-color-picker_",
     "locale": "en-US",
-    "applications": ["browser", "suite"],
+    "applications": ["browser", "suite"]
 }
