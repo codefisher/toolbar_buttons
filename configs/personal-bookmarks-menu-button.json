@@ -4,7 +4,7 @@
     "icon": "toolbar-bookmark.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/bookmark-toolbar-menu-button/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620668/addon-620668-latest.xpi",
-    "download_link": "https://codefisher.org/static/xpi/bookmark_toolbar_menu_button-1.1.2-sm+fx.xpi",
+    "download_link": "https://codefisher.org/static/xpi/bookmark_toolbar_menu_button-1.1.2-sm-fx.xpi",
 
     "buttons": [
         "personal-bookmarks-menu-button"
