@@ -21,6 +21,9 @@
 		{%- if restartless %}
 		<em:bootstrap>true</em:bootstrap>
 		{%- endif %}
+		{%- if unpack %}
+		<em:unpack>true</em:unpack>
+		{%- endif %}
 
 		{%- for app_name, app_id, min_version, max_version in ext_applications %}
 		<!-- {{ app_name }} -->
