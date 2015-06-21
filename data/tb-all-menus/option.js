@@ -198,6 +198,4 @@ allMenusTreeView: function(prefs, prefName) {
 	};
 }
 
-window.addEventListener('load', function() {
-	toolbar_buttons.loadMenuSettings();
-}, false);
+toolbar_buttons.loadMenuSettings();

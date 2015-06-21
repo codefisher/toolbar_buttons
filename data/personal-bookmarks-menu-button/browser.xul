@@ -4,8 +4,7 @@
 	label="&personal-bookmarks-menu-button.label;"
 	tooltiptext="&personal-bookmarks-menu-button.tooltip;"
 	usepanelview="menu"
-	onclick="toolbar_buttons.personalBookmarksMenu(this, event);"
-	ondragenter="window.PlacesMenuDNDHandler.onDragEnter(event);" 
+	ondragenter="window.PlacesMenuDNDHandler.onDragEnter(event);"
 	ondragover="window.PlacesMenuDNDHandler.onDragOver(event);"
 	ondrop="window.PlacesMenuDNDHandler.onDrop(event);">
 	<menupopup id="bookmarksMenuPopupCustomPersonal"

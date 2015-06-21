@@ -1,7 +1,6 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	usepanelview="menu"
-	onclick="toolbar_buttons.openExtensionOptionsMenu(this, event);"
 	id="tb-addon-options"
 	label="&tb-addon-options.label;"
 	tooltiptext="&tb-addon-options.tooltip;">

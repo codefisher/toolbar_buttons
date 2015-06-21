@@ -1,13 +1,11 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
-    id="tb-all-menus"
-	type="menu"
+	id="tb-all-menus"
 	usepanelview="menu"
-	onclick="toolbar_buttons.allMenuOpen(this, event);"
-    label="&tb-all-menus.label;"
-    tooltiptext="&tb-all-menus.tooltip;">
+	label="&tb-all-menus.label;"
+	tooltiptext="&tb-all-menus.tooltip;">
 	<menupopup id="tb-all-menus-popup"
-                   onpopupshowing="toolbar_buttons.loadAllMenusMenu(this, event);"
-                   onpopuphidden="toolbar_buttons.allMenusReturnPopups(this, event);"
-                   oncommand="event.stopPropagation();" />
+				onpopupshowing="toolbar_buttons.loadAllMenusMenu(this, event);"
+				onpopuphidden="toolbar_buttons.allMenusReturnPopups(this, event);"
+				oncommand="event.stopPropagation();" />
 </toolbarbutton>

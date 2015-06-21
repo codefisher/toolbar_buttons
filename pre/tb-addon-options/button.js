@@ -1,19 +1,3 @@
-openExtensionOptionsMenu: function(item, event) {
-	if(event.target != event.currentTarget || event.button != 0) {
-		return;
-	}
-	if(item.getAttribute('cui-areatype') == 'menu-panel') {
-		var win = item.ownerDocument.defaultView;
-		event.preventDefault();
-		event.stopPropagation();
-		var panel = item.ownerDocument.getElementById('tb-addon-options-panel-view');
-		toolbar_buttons.extensionOptionsMenu(panel);
-		win.PanelUI.showSubView('tb-addon-options-panel-view', item, CustomizableUI.AREA_PANEL);
-	} else {
-		event.target.firstChild.openPopup(event.target, "after_start");
-	}
-}
-
 extensionOptionsMenu: function(aMenu) {
 	var doc = aMenu.ownerDocument;
 	Cu.import("resource://gre/modules/AddonManager.jsm");

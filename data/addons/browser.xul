@@ -6,8 +6,7 @@
 	label="&addons.label;"
 	tooltiptext="&addons.tooltip;"
 	usepanelview="button-menu"
-	oncommand="window.BrowserOpenAddonsMgr();"
-	onclick="toolbar_buttons.goOpenAddons(this, event);" >
+	oncommand="window.BrowserOpenAddonsMgr();" >
 	<menupopup onclick="event.stopPropagation();"
 		oncommand="event.stopPropagation();" >
 		<menuitem id="tb-addons-extensions" label="&extensions.label;" oncommand="toolbar_buttons.OpenAddonsMgr(event, 'extensions', 'addons://list/extension');"/>

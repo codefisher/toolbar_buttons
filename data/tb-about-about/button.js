@@ -1,19 +1,3 @@
-openAboutAboutMenu: function(item, event) {
-	if(event.target != event.currentTarget || event.button != 0) {
-		return;
-	}
-	if(item.getAttribute('cui-areatype') == 'menu-panel') {
-		var win = item.ownerDocument.defaultView;
-		event.preventDefault();
-		event.stopPropagation();
-		var panel = item.ownerDocument.getElementById('tb-about-about-panel-view');
-		toolbar_buttons.aboutAboutMenu(panel);
-		win.PanelUI.showSubView('tb-about-about-panel-view', item, CustomizableUI.AREA_PANEL);
-	} else {
-		event.target.firstChild.openPopup(event.target, "after_start");
-	}
-}
-
 aboutAboutMenu: function(item) {
 	var doc = item.ownerDocument;
 	if (item.firstChild) {

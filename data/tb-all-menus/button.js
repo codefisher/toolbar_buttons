@@ -79,11 +79,12 @@ allMenuOpen: function(item, event) {
 		event.stopPropagation();
 		win.PanelUI.showSubView('tb-all-menus-panel-view', item, CustomizableUI.AREA_PANEL);
 		var panel = item.ownerDocument.getElementById('tb-all-menus-panel-view');
+		panel.ownerButton = item;
 		toolbar_buttons.loadAllMenusMenu(panel, event);
 	}
 }
 
-allMenusAddItem: function(menu, item, showIcons, isPanel) {
+allMenusAddItem: function(menu, panel, showIcons, isPanel) {
 	if(!menu.firstChild) {
 		return;
 	}
@@ -93,7 +94,7 @@ allMenusAddItem: function(menu, item, showIcons, isPanel) {
 		node.classList.add('menu-iconic');
 		node.classList.add('menuitem-iconic');
 	}
-	item.appendChild(node);
+	panel.appendChild(node);
 	node.cloneTarget = menu;
 	node.id = node.id + '-panel';
 	if(menu.firstChild) {
@@ -108,27 +109,41 @@ allMenusAddItem: function(menu, item, showIcons, isPanel) {
 	menu.style.visibility = 'visible';
 }
 
-showAMenuAsPanel: function(aEvent, aMenu) {
+showAMenuAsPanel: function(aEvent, aMenu, panel) {
+	/* This is a a work in progress, it is really buggy */
 	var doc = aEvent.target.ownerDocument;
 	var win = doc.defaultView;
 	if(!aMenu.firstChild) {
 		return;
 	}
 	var popup = aMenu.firstChild;
-	/* what we do is move the popup to our self, and then when finished move it
-	 * back again, this is better then cloning because we get all event Listeners too
-	 */
-	popup.addEventListener('popuphidden', function showAMenuPopupHidding(event) {
-		if(event.originalTarget == popup) {
-			aEvent.target.removeEventListener('popuphidden', showAMenuPopupHidding, false);
-			popup.setAttribute('style', '');
-			aMenu.appendChild(popup);
+	var panelView = doc.createElement('panelview');
+	var attrs = popup.attributes;
+	for(var i = attrs.length - 1; i >= 0; i--) {
+		panelView.setAttribute(attrs[i].name, attrs[i].value);
+	}
+	while(popup.firstChild) {
+		/*if(popup.firstChild.nodeName == 'menu') {
+			popup.firstChild.addEventListener('click', function showAMenuPopupClick(event) {
+				toolbar_buttons.showAMenuAsPanel(event, event.target, panel);
+			}, false);
+		}*/
+		panelView.appendChild(popup.firstChild);
+	}
+	panelView.id += '-panelview';
+	panelView.addEventListener('ViewHiding', function showAMenuPopupHidding(event) {
+		win.setTimeout(function() {
+			win.PanelUI.showSubView(panel.id, panel.ownerButton, CustomizableUI.AREA_PANEL);
+		}, 50);
+		aEvent.target.removeEventListener('ViewHiding', showAMenuPopupHidding, false);
+		while(panelView.firstChild) {
+			popup.appendChild(panelView.firstChild);
 		}
+		panelView.parentNode.removeChild(panelView);
 	}, false);
-	doc.getElementById('PanelUI-multiView').appendChild(popup);
-	aMenu.style.visibility = 'visible';
-	popup.setAttribute('style', '-moz-binding: url("chrome://browser/content/customizableui/panelUI.xml#panelview");');
-	win.PanelUI.showSubView(popup.id, aEvent.target, CustomizableUI.AREA_PANEL);
+	doc.getElementById('PanelUI-multiView').appendChild(panelView);
+	win.PanelUI.showMainView();
+	win.PanelUI.showSubView(panelView.id, panel.ownerButton, CustomizableUI.AREA_PANEL);
 }
 
 allMenusReturnPopups: function(item, event) {
