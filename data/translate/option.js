@@ -87,4 +87,4 @@ showPromtTranslate: function() {
 	menulist.setAttribute('hidden', true);
 }
 
-window.addEventListener("load", toolbar_buttons.loadTranslate, false);
+toolbar_buttons.loadTranslate();
