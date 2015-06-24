@@ -1,0 +1,21 @@
+{
+    "name": "Web Developer Buttons",
+    "description": "Buttons for quick access to all the items in the web developer menu, plus a button for the menu itself.",
+    "icon": "world-gear.png",
+
+    "buttons": [
+        "tb-web-developer-menu", "tb-webide", "tb-web-console",
+        "tb-toggle-tools", "tb-style-editor", "tb-scratch-pad",
+        "tb-responsive-ui", "tb-network-monitor", "tb-jsprofiler",
+        "tb-inspector", "tb-eyedropper", "tb-browser-console",
+        "javaScriptConsole", "inspecter", "page-source",
+        "tb-developer-toolbar", "tb-jsdebugger"
+    ],
+    "extension_id": "tb-web-developer-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-web-developer-menu"
+    ],
+    "current_version_pref": "current.version.tb-web-developer",
+    "chrome_name": "tb-web-developer-toolbar-button",
+    "locale_file_prefix": "tb-web-developer"
+}
