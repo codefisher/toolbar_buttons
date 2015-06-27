@@ -4,6 +4,7 @@
     "icon": "plugin.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/add-ons-button/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/567540/addon-567540-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/add_ons_button-1.1.2-sm-tb-fx.xpi",
 
     "buttons": [
         "addons"
