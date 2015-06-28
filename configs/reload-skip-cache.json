@@ -1,0 +1,21 @@
+{
+    "name": "Reload Skip Cache Button",
+    "description": "Reload page without using content stored in the browser cache to make sure you get any updates.",
+    "icon": "arrow-rotate-clockwise-270.png",
+
+    "buttons": [
+        "reload-skip-cache"
+    ],
+    "extension_id": "reload-skip-cache-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "reload-skip-cache"
+    ],
+    "menuitems": [],
+    "current_version_pref": "current.version.reload-skip-cache",
+    "chrome_name": "reload-skip-cache-toolbar-button",
+    "locale_file_prefix": "reload-skip-cache_",
+    "extra_prefs": [
+        ["showamenu.reload-skip-cache-extra-ui", "false"]
+    ],
+    "location_placement": "urlbar"
+}
