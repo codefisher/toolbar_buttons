@@ -1,0 +1,17 @@
+{
+    "name": "Extension Manager Buttons",
+    "description": "Extension and Theme buttons that can be used to do almost anything that the add-ons manger can do.",
+    "icon": "plugin.png",
+
+    "buttons": [
+        "extensions", "themes", "tb-plugins", "tb-languages", "tb-services"
+    ],
+    "extension_id": "extension-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "extensions"
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.extension-buttons",
+    "chrome_name": "extension-toolbar-button",
+    "locale_file_prefix": "extension_"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Zoom Buttons",
+    "description": "Buttons for controlling the page zoom.",
+    "icon": "magnifier.png",
+
+    "buttons": [
+        "reset", "reduce", "tb-text-zoom-only", "enlarge"
+    ],
+    "extension_id": "zoom-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.zoom-buttons",
+    "chrome_name": "zoom-toolbar-button",
+    "locale_file_prefix": "zoom_"
+}

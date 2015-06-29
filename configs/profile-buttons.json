@@ -1,0 +1,20 @@
+{
+    "name": "Profile Buttons",
+    "description": "A button to be able to open the profile folder, along with two buttons to create profiles, and also switch the current profile.",
+    "icon": "folder-user.png",
+
+    "buttons": [
+        "profile-folder", "tb-create-profile", "tb-switch-profile"
+    ],
+    "extension_id": "profile-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "profile-folder"
+    ],
+    "menuitems": [
+        "profile-folder"
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.profile-buttons",
+    "chrome_name": "profile-toolbar-button",
+    "locale_file_prefix": "profile_"
+}

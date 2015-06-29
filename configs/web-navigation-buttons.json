@@ -1,0 +1,19 @@
+{
+    "name": "Web Navigation Buttons",
+    "description": "Replacements for the stop, reload, forward and back buttons, along with a few related buttons.",
+    "icon": "world.png",
+
+    "buttons": [
+        "tb-go-back", "tb-go-forward", "tb-url-go-button", "tb-page-reload",
+        "reload-all-tabs", "reload-skip-cache", "snap-back", "tb-page-stop",
+        "stop-all", "up-directory"
+    ],
+    "extension_id": "web-navigation-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.web-navigation-buttons",
+    "chrome_name": "web-navigation-toolbar-button",
+    "locale_file_prefix": "web-navigation_"
+}

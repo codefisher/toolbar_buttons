@@ -1,0 +1,17 @@
+{
+    "name": "Download Buttons",
+    "description": "Download Management Buttons",
+    "icon": "drive-down.png",
+
+    "buttons": [
+        "tb-open-download-folder"
+    ],
+    "extension_id": "download-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.download-buttons",
+    "chrome_name": "download-toolbar-button",
+    "locale_file_prefix": "download_"
+}

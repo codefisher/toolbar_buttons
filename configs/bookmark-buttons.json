@@ -1,0 +1,19 @@
+{
+    "name": "Bookmark Buttons",
+    "description": "A collection of buttons that are help with working with your bookmarks.",
+    "icon": "bookmark.png",
+
+    "buttons": [
+        "bookmark-manager", "personal-bookmarks-menu-button", "bookmark",
+        "bookmark-tabs", "bookmarks-menu-button1", "bookmarks-menu-button2",
+        "toggle-bookmark-toolbar", "bookmark-nopop"
+    ],
+    "extension_id": "bookmark-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.bookmark-buttons",
+    "chrome_name": "bookmark-toolbar-button",
+    "locale_file_prefix": "bookmark_"
+}

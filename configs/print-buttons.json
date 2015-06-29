@@ -1,0 +1,17 @@
+{
+    "name": "Print Buttons",
+    "description": "Adds buttons to Print a page, or open Print Preview, or open the Page Setup controls.",
+    "icon": "printer.png",
+
+    "buttons": [
+        "tb-print-page", "print-preview", "pagesetup"
+    ],
+    "extension_id": "print-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-print-page"
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.print-buttons",
+    "chrome_name": "print-toolbar-button",
+    "locale_file_prefix": "print_"
+}

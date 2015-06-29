@@ -1,0 +1,17 @@
+{
+    "name": "History Buttons",
+    "description": "A few buttons for showing your history.",
+    "icon": "time.png",
+
+    "buttons": [
+        "tb-history-menu", "tb-history-sidebar", "tb-show-all-history"
+    ],
+    "extension_id": "history-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.history-buttons",
+    "chrome_name": "history-toolbar-button",
+    "locale_file_prefix": "history_"
+}

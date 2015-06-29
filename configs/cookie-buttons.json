@@ -1,0 +1,18 @@
+{
+    "name": "Cookie Buttons",
+    "description": "Buttons to manage and clear your cookies.",
+    "icon": "cookie.png",
+
+    "buttons": [
+        "tb-cookie-exceptions", "tb-cookie-manager", "tb-delete-cookies",
+        "tb-delete-session-cookies", "stop-cookies"
+    ],
+    "extension_id": "cookie-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.cookie-buttons",
+    "chrome_name": "cookie-toolbar-button",
+    "locale_file_prefix": "cookie_"
+}

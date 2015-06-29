@@ -1,0 +1,17 @@
+{
+    "name": "Undo Close Tab Button",
+    "description": "Reopens the last closed tab.",
+    "icon": "tab-undo.png",
+
+    "buttons": [
+        "undo-close-tab", "tb-tab-close-history"
+    ],
+    "extension_id": "under-close-tab-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.under-close-tab-buttons",
+    "chrome_name": "under-close-tab-toolbar-button",
+    "locale_file_prefix": "under-close-tab_"
+}

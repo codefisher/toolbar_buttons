@@ -1,0 +1,21 @@
+{
+    "name": "Tab Buttons",
+    "description": "A collection of buttons that are help with working with tabs.",
+    "icon": "tab.png",
+
+    "buttons": [
+        "bookmark-tabs", "tb-about-blank", "close-all-tabs", "close-all-tabs",
+        "close-tab", "tb-first-last-tab", "tb-move-to-window", "tb-new-tab",
+        "next-tab", "tb-pin-tab", "previous-tab", "tb-tab-close-history",
+        "reload-all-tabs", "label-blank", "label-all-blank", "rename-tab",
+        "tab-list", "undo-close-tab"
+    ],
+    "extension_id": "tabs-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.tabs-buttons",
+    "chrome_name": "tabs-toolbar-button",
+    "locale_file_prefix": "tabs_"
+}

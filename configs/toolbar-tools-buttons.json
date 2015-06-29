@@ -1,0 +1,18 @@
+{
+    "name": "Toolbar Tool Buttons",
+    "description": "A collection of buttons that are help with working with the toolbar.",
+    "icon": "toolbar.png",
+
+    "buttons": [
+        "toggle-bookmark-toolbar", "customize-toolbar", "tb-hide-other-toolbars",
+        "tb-toggle-menu-bar", "toggle-toolbar", "tb-toolbar-display", "toolbar-menu"
+    ],
+    "extension_id": "toolbar-tools-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.toolbar-tools-buttons",
+    "chrome_name": "toolbar-tools-toolbar-button",
+    "locale_file_prefix": "toolbar-tools_"
+}
