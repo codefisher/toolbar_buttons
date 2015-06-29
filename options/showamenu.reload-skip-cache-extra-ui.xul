@@ -1,0 +1,9 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&reload-skip-cache.label;" />
+	<preferences>
+		<preference id="{{pref_root}}showamenu.reload-skip-cache-extra-ui" name="{{pref_root}}showamenu.reload-skip-cache-extra-ui"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}showamenu.reload-skip-cache-extra-ui" label="&reload-skip-cache.option.label;"/>
+</groupbox>
