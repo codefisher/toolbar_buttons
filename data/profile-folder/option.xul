@@ -1,0 +1,9 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&profile-folder.label;" />
+	<preferences>
+		<preference id="{{pref_root}}menupopup.hide.profile-folder" name="{{pref_root}}menupopup.hide.profile-folder"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}menupopup.hide.profile-folder" label="&profile-folder.label.option.label;"/>
+</groupbox>
