@@ -4,7 +4,7 @@
     "icon": "tab.png",
 
     "buttons": [
-        "bookmark-tabs", "tb-about-blank", "close-all-tabs", "close-all-tabs",
+        "bookmark-tabs", "tb-about-blank", "close-other-tabs", "close-all-tabs",
         "close-tab", "tb-first-last-tab", "tb-move-to-window", "tb-new-tab",
         "next-tab", "tb-pin-tab", "previous-tab", "tb-tab-close-history",
         "reload-all-tabs", "label-blank", "label-all-blank", "rename-tab",

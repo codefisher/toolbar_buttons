@@ -6,7 +6,7 @@
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620670/addon-620670-latest.xpi",
 
     "buttons": [
-        "tb-about-about", "about-config", "tb-about-permissions", "about-plugins", "tb-about-blank", "about-mem-cache", "about-disk-cache", "about-application"
+        "tb-about-about", "about-config", "about-cache", "tb-about-permissions", "about-plugins", "tb-about-blank", "about-mem-cache", "about-disk-cache", "about-application"
     ],
     "extension_id": "about-about@codefisher.org",
     "add_to_main_toolbar": [

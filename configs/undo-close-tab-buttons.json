@@ -6,12 +6,13 @@
     "buttons": [
         "undo-close-tab", "tb-tab-close-history"
     ],
-    "extension_id": "under-close-tab-buttons-single@codefisher.org",
+    "extension_id": "undo-close-tab-buttons-single@codefisher.org",
     "add_to_main_toolbar": [
-
+        "undo-close-tab"
     ],
+    "menuitems": null,
     "use_keyboard_shortcuts": true,
-    "current_version_pref": "current.version.under-close-tab-buttons",
-    "chrome_name": "under-close-tab-toolbar-button",
-    "locale_file_prefix": "under-close-tab_"
+    "current_version_pref": "current.version.undo-close-tab-buttons",
+    "chrome_name": "undo-close-tab-toolbar-button",
+    "locale_file_prefix": "undo-close-tab_"
 }

@@ -12,6 +12,11 @@
     "add_to_main_toolbar": [
         "tb-free-memory"
     ],
+    "option_panel_order": ["tb-free-memory.label", "settings.label",
+        "tb-show-a-menu.option.title", "tb-key-shortcut.option.title"],
+    "extra_prefs": [
+        ["showamenu.tb-free-memory-extra-ui", "false"]
+    ],
     "use_keyboard_shortcuts": true,
     "current_version_pref": "current.version.tb-free-memory",
     "chrome_name": "tb-free-memory-toolbar-button",

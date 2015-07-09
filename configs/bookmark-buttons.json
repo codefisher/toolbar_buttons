@@ -6,7 +6,7 @@
     "buttons": [
         "bookmark-manager", "personal-bookmarks-menu-button", "bookmark",
         "bookmark-tabs", "bookmarks-menu-button1", "bookmarks-menu-button2",
-        "toggle-bookmark-toolbar", "bookmark-nopop"
+        "toggle-bookmark-toolbar", "bookmark-nopop", "tb-bookmark-sidebar"
     ],
     "extension_id": "bookmark-buttons-single@codefisher.org",
     "add_to_main_toolbar": [
