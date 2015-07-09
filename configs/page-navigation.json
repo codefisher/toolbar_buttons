@@ -4,6 +4,7 @@
     "icon": "layout.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/page-navigation-buttons/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620320/addon-620320-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/page_navigation_buttons-1.1.2-sm-fx.xpi",
 
     "buttons": [
         "top-page", "bottom-page", "tb-down-page", "tb-up-page"

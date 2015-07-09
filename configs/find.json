@@ -4,6 +4,7 @@
     "icon": "find.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/find-buttons/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/620962/addon-620962-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/find_buttons-1.1.3-sm-tb-fx.xpi",
 
     "buttons": [
         "find", "find-again", "find-prev"

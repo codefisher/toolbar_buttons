@@ -4,6 +4,7 @@
     "icon": "memory.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/free-memory-button/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/618822/addon-618822-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/free_memory_button-1.1.2-sm-tb-fx.xpi",
 
     "buttons": [
         "tb-free-memory"

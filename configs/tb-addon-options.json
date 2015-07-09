@@ -4,6 +4,7 @@
     "icon": "plugin-gear.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/add-on-preferences-button/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/619096/addon-619096-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/add_on_preferences_button-1.1.3-sm-tb-fx.xpi",
 
     "buttons": [
         "tb-addon-options"

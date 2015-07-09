@@ -2,6 +2,9 @@
     "name": "Reload Skip Cache Button",
     "description": "Reload page without using content stored in the browser cache to make sure you get any updates.",
     "icon": "arrow-rotate-clockwise-270.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/reload-skip-cache-button/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/627234/addon-627234-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/reload_skip_cache_button-1.1.3-sm-fx.xpi",
 
     "buttons": [
         "reload-skip-cache"

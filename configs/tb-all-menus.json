@@ -4,6 +4,7 @@
     "icon": "menu.png",
     "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/all-menus-button/",
     "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/621692/addon-621692-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/all_menus_button-1.1.3-sm-tb-fx.xpi",
 
     "buttons": [
         "tb-all-menus", "tb-file-menu", "tb-edit-menu", "tb-history-menu", "tb-tools-menu", "tb-view-menu",
