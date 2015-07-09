@@ -1,7 +1,11 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional"
 	id="undo-close-tab"
+	type="menu-button"
 	key="key_undoCloseTab"
 	label="&undo-close-tab.label;"
 	tooltiptext="&undo-close-tab.tooltip;"
-	oncommand="window.gBrowser.undoCloseTab(0);" />
+	oncommand="window.gBrowser.undoCloseTab(0);" >
+		<menupopup onpopupshowing="event.stopPropagation(); window.updateRecentTabs(this);"
+				   oncommand="window.gBrowser.undoCloseTab(event.target.value); event.stopPropagation();"/>
+</toolbarbutton>

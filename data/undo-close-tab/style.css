@@ -1,0 +1,13 @@
+#undo-close-tab > .toolbarbutton-menubutton-dropmarker {
+    -moz-appearance: none !important;
+    -moz-box-align: center;
+}
+
+#undo-close-tab > .toolbarbutton-menubutton-dropmarker .dropmaker-icon {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#undo-close-tab[cui-areatype="menu-panel"] .toolbarbutton-menubutton-dropmarker {
+    display:none;
+}

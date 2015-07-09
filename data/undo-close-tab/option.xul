@@ -1,0 +1,9 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&undo-close-tab.label;" />
+	<preferences>
+		<preference id="{{pref_root}}menupopup.hide.undo-close-tab" name="{{pref_root}}menupopup.hide.undo-close-tab"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}menupopup.hide.undo-close-tab" label="&undo-close-tab.label.option.label;"/>
+</groupbox>
