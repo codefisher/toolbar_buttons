@@ -1,21 +1,73 @@
-freeMemory: function(event) {
+freeMemoryAction: function(event) {
+	var prefs = toolbar_buttons.interfaces.ExtensionPrefBranch;
+	var option = prefs.getIntPref('free-memory.default.action');
+	switch (option) {
+		case 0:
+			toolbar_buttons.freeMemory(event);
+			break;
+		case 1:
+			toolbar_buttons.freeMemoryGarbageCollection(event);
+			break;
+		case 2:
+			toolbar_buttons.freeMemoryCycleCollection(event);
+			break;
+		default:
+			for(var i = 0; i < 2; i++) {
+				toolbar_buttons.freeMemory(event, true);
+				toolbar_buttons.freeMemoryGarbageCollection(event, true);
+				toolbar_buttons.freeMemoryCycleCollection(event, true);
+			}
+			toolbar_buttons.freeMemoryNotify();
+	}
+}
+
+freeMemory: function(event, no_notify) {
 	Services.obs.notifyObservers(null, "child-mmu-request", null);
 	let gMgr = Cc["@mozilla.org/memory-reporter-manager;1"]
 			.getService(Ci.nsIMemoryReporterManager);
 	gMgr.minimizeMemoryUsage(null);
+	if(!no_notify) {
+		toolbar_buttons.freeMemoryNotify();
+	}
 }
 
-freeMemoryGarbageCollection: function(event) {
+freeMemoryNotify: function() {
+	var prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService)
+			.getBranch("{{pref_root}}free-memory.");
+	if(prefs.getBoolPref("show-notifications")) {
+		var notifications = jetpack("sdk/notifications");
+
+		var stringBundle = toolbar_buttons.interfaces.StringBundleService
+			.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
+
+		notifications.notify({
+			title: stringBundle.GetStringFromName("tb-free-memory.label"),
+			text: stringBundle.GetStringFromName("tb-free-memory.cleared"),
+			data: "",
+			iconURL: "chrome://{{chrome_name}}/skin/option/memory.png",
+			onClick: function (data) {
+			}
+		});
+	}
+}
+
+freeMemoryGarbageCollection: function(event, no_notify) {
 	Services.obs.notifyObservers(null, "child-gc-request", null);
 	Cu.forceGC();
+	if(!no_notify) {
+		toolbar_buttons.freeMemoryNotify();
+	}
 }
 
-freeMemoryCycleCollection: function(event) {
+freeMemoryCycleCollection: function(event, no_notify) {
 	var win = event.target.ownerDocument.defaultView;
 	Services.obs.notifyObservers(null, "child-cc-request", null);
 	win.QueryInterface(Ci.nsIInterfaceRequestor)
 		.getInterface(Ci.nsIDOMWindowUtils)
 		.cycleCollect();
+	if(!no_notify) {
+		toolbar_buttons.freeMemoryNotify();
+	}
 }
 
 freeMemorySetMenu: function(event, item) {

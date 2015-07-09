@@ -1,1 +1,5 @@
 always.new.tab:false
+free-memory.default.action:0
+free-memory.idle.enabled:false
+free-memory.idle.time:15
+free-memory.show-notifications:true

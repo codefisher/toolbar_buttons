@@ -4,7 +4,7 @@
 	type="menu-button"
 	label="&tb-free-memory.label;"
 	tooltiptext="&tb-free-memory.tooltip;"
-	oncommand="toolbar_buttons.freeMemory(event);">
+	oncommand="toolbar_buttons.freeMemoryAction(event);">
 	<menupopup onpopupshowing="toolbar_buttons.freeMemorySetMenu(event, this);" oncommand="event.stopPropagation();" >
 		<menuitem oncommand="toolbar_buttons.freeMemory(event);" label="&tb-free-memory.label;" />
 		<menuitem oncommand="toolbar_buttons.freeMemoryGarbageCollection(event);" label="&tb-free-memory.garbage;" />

@@ -1,0 +1,29 @@
+tb-free-memory.label:memory.png
+<groupbox>
+	<preferences>
+		<preference id="{{pref_root}}free-memory.default.action" name="{{pref_root}}free-memory.default.action"
+			type="int"/>
+		<preference id="{{pref_root}}free-memory.idle.enabled" name="{{pref_root}}free-memory.idle.enabled"
+			type="bool"/>
+		<preference id="{{pref_root}}free-memory.idle.time" name="{{pref_root}}free-memory.idle.time"
+			type="int"/>
+		<preference id="{{pref_root}}free-memory.show-notifications" name="{{pref_root}}free-memory.show-notifications"
+			type="bool"/>
+	</preferences>
+	<description>&tb-free-memory.option.description;</description>
+	<radiogroup style="margin-left:2em;" preference="{{pref_root}}free-memory.default.action">
+		<radio value="0" label="&tb-free-memory.label;"/>
+		<radio value="1" label="&tb-free-memory.garbage;"/>
+		<radio value="2" label="&tb-free-memory.cycle;"/>
+		<radio value="3" label="&tb-free-memory.try-all;" />
+	</radiogroup>
+
+	<checkbox preference="{{pref_root}}free-memory.idle.enabled" label="&tb-free-memory.option.idle;"/>
+	<hbox align="baseline">
+		<label control="free-memory-idle-time" value="&tb-free-memory.option.idle.time;" />
+		<textbox id="free-memory-idle-time" size="3" type="number" min="0" preference="{{pref_root}}free-memory.idle.time" />
+	</hbox>
+
+	<checkbox preference="{{pref_root}}free-memory.show-notifications" label="&tb-free-memory.option.show-notifications;"/>
+
+</groupbox>
