@@ -20,6 +20,7 @@ function StartUp() {
 	setWheelAndPanelEvents();
 	setEyedropper();
 	doApply(updateColor, currentColor);
+	window.sizeToContent();
 }
 
 function setEyedropper() {
