@@ -1,0 +1,9 @@
+settings.label:cog.png:suite
+<groupbox>
+	<caption label="&tb-free-memory.label;" />
+	<preferences>
+		<preference id="{{pref_root}}showamenu.tb-free-memory-extra-ui" name="{{pref_root}}showamenu.tb-free-memory-extra-ui"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}showamenu.tb-free-memory-extra-ui" label="&tb-free-memory.ui.option.label;"/>
+</groupbox>
