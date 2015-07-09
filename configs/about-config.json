@@ -2,6 +2,9 @@
     "name": "about:config Button",
     "description": "Open about:config to change hidden settings that cannot be edited from the Options window. All Mozilla based programs have settings that can not be changed in the options window.  These hidden settings are all reveled in the about:config where anything can be changed or reset.",
     "icon": "wrench.png",
+    "amo_page": "https://addons.mozilla.org/en-US/firefox/addon/aboutconfig-buttons/",
+    "amo_download": "https://addons.mozilla.org/firefox/downloads/latest/625198/addon-625198-latest.xpi",
+    "download_link": "https://codefisher.org/static/xpi/aboutconfig_buttons-1.1.3-sm-tb-fx.xpi",
 
     "buttons": [
         "about-config"
