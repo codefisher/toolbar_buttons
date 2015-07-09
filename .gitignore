@@ -13,3 +13,4 @@ junk/
 todo.txt
 icon_import.py
 release_notes.html
+*.xpi
