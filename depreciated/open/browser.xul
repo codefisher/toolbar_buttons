@@ -1,0 +1,7 @@
+<toolbarbutton
+	class="toolbarbutton-1 chromeclass-toolbar-additional"
+	id="open"
+	label="&open.label;"
+	tooltiptext="&open.tooltip;"
+	key="openFileKb"
+	command="Browser:OpenFile"/>

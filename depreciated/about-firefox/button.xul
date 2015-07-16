@@ -1,6 +1,6 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional"
-	id="about-application"
-	label="&about-application.label;"
-	tooltiptext="&about-application.tooltip; &brandShortName;"
+	id="about-firefox"
+	label="&about-firefox.label;"
+	tooltiptext="&about-firefox.tooltip; &brandShortName;"
 	oncommand="window.openAboutDialog();" />
