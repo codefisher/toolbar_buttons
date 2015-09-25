@@ -31,4 +31,10 @@ setProxyValue: function(event) {
 	prefs.setIntPref("network.proxy.type", event.originalTarget.getAttribute('value'));
 }
 
+openProxySettings: function(event) {
+	var doc = event.target.ownerDocument;
+	var win = doc.defaultView;
+	win.openDialog("chrome://browser/content/preferences/connection.xul", '', 'chrome,centerscreen');
+}
+
 toolbar_buttons.loadPrefWatcher(document, "network.proxy.type", "toggle-proxy");

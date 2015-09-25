@@ -13,5 +13,7 @@
 		<menuitem type="radio" name="toggle-proxy-settings" value="2" label="&toggle.proxy.auto.configuration;"/>
 		<menuitem type="radio" name="toggle-proxy-settings" value="4" label="&toggle.proxy.auto.detect;"/>
 		<menuitem type="radio" name="toggle-proxy-settings" value="5" label="&toggle.proxy.system;"/>
+		<menuseparator />
+		<menuitem oncommand="toolbar_buttons.openProxySettings(event);" label="&toggle-proxy.settings;" />
 	</menupopup>
 </toolbarbutton>
