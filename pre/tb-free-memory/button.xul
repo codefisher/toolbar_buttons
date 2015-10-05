@@ -12,6 +12,8 @@
 		<menuseparator/>
 		<menuitem onclick="toolbar_buttons.openPageInTab('about:memory', event);" label="&tb-free-memory.about;" />
 		<menuseparator/>
+		<menuitem label="&restart-app.label;" oncommand="toolbar_buttons.restartMozilla();" />
+		<menuseparator/>
 		<menuitem />
 	</menupopup>
 </toolbarbutton>
