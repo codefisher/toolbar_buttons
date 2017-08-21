@@ -52,57 +52,59 @@ function onGot(items) {
 }
 
 function goClearCache(items) {
-	if(items.should_confirm && !window.confirm(browser.i18n.getMessage("tbClearCacheQuestion"))){
-		return;
-	}
-	let time = Date.now() - (60 * 60 * 1000);
-	switch(items.time_span) {
-		case 0:
-			time = Date.now() - (60 * 60 * 1000);
-			break;
-		case 1:
-			time = Date.now() - (2 * 60 * 60 * 1000);
-			break;
-		case 2:
-			time = Date.now() - (4 * 60 * 60 * 1000);
-			break;
-		case 3:
-			let d = new Date();
-			d.setHours(0,0,0,0);
-			time = d.getTime();
-			break;
-		case 4:
-			time = 0;
-			break;
-		default:
-			return;
-	}
-	let options = {'since': time};
-	if(items.cache_history) {
-		browser.browsingData.removeHistory(options);
-	}
-	if(items.cache_download) {
-		browser.browsingData.removeDownloads(options);
-	}
-	if(items.form_history) {
-		browser.browsingData.removeFormData(options);
-	}
-	if(items.cache_cookies) {
-		browser.browsingData.removeCookies(options);
-	}
-	if(items.cache_logins) {
-		browser.browsingData.removePasswords(options);
-	}
-	if(items.offline_data) {
-		browser.browsingData.remove(options, {'fileSystems': true, 'localStorage': true});
-	}
-	if(items.should_notify) {
-		browser.notifications.create({
-			type: 'basic',
-			title: browser.i18n.getMessage('tbClearCacheLabel'),
-			message: browser.i18n.getMessage('tbClearCacheMessage'),
-			iconUrl: '/files/backspace.svg'
-		});
+	if(!items.should_confirm || window.confirm(browser.i18n.getMessage("tbClearCacheQuestion"))) {
+		let time = Date.now() - (60 * 60 * 1000);
+		switch (items.time_span) {
+			case 0:
+				time = Date.now() - (60 * 60 * 1000);
+				break;
+			case 1:
+				time = Date.now() - (2 * 60 * 60 * 1000);
+				break;
+			case 2:
+				time = Date.now() - (4 * 60 * 60 * 1000);
+				break;
+			case 3:
+				let d = new Date();
+				d.setHours(0, 0, 0, 0);
+				time = d.getTime();
+				break;
+			case 4:
+				time = 0;
+				break;
+			default:
+				return;
+		}
+		let options = {'since': time};
+		if (items.cache_history) {
+			browser.browsingData.removeHistory(options);
+		}
+		if (items.cache_download) {
+			browser.browsingData.removeDownloads(options);
+		}
+		if (items.form_history) {
+			browser.browsingData.removeFormData(options);
+		}
+		if (items.cache_cookies) {
+			browser.browsingData.removeCookies(options);
+		}
+		if (items.cache_logins) {
+			browser.browsingData.removePasswords(options);
+		}
+		if (items.offline_data) {
+			browser.browsingData.remove(options, {
+				'fileSystems': true,
+				'localStorage': true
+			});
+		}
+		if (items.should_notify) {
+			browser.notifications.create({
+				type: 'basic',
+				title: browser.i18n.getMessage('tbClearCacheLabel'),
+				message: browser.i18n.getMessage('tbClearCacheMessage'),
+				iconUrl: '/files/backspace.svg'
+			});
+		}
 	}
 	window.close();
 }

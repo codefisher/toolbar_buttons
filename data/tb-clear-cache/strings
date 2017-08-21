@@ -17,3 +17,4 @@ tb-clear-cache.last-four-hours=Last Four Hours
 tb-clear-cache.everything=Everything
 tb-clear-cache.window=Clear Recent History...
 tb-clear-cache.prompt.checkbox=Do not ask before clearing the cache.
+tb-clear-cache.notify=Notify after data is cleared.
