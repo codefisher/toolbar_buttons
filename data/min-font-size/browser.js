@@ -9,6 +9,8 @@ toggleMinimumFontSize: function() {
 	} catch (e) {
 		prefs.setIntPref("font.minimum-size.x-western", 0);
 	}
+	// TODO: this needs to be able to handle all font.minimum-size.* settings
+	// not just those for western fonts
 	if (prefs.getIntPref("font.minimum-size.x-western") == 0 &&
 			extPrefs.getIntPref("minimum.font.size") == 0) {
 		var message = strBundle.GetStringFromName("min-font-message");

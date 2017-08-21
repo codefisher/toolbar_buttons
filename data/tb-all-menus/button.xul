@@ -1,7 +1,7 @@
 <toolbarbutton
 	class="toolbarbutton-1 chromeclass-toolbar-additional" 
 	id="tb-all-menus"
-	type="menu"
+	usepanelview="menu"
 	label="&tb-all-menus.label;"
 	tooltiptext="&tb-all-menus.tooltip;">
 	<menupopup id="tb-all-menus-popup"
