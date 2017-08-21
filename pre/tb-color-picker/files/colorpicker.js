@@ -323,7 +323,7 @@ function setupInputs() {
 		event.target.focus();
 		doApply(updateColor, textBoxChange(this));
 	}
-
+	document.getElementById('nc').addEventListener('change', selectChange);
 	for (var i = 0; i < inputs.length; i++) {
 		var input = document.getElementById(inputIds[i]);
 		input.addEventListener('keydown', function (event) {
@@ -842,3 +842,10 @@ function updateColor(r, g, b, input) {
 	}
 	doApply(drawPanel, currentColor);
 }
+
+document.addEventListener('DOMContentLoaded', function(event) {
+	if(document.location.hash == '') {
+		document.location = document.location.href + "#color";
+	}
+	startup();
+});
