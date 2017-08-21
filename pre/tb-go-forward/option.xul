@@ -1,0 +1,12 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&tb-go-forward.label;" />
+	<preferences>
+		<preference id="{{pref_root}}showamenu.forward-button" name="{{pref_root}}showamenu.forward-button"
+			type="bool"/>
+		<preference id="{{pref_root}}tb-go-forward.hide-when-disabled" name="{{pref_root}}tb-go-forward.hide-when-disabled"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}showamenu.forward-button" label="&tb-go-forward.option.label;"/>
+	<checkbox preference="{{pref_root}}tb-go-forward.hide-when-disabled" label="&tb-go-forward.disabled.option;"/>
+</groupbox>

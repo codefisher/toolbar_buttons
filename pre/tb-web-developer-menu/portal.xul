@@ -3,4 +3,5 @@
 	id="tb-web-developer-menu"
 	label="&tb-web-developer-menu.label;"
 	tooltiptext="&tb-web-developer-menu.tooltip;"
+	onclick="toolbar_buttons.webDeveloperOpener(event);"
 	oncommand="toolbar_buttons.showAMenu(event, 'webDeveloperMenu');" />

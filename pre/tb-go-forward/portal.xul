@@ -12,4 +12,6 @@
 		oncommand="window.gotoHistoryIndex(event); event.stopPropagation();"
 		onclick="window.checkForMiddleClick(this, event);"
 		context=""/>
+	<observes element="Browser:ForwardOrForwardDuplicate" attribute="disabled"
+			  onbroadcast="toolbar_buttons.forwardButtonBroadcast(event);" />
 </toolbarbutton>

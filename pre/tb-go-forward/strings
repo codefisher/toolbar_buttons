@@ -1,2 +1,4 @@
 tb-go-forward.label=Forward
 tb-go-forward.tooltip=Forward
+tb-go-forward.option.label=Also show the default Forward button.
+tb-go-forward.disabled.option=Hide Forward button when disabled.

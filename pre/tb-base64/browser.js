@@ -26,13 +26,14 @@ base64: function(event) {
 	if (!localFile) return;
 	var stringBundle = toolbar_buttons.interfaces.StringBundleService
 		.createBundle("chrome://{{chrome_name}}/locale/{{locale_file_prefix}}button.properties");
-	var title = stringBundle.GetStringFromName("tb-base64-alert");
 	var contentType;
 	
 	try {
 		contentType = Cc["@mozilla.org/mime;1"].getService(Ci.nsIMIMEService).getTypeFromFile(localFile);
 	} catch(e){
-		toolbar_buttons.interfaces.PromptService.alert(win, title, stringBundle.GetStringFromName("tb-base64-alert-content-type"));
+		toolbar_buttons.interfaces.PromptService.alert(win, 
+			stringBundle.GetStringFromName("tb-base64-alert"), 
+			stringBundle.GetStringFromName("tb-base64-alert-content-type"));
 		return;
 	}
 	var inputStream = Cc["@mozilla.org/network/file-input-stream;1"].createInstance(Ci.nsIFileInputStream);
@@ -41,5 +42,12 @@ base64: function(event) {
 	stream.setInputStream(inputStream);
 	var encoded = win.btoa(stream.readBytes(stream.available()));
 	Cc["@mozilla.org/widget/clipboardhelper;1"].getService(Ci.nsIClipboardHelper).copyString("data:" + contentType + ";base64," + encoded);
-	toolbar_buttons.interfaces.PromptService.alert(win, title, stringBundle.GetStringFromName("tb-base64-alert-copied"));
+	toolbar_buttons.interfaces.PromptService.alert(win, 
+		stringBundle.GetStringFromName("tb-base64-alert"), 
+		stringBundle.GetStringFromName("tb-base64-alert-copied"));
+}
+
+base64drop: function(event) {
+	var win = event.target.ownerDocument.defaultView;
+	win.alert(event.DataTransfer.files);
 }

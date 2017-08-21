@@ -1,0 +1,9 @@
+settings.label:cog.png
+<groupbox>
+	<caption label="&tb-go-back.label;" />
+	<preferences>
+		<preference id="{{pref_root}}showamenu.back-button" name="{{pref_root}}showamenu.back-button"
+			type="bool"/>
+	</preferences>
+	<checkbox preference="{{pref_root}}showamenu.back-button" label="&tb-go-back.option.label;"/>
+</groupbox>

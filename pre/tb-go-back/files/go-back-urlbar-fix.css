@@ -1,0 +1,10 @@
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
+  clip-path: none !important;
+  -moz-margin-start: 0px !important;
+}
+
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar {
+  -moz-border-start: 1px solid !important;
+  margin-left: 4px !important;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow !important;
+}

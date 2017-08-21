@@ -3,4 +3,5 @@
 	id="tb-base64"
 	label="&tb-base64.label;"
 	tooltiptext="&tb-base64.tooltip;"
+	ondrop="toolbar_buttons.base64drop(event);"
 	oncommand="toolbar_buttons.base64(event);" />

@@ -1,2 +1,3 @@
 tb-go-back.label=Back
 tb-go-back.tooltip=Back
+tb-go-back.option.label=Also show the default Back button.
