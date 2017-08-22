@@ -5,5 +5,5 @@
     "skip_buttons_without_icons": true,
     "extra_options": true,
     "extended_buttons": true,
-    "restartless": true
+    "restartless": false
 }
