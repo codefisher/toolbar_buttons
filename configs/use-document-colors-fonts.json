@@ -16,13 +16,18 @@
     "menuitems": ["use-document-colors", "use-document-fonts", "min-font-size"],
     "menu_placement": null,
     "use_keyboard_shortcuts": true,
-    "menu_meta": ["page-fonts-colors-menu", "tb-page-fonts-colors.menu", "view"],
+    "menu_meta": ["page-fonts-colors-menu", "tb-page-fonts-colors.menu", ["view", "context"]],
     "file_to_menu": {
         "view": {
             "browser": ["menu_viewPopup", "pageStyleMenu"],
             "suite_browser": ["menu_View_Popup", "menu_UseStyleSheet"],
             "mail": ["menu_View_Popup", "viewBodyMenu"],
-            "read": ["menu_View_Popup", "viewBodyMenu"]
+            "read": ["menu_View_Popup", "viewBodyMenu"],
+            "setting_label": "tb-show-a-menu-view.option.label"
+        },
+        "context": {
+            "browser": ["contentAreaContextMenu", "context-viewinfo"],
+            "setting_label": "tb-show-a-menu-context.option.label"
         }
     },
     "current_version_pref": "current.version.use-document-colors-fonts",

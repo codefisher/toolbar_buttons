@@ -1,9 +1,9 @@
 {
-    "show_updated_prompt": true,
+    "show_updated_prompt": false,
     "merge_images": true,
     "missing_strings": "replace",
-    "restartless": true,
-    "projects": ["data"],
+    "restartless": false,
+    "projects": ["data", "pre"],
     "locale": "all,-ar,-tr,-zh,-cs-CZ,-he-IL",
     "translate_description": true,
     "applications": ["browser", "messenger", "suite"]

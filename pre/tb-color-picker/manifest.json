@@ -1,4 +1,9 @@
 {
     "default_title": "tb-color-picker.label",
-    "name": "tb-color-picker.label"
+    "name": "tb-color-picker.label",
+    "files": [
+        "colorpicker.css",
+        "colorpicker.js",
+        "colorpicker.html"
+    ]
 }

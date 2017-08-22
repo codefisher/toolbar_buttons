@@ -6,5 +6,7 @@
         "tb-clear-cache.label",
         "tb-clear-cache.message",
         "tb-clear-cache.question"
-    ]
+    ],
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/clear-cache-and-data/addon-620044-latest.xpi?src=dp-btn-primary",
+    "amo_page": "https://addons.mozilla.org/addon/clear-cache-and-data/"
 }

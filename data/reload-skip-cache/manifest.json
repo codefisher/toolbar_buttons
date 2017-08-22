@@ -1,5 +1,6 @@
 {
     "default_title": "reload-skip-cache.label",
     "name": "reload-skip-cache.label",
-    "download": "https://addons.mozilla.org/firefox/downloads/latest/reload-skip-cache-button/addon-627234-latest.xpi?src=ss"
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/reload-skip-cache-button/addon-627234-latest.xpi?src=ss",
+    "amo_page": "https://addons.mozilla.org/addon/reload-skip-cache-button/"
 }

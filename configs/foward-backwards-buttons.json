@@ -1,0 +1,22 @@
+{
+    "name": "Back and Forward Buttons",
+    "description": "Replaces the default forward and back buttons with two that can be placed anywhere.",
+    "icon": "arrow-back.png",
+
+    "buttons": [
+        "tb-go-back", "tb-go-forward", "snap-back"
+    ],
+    "extension_id": "foward-backwards-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+        "tb-go-back", "tb-go-forward"
+    ],
+    "extra_prefs": [
+        ["showamenu.back-button", "false"],
+        ["showamenu.forward-button", "false"]
+    ],
+    "menuitems": null,
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.foward-backwards-buttons",
+    "chrome_name": "foward-backwards-toolbar-button",
+    "locale_file_prefix": "foward-backwards_"
+}

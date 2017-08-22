@@ -86,6 +86,8 @@
 <!ENTITY unread-threads.label "Unread Threads">
 <!ENTITY tb-free-memory.label "Free Memory">
 <!ENTITY tb-show-a-menu.option.label "Show in menu.">
+<!ENTITY tb-show-a-menu-view.option.label "Show in View menu.">
+<!ENTITY tb-show-a-menu-context.option.label "Show in context menu.">
 <!ENTITY compact.label "Compact">
 <!ENTITY toggle.checkbox "Reload page after toggling setting.">
 <!ENTITY all-threads.label "All Threads">

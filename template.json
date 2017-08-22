@@ -1,0 +1,17 @@
+{
+    "name": " Buttons",
+    "description": "",
+    "icon": "",
+
+    "buttons": [
+
+    ],
+    "extension_id": "-buttons-single@codefisher.org",
+    "add_to_main_toolbar": [
+
+    ],
+    "use_keyboard_shortcuts": true,
+    "current_version_pref": "current.version.-buttons",
+    "chrome_name": "-toolbar-button",
+    "locale_file_prefix": "_"
+}

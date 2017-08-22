@@ -9,6 +9,7 @@ def main():
     config["buttons"] = [button]
     config["extension_id"] = "%s-single@codefisher.org" % button
     config["add_to_main_toolbar"] = [button]
+    config["fix_meta"] = True
     config["current_version_pref"] = 'current.version.%s' % button
     config["chrome_name"] = "%s-toolbar-button" % button
     config["locale_file_prefix"] = "%s_" % button
