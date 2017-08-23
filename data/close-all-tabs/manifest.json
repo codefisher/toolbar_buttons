@@ -1,4 +1,6 @@
 {
-    "default_title": "close-all-tabs.label",
-    "name": "close-all-tabs.tooltip"
+    "default_title": "close-all-tabs.tooltip",
+    "name": "close-all-tabs.tooltip",
+    "amo_page": "https://addons.mozilla.org/addon/close-all-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/close-all-button/addon-846546-latest.xpi"
 }
