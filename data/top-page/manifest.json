@@ -1,0 +1,5 @@
+{
+    "default_title": "top-page.label",
+    "name": "top-page.tooltip",
+    "permissions": ["activeTab"]
+}
