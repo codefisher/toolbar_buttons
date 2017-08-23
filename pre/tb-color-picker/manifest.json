@@ -4,6 +4,7 @@
     "files": [
         "colorpicker.css",
         "colorpicker.js",
-        "colorpicker.html"
+        "colorpicker.html",
+        "pickerweb.js"
     ]
 }

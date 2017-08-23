@@ -842,10 +842,3 @@ function updateColor(r, g, b, input) {
 	}
 	doApply(drawPanel, currentColor);
 }
-
-document.addEventListener('DOMContentLoaded', function(event) {
-	if(document.location.hash == '') {
-		document.location = document.location.href + "#color";
-	}
-	startup();
-});

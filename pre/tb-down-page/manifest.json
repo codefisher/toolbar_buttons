@@ -1,0 +1,5 @@
+{
+    "default_title": "tb-down-page.label",
+    "name": "tb-down-page.tooltip",
+    "permissions": ["activeTab"]
+}
