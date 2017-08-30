@@ -1,5 +1,7 @@
 {
     "default_title": "tb-up-page.label",
     "name": "tb-up-page.tooltip",
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "amo_page": "https://addons.mozilla.org/addon/scroll-one-page-up-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/scroll-one-page-up-button/addon-846881-latest.xpi?src=dp-btn-primary"
 }
