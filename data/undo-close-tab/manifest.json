@@ -4,5 +4,6 @@
     "permissions": ["storage", "sessions", "tabs"],
     "strings": [
         "undoCloseTabEmpty"
-    ]
+    ],
+    "extension_id": "undo-close-tab-buttons-single@codefisher.org"
 }
