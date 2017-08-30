@@ -1,5 +1,7 @@
 {
     "default_title": "tb-down-page.label",
     "name": "tb-down-page.tooltip",
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "amo_page": "https://addons.mozilla.org/addon/scroll-one-page-down-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/scroll-one-page-down-button/addon-846883-latest.xpi?src=dp-btn-primary"
 }
