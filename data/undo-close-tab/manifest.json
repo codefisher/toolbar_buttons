@@ -1,5 +1,5 @@
 {
     "default_title": "undo-close-tab.label",
     "name": "undo-close-tab.label",
-    "permissions": ["storage", "sessions"]
+    "permissions": ["storage", "sessions", "tabs"]
 }

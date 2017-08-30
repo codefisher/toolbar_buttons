@@ -1,7 +1,7 @@
 function save_options() {
-	var show_popup = document.getElementById('show-popup').checked;
+	var hide_popup = document.getElementById('hide-popup').checked;
 	browser.storage.local.set({
-		'show_popup': show_popup,
+		'hide_popup': hide_popup,
 	});
 }
 
@@ -10,13 +10,13 @@ function onError(error) {
 }
 
 function onGot(items) {
-	document.getElementById('show-popup').checked = items.show_popup;
+	document.getElementById('hide-popup').checked = items.hide_popup;
 }
 
 function restore_options() {
-	document.getElementById('show-popup').addEventListener('change', save_options);
+	document.getElementById('hide-popup').addEventListener('change', save_options);
 	var gettingItem = browser.storage.local.get({
-		show_popup: false,
+		hide_popup: true,
 	});
 	gettingItem.then(onGot, onError);
 }

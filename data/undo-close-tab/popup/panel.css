@@ -1,0 +1,46 @@
+html, body {
+    min-width: 150px;
+}
+
+.group {
+    padding:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    border:1px solid #ffffff;
+
+    max-width:250px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+.button img {
+    padding:0 2px 0 0;
+    box-sizing: content-box;
+    vertical-align: middle;
+}
+
+.button:hover {
+    border:1px solid #999999;
+    background: #f9f9f9;
+    border-radius: 2px;
+}
+
+input {
+  padding: 0;
+  margin:0;
+  vertical-align: middle;
+}
+
+hr {
+    border: 0;
+    border-bottom:1px solid #999999;
+}
