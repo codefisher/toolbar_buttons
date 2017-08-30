@@ -1,5 +1,7 @@
 {
     "default_title": "bottom-page.label",
     "name": "bottom-page.tooltip",
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "amo_page": "https://addons.mozilla.org/addon/go-to-bottom-of-page-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/go-to-bottom-of-page-button/addon-846876-latest.xpi?src=dp-btn-primary"
 }
