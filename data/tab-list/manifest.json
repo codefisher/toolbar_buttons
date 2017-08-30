@@ -1,0 +1,5 @@
+{
+  "default_title": "tab-list.label",
+  "name": "tab-list.label",
+  "permissions": ["tabs"]
+}
