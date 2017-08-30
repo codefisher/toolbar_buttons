@@ -1,0 +1,5 @@
+{
+    "default_title": "close-other-tabs.label",
+    "name": "close-other-tabs.label",
+    "permissions": ["storage"]
+}
