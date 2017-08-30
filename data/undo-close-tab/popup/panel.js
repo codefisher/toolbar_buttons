@@ -1,9 +1,15 @@
 function restoreMostRecent(sessionInfos) {
+    let tabs = document.getElementById('tabs');
 	if (!sessionInfos.length) {
-		console.log("No sessions found")
-		return;
-	}
-	let tabs = document.getElementById('tabs');
+        let div = document.createElement('div');
+        div.classList.add('button');
+        div.classList.add('disabled');
+        let text = document.createTextNode(browser.i18n.getMessage("undoCloseTabEmpty"));
+        div.appendChild(text);
+        tabs.appendChild(div);
+        return;
+    }
+    let text = null;
 	for(let i = 0; i < sessionInfos.length; i++) {
         let sessionInfo = sessionInfos[i];
         let div = document.createElement('div');
@@ -14,9 +20,15 @@ function restoreMostRecent(sessionInfos) {
             img.setAttribute('width', '16');
             img.setAttribute('height', '16');
             div.append(img);
-            var text = document.createTextNode(sessionInfo.tab.title);
+            text = document.createTextNode(sessionInfo.tab.title);
         } else {
-            var text = document.createTextNode(sessionInfo.tab.title);
+            continue;
+            /*let windowTabs = sessionInfo.window.tabs;
+            for(let i = 0; i < windowTabs.length; i++) {
+                if (windowTabs[i].active) {
+                    text = document.createTextNode(windowTabs[i].title);
+                }
+            }*/
         }
         div.appendChild(text);
         div.addEventListener('click', function() {
@@ -35,12 +47,25 @@ function onError(error) {
 	console.log(error);
 }
 
+async function restoreAll() {
+    let sessionInfos = await browser.sessions.getRecentlyClosed({
+        maxResults: 10
+    });
+    for(let i = 0; i < sessionInfos.length; i++) {
+        if(sessionInfos[i].tab) {
+           browser.sessions.restore(sessionInfos[i].tab.sessionId);
+       }
+    }
+    window.close();
+}
+
 
 function load_session() {
-    var gettingSessions = browser.sessions.getRecentlyClosed({
+    let gettingSessions = browser.sessions.getRecentlyClosed({
         maxResults: 10
     });
     gettingSessions.then(restoreMostRecent, onError);
+    document.getElementById("restore-all").addEventListener('click', restoreAll);
 }
 
 document.addEventListener('DOMContentLoaded', load_session);

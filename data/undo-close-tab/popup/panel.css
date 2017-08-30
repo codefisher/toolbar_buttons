@@ -28,6 +28,10 @@ html, body {
     vertical-align: middle;
 }
 
+.disabled {
+    color:#999;
+}
+
 .button:hover {
     border:1px solid #999999;
     background: #f9f9f9;

@@ -1,1 +1,3 @@
 undo-close-tab.label.option.label=Do not show a list of recently closed tabs on the Undo Close Tab button.
+undoCloseTabEmpty=No Tabs to Restore...
+undoCloseTabRestoreAll=Restore All Tabs
