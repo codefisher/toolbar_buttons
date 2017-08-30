@@ -1,5 +1,7 @@
 {
     "default_title": "top-page.label",
     "name": "top-page.tooltip",
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab"],
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/go-to-top-of-page-button/addon-846879-latest.xpi?src=dp-btn-primary",
+    "amo_page": "https://addons.mozilla.org/addon/go-to-top-of-page-button/"
 }
