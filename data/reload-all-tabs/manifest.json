@@ -1,0 +1,5 @@
+{
+    "default_title": "reload-all-tabs.label",
+    "name": "reload-all-tabs.label",
+    "permissions": ["storage"]
+}
