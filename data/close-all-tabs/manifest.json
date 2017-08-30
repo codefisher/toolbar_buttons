@@ -1,6 +1,7 @@
 {
     "default_title": "close-all-tabs.tooltip",
     "name": "close-all-tabs.tooltip",
+    "permissions": ["storage"],
     "amo_page": "https://addons.mozilla.org/addon/close-all-button/",
     "download": "https://addons.mozilla.org/firefox/downloads/latest/close-all-button/addon-846546-latest.xpi"
 }
