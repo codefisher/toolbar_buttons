@@ -5,5 +5,7 @@
     "strings": [
         "undoCloseTabEmpty"
     ],
-    "extension_id": "undo-close-tab-buttons-single@codefisher.org"
+    "extension_id": "undo-close-tab-buttons-single@codefisher.org",
+    "amo_page": "https://addons.mozilla.org/addon/undo-close-tab-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/undo-close-tab-button/addon-630686-latest.xpi?src=dp-btn-primary"
 }
