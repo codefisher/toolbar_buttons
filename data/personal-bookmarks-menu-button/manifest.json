@@ -1,0 +1,5 @@
+{
+    "default_title": "personal-bookmarks-menu-button.label",
+    "name": "personal-bookmarks-menu-button.label",
+    "permissions": ["bookmarks", "storage", "activeTab", "tabs"]
+}

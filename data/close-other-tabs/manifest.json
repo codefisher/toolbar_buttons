@@ -1,5 +1,7 @@
 {
     "default_title": "close-other-tabs.label",
     "name": "close-other-tabs.label",
-    "permissions": ["storage"]
+    "permissions": ["storage"],
+    "amo_page": "https://addons.mozilla.org/addon/close-other-tabs-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/close-other-tabs-button/addon-849276-latest.xpi?src=dp-btn-primary"
 }

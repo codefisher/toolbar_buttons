@@ -1,5 +1,7 @@
 {
     "default_title": "reload-all-tabs.label",
     "name": "reload-all-tabs.label",
-    "permissions": ["storage"]
+    "permissions": ["storage"],
+    "amo_page": "https://addons.mozilla.org/addon/reload-tabs-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/reload-tabs-button/addon-849281-latest.xpi?src=dp-btn-primary"
 }

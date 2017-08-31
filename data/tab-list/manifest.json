@@ -1,5 +1,7 @@
 {
   "default_title": "tab-list.label",
   "name": "tab-list.label",
-  "permissions": ["tabs"]
+  "permissions": ["tabs"],
+  "amo-page": "https://addons.mozilla.org/addon/tab-list-button/",
+  "download": "https://addons.mozilla.org/firefox/downloads/latest/tab-list-button/addon-849279-latest.xpi?src=dp-btn-primary"
 }
