@@ -1,5 +1,7 @@
 {
     "default_title": "personal-bookmarks-menu-button.label",
     "name": "personal-bookmarks-menu-button.label",
-    "permissions": ["bookmarks", "storage", "activeTab", "tabs"]
+    "permissions": ["bookmarks", "storage", "activeTab", "tabs"],
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/bookmark-toolbar-menu-button/addon-620668-latest.xpi?src=dp-btn-primary",
+    "amo_page": "https://addons.mozilla.org/addon/bookmark-toolbar-menu-button/"
 }
