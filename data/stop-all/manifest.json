@@ -1,0 +1,7 @@
+{
+    "default_title": "stop-all.label",
+    "name": "stop-all.label",
+    "permissions": ["<all_urls>", "tabs"],
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/stop-all-button/addon-858391-latest.xpi",
+    "amo_page": "https://addons.mozilla.org/addon/stop-all-button/"
+}
