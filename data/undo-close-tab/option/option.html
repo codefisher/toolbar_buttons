@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <form>
-      <label><input type="checkbox" id="hide-popup"><span class="message">__MSG_undo-close-tab.label.option.label__</span></label>
-    </form>
-	<script src="/localise.js"></script>
-    <script src="option.js"></script>
-  </body>
+<form>
+    <div>
+        <label><input type="checkbox" id="hide-popup"> <span
+                class="message">__MSG_undo-close-tab.label.option.label__</span></label>
+    </div>
+    <div>
+        <label><input type="number" id="tab-count"> <span
+                class="message">__MSG_undoCloseTabRestoreCount__</span></label>
+    </div>
+</form>
+<script src="/localise.js"></script>
+<script src="option.js"></script>
+</body>
 
 </html>

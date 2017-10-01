@@ -48,8 +48,11 @@ function onError(error) {
 }
 
 async function restoreAll() {
+    let settings = await browser.storage.local.get({
+        tab_count: 10,
+    });
     let sessionInfos = await browser.sessions.getRecentlyClosed({
-        maxResults: 10
+        maxResults: settings.tab_count
     });
     for(let i = 0; i < sessionInfos.length; i++) {
         if(sessionInfos[i].tab) {
@@ -60,9 +63,12 @@ async function restoreAll() {
 }
 
 
-function load_session() {
+async function load_session() {
+    let settings = await browser.storage.local.get({
+        tab_count: 10
+    });
     let gettingSessions = browser.sessions.getRecentlyClosed({
-        maxResults: 10
+        maxResults: settings.tab_count
     });
     gettingSessions.then(restoreMostRecent, onError);
     document.getElementById("restore-all").addEventListener('click', restoreAll);

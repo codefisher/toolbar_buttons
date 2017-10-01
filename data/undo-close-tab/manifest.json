@@ -2,7 +2,7 @@
     "default_title": "undo-close-tab.label",
     "name": "undo-close-tab.label",
     "permissions": ["storage", "sessions", "tabs"],
-    "strings": [
+    "used_strings": [
         "undoCloseTabEmpty"
     ],
     "extension_id": "undo-close-tab-buttons-single@codefisher.org",
