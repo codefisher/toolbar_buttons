@@ -33,3 +33,11 @@ hr {
     border: 0;
     border-bottom:1px solid #999999;
 }
+
+#tb-go-clear-cache {
+    display:none;
+    max-width:150px;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
+}

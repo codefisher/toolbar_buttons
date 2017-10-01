@@ -2,7 +2,7 @@
     "default_title": "tb-clear-cache.label",
     "name": "tb-clear-cache.tooltip",
     "permissions": ["storage", "browsingData", "notifications"],
-    "strings": [
+    "used_strings": [
         "tb-clear-cache.label",
         "tb-clear-cache.message",
         "tb-clear-cache.question"

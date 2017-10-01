@@ -10,55 +10,62 @@
 <div class="group">
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-history" name="tb-clear-cache-history">
-		<label for="tb-clear-cache-history">__MSG_tb-clear-cache.history__</label>
+		<label for="tb-clear-cache-history" class="message">__MSG_tb-clear-cache.history__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-download" name="tb-clear-cache-download">
-		<label for="tb-clear-cache-download">__MSG_tb-clear-cache.download__</label>
+		<label for="tb-clear-cache-download" class="message">__MSG_tb-clear-cache.download__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-form-history" name="tb-clear-cache-form-history">
-		<label for="tb-clear-cache-form-history">__MSG_tb-clear-cache.form-history__</label>
+		<label for="tb-clear-cache-form-history" class="message">__MSG_tb-clear-cache.form-history__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-cookies" name="tb-clear-cache-cookies">
-		<label for="tb-clear-cache-cookies">__MSG_tb-clear-cache.cookies__</label>
+		<label for="tb-clear-cache-cookies" class="message">__MSG_tb-clear-cache.cookies__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-cache" name="tb-clear-cache-cache">
-		<label for="tb-clear-cache-cache">__MSG_tb-clear-cache.cache__</label>
+		<label for="tb-clear-cache-cache" class="message">__MSG_tb-clear-cache.cache__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-logins" name="tb-clear-cache-logins">
-		<label for="tb-clear-cache-logins">__MSG_tb-clear-cache.logins__</label>
+		<label for="tb-clear-cache-logins" class="message">__MSG_tb-clear-cache.logins__</label>
 	</div>
 	<div class="button">
 		<input type="checkbox" id="tb-clear-cache-offline-data" name="tb-clear-cache-offline-data">
-		<label for="tb-clear-cache-offline-data">__MSG_tb-clear-cache.offline-data__</label>
+		<label for="tb-clear-cache-offline-data" class="message">__MSG_tb-clear-cache.offline-data__</label>
 	</div>
 	<hr />
 	<div class="button">
 		<input type="radio" id="tb-clear-cache-last-hour" name="timespan" value="0">
-		<label for="tb-clear-cache-last-hour">__MSG_tb-clear-cache.last-hour__</label>
+		<label for="tb-clear-cache-last-hour" class="message">__MSG_tb-clear-cache.last-hour__</label>
 	</div>
 	<div class="button">
 		<input type="radio" id="tb-clear-cache-last-two-hours" name="timespan" value="1">
-		<label for="tb-clear-cache-last-two-hours">__MSG_tb-clear-cache.last-two-hours__</label>
+		<label for="tb-clear-cache-last-two-hours" class="message">__MSG_tb-clear-cache.last-two-hours__</label>
 	</div>
 	<div class="button">
 		<input type="radio" id="tb-clear-cache-last-four-hours" name="timespan" value="2">
-		<label for="tb-clear-cache-last-four-hours">__MSG_tb-clear-cache.last-four-hours__</label>
+		<label for="tb-clear-cache-last-four-hours" class="message">__MSG_tb-clear-cache.last-four-hours__</label>
 	</div>
 	<div class="button">
 		<input type="radio" id="tb-clear-cache-today" name="timespan" value="3">
-		<label for="tb-clear-cache-today">__MSG_tb-clear-cache.today__</label>
+		<label for="tb-clear-cache-today" class="message">__MSG_tb-clear-cache.today__</label>
 	</div>
 	<div class="button">
 		<input type="radio" id="tb-clear-cache-everything" name="timespan" value="4">
-		<label for="tb-clear-cache-everything">__MSG_tb-clear-cache.everything__</label>
+		<label for="tb-clear-cache-everything" class="message">__MSG_tb-clear-cache.everything__</label>
 	</div>
 	<hr />
-	<div class="button" id="tb-clear-cache">__MSG_tb-clear-cache.window__</div>
+	<div class="button message" id="tb-clear-cache">__MSG_tb-clear-cache.window__</div>
+	<div id="tb-go-clear-cache">
+		<span class="message">__MSG_tb-clear-cache.question__</span>
+		<div>
+			<button class="message" id="tb-clear-yes">__MSG_tb-clear-cache.yes__</button>
+			<button class="message" id="tb-clear-no">__MSG_tb-clear-cache.no__</button>
+		</div>
+	</div>
 </div>
 <script src="/popup/panel.js"></script>
 <script src="/localise.js"></script>
