@@ -7,6 +7,7 @@
 	"output_folder": "extensions/webextension",
 	"webextension": true,
 	"menuitems": "all",
+	"skip_buttons_without_icons": false,
 	"menu_placement": ["tools", "file"],
 	"use_keyboard_shortcuts": true,
 	"translate_description": true,
