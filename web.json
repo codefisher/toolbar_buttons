@@ -1,6 +1,6 @@
 {
     "show_updated_prompt": false,
-    "projects": ["data", "staging", "pre", "depreciated"],
+    "projects": ["data", "staging", "pre", "depreciated", "webext"],
     "include_icons_for_custom_window": true,
     "skip_buttons_without_icons": true,
     "extra_options": true,

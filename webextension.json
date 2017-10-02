@@ -1,5 +1,5 @@
 {
-	"projects": ["data", "staging", "pre"],
+	"projects": ["data", "staging", "pre", "webext"],
 	"extra_options": true,
 	"include_icons_for_custom_window": true,
 	"fix_meta": true,
@@ -11,5 +11,5 @@
 	"use_keyboard_shortcuts": true,
 	"translate_description": true,
 	"applications": ["browser", "messenger", "suite"],
-	"version": "1.3"
+	"version": "1.4"
 }
