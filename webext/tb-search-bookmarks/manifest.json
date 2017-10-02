@@ -1,0 +1,13 @@
+{
+    "default_title": "tb-search-bookmarks.label",
+    "name": "tb-search-bookmarks.label",
+    "description": "A button with a popup for searching your bookmarks.",
+    "permissions": ["tabs", "activeTab", "bookmarks", "storage"],
+    "download": "",
+    "amo_page": "https://addons.mozilla.org/addon/close-tab-to-the-right-button/",
+  "strings": [
+    ["tb-search-bookmarks.label", "Search Bookmarks"],
+    ["tb-search-bookmarks.new-tab", "Open in New Tab"]
+  ],
+  "images": "bookmark-explore.png"
+}

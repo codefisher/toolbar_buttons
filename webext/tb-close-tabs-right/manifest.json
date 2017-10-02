@@ -1,0 +1,13 @@
+{
+    "default_title": "tb-close-tabs-right.label",
+    "name": "tb-close-tabs-right.label",
+    "description": "Close all tabs to the right of the current tab.",
+    "permissions": ["tabs", "storage"],
+    "download": "",
+    "amo_page": "",
+  "strings": [
+    ["tb-close-tabs-right.label", "Close Tabs to the right"],
+    ["tbCloseAllTabsNotPinned", "Don't close pinned tabs"]
+  ],
+  "images": "tabs-delete.png"
+}

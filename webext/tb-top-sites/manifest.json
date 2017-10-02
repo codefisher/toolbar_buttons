@@ -1,0 +1,13 @@
+{
+    "default_title": "tb-top-sites.label",
+    "name": "tb-top-sites.label",
+    "description": "A list of the top sites that you visit.",
+    "permissions": ["activeTab", "storage", "topSites"],
+    "download": "",
+    "amo_page": "",
+  "strings": [
+    ["tb-top-sites.label", "Top Sites"],
+    ["tb-top-sites.new-tab", "Open in New Tab"]
+  ],
+  "images": "flame.png"
+}
