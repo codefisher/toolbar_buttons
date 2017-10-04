@@ -1,0 +1,30 @@
+{
+  "extensionDescription": {
+    "description": "",
+    "message": "Reopen the last closed tab.  Really nice when a tab is closed by mistake, or you decided you did not really want to close it moments too late."
+  },
+  "extensionName": {
+    "description": "",
+    "message": "Undo Close Tab Button"
+  },
+  "undoCloseTabEmpty": {
+    "description": "",
+    "message": "No Tabs to Restore..."
+  },
+  "undoCloseTabLabel": {
+    "description": "",
+    "message": "Reabrir pesta\u00f1a cerrada"
+  },
+  "undoCloseTabLabelOptionLabel": {
+    "description": "",
+    "message": "Do not show a list of recently closed tabs on the Undo Close Tab button."
+  },
+  "undoCloseTabRestoreAll": {
+    "description": "",
+    "message": "Restore All Tabs"
+  },
+  "undoCloseTabRestoreCount": {
+    "description": "",
+    "message": "How many to show in list."
+  }
+}

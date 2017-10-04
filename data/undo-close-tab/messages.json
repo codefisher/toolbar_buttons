@@ -1,0 +1,22 @@
+{
+  "undoCloseTabEmpty": {
+    "description": "For the popup when the session is empty.",
+    "message": "No Tabs to Restore..."
+  },
+  "undoCloseTabLabel": {
+    "description": "Title for the button",
+    "message": "Undo Close Tab"
+  },
+  "undoCloseTabLabelOptionLabel": {
+    "description": "From the extension options",
+    "message": "Do not show a list of recently closed tabs on the Undo Close Tab button."
+  },
+  "undoCloseTabRestoreAll": {
+    "description": "Menu item at the bottom of the popup to restore all tabs.",
+    "message": "Restore All Tabs"
+  },
+  "undoCloseTabRestoreCount": {
+    "description": "From the extension options.",
+    "message": "How many tabs to show in list."
+  }
+}

@@ -1,6 +1,6 @@
 {
     "default_title": "undo-close-tab.label",
-    "name": "undo-close-tab.label",
+    "name": "Undo Close Tab Button",
     "permissions": ["storage", "sessions", "tabs"],
     "used_strings": [
         "undoCloseTabEmpty"
