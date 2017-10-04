@@ -34,6 +34,7 @@ var wheel = document.getElementById("w"),
 	hex3match = /(.)(.)(.)/,
 	hex3replace = "$1$1$2$2$3$3",
 	hexChars = "0123456789ABCDEF",
+	hexDisplay = "upper",
 	chars = "0369CF",
 	inputs = [["Hue", hueMax], ["Saturation", HSVmax], ["Value", HSVmax],
 		["Red", RGBmax], ["Green", RGBmax], ["Blue", RGBmax]],
@@ -278,6 +279,50 @@ function getSaturation(r, g, b) {
 
 function solveRGB(r, g, b) {
 	return [getHue(r, g, b), getSaturation(r, g, b), getValue(r, g, b)];
+}
+
+function getHSL(r, g, b) {
+
+	var rv = r / 255;
+	var gv = g / 255;
+	var bv = b / 255;
+
+	var max = Math.max(rv, gv, bv);
+	var min = Math.min(rv, gv, bv);
+	var diff = max - min;
+	var sum = max + min;
+
+	var l = sum / 2;
+
+	if (diff == 0) {
+		return [0, 0, l]
+	}
+
+	var s = diff / (2.0 - sum);
+	if (l < 0.5) {
+		s = diff / sum;
+	}
+
+	var dr = (((max - rv) / 6) + (diff / 2)) / diff;
+	var dg = (((max - gv) / 6) + (diff / 2)) / diff;
+	var db = (((max - bv) / 6) + (diff / 2)) / diff;
+
+	var h = 0;
+	if (rv == max) {
+		h = db - dg;
+	} else if (gv == max) {
+		h = (1.0 / 3) + dr - db;
+	} else if (bv == max) {
+		h = (2.0 / 3) + dg - dr;
+	}
+
+	if (h < 0) {
+		h += 1;
+	}
+	if (h > 1) {
+		h -= 1;
+	}
+	return [h * 360, s * 100, l * 100];
 }
 
 function doApply(func, args) {
@@ -826,8 +871,12 @@ function updateColor(r, g, b, input) {
 	setPalette(hex);
 	doApply(setWheel, currentHsv);
 	doSetCurrent(newColor);
-	if (input != "x") {
-		hexNode.value = getHex(r, g, b);
+	if (input !== "x") {
+		if(hexDisplay === "lower") {
+            hexNode.value = getHex(r, g, b).toLowerCase();
+        } else {
+			hexNode.value = getHex(r, g, b).toUpperCase();
+		}
 	}
 	for (var i = 0; i < inputBoxes.length; i++) {
 		if (input != inputBoxes[i].id && inputBoxes[i] !== document.activeElement) {

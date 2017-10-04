@@ -1,10 +1,56 @@
 {
-    "default_title": "tb-color-picker.label",
-    "name": "tb-color-picker.label",
-    "files": [
-        "colorpicker.css",
-        "colorpicker.js",
-        "colorpicker.html",
-        "pickerweb.js"
+  "default_title": "tb-color-picker.label",
+  "name": "tb-color-picker.label",
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "clipboardWrite",
+    "storage",
+    "notifications"
+  ],
+  "files": [
+    "colorpicker.css",
+    "colorpicker.js",
+    "colorpicker.html",
+    "pickerweb.js",
+    "dropper.js",
+    "dropper.css",
+    "close.png"
+  ],
+  "background": {
+    "scripts": [
+      "background.js",
+      "files/colorpicker.js"
     ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "files/dropper.js",
+        "files/colorpicker.js"
+      ],
+      "css": [
+        "files/dropper.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    "files/close.png"
+  ],
+  "messages": {
+    "tbColorPickerCopied": {
+      "message": "Copied color $COLOR$ to clipboard.",
+      "description": "Tells the user which cokir they copied.",
+      "placeholders": {
+        "url": {
+          "content": "$1",
+          "example": "#FF0000"
+        }
+      }
+    }
+  }
 }

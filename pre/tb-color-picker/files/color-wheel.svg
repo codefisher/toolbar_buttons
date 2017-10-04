@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="16" height="16" zversion="1.1">
+	<title>Color Wheel</title>
+	<desc>Color Wheel</desc>
+	<category>drawing</category>
+	<g id="icon" transform="translate(8,8)">
+		<defs>
+			<linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#f00" stop-opacity="0" />
+				<stop offset="50%" stop-color="#f00" />
+				<stop offset="100%" stop-color="#f00" stop-opacity="0" />
+			</linearGradient>
+			<linearGradient id="masker" x1="0%" y1="0%" x2="0%" y2="100%">
+				<stop offset="0%" stop-color="#fff" stop-opacity="0" />
+				<stop offset="100%" stop-color="#fff" />
+			</linearGradient>
+			<linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#00f" stop-opacity="0" />
+				<stop offset="50%" stop-color="#00f" />
+				<stop offset="100%" stop-color="#00f" stop-opacity="0" />
+			</linearGradient>
+			<linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#0f0" stop-opacity="0" />
+				<stop offset="50%" stop-color="#0f0" />
+				<stop offset="100%" stop-color="#0f0" stop-opacity="0" />
+			</linearGradient>
+			<linearGradient id="yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#ff0" stop-opacity="0" />
+				<stop offset="50%" stop-color="#ff0" />
+				<stop offset="100%" stop-color="#ff0" stop-opacity="0" />
+			</linearGradient>
+			<linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#0ff" stop-opacity="0" />
+				<stop offset="50%" stop-color="#0ff" />
+				<stop offset="100%" stop-color="#0ff" stop-opacity="0" />
+			</linearGradient>
+			<linearGradient id="magenta" x1="0%" y1="0%" x2="100%" y2="0%">
+				<stop offset="0%" stop-color="#f0f" stop-opacity="0" />
+				<stop offset="50%" stop-color="#f0f" />
+				<stop offset="100%" stop-color="#f0f" stop-opacity="0" />
+			</linearGradient>
+			<radialGradient id="white">
+				<stop offset="0%" stop-color="#fff" stop-opacity="0" />
+				<stop offset="80%" stop-color="#fff" stop-opacity="0" />
+				<stop offset="100%" stop-color="#fff" />
+			</radialGradient>
+			<mask id="Mask">
+				<path fill="url(#masker)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z" />
+			</mask>
+		</defs>
+		<circle id="round" r="6" fill="#fff" />
+		<path transform="rotate(210)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#yellow)" mask="url(#Mask)" />
+		<path transform="rotate(90)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#cyan)" mask="url(#Mask)" />
+		<path transform="rotate(-30)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#magenta)" mask="url(#Mask)" />
+		<path transform="rotate(-90)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#red)" mask="url(#Mask)" />
+		<path transform="rotate(30)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#blue)" mask="url(#Mask)" />
+		<path transform="rotate(150)" d="M0,0 l6.062177,3.5 a7,7 0 0,1 -12.124354,0 Z"
+			fill="url(#green)" mask="url(#Mask)" />
+		<circle id="round" r="6" fill="url(#white)" />
+	</g>
+</svg>

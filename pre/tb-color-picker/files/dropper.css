@@ -1,0 +1,76 @@
+#tb-color-picker-dropper-box-wrapper {
+    background: #333333 !important;
+    color:#ffffff !important;
+    border:1px solid #000000 !important;
+    border-radius: 0px 8px 8px 0px !important;
+    position:fixed !important;
+    z-index: 99999;
+    bottom:10px !important;
+    left:0px !important;
+    padding:10px !important;
+    width:270px !important;
+    height:160px !important;
+    font-size:14px !important;
+}
+
+#tb-color-picker-dropper-box-close {
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    border:0 !important;
+    display:block !important;
+}
+
+#tb-color-picker-dropper-box-wrapper canvas {
+    display: none !important;
+}
+
+#tb-color-picker-dropper-box-wrapper table {
+    float:right !important;
+    border-collapse: collapse !important;
+    width:120px !important;
+}
+
+#tb-color-picker-dropper-box-color {
+    width:120px !important;
+    height:35px !important;
+    border:1px solid #000000 !important;
+    border-radius: 4px !important;
+}
+
+#tb-color-picker-dropper-box-info {
+    float:left !important;
+    width:120px !important;
+}
+#tb-color-picker-dropper-box-hex,
+#tb-color-picker-dropper-box-rgb {
+    padding:5px 0 !important;
+}
+
+#tb-color-picker-dropper-box-hex {
+    border-width:0px !important;
+    margin:0 !important;
+    background:inherit !important;
+    font: inherit !important;
+    color:inherit !important;
+}
+
+
+#tb-color-picker-dropper-box-wrapper td {
+    border-collapse: collapse !important;
+    width:10px !important;
+    height:10px !important;
+    border:1px solid #000000 !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+#tb-color-picker-dropper-box-wrapper .tb-color-picker-center {
+    border:1px solid #ff0000 !important;
+}
+#tb-color-picker-dropper-box-wrapper .tb-color-picker-left {
+    border-right:1px solid #ff0000 !important;
+}
+#tb-color-picker-dropper-box-wrapper .tb-color-picker-above {
+    border-bottom:1px solid #ff0000 !important;
+}

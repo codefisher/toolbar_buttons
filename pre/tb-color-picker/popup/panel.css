@@ -1,0 +1,67 @@
+html, body {
+    min-width: 180px;
+}
+
+.group {
+    padding:5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    border:1px solid #ffffff;
+
+    max-width:250px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+.iconic {
+    padding-left:24px;
+    background-repeat:no-repeat;
+    background-position-x: 4px;
+    background-position-y: center;
+}
+
+.group .group {
+    padding:0 0 0 10px;
+}
+
+.button img {
+    padding:0 2px 0 0;
+    box-sizing: content-box;
+    vertical-align: middle;
+}
+
+.disabled {
+    color:#999;
+}
+
+.button:hover {
+    border:1px solid #999999;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+}
+
+hr {
+    border: 0;
+    border-bottom:1px solid #999999;
+}
+
+#open-dropper {
+    background-image:url('eyedropper.png');
+}
+
+#open-colorpicker {
+    background-image:url('color-wheel.png');
+}
+
+#open-options {
+    background-image:url('cog.png');
+}
