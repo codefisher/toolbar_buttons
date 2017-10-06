@@ -1,0 +1,10 @@
+{
+    "default_title": "tbTabCloseHistoryLabel",
+    "name": "Close Tab History Button",
+    "permissions": ["storage", "sessions", "tabs"],
+    "used_strings": [
+        "undoCloseTabEmpty"
+    ],
+    "amo_page": "https://addons.mozilla.org/addon/close-tab-history-button/",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/close-tab-history-button/addon-861208-latest.xpi"
+}

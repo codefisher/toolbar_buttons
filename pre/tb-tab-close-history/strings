@@ -1,2 +1,5 @@
 tb-tab-close-history.label=Recently Closed Tabs
 tb-tab-close-history.tooltip=Open a list of the recently closed tabs.
+undoCloseTabRestoreCount=How many tab to show in the list.
+undoCloseTabEmpty=No Tabs to Restore...
+undoCloseTabRestoreAll=Restore All Tabs
