@@ -1,0 +1,7 @@
+{
+    "default_title": "snap-back.label",
+    "name": "Snap Back Button",
+    "permissions": ["activeTab", "tabs"],
+    "amo_page": "https://addons.mozilla.org/addon/snap-back-button//",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/snap-back-button/addon-860911-latest.xpi"
+}
