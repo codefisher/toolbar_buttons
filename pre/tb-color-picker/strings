@@ -21,3 +21,4 @@ tb-color-picker.window=Window
 tb-color-picker.hex-display=Display Hex codes in:
 tb-color-picker.hex-upper=Upper Case
 tb-color-picker.hex-lower=Lower Case
+tbColorPickerCopy=Copy Color

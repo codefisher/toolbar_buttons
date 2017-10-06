@@ -3,31 +3,71 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <style>
+        optgroup + optgroup {
+            border-top: 1px solid black
+        }
+    </style>
 </head>
 
 <body>
 
 <form>
     <fieldset>
-        <legend class="message">__MSG_tb-color-picker.open-picker__</legend>
+        <legend class="message">__MSG_tbColorPickerOpenPicker__</legend>
         <div>
             <label><input type="radio" name="open-in" id="new-tab" value="tab"> <span
-                class="message">__MSG_tb-color-picker.new-tab__</span></label>
+                    class="message">__MSG_tbColorPickerNewTab__</span></label>
         </div>
         <div>
             <label><input type="radio" name="open-in" id="window" value="window"> <span
-                class="message">__MSG_tb-color-picker.window__</span></label>
+                    class="message">__MSG_tbColorPickerWindow__</span></label>
         </div>
     </fieldset>
     <fieldset>
-        <legend class="message">__MSG_tb-color-picker.hex-display__</legend>
+        <legend class="message">__MSG_tbColorPickerHexDisplay__</legend>
         <div>
             <label><input type="radio" name="hex-display" id="hex-upper" value="upper"> <span
-                class="message">__MSG_tb-color-picker.hex-upper__</span></label>
+                    class="message">__MSG_tbColorPickerHexUpper__</span></label>
         </div>
         <div>
             <label><input type="radio" name="hex-display" id="hex-lower" value="lower"> <span
-                class="message">__MSG_tb-color-picker.hex-lower__</span></label>
+                    class="message">__MSG_tbColorPickerHexLower__</span></label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend class="message">__MSG_tbColorPickerCopyToClipboard__</legend>
+        <div>
+            <label><input type="checkbox" id="copy-clipboard"> <span
+                    class="message">__MSG_tbColorPickerShouldCopyToClipboard__</span></label>
+        </div>
+        <div>
+            <label><input type="checkbox" id="copy-notify"> <span
+                    class="message">__MSG_tbColorPickerNotifyCopyToClipboard__</span></label>
+        </div>
+        <div>
+            <label><span class="message">__MSG_tbColorPickerFormatCopyToClipboard__</span>
+                <select id="color-format">
+                    <optgroup>
+                        <option value="hex-upper-1">#RRGGBB</option>
+                        <option value="hex-lower-1">#rrggbb</option>
+                        <option value="hex-upper-2">RRGGBB</option>
+                        <option value="hex-lower-2">rrggbb</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="rgb-1">rgb(R, G, B)</option>
+                        <option value="rgb-2">rgb(R%, G%, B%)</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="rgba-1">rgba(R, G, B, A)</option>
+                        <option value="rgba-2">rgba(R%, G%, B%, A)</option>
+                    </optgroup>
+                    <optgroup>
+                        <option value="hsl">hsl(H, S%, L%)</option>
+                        <option value="hsla">hsla(H, S%, L%, A)</option>
+                    </optgroup>
+                </select>
+            </label>
         </div>
     </fieldset>
 </form>

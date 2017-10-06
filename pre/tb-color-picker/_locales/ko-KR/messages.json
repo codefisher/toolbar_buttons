@@ -1,0 +1,98 @@
+{
+  "extensionDescription": {
+    "description": "",
+    "message": "Opens a color picker dialog window, to chose and work with colors."
+  },
+  "extensionName": {
+    "description": "",
+    "message": "tb-color-picker.label"
+  },
+  "tbColorPickerBlue": {
+    "description": "",
+    "message": "Blue"
+  },
+  "tbColorPickerBrowserSafe": {
+    "description": "",
+    "message": "\u201cBrowser Safe\u201d Colors"
+  },
+  "tbColorPickerCopied": {
+    "description": "",
+    "message": ""
+  },
+  "tbColorPickerDialogTitle": {
+    "description": "",
+    "message": "Sharp Color Picker"
+  },
+  "tbColorPickerEyedropper": {
+    "description": "",
+    "message": "Open Eyedropper"
+  },
+  "tbColorPickerGreen": {
+    "description": "",
+    "message": "Green"
+  },
+  "tbColorPickerHex": {
+    "description": "",
+    "message": "Hex"
+  },
+  "tbColorPickerHexDisplay": {
+    "description": "",
+    "message": "Display Hex codes in:"
+  },
+  "tbColorPickerHexLower": {
+    "description": "",
+    "message": "Lower Case"
+  },
+  "tbColorPickerHexUpper": {
+    "description": "",
+    "message": "Upper Case"
+  },
+  "tbColorPickerHue": {
+    "description": "",
+    "message": "Hue"
+  },
+  "tbColorPickerLabel": {
+    "description": "",
+    "message": "Color Picker"
+  },
+  "tbColorPickerNewTab": {
+    "description": "",
+    "message": "New Tab"
+  },
+  "tbColorPickerOpenPicker": {
+    "description": "",
+    "message": "Open Color Picker in:"
+  },
+  "tbColorPickerOptions": {
+    "description": "",
+    "message": "Options"
+  },
+  "tbColorPickerPanel": {
+    "description": "",
+    "message": "Panel"
+  },
+  "tbColorPickerRed": {
+    "description": "",
+    "message": "Red"
+  },
+  "tbColorPickerSaturation": {
+    "description": "",
+    "message": "Saturation"
+  },
+  "tbColorPickerSave": {
+    "description": "",
+    "message": "Save"
+  },
+  "tbColorPickerValue": {
+    "description": "",
+    "message": "Value"
+  },
+  "tbColorPickerWheel": {
+    "description": "",
+    "message": "Wheel"
+  },
+  "tbColorPickerWindow": {
+    "description": "",
+    "message": "Window"
+  }
+}

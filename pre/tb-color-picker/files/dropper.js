@@ -11,6 +11,7 @@ var colorBox;
 var hexBox;
 var rgbBox;
 var box;
+var cover;
 
 var selectSize = 1;
 var hexDisplay = "upper";
@@ -70,6 +71,9 @@ function updatePicker(event) {
 }
 
 function activateDropper() {
+    cover = document.createElement('div');
+    cover.id = 'tb-color-picker-dropper-box-cover';
+    document.body.appendChild(cover);
     box = document.createElement('div');
     box.id = 'tb-color-picker-dropper-box-wrapper';
     document.body.appendChild(box);
@@ -158,18 +162,30 @@ function activateDropper() {
     document.addEventListener('click', pageClicker);
 }
 
-function pageClicker(event) {
+async function pageClicker(event) {
     if(isOnDiv) {
         return;
     }
-    hexBox.select();
-    try {
-        var successful = document.execCommand('copy');
-    } catch (err) {
-        var successful = false;
+    let settings = await browser.storage.local.get({
+		should_copy: true,
+		copy_format: "hex-upper-1"
+	});
+    let hexValue = hexBox.value;
+    if(settings.should_copy) {
+        let value = getInFormat(hexValue, settings.copy_format);
+        hexBox.value = value;
+        hexBox.select();
+        try {
+            var successful = document.execCommand('copy');
+        } catch (err) {
+            var successful = false;
+        }
+        port.postMessage({"hex": hexValue, "copied": successful, "color": value});
+    } else {
+        port.postMessage({"hex": hexValue});
     }
-    port.postMessage({"hex": hexBox.value, "copied": successful});
     document.body.removeChild(box);
+    document.body.removeChild(cover);
     document.removeEventListener("mousemove", updatePicker);
     document.removeEventListener("click", pageClicker);
     event.preventDefault();
@@ -179,6 +195,7 @@ function pageClicker(event) {
 
 function close(event) {
     document.body.removeChild(box);
+    document.body.removeChild(cover);
     document.removeEventListener("mousemove", updatePicker);
     document.removeEventListener("click", pageClicker);
     event.preventDefault();

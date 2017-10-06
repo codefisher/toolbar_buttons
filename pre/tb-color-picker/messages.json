@@ -1,0 +1,120 @@
+{
+  "extensionDescription": {
+    "description": "",
+    "message": "Opens a color picker dialog window, to chose and work with colors."
+  },
+  "extensionName": {
+    "description": "",
+    "message": "Sharp Color Picker"
+  },
+  "tbColorPickerBlue": {
+    "description": "",
+    "message": "Blue"
+  },
+  "tbColorPickerBrowserSafe": {
+    "description": "",
+    "message": "\u201cBrowser Safe\u201d Colors"
+  },
+  "tbColorPickerDialogTitle": {
+    "description": "",
+    "message": "Sharp Color Picker"
+  },
+  "tbColorPickerEyedropper": {
+    "description": "",
+    "message": "Open Eyedropper"
+  },
+  "tbColorPickerGreen": {
+    "description": "",
+    "message": "Green"
+  },
+  "tbColorPickerHex": {
+    "description": "",
+    "message": "Hex"
+  },
+  "tbColorPickerHexDisplay": {
+    "description": "",
+    "message": "Display Hex codes in:"
+  },
+  "tbColorPickerHexLower": {
+    "description": "",
+    "message": "Lower Case"
+  },
+  "tbColorPickerHexUpper": {
+    "description": "",
+    "message": "Upper Case"
+  },
+  "tbColorPickerHue": {
+    "description": "",
+    "message": "Hue"
+  },
+  "tbColorPickerLabel": {
+    "description": "",
+    "message": "Color Picker"
+  },
+  "tbColorPickerNewTab": {
+    "description": "",
+    "message": "New Tab"
+  },
+  "tbColorPickerOpenPicker": {
+    "description": "",
+    "message": "Open Color Picker in:"
+  },
+  "tbColorPickerOptions": {
+    "description": "",
+    "message": "Options"
+  },
+  "tbColorPickerPanel": {
+    "description": "",
+    "message": "Panel"
+  },
+  "tbColorPickerRed": {
+    "description": "",
+    "message": "Red"
+  },
+  "tbColorPickerSaturation": {
+    "description": "",
+    "message": "Saturation"
+  },
+  "tbColorPickerSave": {
+    "description": "",
+    "message": "Save"
+  },
+  "tbColorPickerValue": {
+    "description": "",
+    "message": "Value"
+  },
+  "tbColorPickerWheel": {
+    "description": "",
+    "message": "Wheel"
+  },
+  "tbColorPickerWindow": {
+    "description": "",
+    "message": "Window"
+  },
+  "tbColorPickerCopyToClipboard": {
+    "description": "Title of fieldset in Option window.",
+    "message": "Auto Copy"
+  },
+  "tbColorPickerShouldCopyToClipboard": {
+    "description": "Label for checkbox in option window.",
+    "message": "Automatically copy picked color to clipboard."
+  },
+  "tbColorPickerNotifyCopyToClipboard": {
+    "description": "Label for checkbox in option window.",
+    "message": "Display notification when color is copied"
+  },
+  "tbColorPickerFormatCopyToClipboard": {
+    "description": "Label for select in option window.",
+    "message": "Format of automatically copied color:"
+  },
+  "tbColorPickerCopied": {
+      "message": "Copied color $COLOR$ to clipboard.",
+      "description": "Notification that tells the user which color they copied.",
+      "placeholders": {
+        "color": {
+          "content": "$1",
+          "example": "#FF0000"
+        }
+      }
+    }
+}

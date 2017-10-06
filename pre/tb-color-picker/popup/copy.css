@@ -1,0 +1,14 @@
+html, body {
+    width: 180px;
+}
+
+.copybox {
+    display:block;
+    background-color:inherit;
+    width:100%;
+}
+
+#colorsample-box {
+    height:25px;
+    border:1px solid #333333;
+}

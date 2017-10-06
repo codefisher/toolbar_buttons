@@ -1,6 +1,6 @@
 {
   "default_title": "tb-color-picker.label",
-  "name": "tb-color-picker.label",
+  "name": "Sharp Color Picker",
   "permissions": [
     "tabs",
     "<all_urls>",
@@ -15,7 +15,8 @@
     "pickerweb.js",
     "dropper.js",
     "dropper.css",
-    "close.png"
+    "close.png",
+    "back.png"
   ],
   "background": {
     "scripts": [
@@ -23,6 +24,9 @@
       "files/colorpicker.js"
     ]
   },
+  "used_strings": [
+    "tbColorPickerCopied"
+  ],
   "content_scripts": [
     {
       "js": [
@@ -41,16 +45,6 @@
   "web_accessible_resources": [
     "files/close.png"
   ],
-  "messages": {
-    "tbColorPickerCopied": {
-      "message": "Copied color $COLOR$ to clipboard.",
-      "description": "Tells the user which cokir they copied.",
-      "placeholders": {
-        "url": {
-          "content": "$1",
-          "example": "#FF0000"
-        }
-      }
-    }
-  }
+  "amo_page": "https://addons.mozilla.org/addon/sharp-color-picker/",
+  "download": "https://addons.mozilla.org/firefox/downloads/latest/sharp-color-picker/addon-601070-latest.xpi"
 }

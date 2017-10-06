@@ -65,3 +65,13 @@ hr {
 #open-options {
     background-image:url('cog.png');
 }
+
+#current-color-box {
+    width:16px;
+    height:16px;
+    border:1px solid #333333;
+    margin-right:4px;
+    display:inline-block;
+    position: relative;
+    bottom:-2px;
+}

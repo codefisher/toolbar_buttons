@@ -84,11 +84,11 @@ var port;
 function connected(p) {
     port = p;
     port.onMessage.addListener(m => {
+        if (m.copied) {
+            notifyCopy(m.color);
+        }
         if (m.hex) {
             saveColor(m.hex);
-            if (m.copied) {
-                notifyCopy(m.color);
-            }
         } else if (m.action == "colorpicker") {
             colorPicker();
         } else if (m.action == "dropper") {

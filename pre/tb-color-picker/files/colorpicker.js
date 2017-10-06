@@ -1,11 +1,11 @@
 var wheel = document.getElementById("w"),
-	wheelCtx = getContext(wheel),
+	wheelCtx = wheel ? getContext(wheel) : null,
 	currentBox = document.getElementById("c"),
-	currentCtx = getContext(currentBox),
+	currentCtx = currentBox ? getContext(currentBox) : null,
 	barCanvas = document.getElementById("ck"),
-	barCanvasCtx = getContext(barCanvas),
+	barCanvasCtx = barCanvas ? getContext(barCanvas) : null,
 	panelCanvas = document.getElementById("cj"),
-	panelCanvasCtx = getContext(panelCanvas),
+	panelCanvasCtx = panelCanvas ? getContext(panelCanvas) : null,
 
 	hexNode = document.getElementById("x"),
 	inputBoxes = [],
@@ -890,4 +890,41 @@ function updateColor(r, g, b, input) {
 		item.selected = true;
 	}
 	doApply(drawPanel, currentColor);
+}
+
+function getInFormat(hexValue, copyFormat) {
+	let rgb = getRGB(hexValue);
+	let r = rgb[0], g = rgb[1], b = rgb[2];
+	let hsl = getHSL(r, g, b);
+	let h = Math.round(hsl[0]), s = Math.round(hsl[1]), l = Math.round(hsl[2]);
+	switch (copyFormat) {
+		case "hex-upper-1":
+			return hexValue.toUpperCase();
+		case "hex-lower-1":
+			return hexValue.toLowerCase();
+		case "hex-upper-2":
+			return hexValue.toUpperCase().replace("#", "");
+		case "hex-lower-2":
+			return hexValue.toLowerCase().replace("#", "");
+		case "rgb-2":
+			r = Math.round(r / 255 * 100);
+			g = Math.round(g / 255 * 100);
+			b = Math.round(b / 255 * 100);
+			return `rgb(${r}%, ${g}%, ${b}%)`;
+		case "rgb-1":
+			return `rgb(${r}, ${g}, ${b})`;
+		case "rgba-2":
+			r = Math.round(r / 255 * 100);
+			g = Math.round(g / 255 * 100);
+			b = Math.round(b / 255 * 100);
+			return `rgba(${r}%, ${g}%, ${b}%, 1)`;
+		case "rgba-1":
+			return `rgba(${r}, ${g}, ${b}, 1)`;
+		case "hsl":
+			return `hsl(${h}, ${s}%, ${l}%)`;
+		case "hsla":
+			return `hsla(${h}, ${s}%, ${l}%, 1)`;
+		default:
+			return hexValue;
+	}
 }
