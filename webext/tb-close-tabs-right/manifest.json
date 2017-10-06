@@ -1,13 +1,12 @@
 {
-    "default_title": "tb-close-tabs-right.label",
-    "name": "tb-close-tabs-right.label",
-    "description": "Close all tabs to the right of the current tab.",
-    "permissions": ["tabs", "storage"],
-    "download": "",
-    "amo_page": "",
-  "strings": [
-    ["tb-close-tabs-right.label", "Close Tabs to the right"],
-    ["tbCloseAllTabsNotPinned", "Don't close pinned tabs"]
+  "default_title": "tbCloseTabsRightLabel",
+  "name": "Close Tabs to the Right Button",
+  "description": "Close all tabs to the right of the current tab.",
+  "permissions": [
+    "tabs",
+    "storage"
   ],
+  "download": "https://addons.mozilla.org/firefox/downloads/latest/close-tab-to-the-right-button/addon-859208-latest.xpi",
+  "amo_page": "https://addons.mozilla.org/addon/close-tab-to-the-right-button/",
   "images": "tabs-delete.png"
 }

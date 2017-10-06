@@ -1,0 +1,10 @@
+{
+  "tbCloseTabsRightLabel": {
+    "message": "Close Tabs to the right",
+    "description": "The name of the extension/action"
+  },
+  "tbCloseAllTabsNotPinned": {
+    "message": "Don't close pinned tabs.",
+    "description": "Options window setting name"
+  }
+}

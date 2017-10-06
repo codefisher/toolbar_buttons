@@ -1,0 +1,10 @@
+{
+  "tbSearchBookmarksLabel": {
+    "message": "Search Bookmarks",
+    "description": "The name of the extension/action"
+  },
+  "tbSearchBookmarksNewTab": {
+    "message": "Open in New Tab.",
+    "description": "Options window setting name"
+  }
+}

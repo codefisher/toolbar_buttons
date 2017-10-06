@@ -74,5 +74,5 @@ document.getElementById('bookmark-search').addEventListener("input", function(ev
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('bookmark-search').focus();
+    document.getElementById('bookmark-search').select();
 });

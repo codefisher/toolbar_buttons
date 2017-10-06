@@ -1,13 +1,9 @@
 {
-    "default_title": "tb-search-bookmarks.label",
-    "name": "tb-search-bookmarks.label",
+    "default_title": "tbSearchBookmarksLabel",
+    "name": "Search Bookmarks Button",
     "description": "A button with a popup for searching your bookmarks.",
     "permissions": ["tabs", "activeTab", "bookmarks", "storage"],
-    "download": "",
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/search-bookmarks-button/addon-859745-latest.xpi",
     "amo_page": "https://addons.mozilla.org/addon/close-tab-to-the-right-button/",
-  "strings": [
-    ["tb-search-bookmarks.label", "Search Bookmarks"],
-    ["tb-search-bookmarks.new-tab", "Open in New Tab"]
-  ],
-  "images": "bookmark-explore.png"
+    "images": "bookmark-explore.png"
 }

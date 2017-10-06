@@ -1,13 +1,9 @@
 {
-    "default_title": "tb-top-sites.label",
-    "name": "tb-top-sites.label",
+    "default_title": "tbTopSitesLabel",
+    "name": "Top Sites Button",
     "description": "A list of the top sites that you visit.",
     "permissions": ["activeTab", "storage", "topSites"],
-    "download": "",
-    "amo_page": "",
-  "strings": [
-    ["tb-top-sites.label", "Top Sites"],
-    ["tb-top-sites.new-tab", "Open in New Tab"]
-  ],
-  "images": "flame.png"
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/top-sites-button/addon-859748-latest.xpi",
+    "amo_page": "https://addons.mozilla.org/addon/top-sites-button/",
+    "images": "flame.png"
 }

@@ -5,14 +5,15 @@ function logTopSites(topSitesArray) {
         div.classList.add('button');
         let text = document.createTextNode(topSite.title);
         div.appendChild(text);
+        let pageUrl = topSite.url;
         div.addEventListener('click', async function () {
             let settings = await browser.storage.local.get({
                 new_tab: false,
             });
             if (settings.new_tab) {
-                browser.tabs.create({url: topSite.url});
+                browser.tabs.create({url: pageUrl});
             } else {
-                browser.tabs.update({url: topSite.url});
+                browser.tabs.update({url: pageUrl});
             }
             window.close();
         });

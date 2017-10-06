@@ -1,0 +1,10 @@
+{
+  "tbTopSitesLabel": {
+    "message": "Top Sites",
+    "description": "The name of the extension/action"
+  },
+  "tbTopSitesNewTab": {
+    "message": "Open in New Tab.",
+    "description": "Options window setting name"
+  }
+}
