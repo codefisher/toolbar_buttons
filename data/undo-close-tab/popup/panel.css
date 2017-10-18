@@ -1,5 +1,6 @@
 html, body {
-    min-width: 150px;
+    min-width: 200px;
+    max-width: 450px;
 }
 
 .group {
@@ -16,10 +17,14 @@ html, body {
     cursor: pointer;
     border:1px solid #ffffff;
 
-    max-width:250px;
+    /*max-width:450px;*/
     overflow:hidden;
     text-overflow: ellipsis;
     white-space:nowrap;
+}
+
+.text {
+    padding-left:22px;
 }
 
 .button img {
@@ -46,5 +51,5 @@ input {
 
 hr {
     border: 0;
-    border-bottom:1px solid #999999;
+    border-top:1px solid #999999;
 }

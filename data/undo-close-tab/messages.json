@@ -18,5 +18,33 @@
   "undoCloseTabRestoreCount": {
     "description": "From the extension options.",
     "message": "How many tabs to show in list."
+  },
+  "undoCloseTabWindowTab": {
+    "message": "$TITLE$ (and 1 other tab)",
+    "description": "The menu label for when there is only two tabs in window.",
+    "placeholders": {
+      "title" : {
+        "content" : "$1",
+        "example" : "Google Search"
+      }
+    }
+  },
+  "undoCloseTabWindowTabs": {
+    "message": "$TITLE$ (and $NUM$ other tab)",
+    "description": "The menu label for when there mutiple tabs in window.",
+    "placeholders": {
+      "title" : {
+        "content" : "$1",
+        "example" : "Google Search"
+      },
+      "num" : {
+        "content" : "$2",
+        "example" : "2"
+      }
+    }
+  },
+  "undoCloseTabMaxWidth": {
+    "message": "Maximum width of the button's menu.",
+    "description": "From the extension options."
   }
 }

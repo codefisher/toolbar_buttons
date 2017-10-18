@@ -1,11 +1,14 @@
 {
     "default_title": "undo-close-tab.label",
     "name": "Undo Close Tab Button",
-    "permissions": ["storage", "sessions", "tabs"],
+    "permissions": ["storage", "sessions", "tabs", "menus"],
     "used_strings": [
-        "undoCloseTabEmpty"
+        "undoCloseTabEmpty",
+        "undoCloseTabWindowTab",
+        "undoCloseTabWindowTabs"
     ],
     "extension_id": "undo-close-tab-buttons-single@codefisher.org",
+    "crowdin": "https://crowdin.com/project/undo-close-tab-button",
     "amo_page": "https://addons.mozilla.org/addon/undo-close-tab-button/",
-    "download": "https://addons.mozilla.org/firefox/downloads/latest/undo-close-tab-button/addon-630686-latest.xpi?src=dp-btn-primary"
+    "download": "https://addons.mozilla.org/firefox/downloads/latest/undo-close-tab-button/addon-630686-latest.xpi"
 }

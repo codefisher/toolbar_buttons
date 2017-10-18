@@ -10,11 +10,15 @@
 <form>
     <div>
         <label><input type="checkbox" id="hide-popup"> <span
-                class="message">__MSG_undo-close-tab.label.option.label__</span></label>
+                class="message">__MSG_undoCloseTabLabelOptionLabel__</span></label>
     </div>
     <div>
-        <label><input type="number" id="tab-count"> <span
+        <label><input type="number" id="tab-count" min="0"> <span
                 class="message">__MSG_undoCloseTabRestoreCount__</span></label>
+    </div>
+    <div>
+        <label><input type="number" id="max-width" min="200" max="600"> <span
+                class="message">__MSG_undoCloseTabMaxWidth__</span></label>
     </div>
 </form>
 <script src="/localise.js"></script>

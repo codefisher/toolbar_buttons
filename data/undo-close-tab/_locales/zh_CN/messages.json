@@ -1,30 +1,30 @@
 {
-  "extensionDescription": {
-    "description": "",
-    "message": "Reopen the last closed tab.  Really nice when a tab is closed by mistake, or you decided you did not really want to close it moments too late."
+  "extensionDescription":{
+    "description":"Description of the extension.",
+    "message":"重新打开最后关闭的标签。适用于：操作失误关闭了标签、决定重新回到关闭的标签。"
   },
-  "extensionName": {
-    "description": "",
-    "message": "Undo Close Tab Button"
+  "extensionName":{
+    "description":"Name of the extension.",
+    "message":"Undo Close Tab Button"
   },
-  "undoCloseTabEmpty": {
-    "description": "",
-    "message": "No Tabs to Restore..."
+  "undoCloseTabEmpty":{
+    "description":"For the popup when the session is empty.",
+    "message":"没有标签可恢复..."
   },
-  "undoCloseTabLabel": {
-    "description": "",
-    "message": "\u64a4\u6d88\u5173\u95ed\u7684\u6807\u7b7e"
+  "undoCloseTabLabel":{
+    "description":"Title for the button",
+    "message":"撤消关闭的标签"
   },
-  "undoCloseTabLabelOptionLabel": {
-    "description": "",
-    "message": "Do not show a list of recently closed tabs on the Undo Close Tab button."
+  "undoCloseTabLabelOptionLabel":{
+    "description":"From the extension options",
+    "message":"在按钮上，不显示最近关闭标签的列表。"
   },
-  "undoCloseTabRestoreAll": {
-    "description": "",
-    "message": "Restore All Tabs"
+  "undoCloseTabRestoreAll":{
+    "description":"Menu item at the bottom of the popup to restore all tabs.",
+    "message":"恢复列表中的所有标签"
   },
-  "undoCloseTabRestoreCount": {
-    "description": "",
-    "message": "How many to show in list."
+  "undoCloseTabRestoreCount":{
+    "description":"From the extension options.",
+    "message":"列表显示的标签数量"
   }
 }
